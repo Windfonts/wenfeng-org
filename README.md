@@ -14,7 +14,8 @@
 cd ~/Projects/wenfeng-org
 # 如有 joy-port：joy-port claim 16030
 python3 preview.py --port 16030
-# http://127.0.0.1:16030/           完整原型（现网口径）
+# http://127.0.0.1:16030/           首页 = 丁（锁定 home-v4）
+# http://127.0.0.1:16030/home-v4.html 丁别名（对照）
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -27,7 +28,8 @@ python3 preview.py --port 16030
 
 | 路径 | 角色 |
 |---|---|
-| `index.html` + `js/site.js` + `css/` | 完整站 SPA |
+| `index.html` + `js/site.js` + `css/` | 完整站 SPA；`/` = 丁首页 |
+| `home-v4.html` | 丁静态别名（枢纽对照） |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |

@@ -134,3 +134,22 @@
 预览：`http://127.0.0.1:16030/home-v4.html`（`?view=design` / `?view=dev`）  
 截图：`_shots/home-full-2026-10-02/home-v4-v5stats-design.png` · `home-v4-v5stats-dev.png`
 
+## 丁挂真首页 `/`（2026-10-02 晚续 5）
+
+冯：把锁定丁换过去，首页就用这个。
+
+- SPA：`js/site.js` 的 `home()` 改为丁 markup（`hv4-*`）；`/` → `index.html` + site.js 按 pathname `home` 渲染
+- 样式：`index.html` 链 `css/home-versions.css`；`paint` 时 `body` 为 `hv hv-v4`（不再用旧 `page-home` 样张墙首页）
+- 别名：`home-v4.html` 仍可打开（对照 / 枢纽 iframe）；字标与导航指回 `/`
+- 预览：`http://127.0.0.1:16030/` 应与原 `/home-v4.html` 观感一致
+- 未部署生产（本仓仍是原型真源）
+
+路由（preview.py + build.py）：
+
+| URL | 谁出内容 |
+| --- | --- |
+| `/` · `/index.html` | 静态壳 `index.html` → SPA `home()` = 丁 |
+| `/license` `/source` … | SITE 正则 → 同一壳 → site.js 各页 |
+| `/home-v4.html` | 静态整页别名（非 SPA） |
+| `build.py` 各路由 `index.html` 副本 | 同壳；OSS 静态托管按 pathname 进 SPA |
+

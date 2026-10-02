@@ -573,53 +573,142 @@
     return picked;
   }
 
+  function countTextFull(fonts) {
+    return fonts.filter(function (f) {
+      return (f.license || {}).textState === 'full';
+    }).length;
+  }
+
+  // 镜像仓库数不在 samples.json；与 export-report coverage.source_mirrors 对齐（2026-10-01）
+  var HOME_MIRROR_N = 132;
+
   function home(fonts) {
-    var take = fonts.filter(canTake);
-    var show = showcaseOf(fonts);
-    var face = show[0] || take[0] || fonts[0];
-    var faceHref = face ? '/source/' + esc(face.norm) + '/' : '/source';
-    var faceClass = face ? ' t-' + esc(face.norm) : '';
-    var faceName = face ? esc(wfName(face)) : '目录';
+    var n = fonts.length;
+    var nSource = countOffer(fonts, 'source');
+    var nFull = countTextFull(fonts);
+    var nMirror = HOME_MIRROR_N;
+    var gen = '2026-10-01';
     return '' +
-      '<section class="home-hero">' +
+      '<section class="hv4-hero">' +
         '<div class="container">' +
-          '<div class="home-hero-top">' +
-            '<p class="kicker">源文件和下载</p>' +
-            '<p class="live-caption"><span class="live-using">' +
-              (show.length > 1 ? '<button type="button" class="btn-text" data-face-next>换一款</button> · ' : '') +
-              '<a class="now" href="' + faceHref + '">' + faceName + '</a></span></p>' +
+          '<p class="hv4-crumb" aria-label="路径"><span class="for-design">wenfeng.org</span><span class="for-dev mono">wenfeng.org /</span></p>' +
+          '<div class="hv4-display">' +
+            '<h1>源文件</h1>' +
+            '<p class="hv4-lead for-design">开源字体的源文件和许可原文。<br class="hv4-br" />能下载的直接下载，不允许再分发的核验后领取切片包。</p>' +
+            '<p class="hv4-lead for-dev mono">/license · /source · #gap<br class="hv4-br" />samples.json · offer · textState · GET /api/v1/fonts · /attest</p>' +
           '</div>' +
-          '<p class="live' + faceClass + '"' + faceAttrs(face) + ' data-hero-live>' + PROOF_BR + '</p>' +
-          '<div class="home-hero-foot">' +
-            '<p class="lead">开源字体可以直接下载。不允许再分发的，核验后领取切片包。</p>' +
-            '<div class="home-cta acts">' +
-              '<a class="btn btn-ink" data-hero-take href="' + faceHref + '">拿走' + faceName + '</a>' +
-              '<a class="btn" href="/source">目录</a>' +
+          '<div class="hv4-split">' +
+            '<div class="hv4-tasks" role="list">' +
+              '<a class="hv4-task is-ink" href="/license" role="listitem">' +
+                '<span class="idx" aria-hidden="true">01</span>' +
+                '<span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-shield"></use></svg></span>' +
+                '<span class="body">' +
+                  '<span class="t-t">查授权</span>' +
+                  '<span class="t-d for-design">许可原文与三态结论</span>' +
+                  '<span class="t-d for-dev mono">/license · textState</span>' +
+                '</span>' +
+                '<span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>' +
+              '</a>' +
+              '<a class="hv4-task" href="/source" role="listitem">' +
+                '<span class="idx" aria-hidden="true">02</span>' +
+                '<span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-download"></use></svg></span>' +
+                '<span class="body">' +
+                  '<span class="t-t">下源文件</span>' +
+                  '<span class="t-d for-design">本站下载或官方下载，逐款标注</span>' +
+                  '<span class="t-d for-dev mono">/source · offer</span>' +
+                '</span>' +
+                '<span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>' +
+              '</a>' +
+              '<a class="hv4-task" href="#gap" role="listitem">' +
+                '<span class="idx" aria-hidden="true">03</span>' +
+                '<span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-edit"></use></svg></span>' +
+                '<span class="body">' +
+                  '<span class="t-t">报缺字</span>' +
+                  '<span class="t-d for-design">缺字形 / 缺收录 / 勘误</span>' +
+                  '<span class="t-d for-dev mono">#gap · 表单未接</span>' +
+                '</span>' +
+                '<span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>' +
+              '</a>' +
             '</div>' +
+            '<aside class="hv4-aside" aria-label="本站已有与即将开放">' +
+              '<div class="hv4-aside-block">' +
+                '<p class="hv4-aside-label">本站已有</p>' +
+                '<ul>' +
+                  '<li><a href="/source"><b>' + n + '</b> 款开源字体</a> · 可搜可浏览</li>' +
+                  '<li><a href="/source?offer=source"><b>' + nSource + '</b> 款源文件</a> · 本站下载</li>' +
+                  '<li><a href="/license"><b>' + nFull + '</b> 份许可全文</a> · 附三态结论</li>' +
+                  '<li>字体注释已带许可地址 <code>wenfeng.org/license</code></li>' +
+                  '<li>不做样张墙，不当 CDN · 不允许再分发的款只核验出处</li>' +
+                '</ul>' +
+              '</div>' +
+              '<div class="hv4-aside-rule" aria-hidden="true"></div>' +
+              '<div class="hv4-aside-block">' +
+                '<p class="hv4-aside-label">即将开放</p>' +
+                '<ul>' +
+                  '<li><a href="#gap">报缺字</a> · 缺字形、缺收录、勘误</li>' +
+                  '<li><a href="/slice">切片包</a> · 不允许再分发的款核验后领取</li>' +
+                  '<li><a href="/attest">授权证明</a> · <a href="/how">怎么核</a></li>' +
+                  '<li class="is-mute">造字工具 · 暂未开放</li>' +
+                '</ul>' +
+              '</div>' +
+            '</aside>' +
+            '<form class="hv4-search" action="/source" method="get" role="search">' +
+              '<label class="sr-only" for="q">搜索字体</label>' +
+              '<span class="hv4-search-kicker" aria-hidden="true">检索</span>' +
+              '<input id="q" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off" />' +
+              '<button class="btn" type="submit">' +
+                '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>' +
+                '搜索' +
+              '</button>' +
+            '</form>' +
           '</div>' +
-          searchForm('/source', '', '', 'search-hero') +
-          homeStats(fonts) +
+          '<div class="hv4-stats" aria-label="目录概况">' +
+            '<div class="hv4-stat">' +
+              '<b>' + n + '</b>' +
+              '<span class="for-design">已收录</span>' +
+              '<span class="for-dev mono">fonts[]</span>' +
+            '</div>' +
+            '<div class="hv4-stat">' +
+              '<b>' + nSource + '</b>' +
+              '<span class="for-design">本站下载</span>' +
+              '<span class="for-dev mono">offer=source</span>' +
+            '</div>' +
+            '<div class="hv4-stat">' +
+              '<b>' + nFull + '</b>' +
+              '<span class="for-design">许可全文</span>' +
+              '<span class="for-dev mono">textState=full</span>' +
+            '</div>' +
+            '<div class="hv4-stat">' +
+              '<b>' + nMirror + '</b>' +
+              '<span class="for-design">镜像仓库</span>' +
+              '<span class="for-dev mono">mirror</span>' +
+            '</div>' +
+            '<p class="hv4-stats-cap for-design">目录数据 · ' + gen + ' 更新</p>' +
+            '<p class="hv4-stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · ' + gen + ' · not live</p>' +
+          '</div>' +
         '</div>' +
       '</section>' +
-      '<section class="home-now">' +
-        '<div class="container">' +
-          '<div class="section-head">' +
-            '<h2>本站下载</h2>' +
-            '<a class="more" href="/source?offer=source">全部 ' + take.length + ' 款</a>' +
+      '<section class="hv4-about" id="gap" aria-label="关于本站">' +
+        '<div class="container hv4-about-grid">' +
+          '<div class="hv4-about-title">' +
+            '<p class="kicker for-design">关于本站</p>' +
+            '<p class="kicker for-dev mono">route /</p>' +
+            '<h2 class="for-design">查授权、下源文件、<br />报缺字。</h2>' +
+            '<h2 class="for-dev mono">/license · /source<br />#gap · /attest</h2>' +
           '</div>' +
-          cards(take.slice(0, 12), true) +
-        '</div>' +
-      '</section>' +
-      '<section class="home-close" aria-label="自托管切片">' +
-        '<p class="home-close-bg" aria-hidden="true">源</p>' +
-        '<div class="container home-close-num">' +
-          '<p class="home-close-figure"><b>' + fonts.length + '</b><span>款字体</span></p>' +
-          '<div>' +
-            '<h2>切片包：给 WordPress 自托管</h2>' +
-            '<p class="lead">woff2 与 CSS 打成包，放进主题本地加载。开源字体的切片包稍后提供。</p>' +
+          '<div class="hv4-about-body">' +
+            '<p class="for-design">文风收录开源字体的源文件和许可原文，授权结论逐款核对原文。缺字形、缺收录或发现勘误，反馈入口开放后在这里提交。</p>' +
+            '<p class="for-dev mono">data-view · .for-design / .for-dev · chrome() · GET /api/v1/fonts · samples.json</p>' +
             '<p class="acts">' +
-              '<a class="btn btn-ink" href="/slice">切片工具</a>' +
-              '<a class="btn" href="/use">怎么用</a>' +
+              '<a class="btn btn-ink" href="/license">' +
+                '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield"></use></svg>' +
+                '查授权' +
+              '</a>' +
+              '<a class="btn" href="/source">' +
+                '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-download"></use></svg>' +
+                '打开目录' +
+              '</a>' +
+              '<a class="btn" href="/how">怎么核</a>' +
             '</p>' +
           '</div>' +
         '</div>' +
@@ -2548,6 +2637,13 @@
     applyView(view());
     var fonts = data.fonts || [];
     var route = parsePath();
+    if (route.page === 'home' && !document.getElementById('wf-home-v-css')) {
+      var hvCss = document.createElement('link');
+      hvCss.id = 'wf-home-v-css';
+      hvCss.rel = 'stylesheet';
+      hvCss.href = '/css/home-versions.css';
+      document.head.appendChild(hvCss);
+    }
     if (route.page === 'attest' || route.page === 'attests' || route.page === 'attest-ledger') {
       if (!document.getElementById('wf-shs-css')) {
         var shs = document.createElement('link');
@@ -2582,7 +2678,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = 'page-' + route.page;
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : ('page-' + route.page);
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();
