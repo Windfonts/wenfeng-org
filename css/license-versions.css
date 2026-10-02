@@ -1131,3 +1131,614 @@ body.lq main { flex: 1; }
 
 .site-foot-alts .muted { color: var(--gray-2); }
 .optbar .muted { color: var(--gray); }
+
+/* ============================================================
+   庚辛壬 · 换向新稿（非裁决轨 / 主命中 / 对读栏）
+   B soft · home-v4 丁工艺：大数统计、字阶、设计/开发、细线
+   ============================================================ */
+
+/* —— 共用英雄 / 搜索 / 注（v7–v9） —— */
+.lq7-hero,
+.lq8-hero,
+.lq9-hero {
+  padding: var(--s-16) 0 var(--s-12);
+}
+.lq7-crumb,
+.lq8-crumb,
+.lq9-crumb {
+  margin: 0 0 var(--s-8);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+.lq7-display,
+.lq8-display,
+.lq9-display {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  gap: var(--s-6) var(--s-12);
+  align-items: end;
+  margin-bottom: var(--s-10);
+  padding-bottom: var(--s-10);
+  border-bottom: 1px solid var(--rule);
+}
+.lq7-display h1,
+.lq8-display h1,
+.lq9-display h1 {
+  margin: 0;
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  font-weight: var(--fw-title);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.lq7-display h1.mono,
+.lq8-display h1.mono,
+.lq9-display h1.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  letter-spacing: -0.03em;
+}
+.lq7-lead,
+.lq8-lead,
+.lq9-lead {
+  margin: 0;
+  max-width: 22em;
+  justify-self: end;
+  padding-bottom: 0.35em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.lq7-lead.mono,
+.lq8-lead.mono,
+.lq9-lead.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-14);
+  letter-spacing: 0.01em;
+}
+.lq7-br,
+.lq8-br,
+.lq9-br { display: none; }
+
+.lq7-search,
+.lq8-search,
+.lq9-search {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-8);
+  max-width: 40rem;
+}
+.lq7-search-kicker,
+.lq8-search-kicker,
+.lq9-search-kicker {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.06em;
+  margin-right: var(--s-1);
+}
+.lq7-search input,
+.lq8-search input,
+.lq9-search input {
+  flex: 1;
+  min-width: 0;
+  height: 2.85rem;
+  padding: 0 1.15rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  font-size: var(--fs-14);
+  color: var(--ink);
+}
+.lq7-search input::placeholder,
+.lq8-search input::placeholder,
+.lq9-search input::placeholder { color: var(--gray-2); }
+.lq7-search input:hover,
+.lq7-search input:focus,
+.lq8-search input:hover,
+.lq8-search input:focus,
+.lq9-search input:hover,
+.lq9-search input:focus { background: var(--surface); }
+.lq7-search input:focus,
+.lq8-search input:focus,
+.lq9-search input:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.lq7-footnote,
+.lq8-footnote,
+.lq9-footnote {
+  margin: var(--s-12) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  max-width: 42em;
+  line-height: var(--lh-body);
+}
+.lq7-footnote a,
+.lq8-footnote a,
+.lq9-footnote a { color: var(--ink); }
+.lq7-footnote.mono,
+.lq8-footnote.mono,
+.lq9-footnote.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+
+/* 统计条：同 hv4-stats 戊式大数 */
+.lq7-stats,
+.lq9-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0;
+  margin: 0 0 var(--s-10);
+  padding: var(--s-6) 0 0;
+  border-top: 1px solid var(--rule);
+  background: transparent;
+}
+.lq7-stat,
+.lq9-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 0 0 auto;
+  padding: var(--s-4) var(--s-6) var(--s-2) 0;
+  background: transparent;
+}
+.lq7-stat + .lq7-stat,
+.lq9-stat + .lq9-stat {
+  padding-left: var(--s-6);
+  border-left: 1px solid var(--rule);
+}
+.lq7-stat b,
+.lq9-stat b {
+  display: block;
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.lq7-stat span,
+.lq9-stat span {
+  display: block;
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+}
+.lq7-stat .mono,
+.lq9-stat .mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+.lq7-stats-cap,
+.lq9-stats-cap {
+  flex: 1 0 100%;
+  width: 100%;
+  margin: var(--s-3) 0 0;
+  padding-top: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   庚 · license-v7 · 权限三轴
+   堆叠权限表：每款一行身份 + 三轴大数（商用/修改/分发）
+   ============================================================ */
+.lq7-sheets {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.lq7-sheet {
+  padding: var(--s-6) 0;
+  border-top: 1px solid var(--rule);
+  background: transparent; /* 非卡 · 非暖纸 */
+}
+.lq7-sheet:last-child { border-bottom: 1px solid var(--rule); }
+
+.lq7-sheet-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-5);
+}
+.lq7-sheet .fname {
+  margin: 0 0 var(--s-1);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-snug);
+}
+.lq7-sheet .meta {
+  margin: 0;
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.lq7-sheet .meta.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+.lq7-sheet .acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin: 0;
+}
+.lq7-sheet .acts a {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+}
+.lq7-sheet .acts a:hover { background: var(--surface-2); text-decoration: none; }
+.lq7-sheet .acts a.is-strong {
+  background: var(--ink);
+  color: var(--on-ink);
+  font-weight: var(--fw-title);
+}
+.lq7-sheet .acts a.is-strong:hover { background: var(--ink-hover); }
+
+/* 三轴：同统计条语感 — 顶线无、列间竖线、大数 */
+.lq7-axes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0;
+  margin: 0 0 var(--s-4);
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.lq7-axes .ax {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 0 0 auto;
+  min-width: 5.5rem;
+  padding: var(--s-2) var(--s-6) var(--s-2) 0;
+}
+.lq7-axes .ax + .ax {
+  padding-left: var(--s-6);
+  border-left: 1px solid var(--rule);
+}
+.lq7-axes .ax b {
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.lq7-axes .ax span {
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+.lq7-axes .ax .mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+.lq7-axes .ax.is-soft b { color: var(--ink-2); }
+.lq7-axes .ax.is-no b { color: var(--gray-2); }
+.lq7-axes .ax.is-empty b { color: var(--gray-2); font-weight: var(--fw-body); }
+
+.lq7-sheet .note {
+  margin: 0;
+  max-width: 42em;
+  font-size: var(--fs-14);
+  color: var(--ink-2);
+  line-height: var(--lh-body);
+}
+.lq7-sheet .note.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+}
+.lq7-sheet.is-gap .fname,
+.lq7-sheet.is-gap .note { color: var(--gray); }
+
+/* ============================================================
+   辛 · license-v8 · 态滤展开
+   分段过滤三态 → 单态展开面板 + 另两态跳转行
+   ============================================================ */
+.lq8-filter {
+  display: inline-flex;
+  margin: 0 0 var(--s-8);
+}
+.lq8-filter button {
+  min-width: 5.5rem;
+}
+.lq8-stage {
+  margin: 0 0 var(--s-6);
+  padding: var(--s-6) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.lq8-panel .kicker {
+  margin: 0 0 var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.06em;
+}
+.lq8-panel .state {
+  margin: 0 0 var(--s-4);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--ink);
+  max-width: 12em;
+}
+.lq8-panel .fname {
+  margin: 0 0 var(--s-1);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+}
+.lq8-panel .meta {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.lq8-panel .meta.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+.lq8-panel .note {
+  margin: 0 0 var(--s-5);
+  max-width: 36em;
+  font-size: var(--fs-16);
+  color: var(--ink-2);
+  line-height: var(--lh-body);
+}
+.lq8-panel .note.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-14);
+}
+.lq8-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0 0 var(--s-6);
+  max-width: 36rem;
+  border-top: 1px solid var(--rule);
+}
+.lq8-fields > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: var(--s-4) var(--s-5) var(--s-3) 0;
+}
+.lq8-fields > div + div {
+  padding-left: var(--s-5);
+  border-left: 1px solid var(--rule);
+}
+.lq8-fields .k {
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+.lq8-fields .v {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.lq8-fields .v.mono {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-13);
+}
+.lq8-panel .acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0;
+}
+
+.lq8-stubs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.lq8-stub {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  gap: var(--s-4);
+  align-items: center;
+  width: 100%;
+  padding: var(--s-4) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+.lq8-stub:last-child { border-bottom: 1px solid var(--rule); }
+.lq8-stub .t {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+}
+.lq8-stub .n {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.lq8-stub .go {
+  color: var(--gray-2);
+  font-size: var(--fs-14);
+}
+@media (hover: hover) {
+  .lq8-stub:hover { background: var(--fill); }
+  .lq8-stub:hover .go { color: var(--ink); }
+}
+
+/* ============================================================
+   壬 · license-v9 · 短码索引 → 结论
+   左索引 / 右详情（master-detail），非轨非舞台非对读栏
+   ============================================================ */
+.lq9-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: var(--s-8) var(--s-12);
+  align-items: start;
+  margin: 0 0 var(--s-4);
+}
+.lq9-index {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  padding-right: var(--s-4);
+  border-right: 1px solid var(--ink);
+}
+.lq9-index-label {
+  margin: 0 0 var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+.lq9-item {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  gap: var(--s-3);
+  align-items: baseline;
+  width: 100%;
+  padding: var(--s-4) var(--s-3);
+  margin: 0 calc(-1 * var(--s-3));
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+.lq9-item:first-of-type { border-top: 1px solid var(--rule); }
+.lq9-item .code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  letter-spacing: 0.01em;
+}
+.lq9-item .name {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.lq9-item .tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+}
+@media (hover: hover) {
+  .lq9-item:hover { background: var(--fill); }
+}
+.lq9-item.is-on {
+  background: var(--ink);
+  color: var(--on-ink);
+  border-top-color: transparent;
+}
+.lq9-item.is-on + .lq9-item { border-top-color: var(--rule); }
+.lq9-item.is-on .code,
+.lq9-item.is-on .tag { color: var(--on-ink-2); }
+.lq9-item.is-on .name { color: var(--on-ink); }
+.lq9-item.is-on:hover { background: var(--ink-hover); }
+
+.lq9-detail {
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+.lq9-panel .state {
+  margin: 0 0 var(--s-4);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: var(--ink);
+  max-width: 10em;
+}
+.lq9-panel .fname {
+  margin: 0 0 var(--s-1);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+}
+.lq9-panel .meta {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.lq9-panel .meta.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+.lq9-panel .note {
+  margin: 0 0 var(--s-6);
+  max-width: 32em;
+  font-size: var(--fs-15, 0.9375rem);
+  color: var(--ink-2);
+  line-height: var(--lh-body);
+}
+.lq9-panel .note.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+}
+.lq9-panel .acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 900px) {
+  .lq7-hero, .lq8-hero, .lq9-hero { padding: var(--s-10) 0 var(--s-8); }
+  .lq7-display, .lq8-display, .lq9-display,
+  .lq9-split { grid-template-columns: 1fr; }
+  .lq7-lead, .lq8-lead, .lq9-lead { justify-self: start; max-width: 32em; }
+  .lq7-br, .lq8-br, .lq9-br { display: inline; }
+  .lq8-fields { grid-template-columns: 1fr; }
+  .lq8-fields > div + div {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .lq9-index {
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: var(--s-4);
+    margin-bottom: var(--s-4);
+  }
+  .lq7-search, .lq8-search, .lq9-search { flex-wrap: wrap; max-width: none; }
+  .lq7-search .btn, .lq8-search .btn, .lq9-search .btn { width: 100%; }
+  .lq8-stub { grid-template-columns: 4.5rem minmax(0, 1fr) auto; }
+}

@@ -208,3 +208,23 @@
 - **未改** SPA `licensesPage()` / `/license`
 - 截图：`_shots/license-full-2026-10-02/license-v6b-*.png`
 - 预览：`http://127.0.0.1:16030/license-v6b.html`
+
+
+## 授权查询 · 换向庚辛壬（2026-10-02 夜续 3）
+
+冯对己′选「换方向」——不要再磨三态对读栏。新开三版完整整页，IA 与丁戊己明确不同：
+
+| 文件 | 版 | IA |
+|---|---|---|
+| `license-v7.html` | 庚 | 权限三轴：每款堆叠表，商用/修改/分发写成大数轴（统计条语感） |
+| `license-v8.html` | 辛 | 态滤展开：分段过滤三态，当前态放大；另两态跳转行 |
+| `license-v9.html` | 壬 | 短码索引：左 norm 索引 / 右结论详情（master-detail） |
+
+三态样例不变：霞鹜文楷（可商用可改可分发）· 普惠体（仅查询不可下载）· EBAS（未核实）。
+
+- 枢纽：`license-query-options.html`（改挂庚辛壬；丁戊己/己′与甲乙丙保留备查）
+- 样式：`css/license-versions.css`（追加 lq7/lq8/lq9）
+- chrome：同丁首页（文风·开源、设计/开发、店面、主题、页脚、统计条工艺）
+- **未改** `js/site.js` `licensesPage()` / `/license`
+- 截图：`_shots/license-full-2026-10-02/`（v7/v8/v9）
+- 预览：`http://127.0.0.1:16030/license-query-options.html`
