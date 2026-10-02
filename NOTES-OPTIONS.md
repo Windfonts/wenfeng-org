@@ -104,3 +104,33 @@
 
 预览：`http://127.0.0.1:16030/home-v4.html`（`?view=dev` / `?view=design`）  
 截图：`_shots/home-full-2026-10-02/home-v4-stats-view-design.png` · `home-v4-stats-view-dev.png`
+
+
+## 丁硬修 · 大数卡 + 干净设计/开发（2026-10-02 晚续 3）
+
+冯怒点：
+
+1. **统计必须是大数卡** — fill 底、字阶 `clamp(2.5–3.25rem)`、无悬停；禁止退回行内文字条。
+2. **设计/开发要对齐 fonts-front 干净分工** — 设计=人话中文（去「口径」等黑话）；开发=`.for-dev` 只露路径 / ID / API，hero/lead 禁止掺黑话。
+
+保留：01/02/03 谱系悬停、本站/稍后可办事、顶栏视图开关。
+
+预览：`http://127.0.0.1:16030/home-v4.html`（`?view=design` / `?view=dev`）  
+截图：`_shots/home-full-2026-10-02/home-v4-hardfix-design.png` · `home-v4-hardfix-dev.png`
+
+## 丁 · 统计改戊式（2026-10-02 晚续 4）
+
+冯定调：统计要 **v5 / 戊** 风格（对照 `home-v5` 与附图像），应用到锁定丁 `home-v4.html`：
+
+1. 大号粗体数字 + 下方小灰标签
+2. 顶细横线、列间竖线
+3. 白底 / 极简 / 左对齐 — **不要灰卡**
+4. 统计无悬停
+
+并收干净设计 / 开发视图文案（设计=人话；开发=路径 / ID / API）。
+
+改动：`home-v4.html`、`css/home-versions.css`、`NOTES-OPTIONS.md`。
+
+预览：`http://127.0.0.1:16030/home-v4.html`（`?view=design` / `?view=dev`）  
+截图：`_shots/home-full-2026-10-02/home-v4-v5stats-design.png` · `home-v4-v5stats-dev.png`
+

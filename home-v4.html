@@ -41,8 +41,8 @@
 
         <div class="hv4-display">
           <h1>源文件</h1>
-          <p class="hv4-lead for-design">先选事，再进页。<br class="hv4-br" />左侧办事，右侧读口径。满意后再谈与其他产品互联。</p>
-          <p class="hv4-lead for-dev">任务入口 + 口径同屏。<br class="hv4-br" /><span class="mono">samples</span> · offer 四态 · license textState · attest API。满意后再谈与其他产品互联。</p>
+          <p class="hv4-lead for-design">先选事，再进页。<br class="hv4-br" />左侧办事，右侧看边界与下一步。满意后再谈与其他产品互联。</p>
+          <p class="hv4-lead for-dev mono">/license · /source · #gap<br class="hv4-br" />samples.json · offer · textState · GET /api/v1/fonts · /attest</p>
         </div>
 
         <div class="hv4-split">
@@ -52,7 +52,8 @@
               <span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-shield"></use></svg></span>
               <span class="body">
                 <span class="t-t">查授权</span>
-                <span class="t-d">许可原文与三态结论</span>
+                <span class="t-d for-design">许可原文与三态结论</span>
+                <span class="t-d for-dev mono">/license · textState</span>
               </span>
               <span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>
             </a>
@@ -61,7 +62,8 @@
               <span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-download"></use></svg></span>
               <span class="body">
                 <span class="t-t">下源文件</span>
-                <span class="t-d">按 offer 四态下载或跳转</span>
+                <span class="t-d for-design">按状态下载或跳转出处</span>
+                <span class="t-d for-dev mono">/source · offer</span>
               </span>
               <span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>
             </a>
@@ -70,13 +72,14 @@
               <span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-edit"></use></svg></span>
               <span class="body">
                 <span class="t-t">报缺字</span>
-                <span class="t-d">缺字形 / 缺收录 / 勘误</span>
+                <span class="t-d for-design">缺字形 / 缺收录 / 勘误</span>
+                <span class="t-d for-dev mono">#gap · form TBD</span>
               </span>
               <span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>
             </a>
           </div>
 
-          <aside class="hv4-aside" aria-label="口径与下一步">
+          <aside class="hv4-aside" aria-label="本站与稍后">
             <div class="hv4-aside-block">
               <p class="hv4-aside-label">本站</p>
               <ul>
@@ -113,25 +116,25 @@
         <div class="hv4-stats" aria-label="目录概况">
           <div class="hv4-stat">
             <b>556</b>
-            <span class="for-design">开源字体<br />目录样本</span>
-            <span class="for-dev">fonts[]<br />samples.json</span>
+            <span class="for-design">已对齐</span>
+            <span class="for-dev mono">fonts[]</span>
           </div>
           <div class="hv4-stat">
             <b>113</b>
-            <span class="for-design">可带走<br />源文件</span>
-            <span class="for-dev">offer=source<br />本站直下</span>
+            <span class="for-design">可带走</span>
+            <span class="for-dev mono">offer=source</span>
           </div>
           <div class="hv4-stat">
             <b>345</b>
-            <span class="for-design">许可全文<br />已归档</span>
-            <span class="for-dev">textState=full<br />/license</span>
+            <span class="for-design">许可全文</span>
+            <span class="for-dev mono">textState=full</span>
           </div>
           <div class="hv4-stat">
             <b>132</b>
-            <span class="for-design">源镜像<br />可对齐</span>
-            <span class="for-dev">mirror ok<br />export-report</span>
+            <span class="for-design">源镜像</span>
+            <span class="for-dev mono">mirror</span>
           </div>
-          <p class="hv4-stats-cap for-design">数字取自 samples.json / export-report · 2026-10-01 · 非生产实时计数；字符覆盖未计入本条</p>
+          <p class="hv4-stats-cap for-design">数字取自 samples.json / export-report · 2026-10-01 · 非生产实时计数</p>
           <p class="hv4-stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · 2026-10-01 · not live</p>
         </div>
       </div>
@@ -140,12 +143,14 @@
     <section class="hv4-about" id="gap" aria-label="关于本站">
       <div class="container hv4-about-grid">
         <div class="hv4-about-title">
-          <p class="kicker">信息密度</p>
-          <h2>任务与口径<br />同屏。</h2>
+          <p class="kicker for-design">本页</p>
+          <p class="kicker for-dev mono">home-v4</p>
+          <h2 class="for-design">三件事<br />同屏可读。</h2>
+          <h2 class="for-dev mono">tasks · aside<br />search · stats</h2>
         </div>
         <div class="hv4-about-body">
-          <p class="for-design">左栏竖排三任务，右栏放本站边界与灰位工具。定稿首页为丁：查授权、下源文件、报缺字同屏可读。</p>
-          <p class="for-dev">IA：tasks · aside · search · stats。共享 chrome 带 <code>data-view</code>；<code>.for-design</code> / <code>.for-dev</code> 供其他页复用。定稿首页为丁。</p>
+          <p class="for-design">左栏竖排三任务，右栏放本站边界与稍后入口。定稿首页为丁：查授权、下源文件、报缺字同屏可读。</p>
+          <p class="for-dev mono">data-view · .for-design / .for-dev · chrome() · GET /api/v1/fonts · samples.json</p>
           <p class="acts">
             <a class="btn btn-ink" href="/license">
               <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield"></use></svg>
