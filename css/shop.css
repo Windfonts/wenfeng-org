@@ -13,6 +13,7 @@
   --gray: #666666;
   --gray-2: #9a9a9a;
   --on-ink: #ffffff;
+  --on-ink-2: rgba(255, 255, 255, 0.62);
   --ink-hover: #000000;
   --accent: var(--ink);
   --font-ui: "Alibaba PuHuiTi", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
@@ -36,8 +37,11 @@
   --s-4: 1rem;
   --s-5: 1.25rem;
   --s-6: 1.5rem;
+  --s-7: 1.75rem;
   --s-8: 2rem;
+  --s-10: 2.5rem;
   --s-12: 3rem;
+  --s-14: 3.5rem;
   --s-16: 4rem;
   --s-20: 5rem;
   --container: 96rem;
@@ -63,6 +67,7 @@
   --gray: #9a9a9a;
   --gray-2: #6a6a6a;
   --on-ink: #111111;
+  --on-ink-2: rgba(0, 0, 0, 0.6);
   --ink-hover: #ffffff;
 }
 
@@ -146,8 +151,31 @@ code, pre { font-family: var(--font-mono); }
 .icon-btn {
   display: inline-grid; place-items: center;
   width: 2.25rem; height: 2.25rem; border-radius: 50%; color: var(--ink-2);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .icon-btn:hover { background: var(--fill); color: var(--ink); }
+.icon-btn .icon { width: 1.15rem; height: 1.15rem; }
+.icon {
+  width: 1.1em; height: 1.1em; flex: 0 0 auto;
+  fill: currentColor; vertical-align: -0.2em; display: inline-block;
+}
+.icon-btn .ico-sun { display: none; }
+[data-theme="dark"] .icon-btn .ico-moon { display: none; }
+[data-theme="dark"] .icon-btn .ico-sun { display: block; }
+.wordmark .wm-sub {
+  font-weight: var(--fw-body);
+  color: var(--gray);
+  font-size: var(--fs-13);
+  margin-left: 0.15em;
+}
+.topnav a {
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.topbar-end > a.shop-link {
+  color: var(--gray);
+  font-size: var(--fs-12);
+}
+.topbar-end > a.shop-link:hover { color: var(--ink); background: var(--fill); }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.4em;
@@ -163,6 +191,7 @@ code, pre { font-family: var(--font-mono); }
 .btn-text { background: transparent; padding: 0 0.25rem; color: var(--gray); height: auto; }
 .btn-text:hover { color: var(--ink); background: transparent; text-decoration: underline; text-underline-offset: 0.2em; }
 .btn-sm { height: 1.875rem; padding: 0 0.8rem; font-size: var(--fs-12); }
+.btn .icon { width: 0.95rem; height: 0.95rem; }
 .acts { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); }
 
 .page-head { padding: var(--s-12) 0 var(--s-8); }
@@ -1831,3 +1860,66 @@ main { flex: 1 1 auto; display: flex; flex-direction: column; }
 .usage-check legend { font-size: var(--fs-13); color: var(--gray); padding: 0; margin-bottom: 0.45rem; }
 .usage-check .opts { display: flex; flex-wrap: wrap; gap: 0.6rem 1.35rem; }
 .usage-check label { display: inline-flex; align-items: center; gap: 0.4em; font-size: var(--fs-14); padding: 0.15rem 0; }
+
+/* —— shared site-foot (org chrome) —— */
+.site-foot {
+  margin-top: auto;
+  padding: var(--s-12) 0 0;
+  border-top: 1px solid var(--rule);
+  background: var(--page);
+}
+.site-foot-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: var(--s-8) var(--s-10);
+  padding-bottom: var(--s-10);
+}
+.site-foot-brand .wordmark { margin-bottom: var(--s-3); }
+.site-foot-brand p {
+  margin: 0;
+  max-width: 28em;
+  font-size: var(--fs-13);
+  line-height: var(--lh-body);
+  color: var(--gray);
+}
+.site-foot-col h2 {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+.site-foot-col a {
+  display: block;
+  padding: 0.28rem 0;
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+  transition: color var(--dur) var(--ease);
+}
+.site-foot-col a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-foot-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3) var(--s-6);
+  padding: var(--s-5) 0 var(--s-6);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+}
+.site-foot-bottom p { margin: 0; }
+.site-foot-bottom a { color: var(--gray); }
+.site-foot-bottom a:hover { color: var(--ink); }
+.site-foot-bottom a.is-on { color: var(--ink); font-weight: var(--fw-title); }
+.site-foot-alts { display: flex; flex-wrap: wrap; gap: 0.35rem 0.65rem; align-items: center; }
+@media (max-width: 900px) {
+  .site-foot-inner { grid-template-columns: 1fr 1fr; }
+  .site-foot-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .site-foot-inner { grid-template-columns: 1fr; }
+}

@@ -4,135 +4,116 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>首页 IA 对照 · 文风 · 源文件</title>
+  <title>首页完整对照 · 文风 · 源文件</title>
   <link rel="stylesheet" href="/from-app/css/fonts.css" />
   <link rel="stylesheet" href="/from-app/css/tokens.css" />
   <link rel="stylesheet" href="/css/options.css" />
+  <link rel="stylesheet" href="/css/home-versions.css" />
 </head>
-<body class="opt-body">
+<body class="opt-body hv-hub">
   <div class="optbar">
-    <b>首页 IA · 甲乙丙</b>
-    <a href="#ver-jia">甲 三任务卡</a>
-    <a href="#ver-yi">乙 任务条+搜</a>
-    <a href="#ver-bing">丙 左任务右注</a>
+    <b>首页完整版 · 甲乙丙丁戊</b>
+    <a href="/home-v1.html">甲 整页</a>
+    <a href="/home-v2.html">乙 整页</a>
+    <a href="/home-v3.html">丙 整页</a>
+    <a href="/home-v4.html">丁 整页</a>
+    <a href="/home-v5.html">戊 整页</a>
     <a href="/options.html">对照索引</a>
     <a href="/">完整原型</a>
-    <span class="muted">工坊首页 · 非样张墙 · 站名「文风 · 源文件」</span>
+    <span class="muted">点预览卡或「打开整页」· 同标签打开 · 非片段对照</span>
   </div>
 
-  <div class="opt-wrap">
-    <p class="site-tag">对照说明：三版都以「查授权 / 下源文件 / 报缺字」为主入口；不把首页做成店面样张墙。造字/店面互联仅灰位占位。</p>
+  <div class="hv-hub-wrap">
+    <p class="site-tag">五版都是<strong>完整可独立打开的首页</strong>（顶栏 · 英雄 · 任务 · 搜索 · 关于 · 页脚），不是同一滚动里的片段卡。</p>
+    <p class="hv-hub-intro">主入口统一：查授权 / 下源文件 / 报缺字。站名「文风 · 源文件」。无暖纸、无样张墙主视觉、无 app 互联 CTA。</p>
 
-    <!-- 甲 -->
-    <section class="opt-ver" id="ver-jia">
-      <h2>甲 · 三任务卡</h2>
-      <p class="opt-diff"><b>差异：</b>首屏三大任务卡并列，一眼选事；搜索与目录沉次级。</p>
-      <span class="opt-tag">工坊感最强 · 适合「来办事」的人</span>
-      <div class="opt-demo">
-        <p class="kicker">文风 · 源文件</p>
-        <h1>来办事，不是逛样张。</h1>
-        <p class="lead">源文件、授权原文、缺字反馈。网页嵌入仍去店面；本站不托管 CDN。</p>
-        <div class="tasks3">
-          <a class="task is-ink" href="/license">
-            <p class="t-k">许可</p>
-            <p class="t-t">查授权</p>
-            <p class="t-d">按字体名读许可原文与可否商用、改、分发。</p>
-          </a>
-          <a class="task" href="/source">
-            <p class="t-k">目录</p>
-            <p class="t-t">下源文件</p>
-            <p class="t-d">开源可带走原件；禁再分发的只给出处或切片核验。</p>
-          </a>
-          <a class="task" href="#gap">
-            <p class="t-k">反馈</p>
-            <p class="t-t">报缺字</p>
-            <p class="t-d">缺字形、缺收录、许可有误，记一笔给我们核。</p>
-          </a>
-        </div>
-        <div class="search">搜索字体名 / 厂商 / Norm…</div>
-        <p class="acts">
-          <a class="btn" href="/source">打开目录</a>
-          <span class="pill is-mute" style="opacity:.55">造字工具 · 稍后</span>
-        </p>
-        <p class="stats"><span><b>113</b>可带走</span><span><b>556</b>已对齐目录</span></p>
-      </div>
-    </section>
-
-    <!-- 乙 -->
-    <section class="opt-ver" id="ver-yi">
-      <h2>乙 · 任务条 + 搜索</h2>
-      <p class="opt-diff"><b>差异：</b>一句定位 + 三个胶囊入口，搜索顶置；适合已知字体名的人。</p>
-      <span class="opt-tag">检索优先 · 任务仍可见</span>
-      <div class="opt-demo">
-        <p class="kicker">文风 · 源文件</p>
-        <h1>源文件 · 授权 · 缺字。</h1>
-        <p class="lead">本站管原件与许可核验，不做样张墙，也不当 CDN。</p>
-        <div class="pill-row">
-          <a class="pill is-on" href="/license">查授权</a>
-          <a class="pill" href="/source">下源文件</a>
-          <a class="pill" href="#gap">报缺字</a>
-          <span class="pill is-mute">造字 · 占位</span>
-        </div>
-        <div class="search" style="padding:0.85rem 1.2rem;font-size:var(--fs-16)">搜中文名、英文、短码、厂商…</div>
-        <div class="tasks-stack">
-          <a class="task-row" href="/license">
-            <div><div class="t-t">查授权</div><div class="t-d">可商用 / 可改 / 可分发 · 或仅查询</div></div>
-            <span class="go">去许可</span>
-          </a>
-          <a class="task-row" href="/source">
-            <div><div class="t-t">下源文件</div><div class="t-d">OFL / MIT 等可带走 · 其余去出处</div></div>
-            <span class="go">去目录</span>
-          </a>
-          <a class="task-row" href="#gap">
-            <div><div class="t-t">报缺字</div><div class="t-d">缺字、缺款、许可勘误</div></div>
-            <span class="go">记一笔</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 丙 -->
-    <section class="opt-ver" id="ver-bing">
-      <h2>丙 · 左任务 / 右说明</h2>
-      <p class="opt-diff"><b>差异：</b>左侧竖排三任务，右侧放口径与灰位工具；信息密度最高。</p>
-      <span class="opt-tag">说明与任务并排 · 适合内部评审</span>
-      <div class="opt-demo">
-        <p class="kicker">文风 · 源文件</p>
-        <h1>工坊入口</h1>
-        <p class="lead">先选事，再进页。满意后再谈与 app 互联。</p>
-        <div class="workshop-split">
-          <div class="tasks-stack">
-            <a class="task-row" href="/license">
-              <div><div class="t-t">查授权</div><div class="t-d">许可原文与三态结论</div></div>
-              <span class="go">查</span>
-            </a>
-            <a class="task-row" href="/source">
-              <div><div class="t-t">下源文件</div><div class="t-d">按 offer 四态下载或跳转</div></div>
-              <span class="go">下</span>
-            </a>
-            <a class="task-row" href="#gap">
-              <div><div class="t-t">报缺字</div><div class="t-d">缺字形 / 缺收录 / 勘误</div></div>
-              <span class="go">报</span>
-            </a>
+    <div class="hv-hub-grid is-5">
+      <article class="hv-preview" id="ver-jia">
+        <div class="hv-preview-head">
+          <div>
+            <h2>甲 · 三任务大卡</h2>
+            <span class="tag">办事感 · 工坊入口</span>
           </div>
-          <aside class="muted-box">
-            <h3>本站做什么</h3>
-            <ul>
-              <li>开源原件可带走</li>
-              <li>禁再分发：只核验 / 出处 / 切片</li>
-              <li>嵌入注释地址：wenfeng.org/license（冻结）</li>
-            </ul>
-            <h3 style="margin-top:var(--s-5)">稍后（灰位）</h3>
-            <ul>
-              <li>造字工具 · 未接</li>
-              <li>与 app 互联 · 未开</li>
-              <li>缺字工单流 · 原型占位</li>
-            </ul>
-          </aside>
+          <a class="open" href="/home-v1.html">打开整页 →</a>
         </div>
-      </div>
-    </section>
+        <p class="hv-preview-diff"><b>差异：</b>首屏三大任务卡并列，搜索沉次级。适合「来办事」。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/home-v1.html" title="甲 完整首页预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/home-v1.html" title="打开甲 · 完整首页">打开甲完整首页</a>
+        </div>
+      </article>
 
+      <article class="hv-preview" id="ver-yi">
+        <div class="hv-preview-head">
+          <div>
+            <h2>乙 · 胶囊 + 搜索</h2>
+            <span class="tag">检索优先 · 任务可见</span>
+          </div>
+          <a class="open" href="/home-v2.html">打开整页 →</a>
+        </div>
+        <p class="hv-preview-diff"><b>差异：</b>胶囊任务条 + 搜索顶置。适合已知字体名。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/home-v2.html" title="乙 完整首页预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/home-v2.html" title="打开乙 · 完整首页">打开乙完整首页</a>
+        </div>
+      </article>
+
+      <article class="hv-preview" id="ver-bing">
+        <div class="hv-preview-head">
+          <div>
+            <h2>丙 · 左任务 / 右说明</h2>
+            <span class="tag">双栏 · 评审密度</span>
+          </div>
+          <a class="open" href="/home-v3.html">打开整页 →</a>
+        </div>
+        <p class="hv-preview-diff"><b>差异：</b>左侧竖排三任务，右侧口径与灰位。信息密度最高。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/home-v3.html" title="丙 完整首页预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/home-v3.html" title="打开丙 · 完整首页">打开丙完整首页</a>
+        </div>
+      </article>
+
+      <article class="hv-preview" id="ver-ding">
+        <div class="hv-preview-head">
+          <div>
+            <h2>丁 · 左任务 / 右说明 · <em>定稿</em></h2>
+            <span class="tag">定稿锁定</span>
+          </div>
+          <a class="open" href="/home-v4.html">打开整页 →</a>
+        </div>
+        <p class="hv-preview-diff"><b>差异：</b>保留丙双栏 IA；加大显示字阶、非对称英雄、墨色单点强调、开放型右栏（非灰盒列表）、等宽路径屑。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/home-v4.html" title="丁 完整首页预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/home-v4.html" title="打开丁 · 完整首页">打开丁完整首页</a>
+        </div>
+      </article>
+
+      <article class="hv-preview" id="ver-wu">
+        <div class="hv-preview-head">
+          <div>
+            <h2>戊 · 丁再拧</h2>
+            <span class="tag">同丁 IA · 更大更少</span>
+          </div>
+          <a class="open" href="/home-v5.html">打开整页 →</a>
+        </div>
+        <p class="hv-preview-diff"><b>差异：</b>保留丁双栏与 01 墨色；字阶再放大、导语更短、竖向超大序号+墨线记忆点、右栏改编辑短文、去搜索 kicker 与统计旁注。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/home-v5.html" title="戊 完整首页预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/home-v5.html" title="打开戊 · 完整首页">打开戊完整首页</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="hv-hub-note">
+      直链：
+      <a href="/home-v1.html">/home-v1.html</a> ·
+      <a href="/home-v2.html">/home-v2.html</a> ·
+      <a href="/home-v3.html">/home-v3.html</a> ·
+      <a href="/home-v4.html">/home-v4.html</a> ·
+      <a href="/home-v5.html">/home-v5.html</a>
+      · 预览 <code>http://127.0.0.1:16030/home-options.html</code>
+      · 样式 <code>css/home-versions.css</code>
+    </p>
   </div>
 </body>
 </html>

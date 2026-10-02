@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>文风 · 源文件 · 乙 · 胶囊+搜索</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/home-versions.css" />
+</head>
+<body class="hv hv-v2" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/home-v2.html"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/license">许可</a>
+        <a href="/source">目录</a>
+        <a href="/attest">核验</a>
+      </nav>
+      <div class="topbar-end">
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hv-hero">
+      <div class="container">
+        <p class="kicker">文风 · 源文件</p>
+        <h1>源文件 · 授权 · 缺字。</h1>
+        <p class="lead">本站管原件与许可核验。已知字体名，先搜；还没想好事，点下方任务。</p>
+
+        <div class="hv-pills" role="tablist" aria-label="主任务">
+          <a class="hv-pill is-on" href="/license">查授权</a>
+          <a class="hv-pill" href="/source">下源文件</a>
+          <a class="hv-pill" href="#gap">报缺字</a>
+          <span class="hv-pill is-mute" title="稍后">造字 · 占位</span>
+        </div>
+
+        <form class="hv-search is-lg" action="/source" method="get" role="search">
+          <label class="sr-only" for="q">搜索字体</label>
+          <input id="q" name="q" type="search" placeholder="搜中文名、英文、短码、厂商…" autocomplete="off" autofocus />
+          <button class="btn btn-ink" type="submit">搜索</button>
+        </form>
+
+        <div class="hv-stack" role="list">
+          <a class="hv-row" href="/license" role="listitem">
+            <div>
+              <p class="t-t">查授权</p>
+              <p class="t-d">可商用 / 可改 / 可分发 · 或仅查询</p>
+            </div>
+            <span class="go">去许可</span>
+          </a>
+          <a class="hv-row" href="/source" role="listitem">
+            <div>
+              <p class="t-t">下源文件</p>
+              <p class="t-d">OFL / MIT 等可带走 · 其余去出处或切片</p>
+            </div>
+            <span class="go">去目录</span>
+          </a>
+          <a class="hv-row" href="#gap" role="listitem">
+            <div>
+              <p class="t-t">报缺字</p>
+              <p class="t-d">缺字、缺款、许可勘误</p>
+            </div>
+            <span class="go">记一笔</span>
+          </a>
+        </div>
+
+        <div class="hv-stats" aria-label="目录概况">
+          <span><b>113</b>可带走</span>
+          <span><b>556</b>已对齐目录</span>
+          <span>检索优先 · 任务仍可见</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="gap" aria-label="关于本站">
+      <div class="hv-about">
+        <p class="kicker">口径</p>
+        <h2>先找字，再定事。</h2>
+        <p>搜索顶置，适合已经知道字体名的人。三件事仍用胶囊与任务行保留：查授权、下源文件、报缺字。不做样张墙，不接站外正式桥。</p>
+        <p class="acts">
+          <a class="btn btn-ink" href="/source">打开目录</a>
+          <a class="btn" href="/license">许可索引</a>
+          <a class="btn" href="/how">怎么核</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hv-foot">
+    <div class="container hv-foot-inner">
+      <div class="hv-foot-brand">
+        <a class="wordmark" href="/home-v2.html"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>
+        <p>源文件、授权原文、缺字反馈。开源可带走，其余核验或去出处。</p>
+      </div>
+      <div class="hv-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="#gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="hv-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">获取证书</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="hv-foot-col">
+        <h2>关于</h2>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/about">关于</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container hv-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照稿 · 未部署生产</p>
+      <p class="hv-alts">完整首页 · <a href="/home-v1.html">甲</a> · <a href="/home-v2.html" class="is-on">乙</a> · <a href="/home-v3.html">丙</a> · <a href="/home-v4.html">丁</a> · <a href="/home-v5.html">戊</a> · <a href="/home-options.html">枢纽</a></p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
+      var root = document.documentElement;
+      var dark = root.getAttribute('data-theme') === 'dark';
+      if (dark) { root.removeAttribute('data-theme'); try { localStorage.setItem('wf-theme', 'light'); } catch (e) {} }
+      else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('wf-theme', 'dark'); } catch (e) {} }
+    });
+  </script>
+</body>
+</html>

@@ -328,31 +328,39 @@
   function toggleTheme() {
     try { localStorage.setItem('wf-theme', theme() === 'dark' ? 'light' : 'dark'); } catch (e) {}
     applyTheme();
-    var btn = document.querySelector('[data-theme-toggle]');
-    if (btn) btn.setAttribute('aria-label', theme() === 'dark' ? '切换到浅色' : '切换到深色');
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+      btn.setAttribute('aria-label', theme() === 'dark' ? '切换到浅色' : '切换到深色');
+    });
+  }
+
+  function themeToggleHtml() {
+    return '<button type="button" class="icon-btn" data-theme-toggle aria-label="' +
+      (theme() === 'dark' ? '切换到浅色' : '切换到深色') + '">' +
+      '<svg class="icon ico-moon" aria-hidden="true"><use href="#i-moon"></use></svg>' +
+      '<svg class="icon ico-sun" aria-hidden="true"><use href="#i-sun"></use></svg>' +
+      '</button>';
   }
 
   function chrome(route) {
     var p = route.page;
     var srcOn = p === 'list' || p === 'font' || p === 'foundry' || p === 'foundries';
     var licOn = p === 'licenses' || p === 'license';
-    var attOn = p === 'attests' || p === 'attest' || p === 'attest-verify' || p === 'legal';
-    var sliceOn = p === 'slice' || p === 'slices';
+    var attOn = p === 'attests' || p === 'attest' || p === 'attest-verify';
+    var aboutOn = p === 'about' || p === 'legal' || p === 'use' || p === 'how';
     return (
       '<header class="topbar">' +
         '<div class="container topbar-inner">' +
-          '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span></a>' +
+          '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>' +
           '<nav class="topnav" aria-label="主导航">' +
             '<a href="/"' + (p === 'home' ? ' class="is-active"' : '') + '>源文件</a>' +
+            '<a href="/license"' + (licOn ? ' class="is-active"' : '') + '>授权</a>' +
             '<a href="/source"' + (srcOn ? ' class="is-active"' : '') + '>目录</a>' +
-            '<a href="/license"' + (licOn ? ' class="is-active"' : '') + '>许可</a>' +
             '<a href="/attest"' + (attOn ? ' class="is-active"' : '') + '>核验</a>' +
-            '<a href="/slice"' + (sliceOn ? ' class="is-active"' : '') + '>切片</a>' +
-            '<a href="/use"' + (p === 'use' ? ' class="is-active"' : '') + '>用法</a>' +
+            '<a href="/about"' + (aboutOn ? ' class="is-active"' : '') + '>关于</a>' +
           '</nav>' +
           '<div class="topbar-end">' +
-            '<a class="shop-link" href="https://app.windfonts.com/">去店面</a>' +
-            '<button type="button" class="icon-btn" data-theme-toggle aria-label="' + (theme() === 'dark' ? '切换到浅色' : '切换到深色') + '">◐</button>' +
+            '<a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>' +
+            themeToggleHtml() +
           '</div>' +
         '</div>' +
       '</header>'
@@ -360,22 +368,40 @@
   }
 
   function footer() {
-    return '<footer class="site-extra-footer"><div class="container extra-inner">' +
-      '<p class="extra-copy">源文件和下载 · 许可只是一小块</p>' +
-      '<div class="extra-links">' +
-        '<a href="/license">许可</a>' +
-        '<a href="/attest">核验</a>' +
-        '<a href="/slice">切片</a>' +
-        '<a href="/legal">法务</a>' +
-        '<a href="/how">怎么核</a>' +
-        '<a href="/v">查证</a>' +
-        '<a href="/use">用法</a>' +
-        '<a href="/about">关于</a>' +
-        '<a href="/api/v1/certs">证明 API</a>' +
-        '<a href="/api/v1/fonts">目录 API</a>' +
-        '<a href="https://app.windfonts.com/">文风字体</a>' +
-      '</div></div>' +
-    '</footer>';
+    return (
+      '<footer class="site-foot">' +
+        '<div class="container site-foot-inner">' +
+          '<div class="site-foot-brand">' +
+            '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>' +
+            '<p>源文件、授权原文、缺字反馈。开源可带走，其余核验或去出处。不做样张墙，不当 CDN。</p>' +
+          '</div>' +
+          '<div class="site-foot-col">' +
+            '<h2>办事</h2>' +
+            '<a href="/license">查授权</a>' +
+            '<a href="/source">下源文件</a>' +
+            '<a href="/slice">切片</a>' +
+          '</div>' +
+          '<div class="site-foot-col">' +
+            '<h2>核验</h2>' +
+            '<a href="/attest">获取证书</a>' +
+            '<a href="/how">怎么核</a>' +
+            '<a href="/v">查证</a>' +
+            '<a href="/api/v1/certs">证明 API</a>' +
+          '</div>' +
+          '<div class="site-foot-col">' +
+            '<h2>关于</h2>' +
+            '<a href="/about">关于</a>' +
+            '<a href="/legal">法务</a>' +
+            '<a href="/use">用法</a>' +
+            '<a href="/api/v1/fonts">目录 API</a>' +
+          '</div>' +
+        '</div>' +
+        '<div class="container site-foot-bottom">' +
+          '<p>文派（广州）科技有限公司 · 源文件站</p>' +
+          '<p class="site-foot-alts"><a class="shop-link" href="https://app.windfonts.com/">店面</a></p>' +
+        '</div>' +
+      '</footer>'
+    );
   }
 
   function searchForm(action, q, extra, cls, ph) {
