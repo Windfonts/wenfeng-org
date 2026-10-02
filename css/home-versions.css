@@ -525,6 +525,7 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   transition: color var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .hv4-task:first-child { border-top: 1px solid var(--rule); }
+/* 悬停同谱系 .lin-row：fill 灰底；箭头如 lin-meta 悬停才显；无 icon 翻色、无位移动画 */
 .hv4-task:hover { text-decoration: none; background: var(--fill); }
 .hv4-task .idx {
   font-family: var(--font-mono);
@@ -540,10 +541,8 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   border-radius: 50%;
   background: var(--fill);
   color: var(--ink-2);
-  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .hv4-task .t-ico .icon { width: 1.05rem; height: 1.05rem; }
-.hv4-task:hover .t-ico { background: var(--surface-2); color: var(--ink); }
 .hv4-task .body { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
 .hv4-task .t-t {
   font-size: var(--fs-20);
@@ -560,15 +559,18 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   display: inline-grid;
   place-items: center;
   color: var(--gray-2);
-  transition: transform var(--dur) var(--ease), color var(--dur) var(--ease);
+  flex: none;
 }
 .hv4-task .arrow .icon { width: 1.05rem; height: 1.05rem; }
-.hv4-task:hover .arrow {
-  color: var(--ink);
-  transform: translateX(3px);
+@media (hover: hover) {
+  .hv4-task .arrow { visibility: hidden; }
+  .hv4-task:hover .arrow,
+  .hv4-task:focus-visible .arrow,
+  .hv4-task.is-ink .arrow { visibility: visible; }
 }
+.hv4-task:hover .arrow { color: var(--ink); }
 
-/* 单一墨色强调：首任务整行铺墨（ink selected，无重阴影） */
+/* 单一墨色强调：首任务整行铺墨（同 lin-row.is-on） */
 .hv4-task.is-ink {
   border-top-color: transparent;
   border-bottom-color: transparent;
@@ -585,11 +587,9 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
 [data-theme="dark"] .hv4-task.is-ink .t-ico {
   background: rgba(0, 0, 0, 0.14);
 }
-.hv4-task.is-ink .arrow { color: var(--on-ink); }
+.hv4-task.is-ink .arrow { color: var(--on-ink); visibility: visible; }
 .hv4-task.is-ink:hover { background: var(--ink-hover); }
-.hv4-task.is-ink:hover .t-ico { background: rgba(255, 255, 255, 0.18); color: var(--on-ink); }
-[data-theme="dark"] .hv4-task.is-ink:hover .t-ico { background: rgba(0, 0, 0, 0.2); }
-.hv4-task.is-ink:hover .arrow { transform: translateX(3px); }
+.hv4-task.is-ink:hover .arrow { color: var(--on-ink); }
 
 /* 右栏：开放型说明，非灰底子弹列表 */
 .hv4-aside {
@@ -622,13 +622,26 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   line-height: var(--lh-body);
 }
 .hv4-aside li + li { border-top: 1px solid var(--rule-2, var(--rule)); }
+.hv4-aside a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+.hv4-aside a:hover { color: var(--ink-hover, var(--ink)); }
+.hv4-aside b {
+  font-weight: var(--fw-title);
+  font-variant-numeric: tabular-nums;
+}
 .hv4-aside code {
   font-size: 0.92em;
   color: var(--ink);
   background: transparent;
   padding: 0;
 }
-.hv4-aside .is-mute li { color: var(--gray); }
+.hv4-aside .is-mute,
+.hv4-aside li.is-mute { color: var(--gray); }
+.hv4-aside .is-mute a { color: var(--gray); }
 .hv4-aside-rule {
   height: 1px;
   margin: var(--s-6) 0;
@@ -675,41 +688,24 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   outline-offset: 2px;
 }
 
-/* 统计条：目录实数（samples.json），诚实标注 */
+/* 统计条：改回甲乙丙式行内实数，无悬停、无卡栅 */
 .hv4-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--s-4) var(--s-6);
-  align-items: stretch;
-  padding: var(--s-6) 0 0;
-  border-top: 1px solid var(--rule);
-}
-.hv4-stat {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: var(--s-4) var(--s-5);
-  border-radius: var(--radius-sm);
-  background: transparent;
-  transition: background var(--dur) var(--ease);
-}
-.hv4-stat:hover { background: var(--fill); }
-.hv4-stat b {
-  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-  font-weight: var(--fw-title);
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--ink);
-}
-.hv4-stat span {
-  font-size: var(--fs-12);
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-8);
+  align-items: baseline;
+  padding: var(--s-5) 0 0;
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
   color: var(--gray);
-  letter-spacing: 0.02em;
-  line-height: 1.35;
+}
+.hv4-stats b {
+  color: var(--ink);
+  font-weight: var(--fw-title);
+  margin-right: 0.3em;
+  font-variant-numeric: tabular-nums;
 }
 .hv4-stats-cap {
-  grid-column: 1 / -1;
-  margin: var(--s-2) 0 0;
   font-family: var(--font-mono);
   font-size: var(--fs-11, 0.6875rem);
   color: var(--gray-2);
@@ -759,7 +755,6 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   .hv-v4 .hv4-hero { padding: var(--s-10) 0 var(--s-8); }
   .hv4-display,
   .hv4-about-grid { grid-template-columns: 1fr; }
-  .hv4-stats { grid-template-columns: 1fr 1fr; }
   .hv4-split {
     grid-template-columns: 1fr;
     grid-template-areas:

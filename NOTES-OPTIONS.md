@@ -81,3 +81,14 @@
 预览：`http://127.0.0.1:16030/home-v4.html`  
 未部署生产。
 
+## 丁反馈拧紧（2026-10-02 晚续）
+
+冯反馈锁定稿：
+
+1. **统计条改回之前的**：去掉四卡大数 + 悬停 fill，回到甲乙丙式行内 `<b>数</b>标签`，无悬停。
+2. **01/02/03 悬停对齐谱系**：同 fonts-front `.lin-row` — fill 灰底；箭头如 `.lin-meta` 悬停才显；去掉 icon 翻色与位移动画。
+3. **「本站」「稍后」可办事**：本站挂真实计数链（`/source`、`?offer=source`、`/license`）；稍后挂 `#gap` 报缺字、`/slice`、`/attest`、`/how`。
+
+预览：`http://127.0.0.1:16030/home-v4.html`  
+截图：`_shots/home-full-2026-10-02/home-v4-ding-feedback.png`
+
