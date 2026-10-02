@@ -173,3 +173,23 @@
 - 预览：`http://127.0.0.1:16030/license-query-options.html` · `/license-v1.html` 等
 
 定稿后再说落到 `js/site.js`，仍不碰生产域名。
+
+
+## 授权查询整页 · 丁戊己重做（2026-10-02 夜续）
+
+冯否决甲乙丙（卡栅 / 行表 / 深面板）整轮。按 **home-v4 语感**（超大字阶、细线、非对称、开放右栏）重做三版；B soft 白底，**无暖纸**。SPA `/license` 仍未动。
+
+| 文件 | 版 | IA |
+|---|---|---|
+| `license-v4.html` | 丁 | 裁决轨：01/02/03 细线条 + 墨色强调 + 右栏「三态怎么读」 |
+| `license-v5.html` | 戊 | 主命中舞台：超大结论字阶 + 墨线卷宗；另两态细线陪衬 |
+| `license-v6.html` | 己 | 三态对读栏：竖线分栏（同统计条语感），非卡非表 |
+
+三态样例不变：霞鹜文楷（可商用可改可分发）· 普惠体（仅查询不可下载）· EBAS（未核实）。
+
+- 枢纽：`license-query-options.html`（改挂丁戊己；甲乙丙保留备查）
+- 样式：`css/license-versions.css`（追加 lq4/lq5/lq6）
+- chrome：同丁首页（文风·开源、设计/开发、店面、主题、页脚）
+- **未改** `js/site.js` `licensesPage()` / `/license`
+- 截图：`_shots/license-full-2026-10-02/`（v4/v5/v6）
+- 预览：`http://127.0.0.1:16030/license-query-options.html`

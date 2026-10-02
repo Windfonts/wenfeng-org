@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>查授权 · 戊 · 主命中舞台 · 文风开源</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/license-versions.css" />
+</head>
+<body class="lq lq-v5" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/">源文件</a>
+        <a href="/license-v5.html" class="is-active">授权</a>
+        <a href="/source">目录</a>
+        <a href="/attest">核验</a>
+        <a href="/about">关于</a>
+      </nav>
+      <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
+        <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/assets/icons.svg#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="lq5-hero">
+      <div class="container">
+        <p class="lq5-crumb" aria-label="路径">
+          <span class="for-design">wenfeng.org / 授权</span>
+          <span class="for-dev mono">wenfeng.org /license · lab license-v5</span>
+        </p>
+
+        <div class="lq5-display">
+          <h1 class="for-design">查授权</h1>
+          <h1 class="for-dev mono">/license</h1>
+          <p class="lq5-lead for-design">一次把结论写大。<br class="lq5-br" />适合「查这一款」；另两态压成细线陪衬。</p>
+          <p class="lq5-lead for-dev mono">q → primary hit · license fields<br class="lq5-br" /> secondary tiers as foils</p>
+        </div>
+
+        <form class="lq5-search" action="/license" method="get" role="search">
+          <span class="lq5-search-kicker" aria-hidden="true">检索</span>
+          <label class="sr-only" for="q">搜索字体</label>
+          <input id="q" name="q" type="search" value="霞鹜文楷" placeholder="中文名、英文、短码…" autocomplete="off" />
+          <button class="btn btn-ink" type="submit">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+            搜索
+          </button>
+        </form>
+
+        <section class="lq5-stage" aria-label="主命中">
+          <div class="lq5-verdict">
+            <p class="kicker for-design">示范命中</p>
+            <p class="kicker for-dev mono">primary · textState=full</p>
+            <p class="state">可商用<br />可改<br />可分发</p>
+            <p class="fname">文风·霞鹜文楷</p>
+            <p class="meta for-design">OFL-1.1 · LXGW · 原文已归档</p>
+            <p class="meta for-dev mono">Xwwk · spdx=OFL-1.1 · offer=source</p>
+            <p class="note for-design">开源许可已核对原文。原件在目录可带走，可出授权证明。</p>
+            <p class="note for-dev mono">canTake · canAttest · GET /api/v1/licenses/Xwwk</p>
+            <p class="acts">
+              <a class="btn btn-ink" href="/license/Xwwk">打开许可原文</a>
+              <a class="btn" href="/source/Xwwk/">下源文件</a>
+              <a class="btn" href="/attest/Xwwk/">授权证明</a>
+            </p>
+          </div>
+
+          <aside class="lq5-dossier" aria-label="卷宗字段">
+            <p class="label">卷宗</p>
+            <div class="lq5-kv">
+              <div>
+                <span class="k for-design">短码</span>
+                <span class="k for-dev">norm</span>
+                <span class="v mono">Xwwk</span>
+              </div>
+              <div>
+                <span class="k for-design">协议</span>
+                <span class="k for-dev">spdx</span>
+                <span class="v">OFL-1.1</span>
+              </div>
+              <div>
+                <span class="k for-design">厂商</span>
+                <span class="k for-dev">foundry</span>
+                <span class="v">LXGW</span>
+              </div>
+              <div>
+                <span class="k for-design">原文</span>
+                <span class="k for-dev">textState</span>
+                <span class="v for-design">已归档 · 可出证</span>
+                <span class="v for-dev mono">full · canAttest</span>
+              </div>
+              <div>
+                <span class="k for-design">源文件</span>
+                <span class="k for-dev">offer</span>
+                <span class="v for-design">本站可带走</span>
+                <span class="v for-dev mono">source</span>
+              </div>
+              <div>
+                <span class="k for-design">商用</span>
+                <span class="k for-dev">commercial</span>
+                <span class="v for-design">允许</span>
+                <span class="v for-dev mono">yes</span>
+              </div>
+              <div>
+                <span class="k for-design">修改</span>
+                <span class="k for-dev">modify</span>
+                <span class="v for-design">允许</span>
+                <span class="v for-dev mono">yes</span>
+              </div>
+              <div>
+                <span class="k for-design">再分发</span>
+                <span class="k for-dev">redistribute</span>
+                <span class="v for-design">允许</span>
+                <span class="v for-dev mono">yes</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <p class="lq5-foils-label for-design">同次检索另见</p>
+        <p class="lq5-foils-label for-dev mono">foils · other tiers</p>
+        <div class="lq5-foils" role="list">
+          <div class="lq5-foil" role="listitem">
+            <div>
+              <span class="state">仅查询 · 不可下载</span>
+            </div>
+            <div>
+              <span class="fname">文风·阿里巴巴普惠体</span>
+              <span class="meta for-design">厂商协议 · 禁再分发 · 去官方</span>
+              <span class="meta for-dev mono">Albbpht · summary · offer=jump</span>
+            </div>
+            <a class="go" href="/license/Albbpht">读要点 →</a>
+          </div>
+          <div class="lq5-foil is-mute" role="listitem">
+            <div>
+              <span class="state">未核实</span>
+            </div>
+            <div>
+              <span class="fname">文风·EBAS 无衬线</span>
+              <span class="meta for-design">许可空 · 不出结论 · 不出证</span>
+              <span class="meta for-dev mono">Qzkswjz · textState= · pending</span>
+            </div>
+            <a class="go" href="/#gap">报缺 →</a>
+          </div>
+        </div>
+
+        <p class="lq5-footnote for-design">
+          戊 · 主命中舞台对照稿。甲乙丙已否。未写入 SPA <code>/license</code>。
+          枢纽 <a href="/license-query-options.html">license-query-options</a> ·
+          现网索引仍见 <a href="/license">/license</a>。
+        </p>
+        <p class="lq5-footnote for-dev mono">
+          lab · not shipped · licensesPage() untouched · pick → site.js
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="container site-foot-inner">
+      <div class="site-foot-brand">
+        <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+        <p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>
+      </div>
+      <div class="site-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="/#gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">授权证明</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>关于</h2>
+        <a href="/about">关于</a>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container site-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照稿 · 未部署生产</p>
+      <p class="site-foot-alts">授权整页
+        <a href="/license-v4.html">丁</a> ·
+        <a href="/license-v5.html" class="is-on">戊</a> ·
+        <a href="/license-v6.html">己</a> ·
+        <a href="/license-query-options.html">枢纽</a> ·
+        SPA <a href="/license">/license</a>（未改） ·
+        <span class="muted">甲乙丙已否</span>
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var VIEW_KEY = 'wf-view';
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === 'dev' ? 'dev' : 'design'; }
+        catch (e) { return 'design'; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute('data-view', v === 'dev' ? 'dev' : 'design');
+        document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+          b.classList.toggle('is-on', b.getAttribute('data-mode') === (v === 'dev' ? 'dev' : 'design'));
+        });
+      }
+      function setView(v) {
+        var next = v === 'dev' ? 'dev' : 'design';
+        try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+        applyView(next);
+      }
+      try {
+        var q = new URLSearchParams(location.search).get('view');
+        if (q === 'dev' || q === 'design') localStorage.setItem(VIEW_KEY, q);
+      } catch (e) {}
+      applyView(view());
+      document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+        b.addEventListener('click', function () { setView(b.getAttribute('data-mode')); });
+      });
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute('data-theme') === 'dark';
+        if (dark) { root.removeAttribute('data-theme'); try { localStorage.setItem('wf-theme', 'light'); } catch (e) {} }
+        else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('wf-theme', 'dark'); } catch (e) {} }
+        this.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? '切换到浅色' : '切换到深色');
+      });
+    })();
+  </script>
+</body>
+</html>
