@@ -702,8 +702,10 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  flex: 1 1 0;
-  min-width: 0;
+  /* Keep the v5-style strip packed to the left instead of distributing
+     each stat across the full content width. */
+  flex: 0 0 auto;
+  width: auto;
   padding: var(--s-4) var(--s-6) var(--s-2) 0;
   background: transparent;
   border-radius: 0;
