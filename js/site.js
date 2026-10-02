@@ -382,7 +382,7 @@
     return (
       '<header class="topbar">' +
         '<div class="container topbar-inner">' +
-          '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>' +
+          '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>' +
           '<nav class="topnav" aria-label="主导航">' +
             '<a href="/"' + (p === 'home' ? ' class="is-active"' : '') + '>源文件</a>' +
             '<a href="/license"' + (licOn ? ' class="is-active"' : '') + '>授权</a>' +
@@ -405,7 +405,7 @@
       '<footer class="site-foot">' +
         '<div class="container site-foot-inner">' +
           '<div class="site-foot-brand">' +
-            '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>' +
+            '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>' +
             '<p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>' +
           '</div>' +
           '<div class="site-foot-col">' +
@@ -430,7 +430,7 @@
           '</div>' +
         '</div>' +
         '<div class="container site-foot-bottom">' +
-          '<p>文派（广州）科技有限公司 · 源文件站</p>' +
+          '<p>文派（广州）科技有限公司 · 文风开源</p>' +
           '<p class="site-foot-alts"><a class="shop-link" href="https://app.windfonts.com/">店面</a></p>' +
         '</div>' +
       '</footer>'
@@ -630,26 +630,16 @@
                 '<span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>' +
               '</a>' +
             '</div>' +
-            '<aside class="hv4-aside" aria-label="本站已有与即将开放">' +
-              '<div class="hv4-aside-block">' +
-                '<p class="hv4-aside-label">本站已有</p>' +
-                '<ul>' +
-                  '<li><a href="/source"><b>' + n + '</b> 款开源字体</a> · 可搜可浏览</li>' +
-                  '<li><a href="/source?offer=source"><b>' + nSource + '</b> 款源文件</a> · 本站下载</li>' +
-                  '<li><a href="/license"><b>' + nFull + '</b> 份许可全文</a> · 附三态结论</li>' +
-                  '<li>字体注释已带许可地址 <code>wenfeng.org/license</code></li>' +
-                  '<li>不做样张墙，不当 CDN · 不允许再分发的款只核验出处</li>' +
-                '</ul>' +
-              '</div>' +
-              '<div class="hv4-aside-rule" aria-hidden="true"></div>' +
-              '<div class="hv4-aside-block">' +
-                '<p class="hv4-aside-label">即将开放</p>' +
-                '<ul>' +
-                  '<li><a href="#gap">报缺字</a> · 缺字形、缺收录、勘误</li>' +
-                  '<li><a href="/slice">切片包</a> · 不允许再分发的款核验后领取</li>' +
-                  '<li><a href="/attest">授权证明</a> · <a href="/how">怎么核</a></li>' +
-                  '<li class="is-mute">造字工具 · 暂未开放</li>' +
-                '</ul>' +
+            '<aside class="hv4-aside" aria-label="目录状态怎么看">' +
+              '<div class="hv4-aside-block hv4-legend">' +
+                '<p class="hv4-aside-label">目录状态</p>' +
+                '<nav class="hv4-legend-rows" aria-label="按状态筛选目录">' +
+                  '<a class="hv4-legend-row" href="/source?offer=source"><span class="l-t">本站下载</span><span class="l-d for-design">源文件在本站，进条目直接下载</span><span class="l-d for-dev mono">offer=source</span></a>' +
+                  '<a class="hv4-legend-row" href="/source?offer=jump"><span class="l-t">官方下载</span><span class="l-d for-design">本站不留文件，去作者或厂商的发布处</span><span class="l-d for-dev mono">offer=jump</span></a>' +
+                  '<a class="hv4-legend-row" href="/source?offer=pending"><span class="l-t">暂无下载</span><span class="l-d for-design">许可已核实，源文件包还没上架</span><span class="l-d for-dev mono">offer=pending · textState=full</span></a>' +
+                  '<a class="hv4-legend-row" href="/source?offer=pending"><span class="l-t">待核实</span><span class="l-d for-design">许可原文还没有核对记录</span><span class="l-d for-dev mono">offer=pending · textState≠full</span></a>' +
+                  '<a class="hv4-legend-row" href="/source?offer=missing"><span class="l-t">未收录</span><span class="l-d for-design">镜像还没收到这款，先去上游仓库或店面</span><span class="l-d for-dev mono">offer=missing</span></a>' +
+                '</nav>' +
               '</div>' +
             '</aside>' +
             '<form class="hv4-search" action="/source" method="get" role="search">' +

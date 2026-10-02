@@ -1168,3 +1168,46 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* 目录状态图例 — 状态词 + 一句固定说明，替代原「本站已有/即将开放」列表；
+   节奏同统计条（细线分行、无卡片、无底色），整行是进目录的筛选链接 */
+.hv4-legend-rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.hv4-legend-row,
+.hv4-aside .hv4-legend-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.hv4-legend-row + .hv4-legend-row { border-top: 1px solid var(--rule-2, var(--rule)); }
+.hv4-legend-row .l-t {
+  flex: 0 0 4.5em;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+}
+.hv4-legend-row .l-d {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--fs-13, 0.8125rem);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.hv4-legend-row .l-d.for-dev.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  letter-spacing: 0.01em;
+}
+.hv4-legend-row:hover .l-t {
+  color: var(--ink-hover, var(--ink));
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}

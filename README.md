@@ -1,6 +1,6 @@
-# wenfeng-org · 文风 org
+# wenfeng-org · 文风开源
 
-**wenfeng.org** 站点仓：造字、授权、源文件下载（以及缺字 / 开源工具的后续落点）。
+**wenfeng.org** 站点仓，站名「文风开源」（与店面「文风字体」对仗）：造字、授权、源文件下载（以及缺字 / 开源工具的后续落点）。
 
 - **不是** Windfonts 分发店面。店面是 [`Windfonts/fonts-front`](https://feicode.com/Windfonts/fonts-front)（`app.windfonts.com`）。
 - 双平台分工见 fonts-front 的 [`docs/PLATFORMS.md`](https://feicode.com/Windfonts/fonts-front/src/branch/main/docs/PLATFORMS.md)（造字 / 授权 / 源文件 → org；逛库 / CDN / 子集化 → Windfonts）。
