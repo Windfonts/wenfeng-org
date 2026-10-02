@@ -153,3 +153,23 @@
 | `/home-v4.html` | 静态整页别名（非 SPA） |
 | `build.py` 各路由 `index.html` 副本 | 同壳；OSS 静态托管按 pathname 进 SPA |
 
+## 授权查询整页 · 甲乙丙（2026-10-02 夜）
+
+首页丁已定。下一站：授权查询。片段卡不够，拆成三份可独立打开的整页（同丁 chrome：顶栏 / 设计·开发 / 店面 / 主题 / 页脚）。
+
+| 文件 | 版 | 差异 |
+|---|---|---|
+| `license-v1.html` | 甲 | 三态卡栅并排 |
+| `license-v2.html` | 乙 | 结论行表 |
+| `license-v3.html` | 丙 | 单结果深面板 + 另两态小卡 |
+
+三态样例：霞鹜文楷（可商用可改可分发）· 普惠体（仅查询不可下载）· EBAS（未核实）。
+
+- 枢纽：`license-query-options.html`（iframe 预览 + 打开整页）
+- 样式：`css/license-versions.css`（配 `shop.css`）
+- **未改** SPA `js/site.js` 的 `licensesPage()` / `/license`
+- 无首页式 v5 统计条（本页不需要）；命中计数用行内文案
+- 截图：`_shots/license-full-2026-10-02/`
+- 预览：`http://127.0.0.1:16030/license-query-options.html` · `/license-v1.html` 等
+
+定稿后再说落到 `js/site.js`，仍不碰生产域名。

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>查授权 · 乙 · 结论行表 · 文风 · 源文件</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/license-versions.css" />
+</head>
+<body class="lq lq-v2" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/">源文件</a>
+        <a href="/license-v2.html" class="is-active">授权</a>
+        <a href="/source">目录</a>
+        <a href="/attest">核验</a>
+        <a href="/about">关于</a>
+      </nav>
+      <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
+        <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/assets/icons.svg#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container lq-page">
+      <p class="lq-crumb" aria-label="路径">
+        <span class="for-design">wenfeng.org / 授权</span>
+        <span class="for-dev mono">wenfeng.org /license · lab license-v2</span>
+      </p>
+
+      <div class="lq-display">
+        <h1 class="for-design">查授权</h1>
+        <h1 class="for-dev mono">/license</h1>
+        <p class="lead for-design">搜索结果压成行：徽章、名称、一句结论、动作。适合批量核名。</p>
+        <p class="lead for-dev mono">licensesPage · matchQ · textState · offer · lic-index → row</p>
+      </div>
+
+      <form class="lq-search" action="/license" method="get" role="search">
+        <label class="sr-only" for="q">搜索字体</label>
+        <input id="q" name="q" type="search" placeholder="搜索字体名…" autocomplete="off" />
+        <button class="btn btn-ink" type="submit">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+          搜索
+        </button>
+      </form>
+
+      <p class="lq-count for-design">命中 <b>3</b> · 示范三态</p>
+      <p class="lq-count for-dev mono">n=3 · demo tiers</p>
+
+      <div class="lq-stack" role="list">
+        <div class="lq-row" role="listitem">
+          <span class="badge is-ok">可商用可改可分发</span>
+          <div>
+            <div class="name">文风·霞鹜文楷</div>
+            <div class="meta for-design">OFL-1.1 · 原文已归档</div>
+            <div class="meta for-dev mono">Xwwk · textState=full · offer=source</div>
+          </div>
+          <div class="sum for-design">开源 · 原件可带走</div>
+          <div class="sum for-dev mono">canTake · canAttest</div>
+          <a class="act is-take" href="/license/Xwwk">原文</a>
+        </div>
+
+        <div class="lq-row" role="listitem">
+          <span class="badge is-warn">仅查询不可下载</span>
+          <div>
+            <div class="name">文风·阿里巴巴普惠体</div>
+            <div class="meta for-design">厂商协议 · 禁再分发</div>
+            <div class="meta for-dev mono">Albbpht · textState=summary · offer=jump</div>
+          </div>
+          <div class="sum for-design">只查条款 · 文件去官方</div>
+          <div class="sum for-dev mono">no redistribute · /slice</div>
+          <a class="act" href="/license/Albbpht">要点</a>
+        </div>
+
+        <div class="lq-row" role="listitem">
+          <span class="badge is-none">未核实</span>
+          <div>
+            <div class="name">文风·EBAS 无衬线</div>
+            <div class="meta for-design">许可文本空</div>
+            <div class="meta for-dev mono">Qzkswjz · textState= · offer=pending</div>
+          </div>
+          <div class="sum for-design">暂无结论 · 可报勘误</div>
+          <div class="sum for-dev mono">#gap · no attest</div>
+          <a class="act" href="/#gap">报缺</a>
+        </div>
+      </div>
+
+      <p class="lq-note for-design">
+        乙 · 结论行表对照稿。未写入 SPA <code>/license</code>。定稿后再落 <code>js/site.js</code>。
+        枢纽 <a href="/license-query-options.html">license-query-options</a> ·
+        现网索引仍见 <a href="/license">/license</a>。
+      </p>
+      <p class="lq-note for-dev mono">
+        lab · not shipped · licensesPage() untouched · pick → site.js
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="container site-foot-inner">
+      <div class="site-foot-brand">
+        <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>
+        <p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>
+      </div>
+      <div class="site-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="/#gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">授权证明</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>关于</h2>
+        <a href="/about">关于</a>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container site-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照稿 · 未部署生产</p>
+      <p class="site-foot-alts">授权整页
+        <a href="/license-v1.html">甲</a> ·
+        <a href="/license-v2.html" class="is-on">乙</a> ·
+        <a href="/license-v3.html">丙</a> ·
+        <a href="/license-query-options.html">枢纽</a> ·
+        SPA <a href="/license">/license</a>（未改）
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var VIEW_KEY = 'wf-view';
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === 'dev' ? 'dev' : 'design'; }
+        catch (e) { return 'design'; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute('data-view', v === 'dev' ? 'dev' : 'design');
+        document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+          b.classList.toggle('is-on', b.getAttribute('data-mode') === (v === 'dev' ? 'dev' : 'design'));
+        });
+      }
+      function setView(v) {
+        var next = v === 'dev' ? 'dev' : 'design';
+        try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+        applyView(next);
+      }
+      try {
+        var q = new URLSearchParams(location.search).get('view');
+        if (q === 'dev' || q === 'design') localStorage.setItem(VIEW_KEY, q);
+      } catch (e) {}
+      applyView(view());
+      document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+        b.addEventListener('click', function () { setView(b.getAttribute('data-mode')); });
+      });
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute('data-theme') === 'dark';
+        if (dark) { root.removeAttribute('data-theme'); try { localStorage.setItem('wf-theme', 'light'); } catch (e) {} }
+        else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('wf-theme', 'dark'); } catch (e) {} }
+        this.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? '切换到浅色' : '切换到深色');
+      });
+    })();
+  </script>
+</body>
+</html>

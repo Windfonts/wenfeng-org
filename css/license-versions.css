@@ -1,0 +1,276 @@
+/* 授权查询整页对照 · 甲乙丙 · 同丁 chrome（shop.css） */
+
+/* —— 页头 —— */
+.lq-page {
+  padding: var(--s-10) 0 var(--s-16);
+}
+.lq-crumb {
+  margin: 0 0 var(--s-5);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+}
+.lq-display {
+  max-width: 42rem;
+  margin-bottom: var(--s-6);
+}
+.lq-display h1 {
+  margin: 0 0 var(--s-3);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  line-height: var(--lh-tight);
+}
+.lq-display .lead {
+  margin: 0;
+  font-size: var(--fs-16);
+  color: var(--ink-2);
+  line-height: var(--lh-body);
+  max-width: 36em;
+}
+.lq-display .lead.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  letter-spacing: 0.01em;
+}
+
+.lq-search {
+  display: flex;
+  gap: var(--s-2);
+  max-width: 36rem;
+  margin: 0 0 var(--s-5);
+}
+.lq-search input {
+  flex: 1;
+  min-width: 0;
+  height: 3rem;
+  padding: 0 1.1rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-14);
+}
+.lq-search input:hover { background: var(--fill); }
+.lq-search input:focus {
+  background: var(--fill);
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.lq-search .btn { height: 3rem; padding: 0 1.4rem; }
+
+.lq-count {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.lq-count b {
+  color: var(--ink);
+  font-weight: var(--fw-title);
+  font-variant-numeric: tabular-nums;
+}
+
+.lq-note {
+  margin: var(--s-8) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  max-width: 42em;
+  line-height: var(--lh-body);
+}
+.lq-note a { color: var(--ink); }
+
+/* —— 甲 · 三态卡栅 —— */
+.lq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+.lq-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--s-5);
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.lq-card .badge {
+  align-self: flex-start;
+  font-size: var(--fs-12);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--ink-2);
+  letter-spacing: 0.02em;
+}
+.lq-card .badge.is-ok { background: var(--ink); color: var(--on-ink); }
+.lq-card .badge.is-warn { background: var(--fill); color: var(--gray); }
+.lq-card .badge.is-none { background: var(--well); color: var(--gray-2); }
+.lq-card .fname {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.lq-card .fmeta {
+  font-size: var(--fs-12);
+  color: var(--gray);
+  margin: 0;
+}
+.lq-card .fnote {
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+  margin: 0;
+  flex: 1;
+  line-height: var(--lh-body);
+}
+.lq-card .facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: var(--s-1) 0;
+}
+.lq-card .facts span {
+  font-size: var(--fs-11, 0.6875rem);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink-2);
+}
+.lq-card .acts {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+/* —— 乙 · 结论行表 —— */
+.lq-stack {
+  display: grid;
+  gap: var(--s-3);
+}
+.lq-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1.5fr) minmax(0, 1fr) auto;
+  gap: var(--s-4);
+  align-items: center;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: var(--s-4) var(--s-5);
+}
+.lq-row .badge {
+  font-size: var(--fs-12);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.lq-row .badge.is-ok { background: var(--ink); color: var(--on-ink); }
+.lq-row .badge.is-warn { background: var(--fill); color: var(--gray); }
+.lq-row .badge.is-none { background: var(--well); color: var(--gray-2); }
+.lq-row .name {
+  font-weight: var(--fw-title);
+  font-size: var(--fs-14);
+  letter-spacing: -0.01em;
+}
+.lq-row .meta {
+  font-size: var(--fs-12);
+  color: var(--gray);
+  margin-top: 0.15rem;
+}
+.lq-row .sum {
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+}
+.lq-row .act {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  white-space: nowrap;
+}
+.lq-row .act:hover { background: var(--surface-2); text-decoration: none; }
+.lq-row .act.is-take {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+.lq-row .act.is-take:hover { background: var(--ink-hover); }
+
+/* —— 丙 · 单结果深面板 —— */
+.lq-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--s-6) var(--s-7);
+  margin-bottom: var(--s-6);
+}
+.lq-panel .head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-5);
+}
+.lq-panel .head h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+}
+.lq-panel .head .badge {
+  font-size: var(--fs-12);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+.lq-kv {
+  display: grid;
+  gap: var(--s-3);
+  font-size: var(--fs-14);
+  margin-bottom: var(--s-5);
+}
+.lq-kv div {
+  display: grid;
+  grid-template-columns: 5.5em minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: baseline;
+}
+.lq-kv .k { color: var(--gray); }
+.lq-kv .v { color: var(--ink); }
+.lq-kv .v.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+}
+.lq-panel .acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.lq-section-label {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-12);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+.lq-grid.is-compact .lq-card {
+  min-height: auto;
+}
+
+/* —— 页脚对照链 —— */
+.site-foot-alts a.is-on { color: var(--ink); font-weight: var(--fw-title); }
+
+@media (max-width: 900px) {
+  .lq-grid { grid-template-columns: 1fr; }
+  .lq-row { grid-template-columns: 1fr; gap: var(--s-2); }
+  .lq-search { flex-direction: column; }
+  .lq-search .btn { width: 100%; }
+}
