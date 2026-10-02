@@ -406,7 +406,7 @@
         '<div class="container site-foot-inner">' +
           '<div class="site-foot-brand">' +
             '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 源文件</span></a>' +
-            '<p>源文件、授权原文、缺字反馈。开源可带走，其余核验或去出处。不做样张墙，不当 CDN。</p>' +
+            '<p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>' +
           '</div>' +
           '<div class="site-foot-col">' +
             '<h2>办事</h2>' +
@@ -416,7 +416,7 @@
           '</div>' +
           '<div class="site-foot-col">' +
             '<h2>核验</h2>' +
-            '<a href="/attest">获取证书</a>' +
+            '<a href="/attest">授权证明</a>' +
             '<a href="/how">怎么核</a>' +
             '<a href="/v">查证</a>' +
             '<a href="/api/v1/certs">证明 API</a>' +
