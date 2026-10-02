@@ -193,3 +193,18 @@
 - **未改** `js/site.js` `licensesPage()` / `/license`
 - 截图：`_shots/license-full-2026-10-02/`（v4/v5/v6）
 - 预览：`http://127.0.0.1:16030/license-query-options.html`
+
+
+## 授权查询 · 己′ 精修（2026-10-02 夜续 2）
+
+冯锁 **己（license-v6 三态对读栏）**，反馈太糙。本轮不换 IA，按 home-v4 丁工艺抬升：
+
+| 文件 | 版 | 差异 |
+|---|---|---|
+| `license-v6b.html` | 己′ | 同己：竖线分栏 / 统计条语感 / 字阶主导 / 三态并排。结论即大数；列等高钉底动作；mono 屑与阶标（全文/摘要/空）；访客导语；无列悬停 fill |
+
+- 枢纽 / lab / options 已挂己′
+- 样式：`css/license-versions.css`（`.lq6b-*`）
+- **未改** SPA `licensesPage()` / `/license`
+- 截图：`_shots/license-full-2026-10-02/license-v6b-*.png`
+- 预览：`http://127.0.0.1:16030/license-v6b.html`
