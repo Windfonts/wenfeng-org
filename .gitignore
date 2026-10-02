@@ -5,3 +5,6 @@ restored-*.png
 dist/
 *.pyc
 .venv/
+
+# Prototype / fake secrets — never commit
+data/attest-hmac.json

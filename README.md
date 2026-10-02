@@ -38,4 +38,8 @@ python3 preview.py --port 16030
 
 ## 从 linuxjoy 迁出
 
-此前活源在 `linuxjoy/docs/plans/wenfeng-org-prototype/`。本仓为定稿后的 FeiCode 真源；linuxjoy 侧留 stub 指针，树暂保留至冯确认后再删。
+此前活源在 `linuxjoy/docs/plans/wenfeng-org-prototype/`。本仓为定稿后的 FeiCode 真源；linuxjoy 该路径现仅留 `MOVED.md` 指针，原型树已删。
+
+## 非生产
+
+本仓是**原型 / 本地预览**真源，**不是**生产站。勿改 `wenfeng.org` DNS 或现网部署，除非人明确要求。`data/attest-hmac.json` 为原型假密钥（已 gitignore），不能用于生产存档。
