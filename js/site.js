@@ -341,6 +341,38 @@
       '</button>';
   }
 
+  var VIEW_KEY = 'wf-view';
+  function view() {
+    try { return localStorage.getItem(VIEW_KEY) === 'dev' ? 'dev' : 'design'; }
+    catch (e) { return 'design'; }
+  }
+  function applyView(v) {
+    var next = (v == null ? view() : v) === 'dev' ? 'dev' : 'design';
+    document.documentElement.setAttribute('data-view', next);
+    document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+      b.classList.toggle('is-on', b.getAttribute('data-mode') === next);
+    });
+  }
+  function setView(v) {
+    var next = v === 'dev' ? 'dev' : 'design';
+    try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+    applyView(next);
+    try { document.dispatchEvent(new CustomEvent('wf:view', { detail: next })); } catch (e) {}
+  }
+  function viewSwitchHtml() {
+    var cur = view();
+    return '<div class="seg view-switch" data-view-switch role="group" aria-label="视图">' +
+      '<button type="button" data-mode="design"' + (cur === 'design' ? ' class="is-on"' : '') + '>设计</button>' +
+      '<button type="button" data-mode="dev"' + (cur === 'dev' ? ' class="is-on"' : '') + '>开发</button></div>';
+  }
+  (function bootView() {
+    try {
+      var q = new URLSearchParams(location.search).get('view');
+      if (q === 'dev' || q === 'design') localStorage.setItem(VIEW_KEY, q);
+    } catch (e) {}
+    applyView(view());
+  })();
+
   function chrome(route) {
     var p = route.page;
     var srcOn = p === 'list' || p === 'font' || p === 'foundry' || p === 'foundries';
@@ -359,6 +391,7 @@
             '<a href="/about"' + (aboutOn ? ' class="is-active"' : '') + '>关于</a>' +
           '</nav>' +
           '<div class="topbar-end">' +
+            viewSwitchHtml() +
             '<a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>' +
             themeToggleHtml() +
           '</div>' +
@@ -2333,6 +2366,11 @@
   }
 
   function handleClick(ev) {
+    var modeBtn = ev.target.closest('[data-view-switch] [data-mode]');
+    if (modeBtn) {
+      setView(modeBtn.getAttribute('data-mode'));
+      return;
+    }
     if (ev.target.closest('[data-theme-toggle]')) toggleTheme();
     if (ev.target.closest('[data-print-cert]')) {
       ev.preventDefault();
@@ -2507,6 +2545,7 @@
 
   function mount(data, licenses) {
     applyTheme();
+    applyView(view());
     var fonts = data.fonts || [];
     var route = parsePath();
     if (route.page === 'attest' || route.page === 'attests' || route.page === 'attest-ledger') {

@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
   <meta charset="utf-8" />
-  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
   <title>文风 · 源文件</title>
@@ -21,6 +21,10 @@
         <a href="/about">关于</a>
       </nav>
       <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
         <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
         <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
           <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
@@ -37,7 +41,8 @@
 
         <div class="hv4-display">
           <h1>源文件</h1>
-          <p class="hv4-lead">先选事，再进页。<br class="hv4-br" />左侧办事，右侧读口径。满意后再谈与其他产品互联。</p>
+          <p class="hv4-lead for-design">先选事，再进页。<br class="hv4-br" />左侧办事，右侧读口径。满意后再谈与其他产品互联。</p>
+          <p class="hv4-lead for-dev">任务入口 + 口径同屏。<br class="hv4-br" /><span class="mono">samples</span> · offer 四态 · license textState · attest API。满意后再谈与其他产品互联。</p>
         </div>
 
         <div class="hv4-split">
@@ -106,11 +111,28 @@
         </div>
 
         <div class="hv4-stats" aria-label="目录概况">
-          <span><b>113</b>可带走</span>
-          <span><b>556</b>已对齐目录</span>
-          <span><b>345</b>许可全文</span>
-          <span><b>132</b>源镜像</span>
-          <span class="hv4-stats-cap">samples / export-report · 2026-10-01 · 非生产实时</span>
+          <div class="hv4-stat">
+            <b>556</b>
+            <span class="for-design">开源字体<br />目录样本</span>
+            <span class="for-dev">fonts[]<br />samples.json</span>
+          </div>
+          <div class="hv4-stat">
+            <b>113</b>
+            <span class="for-design">可带走<br />源文件</span>
+            <span class="for-dev">offer=source<br />本站直下</span>
+          </div>
+          <div class="hv4-stat">
+            <b>345</b>
+            <span class="for-design">许可全文<br />已归档</span>
+            <span class="for-dev">textState=full<br />/license</span>
+          </div>
+          <div class="hv4-stat">
+            <b>132</b>
+            <span class="for-design">源镜像<br />可对齐</span>
+            <span class="for-dev">mirror ok<br />export-report</span>
+          </div>
+          <p class="hv4-stats-cap for-design">数字取自 samples.json / export-report · 2026-10-01 · 非生产实时计数；字符覆盖未计入本条</p>
+          <p class="hv4-stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · 2026-10-01 · not live</p>
         </div>
       </div>
     </section>
@@ -122,7 +144,8 @@
           <h2>任务与口径<br />同屏。</h2>
         </div>
         <div class="hv4-about-body">
-          <p>左栏竖排三任务，右栏放本站边界与灰位工具。定稿首页为丁：查授权、下源文件、报缺字同屏可读。</p>
+          <p class="for-design">左栏竖排三任务，右栏放本站边界与灰位工具。定稿首页为丁：查授权、下源文件、报缺字同屏可读。</p>
+          <p class="for-dev">IA：tasks · aside · search · stats。共享 chrome 带 <code>data-view</code>；<code>.for-design</code> / <code>.for-dev</code> 供其他页复用。定稿首页为丁。</p>
           <p class="acts">
             <a class="btn btn-ink" href="/license">
               <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield"></use></svg>
@@ -172,13 +195,39 @@
     </div>
   </footer>
   <script>
-    document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
-      var root = document.documentElement;
-      var dark = root.getAttribute('data-theme') === 'dark';
-      if (dark) { root.removeAttribute('data-theme'); try { localStorage.setItem('wf-theme', 'light'); } catch (e) {} }
-      else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('wf-theme', 'dark'); } catch (e) {} }
-      this.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? '切换到浅色' : '切换到深色');
-    });
+    (function () {
+      var VIEW_KEY = 'wf-view';
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === 'dev' ? 'dev' : 'design'; }
+        catch (e) { return 'design'; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute('data-view', v === 'dev' ? 'dev' : 'design');
+        document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+          b.classList.toggle('is-on', b.getAttribute('data-mode') === (v === 'dev' ? 'dev' : 'design'));
+        });
+      }
+      function setView(v) {
+        var next = v === 'dev' ? 'dev' : 'design';
+        try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+        applyView(next);
+      }
+      try {
+        var q = new URLSearchParams(location.search).get('view');
+        if (q === 'dev' || q === 'design') localStorage.setItem(VIEW_KEY, q);
+      } catch (e) {}
+      applyView(view());
+      document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+        b.addEventListener('click', function () { setView(b.getAttribute('data-mode')); });
+      });
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute('data-theme') === 'dark';
+        if (dark) { root.removeAttribute('data-theme'); try { localStorage.setItem('wf-theme', 'light'); } catch (e) {} }
+        else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('wf-theme', 'dark'); } catch (e) {} }
+        this.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? '切换到浅色' : '切换到深色');
+      });
+    })();
   </script>
 </body>
 </html>

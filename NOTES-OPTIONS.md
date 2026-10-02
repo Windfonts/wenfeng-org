@@ -92,3 +92,15 @@
 预览：`http://127.0.0.1:16030/home-v4.html`  
 截图：`_shots/home-full-2026-10-02/home-v4-ding-feedback.png`
 
+
+## 丁再拧 · 大数统计 + 设计/开发视图（2026-10-02 晚续 2）
+
+冯反馈：
+
+1. **统计要大数字效果** — 恢复四卡大数栅格（同 eeb4aaa），**仍不要悬停**（无 `.hv4-stat:hover` fill）。
+2. **此站也需要设计 / 开发模式** — 对齐 fonts-front：`data-view="design|dev"`、顶栏分段开关、`localStorage wf-view`、`?view=` 覆盖；`.for-design` / `.for-dev` 显隐。写进共享 `css/shop.css` + `js/site.js` chrome，home-v4 与其他页可用。
+
+改动：`home-v4.html`、`css/home-versions.css`、`css/shop.css`、`js/site.js`、`index.html`。
+
+预览：`http://127.0.0.1:16030/home-v4.html`（`?view=dev` / `?view=design`）  
+截图：`_shots/home-full-2026-10-02/home-v4-stats-view-design.png` · `home-v4-stats-view-dev.png`
