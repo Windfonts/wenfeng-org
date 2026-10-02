@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>详情 · 授权依据 · 设计对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/detail.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+  <style>
+    .lp-wrap { max-width: 56rem; margin: 0 auto; padding: 0 var(--gutter) var(--s-10); }
+    .lp-nav { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .lp-nav .container { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; padding-top: var(--s-3); padding-bottom: var(--s-3); }
+    .lp-nav .lead { font-size: var(--fs-12); color: var(--gray); margin: 0; }
+    .lp-nav nav { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+    .lp-nav nav a { font-size: var(--fs-12); color: var(--ink); text-decoration: none; padding: 0.25rem 0.7rem; border: 1px solid var(--rule); border-radius: var(--radius-pill); }
+    .lp-nav nav a:hover { border-color: var(--ink); }
+
+    .lp-sec { margin-top: var(--s-9); }
+    .lp-sec > header { display: flex; align-items: baseline; gap: var(--s-3); margin-bottom: var(--s-2); flex-wrap: wrap; }
+    .lp-sec > header .tag { font-size: var(--fs-13); font-weight: var(--fw-title); background: var(--ink); color: var(--on-ink); padding: 0.15rem 0.65rem; border-radius: var(--radius-pill); }
+    .lp-sec > header h2 { font-size: var(--fs-16); margin: 0; }
+    .lp-sec > header p { font-size: var(--fs-12); color: var(--gray); margin: 0; }
+    .lp-stage { border: 1px solid var(--rule); border-radius: var(--radius, 10px); background: var(--paper-2, transparent); padding: var(--s-5); }
+    .lp-stage .panel { max-width: 44rem; margin: 0 auto; }
+
+    /* ===== 共用原子：类型签 / 行 / 徽章 / 链接 ===== */
+    .lp-badge { display: inline-flex; align-items: center; gap: 0.35em; font-size: var(--fs-12); font-weight: var(--fw-label); padding: 0.22rem 0.7rem; border: 1px solid var(--rule); border-radius: var(--radius-pill); color: var(--ink-2); white-space: nowrap; }
+    .lp-badge.is-ink { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+    .lp-act { font-size: var(--fs-12); color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.3em; }
+    .lp-foot { margin-top: var(--s-4); font-size: var(--fs-12); color: var(--gray-2); }
+    .lp-foot a { color: var(--gray); text-decoration: underline; text-underline-offset: 0.2em; }
+    .lp-kind { flex: none; width: 3.2em; font-size: var(--fs-12); color: var(--gray); font-weight: var(--fw-label); }
+    .lp-ok::before { content: "✓"; font-weight: var(--fw-title); margin-right: 0.5em; }
+    .lp-no::before { content: "×"; color: var(--gray); margin-right: 0.5em; }
+
+    /* ===== 甲 · 依据行 ===== */
+    .lp3-rows { border-top: 1px solid var(--rule); }
+    .lp3-row { display: flex; align-items: center; gap: var(--s-3); padding: 0.6rem 0; border-bottom: 1px solid var(--rule); min-height: 2.4rem; }
+    .lp3-row .main { flex: 1; min-width: 0; font-size: var(--fs-14); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .lp3-row .main small { color: var(--gray); font-size: var(--fs-12); margin-left: 0.5em; }
+    .lp3-sub { font-size: var(--fs-12); color: var(--gray); margin: var(--s-4) 0 var(--s-2); font-weight: var(--fw-label); }
+    .lp3-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; }
+    .lp3-points span { font-size: var(--fs-13); padding: 0.3rem 0; }
+
+    /* ===== 乙 · 声明卡 ===== */
+    .lp4-card { border: 1px solid var(--rule); border-left: 3px solid var(--ink); border-radius: 8px; padding: var(--s-4) var(--s-5); background: var(--paper-2, transparent); }
+    .lp4-card .who { font-size: var(--fs-12); color: var(--gray); margin-bottom: 0.4rem; font-weight: var(--fw-label); }
+    .lp4-card blockquote { margin: 0; font-size: var(--fs-14); color: var(--ink); line-height: 1.75; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .lp4-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--s-4); }
+    .lp4-links { display: flex; flex-wrap: wrap; gap: var(--s-4); margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px dashed var(--rule); }
+
+    /* ===== 丙 · 出处链 ===== */
+    .lp5-chain { position: relative; margin: 0 0 0 0.35rem; padding-left: 1.3rem; border-left: 1px solid var(--rule); }
+    .lp5-node { position: relative; padding: 0.42rem 0; }
+    .lp5-node::before { content: ""; position: absolute; left: -1.55rem; top: 0.85rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--ink); }
+    .lp5-node .head { display: flex; align-items: baseline; gap: var(--s-3); min-width: 0; }
+    .lp5-node .who { font-size: var(--fs-12); font-weight: var(--fw-label); color: var(--gray); width: 4.6em; flex: none; }
+    .lp5-node .what { flex: 1; min-width: 0; font-size: var(--fs-13); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .lp5-node .what b { color: var(--ink); font-weight: var(--fw-label); }
+    .lp5-node .when { font-size: var(--fs-12); color: var(--gray-2); flex: none; }
+    .lp5-node .lp-act { flex: none; }
+    .lp5-points { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--s-4); }
+    .lp5-tpl { margin-top: var(--s-4); }
+    .lp5-tpl pre { font-size: var(--fs-12); line-height: 1.6; color: var(--ink-2); background: var(--paper-2, transparent); border: 1px dashed var(--rule); border-radius: 8px; padding: var(--s-3) var(--s-4); overflow-x: auto; }
+
+    /* ===== 丁 · 两栏速读 ===== */
+    .lp6-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--s-6); }
+    .lp6-col h3 { font-size: var(--fs-12); color: var(--gray); font-weight: var(--fw-label); margin: 0 0 var(--s-2); }
+    .lp6-col .li { font-size: var(--fs-13); padding: 0.42rem 0; border-bottom: 1px solid var(--rule); display: flex; align-items: baseline; gap: 0.4em; }
+    .lp6-col .li:last-child { border-bottom: 0; }
+    .lp6-kv { display: flex; align-items: baseline; gap: var(--s-2); font-size: var(--fs-13); padding: 0.42rem 0; border-bottom: 1px solid var(--rule); }
+    .lp6-kv:last-child { border-bottom: 0; }
+    .lp6-kv .k { flex: none; width: 3.2em; color: var(--gray); font-size: var(--fs-12); font-weight: var(--fw-label); }
+    .lp6-kv .v { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .lp6-kv .lp-act { flex: none; }
+
+    @media (max-width: 720px) {
+      .lp3-row { flex-wrap: wrap; }
+      .lp3-row .main { white-space: normal; flex-basis: 100%; order: 3; }
+      .lp3-row .lp-kind { width: auto; }
+      .lp3-points { grid-template-columns: 1fr; }
+      .lp6-grid { grid-template-columns: 1fr; }
+      .lp5-node .what { white-space: normal; }
+    }
+  </style>
+</head>
+<body class="page-detail">
+  <header data-topbar data-active="fonts"></header>
+
+  <div class="lp-nav">
+    <div class="container">
+      <p class="lead">授权 · 出处与依据 四个方向。数据＝阿里巴巴普惠体 3.0 真实口径。现页没动。</p>
+      <nav>
+        <a href="#now">现状</a>
+        <a href="#jia">甲 依据行</a>
+        <a href="#yi">乙 声明卡</a>
+        <a href="#bing">丙 出处链</a>
+        <a href="#ding">丁 两栏速读</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="lp-wrap">
+
+    <!-- 现状 -->
+    <section class="lp-sec" id="now">
+      <header><span class="tag">现状</span><h2>现在展开的样子</h2><p>来源行、引用框、警告、链接、两栏清单、脚注六种块堆在一起</p></header>
+      <div class="lp-stage">
+        <section class="panel">
+          <div class="panel-head"><h2>授权</h2>
+            <div class="license-head"><span class="tier">免费商用</span><span class="name">阿里巴巴普惠体授权协议</span></div>
+          </div>
+          <div class="panel-pad">
+            <p class="license-lead">可免费商用。不可修改字体文件，不可再分发。</p>
+            <details class="side-fold license-fold" open>
+              <summary>出处与依据</summary>
+              <div class="license-cite">
+                <p class="cite-meta">厂商官网 · 已核对原文 · 2026-09-24 核对</p>
+                <blockquote>阿里巴巴普惠体是一套全球永久免费正版商用的字体家族。阿里巴巴普惠体3.0为一套符合新国家标准GB18030-2022的简体中文字符集……</blockquote>
+                <p class="cite-links"><a href="#">打开出处 · alibabafonts.com</a> <a href="#">厂商官网 · alibabadesign.com</a> <span>条款以权利人为准。</span></p>
+              </div>
+              <div class="license-grid">
+                <div><h3>可以</h3><ul class="ok"><li>商业用途免费</li><li>全域使用</li></ul></div>
+                <div><h3>不可以</h3><ul class="no"><li>修改字体文件</li><li>再分发字体文件</li></ul></div>
+              </div>
+              <p class="license-foot">Copyright © 2019 Alibaba.com · <a href="#">许可类型说明</a></p>
+            </details>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 甲 -->
+    <section class="lp-sec" id="jia">
+      <header><span class="tag">甲</span><h2>依据行</h2><p>一条依据一行，类型签对齐，右侧动作统一；国标和协议平级</p></header>
+      <div class="lp-stage">
+        <section class="panel">
+          <div class="panel-head"><h2>授权</h2>
+            <div class="license-head"><span class="tier">免费商用</span><span class="name">阿里巴巴普惠体授权协议</span></div>
+          </div>
+          <div class="panel-pad">
+            <p class="license-lead">可免费商用。不可修改字体文件，不可再分发。</p>
+            <div class="lp3-rows">
+              <div class="lp3-row"><span class="lp-kind">国标</span><span class="main">GB 18030-2022<small>实现级别 1＋2 · 7 字重 194,460 全形汉字</small></span><a class="lp-act" href="https://std.samr.gov.cn/search/std?q=GB18030-2022" target="_blank" rel="noopener noreferrer">国家标准平台 ↗</a></div>
+              <div class="lp3-row"><span class="lp-kind">协议</span><span class="main">阿里巴巴普惠体授权协议<small>2026-09-24 核对原文</small></span><a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
+              <div class="lp3-row"><span class="lp-kind">厂商</span><span class="main">Alibaba Design<small>alibabafonts.com</small></span><a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="noopener noreferrer">官网 ↗</a></div>
+            </div>
+            <p class="lp3-sub">条款要点</p>
+            <div class="lp3-points">
+              <span class="lp-ok">个人与企业商用免费</span><span class="lp-no">修改字体文件</span>
+              <span class="lp-ok">桌面、嵌入与网络使用</span><span class="lp-no">再分发字体文件</span>
+            </div>
+            <p class="lp-foot">条款以权利人为准。 <a href="/license">许可类型说明</a></p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 乙 -->
+    <section class="lp-sec" id="yi">
+      <header><span class="tag">乙</span><h2>声明卡</h2><p>厂商声明当主角，其余全部退成徽章和一行链接，展开最短</p></header>
+      <div class="lp-stage">
+        <section class="panel">
+          <div class="panel-head"><h2>授权</h2>
+            <div class="license-head"><span class="tier">免费商用</span><span class="name">阿里巴巴普惠体授权协议</span></div>
+          </div>
+          <div class="panel-pad">
+            <p class="license-lead">可免费商用。不可修改字体文件，不可再分发。</p>
+            <div class="lp4-card">
+              <p class="who">厂商声明 · Alibaba Design</p>
+              <blockquote>阿里巴巴普惠体是一套全球永久免费正版商用的字体家族。3.0 为一套符合新国家标准 GB 18030-2022 的简体中文字符集：实现级别 1＋2 规格的 7 字重共 194,460 全形汉字，另含实现级别 3 规格 Regular 单一字重，覆盖拉丁、希腊、西里尔字母。</blockquote>
+            </div>
+            <div class="lp4-badges">
+              <span class="lp-badge is-ink">免费商用</span>
+              <span class="lp-badge">GB 18030-2022 · 级别 1＋2</span>
+              <span class="lp-badge">2026-09-24 已核对原文</span>
+            </div>
+            <div class="lp4-links">
+              <a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="noopener noreferrer">许可原文 ↗</a>
+              <a class="lp-act" href="https://std.samr.gov.cn/search/std?q=GB18030-2022" target="_blank" rel="noopener noreferrer">国家标准 ↗</a>
+              <a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="noopener noreferrer">厂商官网 ↗</a>
+            </div>
+            <p class="lp-foot">条款以权利人为准。 <a href="/license">许可类型说明</a></p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 丙 -->
+    <section class="lp-sec" id="bing">
+      <header><span class="tag">丙 · 修订</span><h2>出处链</h2><p>厂商发布与国标声明都是厂商自己的话，我们只做末节留档；折叠沿用现在的方式</p></header>
+      <div class="lp-stage">
+        <section class="panel">
+          <div class="panel-head"><h2>授权</h2>
+            <div class="license-head"><span class="tier">免费商用</span><span class="name">阿里巴巴普惠体授权协议</span></div>
+          </div>
+          <div class="panel-pad">
+            <p class="license-lead">可免费商用。不可修改字体文件，不可再分发。</p>
+            <details class="side-fold license-fold" open>
+              <summary>出处与依据</summary>
+              <div class="lp5-chain">
+                <div class="lp5-node">
+                  <div class="head">
+                    <span class="who">授权协议</span>
+                    <span class="what">字体向所有个人和组织开放，免费商用。</span>
+                    <span class="when">2026-09-24</span>
+                    <a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="nofollow noopener noreferrer">alibabafonts.com ↗</a>
+                  </div>
+                </div>
+                <div class="lp5-node">
+                  <div class="head">
+                    <span class="who">国标声明</span>
+                    <span class="what">厂商声明符合 <b>GB 18030-2022</b>。</span>
+                    <a class="lp-act" href="https://std.samr.gov.cn/search/std?q=GB18030-2022" target="_blank" rel="nofollow noopener noreferrer">std.samr.gov.cn ↗</a>
+                  </div>
+                </div>
+                <div class="lp5-node">
+                  <div class="head">
+                    <span class="who">文风存档</span>
+                    <span class="what">收录入库并已做原文核对。</span>
+                    <span class="when">2026-09-24</span>
+                    <a class="lp-act" href="https://wenfeng.org/font/albbpht" title="后续接到 wenfeng.org 对应字体页" rel="noopener noreferrer">wenfeng.org ↗</a>
+                  </div>
+                </div>
+              </div>
+              <div class="lp5-points">
+                <span class="lp-badge">✓ 个人与企业商用免费</span>
+                <span class="lp-badge">× 修改字体文件</span>
+                <span class="lp-badge">× 再分发字体文件</span>
+              </div>
+              <p class="lp-foot">声明为厂商原文摘录，条款以权利人为准。 <a href="/license">许可类型说明</a></p>
+              <details class="side-fold lp5-tpl">
+                <summary>渲染规则（三节都是状态机出固定句，0 手写语句）</summary>
+                <pre>● 授权协议 —— 句子由档位（受控词表 licenseTier）定：
+    免费商用 → 字体向所有个人和组织开放，免费商用。
+    个人免费 → 字体仅个人免费商用。
+    需授权   → 字体需取得权利人授权后方可商用。
+    （其余档位照词表各配一句，只配一次）
+  句后：核对日期（verifiedAt）+ 原文链接（licenseUrl）
+
+● 国标声明 —— 两态：
+    有声明   → 厂商声明符合 {standard}。            ← 链标准平台
+    无声明   → 厂商声明未知。                        ← 无链接
+    standard 取自结构化字段（厂商给过才填），不写自由句
+
+● 文风存档 —— 两态（系统按 licenseVerified 自动）：
+    已核对   → 收录入库并已做原文核对。
+    未核对   → 请自行阅读查看原始授权。
+    句后：收录日期 + wenfeng.org/font/&lt;slug&gt; 链接</pre>
+              </details>
+            </details>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 丁 -->
+    <section class="lp-sec" id="ding">
+      <header><span class="tag">丁</span><h2>两栏速读</h2><p>左条款右依据，一屏扫完，信息密度最高</p></header>
+      <div class="lp-stage">
+        <section class="panel">
+          <div class="panel-head"><h2>授权</h2>
+            <div class="license-head"><span class="tier">免费商用</span><span class="name">阿里巴巴普惠体授权协议</span></div>
+          </div>
+          <div class="panel-pad">
+            <p class="license-lead">可免费商用。不可修改字体文件，不可再分发。</p>
+            <div class="lp6-grid">
+              <div class="lp6-col">
+                <h3>条款要点</h3>
+                <p class="li"><span class="lp-ok"></span>个人与企业商用免费</p>
+                <p class="li"><span class="lp-ok"></span>桌面、嵌入与网络使用</p>
+                <p class="li"><span class="lp-no"></span>修改字体文件</p>
+                <p class="li"><span class="lp-no"></span>再分发字体文件</p>
+              </div>
+              <div class="lp6-col">
+                <h3>依据</h3>
+                <div class="lp6-kv"><span class="k">协议</span><span class="v">阿里巴巴普惠体授权协议</span><a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="noopener noreferrer">原文 ↗</a></div>
+                <div class="lp6-kv"><span class="k">国标</span><span class="v">GB 18030-2022 · 级别 1＋2</span><a class="lp-act" href="https://std.samr.gov.cn/search/std?q=GB18030-2022" target="_blank" rel="noopener noreferrer">出处 ↗</a></div>
+                <div class="lp6-kv"><span class="k">核对</span><span class="v">2026-09-24 · 已核对原文</span></div>
+                <div class="lp6-kv"><span class="k">厂商</span><span class="v">Alibaba Design</span><a class="lp-act" href="https://www.alibabafonts.com/" target="_blank" rel="noopener noreferrer">官网 ↗</a></div>
+              </div>
+            </div>
+            <p class="lp-foot">条款以权利人为准。 <a href="/license">许可类型说明</a></p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+</body>
+</html>

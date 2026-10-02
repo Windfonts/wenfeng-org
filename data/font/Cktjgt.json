@@ -1,0 +1,52 @@
+{
+ "norm": "Cktjgt",
+ "name": "创客贴金刚体",
+ "en": "CKT KingKong",
+ "aliases": [],
+ "licenseName": "创客贴金刚体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": "https://www.chuangkit.com",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Chuangkit",
+ "foundrySlug": "chuangkit",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Cktjgt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.chuangkit.com",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.chuangkit.com",
+   "format": "git",
+   "href": "https://www.chuangkit.com",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-cktjgt"
+}

@@ -1,0 +1,45 @@
+{
+ "norm": "Dyh",
+ "name": "得意黑",
+ "en": "Smiley Sans Oblique",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/atelier-anchor/smiley-sans/main/LICENSE",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "9401f4050f1b66c26b6ccdc8b0e14a3c1cc37aac122eda84386f25854a9bec72",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Atelier Anchor",
+ "foundrySlug": "atelier-anchor",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Dyh",
+ "weights": [
+  "Oblique"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-dyh"
+}

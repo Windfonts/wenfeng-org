@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>谱系可视化 · 设计对照 · 二稿 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-klee&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xwwk&weight=Light" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xwwktc&weight=Light" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xwzkgb&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-systsc&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-swsjc&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-mkwfys&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-yymt&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-wjmp&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-yjmct&weight=Regular" />
+  <style>
+    .lw-wrap { max-width: 60rem; margin: 0 auto; padding: 0 var(--gutter) var(--s-10); }
+    .lw-nav { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .lw-nav .container { display: flex; align-items: baseline; gap: var(--s-4); flex-wrap: wrap; padding-top: var(--s-3); padding-bottom: var(--s-3); }
+    .lw-nav .lead { font-size: var(--fs-12); color: var(--gray); margin: 0; }
+    .lw-nav nav { display: flex; gap: var(--s-2); }
+    .lw-nav nav a { font-size: var(--fs-12); color: var(--ink); text-decoration: none; padding: 0.2rem 0.1rem; border-bottom: 1px solid transparent; }
+    .lw-nav nav a:hover { border-bottom-color: var(--ink); }
+
+    .lw-hero { padding: var(--s-9) 0 var(--s-2); }
+    .lw-hero .kicker { font-size: var(--fs-11); letter-spacing: 0.22em; color: var(--gray); font-weight: var(--fw-label); }
+    .lw-hero h1 { font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif; font-size: 2rem; font-weight: var(--fw-title); margin: 0.4rem 0 0.5rem; letter-spacing: 0.01em; }
+    .lw-hero p { font-size: var(--fs-13); color: var(--gray); margin: 0; max-width: 34em; }
+
+    .lw-sec { margin-top: var(--s-9); }
+    .lw-sec > header { display: flex; align-items: baseline; gap: var(--s-4); margin-bottom: var(--s-4); flex-wrap: wrap; }
+    .lw-sec > header .no { font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif; font-size: 1.9rem; color: var(--ink); line-height: 1; }
+    .lw-sec > header h2 { font-size: var(--fs-16); margin: 0; font-weight: var(--fw-title); }
+    .lw-sec > header p { font-size: var(--fs-12); color: var(--gray); margin: 0; flex-basis: 100%; }
+    .lw-stage { padding: var(--s-6) var(--s-2) var(--s-5); }
+    @media (min-width: 60rem) { .lw-stage { padding: var(--s-7) var(--s-6) var(--s-6); } }
+    .lw-foot { margin-top: var(--s-3); font-size: var(--fs-12); color: var(--gray-2); }
+
+    /* 排印原子：样张 / 元信息 / 年份 */
+    .spec { line-height: 1.25; color: var(--ink); white-space: nowrap; }
+    .meta { font-size: var(--fs-11); color: var(--gray-2); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .meta b { color: var(--gray); font-weight: var(--fw-label); }
+    .yr { font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif; font-variant-numeric: tabular-nums; color: var(--ink); }
+
+    /* ===== 甲 · 自证谱 ===== */
+    .lvA { --step: 2.6rem; }
+    .lvA .fam { margin-bottom: var(--s-8); }
+    .lvA .fam > .cap { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); border-bottom: 1px solid var(--ink); padding-bottom: 0.55rem; margin-bottom: var(--s-4); }
+    .lvA .fam > .cap h3 { margin: 0; font-size: var(--fs-13); font-weight: var(--fw-title); letter-spacing: 0.06em; }
+    .lvA .fam > .cap .meta { font-size: var(--fs-11); }
+    .lvA ul { list-style: none; margin: 0; padding: 0; }
+    .lvA li { position: relative; padding-left: calc(var(--step) + 0.7rem); }
+    .lvA li::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+    .lvA li:last-child::before { display: none; }
+    .lvA li > a { display: flex; align-items: baseline; gap: var(--s-4); padding: 0.62rem 0; position: relative; text-decoration: none; }
+    .lvA li > a::before { content: ""; position: absolute; left: calc(-0.7rem - 1px); top: 50%; width: 0.7rem; height: 1px; background: var(--rule); }
+    .lvA li > a:hover .spec { text-decoration: underline; text-underline-offset: 0.32em; text-decoration-thickness: 1px; }
+    .lvA .spec { font-size: 1.65rem; }
+    .lvA .root > a .spec { font-size: 2.2rem; }
+    .lvA .meta { margin-left: auto; }
+    .lvA .gen { position: absolute; left: -2.4rem; top: 50%; transform: translateY(-50%); font-size: var(--fs-10, 0.65rem); color: var(--gray-2); letter-spacing: 0.18em; writing-mode: vertical-rl; }
+
+    /* ===== 乙 · 谱系墙 ===== */
+    .lvB-band + .lvB-band { margin-top: var(--s-6); }
+    .lvB-band .cap { display: flex; align-items: baseline; gap: var(--s-4); margin-bottom: var(--s-3); }
+    .lvB-band .cap .yr { font-size: 1.8rem; }
+    .lvB-band .cap .cap-t { font-size: var(--fs-11); letter-spacing: 0.2em; color: var(--gray); }
+    .lvB-band .cap .rule { flex: 1; border-bottom: 1px solid var(--rule); align-self: center; }
+    .lvB-band .wall { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 2.6rem; row-gap: var(--s-4); }
+    .lvB-band .item { text-decoration: none; }
+    .lvB-band .item .spec { font-size: 2.5rem; transition: opacity 0.15s; }
+    .lvB-band .item:hover .spec { opacity: 0.66; }
+    .lvB-band .item .meta { display: block; margin-top: 0.45rem; }
+    .lvB-band.is-root .item .spec { font-size: 3.2rem; }
+
+    /* ===== 丙 · 编年刊 ===== */
+    .lvC { width: 100%; border-collapse: collapse; }
+    .lvC th { font-size: var(--fs-10, 0.65rem); letter-spacing: 0.2em; color: var(--gray); font-weight: var(--fw-label); text-align: left; padding: 0 0.9rem 0.55rem; border-bottom: 1px solid var(--ink); }
+    .lvC td { padding: 0.85rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+    .lvC tr:hover td { background: var(--paper-2, rgba(0,0,0,0.025)); }
+    .lvC .spec { font-size: 1.5rem; }
+    .lvC .yr { font-size: 1.05rem; }
+    .lvC .num { font-variant-numeric: tabular-nums; font-size: var(--fs-13); color: var(--ink-2); }
+    .lvC .up { font-size: var(--fs-12); color: var(--gray); }
+    .lvC th.r, .lvC td.r { text-align: right; }
+    .lvC td:first-child, .lvC th:first-child { padding-left: 0; }
+    .lvC td:last-child, .lvC th:last-child { padding-right: 0; }
+  </style>
+</head>
+<body>
+  <div class="lw-nav">
+    <div class="container">
+      <p class="lead">二稿 · 以字证字（节点用它自己的字体渲染）· 去框改发丝线 · 编辑排印</p>
+      <nav>
+        <a href="#a">甲 · 自证谱</a>
+        <a href="#b">乙 · 谱系墙</a>
+        <a href="#c">丙 · 编年刊</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="lw-wrap">
+
+    <div class="lw-hero">
+      <p class="kicker">谱系 · GENEALOGY</p>
+      <h1>字有师承。</h1>
+      <p>每一款开源字体都不是凭空来的。这里把上下传承画出来——字体名用它自己的字型排印，本身就是样张。</p>
+    </div>
+
+    <section class="lw-sec" id="a">
+      <header>
+        <span class="no">甲</span>
+        <h2>自证谱</h2>
+        <p>纵向家谱。发丝线分代、悬行缩进，节点=大号自体样张；元信息退到右侧小字。整页只有字和线，没有框。</p>
+      </header>
+      <div class="lw-stage">
+        <div class="lvA">
+          <div class="fam">
+            <div class="cap"><h3>霞鹜文楷族 · 7 款</h3><span class="meta">源头 Fontworks <b>Klee One</b> · 2021 起在中文世界开枝</span></div>
+            <ul>
+              <li class="root"><a href="#">
+                <span class="gen">源头</span>
+                <span class="spec" style="font-family:'wenfeng-klee'">Klee One</span>
+                <span class="meta"><b>10,178</b> 字 · Fontworks · 开源</span>
+              </a></li>
+              <li><a href="#">
+                <span class="gen">一代</span>
+                <span class="spec" style="font-family:'wenfeng-xwwk'">霞鹜文楷</span>
+                <span class="meta">简中增补 · <b>46,490</b> 字 · 2021 · 开源</span>
+              </a>
+                <ul>
+                  <li><a href="#"><span class="spec" style="font-family:'wenfeng-xwwktc'">霞鹜文楷 TC</span><span class="meta">繁体卷 · <b>25,598</b> 字</span></a></li>
+                  <li><a href="#"><span class="spec" style="font-family:'wenfeng-xwzkgb'">霞鹜臻楷</span><span class="meta">加粗再制 · <b>23,878</b> 字</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="fam">
+            <div class="cap"><h3>思源宋体族 · 29 款（节选）</h3><span class="meta">Adobe × Google · 中文字体开源生态的祖树</span></div>
+            <ul>
+              <li class="root"><a href="#">
+                <span class="gen">源头</span>
+                <span class="spec" style="font-family:'wenfeng-systsc'">思源宋体</span>
+                <span class="meta"><b>44,779</b> 字 · Adobe × Google · 开源</span>
+              </a></li>
+              <li><a href="#">
+                <span class="gen">一代</span>
+                <span class="spec" style="font-family:'wenfeng-swsjc'">狮尾四季春</span>
+                <span class="meta">台湾省改作 · <b>42,858</b> 字 · 2021</span>
+              </a>
+                <ul>
+                  <li><a href="#"><span class="spec" style="font-family:'wenfeng-mkwfys'">猫啃网风雅宋</span><span class="meta">风格化修改 · <b>42,767</b> 字 · 2020</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#">
+                <span class="gen">一代</span>
+                <span class="spec" style="font-family:'wenfeng-yymt'">源样明体</span>
+                <span class="meta">台湾省 · <b>35,349</b> 字 · 2024</span>
+              </a>
+                <ul>
+                  <li><a href="#"><span class="spec" style="font-family:'wenfeng-wjmp'">文津宋体</span><span class="meta">Unicode 17 全覆盖 · <b>31,527</b> 字 · 2024</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#">
+                <span class="gen">一代</span>
+                <span class="spec" style="font-family:'wenfeng-yjmct'">源界明朝</span>
+                <span class="meta">破坏风改作 · <b>9,804</b> 字 · 2014</span>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="lw-foot">代际竖标（源头 / 一代 / 二代）贴在导轨外侧。全家族视图=同构卡片一列到底；大族（思源黑体 84 款）默认收起到「另 N 款」。</p>
+      </div>
+    </section>
+
+    <section class="lw-sec" id="b">
+      <header>
+        <span class="no">乙</span>
+        <h2>谱系墙</h2>
+        <p>按年代分带的一面样张墙：衬线年份立柱，同代字体沿基线排开，大小即辈分。传承不画线，用「谁挨着谁」读出来。</p>
+      </header>
+      <div class="lw-stage">
+        <div class="lvB-band is-root">
+          <div class="cap"><span class="yr">2014</span><span class="cap-t">源 头</span><span class="rule"></span></div>
+          <div class="wall">
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-systsc'">思源宋体</span><span class="meta">Adobe × Google · 开源起点</span></a>
+          </div>
+        </div>
+        <div class="lvB-band">
+          <div class="cap"><span class="yr">2020 – 21</span><span class="cap-t">第 一 代</span><span class="rule"></span></div>
+          <div class="wall">
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-swsjc'">狮尾四季春</span><span class="meta">← 思源宋体 · 台湾省</span></a>
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-xwwk'">霞鹜文楷</span><span class="meta">← Klee One · 简中增补</span></a>
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-mkwfys'">猫啃网风雅宋</span><span class="meta">← 狮尾四季春</span></a>
+          </div>
+        </div>
+        <div class="lvB-band">
+          <div class="cap"><span class="yr">2024 – 25</span><span class="cap-t">第 二 代</span><span class="rule"></span></div>
+          <div class="wall">
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-wjmp'">文津宋体</span><span class="meta">← 源样明体 · Unicode 17</span></a>
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-xwwktc'">霞鹜文楷 TC</span><span class="meta">← 霞鹜文楷 · 繁体卷</span></a>
+            <a class="item" href="#"><span class="spec" style="font-family:'wenfeng-xwzkgb'">霞鹜臻楷</span><span class="meta">← 霞鹜文楷 · 加粗再制</span></a>
+          </div>
+        </div>
+        <p class="lw-foot">墙的密度随家族伸缩：一族一墙，全站首页则混排「当月新枝」。hover 时样张退至 66% 灰示意可选。</p>
+      </div>
+    </section>
+
+    <section class="lw-sec" id="c">
+      <header>
+        <span class="no">丙</span>
+        <h2>编年刊</h2>
+        <p>一本纵向账簿：一行一款，样张即名，年份与字数右对齐衬线数字，上游用文字注。信息最密、最像工具的一版。</p>
+      </header>
+      <div class="lw-stage">
+        <table class="lvC">
+          <thead>
+            <tr><th>字 体</th><th>上 游</th><th class="r">字 数</th><th class="r">年 份</th><th class="r">授 权</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="spec" style="font-family:'wenfeng-systsc'">思源宋体</span></td><td class="up">—</td><td class="r num">44,779</td><td class="r yr">2014</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-yjmct'">源界明朝</span></td><td class="up">思源宋体</td><td class="r num">9,804</td><td class="r yr">2014</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-swsjc'">狮尾四季春</span></td><td class="up">思源宋体</td><td class="r num">42,858</td><td class="r yr">2021</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-xwwk'">霞鹜文楷</span></td><td class="up">Klee One</td><td class="r num">46,490</td><td class="r yr">2021</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-mkwfys'">猫啃网风雅宋</span></td><td class="up">狮尾四季春</td><td class="r num">42,767</td><td class="r yr">2020</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-yymt'">源样明体</span></td><td class="up">思源宋体</td><td class="r num">35,349</td><td class="r yr">2024</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-wjmp'">文津宋体</span></td><td class="up">源样明体</td><td class="r num">31,527</td><td class="r yr">2024</td><td class="r num">开源</td></tr>
+            <tr><td><span class="spec" style="font-family:'wenfeng-xwwktc'">霞鹜文楷 TC</span></td><td class="up">霞鹜文楷</td><td class="r num">25,598</td><td class="r yr">2021</td><td class="r num">开源</td></tr>
+          </tbody>
+        </table>
+        <p class="lw-foot">表头细字距立标、表底线用墨黑、行线发丝。可按任意列排序（年份 / 字数 / 字族），配左侧「字族」筛选列。适合做工具页「谱系索引」。</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

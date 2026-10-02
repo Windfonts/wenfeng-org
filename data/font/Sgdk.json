@@ -1,0 +1,71 @@
+{
+ "norm": "Sgdk",
+ "name": "尚古等宽",
+ "en": "Shanggu Mono",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/GuiWonder/Shanggu",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "e564f06d018e7b95bc3594c96a17f1d41865af4038c375e7aa974dd69df38602",
+  "verifiedAt": "2026-09-24",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "guiwonder",
+   "rootWork": "尚古黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "GuiWonder",
+ "foundrySlug": "guiwonder",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Sgdk",
+ "weights": [
+  "ExtraLight",
+  "Light",
+  "Normal",
+  "Regular",
+  "Medium",
+  "Bold",
+  "Heavy"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/GuiWonder/Shanggu",
+  "upstream": "https://github.com/GuiWonder/Shanggu",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Sgdk.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/GuiWonder/Shanggu",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-sgdk"
+}

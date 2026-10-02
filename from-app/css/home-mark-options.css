@@ -1,0 +1,57 @@
+/* 底部浅字四套。只服务 home-mark-options.html，不进正式站。 */
+html:has(.page-home-mark) { scroll-padding-top: calc(var(--topbar-h) + 5.5rem); }
+
+.hm-stage .home-partners { border-bottom: 1px solid var(--rule); }
+.hm-stage .home-close {
+  position: relative;
+  overflow: hidden;
+  padding: 12rem 0;
+}
+.hm-stage .home-close-num { position: relative; z-index: 1; }
+
+.hm-bg {
+  position: absolute;
+  z-index: 0;
+  right: -0.06em;
+  top: 50%;
+  transform: translateY(-46%);
+  margin: 0;
+  font-size: clamp(16rem, 32vw, 26rem);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  color: color-mix(in srgb, var(--ink) 7%, transparent);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.hm-pair .hm-bg {
+  right: max(var(--gutter), 4vw);
+  font-size: clamp(9rem, 16vw, 14rem);
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.hm-sink .hm-bg {
+  top: auto;
+  bottom: -0.42em;
+  right: 6vw;
+  transform: none;
+  font-size: clamp(20rem, 38vw, 32rem);
+  color: color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.hm-foot {
+  border-top: 1px solid var(--rule);
+  padding: var(--s-6) 0 var(--s-10);
+  color: var(--gray);
+  font-size: var(--fs-13);
+}
+
+@media (max-width: 768px) {
+  .hm-stage .home-close { padding: 8rem 0; }
+  .hm-bg { font-size: 12rem; right: -0.2em; }
+  .hm-pair .hm-bg { font-size: 6.5rem; right: var(--gutter); }
+  .hm-sink .hm-bg { font-size: 14rem; right: 0; }
+}

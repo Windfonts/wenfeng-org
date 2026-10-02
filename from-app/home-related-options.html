@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首页 · 同分类对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-related-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-home-rel">
+  <header data-topbar data-active="home"></header>
+
+  <div class="hr-switch">
+    <div class="container hr-switch-inner">
+      <p class="hr-switch-lead">只改同分类四款。字林和统计卡没动。现首页没改。</p>
+      <nav class="seg-glyph" aria-label="同分类方案">
+        <a href="#a">甲 现页</a>
+        <a href="#b">乙 自报名</a>
+        <a href="#c">丙 同字</a>
+      </nav>
+      <p class="live-caption">
+        <span>当前款</span>
+        <a class="now" data-name href="/">—</a>
+        <button type="button" id="liveNext"><svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-refresh"/></svg>换一款</button>
+        <a class="hr-back" href="/">回现首页</a>
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <header class="hr-meta">
+      <b data-title>甲 · 现页</b>
+      <span data-hint>现在首页：四行瘦条，同一句诗，40px。</span>
+    </header>
+    <div class="container">
+      <p class="count-line" data-count></p>
+      <ul class="specimens" id="hrList"></ul>
+    </div>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/home-related-options.js?v=20260925r"></script>
+</body>
+</html>

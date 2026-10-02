@@ -1,0 +1,45 @@
+{
+ "norm": "Wcsf",
+ "name": "问藏书房",
+ "en": "WenCang",
+ "aliases": [],
+ "licenseName": "问藏书房授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "问藏书房",
+ "foundrySlug": "wencang",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Wcsf",
+ "weights": [
+  "Normal"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-wcsf"
+}

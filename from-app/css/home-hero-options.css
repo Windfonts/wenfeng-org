@@ -1,0 +1,153 @@
+/* 首页 Hero 第二轮对照。只服务 home-hero-options.html，不进正式站。 */
+html:has(.page-hero-opt) { scroll-padding-top: calc(var(--topbar-h) + 5.75rem); }
+.page-hero-opt { padding-top: 0; }
+.ho-block { scroll-margin-top: calc(var(--topbar-h) + 5.75rem); }
+.ho-switch {
+  position: sticky; top: var(--topbar-h); z-index: 40;
+  background: var(--page); border-bottom: 1px solid var(--fill);
+  padding: var(--s-3) 0;
+}
+.ho-switch-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5);
+}
+.ho-switch-lead { font-size: var(--fs-13); color: var(--gray); flex: 1 1 12rem; }
+.ho-switch .seg-glyph { display: inline-flex; gap: 2px; background: var(--fill); border-radius: var(--radius-pill); padding: 2px; }
+.ho-switch .seg-glyph a {
+  padding: 0.28rem 0.85rem; border-radius: var(--radius-pill);
+  font-size: var(--fs-13); color: var(--ink-2); text-decoration: none;
+}
+.ho-switch .seg-glyph a:hover { color: var(--ink); }
+.ho-switch .seg-glyph a.is-on { background: var(--ink); color: var(--on-ink); }
+.ho-switch .live-caption { margin-left: auto; }
+.ho-back { color: var(--gray); font-size: var(--fs-13); }
+
+.ho-block { padding: var(--s-8) 0 var(--s-10); border-top: 1px solid var(--fill); }
+.ho-meta {
+  max-width: var(--container); margin: 0 auto var(--s-6); padding: 0 var(--gutter);
+  display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); align-items: baseline;
+}
+.ho-meta b { font-size: var(--fs-16); font-weight: var(--fw-title); }
+.ho-meta span { font-size: var(--fs-13); color: var(--gray); }
+
+.ho-hero .live,
+.ho-yong,
+.ho-glyph {
+  display: block; outline: none; overflow-wrap: anywhere;
+  letter-spacing: -0.04em; line-height: 0.95; font-weight: var(--fw-body); margin: 0;
+}
+.ho-hero .live:empty::before,
+.ho-yong:empty::before,
+.ho-glyph:empty::before { content: attr(data-placeholder); color: var(--gray-2); }
+
+.ho-whisper {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.55rem;
+  margin: 0; font-size: var(--fs-12); color: var(--gray-2); font-variant-numeric: tabular-nums;
+}
+.ho-whisper a { color: var(--gray); text-decoration: none; }
+.ho-whisper a:hover { color: var(--ink); }
+.ho-whisper span { color: var(--gray-2); }
+
+.ho-film {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-4);
+  margin-top: var(--s-5);
+}
+.ho-now { color: var(--ink); font-weight: var(--fw-title); text-decoration: none; }
+.ho-now:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* E 大海报 */
+.ho-e {
+  --e-size: 10.5rem;
+  min-height: calc(100svh - var(--topbar-h) - 7.5rem);
+  display: flex; flex-direction: column;
+}
+.ho-e-stage {
+  flex: 1; display: flex; align-items: center;
+  padding: var(--s-8) 0 var(--s-6);
+  min-height: 18rem;
+}
+.ho-e .live { font-size: var(--e-size); width: 100%; }
+.ho-e-bar { background: var(--page); padding: var(--s-4) 0 var(--s-5); }
+.ho-e-bar-in {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-4);
+}
+.ho-e-bar-in .ho-whisper { margin-left: auto; }
+.ho-size {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  color: var(--gray); font-size: var(--fs-12); font-variant-numeric: tabular-nums;
+}
+.ho-size input[type="range"] { width: 7.5rem; accent-color: var(--ink); }
+
+/* F 字林 */
+.ho-f { padding-top: var(--s-2); }
+.ho-f-chorus {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(7.5rem, 1fr);
+  gap: var(--s-2);
+}
+.ho-cell {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;
+  gap: var(--s-3); min-width: 0;
+  padding: var(--s-4);
+  background: var(--surface); border: 0; border-radius: var(--radius);
+  color: var(--ink); text-align: left; cursor: pointer;
+}
+.ho-cell:hover { background: var(--surface-2); }
+.ho-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.ho-cell .mark {
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  line-height: 0.95; letter-spacing: -0.04em;
+}
+.ho-cell i {
+  font-style: normal; font-family: var(--font-ui); font-size: var(--fs-12);
+  font-weight: var(--fw-label); color: var(--gray);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%;
+}
+.ho-cell.is-on {
+  grid-column: span 2; grid-row: span 2;
+  background: var(--ink); color: var(--on-ink); cursor: default;
+  padding: var(--s-6);
+}
+.ho-cell.is-on:hover { background: var(--ink); }
+.ho-cell.is-on:focus-visible { outline-color: var(--ink); }
+.ho-cell.is-on .ho-glyph {
+  font-size: clamp(5.5rem, 16vw, 12rem);
+  width: 100%; flex: 1; display: flex; align-items: center;
+}
+.ho-cell.is-on i { color: var(--on-ink-2); }
+
+/* G 单字 */
+.ho-g {
+  display: flex; align-items: center;
+  min-height: calc(100svh - var(--topbar-h) - 8.5rem);
+}
+.ho-g-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15.5rem;
+  gap: var(--s-10);
+  align-items: center;
+  width: 100%;
+  padding: var(--s-6) 0;
+}
+.ho-yong { font-size: clamp(7rem, 28vmin, 13.5rem); }
+.ho-g-meta .kicker { font-size: var(--fs-13); color: var(--gray); font-weight: var(--fw-label); margin: 0 0 var(--s-2); }
+.ho-g-name { font-size: var(--fs-28); font-weight: var(--fw-title); line-height: var(--lh-tight); margin: 0 0 var(--s-4); font-family: var(--font-ui); }
+.ho-g-name a { color: inherit; text-decoration: none; }
+.ho-g-name a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.ho-facts { font-size: var(--fs-14); color: var(--gray); line-height: var(--lh-snug); margin: 0 0 var(--s-5); }
+.ho-g-acts { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-6); }
+.ho-g-meta .ho-whisper { margin-top: var(--s-2); }
+
+.ho-libhint { padding-top: var(--s-5); }
+.ho-libhint .hint { font-size: var(--fs-12); color: var(--gray-2); margin-bottom: var(--s-3); }
+.ho-libhint .specimens { margin: 0; }
+.ho-libhint .specimen.is-now { background: var(--fill); }
+
+@media (max-width: 800px) {
+  .ho-e { --e-size: 4.8rem; min-height: 0; }
+  .ho-e-bar-in .ho-whisper { margin-left: 0; width: 100%; }
+  .ho-f-chorus { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ho-cell.is-on .ho-glyph { font-size: clamp(4.5rem, 28vw, 8rem); }
+  .ho-g-grid { grid-template-columns: 1fr; min-height: 0; gap: var(--s-6); }
+  .ho-yong { font-size: clamp(6rem, 42vw, 10rem); }
+}

@@ -1,0 +1,52 @@
+{
+ "norm": "Tetsubin",
+ "name": "鉄瓶ゴシック",
+ "en": "Tetsubin Gothic",
+ "aliases": [],
+ "licenseName": "Apache License 2.0",
+ "license": {
+  "spdx": "Apache-2.0",
+  "textState": "missing",
+  "sourceUrl": "https://flopdesign.booth.pm/items/3970314",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "FLOP Design",
+ "foundrySlug": "flop design",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Tetsubin",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://flopdesign.booth.pm/items/3970314",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 flopdesign.booth.pm",
+   "format": "git",
+   "href": "https://flopdesign.booth.pm/items/3970314",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-tetsubin"
+}

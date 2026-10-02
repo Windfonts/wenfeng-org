@@ -1,0 +1,152 @@
+/* 对照版。只作用于 .page-v5，不改现站。 */
+.page-v5 { background: var(--page); color: var(--ink); }
+.page-v5 .v5-bar {
+  display: flex; align-items: center; gap: var(--s-5);
+  height: var(--topbar-h); padding: 0 var(--gutter);
+  position: sticky; top: 0; z-index: 20;
+  background: var(--page);
+}
+.page-v5 .v5-logo { font-weight: var(--fw-title); font-size: var(--fs-16); color: inherit; text-decoration: none; }
+.page-v5 .v5-nav { display: flex; gap: var(--s-4); }
+.page-v5 .v5-nav a { color: var(--gray); text-decoration: none; font-size: var(--fs-14); }
+.page-v5 .v5-nav a[aria-current="page"] { color: var(--ink); font-weight: var(--fw-title); }
+.page-v5 .v5-search { margin-left: auto; }
+.page-v5 .v5-search input {
+  width: 14rem; height: 2.25rem; border: 0; border-radius: var(--radius-pill);
+  background: var(--fill); padding: 0 1rem; font: inherit; font-size: var(--fs-14); color: var(--ink);
+}
+.page-v5 .v5-back { color: var(--gray); font-size: var(--fs-13); text-decoration: none; }
+.page-v5 .v5-back:hover { color: var(--ink); }
+.page-v5 .v5-flag {
+  margin: 0; padding: 0.4rem var(--gutter); font-size: var(--fs-12); color: var(--gray);
+  background: var(--surface);
+}
+.page-v5 .v5-flag a { color: var(--ink); }
+
+.v5-wrap { width: min(96rem, calc(100% - 2 * var(--gutter))); margin: 0 auto; }
+
+/* 首页：一面字，一行代码 */
+.v5-home { background: #111; color: #fff; min-height: 100vh; }
+.v5-home .v5-bar { background: #111; }
+.v5-home .v5-nav a { color: rgba(255,255,255,0.55); }
+.v5-home .v5-nav a[aria-current="page"] { color: #fff; }
+.v5-home .v5-search input { background: #222; color: #fff; }
+.v5-home .v5-back, .v5-home .v5-flag { color: rgba(255,255,255,0.55); }
+.v5-home .v5-flag { background: #1a1a1a; }
+.v5-home .v5-flag a, .v5-home .v5-back:hover { color: #fff; }
+
+.v5-hero { padding: var(--s-16) 0 var(--s-10); }
+.v5-hero h1 {
+  margin: 0; font-size: clamp(3rem, 8vw, 7rem); font-weight: var(--fw-title);
+  line-height: 1.05; letter-spacing: -0.03em; outline: none; max-width: 12em;
+}
+.v5-hero h1:empty::before { content: attr(data-placeholder); color: rgba(255,255,255,0.28); }
+.v5-hero-foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--s-6); margin-top: var(--s-8); }
+.v5-who { font-size: var(--fs-16); color: rgba(255,255,255,0.72); }
+.v5-who a { color: #fff; }
+.v5-family {
+  font-family: var(--font-mono); font-size: var(--fs-14); color: rgba(255,255,255,0.85);
+  background: #1c1c1c; border-radius: var(--radius); padding: var(--s-4) var(--s-5);
+  display: flex; align-items: center; gap: var(--s-4); max-width: 100%;
+}
+.v5-family code { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.v5-home .btn { background: #fff; color: #111; }
+.v5-home .btn.btn-quiet { background: transparent; color: #fff; }
+
+.v5-picks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); padding-bottom: var(--s-16); }
+.v5-pick {
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--s-6);
+  min-height: 9rem; padding: var(--s-5); border-radius: var(--radius);
+  background: #1c1c1c; color: #fff; text-decoration: none; text-align: left; border: 0; cursor: pointer; font: inherit;
+}
+.v5-pick.is-on { background: #fff; color: #111; }
+.v5-pick .face { font-size: var(--fs-64); line-height: 1; }
+.v5-pick .nm { font-size: var(--fs-13); opacity: 0.7; }
+
+/* 字墙 */
+.v5-tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); padding: var(--s-6) 0 var(--s-4); }
+.v5-sample {
+  flex: 1 1 16rem; height: 2.75rem; border: 0; border-radius: var(--radius-pill);
+  background: var(--fill); padding: 0 1.1rem; font: inherit; font-size: var(--fs-16); color: var(--ink);
+}
+.v5-chips { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.v5-chips button {
+  height: 2rem; padding: 0 0.9rem; border: 0; border-radius: var(--radius-pill);
+  background: var(--fill); color: var(--ink); font: inherit; font-size: var(--fs-13); cursor: pointer;
+}
+.v5-chips button.is-on { background: var(--ink); color: var(--on-ink); }
+.v5-count { font-size: var(--fs-13); color: var(--gray); margin-left: auto; }
+
+.v5-wall { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); padding-bottom: var(--s-8); }
+.v5-card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--s-8);
+  min-height: 11rem; padding: var(--s-5); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink); text-decoration: none;
+}
+.v5-card:hover { background: var(--surface-2); }
+.v5-card .face { font-size: clamp(2.4rem, 4vw, 3.5rem); line-height: 1.15; word-break: break-all; }
+.v5-card .meta { font-size: var(--fs-13); color: var(--gray); }
+.v5-more { display: flex; justify-content: center; padding-bottom: var(--s-16); }
+
+/* 详情 */
+.v5-stage { padding: var(--s-10) 0 var(--s-6); }
+.v5-stage .sample {
+  margin: 0; font-size: clamp(4rem, 10vw, 8rem); line-height: 1.02; font-weight: 400;
+  outline: none; letter-spacing: -0.03em;
+}
+.v5-stage .sample:empty::before { content: attr(data-placeholder); color: var(--gray-2); }
+.v5-title { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--s-4); margin-top: var(--s-8); }
+.v5-title h1 { margin: 0; font-size: var(--fs-28); font-weight: var(--fw-title); }
+.v5-title h1 small { font-size: var(--fs-14); font-weight: var(--fw-body); color: var(--gray); margin-left: 0.6em; }
+.v5-facts { margin: var(--s-3) 0 0; font-size: var(--fs-16); line-height: 1.6; max-width: 36em; }
+.v5-facts a { color: var(--ink); }
+.v5-acts { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-5); }
+.v5-weights { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-5); }
+.v5-weights button {
+  height: 2rem; padding: 0 0.8rem; border: 0; border-radius: var(--radius-pill);
+  background: var(--fill); font: inherit; font-size: var(--fs-13); cursor: pointer;
+}
+.v5-weights button.is-on { background: var(--ink); color: var(--on-ink); }
+
+.v5-code { background: var(--surface); border-radius: var(--radius); padding: var(--s-5); margin: var(--s-8) 0; }
+.v5-code .row { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); margin-bottom: var(--s-3); }
+.v5-code h2 { margin: 0; font-size: var(--fs-14); font-weight: var(--fw-title); }
+.v5-code pre {
+  margin: 0; white-space: pre-wrap; word-break: break-all;
+  font-family: var(--font-mono); font-size: var(--fs-13); line-height: 1.55; color: var(--ink-2);
+}
+.v5-from { margin: var(--s-8) 0 var(--s-16); max-width: 36em; }
+.v5-from p { font-size: var(--fs-16); line-height: 1.6; }
+.v5-side-link { font-size: var(--fs-13); color: var(--gray); }
+.v5-side-link a { color: var(--ink); }
+
+/* 厂商 */
+.v5-groups { display: grid; gap: var(--s-10); padding: var(--s-8) 0 var(--s-16); }
+.v5-groups h2 { margin: 0 0 var(--s-4); font-size: var(--fs-14); font-weight: var(--fw-title); }
+.v5-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
+.v5-fd {
+  display: flex; align-items: center; gap: var(--s-4);
+  padding: var(--s-4) var(--s-5); border-radius: var(--radius); background: var(--surface);
+  color: var(--ink); text-decoration: none;
+}
+.v5-fd:hover { background: var(--surface-2); }
+.v5-fd img, .v5-fd .mark {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; object-fit: cover; background: var(--ink); color: var(--on-ink);
+  display: grid; place-items: center; flex: none; font-weight: var(--fw-title);
+}
+.v5-fd .sub { display: block; font-size: var(--fs-12); color: var(--gray); }
+.v5-fd-hero { display: flex; align-items: center; gap: var(--s-5); padding: var(--s-8) 0 var(--s-4); }
+.v5-fd-hero img, .v5-fd-hero .mark { width: 4rem; height: 4rem; border-radius: 50%; object-fit: cover; background: var(--ink); color: var(--on-ink); display: grid; place-items: center; font-size: var(--fs-28); font-weight: var(--fw-title); }
+.v5-fd-hero h1 { margin: 0; font-size: var(--fs-28); }
+.v5-fd-hero p { margin: var(--s-2) 0 0; color: var(--gray); }
+.v5-origin { margin: 0 0 var(--s-6); font-size: var(--fs-14); }
+.v5-origin a { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .v5-picks, .v5-wall, .v5-index { grid-template-columns: 1fr 1fr; }
+  .page-v5 .v5-search input { width: 8rem; }
+}
+@media (max-width: 640px) {
+  .v5-picks, .v5-wall, .v5-index { grid-template-columns: 1fr; }
+  .page-v5 .v5-bar { flex-wrap: wrap; height: auto; padding: var(--s-3) var(--gutter); }
+}

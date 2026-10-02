@@ -1,0 +1,57 @@
+{
+ "norm": "Mkwgzs",
+ "name": "猫啃网故障宋",
+ "en": "Maoken Glitch Song",
+ "aliases": [],
+ "licenseName": "SIL Open Font License (OFL)",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://www.maoken.com/freefonts/15861.html",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "27fcb4f26092413de4b8b80313e5aa3e80fd7c9894f7505f452252d6d8f096e4",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源宋体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Maoken",
+ "foundrySlug": "maoken",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Mkwgzs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.maoken.com/freefonts/15861.html",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.maoken.com",
+   "format": "git",
+   "href": "https://www.maoken.com/freefonts/15861.html",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mkwgzs"
+}

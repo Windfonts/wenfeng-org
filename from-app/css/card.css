@@ -1,0 +1,176 @@
+/* 样张卡片：固定像素画布 + CSS 缩放。版式由 data-layout 决定，槽位（副文字 / 头像 / 背景图）
+   只在模板声明了（data-slots）且用户填了（data-has-*）时出现。不带 data-card 时全部退回普通字形墙。 */
+.glyph-wall .card-view { width: 100%; }
+.glyph-wall .card-view.is-framed { position: relative; overflow: hidden; }
+.glyph-wall .wall-stage { min-height: 1.4em; }
+.glyph-wall .wall-stage:not([data-card]) .card-body { display: contents; }
+.glyph-wall .wall-stage:not([data-card]) .card-meta,
+.glyph-wall .wall-stage:not([data-card]) .card-safe,
+.glyph-wall .wall-stage:not([data-card]) .card-bg,
+.glyph-wall .wall-stage:not([data-card]) .card-scrim { display: none; }
+.glyph-wall .wall-stage[data-card] {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) scale(var(--card-scale, 1));
+  transform-origin: top center;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.glyph-wall.is-editing .card-view.is-framed {
+  background: var(--fill);
+  border-radius: var(--radius-sm);
+}
+.glyph-wall.is-editing .wall-stage[data-card] {
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--card-scale, 1));
+  transform-origin: center center;
+}
+.glyph-wall .wall-stage[data-card] .wall { max-height: 100%; }
+.glyph-wall .wall-stage[data-card] .card-body {
+  position: relative; z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 0;
+  padding: 80px;
+}
+.glyph-wall .card-safe {
+  position: absolute;
+  inset: 60px;
+  pointer-events: none;
+  outline: 1px dashed var(--gray-2);
+  z-index: 3;
+}
+.glyph-wall .card-safe[hidden] { display: none; }
+
+/* —— 背景图 + 压色层：选了预置图或填了地址就出现 —— */
+.glyph-wall .card-bg,
+.glyph-wall .card-scrim { display: none; position: absolute; inset: 0; width: 100%; height: 100%; }
+.glyph-wall .card-bg {
+  object-fit: cover;
+  object-position: var(--bg-x, 50%) var(--bg-y, 50%);
+  transform: scale(var(--bg-zoom, 1));
+  transform-origin: var(--bg-x, 50%) var(--bg-y, 50%);
+  z-index: 0;
+}
+.glyph-wall .card-scrim { z-index: 0; background: color-mix(in srgb, var(--card-paper, var(--paper)) var(--scrim, 62%), transparent); }
+.glyph-wall .wall-stage[data-card][data-has-bg] .card-bg,
+.glyph-wall .wall-stage[data-card][data-has-bg] .card-scrim { display: block; }
+
+/* —— 底栏：头像 · 短线 · 副文字 / 署名 · 字体名 品牌 文风 —— */
+.glyph-wall .card-meta {
+  position: relative; z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 80px 48px;
+  font-family: var(--font-ui);
+  font-size: 22px;
+  color: inherit;
+}
+.glyph-wall .card-lines { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.glyph-wall .card-credit { display: inline-flex; align-items: baseline; gap: 14px; }
+.glyph-wall .card-name { font-weight: var(--fw-title); }
+.glyph-wall .card-brand,
+.glyph-wall .card-mark { opacity: 0.5; }
+.glyph-wall .card-rule { display: none; width: 2.5rem; height: 2px; background: currentColor; opacity: 0.22; }
+.glyph-wall .card-sub {
+  display: none;
+  font-family: var(--card-face, inherit);
+  font-weight: var(--card-weight, 500);
+  font-size: 30px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.glyph-wall .wall-stage[data-slots~="sub"][data-has-sub] .card-sub { display: block; }
+.glyph-wall .wall-stage[data-credit="0"] .card-credit { display: none; }
+.glyph-wall .card-avatar { display: none; width: var(--avatar-size, 88px); height: var(--avatar-size, 88px); border-radius: 50%; object-fit: cover; flex: none; }
+.glyph-wall .wall-stage[data-has-avatar] .card-avatar { display: block; }
+.glyph-wall .card-quote { display: none; font-family: var(--card-face, inherit); }
+
+/* —— 版式 —— */
+.glyph-wall .wall-stage[data-layout="center"] .card-body { justify-content: center; }
+.glyph-wall .wall-stage[data-layout="center"] .wall { text-align: center; }
+.glyph-wall .wall-stage[data-layout="center"] .card-meta { flex-direction: column; justify-content: center; gap: 14px; }
+.glyph-wall .wall-stage[data-layout="center"] .card-lines { align-items: center; text-align: center; }
+.glyph-wall .wall-stage[data-layout="center"] .card-rule { display: block; }
+
+.glyph-wall .wall-stage[data-layout="fill"] .card-body { padding: 48px 64px; }
+.glyph-wall .wall-stage[data-layout="fill"] .card-meta { display: none; }
+
+.glyph-wall .wall-stage[data-layout="fill"][data-has-avatar] .card-meta {
+  display: flex; position: absolute; left: 64px; bottom: 48px; z-index: 2; padding: 0; gap: 20px;
+}
+
+.glyph-wall .wall-stage[data-layout="mast"] { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 1fr; }
+.glyph-wall .wall-stage[data-layout="mast"] .card-safe { grid-area: 1 / 1 / -1 / -1; }
+.glyph-wall .wall-stage[data-layout="mast"] .card-body { padding: 48px 40px 48px 80px; min-width: 0; overflow: hidden; }
+.glyph-wall .wall-stage[data-layout="mast"] .wall { overflow: hidden; }
+.glyph-wall .wall-stage[data-layout="mast"] .card-meta {
+  flex-direction: column;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  padding: 48px 40px;
+  gap: 16px;
+}
+.glyph-wall .wall-stage[data-layout="mast"] .card-lines { flex-direction: row; gap: 14px; }
+.glyph-wall .wall-stage[data-layout="mast"] .card-sub { font-size: 24px; }
+
+/* 名刺：大姓名在上，底栏头像 + 职务 */
+.glyph-wall .wall-stage[data-layout="card"] .card-body { align-items: flex-end; padding: 80px 80px 40px; }
+.glyph-wall .wall-stage[data-layout="card"] .card-meta { gap: 28px; padding-bottom: 72px; }
+.glyph-wall .wall-stage[data-layout="card"] .card-avatar { width: var(--avatar-size, 112px); height: var(--avatar-size, 112px); }
+.glyph-wall .wall-stage[data-layout="card"] .card-sub { font-size: 36px; }
+
+/* 引言：左侧竖线 + 「，字居中，底栏头像作者 */
+.glyph-wall .wall-stage[data-layout="quote"] .card-body {
+  justify-content: center; padding-left: 120px; position: relative;
+}
+.glyph-wall .wall-stage[data-layout="quote"] .card-quote {
+  display: block; position: absolute; left: 72px; top: 64px;
+  font-size: 96px; line-height: 1; opacity: 0.22; pointer-events: none;
+}
+.glyph-wall .wall-stage[data-layout="quote"] .card-meta { justify-content: flex-start; padding-left: 120px; gap: 20px; }
+.glyph-wall .wall-stage[data-layout="quote"] .card-avatar { width: var(--avatar-size, 56px); height: var(--avatar-size, 56px); }
+.glyph-wall .wall-stage[data-layout="quote"] .card-sub { font-size: 24px; }
+
+/* 海报：图铺满，字压在底部 */
+.glyph-wall .wall-stage[data-layout="poster"] .card-body { align-items: flex-end; padding: 64px 80px 20px; }
+.glyph-wall .wall-stage[data-layout="poster"] .card-meta { padding-bottom: 64px; }
+.glyph-wall .wall-stage[data-layout="poster"] .card-sub { font-size: 26px; }
+
+/* 方印：大字居中，头像压在字下 */
+.glyph-wall .wall-stage[data-layout="seal"] { justify-content: center; }
+.glyph-wall .wall-stage[data-layout="seal"] .card-body { flex: 0 0 auto; justify-content: center; padding: 80px 80px 32px; }
+.glyph-wall .wall-stage[data-layout="seal"] .wall { text-align: center; }
+.glyph-wall .wall-stage[data-layout="seal"] .card-meta {
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 0 80px 80px; gap: 20px;
+}
+.glyph-wall .wall-stage[data-layout="seal"] .card-lines { align-items: center; text-align: center; }
+.glyph-wall .wall-stage[data-layout="seal"] .card-avatar { width: var(--avatar-size, 96px); height: var(--avatar-size, 96px); order: -1; }
+/* 编辑态：卡片内联改字（主文 / 副文 / 字体名 / 品牌） */
+.glyph-wall.is-editing .wall-stage[data-card][data-slots~="sub"] .card-sub,
+.glyph-wall.is-editing .wall-stage[data-card]:not([data-credit="0"]):not([data-layout="fill"]) .card-name,
+.glyph-wall.is-editing .wall-stage[data-card]:not([data-credit="0"]):not([data-layout="fill"]) .card-brand { display: inline-block; min-width: 0.5em; cursor: text; outline: none; }
+.glyph-wall.is-editing .wall-stage[data-card][data-slots~="sub"] .card-sub:empty::before,
+.glyph-wall.is-editing .wall-stage[data-card]:not([data-credit="0"]):not([data-layout="fill"]) .card-name:empty::before,
+.glyph-wall.is-editing .wall-stage[data-card]:not([data-credit="0"]):not([data-layout="fill"]) .card-brand:empty::before {
+  content: attr(data-placeholder); color: var(--gray-2); opacity: 0.55; pointer-events: none;
+}
+.glyph-wall.is-editing .wall-stage[data-card] .card-sub:focus,
+.glyph-wall.is-editing .wall-stage[data-card] .card-name:focus,
+.glyph-wall.is-editing .wall-stage[data-card] .card-brand:focus {
+  outline: 1px dashed var(--gray-2); outline-offset: 3px; border-radius: 2px;
+}
+.glyph-wall .wall-stage[data-hide~="sub"] .card-sub,
+.glyph-wall .wall-stage[data-hide~="avatar"] .card-avatar,
+.glyph-wall .wall-stage[data-hide~="name"] .card-name,
+.glyph-wall .wall-stage[data-hide~="brand"] .card-brand,
+.glyph-wall .wall-stage[data-hide~="mark"] .card-mark { display: none !important; }
+.glyph-wall .wall-stage[data-hide~="name"][data-hide~="brand"][data-hide~="mark"] .card-credit { display: none !important; }
+.glyph-wall .wall-stage[data-hide~="sub"][data-hide~="avatar"][data-hide~="name"][data-hide~="brand"][data-hide~="mark"] .card-meta { display: none !important; }

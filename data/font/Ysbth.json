@@ -1,0 +1,45 @@
+{
+ "norm": "Ysbth",
+ "name": "优设标题黑",
+ "en": "YouSheBiaoTiHei",
+ "aliases": [],
+ "licenseName": "优设标题黑授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "UISDC",
+ "foundrySlug": "uisdc",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Ysbth",
+ "weights": [
+  "Bold"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ysbth"
+}

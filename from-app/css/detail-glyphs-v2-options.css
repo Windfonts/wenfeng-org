@@ -1,0 +1,148 @@
+/* 现网对照密度 v2（戊一行 / 己条带）。只服务 detail-glyphs-v2-options.html，不进正式站。 */
+.page-detail-glyphs-v2-opt .dgv2-stage {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: var(--s-4);
+}
+
+.page-detail-glyphs-v2-opt .dgv2-panel .panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.page-detail-glyphs-v2-opt .glyph-query { width: 14rem; max-width: 100%; }
+.page-detail-glyphs-v2-opt .glyph-query-field { width: 100%; }
+
+.dgv2-bad-tag {
+  color: var(--ink);
+  background: color-mix(in srgb, #c44 18%, var(--fill));
+  padding: 0.15em 0.55em;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-14);
+}
+
+.dgv2-reject-note,
+.dgv2-hint {
+  margin: 0;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  line-height: 1.55;
+  max-width: 42rem;
+}
+.dgv2-reject-note {
+  padding: var(--s-3) var(--s-4);
+  background: color-mix(in srgb, #c44 10%, var(--fill));
+  border-radius: var(--radius);
+  border-left: 3px solid #c44;
+  color: var(--ink-2);
+}
+
+/* ─── 戊 · 一行结果 ─── */
+.dgv2-wu {
+  margin: 0 0 var(--s-4);
+  max-width: 40rem;
+}
+.dgv2-wu-line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em 0.55em;
+  min-height: 2rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--fill);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.dgv2-wu-line b {
+  color: var(--ink);
+  font-weight: var(--fw-title);
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.1em;
+}
+.dgv2-wu-src {
+  font-weight: var(--fw-label);
+  color: var(--ink);
+}
+.dgv2-dot { color: var(--gray-2); opacity: 0.7; }
+.dgv2-micro {
+  margin-left: 0.35em;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-color: color-mix(in srgb, var(--gray) 40%, transparent);
+}
+.dgv2-micro:hover { color: var(--ink); }
+
+/* loaded：触发钮收起（高度交给一行） */
+.dgv2-panel[data-dgv2-variant="wu"][data-state="loaded"] .dgv2-trigger {
+  display: none;
+}
+.dgv2-panel[data-dgv2-variant="wu"][data-state="idle"] .dgv2-wu {
+  display: none;
+}
+
+/* ─── 己 · 紧凑条带 ─── */
+.dgv2-ji {
+  margin: 0 0 var(--s-4);
+  max-width: 36rem;
+}
+.dgv2-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  /* 无卡片壳：仅一条淡底分隔 */
+}
+.dgv2-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--fill);
+  min-width: 0;
+}
+.dgv2-cell .k {
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray-2);
+  font-weight: var(--fw-label);
+  letter-spacing: 0.02em;
+}
+.dgv2-cell .v {
+  font-size: var(--fs-15);
+  font-weight: var(--fw-title);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.dgv2-panel[data-dgv2-variant="ji"][data-state="idle"] .dgv2-ji {
+  display: none;
+}
+.dgv2-panel[data-dgv2-variant="ji"][data-state="idle"] .dgv2-trigger[aria-pressed="true"] {
+  /* idle 时复位 */
+}
+
+.dgv2-foot {
+  margin: var(--s-2) 0 0;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  line-height: 1.5;
+}
+.dgv2-foot.is-quiet { color: var(--gray-2); }
+
+@media (max-width: 560px) {
+  .dgv2-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dgv2-wu-line { border-radius: var(--radius); }
+}

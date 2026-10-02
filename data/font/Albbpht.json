@@ -1,0 +1,56 @@
+{
+ "norm": "Albbpht",
+ "name": "阿里巴巴普惠体",
+ "en": "Alibaba PuHuiTi",
+ "aliases": [
+  "普惠体",
+  "PuHuiTi"
+ ],
+ "licenseName": "阿里巴巴普惠体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Alibaba Design",
+ "foundrySlug": "alibaba-design",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Albbpht",
+ "weights": [
+  "Thin",
+  "Light",
+  "Regular",
+  "Medium",
+  "SemiBold",
+  "Bold",
+  "ExtraBold",
+  "Heavy",
+  "Black"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "免费商用，不允许单独再分发字体文件。",
+ "family": "wenfeng-albbpht"
+}

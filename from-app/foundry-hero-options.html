@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg");document.documentElement.setAttribute("data-view","design")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>厂商目录顶栏 · 对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-close-options.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/foundry-hero-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-foundry-hero-opts page-home-close">
+  <header data-topbar data-active="foundries"></header>
+
+  <div class="hc-switch">
+    <div class="container hc-switch-inner">
+      <p class="hc-switch-lead">厂商<strong>目录页</strong>顶栏偏挤：标题旁长说明 + 粘顶一条塞满搜索与类型芯片。四套只改顶区。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#a">甲 两行</a>
+        <a href="#b">乙 收束</a>
+        <a href="#c">丙 搜先</a>
+        <a href="#d">丁 现页</a>
+      </nav>
+      <a class="hc-back" href="/foundry">回正式页</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- 甲 -->
+    <article class="hc-block is-on" id="a">
+      <header class="hc-meta">
+        <b>甲 · 两行</b>
+        <span>标题单独一行，说明放到下面。粘顶拆成两行：上行搜索 + 入驻；下行只放类型芯片，不再和搜索抢宽度。</span>
+      </header>
+      <div class="fh-stage">
+        <section class="fh-a-hero" aria-label="厂商目录">
+          <div class="container">
+            <h1>厂商</h1>
+            <p class="lead"><b data-listed-n>88</b> 家在目录。字库、品牌方、作者与开源项目分列；版权归品牌方。</p>
+          </div>
+        </section>
+        <div class="fh-a-bar">
+          <div class="container">
+            <div class="fh-a-row1">
+              <label class="foundry-search">
+                <svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-search"/></svg>
+                <span class="sr-only">搜索厂商</span>
+                <input type="search" placeholder="搜索名称、英文或简称" disabled />
+              </label>
+              <a class="fh-jump" href="#peek">入驻与认领 ↓</a>
+            </div>
+            <div class="fh-a-row2 foundry-kinds" data-kind-btns data-extra="1"></div>
+          </div>
+        </div>
+        <div class="fh-peek" id="peek" aria-hidden="true">
+          <div class="container">
+            <div class="section-head"><h2>字库 <span class="n" data-n-foundry>13</span></h2></div>
+            <div class="foundry-index" data-peek-cards></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 乙 -->
+    <article class="hc-block" id="b">
+      <header class="hc-meta">
+        <b>乙 · 收束</b>
+        <span>芯片减到六类：全部、字库、品牌方、作者（含开源作者）、开源项目、素材。受托与未核对收进「其他」。标题与说明分行，粘顶只留搜索 + 六钮 + 入驻。</span>
+      </header>
+      <div class="fh-stage">
+        <section class="fh-b-hero" aria-label="厂商目录">
+          <div class="container">
+            <div class="fh-b-head">
+              <h1>厂商</h1>
+              <p class="lead"><b data-listed-n>88</b> 家在目录</p>
+            </div>
+            <p class="fh-b-note">字库、品牌方、作者与开源项目分列；版权归品牌方。</p>
+          </div>
+        </section>
+        <div class="fh-b-bar">
+          <div class="container fh-b-inner">
+            <label class="foundry-search">
+              <svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-search"/></svg>
+              <span class="sr-only">搜索厂商</span>
+              <input type="search" placeholder="搜索名称、英文或简称" disabled />
+            </label>
+            <div class="foundry-kinds fh-b-kinds" data-kind-btns-compact></div>
+            <a class="fh-jump" href="#peek-b">入驻与认领</a>
+          </div>
+        </div>
+        <div class="fh-peek" id="peek-b" aria-hidden="true">
+          <div class="container">
+            <div class="section-head"><h2>字库 <span class="n" data-n-foundry>13</span></h2></div>
+            <div class="foundry-index" data-peek-cards></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 丙 -->
+    <article class="hc-block" id="c">
+      <header class="hc-meta">
+        <b>丙 · 搜先</b>
+        <span>首屏只做搜：大搜索框居中。类型改成标题下的跳转链，点了滚到对应分段，不占粘顶。粘顶出现后只留搜索。</span>
+      </header>
+      <div class="fh-stage">
+        <section class="fh-c-hero" aria-label="厂商目录">
+          <div class="container">
+            <h1>厂商</h1>
+            <p class="lead"><b data-listed-n>88</b> 家在目录。版权归品牌方。</p>
+            <label class="fh-c-search">
+              <svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-search"/></svg>
+              <span class="sr-only">搜索厂商</span>
+              <input type="search" placeholder="搜索名称、英文或简称" disabled />
+            </label>
+            <nav class="fh-c-jump" aria-label="按类型跳转" data-jump-links></nav>
+          </div>
+        </section>
+        <div class="fh-c-stick">
+          <div class="container fh-c-stick-inner">
+            <label class="foundry-search">
+              <svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-search"/></svg>
+              <span class="sr-only">搜索厂商</span>
+              <input type="search" placeholder="搜索名称、英文或简称" disabled />
+            </label>
+            <span class="fh-c-stick-hint">滚动后只留搜索</span>
+            <a class="fh-jump" href="#peek-c">入驻与认领</a>
+          </div>
+        </div>
+        <div class="fh-peek" id="peek-c" aria-hidden="true">
+          <div class="container">
+            <div class="section-head"><h2>字库 <span class="n" data-n-foundry>13</span></h2></div>
+            <div class="foundry-index" data-peek-cards></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 丁 -->
+    <article class="hc-block" id="d">
+      <header class="hc-meta">
+        <b>丁 · 现页</b>
+        <span>正式站当前：标题与说明同行；粘顶一条里塞搜索、全部类型芯片、受托/未核对、入驻。对照用。</span>
+      </header>
+      <div class="fh-stage">
+        <section class="fh-stick-hero" aria-label="厂商目录">
+          <div class="container">
+            <h1>厂商</h1>
+            <p class="lead"><b data-listed-n>88</b> 家在目录。字库、品牌方、作者、开源作者与开源项目分列；版权归品牌方。</p>
+          </div>
+        </section>
+        <div class="fh-stick-bar">
+          <div class="container fh-stick-inner">
+            <label class="foundry-search">
+              <svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-search"/></svg>
+              <span class="sr-only">搜索厂商</span>
+              <input type="search" placeholder="搜索名称、英文或简称" disabled />
+            </label>
+            <div class="foundry-kinds" data-kind-btns data-extra="1"></div>
+            <a class="jump" href="#peek-d">入驻与认领</a>
+          </div>
+        </div>
+        <div class="fh-peek" id="peek-d" aria-hidden="true">
+          <div class="container">
+            <div class="section-head"><h2>字库 <span class="n" data-n-foundry>13</span></h2></div>
+            <div class="foundry-index" data-peek-cards></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/foundry-hero-options.js?v=20260925r"></script>
+</body>
+</html>

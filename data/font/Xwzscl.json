@@ -1,0 +1,50 @@
+{
+ "norm": "Xwzscl",
+ "name": "霞鹜致宋 CL",
+ "en": "LXGW ZhiSong CL",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "1483c7de02dcf8b9c54b3b1aacabf7d6bdf32d412ca6724c0292ea68e862d8cf",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "ipa",
+   "rootWork": "IPAexMincho",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwzscl",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwzscl"
+}

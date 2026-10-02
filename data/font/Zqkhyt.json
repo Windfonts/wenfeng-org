@@ -1,0 +1,52 @@
+{
+ "norm": "Zqkhyt",
+ "name": "郑庆科黄油体",
+ "en": "Zhengqingke Butter Regular",
+ "aliases": [],
+ "licenseName": "郑庆科黄油体 Regular授权协议",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "f1bce31b817dee01c1e4ef8bc45d8ecb95f01f4abbf0a985007cb3cd0fd8123d",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "ZCOOL QingKe (Zheng Qingke)",
+ "foundrySlug": "qingke",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zqkhyt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 fonts.google.com",
+   "format": "git",
+   "href": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zqkhyt"
+}

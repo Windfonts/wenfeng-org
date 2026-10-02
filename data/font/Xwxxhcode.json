@@ -1,0 +1,60 @@
+{
+ "norm": "Xwxxhcode",
+ "name": "霞鹜新晰黑 Code",
+ "en": "Neo XiHei Code",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/lxgw/LxgwNeoXiHei",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "0333a85fe077b6849f8e417acc44e8bd879442ceb681e271acf93e2d57fd4e2e",
+  "verifiedAt": "2026-09-26",
+  "rfn": "霞鹜、霞鶩、落霞孤鹜、落霞孤鶩、LXGW"
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwxxhcode",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/lxgw/LxgwNeoXiHei",
+  "upstream": "https://github.com/lxgw/LxgwNeoXiHei",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Xwxxhcode.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/lxgw/LxgwNeoXiHei",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwxxhcode"
+}

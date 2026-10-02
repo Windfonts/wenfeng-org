@@ -1,0 +1,60 @@
+{
+ "norm": "Hcszt",
+ "name": "寒蝉手拙体",
+ "en": "ChillZhuo",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Warren2060/ChillShouZhuo",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "bd8b87d8a64ad2d49ed9a1d91479773300a8776c3bd42e22107716107ec43034",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "寒蝉字型",
+ "foundrySlug": "chilltype",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Hcszt",
+ "weights": [
+  "Normal"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Warren2060/ChillShouZhuo",
+  "upstream": "https://github.com/Warren2060/ChillShouZhuo",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Hcszt.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Warren2060/ChillShouZhuo",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hcszt"
+}

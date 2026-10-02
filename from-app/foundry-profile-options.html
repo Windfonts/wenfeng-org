@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg");document.documentElement.setAttribute("data-view","design")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>厂商详情顶栏 · 对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-close-options.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/foundry-profile-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-foundry-profile-opts page-home-close">
+  <header data-topbar data-active="foundries"></header>
+
+  <div class="hc-switch">
+    <div class="container hc-switch-inner">
+      <p class="hc-switch-lead">单家厂商页顶栏偏挤。四套只动顶区，列表用灰显示意。默认落霞孤鹜。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#a">甲 疏栏</a>
+        <a href="#b">乙 通栏</a>
+        <a href="#c">丙 简介</a>
+        <a href="#d">丁 现页</a>
+      </nav>
+      <label class="fpo-demo">
+        <span class="sr-only">示例厂商</span>
+        <select id="fpoDemo" aria-label="示例厂商">
+          <option value="lxgw">落霞孤鹜</option>
+          <option value="aqua">Aqua</option>
+          <option value="adobe">Adobe</option>
+          <option value="atelier-anchor">得意黑作者</option>
+        </select>
+      </label>
+      <a class="hc-back" href="foundry.html?slug=lxgw">回正式页</a>
+    </div>
+  </div>
+
+  <main>
+    <article class="hc-block is-on" id="a">
+      <header class="hc-meta">
+        <b>甲 · 疏栏</b>
+        <span>仍是左右栏，但加大留白；侧栏去掉与副标重复的「类型 / 归属」；同系派生移出灰卡，单独成一条。</span>
+      </header>
+      <div class="fpo-stage" data-variant="a"></div>
+    </article>
+
+    <article class="hc-block" id="b">
+      <header class="hc-meta">
+        <b>乙 · 通栏</b>
+        <span>取消灰卡与右栏。身份占满一行，事实收成一行小标签；认领跟在后面。同系派生仍单独成带。</span>
+      </header>
+      <div class="fpo-stage" data-variant="b"></div>
+    </article>
+
+    <article class="hc-block" id="c">
+      <header class="hc-meta">
+        <b>丙 · 简介</b>
+        <span>名字与简介占主视线。事实横排在简介下，不抢宽度。认领收成文末一句。有简介的厂商（如 Adobe）差别更明显。</span>
+      </header>
+      <div class="fpo-stage" data-variant="c"></div>
+    </article>
+
+    <article class="hc-block" id="d">
+      <header class="hc-meta">
+        <b>丁 · 现页</b>
+        <span>正式站当前结构，作对照。灰卡里叠了身份、赞助、同系派生、侧栏事实和认领。</span>
+      </header>
+      <div class="fpo-stage" data-variant="d"></div>
+    </article>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-sponsor.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/foundry-profile-options.js?v=20260925r"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+ "generated": "2026-10-01",
+ "coverage": {
+  "shop_fonts": 556,
+  "source_mirrors": 132,
+  "license_dirs": 520,
+  "sample_fonts": 556
+ },
+ "counts": {
+  "text_full": 345,
+  "text_pointer": 92,
+  "text_missing": 119,
+  "sha256": 345,
+  "rfn": 42,
+  "offer_source": 113,
+  "offer_jump": 61,
+  "offer_pending": 263,
+  "offer_missing": 119,
+  "origin": 206,
+  "mirror_norm_unmatched": [
+   "Clcalli",
+   "Clmb",
+   "Ddxty",
+   "EqHiSans",
+   "Hccqcf",
+   "Hccqqh",
+   "NaHei",
+   "RtpxArcade",
+   "RtpxCute",
+   "RtpxPetty",
+   "RtpxThick",
+   "Xcdz2",
+   "Xczzsch",
+   "YShiMincho",
+   "YShiNewHei",
+   "YShiPenShuti",
+   "YShiWritten",
+   "YshiYuanMinh",
+   "YuuGothic"
+  ]
+ },
+ "license_texts": 345
+}

@@ -1,0 +1,2819 @@
+{
+  "$schema": "厂商字典 · 全站厂商名称的唯一真相来源。name 一律中文；en 英文/原文名；short 简称；aliases 为目录原始写法；fontNames 为未署名可归属的字体；kind=author|project|foundry|platform|brand；openSource 标机构；claimed 为已认领；provisional=true 表示中文名拟定；parentId 可选，指向母公司/集团（品牌方树根须为父公司）。",
+  "foundries": [
+    {
+      "id": "alibaba",
+      "name": "阿里巴巴",
+      "en": "Alibaba",
+      "short": "阿里",
+      "website": "https://www.alibaba.com",
+      "aliases": [
+        "阿里巴巴集团",
+        "Alibaba Group",
+        "Alibaba"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "description": "阿里巴巴集团；其下设计、钉钉、淘宝、阿里妈妈等产品线的免费商用字体归入本树。"
+    },
+    {
+      "id": "huawei",
+      "name": "华为",
+      "en": "Huawei",
+      "short": "华为",
+      "website": "https://www.huawei.com",
+      "aliases": [
+        "华为",
+        "Huawei",
+        "HUAWEI",
+        "Huawei Device",
+        "华为终端",
+        "HarmonyOS"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "description": "华为终端；HarmonyOS Sans 等系统字体归入本页。"
+    },
+    {
+      "id": "alibaba-design",
+      "name": "阿里巴巴设计",
+      "en": "Alibaba Design",
+      "short": "阿里设计",
+      "website": "https://design.alibaba.com",
+      "aliases": [
+        "Alibaba Design",
+        "Alibaba Design;Hanyi Fonts"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "parentId": "alibaba"
+    },
+    {
+      "id": "alimama",
+      "name": "阿里妈妈",
+      "en": "Alimama",
+      "short": "阿里妈妈",
+      "website": "https://www.alimama.com",
+      "aliases": [
+        "Alimama",
+        "阿里妈妈",
+        "阿里妈妈字体"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "parentId": "alibaba",
+      "description": "阿里巴巴集团营销科技平台；东方大楷、刀隶体、数黑体等免费商用字归入本支。"
+    },
+    {
+      "id": "taobao",
+      "name": "淘宝",
+      "en": "Taobao",
+      "short": "淘宝",
+      "website": "https://www.taobao.com",
+      "aliases": [
+        "Taobao",
+        "淘宝网",
+        "淘宝买菜"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "parentId": "alibaba",
+      "description": "阿里巴巴集团电商业务线；淘宝买菜体等免费商用字归入本支。"
+    },
+    {
+      "id": "hanyi",
+      "name": "汉仪字库",
+      "en": "Hanyi Fonts",
+      "short": "汉仪",
+      "website": "https://www.hanyi.com.cn",
+      "aliases": [
+        "Hanyi Fonts",
+        "汉仪字库"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false,
+      "description": "北京汉仪科印信息技术有限公司成立于1993年，是中国大陆最早专业从事字形设计、字库产品开发、汉字信息技术研究、汉字应用解决方案的，拥有核心自主知识产权的文化创意与高新技术企业。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6115159482-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "adobe",
+      "name": "Adobe",
+      "en": "Adobe Inc.",
+      "short": "Adobe",
+      "website": "https://fonts.adobe.com",
+      "aliases": [
+        "Adobe Systems Incorporated",
+        "奥多比",
+        "Source Han",
+        "思源黑体",
+        "思源宋体"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "google-fonts",
+      "name": "谷歌字体",
+      "en": "Google Fonts",
+      "short": "Google",
+      "website": "https://fonts.google.com",
+      "aliases": [
+        "Google Fonts / Adobe Fonts",
+        "Google",
+        "Noto CJK",
+        "Noto Sans CJK",
+        "Noto Serif CJK"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "qiantu",
+      "name": "千图网",
+      "en": "Qiantu (58pic)",
+      "short": "千图",
+      "website": "https://www.58pic.com",
+      "aliases": [
+        "Shanghai PinTu Network Technology Co.,Ltd.",
+        "上海品图网络信息科技有限公司",
+        "千图字体",
+        "千图网",
+        "千图网 (58pic)"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false,
+      "description": "是一个专注优质设计素材的平台",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6424388294-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "ascender",
+      "name": "阿森德",
+      "en": "Ascender Corporation",
+      "short": "Ascender",
+      "website": "",
+      "aliases": [
+        "Ascender Corporation"
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "zhongqi",
+      "name": "钟齐字库",
+      "en": "ZhongQi Fonts",
+      "short": "钟齐",
+      "website": "",
+      "aliases": [
+        "钟齐字库",
+        "ZhongQi Fonts",
+        "ZhongQi"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false,
+      "description": "钟齐字库拥有最专业的字库制作水平，包括钢笔字库制作，毛笔字库制作，各种手写字体制作，设计字体制作等，我们以最诚挚的态度为你提供最好的服务。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6281362634-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "ichiten",
+      "name": "一点字坊",
+      "en": "Ichiten Fonts Project",
+      "short": "一点",
+      "website": "https://github.com/ichitenfont",
+      "aliases": [
+        "Ichiten Fonts Project",
+        "Ichiten Fonts Project (I.Font Project)",
+        "I.字坊 (一点字坊)"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "zcool",
+      "name": "站酷",
+      "en": "ZCOOL",
+      "short": "站酷",
+      "website": "https://www.zcool.com.cn",
+      "aliases": [
+        "站酷字库",
+        "站酷（ZCOOL）"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false,
+      "description": "综合性设计师社区，2006年8月创立于北京。站酷网聚集了中国部分设计师、艺术院校师生、潮流艺术家等年轻创意设计人群。现有注册设计师/艺术家200万，日上传原创作品6000余张，3年累计上传原创作品超过350万张。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6153532014-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "yunfeng",
+      "name": "云峰字库",
+      "en": "Yunfeng Fonts",
+      "short": "云峰",
+      "website": "https://www.zcool.com.cn/u/22214279",
+      "aliases": [
+        "云峰字库"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "dinglie",
+      "name": "Miao Keming",
+      "en": "Dinglie Consulting",
+      "short": "鼎猎",
+      "website": "",
+      "aliases": [
+        "鼎猎咨询",
+        "Dinglie Consulting",
+        "缪科明"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "chilltype",
+      "name": "寒蝉字型",
+      "en": "ChillType",
+      "short": "寒蝉",
+      "website": "https://www.zcool.com.cn/u/12923697",
+      "aliases": [
+        "ChillType",
+        "ChillType&Adobe"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "tips": {
+        "alipay": true,
+        "wechat": true
+      },
+      "fontNames": [
+        "寒蝉团圆体",
+        "寒蝉宽黑体",
+        "寒蝉手拙体",
+        "寒蝉端黑体",
+        "寒蝉龙藏楷书",
+        "寒蝉春秋·春风",
+        "寒蝉春秋·秋鸿"
+      ]
+    },
+    {
+      "id": "raptortype",
+      "name": "瀞字型",
+      "en": "RAPTORTYPE",
+      "short": "瀞",
+      "website": "",
+      "aliases": [
+        "RAPTORTYPE"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "fontNames": [
+        "瀞之库格尔黑体",
+        "瀞明朝"
+      ]
+    },
+    {
+      "id": "maoken",
+      "name": "猫啃网",
+      "en": "Maoken",
+      "short": "猫啃",
+      "website": "https://www.maoken.com",
+      "aliases": [
+        "猫啃网",
+        "Maoken",
+        "maoken.com",
+        "LongZhuTi Project",
+        "猫啃网 (Maoken)",
+        "毛肯王星元体",
+        "猫啃网星圆体",
+        "猫啃故障明朝体",
+        "猫啃故障宋体",
+        "猫啃故障黑体",
+        "猫啃风雅宋",
+        "MaoKenWangXingYuan"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false,
+      "fontNames": [
+        "猫啃什锦黑",
+        "猫啃网故障宋",
+        "猫啃网故障黑",
+        "猫啃竹圆体",
+        "猫啃网文明宋",
+        "猫啃网糖圆体",
+        "猫啃网烟波宋",
+        "猫啃网风雅宋"
+      ],
+      "description": "字体资源平台，站内字体以开源字体的派生改良为主：筛选并整理社区改进款，供免费下载使用。"
+    },
+    {
+      "id": "myil",
+      "name": "綿飴",
+      "en": "",
+      "short": "女书",
+      "website": "",
+      "aliases": [
+        "MYIL",
+        "女书字库"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "tips": {
+        "alipay": true,
+        "wechat": true
+      }
+    },
+    {
+      "id": "lxgw",
+      "name": "落霞孤鹜",
+      "en": "LXGW",
+      "short": "霞鹜",
+      "website": "https://github.com/lxgw",
+      "aliases": [
+        "LXGW",
+        "落霞孤鹜",
+        "霞鹜"
+      ],
+      "fontNames": [
+        "小赖字体",
+        "小赖字体 SC",
+        "小赖字体等宽 SC",
+        "悠哉字体",
+        "霞鹜文楷",
+        "霞鹜文楷 GB",
+        "霞鹜文楷 TC",
+        "霞鹜文楷 Lite",
+        "霞鹜文楷等宽 Lite",
+        "霞鹜文楷 Screen",
+        "霞鹜文楷 GB Screen",
+        "霞鹜文楷等宽 Screen",
+        "霞鹜文楷等宽 GB Screen",
+        "霞鹜文楷 GB Lite",
+        "霞鹜文楷等宽 GB Lite",
+        "霞鹜文楷 GB Fusion",
+        "霞鹜文楷等宽 GB Fusion",
+        "霞鹜文楷 KR",
+        "霞鹜文楷等宽 KR",
+        "霞鹜文楷 Bright",
+        "霞鹜文楷 Bright GB",
+        "霞鹜文楷 Bright TC",
+        "霞鹜文楷 Bright Code",
+        "霞鹜文楷 Bright Code GB",
+        "霞鹜文楷 Bright Code TC",
+        "霞鹜新晰黑",
+        "霞鹜新晰黑 Plus",
+        "霞鹜新晰黑 Screen",
+        "霞鹜新晰黑 Screen Full",
+        "霞鹜新晰黑 Code",
+        "霞鹜新致宋",
+        "霞鹜新致宋 Plus",
+        "霞鹜新致宋 Screen",
+        "霞鹜新致宋 Screen Full",
+        "霞鹜晰黑 CL",
+        "霞鹜晰黑 MN",
+        "霞鹜漫黑",
+        "霞鹜致宋 CL",
+        "霞鹜致宋 MN",
+        "霞鹜臻楷",
+        "霞鹜臻楷 Slab",
+        "霞鹜铭心宋",
+        "霞鹜铭心宋 CL",
+        "霞鹜铭心宋 MN",
+        "霞鹜尚智黑",
+        "霞鹜尚智黑 CL",
+        "霞鹜尚智黑 MN"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "tips": {
+        "alipay": true,
+        "wechat": true
+      }
+    },
+    {
+      "id": "fontzone108",
+      "name": "字体传奇",
+      "en": "Font Zone 108",
+      "short": "字体传奇",
+      "website": "",
+      "aliases": [
+        "Font Zone 108"
+      ],
+      "provisional": true,
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "baotu",
+      "name": "包图网",
+      "en": "Baotu (ibaotu)",
+      "short": "包图",
+      "website": "https://ibaotu.com",
+      "aliases": [
+        "上海包图网络科技有限公司",
+        "包图网 (ibaotu)"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false,
+      "description": "中国人气优质创意内容供给平台，联合20w+顶尖设计师、创意工作室以及国内外图库平台，汇集1500w+优质原创内容，为各行各业输出正版的图片、视频、音频、源文件素材。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6264400228-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "tsanger",
+      "name": "仓耳字库",
+      "en": "Tsanger Fonts",
+      "short": "仓耳",
+      "website": "https://tsanger.cn",
+      "aliases": [
+        "北京仓耳文字技术有限公司",
+        "Beijing Tsanger Character Technology Co., Ltd.",
+        "仓耳字库 (Tsanger)"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "chuangkit",
+      "name": "创客贴",
+      "en": "Chuangkit",
+      "short": "创客贴",
+      "website": "https://www.chuangkit.com",
+      "aliases": [
+        "www.chuangkit.com"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "newvalue",
+      "name": "辰宇字型",
+      "en": "New Value",
+      "short": "辰宇",
+      "website": "",
+      "aliases": [
+        "New Value",
+        "新价值",
+        "辰宇字型",
+        "辰宇落雁体"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "dingtalk",
+      "name": "钉钉",
+      "en": "DingTalk",
+      "short": "钉钉",
+      "website": "https://www.dingtalk.com",
+      "aliases": [
+        "钉钉（中国）信息技术有限公司"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "parentId": "alibaba"
+    },
+    {
+      "id": "atelier-anchor",
+      "name": "锚点工作室",
+      "en": "atelierAnchor",
+      "short": "锚点",
+      "website": "https://atelier-anchor.com",
+      "aliases": [
+        "atelierAnchor"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "tips": {
+        "alipay": true
+      }
+    },
+    {
+      "id": "founder",
+      "name": "方正字库",
+      "en": "FounderType",
+      "short": "方正",
+      "website": "https://www.foundertype.com",
+      "aliases": [
+        "北京北大方正电子有限公司"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false,
+      "description": "方正字库包括民族文字体70多款，有4款包含7万多汉字的超大字库，主要应用在出版、印刷、包装、设计、广电、办公等领域。截至2017年共有字体400余款。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6112189865-1.html",
+        "fetched": "2026-09-21"
+      },
+      "fontNames": [
+        "方正书宋简体",
+        "方正仿宋简体",
+        "方正楷体简体",
+        "方正黑体简体"
+      ]
+    },
+    {
+      "id": "douyu",
+      "name": "斗鱼",
+      "en": "DOUYU",
+      "short": "斗鱼",
+      "website": "https://www.douyu.com",
+      "aliases": [
+        "DOUYUFont"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "guangliang",
+      "name": "光良酒业",
+      "en": "Guangliang Liquor",
+      "short": "光良",
+      "website": "",
+      "aliases": [
+        "四川光良酒业有限公司"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "welai",
+      "name": "未来荧坊",
+      "en": "Project Welai",
+      "short": "未来荧坊",
+      "website": "https://github.com/welai",
+      "aliases": [
+        "Project Welai",
+        "Welai",
+        "project-welai",
+        "Glow Sans",
+        "未来荧黑"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "zitijia",
+      "name": "字体家",
+      "en": "Zitijia",
+      "short": "字体家",
+      "website": "https://www.zitijia.com",
+      "aliases": [
+        "字体家"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "nsd",
+      "name": "日本系统开发",
+      "en": "NIHON SYSTEM DEVELOPER CORPORATION",
+      "short": "NSD",
+      "website": "",
+      "aliases": [
+        "NIHON SYSTEM DEVELOPER CORPORATION"
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "huxiaobo",
+      "name": "胡晓波字体工作室",
+      "en": "Hu Xiaobo Type",
+      "short": "胡晓波",
+      "website": "https://www.zcool.com.cn/u/553484",
+      "aliases": [
+        "胡晓波字体工作室",
+        "胡晓波字库",
+        "胡晓波工作室",
+        "HUXIAOBO"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false,
+      "description": "胡晓波工作室销售个人制作的商业字库，字库为GBK，包含6763个汉字字符，用于企业，设计公司，电视台等各类使用字库的企业和个人，提供商业版权销售。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6302355946-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "sandoll",
+      "name": "山石字库",
+      "en": "Sandoll Inc.",
+      "short": "Sandoll",
+      "website": "https://www.sandoll.co.kr",
+      "aliases": [
+        "Sandoll Inc."
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "jingnan",
+      "name": "荆南字坊",
+      "en": "Jingnan Type",
+      "short": "荆南",
+      "website": "https://www.zcool.com.cn/u/18646020",
+      "aliases": [
+        "荆南字坊",
+        "荆南字坊 (Kingnam Typography)",
+        "Kingnam Typography Studios"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "tips": {
+        "wechat": true
+      }
+    },
+    {
+      "id": "sanji",
+      "name": "三极字库",
+      "en": "Sanji Fonts",
+      "short": "三极",
+      "website": "https://www.3jfont.com",
+      "aliases": [
+        "三极字库"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false,
+      "description": "广州三极信息科技有限责任公司（简称“三极字库”），字造极致之美，追求中华文字笔画、笔顺、结构的极致美学。公司主要从事字形设计、字库产品开发、企业专属字体定制、信息系统大字库解决方案等业务。通过展现文字的无限潜能，助力品牌创新价值。\n凭借领先专业的字库研发技术，三极字库与知名上市营销传播公司——因赛集团达成战略投资合作，成为集团“品牌营销智慧服务生态体系”的重要一环，该合作有利于双方优势资源互补，共同发展。未来，三极字库将致力于成为国际领先的字体应用解决方案供应商，引领中国数字文化产业发展。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6323209188-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "kingsoft-cloud",
+      "name": "金山云",
+      "en": "Kingsoft Cloud",
+      "short": "金山云",
+      "website": "https://www.ksyun.com",
+      "aliases": [
+        "Kingsoft Cloud",
+        "金山云 (Kingsoft Cloud)",
+        "北京金山云网络技术有限公司"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "fontree",
+      "name": "字体树",
+      "en": "fontree",
+      "short": "字体树",
+      "website": "",
+      "aliases": [
+        "fontree"
+      ],
+      "provisional": true,
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "kuaikan",
+      "name": "快看漫画",
+      "en": "Kuaikan Comics (KKDC)",
+      "short": "快看",
+      "website": "https://www.kuaikanmanhua.com",
+      "aliases": [
+        "快看KKDC",
+        "Kuaikan KKDC",
+        "快看KKDC（快看设计中心）",
+        "快看武汉研发部UED/品牌组"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "xianglifang",
+      "name": "乡立方",
+      "en": "Xianglifang",
+      "short": "乡立方",
+      "website": "",
+      "aliases": [
+        "乡立方团队"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "flexifont",
+      "name": "FlexiFont",
+      "en": "FlexiFont Co.,Ltd.",
+      "short": "沐瑶",
+      "website": "",
+      "aliases": [
+        "FlexiFont Co.,Ltd.",
+        "FlexiFont Co., Ltd.",
+        "沐瑶字库"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "do-font",
+      "name": "频凡字库",
+      "en": "Do-Font & Cpbyes",
+      "short": "频凡",
+      "website": "",
+      "aliases": [
+        "Do-Font & Cpbyes"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "pangmen",
+      "name": "庞门正道",
+      "en": "Pangmen Zhengdao",
+      "short": "庞门正道",
+      "website": "https://www.zcool.com.cn/u/ZNjE5OTcxNzY=",
+      "aliases": [
+        "庞门正道公众号",
+        "庞门正道设计公众号与自由空间创意工作室",
+        "庞门正道",
+        "旁门正道"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "pinru",
+      "name": "品如设计",
+      "en": "Pinru Design",
+      "short": "品如",
+      "website": "https://www.zcool.com.cn/u/721160",
+      "aliases": [
+        "品如设计",
+        "Pinru"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "writes",
+      "name": "清松手写",
+      "en": "writes.com.tw",
+      "short": "清松",
+      "website": "https://www.writes.com.tw",
+      "aliases": [
+        "www.writes.com.tw"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "ruixian",
+      "name": "上海睿翾创意设计",
+      "en": "Shanghai Rui Xian Creative Design",
+      "short": "睿翾",
+      "website": "",
+      "aliases": [
+        "Shang hai Rui Xian Creative Design Co., Ltd.",
+        "Reeji (RuiZi Trendy Font)",
+        "Reeji",
+        "锐字工房"
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "sucaijishi",
+      "name": "素材集市",
+      "en": "sucaijishi.com",
+      "short": "素材集市",
+      "website": "https://www.sucaijishi.com",
+      "aliases": [
+        "sucaijishi.com"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "cjkfonts",
+      "name": "中日韩字体计划",
+      "en": "cjkFonts",
+      "short": "cjkFonts",
+      "website": "",
+      "aliases": [
+        "cjkFonts"
+      ],
+      "provisional": true,
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "scf",
+      "name": "SCF 字库",
+      "en": "SCF",
+      "short": "SCF",
+      "website": "",
+      "aliases": [
+        "SCF"
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "shutifang",
+      "name": "书体坊",
+      "en": "Shutifang",
+      "short": "书体坊",
+      "website": "",
+      "aliases": [
+        "书体坊"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false,
+      "description": "书体坊，中国书法字体软件开发工作室，是由禚效锋个人而非团体组织于2007年创办的、以开发古今书法名家电脑字库的个人工作室。本工作室在书法类论坛开设有专栏，即时发表相应的信息，方便地与各地书法家、书法朋友及时交流，精诚合作。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6309952489-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "shetu",
+      "name": "摄图网",
+      "en": "Shetu (699pic)",
+      "short": "摄图",
+      "website": "https://699pic.com",
+      "aliases": [
+        "摄图网",
+        "摄图网 (699pic)"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "moe-tw",
+      "name": "台湾省教育部",
+      "en": "Ministry of Education, Taiwan Province",
+      "short": "台教育部",
+      "website": "https://language.moe.gov.tw",
+      "aliases": [
+        "Taiwan MOE",
+        "台湾教育部"
+      ],
+      "fontNames": [
+        "MOESongUN"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "dynalab",
+      "name": "华康字型",
+      "en": "DynaLab Inc.",
+      "short": "华康",
+      "website": "https://www.dynacw.com.tw",
+      "aliases": [
+        "DynaLab Inc."
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false,
+      "description": "1987年，「华康字型」率先进入数码字体市场，始终不断致力于字体的开发。早期以提供文字处理机的嵌入式字体及计算机排版系统所使用的汉字字体为主，其后品牌知名度日益提升，富有创造力的美丽字体「华康字型」被广泛地应用于各式文件、招牌、印刷产品上。在经过多年不断地努力下，华康成为全球少数提供多元化字体解决方案的公司之一。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6122416279-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "gnu",
+      "name": "GNU 计划",
+      "en": "GNU Project",
+      "short": "GNU",
+      "website": "https://www.gnu.org",
+      "aliases": [
+        "GNU Project"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "wenquanyi",
+      "name": "文泉驿",
+      "en": "WenQuanYi",
+      "short": "文泉驿",
+      "website": "http://wenq.org",
+      "aliases": [
+        "WenQuanYi",
+        "WenQuanYi (文泉驿)",
+        "文泉驿 (WenQuanYi)",
+        "WenQuanYi Board of Trustees",
+        "文泉驿点阵宋体"
+      ],
+      "fontNames": [
+        "文泉驿点阵宋体"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "description": "文泉驿是一家致力于在计算机世界中推广汉字，丰富电子汉字资源的非营利性组织。希望通过自己无私的劳动，使得无论您在世界上任何一个角落，都可以免费地获得我们的电子汉字资源，能够流畅地通过汉字进行交流。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6118416571-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "huoshi",
+      "name": "杭州火石",
+      "en": "Hangzhou Huoshi",
+      "short": "火石",
+      "website": "",
+      "aliases": [
+        "hanghzou huoshi"
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "poppy-works",
+      "name": "波比工作室",
+      "en": "Poppy Works",
+      "short": "Poppy",
+      "website": "",
+      "aliases": [
+        "Poppy Works"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "ymnk",
+      "name": "ymnk 设计",
+      "en": "ymnk design works",
+      "short": "ymnk",
+      "website": "",
+      "aliases": [
+        "ymnk design works"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "uisdc",
+      "name": "优设",
+      "en": "UISDC (YouShe)",
+      "short": "优设",
+      "website": "https://www.uisdc.com",
+      "aliases": [
+        "YouShe Network Technology Co., Ltd",
+        "优设 (UISDC)"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false,
+      "description": "是国内极具人气的设计师学习平台，为设计师提供高水准的行业设计讲座和领先的设计资讯分享。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6327315249-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "pingfang",
+      "name": "平方造字团",
+      "en": "Pingfang Type Team",
+      "short": "平方",
+      "website": "",
+      "aliases": [
+        "平方造字团"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "zihun",
+      "name": "字魂",
+      "en": "ZiHun",
+      "short": "字魂",
+      "website": "https://izihun.com",
+      "aliases": [
+        "Shanghai ZiHun Network Technology Co.,Ltd.",
+        "字魂网",
+        "ZiHun"
+      ],
+      "kind": "platform",
+      "openSource": false,
+      "claimed": false,
+      "fontNames": [
+        "字魂扁桃体"
+      ],
+      "description": "上海字魂网络科技有限公司成立于2018年6月，是专业从事字形设计、字库产品开发、汉字信息技术研究、汉字应用解决方案的，拥有核心自主知识产权的文化创意与高新技术企业。\n\n字魂秉持“用设计让世界变得美好一点点”的愿景，坚持做设计师的创意字体库，截至目前，字魂已拥有376套版权认证的精美字体，已累计吸引超1000万用户，服务超3万家企业，享誉业内。通过洞察人文、品质、潮流文化的趋势变化，打造层出不穷的市场爆款如《龙吟手书》《镇魂手书》《经典雅黑》《布丁体》《正酷超级黑》《飞驰标题体》等。其中「字魂扁桃体」为基于得意黑的开源二创（OFL），与多数字魂付费字库不同。",
+      "descSource": {
+        "site": "fonts.net.cn",
+        "url": "https://www.fonts.net.cn/author-6165136829-1.html",
+        "fetched": "2026-09-21"
+      }
+    },
+    {
+      "id": "zhuojian",
+      "name": "卓健",
+      "en": "zhuojianchina",
+      "short": "卓健",
+      "website": "",
+      "aliases": [
+        "zhuojianchina",
+        "Zhuojian",
+        "拙见",
+        "卓见"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "zuozi",
+      "name": "上海佐兹品牌设计",
+      "en": "Zuozi Brand Design",
+      "short": "佐兹",
+      "website": "",
+      "aliases": [
+        "上海佐兹品牌设计工作室"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "qingke",
+      "name": "庆科字体",
+      "en": "Qingke Type",
+      "short": "庆科",
+      "website": "",
+      "aliases": [
+        "庆科字体",
+        "ZCOOL QingKe (Zheng Qingke)",
+        "郑庆科"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "zojitype",
+      "name": "字体圈",
+      "en": "Zojitype",
+      "short": "字体圈",
+      "website": "",
+      "aliases": [
+        "____Zojitype",
+        "Zoulewei（字体圈）",
+        "Zoulewei"
+      ],
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "zhiyong",
+      "name": "贾智勇",
+      "en": "Zhiyong Type",
+      "short": "智勇",
+      "website": "",
+      "aliases": [
+        "智勇造字",
+        "贾智勇 (Jia Zhiyong)",
+        "Jia Zhiyong"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "mplus",
+      "name": "M+ 字体计划",
+      "en": "M+ FONTS PROJECT",
+      "short": "M+",
+      "website": "https://mplusfonts.github.io",
+      "aliases": [],
+      "fontNames": [
+        "Mplus HZK 12 像素字体",
+        "M+ gothic 12r"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "wencang",
+      "name": "问藏书房",
+      "en": "Wencang Studio",
+      "short": "问藏",
+      "website": "",
+      "aliases": [],
+      "fontNames": [
+        "问藏书房"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "seto",
+      "name": "濑户字体",
+      "en": "Seto Font (Nonty)",
+      "short": "濑户",
+      "website": "",
+      "aliases": [],
+      "fontNames": [
+        "濑户字体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "gongfan",
+      "name": "龚帆",
+      "en": "Gong Fan",
+      "short": "龚帆",
+      "website": "",
+      "aliases": [],
+      "fontNames": [
+        "龚帆免费体3.0"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "oppo",
+      "name": "OPPO",
+      "en": "OPPO",
+      "short": "OPPO",
+      "website": "https://www.oppo.com",
+      "aliases": [
+        "OPPO",
+        "OPPO Sans"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "en": "IBM",
+      "short": "IBM",
+      "website": "https://www.ibm.com/plex",
+      "aliases": [
+        "IBM",
+        "IBM Corp.",
+        "IBM Plex"
+      ],
+      "kind": "brand",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "xiaomi",
+      "name": "小米",
+      "en": "Xiaomi",
+      "short": "小米",
+      "website": "https://www.mi.com",
+      "aliases": [
+        "Xiaomi",
+        "小米",
+        "小米 Xiaomi"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "bytedance",
+      "name": "字节跳动",
+      "en": "ByteDance",
+      "short": "字节",
+      "website": "https://www.bytedance.com",
+      "aliases": [
+        "ByteDance",
+        "抖音"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "fontworks",
+      "name": "Fontworks",
+      "en": "Fontworks Inc.",
+      "short": "Fontworks",
+      "website": "https://github.com/fontworks-fonts",
+      "aliases": [
+        "Fontworks",
+        "Fontworks Inc",
+        "The RocknRoll Project Authors"
+      ],
+      "kind": "foundry",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "justfont",
+      "name": "justfont",
+      "en": "justfont",
+      "short": "jf",
+      "website": "https://justfont.com",
+      "aliases": [
+        "justfont",
+        "jf open",
+        "jf open 粉圆",
+        "open 粉圆"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "aqua",
+      "name": "Aqua（阿杰）",
+      "en": "Aqua / max32002",
+      "short": "Aqua",
+      "website": "https://github.com/max32002",
+      "aliases": [
+        "Aqua",
+        "阿杰",
+        "Chun Yu Yao",
+        "max32002",
+        "狮尾",
+        "Swei",
+        "nanigashi",
+        "Nanigashitei",
+        "何某",
+        "何某手写体",
+        "NaniFont",
+        "何某手写"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "fontNames": [
+        "何某手写体"
+      ]
+    },
+    {
+      "id": "ipa",
+      "name": "日本 IPA",
+      "en": "IPA (Japan)",
+      "short": "IPA",
+      "website": "https://moji.or.jp/ipafont/",
+      "aliases": [
+        "IPA",
+        "Information-technology Promotion Agency",
+        "情報処理推進機構 (IPA)",
+        "IPA (Japan)"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "fontNames": [
+        "IPA Gothic",
+        "IPA 黑体",
+        "IPAGothic",
+        "IPAex Gothic",
+        "IPAexGothic",
+        "IPAexMincho",
+        "IPAmj Mincho",
+        "IPAmjMincho",
+        "IPAmj明朝"
+      ],
+      "description": "日本独立行政法人 情报处理推进机构（IPA）字体；现由文字情報技術促進協議会分发。IPAex / IPA / IPAmj 明朝·ゴシック，IPA Font License 1.0（OSI）。本波钉 IPAmj明朝 Ver.006.01（C3）与 IPAex Gothic / IPA Gothic / こころ明朝（C2）。"
+    },
+    {
+      "id": "potta",
+      "name": "The Potta Project Authors",
+      "en": "",
+      "short": "Potta",
+      "website": "",
+      "aliases": [
+        "Potta One",
+        "波塔"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "unifoundry",
+      "name": "Unifoundry",
+      "en": "Unifoundry",
+      "short": "Unifoundry",
+      "website": "https://unifoundry.com",
+      "aliases": [
+        "GNU Unifont"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "longcang",
+      "name": "Long Cang",
+      "en": "YouZiKu",
+      "short": "龙藏",
+      "website": "",
+      "aliases": [
+        "LongCang",
+        "The LongCang Project Authors",
+        "龙藏楷书",
+        "Long Cang (YouZiKu)"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "aoyagi-kouzan",
+      "name": "Aoyagi Kouzan",
+      "en": "",
+      "short": "青柳",
+      "aliases": [
+        "AoyagiKouzan",
+        "青柳衡山",
+        "衡山毛笔",
+        "香山毛笔字体"
+      ],
+      "fontNames": [
+        "衡山毛笔"
+      ],
+      "website": "https://opentype.jp/kouzanmouhitufont.htm",
+      "kind": "author",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "microsoft",
+      "name": "微软",
+      "en": "Microsoft",
+      "short": "微软",
+      "website": "https://www.microsoft.com",
+      "aliases": [
+        "微软 (Microsoft)",
+        "Microsoft"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "longquansi",
+      "name": "北京龙泉寺",
+      "en": "",
+      "short": "龙泉寺",
+      "website": "",
+      "aliases": [
+        "贤二体",
+        "Beijing Longquan Monastery Animation Center"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "etrump",
+      "name": "Etrump",
+      "en": "Shanghai Etrump Information Technology Co., Ltd.",
+      "short": "Etrump",
+      "website": "",
+      "aliases": [
+        "Shanghai Etrump Information Technology Co."
+      ],
+      "provisional": true,
+      "kind": "foundry",
+      "openSource": false,
+      "claimed": false
+    },
+    {
+      "id": "mengshen",
+      "name": "萌神PROJECT",
+      "en": "Mengshen Project",
+      "short": "萌神",
+      "website": "https://github.com/MaruTama/Mengshen-pinyin-font",
+      "aliases": [
+        "mengshen project",
+        "Mengshen Project",
+        "MaruTama",
+        "Yuya Maruyama"
+      ],
+      "fontNames": [
+        "萌神汉宋",
+        "萌神手写体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "chncwk",
+      "name": "chncwk",
+      "en": "",
+      "short": "chncwk",
+      "website": "",
+      "aliases": [],
+      "fontNames": [
+        "屏显臻宋"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "975maru",
+      "name": "975 圆体",
+      "en": "975 Maru",
+      "short": "975",
+      "website": "",
+      "aliases": [
+        "975MaruSC",
+        "975 圆体"
+      ],
+      "fontNames": [
+        "975 圆体"
+      ],
+      "provisional": true,
+      "kind": "author",
+      "openSource": true,
+      "claimed": false
+    },
+    {
+      "id": "buttaiwan",
+      "name": "但",
+      "en": "ButTaiwan",
+      "short": "但",
+      "website": "https://github.com/ButTaiwan",
+      "aliases": [
+        "ButTaiwan",
+        "但"
+      ],
+      "fontNames": [
+        "芫荽",
+        "源泉圆体",
+        "源样明体",
+        "源样黑体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "开源字体计划，作品包括芫荽、源泉圆体、源样黑体、源样明体。"
+    },
+    {
+      "id": "chiron",
+      "name": "昭源",
+      "en": "Chiron",
+      "short": "昭源",
+      "website": "https://github.com/chiron-fonts",
+      "aliases": [
+        "Chiron",
+        "昭源",
+        "Tamcy"
+      ],
+      "fontNames": [
+        "昭源宋体",
+        "昭源黑体",
+        "昭源圆体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Tamcy 的昭源字型。宋、黑、圆均为 SIL OFL 1.1，基于思源。"
+    },
+    {
+      "id": "triones",
+      "name": "璇玑造字",
+      "en": "TrionesType",
+      "short": "璇玑",
+      "website": "https://github.com/TrionesType",
+      "aliases": [
+        "TrionesType",
+        "璇玑造字",
+        "朱雀"
+      ],
+      "fontNames": [
+        "朱雀仿宋"
+      ],
+      "kind": "foundry",
+      "openSource": true,
+      "claimed": false,
+      "description": "璇玑造字。开源产品朱雀仿宋，SIL OFL 1.1。"
+    },
+    {
+      "id": "plangothic",
+      "name": "遍黑体计划",
+      "en": "Plangothic",
+      "short": "遍黑",
+      "website": "https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project",
+      "aliases": [
+        "Plangothic",
+        "遍黑体"
+      ],
+      "fontNames": [
+        "遍黑体"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "description": "基于思源黑体的扩展区补字项目。字体 SIL OFL 1.1。"
+    },
+    {
+      "id": "huiwen",
+      "name": "汇文",
+      "en": "Huiwen",
+      "short": "汇文",
+      "website": "https://github.com/bosswnx/huiwenmincho-improved",
+      "aliases": [
+        "汇文",
+        "Huiwen"
+      ],
+      "fontNames": [
+        "汇文明朝"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "汇文明朝修正版，CC0 1.0。"
+    },
+    {
+      "id": "guiwonder",
+      "name": "GuiWonder",
+      "en": "GuiWonder",
+      "short": "GuiWonder",
+      "website": "https://github.com/GuiWonder",
+      "aliases": [
+        "GuiWonder",
+        "中文网字计划"
+      ],
+      "fontNames": [
+        "Huaying Mincho",
+        "Hymc",
+        "初夏明朝体",
+        "华英明朝",
+        "合简宋体",
+        "尚古明体",
+        "月星楷"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "description": "GuiWonder 的开源字体。月星楷、尚古明体、初夏明朝体、合简宋体为 SIL OFL 1.1。"
+    },
+    {
+      "id": "toneoz",
+      "name": "澳声通",
+      "en": "ToneOZ",
+      "short": "澳声通",
+      "website": "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai",
+      "aliases": [
+        "ToneOZ",
+        "澳声通"
+      ],
+      "fontNames": [
+        "澳声通拼音文楷",
+        "晓声通秋茄"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "澳声通拼音文楷、晓声通秋茄。SIL OFL 1.1。"
+    },
+    {
+      "id": "zdic",
+      "name": "汉典",
+      "en": "ZDIC",
+      "short": "汉典",
+      "website": "https://github.com/AlainAlan/zdic-qx-font",
+      "aliases": [
+        "汉典",
+        "ZDIC"
+      ],
+      "fontNames": [
+        "汉典秦系文字体"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "description": "汉典秦系文字体。CC0 1.0。"
+    },
+    {
+      "id": "gekifude",
+      "name": "激笔",
+      "en": "GEKIFUDE",
+      "short": "激笔",
+      "website": "https://github.com/ukr8b3g-cmyk/GEKIFUDE-SFX",
+      "aliases": [
+        "GEKIFUDE",
+        "激笔"
+      ],
+      "fontNames": [
+        "激笔 SFX"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "激笔 SFX。CC0 1.0。"
+    },
+    {
+      "id": "sarasa",
+      "name": "更纱",
+      "en": "Sarasa Gothic",
+      "short": "更纱",
+      "website": "https://github.com/be5invis/Sarasa-Gothic",
+      "aliases": [
+        "Sarasa Gothic",
+        "更纱",
+        "更紗",
+        "Belleve Invis"
+      ],
+      "fontNames": [
+        "更纱黑体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Belleve Invis 的更纱黑体。简体包为官方 SarasaGothicSC。SIL OFL 1.1。"
+    },
+    {
+      "id": "smiley-moon",
+      "name": "斜月",
+      "en": "Smiley Moon",
+      "short": "斜月",
+      "website": "https://github.com/onichan0923/smiley-moon",
+      "aliases": [
+        "Smiley Moon",
+        "斜月体"
+      ],
+      "fontNames": [
+        "斜月体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "斜月体，由得意黑加宽。SIL OFL 1.1。"
+    },
+    {
+      "id": "dela",
+      "name": "Dela Gothic",
+      "en": "Dela Gothic",
+      "short": "Dela",
+      "website": "https://github.com/syakuzen/DelaGothic",
+      "aliases": [
+        "Dela Gothic One",
+        "馒头黑体",
+        "无界黑"
+      ],
+      "fontNames": [
+        "馒头黑体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Dela Gothic One。SIL OFL 1.1。"
+    },
+    {
+      "id": "yuji",
+      "name": "佑字",
+      "en": "Yuji",
+      "short": "佑字",
+      "website": "https://github.com/Kinutafontfactory/Yuji",
+      "aliases": [
+        "Yuji Syuku",
+        "佑字肃",
+        "Kinuta Font Factory",
+        "Kataoka Yuji"
+      ],
+      "fontNames": [
+        "佑字肃"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "佑字肃（Yuji Syuku），片冈裕。寒蝉拙楷的上游。SIL OFL 1.1。"
+    },
+    {
+      "id": "ume",
+      "name": "梅字体",
+      "en": "Ume Font",
+      "short": "梅",
+      "website": "https://osdn.jp/projects/ume-font/",
+      "aliases": [
+        "Ume Gothic",
+        "梅ゴシック",
+        "梅黑体",
+        "梅明朝",
+        "Ume Mincho",
+        "蓬莱和多流",
+        "HORAI Wataru"
+      ],
+      "fontNames": [
+        "梅黑体",
+        "梅明朝"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "梅ゴシック / 梅明朝，蓬莱和多流。范美黑、范美明的上游。可免费使用、修改、再分发，无保证。不是 OFL。"
+    },
+    {
+      "id": "yoz",
+      "name": "Y.OzVox",
+      "en": "Y.OzFont",
+      "short": "Y.Oz",
+      "website": "http://yozvox.web.fc2.com/",
+      "aliases": [
+        "YozFont",
+        "Y.OzFont",
+        "YOzFont",
+        "Y.Oz"
+      ],
+      "fontNames": [
+        "YozFont"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Y.OzFont。悠哉字体的上游。SIL OFL 1.1。"
+    },
+    {
+      "id": "fwhp",
+      "name": "花乐",
+      "en": "FWHP",
+      "short": "花乐",
+      "website": "https://github.com/FWHP-Enfun",
+      "aliases": [
+        "FWHP",
+        "FWHP-Enfun",
+        "花樂"
+      ],
+      "fontNames": [
+        "偏歪的黑趣体",
+        "混菜写楷",
+        "宅在家麦克笔",
+        "宅在家自动笔",
+        "宅在家粉条甜",
+        "汲古明体A",
+        "汲古明体B",
+        "汲古明体C",
+        "繁多全楷体",
+        "繁多全楷体2",
+        "繁多全宋体",
+        "繁多全宋体2"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "花乐（FWHP）。把开源字改成自己的一份再发布。"
+    },
+    {
+      "id": "keynote",
+      "name": "人生哥",
+      "en": "Keynote",
+      "short": "人生哥",
+      "website": "https://github.com/maoken-fonts/slidefont",
+      "aliases": [
+        "Keynote研究所",
+        "SlideFont",
+        "演示字体",
+        "keynoteart"
+      ],
+      "fontNames": [
+        "演示佛系体",
+        "演示悠然小楷",
+        "演示悠然小楷二",
+        "演示春风楷",
+        "演示夏行楷",
+        "演示秋鸿楷",
+        "演示斜黑体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Keynote 研究所人生哥。演示系列 / SlideFont 作者。正式开源仓 maoken-fonts/slidefont，OFL 1.1。钉 e6a0d2bcef05。"
+    },
+    {
+      "id": "takushun",
+      "name": "Takushun Wu",
+      "en": "Takushun Wu",
+      "short": "Wu",
+      "website": "https://github.com/takushun-wu",
+      "aliases": [
+        "文津",
+        "文渊",
+        "文源",
+        "takushun-wu"
+      ],
+      "fontNames": [
+        "文津宋体",
+        "文津宋体 P2",
+        "文渊宋体",
+        "文渊黑体",
+        "文渊圆体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "文津宋体、文渊宋黑圆。OFL 1.1。SuperHan 已停更，由文津接替。"
+    },
+    {
+      "id": "itmarki",
+      "name": "ItMarki",
+      "en": "ItMarki",
+      "short": "ItMarki",
+      "website": "https://github.com/ItMarki/jyunsaikaai",
+      "aliases": [
+        "芫茜雅楷",
+        "JyunsaiKaai"
+      ],
+      "fontNames": [
+        "芫茜雅楷",
+        "美绩点阵体",
+        "美绩点阵体明朝"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "芫茜雅楷、美绩点阵。OFL 1.1。"
+    },
+    {
+      "id": "yzdnn",
+      "name": "yzdnn",
+      "en": "yzdnn",
+      "short": "yzdnn",
+      "website": "https://github.com/yzdnn",
+      "aliases": [
+        "yzdnn",
+        "长坂点宋",
+        "长坂点宋 12",
+        "八丁饰尾体",
+        "秋叶圆体",
+        "人偶仿宋",
+        "扇尾胄黑",
+        "正格点黑",
+        "袖珍像素体"
+      ],
+      "fontNames": [
+        "长坂点宋 12",
+        "长坂点宋",
+        "八丁饰尾体",
+        "秋叶圆体",
+        "人偶仿宋",
+        "扇尾胄黑",
+        "正格点黑",
+        "袖珍像素体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "yzdnn：基于 KH Dot Font Series、DotGothic16、k6x8 等做的中文像素补字。OFL 1.1。部分款作者仍在更新（目录打 updates-ongoing）。"
+    },
+    {
+      "id": "xiangcui",
+      "name": "香萃",
+      "en": "Xiangcui",
+      "short": "香萃",
+      "website": "https://github.com/Miiiller",
+      "aliases": [
+        "Xiangcui",
+        "Miiiller"
+      ],
+      "fontNames": [
+        "香萃刻宋",
+        "香萃等粗宋",
+        "香萃自在",
+        "香萃打字机",
+        "香萃潮汐宋",
+        "香萃零度黑",
+        "香萃汲学宋",
+        "香萃打字机体",
+        "香萃端庄宋体",
+        "香萃自在舒畅黑",
+        "空缘黑体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "香萃（Xiangcui / Miiiller）开源字体系列作者。代表作含刻宋、等粗宋、自在、打字机/打字机体、潮汐宋、零度黑、汲学宋、端庄宋体、自在舒畅黑、空缘黑体等。字内许可多为 OFL 1.1。GitHub：Miiiller。"
+    },
+    {
+      "id": "logosc",
+      "name": "LogoSC",
+      "en": "LongZhuTi",
+      "short": "龙珠",
+      "website": "https://github.com/maoken-fonts/LongZhuTi",
+      "aliases": [
+        "龙珠体",
+        "LongZhuTi"
+      ],
+      "fontNames": [
+        "龙珠体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "龙珠体。基于 RocknRoll。OFL 1.1。标小智是注册商标。"
+    },
+    {
+      "id": "yufan",
+      "name": "余繁",
+      "en": "YuFan",
+      "short": "余繁",
+      "website": "https://github.com/chilingg/YufanDanQingSong",
+      "aliases": [
+        "YuFan"
+      ],
+      "fontNames": [
+        "余繁丹青宋",
+        "余繁真素",
+        "余繁细柳",
+        "余繁新语"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "余繁丹青宋、真素、细柳、新语。"
+    },
+    {
+      "id": "unbounded",
+      "name": "Unbounded Sans",
+      "en": "Unbounded Sans",
+      "short": "无界黑",
+      "website": "https://github.com/NightFurySL2001/unbounded-sans",
+      "aliases": [
+        "无界黑"
+      ],
+      "fontNames": [
+        "无界黑"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "无界黑。不是 Dela Gothic One。OFL 1.1。"
+    },
+    {
+      "id": "genne",
+      "name": "MoneMizuno",
+      "en": "Genne Gothic",
+      "short": "源音",
+      "website": "https://github.com/MoneMizuno/Genne-Gothic",
+      "aliases": [
+        "源音黑体",
+        "Genne Gothic"
+      ],
+      "fontNames": [
+        "源音黑体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "源音黑体。基于思源黑体。OFL 1.1。"
+    },
+    {
+      "id": "wdxl",
+      "name": "WD-XL",
+      "en": "WD-XL Lubrifont",
+      "short": "滑油",
+      "website": "https://github.com/NightFurySL2001/WD-XL-font",
+      "aliases": [
+        "滑油字",
+        "Lubrifont"
+      ],
+      "fontNames": [
+        "滑油字"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "滑油字。OFL 1.1。"
+    },
+    {
+      "id": "qiushui",
+      "name": "NoHeartPen",
+      "en": "Qiushui Shotai",
+      "short": "秋水",
+      "website": "https://github.com/NoHeartPen/QiushuiShotai",
+      "aliases": [
+        "秋水书体"
+      ],
+      "fontNames": [
+        "秋水书体",
+        "秋水书体 Bright"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "秋水书体。基于 Klee One、Ysabeau、霞鹜文楷。OFL 1.1。"
+    },
+    {
+      "id": "chiukong",
+      "name": "ChiuMing-Neko",
+      "en": "ChiuKong Gothic",
+      "short": "秋空",
+      "website": "https://github.com/ChiuMing-Neko/ChiuKongGothic",
+      "aliases": [
+        "秋空黑体"
+      ],
+      "fontNames": [
+        "秋空黑体 M",
+        "秋空黑体 CL"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "秋空黑体。基于思源黑体。OFL 1.1。"
+    },
+    {
+      "id": "boutique",
+      "name": "字言字语",
+      "en": "Boutique Bitmap",
+      "short": "精品点阵",
+      "website": "https://github.com/scott0107000/BoutiqueBitmap9x9",
+      "aliases": [
+        "BoutiqueBitmap"
+      ],
+      "fontNames": [
+        "精品点阵体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "精品点阵体。可免费使用、复制、修改和分发。不是 SIL OFL。"
+    },
+    {
+      "id": "lingdong",
+      "name": "Lingdong Huang",
+      "en": "Qiji",
+      "short": "齐伋",
+      "website": "https://github.com/LingDong-/qiji-font",
+      "aliases": [
+        "齐伋体",
+        "QIJI"
+      ],
+      "fontNames": [
+        "齐伋体"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "齐伋体。OFL 1.1。"
+    },
+    {
+      "id": "hanamin",
+      "name": "GlyphWiki",
+      "en": "HanaMin",
+      "short": "花园",
+      "website": "http://glyphwiki.org/",
+      "aliases": [
+        "花园明朝",
+        "HanaMin"
+      ],
+      "fontNames": [
+        "花园明朝 A",
+        "花园明朝 B"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "花园明朝。可免费使用、修改、再分发。不是 OFL。"
+    },
+    {
+      "id": "cns11643",
+      "name": "全字库",
+      "en": "CNS 11643, Taiwan Province",
+      "short": "全字库",
+      "website": "https://data.gov.tw/license",
+      "aliases": [
+        "台湾省",
+        "TW-Sung",
+        "TW-Kai"
+      ],
+      "fontNames": [
+        "全字库正宋体",
+        "全字库正楷体"
+      ],
+      "kind": "foundry",
+      "openSource": true,
+      "claimed": false,
+      "description": "全字库正宋、正楷。属台湾省。开放政府数据授权 1.0。"
+    },
+    {
+      "id": "lineseed",
+      "name": "LY Corporation",
+      "en": "LINE Seed",
+      "short": "LINE",
+      "website": "https://github.com/line/seed",
+      "aliases": [
+        "LINE Seed"
+      ],
+      "fontNames": [
+        "LINE Seed TW"
+      ],
+      "kind": "brand",
+      "openSource": false,
+      "claimed": false,
+      "description": "LINE Seed TW。字内写 OFL 1.1。LY 公开条款是另一份免费商用许可。"
+    },
+    {
+      "id": "huangkaihua",
+      "name": "黄凯桦",
+      "en": "Huang Kaihua",
+      "short": "黄凯桦",
+      "website": "http://www.huangkaihua.com",
+      "aliases": [
+        "黄凯桦",
+        "Huang Kaihua",
+        "Lawyer Huang Kaihua"
+      ],
+      "fontNames": [
+        "黄凯桦律师手写体"
+      ],
+      "kind": "individual",
+      "openSource": false,
+      "claimed": false,
+      "description": "执业律师，「黄凯桦律师手写体」作者，字体免费商用。"
+    },
+    {
+      "id": "huangyuchen",
+      "name": "黄煜臣",
+      "en": "Huang Yuchen",
+      "short": "黄煜臣",
+      "website": "https://www.zcool.com.cn/u/653645",
+      "aliases": [
+        "黄煜臣",
+        "huang yu chen",
+        "Huang Yuchen"
+      ],
+      "fontNames": [
+        "江西拙楷体"
+      ],
+      "kind": "individual",
+      "openSource": false,
+      "claimed": false,
+      "description": "独立字体作者，「江西拙楷体」作者。"
+    },
+    {
+      "id": "buernia",
+      "name": "Buernia",
+      "en": "Buernia",
+      "short": "Buernia",
+      "website": "https://github.com/Buernia",
+      "aliases": [
+        "Buernia"
+      ],
+      "fontNames": [
+        "煮豆黑体",
+        "铁蒺藜体"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "独立字体作者，煮豆黑体与铁蒺藜体作者。"
+    },
+    {
+      "id": "wixette",
+      "name": "wixette",
+      "en": "wixette",
+      "short": "wixette",
+      "website": "https://github.com/wixette/dotted-chinese-fonts",
+      "aliases": [
+        "wixette",
+        "点点像素"
+      ],
+      "fontNames": [
+        "点点像素体-圆形",
+        "点点像素圆体",
+        "点点像素宋体菱形",
+        "点阵像素宋体 常规体"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "点点像素（Dotted Chinese Pixel Fonts）作者，文泉驿点阵宋体的矢量化变形重制。"
+    },
+    {
+      "id": "takwolf",
+      "name": "狼人小林 (TakWolf)",
+      "en": "TakWolf",
+      "short": "狼人小林",
+      "website": "https://github.com/TakWolf",
+      "aliases": [
+        "TakWolf",
+        "狼人小林"
+      ],
+      "fontNames": [
+        "方舟像素",
+        "缝合像素",
+        "果冻像素",
+        "怀旧像素 街机",
+        "怀旧像素 可爱",
+        "怀旧像素 小巧",
+        "怀旧像素 粗体",
+        "二维码像素"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "像素字体作者：方舟/缝合/果冻/怀旧像素系列，MIT 开源。"
+    },
+    {
+      "id": "44670",
+      "name": "44670",
+      "en": "44670",
+      "short": "44670",
+      "website": "https://github.com/44670",
+      "aliases": [
+        "44670"
+      ],
+      "fontNames": [
+        "思源黑体 像素"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "思源黑体像素化改作作者。"
+    },
+    {
+      "id": "scott0107000",
+      "name": "字言字语 (scott0107000)",
+      "en": "scott0107000",
+      "short": "字言字语",
+      "website": "https://github.com/scott0107000",
+      "aliases": [
+        "scott0107000",
+        "字言字型"
+      ],
+      "fontNames": [
+        "精品点阵体9x9",
+        "精品点阵体7x7",
+        "流行点阵体16",
+        "夜照飞点阵",
+        "天王星像素"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "精品点阵体系列、夜照飞点阵、天王星像素作者。"
+    },
+    {
+      "id": "skr-zero",
+      "name": "Skr-ZERO",
+      "en": "Skr-ZERO",
+      "short": "Skr-ZERO",
+      "website": "https://github.com/Skr-ZERO",
+      "aliases": [
+        "Skr-ZERO"
+      ],
+      "fontNames": [
+        "玄冬楷书",
+        "飞花宋体",
+        "猫啃什锦黑 繁体"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "玄冬楷书、飞花宋体作者；猫啃什锦黑繁体版维护者。"
+    },
+    {
+      "id": "kalooos0",
+      "name": "Kalooos0",
+      "en": "Kalooos0",
+      "short": "Kalooos0",
+      "website": "https://github.com/Kalooos0",
+      "aliases": [
+        "Kalooos0"
+      ],
+      "fontNames": [
+        "Kalo 黑体"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "Kalo 黑体作者。"
+    },
+    {
+      "id": "astro-2539",
+      "name": "Z Labs (Astro-2539)",
+      "en": "Astro-2539",
+      "short": "Z Labs",
+      "website": "https://github.com/Astro-2539",
+      "aliases": [
+        "Astro-2539",
+        "Z Labs"
+      ],
+      "fontNames": [
+        "Z Labs 像素 12px",
+        "Z Labs 圆像素 16px",
+        "Z Labs 圆像素 12px",
+        "Z Labs 点阵 港标",
+        "Z Labs 点阵 日标"
+      ],
+      "kind": "individual",
+      "openSource": true,
+      "claimed": false,
+      "description": "Z Labs 像素字体系列作者。"
+    },
+    {
+      "id": "frex-sans",
+      "name": "械黑计划",
+      "en": "Frex Sans Project",
+      "short": "械黑计划",
+      "website": "https://github.com/maoken-fonts/frex-sans",
+      "aliases": [
+        "Frex Sans",
+        "械黑计划 (Frex Sans Project)",
+        "frex-sans"
+      ],
+      "fontNames": [
+        "械黑"
+      ],
+      "kind": "project",
+      "description": "修复 IBM Plex Sans SC 简中字形并补齐字重的开源字体计划，发布械黑（Frex Sans）。",
+      "descSource": {
+        "site": "github.com/maoken-fonts/frex-sans",
+        "fetched": "2026-09-25"
+      }
+    },
+    {
+      "id": "keynoteart",
+      "name": "Keynoteart",
+      "en": "Keynoteart",
+      "short": "Keynoteart",
+      "website": "https://github.com/maoken-fonts/slidefont",
+      "aliases": [
+        "keynoteart",
+        "Slide Font",
+        "幻灯片字体",
+        "SlideFont Project",
+        "演示字体",
+        "keynote"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Slide Font（幻灯片字体 / 演示字体）作者身份别名；与 keynote（人生哥）同指 maoken-fonts/slidefont。寒蝉春秋之上游为演示春风楷 / 演示秋鸿楷。SIL OFL 1.1。",
+      "fontNames": [
+        "演示春风楷",
+        "演示秋鸿楷",
+        "演示佛系体",
+        "演示夏行楷",
+        "演示悠然小楷"
+      ]
+    },
+    {
+      "id": "masuda-mitiya",
+      "name": "枡田道也",
+      "en": "MASUDA mitiya",
+      "short": "MASUDA",
+      "website": "https://www.masuseki.com",
+      "aliases": [
+        "masuseki",
+        "MASUDA mitiya"
+      ],
+      "fontNames": [
+        "Konatu",
+        "Konatu Tohaba"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "provisional": false,
+      "description": "小夏（Konatu）与小夏等幅的作者。MIT 许可开源。"
+    },
+    {
+      "id": "feiyangjun",
+      "name": "飞扬君",
+      "en": "feiyangjun-1",
+      "short": "飞扬君",
+      "website": "https://github.com/feiyangjun-1",
+      "aliases": [
+        "feiyangjun-1",
+        "Sumr-Sans"
+      ],
+      "fontNames": [
+        "Sumr Sans"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "provisional": true,
+      "description": "立夏黑体（Sumr Sans）作者。SIL OFL 1.1。"
+    },
+    {
+      "id": "font-silo",
+      "name": "Font Silo",
+      "en": "Font Silo / フォント・サイロ",
+      "short": "Font Silo",
+      "website": "http://hp.vector.co.jp/authors/VA000874/",
+      "aliases": [
+        "平木敬太郎",
+        "Keitarou Hiraki",
+        "Keitaro Hiraki",
+        "フォントサイロ",
+        "FontSilo"
+      ],
+      "kind": "foundry",
+      "openSource": true,
+      "claimed": false,
+      "provisional": false,
+      "description": "平木敬太郎（Keitarou Hiraki）フォント・サイロ。KH Dot 原作设计。TrueType 化由自家製フォント工房完成并以 OFL 发布。",
+      "fontNames": [
+        "KH Dot 道玄坂 12",
+        "KH Dot 道玄坂 16",
+        "KH Dot 八丁堀 16",
+        "KH Dot 秋葉原 16",
+        "KH Dot 人形町 16",
+        "KH Dot 兜町 16",
+        "KH Dot 小伝馬町 12",
+        "KH Dot 小伝馬町 12 Ki",
+        "KH Dot 小伝馬町 12 Ko",
+        "KH Dot 小伝馬町 16",
+        "KH Dot 小伝馬町 16 Ki",
+        "KH Dot 神楽坂 12",
+        "KH Dot 神楽坂 16",
+        "KH Dot 日比谷 24",
+        "KH Dot 日比谷 32"
+      ]
+    },
+    {
+      "id": "jikasei",
+      "name": "自家製フォント工房",
+      "en": "Jikasei Font Koubou",
+      "short": "自家製",
+      "website": "http://jikasei.me/",
+      "aliases": [
+        "jikasei.me",
+        "自家製フォント工房",
+        "Jikasei"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "provisional": false,
+      "description": "自家製フォント工房。将平木敬太郎 KH Dot 等点阵字体重构为 TrueType，并以 SIL OFL 1.1 发布。",
+      "fontNames": [
+        "KH Dot 道玄坂 12",
+        "KH Dot 道玄坂 16",
+        "KH Dot 八丁堀 16",
+        "KH Dot 秋葉原 16",
+        "KH Dot 人形町 16",
+        "KH Dot 兜町 16",
+        "KH Dot 小伝馬町 12",
+        "KH Dot 小伝馬町 12 Ki",
+        "KH Dot 小伝馬町 12 Ko",
+        "KH Dot 小伝馬町 16",
+        "KH Dot 小伝馬町 16 Ki",
+        "KH Dot 神楽坂 12",
+        "KH Dot 神楽坂 16",
+        "KH Dot 日比谷 24",
+        "KH Dot 日比谷 32"
+      ]
+    },
+    {
+      "id": "littlelimit",
+      "name": "littlelimit",
+      "en": "littlelimit / 門真なむ",
+      "short": "littlelimit",
+      "website": "https://littlelimit.net/",
+      "aliases": [
+        "Num Kadoma",
+        "門真なむ",
+        "num_kadoma",
+        "littlelimit.net"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "provisional": false,
+      "description": "門真なむ（Num Kadoma）。k6x8 / 美咲フォント / k8x12 / k12x8 等极小点阵字体作者。站点自由软件许可（非 OFL）。",
+      "fontNames": [
+        "k6x8 ゴシック",
+        "k6x8 明朝",
+        "k6x8",
+        "美咲ゴシック",
+        "美咲明朝",
+        "美咲ゴシック第2",
+        "k8x12",
+        "k8x12L",
+        "k8x12S",
+        "k12x8",
+        "美咲フォント"
+      ]
+    },
+    {
+      "id": "typingart",
+      "name": "Typingart",
+      "en": "Typingart",
+      "short": "Typingart",
+      "website": "https://typingart.net/",
+      "aliases": [
+        "Typing Art",
+        "typingart",
+        "Nakai",
+        "こころ明朝",
+        "Kokoro Mincho",
+        "KokoroMinchoutai"
+      ],
+      "fontNames": [
+        "こころ明朝",
+        "はんなり明朝"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "description": "Typingart（Nakai）。こころ明朝体作者。官网 typingart.net；こころ明朝页 ?p=46 2026-09 已 404，本波以 luxcem/typingart-fonts@d7d6a46 备份钉 zip，随包 IPA Font License 1.0（非 OFL）。"
+    },
+    {
+      "id": "flopdesign",
+      "name": "FLOP DESIGN",
+      "en": "FLOP DESIGN",
+      "short": "フロップ",
+      "website": "https://www.flopdesign.com/",
+      "aliases": [
+        "FLOP DESIGN",
+        "フロップデザイン",
+        "flopdesign",
+        "Flop Design"
+      ],
+      "fontNames": [
+        "03スマートフォントUI"
+      ],
+      "kind": "foundry",
+      "openSource": true,
+      "claimed": false,
+      "description": "FLOP DESIGN（フロップデザイン）。03スマートフォントUI 作者；基于 IPAexゴシック 的 IPA Font License 衍生。官网 freefont 页 2026-09 现 403；现行分发 BOOTH https://flopdesign.booth.pm/items/2296502。另声明假名版权与 webfont/嵌入限制（需日文 Webfont 套件）。"
+    },
+    {
+      "id": "starlove",
+      "name": "天天宅在家",
+      "en": "starlove0425",
+      "short": "宅在家",
+      "website": "https://home.gamer.com.tw/home.php?owner=starlove0425",
+      "aliases": [
+        "天天宅在家",
+        "starlove0425",
+        "Star Love",
+        "StarLove"
+      ],
+      "fontNames": [
+        "天天宅在家"
+      ],
+      "kind": "author",
+      "openSource": false,
+      "claimed": false,
+      "description": "巴哈姆特创作者 starlove0425（天天宅在家）。原创手写三款：宅在家自动笔 / 麦克笔 / 粉条甜。作者声明「完全免费」「镶嵌改作商标都随便使用」。FWHP 以 SIL OFL 1.1 再发于 FWHP-Enfun/Star-Love-Font。"
+    },
+    {
+      "id": "zoomla",
+      "name": "逐浪字库",
+      "en": "Zoomla / z01",
+      "short": "逐浪",
+      "website": "http://f.ziti163.com",
+      "aliases": [
+        "Zoomla",
+        "ZoomlaCMS",
+        "z01",
+        "逐浪",
+        "江西逐浪软件科技有限公司",
+        "上海逐一软件科技有限公司",
+        "z01font",
+        "z01 fonts",
+        "ZoomlaMengyas",
+        "Zoomla!CMS"
+      ],
+      "kind": "foundry",
+      "openSource": true,
+      "claimed": false,
+      "fontNames": [
+        "逐浪萌芽字",
+        "逐浪粗宋简体"
+      ],
+      "description": "逐浪字库（ZoomlaCMS / z01font）。官网 f.ziti163.com；开源仓 zoomla/ZoomlaFont（根 Apache-2.0）与 z01font/ZoomlaMengyas（OFL 1.1）同属一家。"
+    },
+    {
+      "id": "8678c3f0-5136-493c-abd8-54984d39cd26",
+      "name": "嗷呜字造",
+      "en": "howlingFounts",
+      "short": "嗷呜",
+      "slug": "howlingfounts",
+      "aliases": [
+        "howlingFounts",
+        "嗷呜字造"
+      ],
+      "kind": "author",
+      "website": "https://github.com/howlingFounts/EqHiSans",
+      "openSource": true
+    },
+    {
+      "id": "steve-yuu",
+      "name": "Steve-Yuu",
+      "en": "Steve-Yuu",
+      "short": "Steve-Yuu",
+      "slug": "steve-yuu",
+      "aliases": [
+        "SteveYuu",
+        "Steve-Yuu",
+        "steve-yuu",
+        "aa854d83-ca33-4db2-afc0-07441e415b31",
+        "Y式",
+        "YShi",
+        "Yuu"
+      ],
+      "kind": "author",
+      "website": "https://github.com/Steve-Yuu",
+      "openSource": true,
+      "claimed": false,
+      "fontNames": [
+        "传趣",
+        "納黑",
+        "写意体",
+        "Y式笔书",
+        "Y式新黑体",
+        "Y式明朝体",
+        "Y式源明朝",
+        "Yuu Gothic"
+      ],
+      "description": "Steve-Yuu 开源字体作者（github.com/Steve-Yuu）。在库：传趣、納黑、写意体、Y式笔书、Y式新黑体、Y式明朝体、Y式源明朝、Yuu Gothic。Ganju-Sans 空壳未挂。OFL 与 IPA 款并存（IPA 勿标 ofl_ok）。"
+    },
+    {
+      "id": "d82bd370-a7dc-46c1-b21d-8992241d7c31",
+      "name": "鸿雷字记",
+      "en": "Honglei Ziji",
+      "short": "鸿雷",
+      "slug": "honglei",
+      "aliases": [
+        "鸿雷字记",
+        "林鸿雷",
+        "Honglei"
+      ],
+      "kind": "author",
+      "website": "https://www.zcool.com.cn/u/12963257",
+      "openSource": false
+    },
+    {
+      "id": "b0282765-1289-4d9c-b97d-a5093620186b",
+      "name": "岛田水木",
+      "en": "Shimada Mizuki",
+      "short": "水木",
+      "slug": "mizuki",
+      "aliases": [
+        "岛田水木",
+        "MEE-Developers",
+        "Mizuki"
+      ],
+      "kind": "author",
+      "website": "https://github.com/MEE-Developers/Mizuki-Gothic",
+      "openSource": true
+    },
+    {
+      "id": "naver",
+      "name": "Naver",
+      "en": "Naver",
+      "short": "Naver",
+      "website": "https://github.com/naver/nanumfont",
+      "aliases": [
+        "Naver",
+        "나눔",
+        "Nanum",
+        "Nanum Gothic",
+        "네이버"
+      ],
+      "kind": "brand",
+      "openSource": true,
+      "claimed": false,
+      "fontNames": [
+        "Nanum Gothic"
+      ],
+      "description": "Naver 나눔글꼴 / Nanum fonts。納黑上游 Nanum Gothic。",
+      "provisional": true
+    },
+    {
+      "id": "tanugo",
+      "name": "Tanugo",
+      "en": "Tanugo",
+      "short": "Tanugo",
+      "website": "https://github.com/nagamaki008/tanugo",
+      "aliases": [
+        "Tanugo",
+        "たぬご"
+      ],
+      "kind": "project",
+      "openSource": true,
+      "claimed": false,
+      "provisional": true,
+      "description": "Tanugo 马克笔风格开源字体；霞鹜漫黑上游。"
+    },
+    {
+      "id": "kaonashi-tyc",
+      "name": "Yuchen Tian",
+      "en": "Yuchen Tian",
+      "short": "kaonashi",
+      "website": "https://github.com/kaonashi-tyc",
+      "aliases": [
+        "kaonashi-tyc",
+        "Yuchen Tian"
+      ],
+      "kind": "author",
+      "openSource": true,
+      "claimed": false,
+      "provisional": true,
+      "fontNames": [
+        "权衡度量体",
+        "玄宗体"
+      ],
+      "description": "zi2zi-JiT 书法体作者；权衡度量体、玄宗体。"
+    }
+  ]
+}

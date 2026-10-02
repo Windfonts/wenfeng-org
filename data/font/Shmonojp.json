@@ -1,0 +1,51 @@
+{
+ "norm": "Shmonojp",
+ "name": "思源等宽 Mono JP",
+ "en": "Source Han Mono JP",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Shmonojp",
+ "weights": [
+  "ExtraLight",
+  "Light",
+  "DemiLight",
+  "Regular",
+  "Medium",
+  "Bold",
+  "Heavy"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-shmonojp"
+}

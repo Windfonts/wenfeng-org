@@ -1,0 +1,54 @@
+{
+ "norm": "Misa",
+ "name": "小米兰亭 Sans",
+ "en": "MiSans",
+ "aliases": [],
+ "licenseName": "MiSans 字体知识产权许可协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Hanyi Fonts",
+ "foundrySlug": "xiaomi",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Misa",
+ "weights": [
+  "Medium",
+  "Heavy",
+  "Semibold",
+  "Light",
+  "Extralight",
+  "Bold",
+  "Normal",
+  "Demibold",
+  "Regular",
+  "Thin"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-misa"
+}

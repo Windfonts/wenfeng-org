@@ -1,0 +1,315 @@
+/* 厂商目录顶栏对照（第二轮：疏解粘顶挤）。只服务 foundry-hero-options.html。 */
+html:has(.page-foundry-hero-opts) { scroll-padding-top: calc(var(--topbar-h) + 5.5rem); }
+.page-foundry-hero-opts { padding-top: 0; }
+
+.fh-stage { border-top: 1px solid var(--rule); }
+.fh-peek {
+  padding: var(--s-6) 0 var(--s-10);
+  opacity: 0.72;
+  pointer-events: none;
+}
+.fh-peek .section-head { margin-bottom: var(--s-4); }
+.fh-peek .foundry-index {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+@media (max-width: 900px) {
+  .fh-peek .foundry-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.fh-jump {
+  flex: none;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.fh-jump:hover { color: var(--ink); }
+
+/* —— 共用：粘顶条里的 foundry-kinds / search —— */
+.page-foundry-hero-opts .foundry-search {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 2.25rem;
+  max-width: 16rem;
+  padding: 0 0.9rem;
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+  margin: 0;
+}
+.page-foundry-hero-opts .foundry-search .icon { color: var(--gray-2); flex: none; }
+.page-foundry-hero-opts .foundry-search input {
+  flex: 1; min-width: 0; border: 0; background: transparent;
+  font: inherit; font-size: var(--fs-13); outline: none; color: var(--ink);
+}
+.page-foundry-hero-opts .foundry-kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+}
+.page-foundry-hero-opts .foundry-kinds button {
+  height: 2rem;
+  padding: 0 0.8rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--ink-2);
+  font: inherit;
+  font-size: var(--fs-13);
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.page-foundry-hero-opts .foundry-kinds button.is-on {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+.page-foundry-hero-opts .foundry-kinds .n {
+  font-size: var(--fs-12);
+  opacity: 0.72;
+  font-variant-numeric: tabular-nums;
+}
+.page-foundry-hero-opts .foundry-kinds-gap {
+  width: 1px;
+  height: 1.1rem;
+  background: var(--rule);
+  margin: 0 0.15rem;
+}
+
+/* ========== 甲 · 两行 ========== */
+.fh-a-hero {
+  padding: var(--s-8) 0 var(--s-5);
+}
+.fh-a-hero h1 {
+  margin: 0;
+  font-size: clamp(1.85rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.fh-a-hero .lead {
+  margin: var(--s-3) 0 0;
+  max-width: 36em;
+  font-size: var(--fs-14);
+  color: var(--gray);
+  line-height: 1.65;
+}
+.fh-a-hero .lead b {
+  color: var(--ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.fh-a-bar {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 25;
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--s-3) 0 var(--s-4);
+}
+.fh-a-row1 {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-bottom: var(--s-3);
+}
+.fh-a-row1 .foundry-search { flex: 1 1 14rem; max-width: 22rem; }
+.fh-a-row1 .fh-jump { margin-left: auto; }
+.fh-a-row2 { min-width: 0; }
+
+/* ========== 乙 · 收束 ========== */
+.fh-b-hero {
+  padding: var(--s-8) 0 var(--s-5);
+}
+.fh-b-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-3) var(--s-5);
+}
+.fh-b-head h1 {
+  margin: 0;
+  font-size: clamp(1.85rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.fh-b-head .lead {
+  margin: 0;
+  font-size: var(--fs-15);
+  color: var(--gray);
+}
+.fh-b-head .lead b {
+  color: var(--ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.fh-b-note {
+  margin: var(--s-2) 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray-2);
+  line-height: 1.55;
+}
+.fh-b-bar {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 25;
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--s-3) 0;
+}
+.fh-b-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+}
+.fh-b-inner .foundry-search { max-width: 14rem; }
+.fh-b-kinds { flex: 1 1 18rem; min-width: 0; }
+.fh-b-inner .fh-jump { margin-left: auto; }
+
+/* ========== 丙 · 搜先 ========== */
+.fh-c-hero {
+  padding: var(--s-10) 0 var(--s-6);
+  text-align: center;
+}
+.fh-c-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.fh-c-hero .lead {
+  margin: var(--s-3) auto 0;
+  max-width: 28em;
+  font-size: var(--fs-15);
+  color: var(--gray);
+  line-height: 1.65;
+}
+.fh-c-hero .lead b {
+  color: var(--ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.fh-c-search {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: min(32rem, 100%);
+  height: 3rem;
+  margin: var(--s-6) auto 0;
+  padding: 0 1.15rem;
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.fh-c-search .icon { color: var(--gray-2); flex: none; }
+.fh-c-search input {
+  flex: 1; border: 0; background: transparent;
+  font: inherit; font-size: var(--fs-15); outline: none; color: var(--ink); min-width: 0;
+}
+.fh-c-jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-2) var(--s-4);
+  margin: var(--s-5) 0 0;
+  font-size: var(--fs-13);
+}
+.fh-c-jump a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.fh-c-jump a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; }
+.fh-c-jump .n {
+  color: var(--gray);
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.2em;
+}
+.fh-c-stick {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 25;
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--s-3) 0;
+}
+.fh-c-stick-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+.fh-c-stick-inner .foundry-search { flex: 1 1 16rem; max-width: 24rem; }
+.fh-c-stick-hint {
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+}
+.fh-c-stick-inner .fh-jump { margin-left: auto; }
+
+/* ========== 丁 · 现页（复刻正式站） ========== */
+.fh-stick-hero {
+  padding: var(--s-6) 0 var(--s-4);
+}
+.fh-stick-hero h1 {
+  display: inline;
+  margin: 0 var(--s-3) 0 0;
+  font-size: var(--fs-28);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.fh-stick-hero .lead {
+  display: inline;
+  margin: 0;
+  font-size: var(--fs-14);
+  color: var(--gray);
+  line-height: 1.6;
+}
+.fh-stick-hero .lead b {
+  color: var(--ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.fh-stick-bar {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 25;
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--s-3) 0;
+}
+.fh-stick-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+}
+.fh-stick-inner .foundry-search { max-width: 16rem; }
+.fh-stick-inner .foundry-kinds { flex: 1 1 12rem; min-width: 0; }
+.fh-stick-inner .jump {
+  margin-left: auto;
+  flex: none;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.fh-stick-inner .jump:hover { color: var(--ink); }
+
+@media (max-width: 720px) {
+  .fh-a-row1 { flex-wrap: wrap; }
+  .fh-a-row1 .fh-jump { margin-left: 0; }
+  .fh-c-stick-hint { display: none; }
+}

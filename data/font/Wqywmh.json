@@ -1,0 +1,65 @@
+{
+ "norm": "Wqywmh",
+ "name": "文泉驿微米黑",
+ "en": "WenQuanYi Micro Hei",
+ "aliases": [],
+ "licenseName": "Apache 2.0 / GPLv3 (双许可证)",
+ "license": {
+  "spdx": "Apache-2.0",
+  "textState": "full",
+  "sourceUrl": "https://github.com/anthonyfok/fonts-wqy-microhei",
+  "fetchedAt": "2026-09-25",
+  "textSha256": "b81fe79e859ba041aaee225dea3aa7801b9e8be0004502c7f27d0b0c249480a4",
+  "verifiedAt": "2026-09-25",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "google-fonts",
+   "rootWork": "Droid Sans Fallback",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "文泉驿",
+ "foundrySlug": "wenquanyi",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Wqywmh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/anthonyfok/fonts-wqy-microhei",
+  "upstream": "https://github.com/anthonyfok/fonts-wqy-microhei",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Wqywmh.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/anthonyfok/fonts-wqy-microhei",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-wqywmh"
+}

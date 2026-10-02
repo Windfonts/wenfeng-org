@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>谱系 · 亲属角色对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260922a" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260923qa" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260924c" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925k" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925i" />
+  <link rel="stylesheet" href="/from-app/css/lineage-kinship-options.css?v=20260925a" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-lk">
+  <header data-topbar data-active="fonts"></header>
+
+  <div class="lk-switch">
+    <div class="container lk-switch-inner">
+      <p class="lk-lead">实验室 · 点一款当<strong>中心字</strong>，看祖 / 父 / 子·孙 / 旁系 / 混合。现网 <a href="lineage.html">lineage.html</a> 未改。</p>
+      <div class="lk-fams" id="famNav" aria-label="字族"></div>
+      <div class="lk-legend" aria-label="图例">
+        <span class="lk-pill is-self">本字</span>
+        <span class="lk-pill is-zu">祖</span>
+        <span class="lk-pill is-fu">父</span>
+        <span class="lk-pill is-zi">子</span>
+        <span class="lk-pill is-sun">孙</span>
+        <span class="lk-pill is-pang">旁系</span>
+        <span class="lk-pill is-mix">混合</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <p class="lk-cap" id="famCap"></p>
+    <div class="lk-panel" id="stage"><p class="loading">加载中…</p></div>
+    <p class="lk-note">直系（祖→父→本字→子→孙）轨线加粗；旁系变淡。混合＝地区版 / 合作 / 委托（叠在角色上）。未收录原作用灰字标祖。</p>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260927n"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260927e"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260923j"></script>
+  <script src="/from-app/js/pages/lineage-kinship-options.js?v=20260925a"></script>
+</body>
+</html>

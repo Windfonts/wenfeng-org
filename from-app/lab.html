@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>对照实验室 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/lab.css?v=20260927perf4" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-lab">
+  <header data-topbar data-active="fonts"></header>
+  <main class="container lab-main">
+    <header class="lab-head">
+      <p class="lab-kicker">内部 · 不进生产导航</p>
+      <h1>对照实验室</h1>
+      <p class="lab-lead">原型讨论、甲乙丙丁对照、已否方案、审计研究页。<strong>全部保留，勿当垃圾删。</strong> HTML 仍在仓根（相对路径不碎）；本页与 <code>data/lab-archive.json</code> / <code>docs/LAB.md</code> 是索引。</p>
+      <div class="lab-stats" id="stats"></div>
+    </header>
+    <div class="lab-toolbar">
+      <label class="lab-field lab-grow">
+        <span>搜索</span>
+        <input id="q" type="search" placeholder="标题 / 文件名 / 备注" autocomplete="off" />
+      </label>
+      <label class="lab-field">
+        <span>状态</span>
+        <select id="status">
+          <option value="">全部</option>
+          <option value="active">在用研究</option>
+          <option value="archive">归档对照</option>
+          <option value="shipped-ref">已上线·留档</option>
+          <option value="rejected">已否·留档</option>
+        </select>
+      </label>
+    </div>
+    <div id="out"></div>
+  </main>
+  <script src="/from-app/js/wf-proto.js?v=20260927perf4"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260927perf4"></script>
+  <script src="/from-app/js/pages/lab.js?v=20260927perf4"></script>
+</body>
+</html>

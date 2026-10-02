@@ -1,0 +1,50 @@
+{
+ "norm": "Ibmps",
+ "name": "IBM Plex 无衬线简体中文",
+ "en": "IBM Plex Sans SC",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/IBM/plex/master/LICENSE.txt",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "37784b44044a4ffd9256702b7c0982c37e5c8887ba90c6dca0479aea93dc898d",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Sandoll Inc.",
+ "foundrySlug": "ibm",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Ibmps",
+ "weights": [
+  "Light",
+  "Text",
+  "Extralight",
+  "Thin",
+  "Bold",
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ibmps"
+}

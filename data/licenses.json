@@ -1,0 +1,6118 @@
+{
+ "975MaruSCRegular": {
+  "textKind": "missing",
+  "title": "975 圆体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "AbbrFes": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "AcyBold": {
+  "textKind": "missing",
+  "title": "Acy授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Albbpht": {
+  "textKind": "pointer",
+  "title": "阿里巴巴普惠体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Alhyznht": {
+  "textKind": "pointer",
+  "title": "阿里汉仪智能黑体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Alijkt": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "AllPun": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Almmdfdk": {
+  "textKind": "pointer",
+  "title": "阿里妈妈东方大楷授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Almmdlt": {
+  "textKind": "pointer",
+  "title": "阿里妈妈刀隶体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Almmsht": {
+  "textKind": "pointer",
+  "title": "阿里妈妈数黑体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Arkp": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/TakWolf/ark-pixel-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Azbzzwzt": {
+  "textKind": "full",
+  "title": "Apache 2.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "B2SCLight": {
+  "textKind": "missing",
+  "title": "猫啃网烟波宋授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bb7": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/scott0107000/BoutiqueBitmap7x7",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Bb9": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/scott0107000/BoutiqueBitmap9x9",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Bbht": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bbhtp2": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bizudg": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bizudm": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bizudpg": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bizudpm": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bkd": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Bmfs": {
+  "textKind": "missing",
+  "title": "X11 License",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bokug": {
+  "textKind": "missing",
+  "title": "IPA Font License Agreement v1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Bspsc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Btot": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/pottaone/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Btxbt": {
+  "textKind": "pointer",
+  "title": "包图小白体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "CEFFontsCJK": {
+  "textKind": "missing",
+  "title": "快去寫作業-CJK授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Cbds": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-27",
+   "rule": null
+  }
+ },
+ "Cexwz": {
+  "textKind": "full",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Cezkzdbs": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Chuanqu": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://openfontlicense.org",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Cjkfqlt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ckbf": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/FWHP-Enfun/Crooked-Black-Fun",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Cktjgt": {
+  "textKind": "pointer",
+  "title": "创客贴金刚体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://www.chuangkit.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Cldin": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Warren2060/ChillDIN-ChillDINGothic",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Clduan": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Warren2060/ChillDuanSans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Clg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Warren2060/ChillGSans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Clhfs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Warren2060/ChillMovableType",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Cltan": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Warren2060/ChillTanHei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Code2003": {
+  "textKind": "missing",
+  "title": "Code2003授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Corplogo3": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://logotype.jp/corporate-logo-font-dl.html",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Cqscbbt": {
+  "textKind": "pointer",
+  "title": "云峰字库重庆山城棒棒体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Cxmc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Cylyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Chenyu-otf/chenyuluoyan_thin",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ddjbt": {
+  "textKind": "pointer",
+  "title": "钉钉进步体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ddxstfx": {
+  "textKind": "full",
+  "title": "GPL-2.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/wixette/dotted-chinese-fonts",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Ddxstlx": {
+  "textKind": "full",
+  "title": "GPL-2.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/wixette/dotted-chinese-fonts",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Ddxstyx": {
+  "textKind": "full",
+  "title": "GPL-2.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/wixette/dotted-chinese-fonts",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Dela": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Dlkjt": {
+  "textKind": "pointer",
+  "title": "鼎猎客家体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Dlzht": {
+  "textKind": "full",
+  "title": "鼎猎珠海体授权协议",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Dokidoki": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Dotgothic": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "DottedSongtiCircleRegular": {
+  "textKind": "full",
+  "title": "GPL-2.0",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Dqhk": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/BridgeRiver/BRWakaishotai",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Dyh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://raw.githubusercontent.com/atelier-anchor/smiley-sans/main/LICENSE",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Dymht": {
+  "textKind": "pointer",
+  "title": "抖音美好体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Dyzgt": {
+  "textKind": "pointer",
+  "title": "斗鱼追光体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Eqhi": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Fb16": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/scott0107000/FashionBitmap16",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ffs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Skr-ZERO/FlyFlowerSong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Fkzl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Fmthei": {
+  "textKind": "full",
+  "title": "0BSD",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Fmtming": {
+  "textKind": "full",
+  "title": "0BSD",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Fontopo": {
+  "textKind": "missing",
+  "title": "IPA Font License Agreement v1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Frexsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/frex-sans",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Fupx": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/TakWolf/fusion-pixel-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Futehodo": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Fzfs": {
+  "textKind": "missing",
+  "title": "方正仿宋简体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Fzht": {
+  "textKind": "missing",
+  "title": "方正黑体简体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Fzkt": {
+  "textKind": "missing",
+  "title": "方正楷体简体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Fzss": {
+  "textKind": "missing",
+  "title": "方正书宋简体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "GNUUnifontFull": {
+  "textKind": "full",
+  "title": "GPL 2.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://unifoundry.com/LICENSE.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Geneant": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Genegothic": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Genekoburi": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Genenu": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Genifjp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Gfmft": {
+  "textKind": "pointer",
+  "title": "龚帆免费体3.0授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Gljgbt": {
+  "textKind": "pointer",
+  "title": "光良酒-干杯体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Gsht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Gskd": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Gwmsans": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hachimarupop": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hakkou": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Haranoaji": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Harmony": {
+  "textKind": "missing",
+  "title": "HarmonyOS Sans Fonts License Agreement",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://gitee.com/openharmony/utils_system_resources/blob/master/LICENSE_Fonts",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Haseng": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hcdhs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcdht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcdin": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcdzt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hchfs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcjss": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hckht": {
+  "textKind": "full",
+  "title": "SIL Open Font License",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hckt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hclck2": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/longcang/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Hcqy": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hcrym": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcszt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Warren2060/ChillShouZhuo",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcth": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hctyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License (OFL)",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcwjt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcyht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hcymh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hczk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hei975": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Higure": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hinam": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hjht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/GuiWonder/HeSimplFonts",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Hjst": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hkhlssxt": {
+  "textKind": "pointer",
+  "title": "黄凯桦律师手写体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hlbs": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hlbszs": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hlxs": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hlxzt": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hlzs": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Honoka": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Honorsans": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://contentplatform-drcn.hihonorcdn.com/developerPlatform/HONOR_Sans_1.0/HONOR_Sans_1.0.zip",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hsmbzt": {
+  "textKind": "pointer",
+  "title": "衡山毛笔授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hwmc": {
+  "textKind": "full",
+  "title": "CC0 1.0",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hxbnst": {
+  "textKind": "pointer",
+  "title": "胡晓波男神体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hxbsb": {
+  "textKind": "pointer",
+  "title": "胡晓波骚包体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hxbzst": {
+  "textKind": "pointer",
+  "title": "胡晓波真帅体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hxwk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/FWHP-Enfun/Mixed-VsWeKai",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Hyma": {
+  "textKind": "missing",
+  "title": "花园明朝 A授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hymb": {
+  "textKind": "missing",
+  "title": "花园明朝 B授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Hymc": {
+  "textKind": "full",
+  "title": "IPA Font License Agreement v1.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/GuiWonder/HuayingMincho",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Hyqzpt": {
+  "textKind": "full",
+  "title": "黄引齐招牌体授权协议",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.maoken.com/freefonts/915.html",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hyzi": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/NightFurySL2001/WD-XL-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Hzpy": {
+  "textKind": "full",
+  "title": "CC-BY-SA-4.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/parlr/hanzi-pinyin-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "IPAexMincho": {
+  "textKind": "full",
+  "title": "IPA Font License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://opensource.org/licenses/IPA",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ibmps": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://raw.githubusercontent.com/IBM/plex/master/LICENSE.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Ibmpsjp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "JfOpenHuninn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/justfont/open-huninn-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Jgma": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/FWHP-Enfun/JiGu-Ming",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jgmb": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/FWHP-Enfun/JiGu-Ming",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jgmc": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/FWHP-Enfun/JiGu-Ming",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jhk": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/Des-Magmeta/PlanKai",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jkmaru": {
+  "textKind": "missing",
+  "title": "M+ FONTS PROJECT",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jlpx": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/TakWolf/jelly-pixel-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Jlyhmht": {
+  "textKind": "missing",
+  "title": "方正×吉利 吉利银河美好体免费字授权（商业发布）",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://www.foundertype.com/index.php/FontInfo/index/id/12510",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jnbbh": {
+  "textKind": "full",
+  "title": "荆南波波黑授权协议",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/KNBobohei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Jnmy": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/KNMaiyuan",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Jnymt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/KNYuanmo",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Jnyyjyy": {
+  "textKind": "pointer",
+  "title": "今年也要加油鸭授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jpdz": {
+  "textKind": "full",
+  "title": "精品点阵体授权协议",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/scott0107000/BoutiqueBitmap9x9@master/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Jsyjst": {
+  "textKind": "pointer",
+  "title": "金山云技术体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jxzk": {
+  "textKind": "pointer",
+  "title": "江西拙楷体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Jzkgeht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/amazusa/ToronoKugel",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Jzkgemc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/amazusa/ToronoKugel",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kaiseidecol": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kaiseiharuno": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kaiseiopti": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kaiseitoku": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kalo": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Kalooos0/KaloSans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kazukirw": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Keinann": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kiwimaru": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kksjt": {
+  "textKind": "pointer",
+  "title": "快看世界体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Klee": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Klsyt": {
+  "textKind": "pointer",
+  "title": "GNU General Public License",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kosugi": {
+  "textKind": "full",
+  "title": "Apache License 2.0",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kosugimaru": {
+  "textKind": "full",
+  "title": "Apache License 2.0",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kslgbht": {
+  "textKind": "pointer",
+  "title": "GNU General Public License v2.0 or later",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kslyt": {
+  "textKind": "pointer",
+  "title": "IPA Font License v1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kurohana": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Kwgh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kys": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Kongyuan-Sans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Kywa": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Lftsyh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/ACh-K/Cubic-11",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Lhktss": {
+  "textKind": "pointer",
+  "title": "刘欢卡通手书授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lhls": {
+  "textKind": "pointer",
+  "title": "临海体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lhzt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Lineseedjp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ljmc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/liujianmaocao/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Lmld": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lmqylszrht": {
+  "textKind": "pointer",
+  "title": "联盟起艺卢帅正锐黑体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lmsg": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lmys": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lnsw": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Lxht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/feiyangjun-1/Sumr-Sans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Lyss": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Lzti": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/maoken-fonts/LongZhuTi@master/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Maboroshi": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Masa": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://max-everyday.com/2020/05/masafont/",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Matc": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Skr-ZERO/MaokenAssortedSans-TC",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Mdmz": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/max32002/NaikaiFont@master/SIL_Open_Font_License_1.1.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Misa": {
+  "textKind": "pointer",
+  "title": "MiSans 字体知识产权许可协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Mjdm": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Mjdz": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Mkgh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mkkzh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/maoken-heavy-labourer",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Mkkzs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/maoken-heavy-labourer",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Mksjh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mkwfys": {
+  "textKind": "full",
+  "title": "SIL Open Font License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/fengyasong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mkwgzh": {
+  "textKind": "full",
+  "title": "SIL Open Font License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.maoken.com/freefonts/14318.html",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mkwgzs": {
+  "textKind": "full",
+  "title": "SIL Open Font License (OFL)",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.maoken.com/freefonts/15861.html",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mkwxy": {
+  "textKind": "full",
+  "title": "OFL",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/NightFurySL2001/TangYuan-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mkybkjs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/MaokenYingBiKaiShuJ",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Mkzyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.maoken.com/freefonts/17948.html",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mlyu": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/max32002/maruko-gothic@master/SIL_Open_Font_License_1.1.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Mobo": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Mp12": {
+  "textKind": "full",
+  "title": "M+ 位图许可",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://mplus-fonts.osdn.jp/mplus-bitmap-fonts/",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus1": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus1Code": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus1c": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus1m": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus1mn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus1p": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus2": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus2c": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus2m": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mplus2p": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "MplusU": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mshx": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/MaruTama/Mengshen-pinyin-font@master/LICENSE",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Mspyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Pal3love/dream-han-cjk",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Msz": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mtk1": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://data.gov.tw/license",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Mtk2": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://data.gov.tw/license",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Mts1": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://data.gov.tw/license",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Mts2": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://data.gov.tw/license",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Mugimaru": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Murecho": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Mxhn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/max32002/max-hana",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Mysxt": {
+  "textKind": "pointer",
+  "title": "沐瑶软笔手写体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Nagino": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Nani": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Nanotik": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Natsuzemi": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Newclear": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Newteg": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ngz": {
+  "textKind": "full",
+  "title": "GPL-3.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/scott0107000/Nightgazer-Bitmap",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Niiro": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Nk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Nsfx": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/nushu-script/Nyushu",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Nswt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/nushu-script/Nyushu",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Opsa": {
+  "textKind": "full",
+  "title": "OPPO Sans Free Use License",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "PangZhenGuiPMZD": {
+  "textKind": "missing",
+  "title": "庞门正道真贵楷体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Pfhtt": {
+  "textKind": "pointer",
+  "title": "PF频凡胡涂体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Plwk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Pmzdbtt": {
+  "textKind": "pointer",
+  "title": "庞门正道标题体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Pmzdcsd": {
+  "textKind": "pointer",
+  "title": "庞门正道粗书体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Pmzdqst": {
+  "textKind": "pointer",
+  "title": "庞门正道轻松体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Popgh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Poprum": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Prsxt": {
+  "textKind": "pointer",
+  "title": "品如手写体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Pxzs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/izfsk-ium/Clear-Han-Serif",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Pywk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "QRpx": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/TakWolf/qrcode-pixel-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Qhddl": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[Grok]",
+   "url": "https://github.com/kaonashi-tyc/Zi-QuanHengDuLiang/blob/main/LICENSE",
+   "commit": null,
+   "fetchedAt": "2026-09-29",
+   "rule": null
+  }
+ },
+ "Qiji": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/LingDong-/qiji-font@master/LICENSE",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Qkhc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/ChiuMing-Neko/ChiuKongGothic",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Qkhm": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/ChiuMing-Neko/ChiuKongGothic",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Qssb": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/NoHeartPen/QiushuiShotai",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Qsst": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/NoHeartPen/QiushuiShotai",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Qssxt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/jasonhandwriting/JasonHandwriting",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Qtbfsxt": {
+  "textKind": "pointer",
+  "title": "千图笔锋手写体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qthht": {
+  "textKind": "pointer",
+  "title": "千图厚黑体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qtmksxt": {
+  "textKind": "pointer",
+  "title": "千图马克手写体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qtxht": {
+  "textKind": "pointer",
+  "title": "千图学画体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qtxmt": {
+  "textKind": "pointer",
+  "title": "千图纤墨体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qtxtt": {
+  "textKind": "pointer",
+  "title": "千图小兔体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://ibaotu.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qzkswjz": {
+  "textKind": "pointer",
+  "title": "EBAS 无衬线体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qzkt": {
+  "textKind": "missing",
+  "title": "台湾省开放政府数据授权条款 1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Qzss": {
+  "textKind": "missing",
+  "title": "台湾省开放政府数据授权条款 1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Rampart": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Reggae": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "RocknRoll": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/fontworks-fonts/RocknRoll",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Rzzyt": {
+  "textKind": "pointer",
+  "title": "臻妍GB 常规体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Sawag": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Sawam": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Scarymin": {
+  "textKind": "missing",
+  "title": "IPA Font License Agreement v1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://flopdesign.booth.pm/items/6203503",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Scjskkt": {
+  "textKind": "pointer",
+  "title": "素材集市康康体授权协议",
+  "evidence": {
+   "source": "平台官方免费商用声明页",
+   "url": "https://www.sucaijishi.com",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Sft": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://connect.cjkfonts.com/blog/ThePeakFont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Sgdk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/GuiWonder/Shanggu",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Sght": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/GuiWonder/Shanggu",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Sgmt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Sgyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/GuiWonder/Shanggu",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Shcodejp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shinbashi": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shinretro": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shipgbold": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shipporiantique": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Shipporiantiqueb1": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Shipporimincho": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Shipporiminchob1": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Shmgt": {
+  "textKind": "missing",
+  "title": "上海摩登体作者声明授权（汉唐文化）",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://www.shanghaimodeng.com/",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shmonojp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shmonotc": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shp": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/44670/SourceHanSans-Pixel",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Shsanshk": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shsansjp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shserifhk": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Shserifjp": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Slcf": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "maoken-fonts/slidefont OFL.txt",
+   "url": "https://github.com/maoken-fonts/slidefont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Slfu": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "maoken-fonts/slidefont OFL.txt",
+   "url": "https://github.com/maoken-fonts/slidefont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Slqh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "maoken-fonts/slidefont OFL.txt",
+   "url": "https://github.com/maoken-fonts/slidefont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Slxx": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "maoken-fonts/slidefont OFL.txt",
+   "url": "https://github.com/maoken-fonts/slidefont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Sly1": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/maoken-fonts/slidefont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Slyr": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "maoken-fonts/slidefont OFL.txt",
+   "url": "https://github.com/maoken-fonts/slidefont",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Smht": {
+  "textKind": "missing",
+  "title": "IPA Font License Agreement v1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Soukou": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://flopdesign.booth.pm/items/1028555",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "SourceHanSansCNRegular": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/adobe-fonts/source-han-sans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "SourceHanSansTWRegular": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/adobe-fonts/source-han-sans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "SourceHanSansXTRegular": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/adobe-fonts/source-han-sans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "SourceHanSerifCNforDisplay": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/adobe-fonts/source-han-serif",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "SourceSa3mSerifCNRegular": {
+  "textKind": "missing",
+  "title": "叁慕斜宋体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Stfytz": {
+  "textKind": "pointer",
+  "title": "书体坊颜体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Stfzxfxct": {
+  "textKind": "pointer",
+  "title": "书体坊禚效锋行草体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Stick": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Sw3tleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Sw3tsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swaliasleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swaliassans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swaxleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swaxsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swb2leg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swb2sans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swb2serif": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swbatsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swbellleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swbellsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swboneleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swbonesans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swbowleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swbowsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swcurveleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swcurvesans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdartleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdartsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdellunaleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdellunasans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdevilleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdevilsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swdlucy": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "SweiB2Sugar": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓/官方原文",
+   "url": "https://github.com/max32002/swei-b2-sugar",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "SweiSpring": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓/官方原文",
+   "url": "https://github.com/max32002/swei-spring",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swfanleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swfansans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swfanserif": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swfistleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swfistsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swgospelleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swgospelsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swgothic": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swgothicleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swhalfmoon": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swjayleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swjaysans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swjayserif": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swmarkerleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swmarkersans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swmatchleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swmatchsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swmeatball": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swnutleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swnutsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swrainbowleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swrightbottoml": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swrightbottoms": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swshearleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swshearsans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swspikeleg": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swspikesans": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swsugar": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swtoothpaste": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swxd": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Swzh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/yzdnn/ShanWeiZhouHei-16",
+   "commit": null,
+   "fetchedAt": "2026-09-27",
+   "rule": null
+  }
+ },
+ "Syhtcjk": {
+  "textKind": "full",
+  "title": "SIL Open Font License",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Syhtsc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/adobe-fonts/source-han-sans",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Sykd": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Syma": {
+  "textKind": "full",
+  "title": "GlyphWiki 著作权与许可协议",
+  "evidence": {
+   "source": "[CC]",
+   "url": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Symb": {
+  "textKind": "full",
+  "title": "GlyphWiki 著作权与许可协议",
+  "evidence": {
+   "source": "[CC]",
+   "url": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Symdxft": {
+  "textKind": "pointer",
+  "title": "摄图摩登小方体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Systcn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Systcnl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/adobe-fonts/source-han-serif",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Systsc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/adobe-fonts/source-han-serif",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Systtc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Tbmct": {
+  "textKind": "full",
+  "title": "淘宝买菜体授权协议",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://www.alibabafonts.com/#/more",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Tetsubin": {
+  "textKind": "missing",
+  "title": "Apache License 2.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://flopdesign.booth.pm/items/3970314",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Tjlt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Buernia/Tiejili",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Train": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "TsangerFeiBaiW01": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerFeiBaiW02": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerFeiBaiW03": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerFeiBaiW04": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerFeiBaiW05": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerShuYuanTW01": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerShuYuanTW02": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerShuYuanTW03": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerShuYuanTW04": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerShuYuanTW05": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuMoW01": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuMoW02": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuMoW03": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuMoW04": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuMoW05": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuYangTW01": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuYangTW02": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuYangTW03": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuYangTW04": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "TsangerYuYangTW05": {
+  "textKind": "pointer",
+  "title": "仓耳字库免费开源字体授权声明",
+  "evidence": {
+   "source": "仓耳官方声明（cntrump/tsanger_free_fonts 存档 PDF 已 OCR 转录）",
+   "url": "https://www.tsanger.cn/category/114",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Tsugumi": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Tsukuhou": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Twjybbzjs": {
+  "textKind": "pointer",
+  "title": "CC BY-ND 3.0 TW",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Twjybbzst": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Twjybxxmt": {
+  "textKind": "pointer",
+  "title": "PMingLiU 繁体中文版授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Twzl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ubss": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/NightFurySL2001/unbounded-sans@master/OFL_ZHS.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Umgh": {
+  "textKind": "missing",
+  "title": "梅字体许可",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ummc": {
+  "textKind": "missing",
+  "title": "梅字体许可",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Unfdzh": {
+  "textKind": "full",
+  "title": "Dual license: GNU GPL version 2 or later with the GNU Font Embedding Exception, and SIL Open Font License version 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://unifoundry.com/LICENSE.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Urx": {
+  "textKind": "full",
+  "title": "GPL-2.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/scott0107000/Uranus-Pixel",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Vivosans": {
+  "textKind": "missing",
+  "title": "免费商用",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Wataame": {
+  "textKind": "missing",
+  "title": "待核实",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Wcsf": {
+  "textKind": "pointer",
+  "title": "问藏书房授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Wdxl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wjm2": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓/官方原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wjmp": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓/官方原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wlhxh": {
+  "textKind": "full",
+  "title": "MIT",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wqydkwmh": {
+  "textKind": "full",
+  "title": "Apache 2.0 / GPLv3",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/anthonyfok/fonts-wqy-microhei",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Wqydkzh": {
+  "textKind": "full",
+  "title": "GPL-2.0-with-font-exception",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/deepin-community/fonts-wqy-zenhei",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Wqys": {
+  "textKind": "full",
+  "title": "GPL-2.0-with-font-exception",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/deepin-community/fonts-wqy-zenhei",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Wqywmh": {
+  "textKind": "full",
+  "title": "Apache 2.0 / GPLv3 (双许可证)",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/anthonyfok/fonts-wqy-microhei",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Wqyzh": {
+  "textKind": "full",
+  "title": "GPL-2.0-with-font-exception",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/deepin-community/fonts-wqy-zenhei",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "WriteRight": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wyhk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wysf": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Wyyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xccx": {
+  "textKind": "full",
+  "title": "香萃潮汐宋授权协议",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Xiangcui-Chaoxisong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xcdc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Xiangcui-Dengcusong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xcdj": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Xiangcui-Dazijiti",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xcdz": {
+  "textKind": "pointer",
+  "title": "香萃打字机授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/Miiiller",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Xcjx": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Xiangcui-Jixuesong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xcks": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Xiangcui-Kesong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xcld": {
+  "textKind": "full",
+  "title": "香萃零度黑授权协议",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Miiiller/Xiangcui-ZeroHei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xcmdk": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/DraftingDreamer/FontCilantroCode",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Xcws": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xdks": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Skr-ZERO/Xuandong-Kaishu",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xet": {
+  "textKind": "pointer",
+  "title": "贤二体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "XiaolaiMonoSC": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/lxgw/kose-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "XiaolaiSC": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/lxgw/kose-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "XinYuGongHeXieSongLLight": {
+  "textKind": "missing",
+  "title": "猫啃网文明宋授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Xlfht": {
+  "textKind": "pointer",
+  "title": "乡立方黑体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Xsong": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xsslv": {
+  "textKind": "pointer",
+  "title": "CC BY 4.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Xstq": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/jeffreyxuan/toneoz-font-pinyin-wenkai@master/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Xwbright": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwbrightcode": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwmh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://raw.githubusercontent.com/lxgw/LxgwMarkerGothic/main/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Xwmxs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwmxscl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwmxsmn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwszh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwszhcl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwFasmartGothic",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwszhmn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwFasmartGothic",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwwk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/lxgw/LxgwWenKai",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwwkgb": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwWenKai",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwwktc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/lxgw/LxgwWenKai",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxhcl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxhmn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxxh": {
+  "textKind": "full",
+  "title": "IPA Font License",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxxhcode": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoXiHei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxxhplus": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoXiHei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxxhscreen": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoXiHei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxxhscreenfull": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoXiHei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxzs": {
+  "textKind": "full",
+  "title": "IPA Open Font License 1.0",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxzsplus": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoZhiSong",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxzsscreen": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoXiZhi-Screen",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwxzsscreenfull": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文/家族同授权",
+   "url": "https://github.com/lxgw/LxgwNeoXiZhi-Screen",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwzkgb": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://github.com/lxgw/LxgwZhenKai",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Xwzksgb": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/lxgw/LxgwZhenKai",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwzscl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwzsmn": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xwzt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Xxzt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[Grok]",
+   "url": "https://github.com/kaonashi-tyc/Zi-XuanZongTi/blob/main/LICENSE",
+   "commit": null,
+   "fetchedAt": "2026-09-29",
+   "rule": null
+  }
+ },
+ "Xyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "YRDZSTRegular": {
+  "textKind": "missing",
+  "title": "杨任东竹石体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yaoyt": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/feiyangjun-1/KirakaraMaru",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yasashisa": {
+  "textKind": "missing",
+  "title": "M+ FONTS PROJECT",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://flopdesign.booth.pm/items/1833993",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ydwbnnsp": {
+  "textKind": "pointer",
+  "title": "香蕉Plus字体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yffyt": {
+  "textKind": "pointer",
+  "title": "云峰飞云体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yiny": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yjmct": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yjsu": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ylmt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yomogi": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yozai": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓/官方原文",
+   "url": "https://github.com/lxgw/yozai-font",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yozf": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "http://yozvox.web.fc2.com/",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yqht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yqmt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yqt": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/Des-Magmeta/ChildFunSans",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yqttc": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/Des-Magmeta/ChildFunSans-TC",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yqyk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Yqyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ysbs": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/Steve-Yuu/YshiPen-Shuti",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ysbth": {
+  "textKind": "pointer",
+  "title": "优设标题黑授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ysbzt": {
+  "textKind": "pointer",
+  "title": "峄山碑篆体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ysht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ysui": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ysxh": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.maoken.com/freefonts/4535.html",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ysxin": {
+  "textKind": "missing",
+  "title": "IPA Font License Agreement v1.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yujiboku": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yujimai": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yunmt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yuseimagic": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yuzl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yxkt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yydq": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://cdn.jsdelivr.net/gh/chilingg/YufanDanQingSong@master/LICENSE",
+   "commit": null,
+   "fetchedAt": "2026-09-28",
+   "rule": null
+  }
+ },
+ "Yyht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yymt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yyuan": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Yyxl": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yyxy": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yyzs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Yzklct": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/longcang/OFL.txt",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Zcfs": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/Hulenkius/sotyr",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zdht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Buernia/Zhudou-Sans",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Zdicqx": {
+  "textKind": "full",
+  "title": "CC0 1.0",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenantique": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenantiquesoft": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenkakuantique": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenkakunew": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenkurenaido": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenmaru": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zenoldmincho": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zhbtt": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://izihun.com/shangyongziti/7495.html",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zht": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": "https://github.com/chiron-fonts/zev-hei-tc",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Ziyyt": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zjgljt": {
+  "textKind": "pointer",
+  "title": "卓健橄榄简体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zkgdht": {
+  "textKind": "pointer",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "zcool 官方字库页/Google Fonts",
+   "url": "https://www.zcool.com.cn/special/zcoolfonts/",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zkkht": {
+  "textKind": "pointer",
+  "title": "站酷酷黑授权协议",
+  "evidence": {
+   "source": "zcool 官方字库页/Google Fonts",
+   "url": "https://www.zcool.com.cn/special/zcoolfonts/",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zkklt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://www.zcool.com.cn/special/zcoolfonts/",
+   "commit": null,
+   "fetchedAt": "2026-09-24",
+   "rule": null
+  }
+ },
+ "Zkwyt": {
+  "textKind": "pointer",
+  "title": "站酷文艺体授权协议",
+  "evidence": {
+   "source": "zcool 官方字库页/Google Fonts",
+   "url": "https://www.zcool.com.cn/special/zcoolfonts/",
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zkxwt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://fonts.google.com/specimen/ZCOOL+XiaoWei",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zlcs": {
+  "textKind": "missing",
+  "title": "Apache License 2.0",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zlhc": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Astro-2539/ZLabs-Bitmap-HC",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zljp": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Astro-2539/ZLabs-Bitmap-JP",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zlmeng": {
+  "textKind": "missing",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zlrp12": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Astro-2539/ZLabs-RoundPix-12px",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zlrp16": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Astro-2539/ZLabs-RoundPix-16px",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zlx12": {
+  "textKind": "full",
+  "title": "MIT License",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/Astro-2539/ZLabs-Pixel-12px",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zqfs": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zqkhyt": {
+  "textKind": "full",
+  "title": "郑庆科黄油体 Regular授权协议",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Ztqxyjxs": {
+  "textKind": "pointer",
+  "title": "字体圈-信谊吉祥宋授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zwxszt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://www.maoken.com/freefonts/11130.html",
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zyht": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zyss": {
+  "textKind": "pointer",
+  "title": "智勇手书体授权协议",
+  "evidence": {
+   "source": "结构化记录",
+   "url": null,
+   "commit": null,
+   "fetchedAt": null,
+   "rule": null
+  }
+ },
+ "Zyst": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zyyt": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "上游仓原文",
+   "url": null,
+   "commit": null,
+   "fetchedAt": "2026-09-26",
+   "rule": null
+  }
+ },
+ "Zzft": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/FWHP-Enfun/Star-Love-Font",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Zzmk": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/FWHP-Enfun/Star-Love-Font",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ },
+ "Zzzd": {
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
+  "evidence": {
+   "source": "[CC]",
+   "url": "https://github.com/FWHP-Enfun/Star-Love-Font",
+   "commit": null,
+   "fetchedAt": "2026-09-25",
+   "rule": null
+  }
+ }
+}

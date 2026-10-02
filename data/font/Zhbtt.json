@@ -1,0 +1,57 @@
+{
+ "norm": "Zhbtt",
+ "name": "字魂扁桃体",
+ "en": "ZiHun BianTaoTi",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "pointer",
+  "sourceUrl": "https://izihun.com/shangyongziti/7495.html",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "atelier-anchor",
+   "rootWork": "得意黑",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "字魂",
+ "foundrySlug": "zihun",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zhbtt",
+ "weights": [
+  "Oblique"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://izihun.com/shangyongziti/7495.html",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 izihun.com",
+   "format": "git",
+   "href": "https://izihun.com/shangyongziti/7495.html",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zhbtt"
+}

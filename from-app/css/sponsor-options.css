@@ -1,0 +1,50 @@
+/* 赞助作者对照壳。组件样式在 site.css / detail.css。 */
+html:has(.page-sponsor-opt) { scroll-padding-top: calc(var(--topbar-h) + 4.5rem); }
+
+.sp-switch {
+  position: sticky; top: var(--topbar-h); z-index: 40;
+  background: var(--page); border-bottom: 1px solid var(--fill);
+  padding: var(--s-3) 0;
+}
+.sp-switch-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5);
+}
+.sp-switch-lead { font-size: var(--fs-13); color: var(--gray); flex: 1 1 12rem; }
+.sp-switch .seg-glyph { display: inline-flex; gap: 2px; background: var(--fill); border-radius: var(--radius-pill); padding: 2px; }
+.sp-switch .seg-glyph a {
+  padding: 0.28rem 0.85rem; border-radius: var(--radius-pill);
+  font-size: var(--fs-13); color: var(--ink-2); text-decoration: none;
+}
+.sp-switch .seg-glyph a:hover { color: var(--ink); }
+.sp-switch .seg-glyph a.is-on { background: var(--ink); color: var(--on-ink); }
+.sp-back { margin-left: auto; color: var(--gray); font-size: var(--fs-13); }
+
+.sp-block { padding-bottom: var(--s-12); }
+.sp-meta {
+  max-width: var(--container); margin: var(--s-6) auto var(--s-4); padding: 0 var(--gutter);
+  display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); align-items: baseline;
+}
+.sp-meta b { font-size: var(--fs-16); font-weight: var(--fw-title); }
+.sp-meta span { font-size: var(--fs-13); color: var(--gray); }
+
+.sp-hero { margin-top: 0; }
+.sp-fake-list { margin-top: var(--s-6); color: var(--gray); font-size: var(--fs-13); }
+
+.sp-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  gap: var(--s-8);
+  align-items: start;
+}
+.sp-detail-main {
+  padding: var(--s-8) 0;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: var(--fw-title);
+}
+
+@media (max-width: 768px) {
+  .sp-detail { grid-template-columns: 1fr; }
+  .sp-detail-main { padding-top: var(--s-4); font-size: 2rem; }
+}

@@ -1,0 +1,34 @@
+/* 界面字：阿里巴巴普惠体 3.0（Apache-2.0）。只收录页面文案和目录名实际用到的字，
+   400 / 700 各约 350 KB。样张不走这两份文件，走该字体自己的分包。 */
+@font-face { font-family: "Alibaba PuHuiTi"; font-weight: 400; font-display: swap; src: url("../assets/fonts/ui/PuHuiTi-400.woff2") format("woff2"); }
+@font-face { font-family: "Alibaba PuHuiTi"; font-weight: 700; font-display: swap; src: url("../assets/fonts/ui/PuHuiTi-700.woff2") format("woff2"); }
+
+/* 字标「文风字体」：寒蝉宽黑体 Medium（Chill K Sans）。只拉这四字所在的包分片。 */
+@font-face {
+  font-family: "wenfeng-hckht";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cn.windfonts.com/fonts-packages/Hckht/Medium/full/16.woff2") format("woff2");
+  unicode-range: U+6587;
+}
+@font-face {
+  font-family: "wenfeng-hckht";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cn.windfonts.com/fonts-packages/Hckht/Medium/full/18.woff2") format("woff2");
+  unicode-range: U+98CE;
+}
+@font-face {
+  font-family: "wenfeng-hckht";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cn.windfonts.com/fonts-packages/Hckht/Medium/full/15.woff2") format("woff2");
+  unicode-range: U+4F53;
+}
+@font-face {
+  font-family: "wenfeng-hckht";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cn.windfonts.com/fonts-packages/Hckht/Medium/full/19.woff2") format("woff2");
+  unicode-range: U+5B57;
+}

@@ -1,0 +1,52 @@
+{
+ "norm": "Zkxwt",
+ "name": "站酷小薇体",
+ "en": "ZCOOL XiaoWei",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://fonts.google.com/specimen/ZCOOL+XiaoWei",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "a094514ca57cf8f9c5e8d8d1adab5d8cd3a377297ff016f9df2c05b3ecd77f0a",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "ZCOOL",
+ "foundrySlug": "zcool",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zkxwt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://fonts.google.com/specimen/ZCOOL+XiaoWei",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 fonts.google.com",
+   "format": "git",
+   "href": "https://fonts.google.com/specimen/ZCOOL+XiaoWei",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zkxwt"
+}

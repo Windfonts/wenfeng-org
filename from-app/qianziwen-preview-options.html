@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg");if(localStorage.getItem("wf-view")==="dev")document.documentElement.setAttribute("data-view","dev")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>千字文全屏预览 · 对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-close-options.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/qianziwen-preview-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-qzw-opts page-home-close">
+  <header data-topbar data-active="fonts"></header>
+
+  <div class="hc-switch">
+    <div class="container hc-switch-inner">
+      <p class="hc-switch-lead">乙碑格已上正式页（字符表摘要「通篇预览」）。本页留档对照甲乙丙丁。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#a">甲 卷轴</a>
+        <a href="#b">乙 碑格</a>
+        <a href="#c">丙 校读</a>
+        <a href="#d">丁 灯箱</a>
+      </nav>
+      <a class="hc-back" href="font-detail.html">回字体页</a>
+    </div>
+  </div>
+
+  <main>
+    <article class="hc-block is-on" id="a">
+      <header class="hc-meta">
+        <b>甲 · 卷轴</b>
+        <span>像读一册字帖：四字一顿、通栏竖感横向排开。缺字虚框系统回退，顶栏只留覆盖率与「只看缺字」。</span>
+      </header>
+      <div class="qz-stage">
+        <div class="qz-card">
+          <p class="qz-kicker">字符表 · 旁路入口</p>
+          <h2 data-font-name>千字文通篇</h2>
+          <p class="qz-note">适合：第一次看一款字「整篇什么感觉」。弱审计、强阅读。</p>
+          <button type="button" class="btn btn-ink" data-open="a">打开卷轴预览</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="hc-block" id="b">
+      <header class="hc-meta">
+        <b>乙 · 碑格</b>
+        <span>全宽 20 列铺满。悬停放大当前字并淡化旁字；触屏点按短放大。字号可调；缺字灰底内描边。</span>
+      </header>
+      <div class="qz-stage">
+        <div class="qz-card">
+          <p class="qz-kicker">字符表 · 放大盘点</p>
+          <h2 data-font-name>千字文通篇</h2>
+          <p class="qz-note">适合：缺字多时「洞在哪一片」。弱阅读、强盘点。</p>
+          <button type="button" class="btn btn-ink" data-open="b">打开碑格预览</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="hc-block" id="c">
+      <header class="hc-meta">
+        <b>丙 · 校读</b>
+        <span>左边通篇，右边缺字清单可点跳。覆盖率钉在侧栏。适合：对照修改、给厂商报缺字。</span>
+      </header>
+      <div class="qz-stage">
+        <div class="qz-card">
+          <p class="qz-kicker">出处 / 开发视图</p>
+          <h2 data-font-name>千字文通篇</h2>
+          <p class="qz-note">适合：边读边记缺字。阅读与审计并重。</p>
+          <button type="button" class="btn btn-ink" data-open="c">打开校读预览</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="hc-block" id="d">
+      <header class="hc-meta">
+        <b>丁 · 灯箱</b>
+        <span>最少 UI：大字 + 字号滑杆 + Esc 关闭。缺字仅淡化虚线。适合：设计视图从字形墙一键进入，不抢主流程。</span>
+      </header>
+      <div class="qz-stage">
+        <div class="qz-card">
+          <p class="qz-kicker">字形墙 · 快捷</p>
+          <h2 data-font-name>千字文通篇</h2>
+          <p class="qz-note">适合：只想放大看、少打扰。入口最轻，功能最少。</p>
+          <button type="button" class="btn btn-ink" data-open="d">打开灯箱预览</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div id="qzOverlay" class="qz-overlay" hidden></div>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/qianziwen-preview-options.js?v=20260925r"></script>
+</body>
+</html>

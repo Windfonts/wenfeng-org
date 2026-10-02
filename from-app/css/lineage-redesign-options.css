@@ -1,0 +1,170 @@
+/* 谱系三套重设对照。令牌只走 tokens；不进生产导航。 */
+
+.page-lro .lro-switch {
+  position: sticky; top: var(--topbar-h); z-index: 20;
+  background: var(--page); border-bottom: 1px solid var(--rule-2);
+}
+.lro-switch-inner { padding: var(--s-4) 0 var(--s-5); display: flex; flex-direction: column; gap: var(--s-3); }
+.lro-lead { margin: 0; font-size: var(--fs-13); color: var(--gray); }
+.lro-lead a { color: var(--ink); }
+.lro-fams { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.lro-fams .chip .n { margin-left: 0.35em; color: var(--gray-2); font-variant-numeric: tabular-nums; }
+
+.lro-block { padding: var(--s-10) 0 var(--s-12); border-bottom: 1px solid var(--rule-2); }
+.lro-block:last-child { border-bottom: none; }
+.lro-meta {
+  max-width: var(--container); margin: 0 auto var(--s-6); padding: 0 var(--gutter);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-3) var(--s-5);
+}
+.lro-meta b { font-size: var(--fs-16); font-weight: var(--fw-title); color: var(--ink); }
+.lro-meta span { font-size: var(--fs-13); color: var(--gray); max-width: 42rem; }
+.lro-panel { background: var(--surface); border-radius: var(--radius); padding: var(--s-6); }
+.lro-empty { margin: 0; color: var(--gray); font-size: var(--fs-14); }
+
+/* —— 共用节点零件 —— */
+.lro-yong { flex: none; width: 2rem; font-size: var(--fs-20); line-height: 1; color: var(--ink); text-align: left; }
+.lro-name { font-size: var(--fs-14); color: var(--ink); display: inline-flex; align-items: center; gap: 0.45em; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lro-name .icon { color: var(--gray-2); flex: none; }
+.lro-meta-n { margin-left: auto; font-size: var(--fs-12); color: var(--gray-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lro-meta-n b { color: var(--gray); font-weight: var(--fw-label); }
+
+.lro-node {
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: 0.42rem 0; text-decoration: none; min-height: 2.4rem; color: inherit;
+}
+a.lro-node:hover .lro-name { text-decoration: underline; text-underline-offset: 0.32em; text-decoration-thickness: 1px; }
+.lro-node.is-root { min-height: 3.2rem; }
+.lro-node.is-root .lro-yong { width: 2.6rem; font-size: var(--fs-28); }
+.lro-node.is-root .lro-name { font-size: var(--fs-16); font-weight: var(--fw-title); }
+.lro-node.is-ghost .lro-name, .lro-node.is-ghost .lro-yong { color: var(--gray-2); }
+
+.lro-fold {
+  appearance: none; background: none; border: none; padding: 0.3rem 0;
+  font: inherit; font-size: var(--fs-12); color: var(--gray); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.4em;
+}
+.lro-fold:hover { color: var(--ink); }
+
+/* ===== 甲 · 真树导轨（加粗肘线 + 真末子截断） ===== */
+.lro-a { --step: 1.75rem; --rail: 1.5px; }
+.lro-a ul { list-style: none; margin: 0; padding: 0; }
+.lro-a > ul > li { padding-left: 0; }
+.lro-a > ul > li::before,
+.lro-a > ul > li > .lro-node::before,
+.lro-a > ul > li > .lro-fold::before { display: none; }
+.lro-a li { position: relative; padding-left: calc(var(--step) + 0.75rem); }
+.lro-a li::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: var(--rail); background: var(--gray-2); opacity: 0.55; border-radius: 1px;
+}
+.lro-a li.is-last::before { bottom: auto; height: calc(1.2rem + 0.5em); }
+.lro-a li > .lro-node, .lro-a li > .lro-fold { position: relative; }
+.lro-a li > .lro-node::before, .lro-a li > .lro-fold::before {
+  content: ""; position: absolute;
+  left: calc(-0.75rem - var(--rail)); top: 50%;
+  width: 0.75rem; height: var(--rail);
+  background: var(--gray-2); opacity: 0.55; border-radius: 1px;
+}
+.lro-a .lro-cap {
+  font-size: var(--fs-12); color: var(--gray); letter-spacing: 0.08em;
+  margin: 0 0 var(--s-4); padding-bottom: var(--s-3); border-bottom: 1px solid var(--rule);
+}
+
+/* ===== 乙 · 根卡支线 ===== */
+.lro-b-root {
+  background: var(--paper); border-radius: var(--radius-sm);
+  padding: var(--s-5) var(--s-6); margin-bottom: var(--s-5);
+}
+.lro-b-root .lro-node { min-height: 3.6rem; }
+.lro-b-root .lro-yong { width: 3rem; font-size: var(--fs-40); }
+.lro-b-root .lro-name { font-size: var(--fs-20); font-weight: var(--fw-title); }
+.lro-b-gen {
+  display: flex; align-items: center; gap: var(--s-3);
+  margin: var(--s-5) 0 var(--s-3);
+  font-size: var(--fs-12); color: var(--gray); letter-spacing: 0.1em;
+}
+.lro-b-gen::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+.lro-b-branch { --step: 1.5rem; --rail: 1.5px; }
+.lro-b-branch ul { list-style: none; margin: 0; padding: 0; }
+.lro-b-branch li { position: relative; padding-left: calc(var(--step) + 0.7rem); }
+.lro-b-branch li::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: var(--rail); background: var(--gray-2); opacity: 0.5; border-radius: 1px;
+}
+.lro-b-branch li.is-last::before { bottom: auto; height: 1.3rem; }
+.lro-b-branch li > .lro-node::before, .lro-b-branch li > .lro-fold::before {
+  content: ""; position: absolute;
+  left: calc(-0.7rem - var(--rail)); top: 50%;
+  width: 0.7rem; height: var(--rail);
+  background: var(--gray-2); opacity: 0.5;
+}
+.lro-b-branch li > .lro-node, .lro-b-branch li > .lro-fold { position: relative; }
+.lro-b-flat {
+  display: flex; flex-wrap: wrap; gap: var(--s-3); margin: 0; padding: 0; list-style: none;
+}
+.lro-b-flat .lro-chip {
+  display: flex; align-items: center; gap: var(--s-2);
+  background: var(--paper); border-radius: var(--radius-sm);
+  padding: var(--s-3) var(--s-4); text-decoration: none; color: inherit; min-width: 10rem;
+}
+.lro-b-flat .lro-chip:hover { background: var(--fill); }
+.lro-b-flat .lro-yong { width: auto; font-size: var(--fs-20); }
+.lro-b-flat .lro-name { font-size: var(--fs-13); }
+.lro-b-flat .lro-meta-n { margin-left: 0; display: none; }
+
+/* ===== 丙 · 墙 + 旁谱 ===== */
+.lro-c { display: grid; grid-template-columns: 14rem 1fr; gap: var(--s-6); align-items: start; }
+@media (max-width: 52rem) { .lro-c { grid-template-columns: 1fr; } }
+.lro-c-rail {
+  background: var(--paper); border-radius: var(--radius-sm); padding: var(--s-4) var(--s-5);
+  position: sticky; top: calc(var(--topbar-h) + 7rem);
+}
+.lro-c-rail .lro-cap {
+  font-size: var(--fs-12); color: var(--gray); letter-spacing: 0.1em;
+  margin: 0 0 var(--s-3);
+}
+.lro-c-rail ul { list-style: none; margin: 0; padding: 0; }
+.lro-c-rail li { position: relative; padding-left: 1.1rem; }
+.lro-c-rail li::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 1px; background: var(--rule);
+}
+.lro-c-rail li.is-last::before { bottom: auto; height: 0.85rem; }
+.lro-c-rail .lro-slim {
+  display: block; padding: 0.28rem 0; font-size: var(--fs-12); color: var(--ink-2);
+  text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.lro-c-rail .lro-slim.is-root { font-weight: var(--fw-title); color: var(--ink); font-size: var(--fs-13); }
+.lro-c-rail .lro-slim.is-ghost { color: var(--gray-2); }
+.lro-c-rail a.lro-slim:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+
+.lro-c-main .lro-band + .lro-band { margin-top: var(--s-6); }
+.lro-c-main .lro-band-cap {
+  display: flex; align-items: center; gap: var(--s-3);
+  margin-bottom: var(--s-3); padding-bottom: var(--s-2); border-bottom: 1px solid var(--rule);
+}
+.lro-c-main .lro-band-cap .yr {
+  font-size: var(--fs-14); font-weight: var(--fw-title); font-variant-numeric: tabular-nums; color: var(--ink);
+}
+.lro-c-main .lro-band-cap .t { font-size: var(--fs-12); letter-spacing: 0.14em; color: var(--gray); }
+.lro-c-main .lro-wall { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+.lro-c-main .lro-cell {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  background: var(--paper); border-radius: var(--radius-sm);
+  padding: var(--s-4) var(--s-5); color: inherit; text-decoration: none;
+  min-width: 9.5rem; flex: 0 1 auto;
+}
+.lro-c-main .lro-cell:hover { background: var(--fill); }
+.lro-c-main .lro-cell .lro-yong { width: auto; font-size: var(--fs-28); }
+.lro-c-main .lro-cell .lro-name { font-size: var(--fs-13); }
+.lro-c-main .lro-cell .lro-meta-n { margin: 0; display: block; }
+.lro-c-main .lro-cell.is-root { background: var(--ink); }
+.lro-c-main .lro-cell.is-root .lro-yong,
+.lro-c-main .lro-cell.is-root .lro-name { color: var(--on-ink); }
+.lro-c-main .lro-cell.is-root .lro-meta-n { color: var(--on-ink-2, var(--gray-2)); }
+.lro-c-main .lro-cell.is-root .lro-yong { font-size: var(--fs-40); }
+
+@media (max-width: 40rem) {
+  .lro-node { flex-wrap: wrap; }
+  .lro-node .lro-meta-n { margin-left: 0; flex-basis: 100%; }
+}

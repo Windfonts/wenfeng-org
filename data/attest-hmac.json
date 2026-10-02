@@ -1,0 +1,6 @@
+{
+  "kid": "wf-proto-1",
+  "alg": "HMAC-SHA256",
+  "note": "原型密钥，不能用于生产存档。生产另配 Ed25519，本文件不进公网桶。",
+  "secret": "wenfeng-org-prototype-hmac-not-production"
+}

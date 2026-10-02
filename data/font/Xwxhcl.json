@@ -1,0 +1,50 @@
+{
+ "norm": "Xwxhcl",
+ "name": "霞鹜晰黑 CL",
+ "en": "LXGW XiHei CL",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "bce9800ab47cd0961c2a536d5ecfb983442d58eec1db5ff88a5f1a8d1c682367",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "ipa",
+   "rootWork": "IPAex Gothic",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwxhcl",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwxhcl"
+}

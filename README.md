@@ -1,0 +1,41 @@
+# wenfeng-org · 文风 org
+
+**wenfeng.org** 站点仓：造字、授权、源文件下载（以及缺字 / 开源工具的后续落点）。
+
+- **不是** Windfonts 分发店面。店面是 [`Windfonts/fonts-front`](https://feicode.com/Windfonts/fonts-front)（`app.windfonts.com`）。
+- 双平台分工见 fonts-front 的 [`docs/PLATFORMS.md`](https://feicode.com/Windfonts/fonts-front/src/branch/main/docs/PLATFORMS.md)（造字 / 授权 / 源文件 → org；逛库 / CDN / 子集化 → Windfonts）。
+- **不要**把本仓内容合进 `fonts-front`。生产 DNS / 部署变更须人明确要求（部署手册见 `DEPLOY.md`）。
+
+## 本机预览
+
+端口 **16030**（与店面 16016 分开）。
+
+```bash
+cd ~/Projects/wenfeng-org
+# 如有 joy-port：joy-port claim 16030
+python3 preview.py --port 16030
+# http://127.0.0.1:16030/           完整原型（现网口径）
+# http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
+# http://127.0.0.1:16030/lab         旧稿 A–F 对照
+```
+
+依赖：Python 3；证书 PDF 预览需要本机 `qrcode` 与 Chrome（可选）。
+
+静态包：`python3 build.py` → `dist/`（已 gitignore；勿提交构建噪声）。
+
+## 仓结构（要点）
+
+| 路径 | 角色 |
+|---|---|
+| `index.html` + `js/site.js` + `css/` | 完整站 SPA |
+| `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
+| `samples.json` / `data/` | 演示样本与许可数据 |
+| `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |
+| `lab.html` · `a.html`…`f.html` · `hifi-*` | 否决 / 过程稿对照（见 `archive/README.md`） |
+| `from-app/` | 从 fonts-front 拷的设计令牌对照 |
+| `docs/` | 简报与计划摘录 |
+| `worker/` | CF Worker 草稿 |
+
+## 从 linuxjoy 迁出
+
+此前活源在 `linuxjoy/docs/plans/wenfeng-org-prototype/`。本仓为定稿后的 FeiCode 真源；linuxjoy 侧留 stub 指针，树暂保留至冯确认后再删。

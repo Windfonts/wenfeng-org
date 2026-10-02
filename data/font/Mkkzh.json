@@ -1,0 +1,61 @@
+{
+ "norm": "Mkkzh",
+ "name": "猫啃扛重族黑",
+ "en": "Maoken Heavy Labourer Gothic SC",
+ "aliases": [
+  "扛重族",
+  "maoken-heavy-labourer"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/maoken-fonts/maoken-heavy-labourer",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "9b4364250e518bb44aee5d7d0a19f9981c6c84576afc7d077e5726db0b6db479",
+  "verifiedAt": "2026-09-24",
+  "rfn": null,
+  "rfnNote": "继承自思源黑体的 Adobe 许可，衍生版不得使用",
+  "origin": {
+   "rootAuthor": "Adobe",
+   "rootWork": "思源黑体 Source Han Sans",
+   "note": "猫啃扛重族为思源黑体的衍生字体，授权沿袭上游"
+  }
+ },
+ "foundry": "猫啃网 (Maoken)",
+ "foundrySlug": "maoken",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Mkkzh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "skipped-too-heavy",
+  "feicode": null,
+  "upstream": "https://github.com/maoken-fonts/maoken-heavy-labourer",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/maoken-fonts/maoken-heavy-labourer",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "开源。体积过大，本站不收，请到上游取。",
+ "family": "wenfeng-mkkzh"
+}

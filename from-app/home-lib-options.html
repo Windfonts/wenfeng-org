@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首页下半 · 四套设计稿 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-lib-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-home-lib">
+  <header data-topbar data-active="home"></header>
+
+  <div class="hl-switch">
+    <div class="container hl-switch-inner">
+      <p class="hl-switch-lead">只改字林下面。上面仍是原 hero + 四格 + 字林。现首页未改。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#a">甲 瘦三栏</a>
+        <a href="#b">乙 全宽</a>
+        <a href="#c">丙 门面</a>
+        <a href="#d">丁 精修</a>
+      </nav>
+      <p class="live-caption">
+        <span>当前款</span>
+        <a class="now" data-name href="/">—</a>
+        <button type="button" id="liveNext"><svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-refresh"/></svg>换一款</button>
+        <a class="hl-back" href="/">回现首页</a>
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <article class="hl-block is-on" id="a">
+      <header class="hl-meta">
+        <b>甲 · 瘦三栏</b>
+        <span>按上次四条。左栏只留分类；当前款置顶标出；右卡削到厂商、许可、两个按钮。底栏不要。</span>
+      </header>
+      <div class="controlbar hl-fakebar" aria-hidden="true">
+        <div class="container controlbar-inner">
+          <input class="sample" value="春风又绿江南岸" readonly tabindex="-1" />
+          <div class="presets">
+            <button type="button" class="is-on" tabindex="-1">短句</button>
+            <button type="button" tabindex="-1">标题</button>
+            <button type="button" tabindex="-1">段落</button>
+            <button type="button" tabindex="-1">品牌</button>
+            <button type="button" tabindex="-1">诗句</button>
+            <button type="button" tabindex="-1">中英数</button>
+          </div>
+          <div class="sizer"><span class="val">44 px</span></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lib has-side hl-lib-a">
+          <aside class="lib-rail" id="aRail" aria-label="分类"></aside>
+          <section>
+            <div class="count-line row-between">
+              <span id="aCount"></span>
+              <label class="lib-sort"><span class="sr-only">排序</span><select class="select" tabindex="-1" aria-hidden="true"><option>推荐排序</option></select></label>
+            </div>
+            <ul class="specimens" id="aList"></ul>
+          </section>
+          <aside class="lib-side" id="aSide" aria-label="当前字体"></aside>
+        </div>
+      </div>
+    </article>
+
+    <article class="hl-block" id="b">
+      <header class="hl-meta">
+        <b>乙 · 全宽</b>
+        <span>不要左右栏。分类改成横条，列表铺满。当前款只在行上认，完整筛选留给字体库页。</span>
+      </header>
+      <div class="controlbar hl-fakebar" aria-hidden="true">
+        <div class="container controlbar-inner">
+          <input class="sample" value="春风又绿江南岸" readonly tabindex="-1" />
+          <div class="presets">
+            <button type="button" class="is-on" tabindex="-1">短句</button>
+            <button type="button" tabindex="-1">标题</button>
+            <button type="button" tabindex="-1">段落</button>
+            <button type="button" tabindex="-1">品牌</button>
+            <button type="button" tabindex="-1">诗句</button>
+            <button type="button" tabindex="-1">中英数</button>
+          </div>
+          <div class="sizer"><span class="val">44 px</span></div>
+        </div>
+      </div>
+      <div class="container hl-lib-b">
+        <div class="hl-cats" id="bCats"></div>
+        <div class="count-line row-between">
+          <span id="bCount"></span>
+          <p class="hl-nowline">当前 · <a data-name>—</a> 在列表里标出</p>
+        </div>
+        <ul class="specimens" id="bList"></ul>
+        <p class="hl-more"><a href="/fonts">完整筛选与全部字体 →</a></p>
+      </div>
+    </article>
+
+    <article class="hl-block" id="c">
+      <header class="hl-meta">
+        <b>丙 · 门面</b>
+        <span>首页不再铺满整库。字林之后先落当前款一条，再给同分类十二款，其余进字体库。</span>
+      </header>
+      <div class="container hl-lib-c">
+        <div class="hl-now" id="cNow"></div>
+        <div class="count-line"><span id="cCount"></span></div>
+        <ul class="specimens" id="cList"></ul>
+        <p class="hl-more hl-more-strong" id="cMore"></p>
+      </div>
+    </article>
+
+    <article class="hl-block" id="d">
+      <header class="hl-meta">
+        <b>丁 · 精修</b>
+        <span>三栏都留。分类常开，字重 / 语言 / 许可折上；简介去掉；底栏只留三张图，不再重复四个数字。</span>
+      </header>
+      <div class="controlbar hl-fakebar" aria-hidden="true">
+        <div class="container controlbar-inner">
+          <input class="sample" value="春风又绿江南岸" readonly tabindex="-1" />
+          <div class="presets">
+            <button type="button" class="is-on" tabindex="-1">短句</button>
+            <button type="button" tabindex="-1">标题</button>
+            <button type="button" tabindex="-1">段落</button>
+            <button type="button" tabindex="-1">品牌</button>
+            <button type="button" tabindex="-1">诗句</button>
+            <button type="button" tabindex="-1">中英数</button>
+          </div>
+          <div class="sizer"><span class="val">44 px</span></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lib has-side hl-lib-d">
+          <aside class="lib-rail" id="dRail" aria-label="筛选"></aside>
+          <section>
+            <div class="count-line row-between">
+              <span id="dCount"></span>
+              <label class="lib-sort"><span class="sr-only">排序</span><select class="select" tabindex="-1" aria-hidden="true"><option>推荐排序</option></select></label>
+            </div>
+            <ul class="specimens" id="dList"></ul>
+          </section>
+          <aside class="lib-side" id="dSide" aria-label="当前字体"></aside>
+        </div>
+      </div>
+      <section class="stats-band hl-charts" aria-label="库内结构"><div class="container" id="dCharts"></div></section>
+    </article>
+  </main>
+
+  <footer id="wfExtraFooter"></footer>
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/home-lib-options.js?v=20260925r"></script>
+</body>
+</html>

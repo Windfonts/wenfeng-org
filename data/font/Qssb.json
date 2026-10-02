@@ -1,0 +1,60 @@
+{
+ "norm": "Qssb",
+ "name": "秋水书体 Bright",
+ "en": "Qiushui Shotai Bright",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/NoHeartPen/QiushuiShotai",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "0ff6bae363cd226cae83befa8faaac2b772c493bc3e86253650cd2d43853a5ea",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "NoHeartPen",
+ "foundrySlug": "qiushui",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Qssb",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/NoHeartPen/QiushuiShotai",
+  "upstream": "https://github.com/NoHeartPen/QiushuiShotai",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Qssb.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/NoHeartPen/QiushuiShotai",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-qssb"
+}

@@ -1,0 +1,52 @@
+{
+ "norm": "Qtxmt",
+ "name": "千图纤墨体",
+ "en": "qiantuxianmoti",
+ "aliases": [],
+ "licenseName": "千图纤墨体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": "https://ibaotu.com",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "拼图",
+ "foundrySlug": "qiantu",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Qtxmt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://ibaotu.com",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 ibaotu.com",
+   "format": "git",
+   "href": "https://ibaotu.com",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-qtxmt"
+}

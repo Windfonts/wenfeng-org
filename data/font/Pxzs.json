@@ -1,0 +1,65 @@
+{
+ "norm": "Pxzs",
+ "name": "屏显臻宋",
+ "en": "Clear Han Serif",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/izfsk-ium/Clear-Han-Serif",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "7f18ec1ebb6b50e3ed0f74b2c61f25b8d7cd69e43f4de66e991bcfd3c419a8bb",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源宋体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "chncwk",
+ "foundrySlug": "chncwk",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Pxzs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/izfsk-ium/Clear-Han-Serif",
+  "upstream": "https://github.com/izfsk-ium/Clear-Han-Serif",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Pxzs.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/izfsk-ium/Clear-Han-Serif",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-pxzs"
+}

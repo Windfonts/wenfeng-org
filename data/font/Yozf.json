@@ -1,0 +1,52 @@
+{
+ "norm": "Yozf",
+ "name": "YozFont",
+ "en": "Y.OzFont",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "http://yozvox.web.fc2.com/",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "a336dfdfbdc7e8a5e728a5f0341b0d809951086404ad5ddf47461909d28ff0d1",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Y.OzVox",
+ "foundrySlug": "yoz",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Yozf",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "http://yozvox.web.fc2.com/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 yozvox.web.fc2.com",
+   "format": "git",
+   "href": "http://yozvox.web.fc2.com/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-yozf"
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首页 Hero 原型 · 第二轮 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-hero-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-hero-opt">
+  <header data-topbar data-active="home"></header>
+
+  <div class="ho-switch" id="hoSwitch">
+    <div class="container ho-switch-inner">
+      <p class="ho-switch-lead">第二轮三套 · 概念不同，不是换摆法。现首页未改。</p>
+      <nav class="seg-glyph" aria-label="原型">
+        <a href="#e">E 大海报</a>
+        <a href="#f">F 字林</a>
+        <a href="#g">G 单字</a>
+      </nav>
+      <p class="live-caption">
+        <span>正在用</span>
+        <a class="now" data-name href="/">—</a>
+        <button type="button" id="liveNext"><svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-refresh"/></svg>换一款</button>
+        <a class="ho-back" href="/">回现首页</a>
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <article class="ho-block" id="e">
+      <header class="ho-meta"><b>E · 大海报</b><span>字占满第一屏。没有 slogan、没有主按钮、没有四格数字。底下那一行才是身份。</span></header>
+      <section class="ho-hero ho-e">
+        <div class="container ho-e-stage">
+          <h2 class="live" data-live data-live-e contenteditable="true" spellcheck="false" data-placeholder="写几个字">春风</h2>
+        </div>
+        <div class="ho-e-bar">
+          <div class="container ho-e-bar-in">
+            <a class="ho-now" data-name data-detail>—</a>
+            <a class="btn-text" data-detail>查看这款</a>
+            <button type="button" class="btn-text" data-pick>加入选字袋</button>
+            <label class="ho-size"><span class="sr-only">字号</span><input type="range" min="72" max="240" value="168" data-size-e><span data-size-e-val>168</span></label>
+            <p class="ho-whisper" data-whisper></p>
+          </div>
+        </div>
+      </section>
+      <div class="container ho-libhint" data-rows="e"></div>
+    </article>
+
+    <article class="ho-block" id="f">
+      <header class="ho-meta"><b>F · 字林</b><span>同一字，九款同时在场。点格子换主角。库从第一屏就开始。</span></header>
+      <section class="ho-hero ho-f">
+        <div class="container">
+          <div class="ho-f-chorus" data-chorus></div>
+          <div class="ho-film">
+            <a class="btn-text" data-detail>查看这款</a>
+            <button type="button" class="btn-text" data-pick>加入选字袋</button>
+            <p class="ho-whisper" data-whisper></p>
+          </div>
+        </div>
+      </section>
+      <div class="container ho-libhint" data-rows="f"></div>
+    </article>
+
+    <article class="ho-block" id="g">
+      <header class="ho-meta"><b>G · 单字</b><span>一个「永」，像字帖封面。身份是图注，不是卡片。</span></header>
+      <section class="ho-hero ho-g">
+        <div class="container ho-g-grid">
+          <h2 class="ho-yong" data-live data-live-g contenteditable="true" spellcheck="false" data-placeholder="永">永</h2>
+          <aside class="ho-g-meta">
+            <p class="kicker">样张</p>
+            <p class="ho-g-name"><a data-name data-detail>—</a></p>
+            <p class="ho-facts" data-g-facts></p>
+            <div class="ho-g-acts">
+              <a class="btn-text" data-detail>查看这款</a>
+              <button type="button" class="btn-text" data-pick>加入选字袋</button>
+            </div>
+            <p class="ho-whisper" data-whisper></p>
+          </aside>
+        </div>
+      </section>
+      <div class="container ho-libhint" data-rows="g"></div>
+    </article>
+  </main>
+
+  <footer id="wfExtraFooter"></footer>
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/home-hero-options.js?v=20260925r"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>谱系可视化 · 设计对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-systsc&weight=Regular" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xwwk&weight=Light" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-dyh&weight=Regular" />
+  <style>
+    .lv-wrap { max-width: 62rem; margin: 0 auto; padding: 0 var(--gutter) var(--s-10); }
+    .lv-nav { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .lv-nav .container { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; padding-top: var(--s-3); padding-bottom: var(--s-3); }
+    .lv-nav .lead { font-size: var(--fs-12); color: var(--gray); margin: 0; }
+    .lv-nav nav { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+    .lv-nav nav a { font-size: var(--fs-12); color: var(--ink); text-decoration: none; padding: 0.25rem 0.7rem; border: 1px solid var(--rule); border-radius: var(--radius-pill); }
+    .lv-nav nav a:hover { border-color: var(--ink); }
+
+    .lv-sec { margin-top: var(--s-9); }
+    .lv-sec > header { display: flex; align-items: baseline; gap: var(--s-3); margin-bottom: var(--s-2); flex-wrap: wrap; }
+    .lv-sec > header .tag { font-size: var(--fs-13); font-weight: var(--fw-title); background: var(--ink); color: var(--on-ink); padding: 0.15rem 0.65rem; border-radius: var(--radius-pill); }
+    .lv-sec > header h2 { font-size: var(--fs-16); margin: 0; }
+    .lv-sec > header p { font-size: var(--fs-12); color: var(--gray); margin: 0; }
+    .lv-stage { border: 1px solid var(--rule); border-radius: var(--radius, 10px); background: var(--paper-2, transparent); padding: var(--s-5); overflow-x: auto; }
+    .lv-foot { margin-top: var(--s-4); font-size: var(--fs-12); color: var(--gray-2); }
+
+    /* 共用：节点徽章 */
+    .lv-meta { font-size: var(--fs-12); color: var(--gray); white-space: nowrap; }
+    .lv-tier { display: inline-block; font-size: var(--fs-11); padding: 0.05rem 0.45rem; border: 1px solid var(--rule); border-radius: var(--radius-pill); color: var(--ink-2); }
+    .lv-tier.oss { border-color: #1f7a3f; color: #1f7a3f; }
+    .lv-sample { font-family: 'wenfeng-systsc', serif; }
+
+    /* ===== 方向一 · 族谱树 ===== */
+    .lvA-group { margin-bottom: var(--s-7); }
+    .lvA-caption { font-size: var(--fs-12); color: var(--gray); margin: 0 0 var(--s-3); font-weight: var(--fw-label); }
+    .lvA-caption b { color: var(--ink); font-size: var(--fs-14); margin-right: 0.5em; }
+    .lvA-tree { --rail: 1.4rem; }
+    .lvA-node { position: relative; padding-left: calc(var(--rail) + 0.9rem); }
+    .lvA-node::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+    .lvA-node:last-child::before { bottom: auto; height: 1.05rem; }
+    .lvA-node > .lvA-row::before,
+    .lvA-node > .lvA-tree > .lvA-node:first-child > .lvA-row::before { content: none; }
+    .lvA-node > .lvA-tree { margin-top: 0; }
+    .lvA-row { display: flex; align-items: baseline; gap: var(--s-3); padding: 0.5rem 0 0.5rem 0; position: relative; }
+    .lvA-row::before { content: ""; position: absolute; left: calc(-0.9rem - 1px); top: 50%; width: 0.9rem; height: 1px; background: var(--rule); }
+    .lvA-name { font-size: var(--fs-14); color: var(--ink); font-weight: var(--fw-label); }
+    .lvA-name .en { color: var(--gray); font-weight: var(--fw-normal); margin-left: 0.4em; font-size: var(--fs-12); }
+    .lvA-root > .lvA-row .lvA-name { font-size: var(--fs-16); font-weight: var(--fw-title); }
+    .lvA-rel { font-size: var(--fs-11); color: var(--gray-2); border: 1px dashed var(--rule); border-radius: var(--radius-pill); padding: 0 0.45rem; }
+    .lvA-card { border: 1px solid var(--rule); border-radius: 8px; padding: 0.65rem 0.9rem; background: var(--paper); margin: 0.35rem 0; display: flex; align-items: baseline; gap: var(--s-3); flex-wrap: wrap; }
+    .lvA-group-head { display: flex; align-items: baseline; gap: var(--s-3); margin-bottom: var(--s-2); }
+    .lvA-group-head h3 { margin: 0; font-size: var(--fs-15); }
+    .lvA-group-head .n { font-size: var(--fs-12); color: var(--gray); }
+
+    /* ===== 方向二 · 年代纵轴 ===== */
+    .lvB { position: relative; padding-left: 3.2rem; }
+    .lvB::before { content: ""; position: absolute; left: 2.55rem; top: 0.4rem; bottom: 0.4rem; width: 1px; background: var(--rule); }
+    .lvB-year { position: relative; margin: var(--s-5) 0 var(--s-2); }
+    .lvB-year::before { content: ""; position: absolute; left: calc(-0.65rem - 1px); top: 50%; width: 0.65rem; height: 1px; background: var(--rule); }
+    .lvB-year .y { position: absolute; left: -3.2rem; top: 50%; transform: translateY(-58%); font-size: 1.35rem; font-family: var(--font-serif, serif); font-weight: var(--fw-title); color: var(--ink); letter-spacing: 0.02em; }
+    .lvB-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .lvB-chip { display: inline-flex; align-items: baseline; gap: 0.45em; border: 1px solid var(--rule); border-radius: var(--radius-pill); padding: 0.28rem 0.8rem; background: var(--paper); }
+    .lvB-chip .nm { font-size: var(--fs-13); color: var(--ink); }
+    .lvB-chip .up { font-size: var(--fs-11); color: var(--gray-2); }
+    .lvB-chip.is-root { background: var(--ink); border-color: var(--ink); }
+    .lvB-chip.is-root .nm, .lvB-chip.is-root .up { color: var(--on-ink); }
+
+    /* ===== 方向三 · 溯源河流 ===== */
+    .lvC-flow { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(9.5rem, 1fr); gap: var(--s-2) var(--s-3); align-items: start; position: relative; min-width: 44rem; }
+    .lvC-col-head { font-size: var(--fs-11); color: var(--gray); font-weight: var(--fw-label); text-align: center; padding-bottom: var(--s-2); border-bottom: 1px dashed var(--rule); margin-bottom: var(--s-3); letter-spacing: 0.08em; }
+    .lvC-card { border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); padding: 0.55rem 0.75rem; margin-bottom: 0.55rem; position: relative; }
+    .lvC-card .nm { font-size: var(--fs-13); font-weight: var(--fw-label); color: var(--ink); }
+    .lvC-card .sub { font-size: var(--fs-11); color: var(--gray); margin-top: 0.15rem; }
+    .lvC-card.is-source { border-left: 3px solid var(--ink); }
+    .lvC-card::after { content: "→"; position: absolute; right: -0.72rem; top: 50%; transform: translateY(-50%); color: var(--rule); font-size: var(--fs-12); }
+    .lvC-col:last-child .lvC-card::after { content: none; }
+    .lvC-note { font-size: var(--fs-12); color: var(--gray); margin-top: var(--s-4); }
+
+    /* ===== 彩蛋 · 星图 ===== */
+    .lvD { position: relative; height: 15rem; border: 1px dashed var(--rule); border-radius: 10px; background:
+      radial-gradient(circle at 30% 42%, rgba(0,0,0,0.035), transparent 42%),
+      radial-gradient(circle at 72% 60%, rgba(0,0,0,0.03), transparent 38%); overflow: hidden; }
+    .lvD svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .lvD-dot { position: absolute; transform: translate(-50%, -50%); font-size: var(--fs-12); color: var(--ink); white-space: nowrap; }
+    .lvD-dot i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); margin-right: 0.4em; vertical-align: 1px; font-style: normal; }
+    .lvD-dot.hub i { width: 11px; height: 11px; }
+    .lvD-dot.sat { color: var(--gray); font-size: var(--fs-11); }
+  </style>
+</head>
+<body>
+  <div class="lv-nav">
+    <div class="container">
+      <p class="lead">谱系可视化 · 三个方向并排 · 数据=站内 font-lineage.json（15 组 258 条，随目录生长）</p>
+      <nav>
+        <a href="#a">一 · 族谱树</a>
+        <a href="#b">二 · 年代纵轴</a>
+        <a href="#c">三 · 溯源河流</a>
+        <a href="#d">彩蛋 · 星图</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="lv-wrap">
+
+    <section class="lv-sec" id="a">
+      <header><span class="tag">方向一</span><h2>族谱树</h2><p>画册式纵向家谱：一张卡一个家族组，连线分代，节点点进详情。减法、好排、信息密度可调。</p></header>
+      <div class="lv-stage">
+        <div class="lvA-group">
+          <div class="lvA-group-head"><h3>思源宋体 / Source Han Serif</h3><span class="n">29 款 · Adobe × Google 开源起家</span></div>
+          <div class="lvA-tree lvA-root">
+            <div class="lvA-node">
+              <div class="lvA-row">
+                <span class="lvA-name lvA-sample">思源宋体</span>
+                <span class="lv-meta">Adobe <span class="lv-tier oss">开源商用</span></span>
+              </div>
+              <div class="lvA-tree">
+                <div class="lvA-node">
+                  <div class="lvA-row">
+                    <span class="lvA-name">狮尾四季春 <span class="en">Swei Spring</span></span>
+                    <span class="lv-meta">2021 · 台湾省 <span class="lv-tier oss">开源商用</span></span>
+                  </div>
+                  <div class="lvA-tree">
+                    <div class="lvA-node">
+                      <div class="lvA-row"><span class="lvA-name">猫啃网风雅宋</span><span class="lv-meta">风格化修改 <span class="lv-tier oss">开源商用</span></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvA-node">
+                  <div class="lvA-row"><span class="lvA-name">源样明体 <span class="en">Gen Yo Min</span></span><span class="lv-meta">台湾省 <span class="lv-tier oss">开源商用</span></span></div>
+                  <div class="lvA-tree">
+                    <div class="lvA-node"><div class="lvA-row"><span class="lvA-name">文津宋体</span><span class="lv-meta">v2.0 · Unicode 17 全覆盖 <span class="lv-tier oss">开源商用</span></span></div></div>
+                  </div>
+                </div>
+                <div class="lvA-node"><div class="lvA-row"><span class="lvA-name">源界明朝 <span class="en">Genkaimincho</span></span><span class="lv-meta">Adobe · 破坏风 <span class="lv-tier oss">开源商用</span></span></div></div>
+                <div class="lvA-node"><div class="lvA-row"><span class="lvA-name">狮尾 B2 加糖 <span class="en">Swei B2 Sugar</span></span><span class="lv-meta">2024 <span class="lv-tier oss">开源商用</span></span></div>
+                  <div class="lvA-tree"><div class="lvA-node"><div class="lvA-row"><span class="lvA-name">烟波宋</span><span class="lv-meta">缺字回吃上游 <span class="lv-tier oss">开源商用</span></span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lvA-group">
+          <div class="lvA-group-head"><h3>霞鹜文楷 / LXGW WenKai</h3><span class="n">7 款 · 手写楷系</span></div>
+          <div class="lvA-tree lvA-root">
+            <div class="lvA-node">
+              <div class="lvA-row"><span class="lvA-name" style="font-family:'wenfeng-xwwk'">Klee One</span><span class="lv-meta">Fontworks <span class="lv-tier oss">开源商用</span></span></div>
+              <div class="lvA-tree">
+                <div class="lvA-node">
+                  <div class="lvA-row"><span class="lvA-name">霞鹜文楷</span><span class="lv-meta">简中增补 <span class="lv-tier oss">开源商用</span></span></div>
+                  <div class="lvA-tree">
+                    <div class="lvA-node"><div class="lvA-row"><span class="lvA-name">霞鹜文楷 GB</span><span class="lvA-rel">locale</span></div></div>
+                    <div class="lvA-node"><div class="lvA-row"><span class="lvA-name">霞鹜文楷 TC</span><span class="lvA-rel">locale</span></div></div>
+                    <div class="lvA-node"><div class="lvA-row"><span class="lvA-name">霞鹜臻楷</span><span class="lv-meta">加粗 <span class="lv-tier oss">开源商用</span></span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="lv-foot">示意节选两组。全量=15 个家族组卡片（思源黑体 84 / 思源宋体 29 / Droid Sans / IPA / 阿里巴巴普惠 / 站酷 / 龙藏 / RocknRoll / justfont 繁黑 / 狮尾春 / 狮尾糖 / 霞鹜文楷 / IPA Gothic / こころ / Smart UI）。节点行右侧元信息（字数/字重/年份/档位）从目录数据直出。</p>
+      </div>
+    </section>
+
+    <section class="lv-sec" id="b">
+      <header><span class="tag">方向二</span><h2>年代纵轴</h2><p>同一棵树按发布年份摊开：大号衬线年份做锚，看「开源字体怎么一代代长出来」。故事感在时间，不在连线。</p></header>
+      <div class="lv-stage">
+        <div class="lvB">
+          <div class="lvB-year"><span class="y">2014</span><div class="lvB-chips">
+            <span class="lvB-chip is-root"><span class="nm">思源宋体</span><span class="up">Adobe × Google</span></span>
+            <span class="lvB-chip"><span class="nm">源界明朝</span><span class="up">破坏风改作</span></span>
+          </div></div>
+          <div class="lvB-year"><span class="y">2021</span><div class="lvB-chips">
+            <span class="lvB-chip"><span class="nm">狮尾四季春</span><span class="up">← 思源宋体</span></span>
+            <span class="lvB-chip"><span class="nm">霞鹜文楷</span><span class="up">← Klee One</span></span>
+            <span class="lvB-chip"><span class="nm">猫啃网故障黑</span><span class="up">← 思源黑体</span></span>
+          </div></div>
+          <div class="lvB-year"><span class="y">2022</span><div class="lvB-chips">
+            <span class="lvB-chip"><span class="nm">屏显臻宋</span><span class="up">← 思源宋体</span></span>
+            <span class="lvB-chip"><span class="nm">猫啃什锦黑</span><span class="up">← 思源黑体</span></span>
+          </div></div>
+          <div class="lvB-year"><span class="y">2024</span><div class="lvB-chips">
+            <span class="lvB-chip"><span class="nm">狮尾 B2 加糖</span><span class="up">← 思源宋体</span></span>
+            <span class="lvB-chip"><span class="nm">寒蝉端黑体</span><span class="up">← 思源黑体</span></span>
+            <span class="lvB-chip"><span class="nm">未来荧黑</span><span class="up">← 思源黑体</span></span>
+            <span class="lvB-chip"><span class="nm">寒蝉龙藏楷书</span><span class="up">← 龙藏体</span></span>
+          </div></div>
+          <div class="lvB-year"><span class="y">2025</span><div class="lvB-chips">
+            <span class="lvB-chip"><span class="nm">文津宋体</span><span class="up">← 源样明体</span></span>
+            <span class="lvB-chip"><span class="nm">械黑</span><span class="up">← IBM Plex Sans SC</span></span>
+          </div></div>
+        </div>
+        <p class="lv-foot">年份锚=releaseYear（部分老字体无年份，落到「早期」段不猜）。chip 里带上游箭头，点进详情看整链。可与方向一共存：总览用树、时间视角做一张「编年」页。</p>
+      </div>
+    </section>
+
+    <section class="lv-sec" id="c">
+      <header><span class="tag">方向三</span><h2>溯源河流</h2><p>横向流动：左岸是源头，往右一代代分支，讲「字从哪来」。横屏/桌面宽幅观感最好，窄屏退化为纵向列表。</p></header>
+      <div class="lv-stage">
+        <div class="lvC-flow">
+          <div class="lvC-col">
+            <div class="lvC-col-head">源 头</div>
+            <div class="lvC-card is-source"><div class="nm">思源宋体</div><div class="sub">Adobe × Google · 2014</div></div>
+            <div class="lvC-card is-source"><div class="nm">Klee One</div><div class="sub">Fontworks</div></div>
+          </div>
+          <div class="lvC-col">
+            <div class="lvC-col-head">第 一 代</div>
+            <div class="lvC-card"><div class="nm">狮尾四季春</div><div class="sub">台湾省 · 2021</div></div>
+            <div class="lvC-card"><div class="nm">源样明体</div><div class="sub">台湾省</div></div>
+            <div class="lvC-card"><div class="nm">霞鹜文楷</div><div class="sub">简中增补 · 2021</div></div>
+          </div>
+          <div class="lvC-col">
+            <div class="lvC-col-head">第 二 代</div>
+            <div class="lvC-card"><div class="nm">猫啃网风雅宋</div><div class="sub">风格化修改</div></div>
+            <div class="lvC-card"><div class="nm">文津宋体</div><div class="sub">Unicode 17 全覆盖</div></div>
+            <div class="lvC-card"><div class="nm">烟波宋</div><div class="sub">← 狮尾 B2 加糖</div></div>
+            <div class="lvC-card"><div class="nm">霞鹜文楷 TC</div><div class="sub">繁体卷</div></div>
+          </div>
+          <div class="lvC-col">
+            <div class="lvC-col-head">今 天</div>
+            <div class="lvC-card"><div class="nm">文津宋体 v2.0</div><div class="sub">2025 · 持续更新</div></div>
+            <div class="lvC-card"><div class="nm">烟波宋</div><div class="sub">缺字回吃上游</div></div>
+          </div>
+        </div>
+        <p class="lvC-note">代的切分按谱系跳数自动算；「今天」列=仍在更新的末端。连线在实装时用 SVG 贝塞尔画河道，卡位按分支数自动排。</p>
+      </div>
+    </section>
+
+    <section class="lv-sec" id="d">
+      <header><span class="tag">彩蛋</span><h2>全局星图（示意）</h2><p>force-directed 一张全图，思源系一个大星团。壮观但易成毛线球，只作为可选项，不推荐首屏。</p></header>
+      <div class="lv-stage">
+        <div class="lvD">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="30" y1="42" x2="18" y2="24" stroke="currentColor" opacity="0.15"/>
+            <line x1="30" y1="42" x2="14" y2="52" stroke="currentColor" opacity="0.15"/>
+            <line x1="30" y1="42" x2="26" y2="66" stroke="currentColor" opacity="0.15"/>
+            <line x1="30" y1="42" x2="46" y2="30" stroke="currentColor" opacity="0.15"/>
+            <line x1="72" y1="60" x2="60" y2="78" stroke="currentColor" opacity="0.15"/>
+            <line x1="72" y1="60" x2="84" y2="46" stroke="currentColor" opacity="0.15"/>
+            <line x1="72" y1="60" x2="88" y2="70" stroke="currentColor" opacity="0.15"/>
+          </svg>
+          <span class="lvD-dot hub" style="left:30%;top:42%"><i></i>思源黑体</span>
+          <span class="lvD-dot sat" style="left:18%;top:24%"><i></i>更纱黑体</span>
+          <span class="lvD-dot sat" style="left:14%;top:52%"><i></i>未来荧黑</span>
+          <span class="lvD-dot sat" style="left:26%;top:66%"><i></i>寒蝉端黑</span>
+          <span class="lvD-dot sat" style="left:46%;top:30%"><i></i>975 圆体</span>
+          <span class="lvD-dot hub" style="left:72%;top:60%"><i></i>思源宋体</span>
+          <span class="lvD-dot sat" style="left:60%;top:78%"><i></i>狮尾四季春</span>
+          <span class="lvD-dot sat" style="left:84%;top:46%"><i></i>源样明体</span>
+          <span class="lvD-dot sat" style="left:88%;top:70%"><i></i>文津宋体</span>
+        </div>
+        <p class="lv-foot">静态示意（点位手摆）。实装需引一个 ~10KB 的力导向库或手写简单模拟，与站内零依赖原则有张力——建议仅当独立彩蛋页。</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

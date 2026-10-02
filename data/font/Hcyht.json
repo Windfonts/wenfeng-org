@@ -1,0 +1,53 @@
+{
+ "norm": "Hcyht",
+ "name": "寒蝉圆黑体",
+ "en": "Chill Round Gothic",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "bdefa7c6496762298804550255762c4532124282910e976db960b24d04665ad4",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "寒蝉字型",
+ "foundrySlug": "chilltype",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Hcyht",
+ "weights": [
+  "Light",
+  "Regular",
+  "Bold",
+  "Medium"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hcyht"
+}

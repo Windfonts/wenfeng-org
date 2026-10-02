@@ -1,0 +1,52 @@
+{
+ "norm": "Yasashisa",
+ "name": "やさしさゴシック Bold V2",
+ "en": "Yasashisa Gothic Bold V2",
+ "aliases": [],
+ "licenseName": "M+ FONTS PROJECT",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": "https://flopdesign.booth.pm/items/1833993",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "FLOP Design",
+ "foundrySlug": "flop design",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Yasashisa",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://flopdesign.booth.pm/items/1833993",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 flopdesign.booth.pm",
+   "format": "git",
+   "href": "https://flopdesign.booth.pm/items/1833993",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-yasashisa"
+}

@@ -1,0 +1,50 @@
+{
+ "norm": "Xwszh",
+ "name": "霞鹜尚智黑",
+ "en": "LXGW Fasmart Gothic",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "8a5719e6a0ddc1eba3d0671cee61a0c2cdf2ca555f2e0328532c591aca5e997a",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "flopdesign",
+   "rootWork": "03スマートフォントUI",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwszh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwszh"
+}

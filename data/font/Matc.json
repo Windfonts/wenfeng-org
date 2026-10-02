@@ -1,0 +1,60 @@
+{
+ "norm": "Matc",
+ "name": "猫啃什锦黑 繁体",
+ "en": "Maoken Assorted Sans TC",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "pointer",
+  "sourceUrl": "https://github.com/Skr-ZERO/MaokenAssortedSans-TC",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-25",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "skr-zero",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Matc",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Skr-ZERO/MaokenAssortedSans-TC",
+  "upstream": "https://github.com/Skr-ZERO/MaokenAssortedSans-TC",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Matc.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Skr-ZERO/MaokenAssortedSans-TC",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-matc"
+}

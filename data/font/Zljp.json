@@ -1,0 +1,60 @@
+{
+ "norm": "Zljp",
+ "name": "Z Labs 点阵 日标",
+ "en": "Z Labs Bitmap JP",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Astro-2539/ZLabs-Bitmap-JP",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "f6a286844a8c29fea53f42a036ed8102eee9101b4a7aee20593b265de0273fcf",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "astro-2539",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zljp",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Astro-2539/ZLabs-Bitmap-JP",
+  "upstream": "https://github.com/Astro-2539/ZLabs-Bitmap-JP",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Zljp.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Astro-2539/ZLabs-Bitmap-JP",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zljp"
+}

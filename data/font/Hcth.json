@@ -1,0 +1,46 @@
+{
+ "norm": "Hcth",
+ "name": "寒蝉有机体",
+ "en": "Chill Organic",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "3e8c600206aca84fc2d9b8de13ba52a11afadfe4d705e39da608d3651872ecbb",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "寒蝉字型",
+ "foundrySlug": "chilltype",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Hcth",
+ "weights": [
+  "Regular",
+  "Medium"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hcth"
+}

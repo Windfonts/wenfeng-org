@@ -1,0 +1,51 @@
+{
+ "norm": "Systcn",
+ "name": "思源宋体 CN",
+ "en": "Source Han Serif CN",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Adobe",
+ "foundrySlug": "adobe",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Systcn",
+ "weights": [
+  "Heavy",
+  "Light",
+  "Bold",
+  "Extralight",
+  "Semibold",
+  "Medium",
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-systcn"
+}

@@ -1,0 +1,188 @@
+/* 首页高保真对照。壳与按钮走 from-app，这里只排 org 首页自己的栏。 */
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+body.hifi { min-height: 100vh; display: flex; flex-direction: column; }
+body.hifi main { flex: 1; }
+
+.wordmark .mark {
+  position: relative;
+  width: 24px; height: 24px; border-radius: 6px;
+  background: var(--ink);
+  display: block;
+  flex: none;
+}
+.wordmark .mark::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: #fff;
+  -webkit-mask: url("../assets/wenfeng-mark.png") center / 66% no-repeat;
+  mask: url("../assets/wenfeng-mark.png") center / 66% no-repeat;
+}
+
+.hifi-kicker { font-size: var(--fs-13); color: var(--gray); }
+.hifi-a h1,
+.hifi-c h1 {
+  margin-top: var(--s-2);
+  font-size: var(--fs-28);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.01em;
+  line-height: var(--lh-snug);
+}
+.hifi-lead {
+  margin-top: var(--s-3);
+  max-width: 36em;
+  color: var(--ink-2);
+}
+
+.hifi-search {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-6);
+}
+.hifi-search input {
+  flex: 1;
+  min-width: 0;
+  height: 2.75rem;
+  padding: 0 1.15rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  font-size: var(--fs-14);
+  appearance: none;
+  -webkit-appearance: none;
+}
+.hifi-search input::placeholder { color: var(--gray-2); }
+.hifi-search input:focus { outline: 2px solid var(--ink); outline-offset: 0; }
+.hifi-search .btn { height: 2.75rem; padding: 0 1.25rem; }
+
+.hifi-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-top: var(--s-8);
+}
+.hifi-tools .more {
+  font-size: var(--fs-13);
+  color: var(--gray);
+  white-space: nowrap;
+}
+.hifi-tools .more:hover { color: var(--ink); }
+
+.hifi-shelf { margin-top: var(--s-3); }
+.hifi-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  padding: 0.72rem 0.85rem;
+  margin: 0 -0.85rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.hifi-row + .hifi-row { box-shadow: inset 0 1px 0 var(--rule); }
+.hifi-row:hover { background: var(--fill); }
+.hifi-row .who { min-width: 0; color: inherit; }
+.hifi-row .who:hover { text-decoration: none; }
+.hifi-row .name {
+  display: block;
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  line-height: var(--lh-snug);
+}
+.hifi-row .meta {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.hifi-slice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-top: var(--s-10);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.hifi-slice p { color: var(--ink-2); max-width: 36em; }
+
+.hifi-alts {
+  margin: var(--s-6) 0 0;
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+}
+.hifi-alts a { color: var(--gray); }
+.hifi-alts a.is-on { color: var(--ink); font-weight: var(--fw-title); text-decoration: none; }
+
+/* 甲：窄栏，搜索在页心 */
+.hifi-a .hifi-col {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--s-12) 0 var(--s-6);
+}
+
+/* 乙：搜索在顶栏，货架即页面 */
+.hifi-b .hifi-col {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: var(--s-8) 0 var(--s-6);
+}
+.hifi-b .hifi-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--s-3) var(--s-3) var(--s-2);
+}
+.hifi-b .hifi-panel .hifi-tools { margin-top: 0; padding: 0.35rem 0.85rem 0.15rem; }
+.hifi-b .hifi-panel .hifi-shelf { margin-top: 0; }
+.hifi-b .hifi-fallback { display: none; }
+.hifi-b .hifi-fallback.hifi-search { margin-top: 0; margin-bottom: var(--s-5); }
+.icon-btn .ico-sun { display: none; }
+[data-theme="dark"] .icon-btn .ico-moon { display: none; }
+[data-theme="dark"] .icon-btn .ico-sun { display: inline-block; }
+[data-theme="dark"] .wordmark .mark::before { background: #111; }
+
+/* 丙：左一句，右货架 */
+.hifi-c .hifi-split {
+  display: grid;
+  grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
+  gap: var(--s-10);
+  align-items: start;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--s-12) 0 var(--s-6);
+}
+.hifi-c .intro { position: sticky; top: calc(var(--topbar-h) + var(--s-6)); }
+.hifi-c .hifi-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--s-4) var(--s-4) var(--s-3);
+}
+.hifi-c .hifi-panel .hifi-tools { margin-top: 0; }
+.hifi-c .intro .hifi-slice {
+  display: block;
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+}
+.hifi-c .intro .hifi-slice .btn { margin-top: var(--s-4); }
+
+@media (max-width: 860px) {
+  .hifi-c .hifi-split { grid-template-columns: 1fr; gap: var(--s-6); padding-top: var(--s-8); }
+  .hifi-c .intro { position: static; }
+}
+@media (max-width: 960px) {
+  .hifi-b .hifi-fallback { display: flex; }
+}
+@media (max-width: 640px) {
+  .hifi-tools { align-items: flex-start; flex-direction: column; gap: var(--s-3); }
+  .hifi-slice { flex-direction: column; align-items: flex-start; }
+  .hifi-row { margin: 0; padding-left: 0.35rem; padding-right: 0.35rem; }
+  .hifi-a .hifi-col,
+  .hifi-b .hifi-col { padding-top: var(--s-6); }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg");if(localStorage.getItem("wf-view")==="dev")document.documentElement.setAttribute("data-view","dev")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>详情 · 开源谱系 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/detail.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/detail-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-detail page-detail-opt page-detail-lin">
+  <header data-topbar data-active="fonts"></header>
+
+  <div class="do-switch">
+    <div class="container do-switch-stack">
+      <p class="do-switch-lead">甲已改成白话。现页未改。</p>
+      <div class="do-row">
+        <span>谱系</span>
+        <nav class="seg-glyph" data-part="v" aria-label="谱系">
+          <a href="#a-fork" data-id="a">甲 发现</a>
+          <a href="#b-fork" data-id="b">乙 邀请</a>
+          <a href="#c-fork" data-id="c">丙 同支</a>
+          <a href="#d-fork" data-id="d">丁 开源林</a>
+        </nav>
+      </div>
+      <div class="do-row">
+        <span>看</span>
+        <nav class="seg-glyph" data-part="f" aria-label="示例">
+          <a href="#a-fork" data-id="fork">萌神 · 改出来的</a>
+          <a href="#a-root" data-id="root">思源宋体 · 源头</a>
+          <a href="#a-open" data-id="open">美好体 · 能改但没人改</a>
+          <a href="#a-shut" data-id="shut">酷黑体 · 不许改</a>
+        </nav>
+      </div>
+      <p class="do-live"><a class="do-back" id="doBack" href="font-detail.html">回现页</a></p>
+    </div>
+  </div>
+
+  <main>
+    <header class="do-meta" data-lin-meta></header>
+    <div class="container lin-frame" data-mount-lin></div>
+    <section class="container lin-mods">
+      <h2>还可能要的模块</h2>
+      <p>对照上面四套。这些不是谱系栏里能塞完的，但是文风作为 webfont 服务该有的。</p>
+      <dl>
+        <div><dt>登记派生</dt><dd>上传预填上游、检查改名和保留声明，通过后进公开库并走同一套 CDN。</dd></div>
+        <div><dt>可派生目录</dt><dd>字体库 <code>?open=1</code> 已经能滤开源。再加「可二创 / 还没有派生」两档。</dd></div>
+        <div><dt>同支选字袋</dt><dd>一键把思源宋体 + 本支派生放进袋，方便配字和对比。</dd></div>
+        <div><dt>同支嵌入包</dt><dd>一条 link 拉多 family。标题用派生、正文用原作，不必自己拼。</dd></div>
+        <div><dt>同支子集化</dt><dd>同一段文案给几款各打一份子集，体积和缺字并排看。</dd></div>
+        <div><dt>覆盖 / 体积对照</dt><dd>嵌哪款取决于谁更瘦、谁更全，这是 webfont 自己的比较，不是族谱。</dd></div>
+        <div><dt>开源林</dt><dd>思源两当头图，下面是还没有派生的 OFL。比详情栏更适合长列表。</dd></div>
+        <div><dt>开源替代</dt><dd>需授权或不可二创旁边，推荐可嵌的思源 / OFL。</dd></div>
+        <div><dt>库卡徽记</dt><dd>可派生、N 个派生。在库里就能发现，不必点进详情。</dd></div>
+        <div><dt>嵌入时的上游提醒</dt><dd>开发模式里写清保留名和须改名，避免有人把派生当原作授权。</dd></div>
+        <div><dt>派生认领</dt><dd>二创作者认领自己的款，和厂商认领分开。</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/detail-lineage-options.js?v=20260925r"></script>
+</body>
+</html>

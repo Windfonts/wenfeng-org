@@ -1,0 +1,65 @@
+{
+ "norm": "Ckbf",
+ "name": "偏歪的黑趣体",
+ "en": "Crooked Black Fun",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/FWHP-Enfun/Crooked-Black-Fun",
+  "fetchedAt": "2026-09-25",
+  "textSha256": "0673fdc8f80aa3a13dae0eb920ea0b330559a77d14277594c9d3210a4fe38072",
+  "verifiedAt": "2026-09-25",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "atelier-anchor",
+   "rootWork": "得意黑",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "花乐",
+ "foundrySlug": "fwhp",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Ckbf",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/FWHP-Enfun/Crooked-Black-Fun",
+  "upstream": "https://github.com/FWHP-Enfun/Crooked-Black-Fun",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Ckbf.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/FWHP-Enfun/Crooked-Black-Fun",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ckbf"
+}

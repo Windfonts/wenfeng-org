@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg");if(localStorage.getItem("wf-view")==="dev")document.documentElement.setAttribute("data-view","dev")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>详情 · 现网字符表密度 v2 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/detail.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/detail-options.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/detail-glyphs-options.css?v=20260925h" />
+  <link rel="stylesheet" href="/from-app/css/detail-glyphs-v2-options.css?v=20260925h" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-detail page-detail-opt page-detail-glyphs-v2-opt">
+  <header data-topbar data-active="fonts"></header>
+
+  <div class="do-switch">
+    <div class="container do-switch-inner">
+      <p class="do-switch-lead">现网对照 · 一键见数 · 紧密度。甲已否（两击 + 空 summary + 2×2 卡）。现页未改。静态 mock。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#bad">甲（坏）</a>
+        <a href="#wu">戊 一行</a>
+        <a href="#ji">己 条带</a>
+      </nav>
+      <p class="do-live">
+        <a class="do-back" href="detail-glyphs-options.html">上轮四套</a>
+        ·
+        <a class="do-back" href="font-detail.html">回现页</a>
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ═══════ 甲 · 当前坏基线（已否） ═══════ -->
+    <article class="do-block is-on" id="bad">
+      <header class="do-meta">
+        <b class="dgv2-bad-tag">当前甲（坏）基线 · 已否</b>
+        <span>两击才见数：先点按钮，再开 details。收起时空 summary 占一行；展开后 2×2 指标卡偏胖。</span>
+      </header>
+      <div class="container dgv2-stage">
+        <section class="panel dgv2-panel">
+          <div class="panel-head">
+            <div class="glyph-title"><h2>字符表</h2>
+              <div class="glyph-query"><input class="input glyph-query-field" type="search" placeholder="查字…" disabled /></div>
+            </div>
+            <div class="glyph-tools">
+              <div class="seg-glyph" role="group">
+                <button type="button" class="is-on">常用</button>
+                <button type="button">CJK</button>
+                <button type="button">全部</button>
+              </div>
+              <button type="button" class="gtoggle" disabled>缺字</button>
+              <button type="button" class="gtoggle" disabled aria-pressed="true">对照现网字符表</button>
+            </div>
+          </div>
+          <div class="panel-pad">
+            <div class="glyph-summary"><p>本地常用 <b>980</b> / 994 · CJK 统一汉字约 <b>6,840</b></p></div>
+            <!-- 坏基线：默认收起（模拟加载成功后仍要再点开） -->
+            <div class="glyph-live" style="display:block">
+              <details class="glyph-live-fold">
+                <summary>现网字符分析 · 覆盖常用≈98%</summary>
+                <div class="glyph-live-metrics">
+                  <div class="glyph-live-metric"><span class="k">字符数</span><b class="v">7,102</b><span class="sub">相对目录 −12</span></div>
+                  <div class="glyph-live-metric"><span class="k">字形数</span><b class="v">7,218</b><span class="sub">相对目录 +3</span></div>
+                  <div class="glyph-live-metric"><span class="k">常用覆盖</span><b class="v">≈98%</b><span class="sub">CJK 6,840</span></div>
+                  <div class="glyph-live-metric"><span class="k">扩充覆盖</span><b class="v">≈72%</b><span class="sub">对 7,000 档</span></div>
+                </div>
+                <p class="glyph-live-note is-quiet">来源 vault <code>/api/fonts/…/analysis</code> · 字重样例 <code>Regular</code>。覆盖按 analysis 的 CJK 计数估算（非逐字表）；逐字查缺用上方本地字符表。</p>
+              </details>
+            </div>
+            <div class="dgo-grid-mock" aria-hidden="true">
+              <span>永</span><span>和</span><span>九</span><span>年</span><span>在</span><span>癸</span><span>丑</span><span>暮</span>
+              <span>春</span><span>会</span><span>于</span><span>会</span><span>稽</span><span>山</span><span>阴</span><span>之</span>
+            </div>
+          </div>
+        </section>
+        <p class="dgv2-reject-note" role="note">否因：① 按钮后再开 fold = 两击；② 收起时空 summary 浪费；③ 展开 2×2 卡占高。本页只留档，不改现网。</p>
+      </div>
+    </article>
+
+    <!-- ═══════ 戊 · 一行结果 ═══════ -->
+    <article class="do-block" id="wu">
+      <header class="do-meta">
+        <b>戊 · 一行结果</b>
+        <span>一击后按钮收成一行 meta；数字立刻可见，无 details。推荐默认候选。</span>
+      </header>
+      <div class="container dgv2-stage">
+        <section class="panel dgv2-panel" data-dgv2-variant="wu" data-state="loaded">
+          <div class="panel-head">
+            <div class="glyph-title"><h2>字符表</h2>
+              <div class="glyph-query"><input class="input glyph-query-field" type="search" placeholder="查字…" disabled /></div>
+            </div>
+            <div class="glyph-tools">
+              <div class="seg-glyph" role="group">
+                <button type="button" class="is-on">常用</button>
+                <button type="button">CJK</button>
+                <button type="button">全部</button>
+              </div>
+              <button type="button" class="gtoggle" disabled>缺字</button>
+              <!-- idle 态按钮；loaded 时被 JS/CSS 藏起，改由下行 meta 承担 -->
+              <button type="button" class="gtoggle dgv2-trigger" data-dgv2-trigger>对照现网字符表</button>
+            </div>
+          </div>
+          <div class="panel-pad">
+            <div class="glyph-summary"><p>本地常用 <b>980</b> / 994 · CJK 统一汉字约 <b>6,840</b></p></div>
+
+            <!-- idle -->
+            <div class="dgv2-idle" hidden></div>
+
+            <!-- loaded：一行结果，高度≈工具条一行 -->
+            <div class="dgv2-wu" data-dgv2-result>
+              <p class="dgv2-wu-line" role="status">
+                <span class="dgv2-wu-src">现网</span>
+                <span class="dgv2-dot" aria-hidden="true">·</span>
+                <span>常用<b>≈98%</b></span>
+                <span class="dgv2-dot" aria-hidden="true">·</span>
+                <span>扩展<b>≈72%</b></span>
+                <span class="dgv2-dot" aria-hidden="true">·</span>
+                <span>缺<b>12</b></span>
+                <span class="dgv2-dot" aria-hidden="true">·</span>
+                <span>多<b>3</b></span>
+                <a class="dgv2-micro" href="#wu-diff" onclick="return false">覆盖差</a>
+              </p>
+              <p class="dgv2-foot is-quiet">vault analysis · Regular · CJK 计数估算，非逐字表</p>
+            </div>
+
+            <div class="dgo-grid-mock" aria-hidden="true">
+              <span>永</span><span>和</span><span>九</span><span>年</span><span>在</span><span>癸</span><span>丑</span><span>暮</span>
+              <span>春</span><span>会</span><span>于</span><span>会</span><span>稽</span><span>山</span><span>阴</span><span>之</span>
+            </div>
+          </div>
+        </section>
+        <p class="dgv2-hint">交互：点「对照现网字符表」→ 按钮消失，同一位置高度换成一行数字。无第二击。</p>
+      </div>
+    </article>
+
+    <!-- ═══════ 己 · 紧凑条带 ═══════ -->
+    <article class="do-block" id="ji">
+      <header class="do-meta">
+        <b>己 · 紧凑条带</b>
+        <span>一击后立刻展开横向 4 格统计条；无 fold、无卡片壳、小内边距。</span>
+      </header>
+      <div class="container dgv2-stage">
+        <section class="panel dgv2-panel" data-dgv2-variant="ji" data-state="loaded">
+          <div class="panel-head">
+            <div class="glyph-title"><h2>字符表</h2>
+              <div class="glyph-query"><input class="input glyph-query-field" type="search" placeholder="查字…" disabled /></div>
+            </div>
+            <div class="glyph-tools">
+              <div class="seg-glyph" role="group">
+                <button type="button" class="is-on">常用</button>
+                <button type="button">CJK</button>
+                <button type="button">全部</button>
+              </div>
+              <button type="button" class="gtoggle" disabled>缺字</button>
+              <button type="button" class="gtoggle dgv2-trigger" data-dgv2-trigger aria-pressed="true">对照现网字符表</button>
+            </div>
+          </div>
+          <div class="panel-pad">
+            <div class="glyph-summary"><p>本地常用 <b>980</b> / 994 · CJK 统一汉字约 <b>6,840</b></p></div>
+
+            <div class="dgv2-ji" data-dgv2-result>
+              <div class="dgv2-strip" role="status">
+                <div class="dgv2-cell"><span class="k">常用</span><b class="v">≈98%</b></div>
+                <div class="dgv2-cell"><span class="k">扩展</span><b class="v">≈72%</b></div>
+                <div class="dgv2-cell"><span class="k">缺</span><b class="v">12</b></div>
+                <div class="dgv2-cell"><span class="k">多</span><b class="v">3</b></div>
+              </div>
+              <p class="dgv2-foot is-quiet">vault analysis · Regular · CJK 计数估算，非逐字表</p>
+            </div>
+
+            <div class="dgo-grid-mock" aria-hidden="true">
+              <span>永</span><span>和</span><span>九</span><span>年</span><span>在</span><span>癸</span><span>丑</span><span>暮</span>
+              <span>春</span><span>会</span><span>于</span><span>会</span><span>稽</span><span>山</span><span>阴</span><span>之</span>
+            </div>
+          </div>
+        </section>
+        <p class="dgv2-hint">交互：一击后条带直接展开（首屏即见四数）。仍无 details。</p>
+      </div>
+    </article>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925h"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925h"></script>
+  <script src="/from-app/js/pages/detail-glyphs-v2-options.js?v=20260925h"></script>
+</body>
+</html>

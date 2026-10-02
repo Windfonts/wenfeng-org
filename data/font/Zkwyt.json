@@ -1,0 +1,52 @@
+{
+ "norm": "Zkwyt",
+ "name": "站酷文艺体",
+ "en": "ZCOOL WenYiTi",
+ "aliases": [],
+ "licenseName": "站酷文艺体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": "https://www.zcool.com.cn/special/zcoolfonts/",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "ZCOOL",
+ "foundrySlug": "zcool",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zkwyt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.zcool.com.cn/special/zcoolfonts/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.zcool.com.cn",
+   "format": "git",
+   "href": "https://www.zcool.com.cn/special/zcoolfonts/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zkwyt"
+}

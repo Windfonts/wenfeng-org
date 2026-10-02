@@ -1,0 +1,65 @@
+{
+ "norm": "Jgmc",
+ "name": "汲古明体C",
+ "en": "JiGu Ming C",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "pointer",
+  "sourceUrl": "https://github.com/FWHP-Enfun/JiGu-Ming",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "buttaiwan",
+   "rootWork": "源流明体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "花乐",
+ "foundrySlug": "fwhp",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Jgmc",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/FWHP-Enfun/JiGu-Ming",
+  "upstream": "https://github.com/FWHP-Enfun/JiGu-Ming",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Jgmc.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/FWHP-Enfun/JiGu-Ming",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jgmc"
+}

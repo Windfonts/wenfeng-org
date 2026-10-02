@@ -1,0 +1,370 @@
+/* 厂商 CTA 四套新稿。只服务 foundry-join-options.html，不进正式站。 */
+html:has(.page-foundry-join-opts) { scroll-padding-top: calc(var(--topbar-h) + 5.5rem); }
+.page-foundry-join-opts { padding-top: 0; }
+
+.fj-stub {
+  padding: var(--s-6) 0;
+  border-top: 1px solid var(--rule);
+}
+.fj-stub .foundry-index { margin-top: var(--s-3); }
+
+/* ========== 甲 · 墨海报 ========== */
+.fj-poster {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  isolation: isolate;
+}
+.fj-poster-mark {
+  position: absolute;
+  inset: auto -0.06em -0.22em auto;
+  margin: 0;
+  font-size: clamp(14rem, 32vw, 28rem);
+  font-weight: 900;
+  line-height: 0.75;
+  letter-spacing: -0.08em;
+  color: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  animation: fj-drift 18s ease-in-out infinite alternate;
+}
+@keyframes fj-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-2%, -3%, 0); }
+}
+.fj-poster-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(14rem, 0.7fr);
+  gap: var(--s-10) var(--s-12);
+  align-items: end;
+}
+.fj-poster-kicker {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-13);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.fj-poster h2 {
+  margin: 0;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  max-width: 8.5em;
+}
+.fj-poster h2 em {
+  font-style: normal;
+  display: block;
+  color: rgba(255, 255, 255, 0.42);
+}
+.fj-poster-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  padding-bottom: 0.15em;
+}
+.fj-poster-side .lead {
+  margin: 0;
+  font-size: var(--fs-15);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 22em;
+}
+.fj-poster .btn {
+  align-self: flex-start;
+  background: #fff;
+  color: #111;
+}
+.fj-poster .btn:hover { background: #e8e8e8; }
+.fj-poster-meta {
+  margin: 0;
+  font-size: var(--fs-12);
+  color: rgba(255, 255, 255, 0.42);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========== 乙 · 字标潮 ========== */
+.fj-tide {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  padding: clamp(4rem, 9vw, 7rem) 0;
+}
+.fj-tide-rails {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-3);
+  opacity: 0.9;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.fj-tide-row {
+  display: flex;
+  gap: var(--s-3);
+  width: max-content;
+  animation: fj-marquee 38s linear infinite;
+}
+.fj-tide-row.is-rev { animation-direction: reverse; animation-duration: 46s; }
+@keyframes fj-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.fj-tide-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.05rem 0.6rem 0.6rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-13);
+  color: rgba(255, 255, 255, 0.72);
+  white-space: nowrap;
+}
+.fj-tide-chip .mark,
+.fj-tide-chip img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  flex: none;
+  object-fit: cover;
+}
+.fj-tide-chip .mark {
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: var(--fs-12);
+  font-weight: 700;
+  color: #fff;
+}
+.fj-tide-panel {
+  position: relative;
+  z-index: 1;
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-7);
+  background: #fff;
+  color: #111;
+  border-radius: calc(var(--radius) + 6px);
+  text-align: left;
+}
+.fj-tide-panel .kicker { margin: 0; color: var(--gray); }
+.fj-tide-panel h2 {
+  margin: var(--s-3) 0 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+.fj-tide-panel .lead {
+  margin: var(--s-4) 0 0;
+  max-width: 22em;
+  font-size: var(--fs-14);
+  color: var(--gray);
+  line-height: 1.7;
+}
+.fj-tide-panel .btn { margin-top: var(--s-6); }
+
+/* ========== 丙 · 竖排 ========== */
+.fj-vert {
+  position: relative;
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--rule);
+  background:
+    radial-gradient(ellipse 70% 80% at 88% 20%, color-mix(in srgb, var(--ink) 6%, transparent), transparent 60%),
+    var(--page);
+}
+.fj-vert-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: stretch;
+  min-height: 18rem;
+}
+.fj-vert-glyph {
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--ink);
+  user-select: none;
+}
+.fj-vert-glyph span {
+  display: inline-block;
+  color: color-mix(in srgb, var(--ink) 28%, transparent);
+}
+.fj-vert-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s-8);
+  padding: var(--s-2) 0;
+  border-left: 1px solid var(--rule);
+  padding-left: clamp(1.5rem, 4vw, 3rem);
+}
+.fj-vert-top .kicker { margin: 0 0 var(--s-4); }
+.fj-vert-top h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  max-width: 12em;
+}
+.fj-vert-top .lead {
+  margin: var(--s-4) 0 0;
+  max-width: 30em;
+  font-size: var(--fs-15);
+  color: var(--gray);
+  line-height: 1.7;
+}
+.fj-vert-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+.fj-vert-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+.fj-vert-stat {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.fj-vert-stat b {
+  font-size: var(--fs-28);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-right: 0.2em;
+}
+
+/* ========== 丁 · 清单票 ========== */
+.fj-ticket {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  border-top: 1px solid var(--rule);
+}
+.fj-ticket-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+  gap: 0;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--page);
+}
+.fj-ticket-main {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-right: 1px dashed var(--rule);
+}
+.fj-ticket-main .kicker { margin: 0; }
+.fj-ticket-main h2 {
+  margin: var(--s-3) 0 0;
+  font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.fj-ticket-steps {
+  list-style: none;
+  margin: var(--s-7) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-4);
+}
+.fj-ticket-steps li {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: start;
+}
+.fj-ticket-steps .n {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-13);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.fj-ticket-steps b {
+  display: block;
+  font-size: var(--fs-15);
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+.fj-ticket-steps span {
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: 1.55;
+}
+.fj-ticket-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s-6);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  background: var(--surface);
+}
+.fj-ticket-side .lead {
+  margin: 0;
+  font-size: var(--fs-14);
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.fj-ticket-side .btn { align-self: stretch; justify-content: center; }
+.fj-ticket-stamp {
+  margin: 0;
+  font-size: var(--fs-12);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-2);
+}
+
+@media (max-width: 768px) {
+  .fj-poster-inner { grid-template-columns: 1fr; }
+  .fj-poster-mark { font-size: 11rem; right: -0.2em; bottom: -0.15em; }
+  .fj-tide-rails { opacity: 0.55; }
+  .fj-tide-panel { text-align: left; }
+  .fj-vert-inner { grid-template-columns: 1fr; min-height: 0; }
+  .fj-vert-glyph {
+    writing-mode: horizontal-tb;
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+    letter-spacing: -0.04em;
+  }
+  .fj-vert-glyph span { display: inline; }
+  .fj-vert-body {
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+    padding-left: 0;
+    padding-top: var(--s-6);
+  }
+  .fj-ticket-shell { grid-template-columns: 1fr; }
+  .fj-ticket-main { border-right: 0; border-bottom: 1px dashed var(--rule); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fj-poster-mark,
+  .fj-tide-row { animation: none; }
+}

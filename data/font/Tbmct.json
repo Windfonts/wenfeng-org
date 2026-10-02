@@ -1,0 +1,52 @@
+{
+ "norm": "Tbmct",
+ "name": "淘宝买菜体",
+ "en": "TaoBaoMaiCaiTi",
+ "aliases": [],
+ "licenseName": "淘宝买菜体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://www.alibabafonts.com/#/more",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "447a83116374481f6d60c1669aef408acad685e197111b261853bb7f0b4fbf4c",
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Alibaba Design",
+ "foundrySlug": "alibaba-design",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Tbmct",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.alibabafonts.com/#/more",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.alibabafonts.com",
+   "format": "git",
+   "href": "https://www.alibabafonts.com/#/more",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-tbmct"
+}

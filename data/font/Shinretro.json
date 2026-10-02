@@ -1,0 +1,45 @@
+{
+ "norm": "Shinretro",
+ "name": "复古圆黑",
+ "en": "Shin Retro Maru Gothic",
+ "aliases": [],
+ "licenseName": "待核实",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Shinretro",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-shinretro"
+}

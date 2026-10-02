@@ -1,0 +1,65 @@
+{
+ "norm": "Hyzi",
+ "name": "滑油字",
+ "en": "WD-XL Lubrifont SC",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/NightFurySL2001/WD-XL-font",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "c1426279bc38dde2a39bed76db54e93c9f2daf3aff960be62382a1efeb4b30e5",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "zcool",
+   "rootWork": "站酷庆科黄油体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "WD-XL",
+ "foundrySlug": "wdxl",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Hyzi",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/NightFurySL2001/WD-XL-font",
+  "upstream": "https://github.com/NightFurySL2001/WD-XL-font",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Hyzi.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/NightFurySL2001/WD-XL-font",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hyzi"
+}

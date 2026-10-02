@@ -1,0 +1,45 @@
+{
+ "norm": "Btot",
+ "name": "波塔One",
+ "en": "Potta One",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/pottaone/OFL.txt",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "8ba4b7dda658d4364fa7c165abbd1eb7d4eaece1a0585af445cb2f14435716e3",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "FontZone108",
+ "foundrySlug": "potta",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Btot",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-btot"
+}

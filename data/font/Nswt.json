@@ -1,0 +1,61 @@
+{
+ "norm": "Nswt",
+ "name": "女書梧桐",
+ "en": "Nyushu Firmia",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/nushu-script/Nyushu",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "910df0a1cfe9d554a417c02b0e728f7bbc04cd8e3247607d2bbb0da0a37aa286",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "妙笔",
+ "foundrySlug": "myil",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Nswt",
+ "weights": [
+  "Italic",
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/nushu-script/Nyushu",
+  "upstream": "https://github.com/nushu-script/Nyushu",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Nswt.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/nushu-script/Nyushu",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-nswt"
+}

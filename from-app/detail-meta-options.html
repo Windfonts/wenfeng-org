@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg");if(localStorage.getItem("wf-view")==="dev")document.documentElement.setAttribute("data-view","dev")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>详情 · 标题与资料 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/detail.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/detail-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-detail page-detail-opt page-detail-meta">
+  <header data-topbar data-active="fonts"></header>
+
+  <div class="do-switch">
+    <div class="container do-switch-inner">
+      <p class="do-switch-lead">标题 / 资料 / 预览 · 现页未改。顶栏切设计 / 开发。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#a">甲 去重</a>
+        <a href="#b">乙 数字回侧栏</a>
+        <a href="#c">丙 并进品牌卡</a>
+        <a href="#d">丁 现页</a>
+      </nav>
+      <p class="do-live">
+        <a class="do-back" id="doBack" href="font-detail.html">回现页</a>
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <article class="do-block" id="a">
+      <header class="do-meta"><b>甲 · 去重</b><span>标题仍报字重和字数。资料卡不再重复这两项。开发预览整节拿掉。</span></header>
+      <div data-mount="a"></div>
+    </article>
+    <article class="do-block" id="b">
+      <header class="do-meta"><b>乙 · 数字回侧栏</b><span>标题只留厂商和档位。字重、字数只出现在资料卡。开发预览同样拿掉。</span></header>
+      <div data-mount="b"></div>
+    </article>
+    <article class="do-block" id="c">
+      <header class="do-meta"><b>丙 · 并进品牌卡</b><span>和甲一样去重、删预览，但资料不再单独一张灰卡，跟在品牌卡下面。</span></header>
+      <div data-mount="c"></div>
+    </article>
+    <article class="do-block" id="d">
+      <header class="do-meta"><b>丁 · 现页</b><span>对照用。标题、资料、开发预览都还在，一字未动。</span></header>
+      <div data-mount="d"></div>
+    </article>
+  </main>
+
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-embed.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/detail-meta-options.js?v=20260925r"></script>
+</body>
+</html>

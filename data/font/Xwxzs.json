@@ -1,0 +1,50 @@
+{
+ "norm": "Xwxzs",
+ "name": "霞鹜新致宋",
+ "en": "LXGW Neo ZhiSong",
+ "aliases": [],
+ "licenseName": "IPA Open Font License 1.0",
+ "license": {
+  "spdx": "IPA-1.0",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "1483c7de02dcf8b9c54b3b1aacabf7d6bdf32d412ca6724c0292ea68e862d8cf",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "ipa",
+   "rootWork": "IPAexMincho",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwxzs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwxzs"
+}

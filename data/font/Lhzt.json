@@ -1,0 +1,52 @@
+{
+ "norm": "Lhzt",
+ "name": "濑户字体",
+ "en": "SetoFont",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "910df0a1cfe9d554a417c02b0e728f7bbc04cd8e3247607d2bbb0da0a37aa286",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "濑户字体",
+ "foundrySlug": "seto",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Lhzt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 web.archive.org",
+   "format": "git",
+   "href": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-lhzt"
+}

@@ -1,0 +1,60 @@
+{
+ "norm": "Jnmy",
+ "name": "荆南麦圆",
+ "en": "KNMaiyuan",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/maoken-fonts/KNMaiyuan",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "0d3aa94d1bf406e867659d976fcb67a46e6ec224f6d9490dade350d537def214",
+  "verifiedAt": "2026-09-24",
+  "rfn": null
+ },
+ "foundry": "荆南字坊 (Kingnam Typography)",
+ "foundrySlug": "jingnan",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Jnmy",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/maoken-fonts/KNMaiyuan",
+  "upstream": "https://github.com/maoken-fonts/KNMaiyuan",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Jnmy.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/maoken-fonts/KNMaiyuan",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jnmy"
+}

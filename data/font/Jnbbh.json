@@ -1,0 +1,60 @@
+{
+ "norm": "Jnbbh",
+ "name": "荆南波波黑",
+ "en": "Kingnam Bobo",
+ "aliases": [],
+ "licenseName": "荆南波波黑授权协议",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/maoken-fonts/KNBobohei",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "2f4d367072f5f4d154c0e1a6716f04d10a707a05ed5540a9bc68c7661d0e4770",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "一字一句",
+ "foundrySlug": "etrump",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Jnbbh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/maoken-fonts/KNBobohei",
+  "upstream": "https://github.com/maoken-fonts/KNBobohei",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Jnbbh.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/maoken-fonts/KNBobohei",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jnbbh"
+}

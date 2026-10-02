@@ -1,0 +1,60 @@
+{
+ "norm": "JfOpenHuninn",
+ "name": "jf open 粉圆",
+ "en": "jf open huninn",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/justfont/open-huninn-font",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "d71824aeb09afc4c2cac01acab5c3db79796e927ba37be40d69fb62a412639b6",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "justfont",
+ "foundrySlug": "justfont",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/JfOpenHuninn",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/justfont/open-huninn-font",
+  "upstream": "https://github.com/justfont/open-huninn-font",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/JfOpenHuninn.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/justfont/open-huninn-font",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jfophy"
+}

@@ -1,0 +1,52 @@
+{
+ "norm": "Zwxszt",
+ "name": "mplus hzk 12 像素字体",
+ "en": "Mplus HZK 12",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://www.maoken.com/freefonts/11130.html",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "910df0a1cfe9d554a417c02b0e728f7bbc04cd8e3247607d2bbb0da0a37aa286",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zwxszt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.maoken.com/freefonts/11130.html",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.maoken.com",
+   "format": "git",
+   "href": "https://www.maoken.com/freefonts/11130.html",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zwxszt"
+}

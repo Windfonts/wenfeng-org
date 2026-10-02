@@ -1,0 +1,52 @@
+/* 首页同分类三套。只服务 home-related-options.html，不进正式站。 */
+html:has(.page-home-rel) { scroll-padding-top: calc(var(--topbar-h) + 5.5rem); }
+.page-home-rel { padding-top: 0; }
+
+.hr-switch {
+  position: sticky; top: var(--topbar-h); z-index: 40;
+  background: var(--page); border-bottom: 1px solid var(--fill);
+  padding: var(--s-3) 0;
+}
+.hr-switch-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5);
+}
+.hr-switch-lead { font-size: var(--fs-13); color: var(--gray); flex: 1 1 14rem; }
+.hr-switch .seg-glyph { display: inline-flex; gap: 2px; background: var(--fill); border-radius: var(--radius-pill); padding: 2px; }
+.hr-switch .seg-glyph a {
+  padding: 0.28rem 0.85rem; border-radius: var(--radius-pill);
+  font-size: var(--fs-13); color: var(--ink-2); text-decoration: none;
+}
+.hr-switch .seg-glyph a:hover { color: var(--ink); }
+.hr-switch .seg-glyph a.is-on { background: var(--ink); color: var(--on-ink); }
+.hr-switch .live-caption { margin-left: auto; display: flex; align-items: center; flex-wrap: wrap; gap: var(--s-3); font-size: var(--fs-13); color: var(--gray); }
+.hr-switch .live-caption .now { color: var(--ink); font-weight: var(--fw-title); }
+.hr-switch .live-caption button { color: var(--gray); padding: 0.2rem 0.7rem; border-radius: var(--radius-pill); font-weight: var(--fw-label); display: inline-flex; align-items: center; gap: 0.35em; }
+.hr-switch .live-caption button:hover { color: var(--ink); background: var(--fill); }
+.hr-back { color: var(--gray); font-size: var(--fs-13); }
+
+.hr-meta {
+  max-width: var(--container); margin: var(--s-6) auto var(--s-4); padding: 0 var(--gutter);
+  display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); align-items: baseline;
+}
+.hr-meta b { font-size: var(--fs-16); font-weight: var(--fw-title); }
+.hr-meta span { font-size: var(--fs-13); color: var(--gray); }
+
+.page-home-rel .specimens.is-grid { gap: var(--s-3); }
+.page-home-rel[data-hr="b"] .specimens.is-grid .specimen .preview {
+  font-size: 64px !important;
+  line-height: 1.12;
+  min-height: 1.35em;
+  letter-spacing: -0.03em;
+  -webkit-line-clamp: 2;
+}
+.page-home-rel[data-hr="c"] .specimens.is-grid .specimen .preview {
+  font-size: 88px !important;
+  line-height: 0.95;
+  min-height: 1.05em;
+  letter-spacing: -0.04em;
+  -webkit-line-clamp: 1;
+}
+@media (max-width: 768px) {
+  .page-home-rel[data-hr="b"] .specimens.is-grid .specimen .preview { font-size: 44px !important; }
+  .page-home-rel[data-hr="c"] .specimens.is-grid .specimen .preview { font-size: 64px !important; }
+}

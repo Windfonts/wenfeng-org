@@ -1,0 +1,122 @@
+/* 首页收尾四套。只服务 home-close-options.html，不进正式站。 */
+html:has(.page-home-close) { scroll-padding-top: calc(var(--topbar-h) + 5.5rem); }
+.page-home-close { padding-top: 0; }
+
+.hc-switch {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 30;
+  background: var(--page);
+  border-bottom: 1px solid var(--fill);
+  padding: var(--s-3) 0;
+}
+.hc-switch-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+}
+.hc-switch-lead { font-size: var(--fs-13); color: var(--gray); flex: 1 1 16rem; }
+.hc-switch .seg-glyph {
+  display: inline-flex;
+  gap: 2px;
+  background: var(--fill);
+  border-radius: var(--radius-pill);
+  padding: 2px;
+}
+.hc-switch .seg-glyph a {
+  padding: 0.28rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.hc-switch .seg-glyph a:hover { color: var(--ink); }
+.hc-switch .seg-glyph a.is-on { background: var(--ink); color: var(--on-ink); }
+.hc-back { margin-left: auto; color: var(--gray); font-size: var(--fs-13); }
+
+.hc-block { display: none; scroll-margin-top: calc(var(--topbar-h) + 5.5rem); }
+.hc-block.is-on { display: block; }
+.hc-meta {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--s-6) var(--gutter) var(--s-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-5);
+  align-items: baseline;
+}
+.hc-meta b { font-size: var(--fs-16); font-weight: var(--fw-title); }
+.hc-meta span { font-size: var(--fs-13); color: var(--gray); }
+
+.hc-stage { border-top: 1px solid var(--rule); }
+.hc-stage .home-partners { border-bottom: 1px solid var(--rule); }
+
+.hc-close { padding: var(--s-16) 0; }
+.hc-close h2 {
+  margin: var(--s-3) 0 0;
+  font-size: var(--fs-40);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.hc-close .kicker { margin: 0; }
+.hc-close .lead {
+  margin: var(--s-4) 0 0;
+  max-width: 28em;
+  font-size: var(--fs-16);
+  color: var(--gray);
+  line-height: 1.7;
+}
+.hc-close .btn { margin-top: var(--s-6); }
+
+.hc-split {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-8);
+}
+.hc-split .btn { margin-top: 0; flex: none; }
+
+.hc-center { text-align: center; }
+.hc-center .lead { margin-left: auto; margin-right: auto; }
+.hc-center .btn { margin-top: var(--s-6); }
+
+.hc-num {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+}
+.hc-figure {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+.hc-figure b {
+  font-size: clamp(4.5rem, 9vw, 7rem);
+  font-weight: 700;
+}
+.hc-figure span {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-title);
+  color: var(--gray);
+}
+.hc-num h2 { margin-top: 0; font-size: clamp(1.75rem, 3vw, 2.25rem); }
+
+.hc-foot {
+  border-top: 1px solid var(--rule);
+  padding: var(--s-6) 0 var(--s-10);
+  color: var(--gray);
+  font-size: var(--fs-13);
+}
+
+@media (max-width: 768px) {
+  .hc-close { padding: var(--s-12) 0; }
+  .hc-split, .hc-num { flex-direction: column; align-items: flex-start; }
+  .hc-split .btn, .hc-num .btn { margin-top: var(--s-6); }
+  .hc-center .btn { margin-top: var(--s-6); }
+}

@@ -1,0 +1,47 @@
+{
+ "norm": "Bmfs",
+ "name": "不寐仿宋",
+ "en": "Insomnia Fangsong",
+ "aliases": [],
+ "licenseName": "X11 License",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Bmfs",
+ "weights": [
+  "Regular",
+  "Demi",
+  "Bold"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-bmfs"
+}

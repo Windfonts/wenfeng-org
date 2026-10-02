@@ -1,0 +1,63 @@
+{
+ "norm": "Arkp",
+ "name": "方舟像素",
+ "en": "Ark Pixel 10px",
+ "aliases": [
+  "ark-pixel",
+  "TakWolf"
+ ],
+ "licenseName": "MIT License",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/TakWolf/ark-pixel-font",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "41c98b6291a74daf50d8d131af00733b4a5f3f11954b6fb68666f988668d0827",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "takwolf",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Arkp",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/TakWolf/ark-pixel-font",
+  "upstream": "https://github.com/TakWolf/ark-pixel-font",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Arkp.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/TakWolf/ark-pixel-font",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "店面目录曾写 MIT，收录记 OFL 1.1，条款以原文为准。",
+ "family": "wenfeng-arkp"
+}

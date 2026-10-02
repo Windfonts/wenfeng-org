@@ -1,0 +1,45 @@
+{
+ "norm": "Dlzht",
+ "name": "鼎猎珠海体",
+ "en": "Dinglie Zhuhai Font",
+ "aliases": [],
+ "licenseName": "鼎猎珠海体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-24",
+  "textSha256": "fc234eb3ca5675a263cb5d71c4b3baad71140b8b7331b452d0a0d0392b20796c",
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "丁烈",
+ "foundrySlug": "dinglie",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Dlzht",
+ "weights": [
+  "Normal"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-dlzht"
+}

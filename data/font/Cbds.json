@@ -1,0 +1,50 @@
+{
+ "norm": "Cbds",
+ "name": "长坂点宋",
+ "en": "Changban Dian Song 16",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-27",
+  "textSha256": "40b328d200a05f92e68cdda6a6d3803ee58667521052428ad14cb3bde3e05230",
+  "verifiedAt": "2026-09-27",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "font-silo",
+   "rootWork": "KH Dot 道玄坂 16",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "yzdnn",
+ "foundrySlug": "yzdnn",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Cbds",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-cbds"
+}

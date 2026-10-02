@@ -1,0 +1,60 @@
+{
+ "norm": "SourceHanSerifCNforDisplay",
+ "name": "思源屏显臻宋 CN",
+ "en": "Source Han Serif CN for Display",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/adobe-fonts/source-han-serif",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Adobe",
+ "foundrySlug": "adobe",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/SourceHanSerifCNforDisplay",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/adobe-fonts/source-han-serif",
+  "upstream": "https://github.com/adobe-fonts/source-han-serif",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/SourceHanSerifCNforDisplay.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/adobe-fonts/source-han-serif",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-sypscn"
+}

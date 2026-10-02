@@ -1,0 +1,52 @@
+{
+ "norm": "TsangerYuMoW02",
+ "name": "仓耳与墨 W02",
+ "en": "TsangerYuMo W02",
+ "aliases": [],
+ "licenseName": "仓耳字库免费开源字体授权声明",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": "https://www.tsanger.cn/category/114",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "造字工房",
+ "foundrySlug": "tsanger",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/TsangerYuMoW02",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.tsanger.cn/category/114",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.tsanger.cn",
+   "format": "git",
+   "href": "https://www.tsanger.cn/category/114",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ceym2"
+}

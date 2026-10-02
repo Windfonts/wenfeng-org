@@ -1,0 +1,85 @@
+/* 页脚四套。只服务 footer-options.html，不进正式站。 */
+html:has(.page-foot-opt) { scroll-padding-top: calc(var(--topbar-h) + 4.5rem); }
+.page-foot-opt { padding-top: 0; }
+
+.fo-switch {
+  position: sticky; top: var(--topbar-h); z-index: 40;
+  background: var(--page); border-bottom: 1px solid var(--fill);
+  padding: var(--s-3) 0;
+}
+.fo-switch-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5);
+}
+.fo-switch-lead { font-size: var(--fs-13); color: var(--gray); flex: 1 1 14rem; }
+.fo-switch .seg-glyph { display: inline-flex; gap: 2px; background: var(--fill); border-radius: var(--radius-pill); padding: 2px; }
+.fo-switch .seg-glyph a {
+  padding: 0.28rem 0.85rem; border-radius: var(--radius-pill);
+  font-size: var(--fs-13); color: var(--ink-2); text-decoration: none;
+}
+.fo-switch .seg-glyph a:hover { color: var(--ink); }
+.fo-switch .seg-glyph a.is-on { background: var(--ink); color: var(--on-ink); }
+.fo-back { margin-left: auto; color: var(--gray); font-size: var(--fs-13); }
+
+.fo-note {
+  max-width: var(--container); margin: var(--s-5) auto 0; padding: 0 var(--gutter);
+  font-size: var(--fs-13); color: var(--gray);
+}
+.fo-stub { margin-top: var(--s-4); }
+.fo-block { display: none; }
+.fo-block.is-on { display: block; }
+
+.fo { color: var(--gray); font-size: var(--fs-13); }
+.fo a { color: var(--ink-2); font-weight: var(--fw-label); }
+.fo a:hover { color: var(--ink); }
+.fo .fo-copy { color: var(--gray-2); font-size: var(--fs-12); }
+.fo .fo-copy a { color: inherit; font-weight: var(--fw-body); }
+.fo .fo-copy a:hover { color: var(--ink-2); }
+.fo-links { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); }
+
+.fo-a,
+.fo-b,
+.fo-c,
+.fo-d { margin-top: var(--s-6); padding: var(--s-6) var(--gutter) var(--s-10); }
+
+.fo-a .fo-inner {
+  max-width: var(--container); margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--s-3) var(--s-6);
+}
+.fo-a .fo-copy { margin: 0; }
+
+.fo-b .fo-inner { max-width: var(--container); margin: 0 auto; }
+.fo-b .fo-copy { margin: var(--s-4) 0 0; }
+
+.fo-c .fo-inner {
+  max-width: var(--container); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--s-6) var(--s-10); align-items: end;
+}
+.fo-c .wordmark { font-size: var(--fs-16); }
+.fo-c .fo-lead { margin-top: var(--s-2); color: var(--ink-2); font-size: var(--fs-13); }
+.fo-c .fo-copy { margin-top: var(--s-4); }
+.fo-c .fo-related { color: var(--gray-2); font-size: var(--fs-12); margin-bottom: var(--s-3); }
+
+.fo-d .fo-inner { max-width: var(--container); margin: 0 auto; }
+.fo-d .fo-mark {
+  margin: 0 0 var(--s-5);
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: var(--fw-title);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+}
+.fo-d .fo-bottom {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--s-3) var(--s-6);
+}
+.fo-d .fo-copy { margin: 0; }
+
+@media (max-width: 768px) {
+  .fo-c .fo-inner { grid-template-columns: 1fr; }
+  .fo-a,
+  .fo-b,
+  .fo-c,
+  .fo-d { padding: var(--s-5) var(--gutter) var(--s-8); }
+}

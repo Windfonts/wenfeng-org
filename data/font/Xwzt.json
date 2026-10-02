@@ -1,0 +1,45 @@
+{
+ "norm": "Xwzt",
+ "name": "霞鹜篆体",
+ "en": "LXGW Seal",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "014c5eec8e93d9deb222d0a47b4f44668f2f63b14f27448dcf468f52fd0cf910",
+  "verifiedAt": "2026-09-26",
+  "rfn": "霞鹜、霞鶩、落霞孤鹜、落霞孤鶩、LXGW"
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwzt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwzt"
+}

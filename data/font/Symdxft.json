@@ -1,0 +1,45 @@
+{
+ "norm": "Symdxft",
+ "name": "摄图摩登小方体",
+ "en": "Shetu Mo Deng Xiao Fang Ti",
+ "aliases": [],
+ "licenseName": "摄图摩登小方体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "699pic / Shetuang",
+ "foundrySlug": "shetu",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Symdxft",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-symdxft"
+}

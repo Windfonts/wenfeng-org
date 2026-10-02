@@ -1,0 +1,57 @@
+{
+ "norm": "Mkwgzh",
+ "name": "猫啃网故障黑",
+ "en": "Maoken Glitch Hei",
+ "aliases": [],
+ "licenseName": "SIL Open Font License",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://www.maoken.com/freefonts/14318.html",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "c8cb9bf864b751b9867f1bc23bd1b8397a4f8843ca27751eb8566de34d18f20d",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Maoken",
+ "foundrySlug": "maoken",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Mkwgzh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.maoken.com/freefonts/14318.html",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.maoken.com",
+   "format": "git",
+   "href": "https://www.maoken.com/freefonts/14318.html",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mkwgzh"
+}

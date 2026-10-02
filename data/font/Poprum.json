@@ -1,0 +1,52 @@
+{
+ "norm": "Poprum",
+ "name": "PopRumKiwi Telop",
+ "en": "PopRumKiwi Telop",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Poprum",
+ "weights": [
+  "Black"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 kiwi-kawagoto.com",
+   "format": "git",
+   "href": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-poprum"
+}

@@ -1,0 +1,110 @@
+/* 首页下半四套。只服务 home-lib-options.html，不进正式站。 */
+html:has(.page-home-lib) { scroll-padding-top: calc(var(--topbar-h) + 6.75rem); }
+.page-home-lib { padding-top: 0; }
+.hl-block { scroll-margin-top: calc(var(--topbar-h) + 6.75rem); }
+
+.hl-switch {
+  position: sticky; top: var(--topbar-h); z-index: 40;
+  background: var(--page); border-bottom: 1px solid var(--fill);
+  padding: var(--s-3) 0;
+}
+.hl-switch-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5);
+}
+.hl-switch-lead { font-size: var(--fs-13); color: var(--gray); flex: 1 1 14rem; }
+.hl-switch .seg-glyph { display: inline-flex; gap: 2px; background: var(--fill); border-radius: var(--radius-pill); padding: 2px; }
+.hl-switch .seg-glyph a {
+  padding: 0.28rem 0.85rem; border-radius: var(--radius-pill);
+  font-size: var(--fs-13); color: var(--ink-2); text-decoration: none;
+}
+.hl-switch .seg-glyph a:hover { color: var(--ink); }
+.hl-switch .seg-glyph a.is-on { background: var(--ink); color: var(--on-ink); }
+.hl-switch .live-caption { margin-left: auto; }
+.hl-back { color: var(--gray); font-size: var(--fs-13); }
+
+.hl-block { display: none; padding: var(--s-6) 0 var(--s-10); }
+.hl-block.is-on { display: block; }
+.hl-meta {
+  max-width: var(--container); margin: 0 auto var(--s-5); padding: 0 var(--gutter);
+  display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); align-items: baseline;
+}
+.hl-meta b { font-size: var(--fs-16); font-weight: var(--fw-title); }
+.hl-meta span { font-size: var(--fs-13); color: var(--gray); }
+
+.page-home-lib .hl-fakebar { position: static; pointer-events: none; }
+.page-home-lib .lib-side { position: sticky; top: calc(var(--topbar-h) + 6.5rem); }
+.page-home-lib .lib-rail { position: sticky; top: calc(var(--topbar-h) + 6.5rem); }
+
+.specimen.is-now { background: var(--fill); }
+.specimen.is-now:hover { background: var(--fill); }
+.specimen.is-now .name::after {
+  content: "当前";
+  margin-left: 0.45em;
+  font-size: var(--fs-12);
+  font-weight: var(--fw-label);
+  color: var(--gray);
+}
+
+.hl-side-bits { margin: var(--s-4) 0 0; font-size: var(--fs-13); color: var(--gray); line-height: 1.6; }
+.hl-side-slim .actions { margin-top: var(--s-5); }
+.hl-kv { margin-top: var(--s-4); }
+
+.hl-cats { display: flex; flex-wrap: wrap; gap: var(--s-1); padding: var(--s-2) 0 var(--s-3); }
+.hl-cats .chip { background: transparent; color: var(--gray); }
+.hl-cats .chip:hover { background: var(--fill); color: var(--ink); }
+.hl-cats .chip.is-on { background: var(--ink); color: var(--on-ink); }
+
+.hl-nowline { margin: 0; font-size: var(--fs-13); color: var(--gray); }
+.hl-nowline a { color: var(--ink); font-weight: var(--fw-title); }
+
+.hl-more { padding: var(--s-6) 0 var(--s-10); font-size: var(--fs-13); }
+.hl-more a { color: var(--gray); }
+.hl-more a:hover { color: var(--ink); }
+.hl-more-strong { padding-top: var(--s-4); }
+.hl-more-strong a.btn { text-decoration: none; }
+
+.hl-now {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+  gap: var(--s-6);
+  align-items: center;
+  padding: var(--s-6);
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin-bottom: var(--s-6);
+}
+.hl-now-glyph {
+  margin: 0;
+  font-size: clamp(3.4rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.hl-now h3 { font-size: var(--fs-20); font-weight: var(--fw-title); letter-spacing: -0.02em; }
+.hl-now h3 a { color: inherit; }
+.hl-now .sub { margin-top: var(--s-2); font-size: var(--fs-13); color: var(--gray); }
+.hl-now .acts { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+.hl-fold { border-top: 1px solid var(--rule); }
+.hl-fold > summary {
+  cursor: pointer;
+  padding: var(--s-4) 0;
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  font-weight: var(--fw-label);
+  list-style: none;
+}
+.hl-fold > summary::-webkit-details-marker { display: none; }
+.hl-fold > summary::after { content: "+"; float: right; color: var(--gray-2); font-weight: var(--fw-body); }
+.hl-fold[open] > summary::after { content: "–"; }
+.hl-fold .chips { padding-bottom: var(--s-3); }
+
+.hl-charts { margin-top: var(--s-8); }
+
+@media (max-width: 1024px) {
+  .hl-now { grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .hl-now .acts { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  .hl-now { grid-template-columns: 1fr; }
+  .hl-lib-b .count-line { flex-direction: column; align-items: flex-start; }
+}

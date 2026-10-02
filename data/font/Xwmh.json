@@ -1,0 +1,50 @@
+{
+ "norm": "Xwmh",
+ "name": "霞鹜漫黑",
+ "en": "LXGW Marker Gothic",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/lxgw/LxgwMarkerGothic/main/OFL.txt",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "a5e70c8b156c4103b96a4f6af65ad6562e03c0e87373dc3ab43e04d6997ec46e",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "tanugo",
+   "rootWork": "Tanugo",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwmh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwmh"
+}

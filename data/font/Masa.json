@@ -1,0 +1,57 @@
+{
+ "norm": "Masa",
+ "name": "正风毛笔",
+ "en": "MasaFont",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://max-everyday.com/2020/05/masafont/",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "1bb512463ef3ed85da51fc996537984515c94a0860e8d9b340f43ada7bd18f64",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "aoyagi-kouzan",
+   "rootWork": "衡山毛笔",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Aqua（阿杰）",
+ "foundrySlug": "aqua",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Masa",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://max-everyday.com/2020/05/masafont/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 max-everyday.com",
+   "format": "git",
+   "href": "https://max-everyday.com/2020/05/masafont/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-masa"
+}

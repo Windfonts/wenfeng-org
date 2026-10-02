@@ -1,0 +1,246 @@
+{
+ "$schema": "授权依据。standards 为官方许可文本；names 按字体名包含匹配。运行时见 WFProto.resolveLicenseEvidence。不手改 fonts.json。",
+ "standards": {
+  "OFL-1.1": {
+   "sourceKind": "standard",
+   "spdx": "OFL-1.1",
+   "label": "SIL Open Font License 1.1",
+   "sourceUrl": "https://openfontlicense.org/",
+   "quote": "You can use them in books, posters, artwork, logos, and on websites… You can freely modify and redistribute OFL fonts. Some projects may require a name change to respect any declared Reserved Font Names.",
+   "restrictions": [
+    "不得单独售卖字体文件",
+    "修改后再分发须遵守 OFL，有保留名的须改名",
+    "须保留版权与许可声明"
+   ]
+  },
+  "Apache-2.0": {
+   "sourceKind": "standard",
+   "spdx": "Apache-2.0",
+   "label": "Apache License 2.0",
+   "sourceUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+   "quote": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications…",
+   "restrictions": [
+    "须保留版权、许可与 NOTICE",
+    "不得使用权利人名义背书"
+   ]
+  },
+  "GPL-2.0": {
+   "sourceKind": "standard",
+   "spdx": "GPL-2.0",
+   "label": "GNU GPL",
+   "sourceUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
+   "quote": "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License.",
+   "restrictions": [
+    "再分发须遵守 GPL",
+    "嵌入到专有软件前先读原文，不能当 MIT 用"
+   ]
+  },
+  "CC-BY-SA-4.0": {
+   "sourceKind": "standard",
+   "spdx": "CC-BY-SA-4.0",
+   "label": "CC BY-SA 4.0",
+   "sourceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "quote": "You are free to share and adapt… Attribution — You must give appropriate credit. ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license.",
+   "restrictions": [
+    "必须署名",
+    "衍生作品须以相同方式共享"
+   ]
+  },
+  "CC-BY-ND-3.0": {
+   "sourceKind": "standard",
+   "spdx": "CC-BY-ND-3.0",
+   "label": "CC BY-ND 3.0",
+   "sourceUrl": "https://creativecommons.org/licenses/by-nd/3.0/",
+   "quote": "You are free to copy and redistribute the material in any medium or format for any purpose, even commercially… NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.",
+   "restrictions": [
+    "必须署名",
+    "不得分发修改后的版本"
+   ]
+  },
+  "IPA-1.0": {
+   "sourceKind": "standard",
+   "spdx": "IPA",
+   "label": "IPA Font License",
+   "sourceUrl": "https://licenses.opensource.jp/IPAfont/IPAfont.html",
+   "quote": "IPA Font License allows use, copying and redistribution under the conditions of the license, including rules on Derived Programs and reserved font names.",
+   "restrictions": [
+    "派生字体须改名",
+    "须保留许可文本"
+   ]
+  },
+  "MIT": {
+   "sourceKind": "standard",
+   "spdx": "MIT",
+   "label": "MIT License",
+   "sourceUrl": "https://opensource.org/license/mit",
+   "quote": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software…, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software…",
+   "restrictions": [
+    "须保留版权与许可声明",
+    "不得用权利人名义背书"
+   ]
+  },
+  "GPL-3.0": {
+   "sourceKind": "standard",
+   "spdx": "GPL-3.0",
+   "label": "GNU GPL 3.0",
+   "sourceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+   "quote": "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License.",
+   "restrictions": [
+    "再分发须随附 GPL 与对应源文件",
+    "嵌入专有软件前先读原文"
+   ]
+  },
+  "GPL-2.0-with-font-exception": {
+   "sourceKind": "standard",
+   "spdx": "GPL-2.0-with-font-exception",
+   "label": "GPLv2 + 字体嵌入例外",
+   "sourceUrl": "https://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html#FontException",
+   "quote": "As a special exception, if you create a document which uses this font, and embed this font or unaltered portions of this font into the document, this font does not by itself cause the resulting document to be covered by the GNU General Public License.",
+   "restrictions": [
+    "再分发须随附 GPL 与源文件",
+    "字体例外：嵌入文档/网页不使文档染 GPL",
+    "修改字体后可延续例外条款，亦可删除"
+   ]
+  },
+  "CC0-1.0": {
+   "sourceKind": "standard",
+   "spdx": "CC0-1.0",
+   "label": "CC0 1.0 公共领域",
+   "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "quote": "The person associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law.",
+   "restrictions": []
+  },
+  "0BSD": {
+   "sourceKind": "standard",
+   "spdx": "0BSD",
+   "label": "Zero-Clause BSD",
+   "sourceUrl": "https://opensource.org/license/0bsd",
+   "quote": "Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.",
+   "restrictions": [
+    "须保留版权声明"
+   ]
+  },
+  "CC-BY-4.0": {
+   "sourceKind": "standard",
+   "spdx": "CC-BY-4.0",
+   "label": "CC BY 4.0",
+   "sourceUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "quote": "You are free to share and adapt the material for any purpose, even commercially.",
+   "restrictions": [
+    "须署名"
+   ]
+  },
+  "GlyphWiki": {
+   "sourceKind": "standard",
+   "spdx": "GlyphWiki",
+   "label": "GlyphWiki 著作权与许可协议",
+   "sourceUrl": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
+   "quote": "GlyphWiki 的字形与字体数据依照 GlyphWiki:著作权与许可协议 提供，可自由使用与再分发。",
+   "restrictions": [
+    "遵守 GlyphWiki 站点协议"
+   ]
+  },
+  "OGDL-1.0": {
+   "sourceKind": "standard",
+   "spdx": "OGDL-1.0",
+   "label": "政府资料开放授权条款 1.0",
+   "sourceUrl": "https://data.gov.tw/license",
+   "quote": "数位发展部全字库字型：可依需求择一使用「政府资料开放授权条款 1.0」或「开源字型授权 OFL 1.1」。",
+   "restrictions": [
+    "依所择条款履行署名/声明要求"
+   ]
+  },
+  "Mplus": {
+   "sourceKind": "standard",
+   "spdx": "Mplus",
+   "label": "M+ OUTLINE FONTS 许可",
+   "sourceUrl": "https://mplus-fonts.osdn.jp/about2.html",
+   "quote": "These fonts are free software. Unlimited permission is granted to use, copy, and distribute them, with or without modification, either commercially or non-commercially.",
+   "restrictions": [
+    "须随附许可声明（嵌入或复制均可）"
+   ]
+  }
+ },
+ "names": {
+  "阿里巴巴普惠体": {
+   "sourceKind": "rights_holder",
+   "sourceUrl": "https://www.alibabafonts.com/",
+   "verifiedAt": "2026-09-20",
+   "restrictions": [
+    "不得将修改后的字体再分发或售卖",
+    "具体条款以阿里巴巴字体官网为准"
+   ]
+  },
+  "思源黑体": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/adobe-fonts/source-han-sans",
+   "verifiedAt": "2026-09-20"
+  },
+  "思源黑體": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/adobe-fonts/source-han-sans",
+   "verifiedAt": "2026-09-20"
+  },
+  "思源宋体": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/adobe-fonts/source-han-serif",
+   "verifiedAt": "2026-09-20"
+  },
+  "思源屏显臻宋": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/adobe-fonts/source-han-serif",
+   "verifiedAt": "2026-09-20"
+  },
+  "霞鹜": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/lxgw",
+   "verifiedAt": "2026-09-20"
+  },
+  "寒蝉": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/Warren2060",
+   "verifiedAt": "2026-09-20"
+  },
+  "得意黑": {
+   "sourceKind": "github_license",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://github.com/atelier-anchor/smiley-sans",
+   "verifiedAt": "2026-09-20"
+  },
+  "字魂扁桃体": {
+   "sourceKind": "rights_holder",
+   "spdx": "OFL-1.1",
+   "sourceUrl": "https://www.zcool.com.cn/work/ZNjUwNDM5OTY=.html",
+   "verifiedAt": "2026-09-23",
+   "quote": "字魂创意字库对得意黑进行二次创作……「字魂扁桃体」是一款开源字体，遵从原作者约定及开源协议，永久免费商用。"
+  },
+  "教育部標準楷書": {
+   "sourceKind": "rights_holder",
+   "spdx": "CC-BY-ND-3.0",
+   "sourceUrl": "https://language.moe.gov.tw",
+   "verifiedAt": "2026-09-20"
+  },
+  "文泉驿": {
+   "sourceKind": "rights_holder",
+   "spdx": "Apache-2.0",
+   "sourceUrl": "http://wenq.org",
+   "verifiedAt": "2026-09-20"
+  },
+  "仓耳": {
+   "sourceKind": "rights_holder",
+   "spdx": "",
+   "label": "仓耳字库免费开源字体授权声明",
+   "sourceUrl": "https://feicode.com/Windfonts/font-licenses",
+   "quote": "仓耳字库免费开源字体授权声明（原件已转录存档于 font-licenses 仓）：该系列字体可免费商用、开源使用。",
+   "restrictions": [
+    "以授权声明原件为准"
+   ]
+  }
+ }
+}

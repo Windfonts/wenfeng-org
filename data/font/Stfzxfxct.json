@@ -1,0 +1,45 @@
+{
+ "norm": "Stfzxfxct",
+ "name": "书体坊禚效锋行草体",
+ "en": "Shutifang Zhuo Xiaofeng Xingcao",
+ "aliases": [],
+ "licenseName": "书体坊禚效锋行草体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "ShuTiFang",
+ "foundrySlug": "shutifang",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/Stfzxfxct",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-stfzxfxct"
+}

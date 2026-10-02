@@ -1,0 +1,45 @@
+{
+ "norm": "Yyzs",
+ "name": "余繁真素",
+ "en": "YuFan ZhenSu",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "46066abec18f378eaa4ad3553af456ec08f4497ee55650f8d96fc7c5b6985905",
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "余繁",
+ "foundrySlug": "yufan",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Yyzs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-yyzs"
+}

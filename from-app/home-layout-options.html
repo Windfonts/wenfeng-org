@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首页结构 · 四套设计稿 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/specimen.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/home-layout-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-home-layout">
+  <header data-topbar data-active="home"></header>
+
+  <div class="hl-switch">
+    <div class="container hl-switch-inner">
+      <p class="hl-switch-lead">整页结构四套 · 三件套相同（活样张 / 四格 / 字林）。现首页未改。</p>
+      <nav class="seg-glyph" aria-label="设计稿">
+        <a href="#a">甲 竖叠</a>
+        <a href="#b">乙 左右</a>
+        <a href="#c">丙 两拍</a>
+        <a href="#d">丁 密缝</a>
+      </nav>
+      <p class="live-caption">
+        <span>正在用</span>
+        <a class="now" data-name href="/">—</a>
+        <button type="button" id="liveNext"><svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg?v=20260925r#i-refresh"/></svg>换一款</button>
+        <a class="hl-back" href="/">回现首页</a>
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <article class="hl-block" id="a">
+      <header class="hl-meta"><b>甲 · 竖叠舞台</b><span>推荐。大字、动作、四格、字林一条线。字林没有标题，就是 hero 的合唱。</span></header>
+      <section class="hl-stage hl-a">
+        <div class="container">
+          <div class="hl-top">
+            <p class="kicker">中文 Webfonts 云服务</p>
+            <p class="live-caption"><span>正在使用</span><a class="now" data-name data-detail>—</a></p>
+          </div>
+          <h2 class="live" data-live contenteditable="true" spellcheck="false">让中文字体，<br>在网页上流动。</h2>
+          <div class="hl-acts">
+            <a class="btn btn-ink" data-detail>查看这款</a>
+            <button type="button" class="btn" data-pick>加入选字袋</button>
+            <a class="btn-text" href="/docs">文档</a>
+          </div>
+          <div class="home-stats" data-stats></div>
+          <div class="home-forest-grid" data-forest></div>
+        </div>
+      </section>
+      <div class="container hl-lib" data-rows></div>
+    </article>
+
+    <article class="hl-block" id="b">
+      <header class="hl-meta"><b>乙 · 左右对台</b><span>左写字，右换款。第一屏同时看见句子和字林，四格垫底。</span></header>
+      <section class="hl-stage hl-b">
+        <div class="container hl-b-grid">
+          <div class="hl-b-copy">
+            <p class="kicker">中文 Webfonts 云服务</p>
+            <h2 class="live" data-live contenteditable="true" spellcheck="false">让中文字体，<br>在网页上流动。</h2>
+            <p class="live-caption"><span>正在使用</span><a class="now" data-name data-detail>—</a></p>
+            <div class="hl-acts">
+              <a class="btn btn-ink" data-detail>查看这款</a>
+              <button type="button" class="btn" data-pick>加入选字袋</button>
+              <a class="btn-text" href="/docs">文档</a>
+            </div>
+          </div>
+          <div class="home-forest-grid is-side" data-forest></div>
+        </div>
+        <div class="container"><div class="home-stats" data-stats></div></div>
+      </section>
+      <div class="container hl-lib" data-rows></div>
+    </article>
+
+    <article class="hl-block" id="c">
+      <header class="hl-meta"><b>丙 · 两拍</b><span>第一屏只给大字和四格。字林独占下一屏，再往下才是库。</span></header>
+      <section class="hl-stage hl-c">
+        <div class="container hl-c-hero">
+          <div class="hl-top">
+            <p class="kicker">中文 Webfonts 云服务</p>
+            <p class="live-caption"><span>正在使用</span><a class="now" data-name data-detail>—</a></p>
+          </div>
+          <h2 class="live" data-live contenteditable="true" spellcheck="false">让中文字体，<br>在网页上流动。</h2>
+          <div class="hl-c-foot">
+            <div class="hl-acts">
+              <a class="btn btn-ink btn-lg" data-detail>查看这款</a>
+              <button type="button" class="btn btn-lg" data-pick>加入选字袋</button>
+              <a class="btn-text" href="/docs">文档</a>
+            </div>
+            <div class="home-stats" data-stats></div>
+          </div>
+        </div>
+      </section>
+      <section class="hl-c-forest">
+        <div class="container">
+          <div class="home-forest-grid" data-forest></div>
+        </div>
+      </section>
+      <div class="container hl-lib" data-rows></div>
+    </article>
+
+    <article class="hl-block" id="d">
+      <header class="hl-meta"><b>丁 · 一屏密缝</b><span>一句、四格、字林压进同一视口。气场让给字林，大字改成帽檐。</span></header>
+      <section class="hl-stage hl-d">
+        <div class="container">
+          <div class="hl-d-rail">
+            <h2 class="live" data-live contenteditable="true" spellcheck="false">让中文字体在网页上流动。</h2>
+            <div class="hl-d-meta">
+              <a class="now" data-name data-detail>—</a>
+              <div class="hl-acts">
+                <a class="btn btn-ink btn-sm" data-detail>查看这款</a>
+                <button type="button" class="btn btn-sm" data-pick>加入选字袋</button>
+              </div>
+            </div>
+          </div>
+          <div class="home-stats" data-stats></div>
+          <div class="home-forest-grid is-tight" data-forest></div>
+        </div>
+      </section>
+      <div class="container hl-lib" data-rows></div>
+    </article>
+  </main>
+
+  <footer id="wfExtraFooter"></footer>
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-specimen.js?v=20260925r"></script>
+  <script src="/from-app/js/pages/home-layout-options.js?v=20260925r"></script>
+</body>
+</html>

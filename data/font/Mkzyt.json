@@ -1,0 +1,57 @@
+{
+ "norm": "Mkzyt",
+ "name": "猫啃竹圆体",
+ "en": "Maoken Zhuyuan Ti",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://www.maoken.com/freefonts/17948.html",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "06b72d8e7fb1f3d4b912ffdaf363d9267bfecb4bcc83ebf68a9f761a243bd29f",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "fontworks",
+   "rootWork": "RocknRoll",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "LogoSC / Biaoxiaozhi",
+ "foundrySlug": "maoken",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Mkzyt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.maoken.com/freefonts/17948.html",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.maoken.com",
+   "format": "git",
+   "href": "https://www.maoken.com/freefonts/17948.html",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mkzyt"
+}

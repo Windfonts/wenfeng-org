@@ -1,0 +1,62 @@
+{
+ "norm": "Xwwktc",
+ "name": "霞鹜文楷 TC",
+ "en": "LXGW WenKai TC",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/lxgw/LxgwWenKai",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "4fff27d35db0e22cd81d58da6f20e09f415cf354a3338e3cf1fc0eb9222c7174",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Xwwktc",
+ "weights": [
+  "Light",
+  "Regular",
+  "Medium"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/lxgw/LxgwWenKai",
+  "upstream": "https://github.com/lxgw/LxgwWenKai",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Xwwktc.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/lxgw/LxgwWenKai",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwwktc"
+}

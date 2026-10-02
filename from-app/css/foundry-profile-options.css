@@ -1,0 +1,280 @@
+/* 厂商详情顶栏四套。只服务 foundry-profile-options.html。 */
+.page-foundry-profile-opts .fpo-demo {
+  margin-left: auto;
+}
+.page-foundry-profile-opts .fpo-demo select {
+  height: 2rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--page);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-13);
+}
+.page-foundry-profile-opts .hc-back { margin-left: 0; }
+
+.fpo-stage {
+  border-top: 1px solid var(--rule);
+  padding: var(--s-6) 0 var(--s-10);
+}
+.fpo-stage .container { max-width: var(--container); }
+
+.fpo-crumb {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.fpo-crumb a { color: var(--ink-2); text-decoration: none; }
+.fpo-crumb a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.fpo-crumb span { margin: 0 0.35em; color: var(--gray-2); }
+
+.fpo-peek {
+  margin-top: var(--s-8);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.fpo-peek .count-line { padding-top: var(--s-2); }
+.fpo-peek-rows {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+}
+.fpo-peek-row {
+  height: 4.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+/* —— 共用：身份头 —— */
+.fpo-id {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-4);
+  min-width: 0;
+}
+.fpo-id .mark,
+.fpo-id img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+  background: var(--fill);
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-28);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+}
+.fpo-id .who { min-width: 0; }
+.fpo-id .name {
+  margin: 0;
+  font-size: clamp(1.65rem, 2.4vw, 2rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  flex-wrap: wrap;
+}
+.fpo-id .en {
+  margin: 0.2em 0 0;
+  font-size: var(--fs-14);
+  color: var(--gray);
+  font-family: var(--font-mono);
+}
+.fpo-id .sub {
+  margin: 0.45em 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: 1.5;
+}
+.fpo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+  align-items: center;
+}
+.fpo-actions .btn { height: 2.25rem; }
+
+.fpo-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+}
+.fpo-facts li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+.fpo-facts li + li::before {
+  content: '·';
+  color: var(--gray-2);
+  margin-right: 0.15em;
+}
+.fpo-b-meta .fpo-facts li + li::before { display: none; }
+.fpo-facts .k { color: var(--gray); }
+.fpo-facts a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; }
+
+.fpo-eco {
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.fpo-eco .lab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  color: var(--gray);
+  margin-right: 0.5em;
+  font-weight: var(--fw-label);
+}
+.fpo-eco a { color: var(--ink); text-decoration: none; }
+.fpo-eco a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.fpo-eco .sep { color: var(--gray-2); margin: 0 0.35em; }
+
+.fpo-claim {
+  margin: var(--s-5) 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: 1.55;
+}
+.fpo-claim a {
+  color: var(--ink);
+  font-weight: var(--fw-label);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.fpo-desc {
+  margin: var(--s-5) 0 0;
+  max-width: 40em;
+  font-size: var(--fs-15);
+  color: var(--ink-2);
+  line-height: 1.75;
+}
+
+/* ========== 甲 · 疏栏 ========== */
+.fpo-a-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+  gap: var(--s-10) var(--s-12);
+  padding: var(--s-10) var(--s-10) var(--s-9);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  align-items: start;
+}
+.fpo-a-side .kv {
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+.fpo-a-side .kv > div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: var(--s-3);
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-13);
+}
+.fpo-a-side .kv > div:last-of-type { border-bottom: 0; }
+.fpo-a-side .kv dt {
+  margin: 0;
+  color: var(--gray);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-weight: var(--fw-body);
+}
+.fpo-a-side .kv dd { margin: 0; color: var(--ink); min-width: 0; word-break: break-all; }
+.fpo-a-side .kv dd a { color: inherit; }
+.fpo-a-band {
+  margin-top: var(--s-5);
+  padding: var(--s-5) var(--s-6);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.fpo-a-band .fpo-eco { margin-top: 0; padding-top: 0; border-top: 0; }
+
+@media (max-width: 860px) {
+  .fpo-a-card { grid-template-columns: minmax(0, 1fr); padding: var(--s-7); gap: var(--s-6); }
+}
+
+/* ========== 乙 · 通栏 ========== */
+.fpo-b {
+  padding: var(--s-4) 0 var(--s-2);
+}
+.fpo-b .fpo-id .mark,
+.fpo-b .fpo-id img { width: 88px; height: 88px; font-size: var(--fs-32); }
+.fpo-b .fpo-id .name { font-size: clamp(1.85rem, 3vw, 2.35rem); }
+.fpo-b-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-4);
+  margin-top: var(--s-5);
+}
+.fpo-b-meta .fpo-facts { gap: var(--s-2) var(--s-4); }
+.fpo-b-meta .fpo-facts li {
+  padding: 0.28rem 0.75rem;
+  background: var(--fill);
+  border-radius: var(--radius-pill);
+}
+.fpo-b-meta .fpo-facts .k { display: none; }
+.fpo-b .fpo-claim { margin-top: 0; }
+.fpo-b .fpo-eco {
+  margin-top: var(--s-7);
+  padding: var(--s-5) 0 0;
+}
+
+/* ========== 丙 · 简介 ========== */
+.fpo-c {
+  padding: var(--s-2) 0 var(--s-4);
+  max-width: 44rem;
+}
+.fpo-c .fpo-id .mark,
+.fpo-c .fpo-id img { width: 64px; height: 64px; }
+.fpo-c .fpo-desc {
+  margin-top: var(--s-6);
+  font-size: var(--fs-16);
+  max-width: none;
+}
+.fpo-c .fpo-facts {
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  gap: var(--s-3) var(--s-7);
+}
+.fpo-c .fpo-actions { margin-top: var(--s-5); }
+.fpo-c .fpo-eco {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+}
+.fpo-c .fpo-claim { margin-top: var(--s-6); }
+
+/* ========== 丁 · 现页（复用正式类名，外包一层） ========== */
+.fpo-d .foundry-hero {
+  margin-top: 0;
+}
+.fpo-d .foundry-hero-side .claim { margin-top: var(--s-2); }
+
+@media (max-width: 720px) {
+  .fpo-id .mark,
+  .fpo-id img { width: 56px; height: 56px; font-size: var(--fs-22); }
+  .fpo-b .fpo-id .mark,
+  .fpo-b .fpo-id img { width: 64px; height: 64px; }
+}

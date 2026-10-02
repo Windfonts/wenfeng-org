@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>源文件和下载 · C · wenfeng.org</title>
+  <link rel="stylesheet" href="/from-app/css/fonts.css" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css" />
+  <link rel="stylesheet" href="/from-app/css/base.css" />
+  <link rel="stylesheet" href="/from-app/css/components.css" />
+  <link rel="stylesheet" href="/css/home-pick.css?v=18" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xwwk&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-syhtsc&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-systsc&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-arkp&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xwxzsplus&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-xiaolaisc&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-yozai&weight=400&subset=zh-common&version=zh-common" />
+  <link rel="stylesheet" href="https://cn.windfonts.com/api/css?family=wenfeng-jnmy&weight=400&subset=zh-common&version=zh-common" />
+  <style>.t-Xwwk{font-family:"WF-Xwwk",var(--font-ui);}
+.t-Syhtsc{font-family:"WF-Syhtsc",var(--font-ui);}
+.t-Systsc{font-family:"WF-Systsc",var(--font-ui);}
+.t-Arkp{font-family:"WF-Arkp",var(--font-ui);}
+.t-Xwxzsplus{font-family:"WF-Xwxzsplus",var(--font-ui);}
+.t-XiaolaiSC{font-family:"WF-XiaolaiSC",var(--font-ui);}
+.t-Yozai{font-family:"WF-Yozai",var(--font-ui);}
+.t-Jnmy{font-family:"WF-Jnmy",var(--font-ui);}</style>
+</head>
+<body class="hp hp-c">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/home-c.html"><span class="mark" aria-hidden="true"></span><span>文风</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/source">目录</a>
+        <a href="/license">许可</a>
+        <a href="/attest">核验</a>
+      </nav>
+      <div class="topbar-end">
+        <a href="https://app.windfonts.com/">去店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换到深色">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/from-app/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/from-app/assets/icons.svg#i-sun"></use></svg>
+        </button>
+        <button type="button" class="icon-btn menu-btn" data-menu aria-label="菜单" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="/from-app/assets/icons.svg#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+    <div class="topmenu" hidden>
+      <a href="/source">目录</a>
+      <a href="/license">许可</a>
+      <a href="/attest">核验</a>
+      <a href="/slice">切片</a>
+      <a href="https://app.windfonts.com/">去店面</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="container">
+        <h1 class="sr-only">源文件和下载。</h1>
+        <div class="home-hero-top">
+          <p class="kicker">源文件和下载</p>
+          <p class="live-caption"><span class="live-using">
+            <button type="button" class="btn-text" data-face-next>换一款</button>
+            ·
+            <a class="now" href="/source/Xwwk/">文风·霞鹜文楷</a>
+          </span></p>
+        </div>
+        <p class="live t-Xwwk" data-face-norm="Xwwk" data-hero-live>风急天高猿啸哀<br>渚清沙白鸟飞回</p>
+        <div class="home-hero-foot">
+          <p class="lead">开源字体可以直接下载。不允许再分发的，核验后领取切片包。</p>
+          <div class="home-cta acts">
+            <a class="btn btn-ink" data-hero-take href="/source/Xwwk/">拿走文风·霞鹜文楷</a>
+            <a class="btn" href="/source">目录</a>
+          </div>
+        </div>
+        <form class="search search-hero" action="/source" method="get" role="search">
+          <label class="sr-only" for="q">搜索</label>
+          <input id="q" name="q" type="search" placeholder="搜中文名、英文、短码、厂商" autocomplete="off" />
+          <button class="btn btn-ink" type="submit">搜索</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="hp-shelf-block" id="shelf">
+      <div class="container hp-sec-head">
+        <p class="kicker">可带走</p>
+        <div class="hp-sec-title">
+          <h2>开源字体，本页下载。</h2>
+          <a class="more" href="/source?offer=source">全部可带走</a>
+        </div>
+      </div>
+
+      <div class="hp-bar">
+        <div class="container hp-bar-inner">
+          <div class="seg" role="tablist" aria-label="收录状态">
+            <a class="is-on" href="#shelf">可带走</a>
+            <a href="/source?offer=jump">官方下载</a>
+            <a href="/source?offer=pending">暂无下载</a>
+            <a href="/source?offer=missing">未收录</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container hp-panel-wrap">
+        <div class="hp-panel">
+          <div class="hp-row">
+            <a class="who" href="/source/Xwwk/"><span class="name t-Xwwk">文风·霞鹜文楷</span><span class="meta">LXGW · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Xwwk/">下载字体</a>
+              <a class="btn" href="/attest/Xwwk/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/Syhtsc/"><span class="name t-Syhtsc">文风·思源黑体</span><span class="meta">Adobe · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Syhtsc/">下载字体</a>
+              <a class="btn" href="/attest/Syhtsc/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/Systsc/"><span class="name t-Systsc">文风·思源宋体</span><span class="meta">Adobe · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Systsc/">下载字体</a>
+              <a class="btn" href="/attest/Systsc/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/Arkp/"><span class="name t-Arkp">文风·方舟像素</span><span class="meta">MIT</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Arkp/">下载字体</a>
+              <a class="btn" href="/attest/Arkp/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/Xwxzsplus/"><span class="name t-Xwxzsplus">文风·霞鹜新致宋 Plus</span><span class="meta">LXGW · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Xwxzsplus/">下载字体</a>
+              <a class="btn" href="/attest/Xwxzsplus/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/XiaolaiSC/"><span class="name t-XiaolaiSC">文风·小赖字体 SC</span><span class="meta">LXGW · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/XiaolaiSC/">下载字体</a>
+              <a class="btn" href="/attest/XiaolaiSC/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/Yozai/"><span class="name t-Yozai">文风·悠哉字体</span><span class="meta">LXGW · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Yozai/">下载字体</a>
+              <a class="btn" href="/attest/Yozai/">获取证书</a>
+            </div>
+          </div>
+          <div class="hp-row">
+            <a class="who" href="/source/Jnmy/"><span class="name t-Jnmy">文风·荆南麦圆</span><span class="meta">荆南字坊 · OFL-1.1</span></a>
+            <div class="hp-acts">
+              <a class="btn btn-ink" href="/source/Jnmy/">下载字体</a>
+              <a class="btn" href="/attest/Jnmy/">获取证书</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="hp-how" aria-label="核验和切片">
+      <div class="container">
+        <div class="hp-sec-head">
+          <p class="kicker">核验和切片</p>
+          <h2>不允许再分发的，核验后领取切片包。</h2>
+        </div>
+        <div class="hp-how-grid">
+          <article>
+            <svg class="hp-how-ico" aria-hidden="true"><use href="/from-app/assets/icons.svg#i-certificate"></use></svg>
+            <h3>核验官方包</h3>
+            <p class="hp-how-copy">本站不提供原件。放入从厂商取得的官方 zip，不要解压。通过后领取切片包。</p>
+            <p class="acts">
+              <a class="btn btn-ink" href="/attest">获取证书</a>
+              <a class="btn" href="/how">怎么核</a>
+            </p>
+          </article>
+          <article>
+            <svg class="hp-how-ico" aria-hidden="true"><use href="/from-app/assets/icons.svg#i-scissors"></use></svg>
+            <h3>切片包进主题</h3>
+            <p class="hp-how-copy">woff2 与 CSS，给 WordPress 和静态站本地加载。开源字体的切片包稍后提供。</p>
+            <p class="acts">
+              <a class="btn" href="/slice">切片工具</a>
+              <a class="btn" href="/use">用法</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="hp-foot">
+    <div class="container hp-foot-inner">
+      <div class="hp-foot-brand">
+        <a class="wordmark" href="/home-c.html"><span class="mark" aria-hidden="true"></span><span>文风</span></a>
+        <p>源文件和下载。开源字体可带走，许可原文和核验也在这里。</p>
+      </div>
+      <div class="hp-foot-cols">
+        <div>
+          <h2>拿走</h2>
+          <a href="/source">目录</a>
+          <a href="/source?offer=source">可带走</a>
+          <a href="/slice">切片</a>
+          <a href="/use">用法</a>
+        </div>
+        <div>
+          <h2>核验</h2>
+          <a href="/attest">获取证书</a>
+          <a href="/how">怎么核</a>
+          <a href="/v">查证</a>
+          <a href="/attest/ledger">签发台账</a>
+        </div>
+        <div>
+          <h2>关于</h2>
+          <a href="/license">许可</a>
+          <a href="/legal">法务</a>
+          <a href="/foundry">厂商</a>
+          <a href="/about">关于</a>
+          <a href="https://app.windfonts.com/">文风字体</a>
+        </div>
+      </div>
+    </div>
+    <div class="container hp-foot-bottom">
+      <p class="legal">文派（广州）科技有限公司</p>
+      <p class="hp-alts"><a href="/home-c.html" class="is-on">C</a> · <a href="/home-a.html">A</a> · <a href="/home-b.html">B</a> · <a href="/">正式原型</a></p>
+    </div>
+  </footer>
+  <script src="/js/hifi.js?v=5"></script>
+</body>
+</html>

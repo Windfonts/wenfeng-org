@@ -1,0 +1,50 @@
+{
+ "norm": "Harmony",
+ "name": "HarmonyOS Sans",
+ "en": "HarmonyOS Sans SC",
+ "aliases": [],
+ "licenseName": "HarmonyOS Sans Fonts License Agreement",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": "https://gitee.com/openharmony/utils_system_resources/blob/master/LICENSE_Fonts",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "华为",
+ "foundrySlug": "华为",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Harmony",
+ "weights": [
+  "Thin",
+  "Light",
+  "Regular",
+  "Medium",
+  "Bold",
+  "Black"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-harmony"
+}

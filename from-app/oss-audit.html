@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");if(localStorage.getItem("wf-scale")==="lg")document.documentElement.setAttribute("data-scale","lg")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OSS 缺口清单 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260927perf4" />
+  <link rel="stylesheet" href="/from-app/css/oss-audit.css?v=20260927perf4" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-oss-audit">
+  <header data-topbar data-active="fonts"></header>
+  <main class="container oa-main">
+    <header class="oa-head">
+      <p class="oa-kicker">内部核对 · 不入库</p>
+      <h1>开源作者 · 未上架清单</h1>
+      <p class="oa-lead">独立字体都收：<strong>寒蝉未收录全收</strong>；<strong>Aqua / 狮尾未收录全收</strong>（含各造型仓；同系 sans·leg 入库后可进同一产品卡）。另含 Fontworks、霞鹜剩余、络黑等。仅 Super OTC 暂缓。回对照索引见 <a href="/lab">lab.html</a>。</p>
+      <div class="oa-stats" id="stats" aria-live="polite"></div>
+    </header>
+
+    <div class="oa-toolbar" role="search">
+      <label class="oa-field">
+        <span>视图</span>
+        <select id="view">
+          <option value="missing">只看未收录</option>
+          <option value="batch">建议首批</option>
+          <option value="authors">按厂商</option>
+          <option value="avatars">头像状态</option>
+        </select>
+      </label>
+      <label class="oa-field">
+        <span>厂商</span>
+        <select id="author"><option value="">全部</option></select>
+      </label>
+      <label class="oa-field">
+        <span>星标</span>
+        <select id="stars">
+          <option value="0">不限</option>
+          <option value="50">≥ 50</option>
+          <option value="100" selected>≥ 100</option>
+          <option value="200">≥ 200</option>
+        </select>
+      </label>
+      <label class="oa-field oa-grow">
+        <span>搜索</span>
+        <input id="q" type="search" placeholder="名称 / 仓库 / 厂商" autocomplete="off" />
+      </label>
+    </div>
+
+    <p class="oa-count" id="count"></p>
+    <div id="out"></div>
+  </main>
+  <script src="/from-app/js/wf-proto.js?v=20260927perf4"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260927perf4"></script>
+  <script src="/from-app/js/pages/oss-audit.js?v=20260927perf4"></script>
+</body>
+</html>

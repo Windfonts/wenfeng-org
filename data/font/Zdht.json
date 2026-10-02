@@ -1,0 +1,71 @@
+{
+ "norm": "Zdht",
+ "name": "煮豆黑体",
+ "en": "Zhudou Sans",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Buernia/Zhudou-Sans",
+  "fetchedAt": "2026-09-25",
+  "textSha256": "6cab798f47e933515dedc57b5c2a542ff83c264d52e900551041911f03c95bc5",
+  "verifiedAt": "2026-09-25",
+  "rfn": "Zhudou、煮豆",
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Buernia",
+ "foundrySlug": "buernia",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Zdht",
+ "weights": [
+  "ExtraLight",
+  "Light",
+  "Normal",
+  "Regular",
+  "Medium",
+  "Bold",
+  "Heavy"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Buernia/Zhudou-Sans",
+  "upstream": "https://github.com/Buernia/Zhudou-Sans",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Zdht.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Buernia/Zhudou-Sans",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zdht"
+}

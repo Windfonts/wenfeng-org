@@ -1,0 +1,53 @@
+{
+ "norm": "Vivosans",
+ "name": "vivo Sans",
+ "en": "vivo Sans",
+ "aliases": [],
+ "licenseName": "免费商用",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Vivosans",
+ "weights": [
+  "Thin",
+  "ExtraLight",
+  "Light",
+  "Regular",
+  "Medium",
+  "DemiBold",
+  "Bold",
+  "ExtraBold",
+  "Black"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-vivosans"
+}

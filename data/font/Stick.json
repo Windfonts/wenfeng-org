@@ -1,0 +1,45 @@
+{
+ "norm": "Stick",
+ "name": "Stick",
+ "en": "Stick",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "35187dd015d0c0006d57f99815fb3f81304c4445f04c3fa35bc533a7a4b00676",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Fontworks",
+ "foundrySlug": "fontworks",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Stick",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-stick"
+}

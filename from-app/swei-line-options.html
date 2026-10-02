@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>狮尾先折叠 · 对照 · 文风字体</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/tokens.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/base.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/components.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/site.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/detail.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/swei-line-options.css?v=20260925r" />
+  <link rel="icon" type="image/webp" href="/from-app/assets/icon.webp" />
+</head>
+<body class="page-swei-opt">
+  <header data-topbar data-active="fonts"></header>
+  <main class="container">
+    <p class="swei-lead">合上时用上一版的三行样子，交互用这一版：默认折着，点开才是和寒蝉一样的整行。三版都是合上的。页底是点开之后，三版里面一样。详情页还没改。</p>
+    <div class="swei-grid" id="grid"></div>
+    <section class="swei-open" id="opened"></section>
+  </main>
+  <script src="/from-app/js/wf-proto.js?v=20260925r"></script>
+  <script src="/from-app/js/wf-chrome.js?v=20260925r"></script>
+  <script>
+    var OTHERS = ['寒蝉端黑体', '更纱黑体', '昭源黑体', '源起黑体', '猫啃什锦黑'];
+    var PICKS = ['狮尾圆体', '狮尾黑体', '狮尾尖刺黑体', '狮尾半月体'];
+    function row(name, cls) {
+      return '<a class="lin-row' + (cls ? ' ' + cls : '') + '" href="font-detail.html?slug=syhtsc"><span class="lin-name">' + name + '</span></a>';
+    }
+    function fold(summary, inside) {
+      return '<details class="swei-fold"><summary>' + summary + '</summary><div class="swei-body">' + inside + '</div></details>';
+    }
+    function tree(sweiHtml) {
+      return '<div class="lin-tree"><p class="lin-h">原作</p>' + row('思源黑体', 'is-on') +
+        '<p class="lin-h">派生</p>' + OTHERS.map(function (n) { return row(n); }).join('') + sweiHtml + '</div>';
+    }
+    function col(title, note, html) {
+      return '<section class="swei-col"><p class="swei-cap"><b>' + title + '</b><span>' + note + '</span></p>' + html + '</section>';
+    }
+    WFProto.loadCatalog().then(function (fonts) {
+      var swei = fonts.filter(function (f) {
+        return f.lineage && f.lineage.upstreamName === '思源黑体' && f.name.indexOf('狮尾') === 0;
+      });
+      var n = swei.length || 51;
+      var picks = PICKS.filter(function (name) { return swei.some(function (f) { return f.name === name; }); });
+      if (picks.length < 2) picks = swei.slice(0, 4).map(function (f) { return f.name; });
+      var short = picks.map(function (name) { return name.replace(/^狮尾/, ''); });
+      var inside = swei.slice(0, 4).map(function (f) { return row(f.name); }).join('') +
+        row('其余 ' + Math.max(n - 4, 0) + ' 款同样是这种行');
+      var mark = '<span class="swei-mark">' + n + ' 款</span>';
+      var a = '<span class="lin-row swei-a"><span class="lin-name">狮尾</span>' + mark + '</span>';
+      var b = '<span class="lin-row swei-b"><span class="swei-stack"><span class="lin-name">狮尾</span><span class="swei-sub">' +
+        short.join('、') + '等 ' + n + ' 款</span></span><span class="swei-mark"></span></span>';
+      var c = '<span class="lin-row swei-c"><span class="lin-name">狮尾</span><span class="swei-pills">' +
+        short.map(function (s) { return '<i>' + s + '</i>'; }).join('') + '<b>' + n + '</b></span><span class="swei-mark"></span></span>';
+      document.getElementById('grid').innerHTML = [
+        col('A 计数', '和旁边同一行高。右边是款数和箭头。', tree(fold(a, inside))),
+        col('B 副题', '下面一行小字点出几款，说明这是一套。', tree(fold(b, inside))),
+        col('C 名字条', '几个短名做成小标签，数字单独一颗。', tree(fold(c, inside)))
+      ].join('');
+      document.getElementById('opened').innerHTML =
+        '<p class="swei-cap"><b>点开之后</b><span>三版展开后相同。这里用 A 的合上样子，下面是整行。</span></p>' +
+        '<div class="lin-tree"><p class="lin-h">派生</p>' +
+        OTHERS.map(function (name) { return row(name); }).join('') +
+        '<details class="swei-fold" open><summary>' + a + '</summary><div class="swei-body">' +
+        swei.slice(0, 4).map(function (f) { return row(f.name); }).join('') + '</div></details></div>';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+ "norm": "Mksjh",
+ "name": "猫啃什锦黑",
+ "en": "Maoken Assorted Sans",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "5ef50096bf7368709da3326b0e2308cff43d50ed43cd712b8bfdb8a5a9cc5c38",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Maoken",
+ "foundrySlug": "maoken",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Mksjh",
+ "weights": [
+  "Bold"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mksjh"
+}

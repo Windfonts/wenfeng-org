@@ -1,0 +1,56 @@
+/* 赞助空态对照。只影响本页，现网样式不动。 */
+.se-lead {
+  margin: var(--s-6) 0 var(--s-5);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.se-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 19rem);
+  gap: var(--s-6);
+  align-items: start;
+  padding-bottom: var(--s-12);
+}
+.se-cap { margin: 0 0 var(--s-3); display: grid; gap: 0.2rem; }
+.se-cap b { font-size: var(--fs-14); font-weight: var(--fw-title); }
+.se-cap span { font-size: var(--fs-12); color: var(--gray); line-height: 1.45; }
+.se-slot { width: 19rem; }
+
+/* 乙：按钮还在，灰框拿掉，只留那句小字 */
+.se-b .sp-ph { display: none; }
+.se-b .sp-empty { gap: 0; }
+.se-b .sp-tip { margin-top: var(--s-3); }
+
+/* 丙：不设按钮。句子接在认领下面 */
+.se-line {
+  margin: 0.35rem 0 0;
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  line-height: 1.5;
+}
+.se-line a {
+  color: var(--ink);
+  font-weight: var(--fw-label);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* 丁：白底说明，文案写在框里，不再放一个礼物方洞 */
+.se-d .sp-ph { display: none; }
+.se-d .sp-empty {
+  width: 100%;
+  min-height: 6.5rem;
+  place-items: center;
+  text-align: center;
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 0.85rem 0.8rem;
+}
+.se-d .sp-host { line-height: 1.55; }
+
+@media (max-width: 1200px) {
+  .se-grid { grid-template-columns: repeat(2, 19rem); }
+}
+@media (max-width: 720px) {
+  .se-grid { grid-template-columns: minmax(0, 19rem); }
+}

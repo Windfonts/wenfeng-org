@@ -1,0 +1,40 @@
+/* 谱系悬停 / 选中数据对照。只影响本页。 */
+.lv-lead { margin: var(--s-6) 0 var(--s-5); font-size: var(--fs-13); color: var(--gray); }
+.lv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-8);
+  align-items: start;
+  padding-bottom: var(--s-12);
+}
+.lv-cap { margin: 0 0 var(--s-3); display: grid; gap: 0.2rem; }
+.lv-cap b { font-size: var(--fs-14); font-weight: var(--fw-title); }
+.lv-cap span { font-size: var(--fs-12); color: var(--gray); line-height: 1.45; }
+
+.lv-col .lin-row { width: 100%; text-align: left; align-items: center; }
+.lv-main { display: grid; gap: 0.2rem; min-width: 0; }
+.lv-sub, .lv-cells { display: none; }
+.lv-tail { display: none; font-size: var(--fs-12); color: var(--gray); flex: none; }
+
+.lv-a .lin-row:hover .lv-tail,
+.lv-a .lin-row.is-on .lv-tail { display: inline; }
+.lv-a .lin-row.is-on .lv-tail { color: var(--on-ink); opacity: 0.75; }
+
+.lv-b .lin-row.is-on,
+.lv-c .lin-row.is-on { background: var(--fill); color: var(--ink); }
+.lv-b .lin-row.is-on .lin-rel,
+.lv-c .lin-row.is-on .lin-rel { color: var(--gray); opacity: 1; }
+.lv-b .lin-row:hover .lv-sub,
+.lv-b .lin-row.is-on .lv-sub,
+.lv-c .lin-row:hover .lv-cells,
+.lv-c .lin-row.is-on .lv-cells { display: flex; }
+
+.lv-sub { font-size: var(--fs-12); color: var(--gray); line-height: 1.4; }
+.lv-cells { flex-wrap: wrap; gap: var(--s-3) var(--s-4); margin-top: 0.15rem; }
+.lv-cells span { display: grid; gap: 0.05rem; min-width: 3.2rem; }
+.lv-cells i { font-style: normal; font-size: var(--fs-12); color: var(--gray-2); }
+.lv-cells b { font-size: var(--fs-13); font-weight: var(--fw-label); color: var(--ink); }
+
+@media (max-width: 980px) {
+  .lv-grid { grid-template-columns: 1fr; }
+}

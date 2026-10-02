@@ -1,0 +1,53 @@
+{
+ "norm": "Wyhk",
+ "name": "文渊黑体",
+ "en": "WenYuan Sans SC",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "c149e69d2e578e94e3fb8dd96e0f687757fbd00a63603d0a8979ec49237cf8be",
+  "verifiedAt": null,
+  "rfn": "WenYuan Sans、<span lang=\"zh-Hans\">文渊黑体</span>、WenYuan Serif、<span lang=\"zh-Hans\">文渊宋体</span>、WenYuan Rounded、<span lang=\"zh-Hans\">文渊圆体</span>",
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Takushun Wu",
+ "foundrySlug": "takushun",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Wyhk",
+ "weights": [
+  "Light",
+  "Regular",
+  "Medium",
+  "Bold"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-wyhk"
+}

@@ -1,0 +1,169 @@
+/* GAP-FILL T1/T3 · 授权查询 / 标准棒 / 工单 — 贴合现有 app/site 气质 */
+.lq-use-checks { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); margin-top: var(--s-2); }
+.lq-bools {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3);
+  margin: var(--s-5) 0;
+  align-items: stretch;
+}
+.lq-bool {
+  background: transparent; border-radius: 0; padding: var(--s-3) 0;
+  display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+  text-align: center;
+  border-bottom: 1px solid var(--surface-2, #ececec);
+}
+.lq-bool-k { font-size: var(--fs-12); color: var(--gray-2, var(--gray)); font-weight: var(--fw-label); letter-spacing: 0.02em; }
+.lq-bool-slot {
+  height: 1.75rem; display: flex; align-items: center; justify-content: center;
+  width: 100%;
+}
+.lq-bool-e { font-size: var(--fs-12); color: var(--gray); line-height: 1.35; max-width: 12em; }
+
+/* Feng icon/color-scale badges · equal height; preview=circle; others=horizontal pills */
+.lq-badge {
+  --lq-badge-h: 1.75rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  height: var(--lq-badge-h);
+  font-size: var(--fs-13); font-weight: var(--fw-label); line-height: 1;
+  box-sizing: border-box; white-space: nowrap; user-select: none;
+  vertical-align: middle;
+}
+.lq-badge.is-pill {
+  min-width: 2.85rem; /* wider than tall → capsule, not tiny circle */
+  padding: 0 0.85em;
+  border-radius: var(--radius-pill);
+}
+.lq-badge.is-circle {
+  width: var(--lq-badge-h); min-width: var(--lq-badge-h);
+  padding: 0;
+  border-radius: 50%;
+}
+.lq-badge.is-allow {
+  background: var(--ink); color: var(--on-ink);
+  box-shadow: none;
+}
+.lq-badge.is-maybe {
+  background: var(--fill); color: var(--warn, #8a6d1a);
+  box-shadow: inset 0 0 0 1.5px var(--warn-edge, #b08a2e);
+}
+.lq-badge.is-deny {
+  background: var(--fill); color: var(--ink-2, #333);
+  box-shadow: none;
+}
+
+/* licenses.html table cells · same three-state scale, always pill */
+span.lq-bool {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 1.75rem; min-width: 2.85rem; padding: 0 0.75em;
+  border-radius: var(--radius-pill); font-size: var(--fs-12);
+  font-weight: var(--fw-label); line-height: 1; box-sizing: border-box;
+}
+span.lq-bool.is-ok,
+span.lq-bool.is-allow { background: var(--ink); color: var(--on-ink); }
+span.lq-bool.is-no,
+span.lq-bool.is-deny { background: var(--fill); color: var(--ink-2); }
+span.lq-bool.is-uncertain,
+span.lq-bool.is-maybe {
+  background: var(--fill); color: var(--warn, #8a6d1a);
+  box-shadow: inset 0 0 0 1.5px var(--warn-edge, #b08a2e);
+}
+
+.lq-headline { font-size: var(--fs-18); font-weight: var(--fw-title); margin: var(--s-3) 0; max-width: 40em; }
+.lq-meta { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: baseline; justify-content: space-between; }
+.lq-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.lq-tag {
+  display: inline-flex; align-items: center; padding: 0.15em 0.65em;
+  border-radius: var(--radius-pill); background: var(--fill); font-size: var(--fs-12); color: var(--ink-2);
+}
+.lq-tag.is-verified { background: var(--ink); color: var(--on-ink); }
+.lq-tag.is-unverified { color: var(--warn, #a65c00); box-shadow: inset 0 0 0 1px var(--warn-edge, rgba(166,92,0,.35)); background: transparent; }
+.lq-tag.is-flop { background: #8b1a1a; color: #fff; }
+/* cite-closed block: amber/muted — NOT blood red (blood reserved for FLOP) */
+.lq-tag.is-cite-block {
+  background: transparent; color: var(--warn, #a65c00);
+  box-shadow: inset 0 0 0 1px var(--warn-edge, rgba(166,92,0,.45));
+}
+
+.lq-h3 { font-size: var(--fs-14); margin: var(--s-4) 0 var(--s-2); }
+.lq-use-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
+.lq-use-list li {
+  display: grid; grid-template-columns: 8rem 4.5rem minmax(0, 1fr); gap: var(--s-3);
+  align-items: baseline; font-size: var(--fs-13); padding: var(--s-2) 0;
+  border-bottom: 1px solid var(--surface-2);
+}
+.lq-use-list .is-ok { color: var(--ink); font-weight: var(--fw-label); }
+.lq-use-list .is-no { color: var(--gray); }
+.lq-use-list .is-uncertain { color: var(--warn, #a65c00); }
+
+.lq-warn { margin: var(--s-4) 0 0; padding-left: 1.2em; color: var(--ink-2); font-size: var(--fs-13); }
+.lq-cta-row { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; margin-top: var(--s-5); }
+.btn.is-blocked,
+button.btn.is-blocked:disabled {
+  background: #8b1a1a; color: #fff; opacity: 0.85; cursor: not-allowed;
+}
+.lq-flop-badge {
+  display: inline-flex; align-items: center; padding: 0.2em 0.7em;
+  border-radius: var(--radius-pill); background: #8b1a1a; color: #fff;
+  font-size: var(--fs-12); font-weight: var(--fw-label);
+}
+.lq-flop-card { box-shadow: inset 0 0 0 1px rgba(139,26,26,.35); }
+
+.lq-cert { margin-top: var(--s-5); padding: var(--s-4); background: var(--paper); border-radius: var(--radius-sm); }
+.lq-cert-st { font-size: var(--fs-14); margin-bottom: var(--s-2); }
+.lq-cert-st.is-pending b { color: var(--warn, #a65c00); }
+.lq-cert-st.is-approved b { color: var(--ink); }
+.lq-cert-st.is-rejected b,
+.lq-cert-st.is-expired b { color: var(--gray); }
+.lq-cert-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; margin-top: var(--s-3); }
+
+.lq-seed-list { list-style: none; padding: 0; display: grid; gap: var(--s-2); }
+.lq-seed-list li { padding: var(--s-3) 0; border-bottom: 1px solid var(--surface-2); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.lq-type-table td .lq-bool { margin: 0; }
+
+.page-license-query .app-section,
+.page-licenses .app-section {
+  background: var(--paper); border-radius: var(--radius-sm); padding: var(--s-5); margin-top: var(--s-5);
+}
+
+@media (max-width: 900px) {
+  .lq-bools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lq-use-list li { grid-template-columns: 6rem 3.5rem minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .lq-bools { grid-template-columns: minmax(0, 1fr); }
+  .lq-use-list li { grid-template-columns: minmax(0, 1fr); }
+}
+
+.lq-ticket-bools { display: flex; flex-wrap: wrap; gap: 0.25rem; max-width: 14rem; }
+.lq-ticket-bools .lq-tag { font-size: 0.7rem; padding: 0.1em 0.45em; }
+.lq-tag.is-ops-green { background: var(--ink); color: var(--on-ink); }
+
+
+/* gap5 · LAN/demo mock banner + pending CTA */
+.wf-mock-banner {
+  margin: 0 0 var(--s-4);
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: #fff6e5;
+  color: #7a4b00;
+  border: 1px solid rgba(166, 92, 0, 0.28);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-label);
+}
+[data-theme="dark"] .wf-mock-banner {
+  background: rgba(166, 92, 0, 0.18);
+  color: #ffd89a;
+  border-color: rgba(255, 216, 154, 0.25);
+}
+button.btn.is-pending-cta:disabled {
+  background: #a65c00;
+  color: #fff;
+  opacity: 0.92;
+  cursor: not-allowed;
+}
+
+/* gap5c · Motuicons check/close; same icon size in circle + pills */
+.lq-badge .icon,
+span.lq-bool .icon {
+  width: 1rem; height: 1rem; display: block; flex-shrink: 0;
+}

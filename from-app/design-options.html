@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <script>try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>设计系统候选 · 文风字体</title>
+  <link rel="stylesheet" href="/from-app/css/fonts.css?v=20260925r" />
+  <link rel="stylesheet" href="/from-app/css/design-options.css?v=20260925r" />
+</head>
+<body>
+  <header class="do-head">
+    <h1>设计系统候选 · 四套</h1>
+    <p>同一份内容、同一款 UI 字体（寒蝉全圆体 300 / 400 / 500 / 700 / 900）、只用黑白灰。差别只在形态、密度、层级与黑的用法。选一套，我照它重做全站 tokens 与组件。</p>
+    <nav><a href="#a">A 硬朗·印刷样本</a><a href="#b">B 柔和·圆润</a><a href="#b2">B″ 轻层次</a><a href="#c">C 深色·工作台</a><a href="#d">D 网格·规格表</a></nav>
+  </header>
+
+  <template id="tpl">
+    <div class="topbar">
+      <a class="brand" href="#"><span class="mark">文</span>文风字体</a>
+      <nav><a class="on">字体库</a><a>厂商</a><a>定价</a><a>文档</a></nav>
+      <div class="end"><input type="search" placeholder="搜索字体、厂商" /><a>选字袋 <b>3</b></a><a class="btn btn-primary btn-sm">登录</a></div>
+    </div>
+
+    <section class="hero">
+      <p class="kicker">中文 Webfonts 云服务</p>
+      <h2 class="live" contenteditable="true" spellcheck="false">让中文字体，<br>在网页上流动。</h2>
+      <p class="lead">托管、子集化、域名白名单，一行代码接入。免费商用字体 107 款，厂商在库认证。</p>
+      <div class="cta"><a class="btn btn-primary btn-lg">浏览字体库</a><a class="btn btn-lg">查看文档</a><span class="meta">正在使用 <b>寒蝉全圆体</b> · 换一款</span></div>
+    </section>
+
+    <section class="bar">
+      <input class="sample" value="让中文字体在网页上，一行代码可用。" />
+      <div class="presets"><button class="on">短句</button><button>段落</button><button>品牌</button><button>诗句</button><button>中英数</button></div>
+      <div class="sizer"><span>字号</span><input type="range" min="16" max="120" value="48" /><span class="val">48px</span></div>
+      <div class="view"><button class="on">行</button><button>网格</button></div>
+    </section>
+
+    <section class="body">
+      <aside class="rail">
+        <div class="facet"><h4>分类</h4>
+          <ul class="cats">
+            <li class="on"><button style="font-weight:700">黑体<i>65</i></button></li>
+            <li><button style="font-family:'Songti SC',serif">宋体<i>15</i></button></li>
+            <li><button style="font-family:'Kaiti SC',serif">楷体<i>8</i></button></li>
+            <li><button style="font-family:'Hannotate SC',cursive">手写<i>41</i></button></li>
+            <li><button style="font-family:'Xingkai SC',cursive">书法<i>4</i></button></li>
+            <li><button style="font-family:Menlo,monospace;font-size:.9em">等宽<i>5</i></button></li>
+          </ul></div>
+        <div class="facet"><h4>字重</h4><ul><li><a>细体<i>7</i></a></li><li class="on"><a>常规<i>122</i></a></li><li><a>粗体<i>9</i></a></li><li><a>三字重以上<i>12</i></a></li></ul></div>
+        <div class="facet"><h4>许可</h4><ul><li><a>免费商用<i>107</i></a></li><li><a>需授权<i>19</i></a></li><li><a>待核实<i>1</i></a></li></ul></div>
+      </aside>
+      <div class="list">
+        <p class="count">共 <b>128</b> 款 · 已显示 12 款 <span class="chips"><span class="chip on">常规 ×</span></span></p>
+        <article class="card">
+          <header><a class="name">阿里巴巴普惠体</a><span class="sub">Alibaba Design · 4 字重 · 免费商用</span><a class="act">加入选字袋</a></header>
+          <p class="preview" style="font-weight:400">让中文字体在网页上，一行代码可用。</p>
+        </article>
+        <article class="card">
+          <header><a class="name">寒蝉锦书宋</a><span class="sub">寒蝉字型 · 7 字重 · <span class="ok">✓ 已认证</span> · 免费商用</span><a class="act picked">已在选字袋</a></header>
+          <p class="preview" style="font-family:'Songti SC',serif">让中文字体在网页上，一行代码可用。</p>
+        </article>
+        <article class="card">
+          <header><a class="name">霞鹙文楷</a><span class="sub">LXGW · 2 字重 · 免费商用</span><a class="act">加入选字袋</a></header>
+          <p class="preview" style="font-family:'Kaiti SC',serif">让中文字体在网页上，一行代码可用。</p>
+        </article>
+      </div>
+      <aside class="side">
+        <div class="box">
+          <div class="foundry"><span class="avatar">寒</span><div><b>寒蝉字型 <span class="ok">✓</span></b><small>在库 7 款</small></div></div>
+          <p class="desc">基于思源宋体修改，添加圆角，更加温润的宋体；重构字重比例，字体粗细更加均衡，便于阅读。</p>
+          <dl class="kv"><div><dt>版本</dt><dd>2.0</dd></div><div><dt>字符数</dt><dd>28,937</dd></div><div><dt>字重</dt><dd>7</dd></div><div><dt>发布</dt><dd>2023</dd></div></dl>
+          <div class="code"><pre>&lt;link rel="stylesheet"
+  href="https://cn.windfonts.com/api/css?family=wenfeng-hcjss&amp;weight=400"&gt;</pre><button>复制</button></div>
+          <div class="actions"><a class="btn btn-primary">获取代码</a><a class="btn">加入选字袋</a></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="foot"><span>文风字体 Windfonts</span><a>关于</a><a>文档</a><a>服务条款</a><a>厂商入驻</a><span class="copy">© 2026 文派</span></section>
+  </template>
+
+  <section class="variant v-a" id="a"><div class="do-label"><b>A</b> 硬朗 · 印刷样本册 —— 直角、2px 黑边、黑块标题、Heavy 大标题、栏线分区。像一本纸质字体样本。</div><div class="frame"></div></section>
+  <section class="variant v-b" id="b"><div class="do-label"><b>B</b> 柔和 · 圆润（原版）—— 你选的这套，觉得偏平。</div><div class="frame"></div></section>
+<section class="variant v-b2" id="b2"><div class="do-label"><b>B″</b> 柔和 · 圆润（轻层次）—— 骨架不动，只做四个小动作：白卡浮在浅灰页上、极淡投影；标题与字体名 700；控制条白色悬浮；黑只留给主按钮、选中态和头像。没有照片，没有黑卡。</div><div class="frame"></div></section>
+  <section class="variant v-c" id="c"><div class="do-label"><b>C</b> 深色 · 工作台 —— 炭黑背景、白字、1px 深灰线、小圆角、白色主按钮、字号偏小密度高。专业工具的气质。</div><div class="frame"></div></section>
+  <section class="variant v-d" id="d"><div class="do-label"><b>D</b> 网格 · 规格表 —— 全页可见网格，内容住在 1px 格子里，无间隙无圆角，小字标签 + 极大字号级差。像字体规格书 / 技术图纸。</div><div class="frame"></div></section>
+
+  <script>
+    document.querySelectorAll('.variant .frame').forEach(function (f) {
+      f.appendChild(document.getElementById('tpl').content.cloneNode(true));
+    });
+  </script>
+</body>
+</html>

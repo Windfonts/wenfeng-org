@@ -1,0 +1,65 @@
+{
+ "norm": "Tjlt",
+ "name": "铁蒺藜体",
+ "en": "Tiejili",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Buernia/Tiejili",
+  "fetchedAt": "2026-09-25",
+  "textSha256": "9da4f114a2572c7c971fe57ae9bcf0e5d5838c01879c4b9d5f8c0efcddc64837",
+  "verifiedAt": "2026-09-25",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "fontworks",
+   "rootWork": "Reggae One",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Buernia",
+ "foundrySlug": "buernia",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Tjlt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Buernia/Tiejili",
+  "upstream": "https://github.com/Buernia/Tiejili",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Tjlt.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Buernia/Tiejili",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-tjlt"
+}

@@ -1,0 +1,33 @@
+{
+  "_note": "Cite-closed shelf 站内预览面（同源 @font-face）。权利人试看/官网页试看字源，仅供灰墙与字符表；不开 CDN 热链、不进 fonts-packages、不进「获取代码」embed。",
+  "faces": {
+    "wenfeng-shmgt": {
+      "regular": {
+        "url": "assets/fonts/preview/Shmgt-Regular.woff2",
+        "format": "woff2",
+        "cssWeight": "400"
+      }
+    },
+    "wenfeng-jlyhmht": {
+      "light": {
+        "url": "assets/fonts/preview/Jlyhmht-Light.woff2",
+        "format": "woff2",
+        "cssWeight": "300"
+      },
+      "regular": {
+        "url": "assets/fonts/preview/Jlyhmht-Regular.woff2",
+        "format": "woff2",
+        "cssWeight": "400"
+      },
+      "bold": {
+        "url": "assets/fonts/preview/Jlyhmht-Bold.woff2",
+        "format": "woff2",
+        "cssWeight": "700"
+      }
+    }
+  },
+  "byNormalized": {
+    "Shmgt": "wenfeng-shmgt",
+    "Jlyhmht": "wenfeng-jlyhmht"
+  }
+}

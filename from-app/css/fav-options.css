@@ -1,0 +1,42 @@
+/* 收藏对照。只影响本页。 */
+.fv-lead { margin: var(--s-6) 0 var(--s-5); font-size: var(--fs-13); color: var(--gray); }
+.fv-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-6);
+  align-items: start;
+  padding-bottom: var(--s-12);
+}
+.fv-cap { margin: 0 0 var(--s-4); display: grid; gap: 0.2rem; }
+.fv-cap b { font-size: var(--fs-14); font-weight: var(--fw-title); }
+.fv-cap span { font-size: var(--fs-12); color: var(--gray); line-height: 1.45; }
+.fv-label { margin: var(--s-4) 0 var(--s-2); font-size: var(--fs-12); color: var(--gray-2); }
+.fv-col .detail-title { padding: var(--s-3) 0 var(--s-2); gap: var(--s-3); align-items: flex-start; }
+.fv-col .detail-title h1 { font-size: var(--fs-20); }
+.fv-col .specimen { padding: var(--s-4); }
+.fv-col .specimen .preview { font-size: 1.75rem; margin-top: var(--s-2); }
+.fv-name { display: inline-flex; align-items: center; gap: 0.2em; }
+.fv-inline {
+  width: 1.15em; height: 1.15em; padding: 0;
+  display: inline-grid; place-items: center;
+  color: var(--gray-2); background: none; border-radius: var(--radius-pill);
+}
+.fv-inline:hover { color: var(--ink); }
+.fv-inline.is-on { color: var(--ink); }
+.fv-inline .icon { width: 0.95em; height: 0.95em; }
+.fv-b .detail-title h1 { display: flex; align-items: center; flex-wrap: wrap; gap: 0.25em 0.35em; }
+.fv-b .who-row { align-items: center; }
+.fv-text {
+  background: none; padding: 0;
+  color: var(--gray); font-size: inherit;
+  text-decoration: underline; text-underline-offset: 0.2em;
+}
+.fv-text.is-on { color: var(--ink); font-weight: var(--fw-label); text-decoration: none; }
+.fv-pill.is-on { color: var(--on-ink); background: var(--ink); }
+
+@media (max-width: 1100px) {
+  .fv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .fv-grid { grid-template-columns: minmax(0, 1fr); }
+}

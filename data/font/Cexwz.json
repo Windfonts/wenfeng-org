@@ -1,0 +1,52 @@
+{
+ "norm": "Cexwz",
+ "name": "仓耳小丸子",
+ "en": "Tsanger Little Balls",
+ "aliases": [],
+ "licenseName": "仓耳字库免费开源字体授权声明",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://www.tsanger.cn/category/114",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "efc3c011ffb4c83df96ce819940dd1b391b6ba54048f42d85fd56055dabcbeab",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "造字工房",
+ "foundrySlug": "tsanger",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Cexwz",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.tsanger.cn/category/114",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.tsanger.cn",
+   "format": "git",
+   "href": "https://www.tsanger.cn/category/114",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-cexwz"
+}

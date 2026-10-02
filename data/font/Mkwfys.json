@@ -1,0 +1,65 @@
+{
+ "norm": "Mkwfys",
+ "name": "猫啃网风雅宋",
+ "en": "Maoken FengYa Song",
+ "aliases": [],
+ "licenseName": "SIL Open Font License",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/maoken-fonts/fengyasong",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "26f87a7211d10b8ab58e247934d253af2f685b0210ab51b58cd213b01fcccdb4",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "swei-spring",
+   "rootWork": "狮尾四季春",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Maoken",
+ "foundrySlug": "maoken",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Mkwfys",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/maoken-fonts/fengyasong",
+  "upstream": "https://github.com/maoken-fonts/fengyasong",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Mkwfys.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/maoken-fonts/fengyasong",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mkwfys"
+}

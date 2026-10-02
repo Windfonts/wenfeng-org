@@ -1,0 +1,60 @@
+{
+ "norm": "QRpx",
+ "name": "二维码像素",
+ "en": "QRCode Pixel",
+ "aliases": [],
+ "licenseName": "MIT License",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/TakWolf/qrcode-pixel-font",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "45affded17cd0a4818bf01c380b5f11722bc899bcd4c81638b007ad3e75fb86b",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "takwolf",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/QRpx",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/TakWolf/qrcode-pixel-font",
+  "upstream": "https://github.com/TakWolf/qrcode-pixel-font",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/QRpx.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/TakWolf/qrcode-pixel-font",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-qrpx"
+}

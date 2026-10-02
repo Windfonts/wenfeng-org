@@ -1,0 +1,60 @@
+{
+ "norm": "Clhfs",
+ "name": "寒蝉活字仿宋",
+ "en": "Chill Huozhi Fang Song",
+ "aliases": [],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Warren2060/ChillMovableType",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "c7c669131e820b4bd6d9915a4b56c95676bcff8dddef3716e228ef06254e6d3f",
+  "verifiedAt": "2026-09-26",
+  "rfn": "ChillMovableType"
+ },
+ "foundry": "",
+ "foundrySlug": "chilltype",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Clhfs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Warren2060/ChillMovableType",
+  "upstream": "https://github.com/Warren2060/ChillMovableType",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Clhfs.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Warren2060/ChillMovableType",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-clhfs"
+}

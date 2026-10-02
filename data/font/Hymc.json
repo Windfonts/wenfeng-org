@@ -1,0 +1,65 @@
+{
+ "norm": "Hymc",
+ "name": "华英明朝",
+ "en": "Huaying Mincho",
+ "aliases": [],
+ "licenseName": "IPA Font License Agreement v1.0",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://github.com/GuiWonder/HuayingMincho",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "13ac75bd4e2872272982da0617a62eaa9af8c6a12ba88619997a20c36b103e53",
+  "verifiedAt": "2026-09-24",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "ipa",
+   "rootWork": "IPAmj明朝",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "GuiWonder",
+ "foundrySlug": "guiwonder",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Hymc",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/GuiWonder/HuayingMincho",
+  "upstream": "https://github.com/GuiWonder/HuayingMincho",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Hymc.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/GuiWonder/HuayingMincho",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hymc"
+}

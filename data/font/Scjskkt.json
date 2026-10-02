@@ -1,0 +1,52 @@
+{
+ "norm": "Scjskkt",
+ "name": "素材集市康康体",
+ "en": "Sucaijishi Kangkangti",
+ "aliases": [],
+ "licenseName": "素材集市康康体授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": "https://www.sucaijishi.com",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "SuCaiJiShi",
+ "foundrySlug": "sucaijishi",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/Scjskkt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.sucaijishi.com",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.sucaijishi.com",
+   "format": "git",
+   "href": "https://www.sucaijishi.com",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-scjskkt"
+}

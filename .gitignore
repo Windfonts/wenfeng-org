@@ -1,0 +1,7 @@
+__pycache__/
+_shots/
+.DS_Store
+restored-*.png
+dist/
+*.pyc
+.venv/
