@@ -2860,12 +2860,22 @@ body.gp-v1b .gp1-kinds button {
 .hv4-aside { grid-area: aside; align-self: stretch; min-width: 0; padding: var(--s-5) 0 var(--s-2) var(--s-6); border-left: 1px solid var(--ink); background: transparent; }
 .hv4-aside-label { margin: 0 0 var(--s-3); font-family: var(--font-mono); font-size: var(--fs-11); font-weight: var(--fw-title); color: var(--ink); letter-spacing: 0.08em; }
 .hv4-legend-rows { display: flex; flex-direction: column; margin: 0; }
-.hv4-legend-row { display: flex; align-items: baseline; gap: var(--s-3); padding: 0.5rem 0; text-decoration: none; color: inherit; min-width: 0; }
+.hv4-legend-row { display: flex; align-items: baseline; gap: var(--s-3); margin: 0 calc(-1 * var(--s-2)); padding: 0.5rem var(--s-2); border-radius: var(--radius-sm); text-decoration: none; color: inherit; min-width: 0; }
+.hv4-legend-row:hover { background: var(--fill); text-decoration: none; }
 .hv4-legend-row + .hv4-legend-row { border-top: 1px solid var(--rule-2, var(--rule)); }
 .hv4-legend-row .l-t { flex: 0 0 4.5em; font-size: var(--fs-14); font-weight: var(--fw-title); color: var(--ink); }
 .hv4-legend-row .l-d { flex: 1 1 auto; min-width: 0; font-size: var(--fs-13); color: var(--gray); line-height: var(--lh-body); }
 .hv4-legend-row .l-d.for-dev.mono { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: 0.01em; }
 .hv4-legend-row:hover .l-t { color: var(--ink-hover, var(--ink)); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.hv4-aside-block + .hv4-aside-block { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px solid var(--rule-2, var(--rule)); }
+.hv4-attest-d { margin: 0; font-size: var(--fs-13); color: var(--gray); line-height: var(--lh-body); }
+.hv4-attest-go { display: inline-block; margin-top: var(--s-1); font-size: var(--fs-14); color: var(--ink); text-decoration: none; }
+.hv4-attest-go b { font-weight: var(--fw-title); font-variant-numeric: tabular-nums; }
+.hv4-attest-go:hover { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a.hv4-stat { color: inherit; }
+a.hv4-stat:hover { text-decoration: none; }
+a.hv4-stat:hover b { text-decoration: underline; text-underline-offset: 0.14em; text-decoration-thickness: 3px; }
+.hv4-display h1.t-xxzt { font-weight: 400; letter-spacing: 0; }
 .hv4-search { grid-area: search; display: flex; align-items: center; align-self: start; gap: var(--s-3); margin: 0; padding-top: var(--s-2); max-width: 40rem; min-width: 0; }
 .hv4-search-kicker { flex-shrink: 0; font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray-2); letter-spacing: 0.06em; margin-right: var(--s-1); }
 .hv4-search input { flex: 1; min-width: 0; height: 2.85rem; padding: 0 1.15rem; border: 0; border-radius: var(--radius-pill); background: var(--fill); font-size: var(--fs-14); color: var(--ink); }

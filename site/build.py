@@ -314,7 +314,7 @@ def layout(section, title, body, dev="", extra_head="", body_class=""):
 %s
 <header class="topbar"><div class="container topbar-inner">%s
 <nav class="topnav" aria-label="主导航">%s</nav>
-<div class="topbar-end"><div class="seg" data-view-switch role="group" aria-label="视图"><button type="button" data-mode="design" class="is-on">设计</button><button type="button" data-mode="dev">开发</button></div>
+<div class="topbar-end">
 <a href="https://app.windfonts.com/" target="_blank" rel="noopener" title="店面（样张与选字）">店面</a>
 <button type="button" class="icon-btn" data-theme-toggle aria-label="切换深浅"><svg class="icon ico-moon" aria-hidden="true"><use href="#i-moon"></use></svg><svg class="icon ico-sun" aria-hidden="true"><use href="#i-sun"></use></svg></button></div>
 </div></header>
@@ -334,11 +334,15 @@ def page_home(data, fonts):
     """首页 = 16030 丁版移植：大字+导语 → 三件事竖列（01 墨色）+ 检索 | 目录状态图例 → 统计条 → 关于本站。"""
     n_src = sum(1 for f in fonts if status(f) == "source")
     n_full = sum(1 for f in fonts if lic(f).get("textState") == "full")
+    n_att = sum(1 for f in fonts if can_attest(f))
     gen = e((data.get("generated") or "")[:10])
     try:
         n_mirror = json.loads((ROOT / "data" / "export-report.json").read_text())["coverage"]["source_mirrors"]
     except Exception:
         n_mirror = 132
+    # hero 大字用目录字体渲染（玄宗体）；类名 t-xxzt 由懒加载 css 注入字体族，加载失败自然回退 var(--font-ui)
+    hero_face = next((f for f in fonts if f.get("norm") == "xxzt"), None)
+    hero_attrs = (' class="t-xxzt" data-face-norm="xxzt" data-face-family="%s"' % e(hero_face["family"])) if hero_face else ""
 
     def fv(d, v, cls=""):
         p = (cls + " ") if cls else ""
@@ -372,19 +376,23 @@ def page_home(data, fonts):
                    '<input id="q" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
                    '<button class="btn" type="submit">%s搜索</button></form>' % icon("search"))
 
+    attest_html = ('<div class="hv4-aside-block hv4-attest"><p class="hv4-aside-label">授权证明</p>'
+                   '<p class="hv4-attest-d for-design">标准开源协议可出具，签发即登记。</p>'
+                   '<p class="hv4-attest-d for-dev mono">can_attest=%d</p>'
+                   '<a class="hv4-attest-go" href="/attest/"><b>%d</b> 款可出证</a></div>' % (n_att, n_att))
+
     # 二、统计条：戊式大数（顶横线 + 列间竖线，白底左对齐，读数不可点）
-    stats = [(len(fonts), "已收录", "fonts[]"), (n_src, "本站下载", "offer=source"),
-             (n_full, "许可全文", "textState=full"), (n_mirror, "镜像仓库", "source_mirrors")]
-    stats_html = "".join('<div class="hv4-stat"><b>%d</b>%s</div>' % (v, fv(d, dv)) for v, d, dv in stats)
+    stats = [(len(fonts), "已收录", "fonts[]", "/source/"), (n_src, "本站下载", "offer=source", "/source/?st=source"),
+             (n_full, "许可全文", "textState=full", "/license/"), (n_mirror, "镜像仓库", "source_mirrors", "/source/")]
+    stats_html = "".join('<a class="hv4-stat" href="%s"><b>%d</b>%s</a>' % (h, v, fv(d, dv)) for v, d, dv, h in stats)
 
     body = ('<section class="hv4-hero">'
             '<p class="hv4-crumb">%s</p>'
-            '<div class="hv4-display"><h1>源文件</h1>%s</div>'
+            '<div class="hv4-display"><h1%s>源文件</h1>%s</div>'
             '<div class="hv4-split">'
             '<div class="hv4-tasks" role="list">%s</div>'
             '<aside class="hv4-aside" aria-label="目录状态怎么看"><div class="hv4-aside-block hv4-legend">'
-            '<p class="hv4-aside-label">目录状态</p><nav class="hv4-legend-rows" aria-label="按状态筛选目录">%s</nav>'
-            '</div></aside>%s</div>'
+            '<p class="hv4-aside-label">目录状态</p><nav class="hv4-legend-rows" aria-label="按状态筛选目录">%s</nav></div>%s</aside>%s</div>'
             '<div class="hv4-stats" aria-label="目录概况">%s'
             '<p class="hv4-stats-cap for-design">目录数据 · %s 更新</p>'
             '<p class="hv4-stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · %s</p>'
@@ -400,10 +408,10 @@ def page_home(data, fonts):
             '<a class="btn btn-ink" href="/license/">%s查授权</a>'
             '<a class="btn" href="/source/">%s打开目录</a>'
             '<a class="btn" href="/how/">怎么核</a></p></div></div></section>'
-            % (fv("wenfeng.org", "wenfeng.org /"),
+            % (fv("wenfeng.org", "wenfeng.org /"), hero_attrs,
                fv('开源字体的源文件和许可原文。<br class="hv4-br">能下载的直接下载，不允许再分发的核验后领取切片包。',
                   '/license · /source · /gap<br class="hv4-br"> samples.json · offer · textState · GET /api/v1/fonts · /attest', "hv4-lead"),
-               tasks_html, legend_html, search_html, stats_html, gen, gen,
+               tasks_html, legend_html, attest_html, search_html, stats_html, gen, gen,
                icon("shield"), icon("download")))
     return layout("home", "", body, "home")
 
