@@ -350,37 +350,30 @@ def page_home(data, fonts):
                 search(),
                 dd("已收录 <b>%d</b> 款 · 目录 %s 更新" % (len(fonts), gen), "fonts[]=%d · generated %s · not live" % (len(fonts), gen))))
 
-    # 二、四件事：四栏等宽，数字就是每件事的量；01 墨黑主卡（查授权是本站独有的一件事），
-    # 04 没有数字，尾行写成动作词，不冒充数字
+    # 二、四件事：收成一条窄的圆角模条（居中、左右圆角、不占满行宽），一行一款：图标+名称+数字
     cards = [
-        ("01", "查授权", "许可原文与三态结论", n_full, "份许可全文", "/license/", "shield", "/license · textState=full", True),
-        ("02", "下源文件", "本站下载或官方下载，逐款标注", n_src, "款本站下载", "/source/", "download", "/source · offer=source", False),
-        ("03", "出授权证明", "标准开源协议，签发即登记", n_att, "款可出证", "/attest/", "certificate", "/attest · can_attest", False),
-        ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接", False),
+        ("01", "查授权", "许可原文与三态结论", n_full, "份许可全文", "/license/", "shield", "/license · textState=full"),
+        ("02", "下源文件", "本站下载或官方下载，逐款标注", n_src, "款本站下载", "/source/", "download", "/source · offer=source"),
+        ("03", "出授权证明", "标准开源协议，签发即登记", n_att, "款可出证", "/attest/", "certificate", "/attest · can_attest"),
+        ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接"),
     ]
     body += '<nav class="home-cards" aria-label="办事">%s</nav>' % "".join(
-        '<a class="home-card%s" href="%s"><span class="hc-top"><span class="idx">%s</span><span class="t-ico">%s</span></span>'
-        '<span class="t-t">%s</span><span class="t-d">%s</span>'
-        '%s'
-        '<span class="arrow">%s</span></a>'
-        % (" is-ink" if ck else "", href, idx, icon(ico), e(t), dd(e(d), v),
+        '<a class="home-cell" href="%s"><span class="t-ico">%s</span><span class="t-t">%s</span>%s</a>'
+        % (href, icon(ico), e(t),
            ('<span class="hc-num"><b>%d</b><span class="u">%s</span></span>' % (n, e(u))) if n is not None
-           else '<span class="hc-act">%s</span>' % e(u),
-           icon("arrow-right"))
-        for idx, t, d, n, u, href, ico, v, ck in cards)
+           else '<span class="hc-act">%s</span>' % e(u))
+        for idx, t, d, n, u, href, ico, v in cards)
 
 
     # 二、最近核实（左）| 目录状态图例（右）：图例解释的正是左边列表里的状态词。
-    # 状态词单独成列（本站下载加墨），不再埋在「协议 · 厂商 · 状态」灰串里；图例词直接链进目录筛选
+    # 图例词直接链进目录筛选；状态词留在「协议 · 厂商 · 状态」灰串里（full 版式样）
     recent = sorted((f for f in fonts if lic(f).get("verifiedAt")),
                     key=lambda f: (lic(f).get("verifiedAt"), f["norm"]), reverse=True)[:6]
     rows = "".join(
-        '<li><a href="/source/%s/"><span class="nm">%s</span><span class="info">%s</span>'
-        '<span class="rv-st%s">%s</span><span class="go mono">%s</span></a></li>'
+        '<li><a href="/source/%s/"><span class="nm">%s</span><span class="info">%s</span><span class="go mono">%s</span></a></li>'
         % (e(f["norm"]), e(wf(f)),
-           dd(e(" · ".join(filter(None, [spdx_of(f) or f.get("licenseName"), f.get("foundry")]))),
+           dd(e(" · ".join(filter(None, [spdx_of(f) or f.get("licenseName"), f.get("foundry"), STATUS[status(f)][0]]))),
               "%s · offer=%s" % (e(f["norm"]), e(f.get("offer") or "jump"))),
-           " is-ink" if status(f) == "source" else "", e(STATUS[status(f)][0]),
            e(lic(f).get("verifiedAt")))
         for f in recent)
     legend = '<dl class="kv-rows is-words">%s</dl>' % "".join(
