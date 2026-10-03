@@ -102,11 +102,19 @@
       if (!pager) return;
       if (pages <= 1) { pager.hidden = true; pager.innerHTML = ''; return; }
       pager.hidden = false;
-      var html = '<button type="button" class="pg"' + (page <= 1 ? ' disabled' : '') + ' data-go="' + (page - 1) + '">上一页</button>';
-      for (var i = 1; i <= pages; i++) {
-        html += '<button type="button" class="pg' + (i === page ? ' is-on' : '') + '" data-go="' + i + '"' + (i === page ? ' aria-current="page"' : '') + '>' + i + '</button>';
+      var win = [], i;
+      for (i = 1; i <= pages; i++) {
+        if (i === 1 || i === pages || Math.abs(i - page) <= 2) win.push(i);
       }
-      html += '<button type="button" class="pg"' + (page >= pages ? ' disabled' : '') + ' data-go="' + (page + 1) + '">下一页</button>';
+      var html = '<button type="button" class="pg nav"' + (page <= 1 ? ' disabled' : '') + ' data-go="' + (page - 1) + '">上一页</button>';
+      var prev = 0;
+      win.forEach(function (i) {
+        if (prev && i - prev > 1) html += '<span class="dots" aria-hidden="true">…</span>';
+        html += '<button type="button" class="pg' + (i === page ? ' is-on' : '') + '" data-go="' + i + '"' + (i === page ? ' aria-current="page"' : '') + '>' + i + '</button>';
+        prev = i;
+      });
+      html += '<button type="button" class="pg nav"' + (page >= pages ? ' disabled' : '') + ' data-go="' + (page + 1) + '">下一页</button>';
+      html += '<span class="pg-info mono">' + page + ' / ' + pages + '</span>';
       pager.innerHTML = html;
       pager.querySelectorAll('[data-go]').forEach(function (b) {
         b.addEventListener('click', function () {

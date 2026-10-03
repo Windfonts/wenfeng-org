@@ -2872,8 +2872,11 @@ body.gp-v1b .gp1-kinds button {
 
 
 /* 目录分页 — 同 chip 视觉 */
-.pager { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; margin: var(--s-5) 0 0; }
-.pager .pg { height: 2rem; padding: 0 0.95rem; border: 0; border-radius: var(--radius-pill); background: var(--fill); font-size: var(--fs-13); font-family: inherit; color: var(--ink-2); cursor: pointer; transition: background var(--dur) var(--ease); }
-.pager .pg:hover:not(:disabled):not(.is-on) { background: var(--surface-2); }
-.pager .pg.is-on { background: var(--ink); color: var(--on-ink); font-weight: var(--fw-title); }
-.pager .pg:disabled { color: var(--gray-2); cursor: default; }
+.pager { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-3); align-items: center; margin: var(--s-5) 0 0; }
+.pager .pg { border: 0; background: transparent; padding: 0.2rem 0.15rem; font-family: inherit; font-size: var(--fs-13); color: var(--gray); cursor: pointer; font-variant-numeric: tabular-nums; }
+.pager .pg.nav { color: var(--ink-2); }
+.pager .pg:hover:not(:disabled) { color: var(--ink); text-decoration: underline; text-underline-offset: 0.25em; }
+.pager .pg.is-on { color: var(--ink); font-weight: var(--fw-title); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px; }
+.pager .pg:disabled { color: var(--gray-2); opacity: 0.55; cursor: default; text-decoration: none; }
+.pager .dots { color: var(--gray-2); font-size: var(--fs-13); }
+.pager .pg-info { font-size: var(--fs-12, 0.75rem); color: var(--gray-2); margin-left: var(--s-2); }
