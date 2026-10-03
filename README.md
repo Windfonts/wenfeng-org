@@ -26,14 +26,15 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/gap-v1b.html       甲′ · 短笺精修
 # http://127.0.0.1:16030/gap-v1.html         甲 · 原稿
 # http://127.0.0.1:16030/gap-v2.html         乙 · 已归档
-# http://127.0.0.1:16030/about-options.html  关于枢纽（戊来信 / 己路径 · 甲乙丙丁已否 · 未接入 /about）
-# http://127.0.0.1:16030/about-v5.html       戊 · 来信
-# http://127.0.0.1:16030/about-v6.html       己 · 路径
+# http://127.0.0.1:16030/about             关于 = 己′（about-v6b 为静态别名）
+# http://127.0.0.1:16030/about-options.html  关于枢纽（己′当前；己原稿；甲乙丙丁戊已否）
+# http://127.0.0.1:16030/about-v6b.html      己′ · 路径精修
+# http://127.0.0.1:16030/about-v6.html       己 · 原稿
+# http://127.0.0.1:16030/about-v5.html       戊 · 来信 · 已否
 # http://127.0.0.1:16030/about-v3.html       丙 · 三件 · 已否
 # http://127.0.0.1:16030/about-v4.html       丁 · 五不 · 已否
 # http://127.0.0.1:16030/about-v1.html       甲 · 三处 · 已否
 # http://127.0.0.1:16030/about-v2.html       乙 · 短文 · 已否
-# http://127.0.0.1:16030/about             关于仍是旧壳
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -54,7 +55,9 @@ python3 preview.py --port 16030
 | `font-v1.html` · `font-v2.html` | 一款详情原稿甲 / 已归档乙 |
 | `gap-v1b.html` | 甲′静态别名（`/gap` 活页） |
 | `gap-v1.html` · `gap-v2.html` | 报缺字原稿甲 / 已归档乙 |
-| `about-v5.html` · `about-v6.html` | 关于再重做：戊来信 / 己路径（未接入 `/about`；甲乙丙丁已否） |
+| `about-v6b.html` | 己′静态别名（`/about` 活页） |
+| `about-v6.html` | 关于原稿己（路径） |
+| `about-v1.html`…`about-v5.html` | 关于已否：甲三处 / 乙短文 / 丙三件 / 丁五不 / 戊来信 |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |

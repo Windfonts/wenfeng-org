@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>关于 · 己′ · 路径 · 文风开源</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/about-versions.css" />
+</head>
+<body class="ab ab-v6b" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/">源文件</a>
+        <a href="/license">授权</a>
+        <a href="/source">目录</a>
+        <a href="/attest">核验</a>
+        <a href="/about" class="is-active">关于</a>
+      </nav>
+      <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
+        <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/assets/icons.svg#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="ab-hero">
+      <div class="container">
+        <p class="ab-crumb" aria-label="路径">
+          <span class="for-design"><a href="/">首页</a><span class="sep">/</span>关于</span>
+          <span class="for-dev mono">/about · alias about-v6b</span>
+        </p>
+        <div class="ab-display">
+          <h1 class="for-design">从根往下</h1>
+          <h1 class="for-dev mono">origin tree</h1>
+          <p class="ab-lead for-design">先看这一名下面挂着什么。源文件、许可、缺字、证明是路径。店面和造字是别的名字，不跟路径并排。</p>
+          <p class="ab-lead for-dev mono">/source · /license · /gap · /attest<br />other hosts are not children</p>
+        </div>
+
+        <p class="ab6-root">
+          <span class="host">wenfeng.org</span>
+          <span class="for-design">这一名下面</span>
+          <span class="for-dev mono">children</span>
+        </p>
+        <ol class="ab6-tree">
+          <li class="ab6-branch">
+            <div class="ab6-line">
+              <a class="path" href="/source">/source</a>
+              <span class="name for-design">源文件</span>
+              <span class="name for-dev mono">offer</span>
+              <span class="act"><a class="is-pill" href="/source"><span class="for-design">看目录</span><span class="for-dev">GET</span></a></span>
+            </div>
+            <p class="gloss for-design">开源原件和开源切片可自选带走。不允许再分发的，核验后领切片包。不当 CDN。</p>
+            <p class="gloss for-dev mono">offer · slice · no file sale · not a CDN</p>
+          </li>
+          <li class="ab6-branch">
+            <div class="ab6-line">
+              <a class="path" href="/license">/license</a>
+              <span class="name for-design">许可</span>
+              <span class="name for-dev mono">text</span>
+              <span class="act"><a href="/license"><span class="for-design">查授权</span><span class="for-dev">GET</span></a></span>
+            </div>
+            <p class="gloss for-design">授权原文要收，只是一小块。证明不替代原文，也不新设权利。</p>
+            <p class="gloss for-dev mono">text · attest ≠ new rights</p>
+          </li>
+          <li class="ab6-branch">
+            <div class="ab6-line">
+              <a class="path" href="/gap">/gap</a>
+              <span class="name for-design">缺字</span>
+              <span class="name for-dev mono">gap</span>
+              <span class="act"><a href="/gap"><span class="for-design">报缺字</span><span class="for-dev">GET</span></a></span>
+            </div>
+            <p class="gloss for-design">缺字形、缺收录、勘误在这里说。造字不在这条路径上。</p>
+            <p class="gloss for-dev mono">/gap · submit unwired · editor not a child</p>
+          </li>
+          <li class="ab6-branch">
+            <div class="ab6-line">
+              <a class="path" href="/attest">/attest</a>
+              <span class="name for-design">证明</span>
+              <span class="name for-dev mono">attest</span>
+              <span class="act"><a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">GET</span></a></span>
+            </div>
+            <p class="gloss for-design">只给标准开源协议出证。厂商自拟、还没核实、未收录的，不出。</p>
+            <p class="gloss for-dev mono">SPDX only · else no attest</p>
+          </li>
+        </ol>
+
+        <p class="ab6-root is-other">
+          <span class="host for-design">别的名字</span>
+          <span class="host for-dev mono">not children</span>
+          <span class="for-design">不挂在 wenfeng.org 下面</span>
+          <span class="for-dev mono">other origins</span>
+        </p>
+        <ol class="ab6-tree is-other">
+          <li class="ab6-branch">
+            <div class="ab6-line">
+              <a class="path" href="https://app.windfonts.com/">app.windfonts.com</a>
+              <span class="name for-design">店面</span>
+              <span class="name for-dev mono">shop</span>
+              <span class="act"><a href="https://app.windfonts.com/"><span class="for-design">去店面</span><span class="for-dev">shop</span></a></span>
+            </div>
+            <p class="gloss for-design">样张、选字、网页里用、控制台和账号。本站不做样张墙。</p>
+            <p class="gloss for-dev mono">specimens · account · console</p>
+          </li>
+          <li class="ab6-branch">
+            <div class="ab6-line">
+              <span class="path is-quiet">尚无域名</span>
+              <span class="name for-design">造字</span>
+              <span class="name for-dev mono">editor</span>
+            </div>
+            <p class="gloss for-design">编辑器放在独立新域，不挂在本站。本站以后只做入口和收录。</p>
+            <p class="gloss for-dev mono">other origin · no route · entry + catalog later</p>
+          </li>
+        </ol>
+
+        <section class="ab6-note" aria-label="说明">
+          <p class="label for-design">说明 · 写在路径下面，不占路径的结构</p>
+          <p class="label for-dev mono">note · under the tree</p>
+          <p class="for-design">文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>
+          <p class="for-design">对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。</p>
+          <p class="for-design">其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。</p>
+          <p class="for-design">wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how">我们怎么核</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>
+          <p class="for-dev mono">oss · SPDX text · chain + hash + original?<br />attest ≠ new rights · custom terms → text only<br />no file sale · no license sale · no grant<br />SPDX only · custom / unverified / unlisted → no attest<br />/legal#legal-scope · /how · wordpress → static · split deploy</p>
+        </section>
+
+        <p class="ab-footnote for-design">己′静态别名，版式与活页相同。路径挂在这一名下面，别的主机另起，说明写在树下。活页在 <a href="/about">/about</a>。原稿 <a href="/about-v6.html">己</a>。</p>
+        <p class="ab-footnote for-dev mono">alias about-v6b · live route /about · aboutPage</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot">
+    <div class="container site-foot-inner">
+      <div class="site-foot-brand">
+        <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+        <p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>
+      </div>
+      <div class="site-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="/gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">授权证明</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>关于</h2>
+        <a href="/about">关于</a>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container site-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照别名 · 未部署生产</p>
+      <p class="site-foot-alts">关于
+        <a href="/about-v6b.html" class="is-on">己′ · 当前</a> ·
+        <a href="/about-v6.html">己 · 原稿</a> ·
+        <a href="/about">活页 /about</a> ·
+        <a href="/about-options.html">枢纽</a>
+        · 已否
+        <a href="/about-v1.html">甲</a> /
+        <a href="/about-v2.html">乙</a> /
+        <a href="/about-v3.html">丙</a> /
+        <a href="/about-v4.html">丁</a> /
+        <a href="/about-v5.html">戊</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var VIEW_KEY = "wf-view";
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === "dev" ? "dev" : "design"; }
+        catch (e) { return "design"; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute("data-view", v === "dev" ? "dev" : "design");
+        document.querySelectorAll("[data-view-switch] [data-mode]").forEach(function (b) {
+          b.classList.toggle("is-on", b.getAttribute("data-mode") === (v === "dev" ? "dev" : "design"));
+        });
+      }
+      document.querySelectorAll("[data-view-switch] [data-mode]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var next = b.getAttribute("data-mode") === "dev" ? "dev" : "design";
+          try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+          applyView(next);
+        });
+      });
+      applyView(view());
+      var themeBtn = document.querySelector("[data-theme-toggle]");
+      if (themeBtn) themeBtn.addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute("data-theme") === "dark";
+        if (dark) { root.removeAttribute("data-theme"); try { localStorage.setItem("wf-theme", "light"); } catch (e) {} }
+        else { root.setAttribute("data-theme", "dark"); try { localStorage.setItem("wf-theme", "dark"); } catch (e) {} }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -2153,52 +2153,105 @@
   }
 
   function aboutPage() {
-    return '<div class="container page-pad">' +
-      '<div class="page-head is-compact">' +
-        '<p class="kicker">关于</p>' +
-        '<h1>文风的仓库，不是店面</h1>' +
-        '<p class="lead">wenfeng.org 提供源文件和下载。开源原件和开源切片可自选带走。授权原文也要收，只是一小块。</p>' +
+    return '<section class="ab-hero">' +
+      '<div class="container">' +
+        '<p class="ab-crumb" aria-label="路径">' +
+          '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>关于</span>' +
+          '<span class="for-dev mono">/about · ab-v6b</span>' +
+        '</p>' +
+        '<div class="ab-display">' +
+          '<h1 class="for-design">从根往下</h1>' +
+          '<h1 class="for-dev mono">origin tree</h1>' +
+          '<p class="ab-lead for-design">先看这一名下面挂着什么。源文件、许可、缺字、证明是路径。店面和造字是别的名字，不跟路径并排。</p>' +
+          '<p class="ab-lead for-dev mono">/source · /license · /gap · /attest<br />other hosts are not children</p>' +
+        '</div>' +
+        '<p class="ab6-root">' +
+          '<span class="host">wenfeng.org</span>' +
+          '<span class="for-design">这一名下面</span>' +
+          '<span class="for-dev mono">children</span>' +
+        '</p>' +
+        '<ol class="ab6-tree">' +
+          '<li class="ab6-branch">' +
+            '<div class="ab6-line">' +
+              '<a class="path" href="/source">/source</a>' +
+              '<span class="name for-design">源文件</span>' +
+              '<span class="name for-dev mono">offer</span>' +
+              '<span class="act"><a class="is-pill" href="/source"><span class="for-design">看目录</span><span class="for-dev">GET</span></a></span>' +
+            '</div>' +
+            '<p class="gloss for-design">开源原件和开源切片可自选带走。不允许再分发的，核验后领切片包。不当 CDN。</p>' +
+            '<p class="gloss for-dev mono">offer · slice · no file sale · not a CDN</p>' +
+          '</li>' +
+          '<li class="ab6-branch">' +
+            '<div class="ab6-line">' +
+              '<a class="path" href="/license">/license</a>' +
+              '<span class="name for-design">许可</span>' +
+              '<span class="name for-dev mono">text</span>' +
+              '<span class="act"><a href="/license"><span class="for-design">查授权</span><span class="for-dev">GET</span></a></span>' +
+            '</div>' +
+            '<p class="gloss for-design">授权原文要收，只是一小块。证明不替代原文，也不新设权利。</p>' +
+            '<p class="gloss for-dev mono">text · attest ≠ new rights</p>' +
+          '</li>' +
+          '<li class="ab6-branch">' +
+            '<div class="ab6-line">' +
+              '<a class="path" href="/gap">/gap</a>' +
+              '<span class="name for-design">缺字</span>' +
+              '<span class="name for-dev mono">gap</span>' +
+              '<span class="act"><a href="/gap"><span class="for-design">报缺字</span><span class="for-dev">GET</span></a></span>' +
+            '</div>' +
+            '<p class="gloss for-design">缺字形、缺收录、勘误在这里说。造字不在这条路径上。</p>' +
+            '<p class="gloss for-dev mono">/gap · submit unwired · editor not a child</p>' +
+          '</li>' +
+          '<li class="ab6-branch">' +
+            '<div class="ab6-line">' +
+              '<a class="path" href="/attest">/attest</a>' +
+              '<span class="name for-design">证明</span>' +
+              '<span class="name for-dev mono">attest</span>' +
+              '<span class="act"><a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">GET</span></a></span>' +
+            '</div>' +
+            '<p class="gloss for-design">只给标准开源协议出证。厂商自拟、还没核实、未收录的，不出。</p>' +
+            '<p class="gloss for-dev mono">SPDX only · else no attest</p>' +
+          '</li>' +
+        '</ol>' +
+        '<p class="ab6-root is-other">' +
+          '<span class="host for-design">别的名字</span>' +
+          '<span class="host for-dev mono">not children</span>' +
+          '<span class="for-design">不挂在 wenfeng.org 下面</span>' +
+          '<span class="for-dev mono">other origins</span>' +
+        '</p>' +
+        '<ol class="ab6-tree is-other">' +
+          '<li class="ab6-branch">' +
+            '<div class="ab6-line">' +
+              '<a class="path" href="https://app.windfonts.com/">app.windfonts.com</a>' +
+              '<span class="name for-design">店面</span>' +
+              '<span class="name for-dev mono">shop</span>' +
+              '<span class="act"><a href="https://app.windfonts.com/"><span class="for-design">去店面</span><span class="for-dev">shop</span></a></span>' +
+            '</div>' +
+            '<p class="gloss for-design">样张、选字、网页里用、控制台和账号。本站不做样张墙。</p>' +
+            '<p class="gloss for-dev mono">specimens · account · console</p>' +
+          '</li>' +
+          '<li class="ab6-branch">' +
+            '<div class="ab6-line">' +
+              '<span class="path is-quiet">尚无域名</span>' +
+              '<span class="name for-design">造字</span>' +
+              '<span class="name for-dev mono">editor</span>' +
+            '</div>' +
+            '<p class="gloss for-design">编辑器放在独立新域，不挂在本站。本站以后只做入口和收录。</p>' +
+            '<p class="gloss for-dev mono">other origin · no route · entry + catalog later</p>' +
+          '</li>' +
+        '</ol>' +
+        '<section class="ab6-note" aria-label="说明">' +
+          '<p class="label for-design">说明 · 写在路径下面，不占路径的结构</p>' +
+          '<p class="label for-dev mono">note · under the tree</p>' +
+          '<p class="for-design">文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>' +
+          '<p class="for-design">对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。</p>' +
+          '<p class="for-design">其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。</p>' +
+          '<p class="for-design">wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how">我们怎么核</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>' +
+          '<p class="for-dev mono">oss · SPDX text · chain + hash + original?<br />attest ≠ new rights · custom terms → text only<br />no file sale · no license sale · no grant<br />SPDX only · custom / unverified / unlisted → no attest<br />/legal#legal-scope · /how · wordpress → static · split deploy</p>' +
+        '</section>' +
+        '<p class="ab-footnote for-design">路径挂在这一名下面，别的主机另起。说明写在树下，不占路径的结构。对照别名 <a href="/about-v6b.html">about-v6b</a>。</p>' +
+        '<p class="ab-footnote for-dev mono">aboutPage · ab-v6b · /about</p>' +
       '</div>' +
-      '<ul class="ways">' +
-        '<li class="way">' +
-          '<p class="idx">店面</p>' +
-          '<h2>app.windfonts.com</h2>' +
-          '<p>网页里用、控制台、账号。</p>' +
-          '<p class="way-go"><a href="https://app.windfonts.com/">去店面</a></p>' +
-        '</li>' +
-        '<li class="way">' +
-          '<p class="idx">仓库</p>' +
-          '<h2>wenfeng.org</h2>' +
-          '<p>源文件和下载、许可原文、授权证明，以后有目录 API。</p>' +
-          '<p class="way-go"><a href="/source">看目录</a></p>' +
-        '</li>' +
-        '<li class="way">' +
-          '<p class="idx">造字</p>' +
-          '<h2>造字平台</h2>' +
-          '<p>编辑器放在独立新域，不挂在本站。本站以后只做入口和收录。</p>' +
-        '</li>' +
-      '</ul>' +
-      '<div class="legal-block" id="about-oss">' +
-        '<h2>开源立场</h2>' +
-        '<p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>' +
-        '<p>对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。</p>' +
-        '<p>其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。</p>' +
-      '</div>' +
-      '<div class="legal-block" id="about-neutral">' +
-        '<h2>不卖字，不代言</h2>' +
-        '<p>wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。</p>' +
-      '</div>' +
-      '<div class="legal-block" id="about-scope">' +
-        '<h2>出证范围</h2>' +
-        '<p>只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。</p>' +
-      '</div>' +
-      '<p class="quiet-note">收录与核验的方法写在<a href="/how">我们怎么核</a>。wenfeng.org 以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>' +
-      '<p class="acts page-acts">' +
-        '<a class="btn btn-ink" href="/source">看目录</a>' +
-        '<a class="btn" href="/attest">授权证明</a>' +
-        '<a class="btn" href="/legal">法务说明</a>' +
-      '</p>' +
-    '</div>';
+    '</section>';
   }
 
   var CN_DIGITS = '〇一二三四五六七八九';
@@ -3428,7 +3481,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : ('page-' + route.page)))));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : ('page-' + route.page))))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();

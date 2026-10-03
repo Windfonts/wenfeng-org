@@ -1,5 +1,6 @@
-/* 关于整页 · 甲三处 / 乙短文 / 丙三件 / 丁五不（已否）· 戊来信 / 己路径
-   同 home-v4 丁的字阶与细线。未接入 /about。
+/* 关于整页 · 甲三处 / 乙短文 / 丙三件 / 丁五不 / 戊来信（已否）
+   己路径原稿 / 己′精修（当前，/about）
+   己′同己 IA，字阶与墨线对齐 home-v4 丁。
    B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
 
 body.ab {
@@ -700,3 +701,138 @@ a.ab6-node .path,
 .ab6-tree { border-left: 0; }
 .ab6-branch { padding-left: var(--s-2); }
 .ab6-branch:hover { background: var(--fill); border-radius: var(--radius-sm); }
+
+/* ============================================================
+   己′ · about-v6b · 路径精修
+   同锁定己 IA：这一名下面挂路径，别的主机另起，说明在树下
+   抬升：标题即丁的展示字阶 / 树干墨线 / 行悬停只填底 / mono 屑
+   ============================================================ */
+body.ab-v6b .ab-crumb .sep {
+  margin: 0 0.45em;
+  color: var(--gray-2);
+  opacity: 0.7;
+}
+body.ab-v6b .ab-display {
+  border-bottom-color: var(--ink);
+}
+body.ab-v6b .ab-display h1 {
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+body.ab-v6b .ab-display h1.mono {
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+}
+body.ab-v6b .ab6-root .host {
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  letter-spacing: -0.04em;
+}
+body.ab-v6b .ab6-tree {
+  margin: 0 0 var(--s-2);
+  border-left: 1px solid var(--ink);
+}
+body.ab-v6b .ab6-tree.is-other { border-left-color: var(--rule); }
+body.ab-v6b .ab6-branch {
+  position: relative;
+  margin: 0;
+  padding: var(--s-4) var(--s-4) var(--s-3) var(--s-5);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: background var(--dur) var(--ease);
+}
+body.ab-v6b .ab6-branch:last-child { border-bottom: 0; }
+body.ab-v6b .ab6-branch:hover,
+body.ab-v6b .ab6-branch:focus-within { background: var(--fill); }
+body.ab-v6b .ab6-branch::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.65rem;
+  width: 0.7rem;
+  border-top: 1px solid var(--ink);
+}
+body.ab-v6b .ab6-tree.is-other .ab6-branch::before { border-top-color: var(--rule); }
+body.ab-v6b .ab6-line {
+  gap: var(--s-3) var(--s-5);
+  padding-top: 0;
+  padding-left: var(--s-3);
+}
+body.ab-v6b .ab6-branch .path {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+body.ab-v6b .ab6-branch a.path:hover,
+body.ab-v6b .ab6-branch:hover a.path { text-decoration: none; }
+body.ab-v6b .ab6-branch .path.is-quiet {
+  color: var(--gray);
+  text-decoration: none;
+}
+body.ab-v6b .ab6-branch .name {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+body.ab-v6b .ab6-branch .name.mono,
+body.ab-v6b .ab6-branch .name.for-dev {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+body.ab-v6b .ab6-branch .gloss {
+  margin: var(--s-2) 0 0;
+  padding-left: var(--s-3);
+  max-width: 40em;
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+body.ab-v6b .ab6-branch .gloss.mono,
+body.ab-v6b .ab6-branch .gloss.for-dev {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+body.ab-v6b .ab6-branch .act { margin-left: auto; }
+body.ab-v6b .ab6-branch .act a.is-pill {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-title);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+body.ab-v6b .ab6-branch .act a.is-pill:hover {
+  background: var(--ink-hover);
+  text-decoration: none;
+}
+body.ab-v6b .ab6-branch .act a:not(.is-pill) {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
+  transition: color var(--dur) var(--ease);
+}
+body.ab-v6b .ab6-branch .act a:not(.is-pill):hover {
+  text-decoration: underline;
+}
+body.ab-v6b .ab6-note {
+  margin-top: var(--s-10);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--ink);
+}
+body.ab-v6b .ab6-note .label { color: var(--ink); letter-spacing: 0.06em; }
+@media (max-width: 900px) {
+  body.ab-v6b .ab6-branch .act { margin-left: 0; margin-top: var(--s-2); }
+  body.ab-v6b .ab-display { border-bottom-color: var(--ink); }
+}
