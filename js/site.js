@@ -785,7 +785,7 @@
       ? ''
       : '<p class="sd2b-empty">没有这个名字。换个短码，或看<a href="/source">全部目录</a>。</p>';
     var qNote = route.q ? ' · 「' + esc(route.q) + '」' : '';
-    var footD = '按短码和名字找。胶囊筛的是这张目录。授权结论不在这里下。对照别名 <a href="/source-v2b.html">source-v2b</a>。';
+    var footD = '按短码或名字找。授权结论在查授权页，这里只标状态。对照别名 <a href="/source-v2b.html">source-v2b</a>。';
     var footV = 'listPage · sd-v2b · /source' + (route.q ? ' · q=' + esc(route.q) : '') + (offer !== 'all' ? ' · offer=' + esc(offer) : '');
     return '<section class="sd-hero">' +
       '<div class="container">' +
@@ -800,13 +800,13 @@
             '<h1 class="for-design">索引</h1>' +
             '<h1 class="for-dev mono">/source</h1>' +
           '</div>' +
-          '<p class="sd-lead for-design">一条文件名索引。<br class="sd-br" />右边只写这一站的边界。不管样张，也不当 CDN。</p>' +
+          '<p class="sd-lead for-design">全部字体的名字索引，一行一款。<br class="sd-br" />按状态筛选，点动作进条目。</p>' +
           '<p class="sd-lead for-dev mono">norm · name · offer · action<br class="sd-br" /> aside = boundary</p>' +
         '</div>' +
         '<form class="sd-search" action="/source" method="get" role="search">' +
           '<span class="sd-search-kicker" aria-hidden="true">检索</span>' +
           '<label class="sr-only" for="q">搜索字体</label>' +
-          '<input id="q" name="q" type="search" value="' + esc(route.q) + '" placeholder="中文名、短码、厂商…" autocomplete="off" />' +
+          '<input id="q" name="q" type="search" value="' + esc(route.q) + '" placeholder="中文名、英文、短码、厂商…" autocomplete="off" />' +
           (offer && offer !== 'all' ? '<input type="hidden" name="offer" value="' + esc(offer) + '">' : '') +
           '<button class="btn btn-ink" type="submit">' +
             '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>' +
@@ -816,10 +816,10 @@
         '<div class="sd2b-split">' +
           '<div>' +
             '<nav class="sd2b-pills" aria-label="按状态筛选">' + pillHtml + '</nav>' +
-            '<p class="sd2b-count"><span>' + list.length + '</span> 条' + qNote + ' · 目录 ' + fonts.length + '</p>' +
+            '<p class="sd2b-count"><span>' + list.length + '</span> 款' + qNote + ' · 全部 ' + fonts.length + ' 款</p>' +
             '<div class="sd2b-legend" aria-hidden="true">' +
               '<span>短码</span><span>名字</span>' +
-              '<span class="for-design">记录</span><span class="for-dev">offer</span><span>动作</span>' +
+              '<span class="for-design">信息</span><span class="for-dev">offer</span><span>动作</span>' +
             '</div>' +
             (rows ? '<ul class="sd2b-rows">' + rows + '</ul>' : '') +
             empty +
@@ -828,13 +828,13 @@
             '<p class="label for-design">这一站</p>' +
             '<p class="label for-dev mono">boundary</p>' +
             '<div class="sd2b-kv">' +
-              '<div><span class="k for-design">源文件</span><span class="k for-dev">files</span><span class="v">能带走的在本站，不能再分发的不代发</span></div>' +
-              '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v">结论在查授权，这张表不下判断</span></div>' +
-              '<div><span class="k for-design">缺字</span><span class="k for-dev">/gap</span><span class="v">缺字形、缺收录、勘误。不假装覆盖率</span></div>' +
-              '<div><span class="k for-design">工具</span><span class="k for-dev">/slice</span><span class="v">切片、核验。不是托管分发</span></div>' +
+              '<div><span class="k for-design">源文件</span><span class="k for-dev">files</span><span class="v">本站有的直接下载，不允许再分发的不代发</span></div>' +
+              '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v">结论在查授权页，这张表只标状态</span></div>' +
+              '<div><span class="k for-design">缺字</span><span class="k for-dev">/gap</span><span class="v">缺字形、缺收录、勘误，都从这一个入口报</span></div>' +
+              '<div><span class="k for-design">工具</span><span class="k for-dev">/slice</span><span class="v">切片包和核验，不做托管分发</span></div>' +
               '<div><span class="k for-design">不是</span><span class="k for-dev">not</span><span class="v">网页字体 CDN、样张墙、店面选字</span></div>' +
             '</div>' +
-            '<p class="note for-design">胶囊筛整张目录。右栏是这一站的边界，不是某一款的状态。</p>' +
+            '<p class="note for-design">筛选作用于整张目录。侧栏写的是这一站的边界，不是某一款的状态。</p>' +
             '<p class="note for-dev mono">offer · textState · samples.json</p>' +
           '</aside>' +
         '</div>' +
