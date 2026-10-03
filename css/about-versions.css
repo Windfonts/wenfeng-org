@@ -1,4 +1,4 @@
-/* 关于整页 · 甲三处 / 乙短文
+/* 关于整页 · 甲三处 / 乙短文（已否）· 丙三件 / 丁五不
    同 home-v4 丁的字阶与细线。未接入 /about。
    B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
 
@@ -318,4 +318,149 @@ body.ab .wordmark .wm-sub {
   .ab1-col { padding: var(--s-6) 0; border-top: 1px solid var(--rule); }
   .ab1-col + .ab1-col { padding-left: 0; border-left: 0; }
   .ab2-dossier { padding: var(--s-5) 0 0; border-left: 0; border-top: 1px solid var(--ink); }
+}
+
+/* 丙 · 三件：横条账本，不是三列。许可条承载立场，店面与造字收成一行 */
+.ab3-jobs { margin: 0; padding: 0; list-style: none; }
+.ab3-job {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: var(--s-4) var(--s-6);
+  align-items: start;
+  padding: var(--s-6) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.ab3-jobs .ab3-job:last-child { border-bottom: 1px solid var(--rule); }
+.ab3-job:hover { background: var(--fill); }
+.ab3-idx {
+  margin: 0.45em 0 0;
+  padding-left: var(--s-3);
+  border-left: 1px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+}
+.ab3-job h2 {
+  margin: 0 0 var(--s-3);
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+.ab3-job h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  letter-spacing: -0.03em;
+}
+.ab3-job .body p {
+  margin: 0 0 var(--s-3);
+  max-width: 40em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.ab3-job .body p:last-child { margin-bottom: 0; }
+.ab3-job .body p.mono { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--gray); }
+.ab3-job .body a { color: var(--ink); }
+.ab3-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  margin-top: var(--s-5);
+}
+.ab3-acts a.is-pill,
+.ab4-acts a.is-pill,
+.ab4-go a.is-pill,
+.ab3-away a.is-pill {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-title);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+}
+.ab3-acts a.is-pill:hover,
+.ab4-acts a.is-pill:hover,
+.ab4-go a.is-pill:hover,
+.ab3-away a.is-pill:hover { background: var(--ink-hover); text-decoration: none; }
+.ab3-acts a:not(.is-pill) {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+}
+.ab3-acts a:not(.is-pill):hover { text-decoration: underline; text-underline-offset: 0.2em; }
+
+.ab3-away {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  font-size: var(--fs-14);
+  color: var(--ink-2);
+}
+.ab3-away .label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+}
+.ab3-away .host { color: var(--ink-2); }
+.ab3-away .host.mono { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray); }
+
+/* 丁 · 五不：否定词即字阶，纵向往下读。没有右栏，没有三列 */
+.ab4-line {
+  padding: var(--s-7) 0 var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.ab4-stack .ab4-line:last-child { border-bottom: 1px solid var(--rule); }
+.ab4-line h2 {
+  margin: 0 0 var(--s-4);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+.ab4-line h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.ab4-line p {
+  margin: 0 0 var(--s-3);
+  max-width: 38em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.ab4-line p:last-of-type { margin-bottom: 0; }
+.ab4-line p.mono { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--gray); }
+.ab4-line a { color: var(--ink); }
+.ab4-line .ab4-go { margin-top: var(--s-4); }
+.ab4-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-4);
+  margin-top: var(--s-8);
+}
+.ab4-acts .label {
+  margin-right: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+}
+
+@media (max-width: 900px) {
+  .ab3-job { grid-template-columns: 1fr; gap: var(--s-2); }
+  .ab3-idx { margin-top: 0; }
 }
