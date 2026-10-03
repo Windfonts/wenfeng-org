@@ -1,0 +1,340 @@
+/* 怎么核整页 · 甲三条 / 乙四词
+   未接入 /how（活页仍是 page-pad / legal-block）。
+   字阶对齐 home-v4 丁。
+   B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
+
+body.hw {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+}
+body.hw main { flex: 1; }
+body.hw .wordmark .wm-sub {
+  font-weight: var(--fw-body);
+  color: var(--gray);
+  font-size: var(--fs-13);
+  margin-left: 0.15em;
+}
+
+.hw-hero { padding: var(--s-16) 0 var(--s-12); }
+.hw-crumb {
+  margin: 0 0 var(--s-8);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+.hw-crumb a { color: var(--gray-2); text-decoration: none; }
+.hw-crumb a:hover { color: var(--ink); }
+
+.hw-display {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: var(--s-6) var(--s-12);
+  align-items: end;
+  margin-bottom: var(--s-12);
+  padding-bottom: var(--s-10);
+  border-bottom: 1px solid var(--rule);
+}
+.hw-display h1 {
+  margin: 0;
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  font-weight: var(--fw-title);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.hw-display h1.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.hw-lead {
+  margin: 0;
+  max-width: 26em;
+  justify-self: end;
+  padding-bottom: 0.35em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.hw-lead.mono { font-family: var(--font-mono); font-size: var(--fs-13); }
+.hw-footnote {
+  margin: var(--s-12) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  max-width: 46em;
+  line-height: var(--lh-body);
+}
+.hw-footnote a { color: var(--ink); }
+.hw-footnote.mono { font-family: var(--font-mono); font-size: var(--fs-12); }
+
+.hw-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  margin: var(--s-8) 0 0;
+}
+.hw-acts a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--fs-13);
+  text-underline-offset: 0.2em;
+}
+.hw-acts a:hover { text-decoration: underline; }
+.hw-acts a.is-pill {
+  font-weight: var(--fw-title);
+  padding: 0.45rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+.hw-acts a.is-pill:hover {
+  background: var(--ink-hover);
+  text-decoration: none;
+}
+
+/* 甲 · 三条：门槛占舞台，词和核验方法在下 */
+.hw1-gates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hw1-gate {
+  min-width: 0;
+  padding: var(--s-2) var(--s-6) var(--s-2) 0;
+}
+.hw1-gate + .hw1-gate {
+  padding-left: var(--s-6);
+  border-left: 1px solid var(--ink);
+}
+.hw1-idx {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray-2);
+}
+.hw1-gate h2 {
+  margin: 0 0 var(--s-3);
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+.hw1-gate h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  letter-spacing: -0.03em;
+  font-weight: var(--fw-body);
+}
+.hw1-gate p {
+  margin: 0;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  max-width: 16em;
+}
+.hw1-gate p.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.hw1-refuse {
+  margin: var(--s-8) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  max-width: 42em;
+  color: var(--ink-2);
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+}
+.hw1-refuse.mono { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray); }
+
+.hw1-lex { margin-top: var(--s-12); }
+.hw-label {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray-2);
+}
+.hw1-row {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: var(--s-4) var(--s-8);
+  align-items: baseline;
+  padding: var(--s-5) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.hw1-lex .hw1-row:last-child { border-bottom: 1px solid var(--rule); }
+.hw1-row:hover { background: var(--fill); }
+.hw1-row b {
+  font-weight: var(--fw-title);
+  font-size: var(--fs-16);
+  letter-spacing: -0.02em;
+}
+.hw1-row b.mono {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-12);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.hw1-row span {
+  color: var(--ink-2);
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+}
+.hw1-row span.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.hw1-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s-8) var(--s-12);
+  margin-top: var(--s-12);
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--ink);
+}
+.hw1-pair h2 {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-20);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+}
+.hw1-pair h2.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.hw1-pair p {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.hw1-pair p.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.hw1-pair a { color: var(--ink); }
+
+/* 乙 · 四词：词占舞台，标准与核验收在右栏 */
+.hw2-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  gap: var(--s-10) var(--s-12);
+  align-items: start;
+}
+.hw2-word {
+  padding: var(--s-6) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.hw2-words .hw2-word:last-of-type { border-bottom: 1px solid var(--ink); }
+.hw2-word:hover { background: var(--fill); }
+.hw2-word h2 {
+  margin: 0;
+  font-size: clamp(2.15rem, 4.2vw, 3.35rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.hw2-word h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  font-weight: var(--fw-body);
+  letter-spacing: -0.03em;
+}
+.hw2-word p {
+  margin: var(--s-3) 0 0;
+  max-width: 28em;
+  color: var(--ink-2);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+}
+.hw2-word p.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.hw2-side {
+  position: sticky;
+  top: calc(var(--topbar-h) + var(--s-6));
+  padding-left: var(--s-8);
+  border-left: 1px solid var(--rule);
+}
+.hw2-side section + section {
+  margin-top: var(--s-8);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.hw2-side h2 {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+}
+.hw2-side h2.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.hw2-side p {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.hw2-side p.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.hw2-side a { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .hw-display { grid-template-columns: 1fr; }
+  .hw-lead { justify-self: start; padding-bottom: 0; }
+  .hw1-gates { grid-template-columns: 1fr; }
+  .hw1-gate + .hw1-gate {
+    margin-top: var(--s-6);
+    padding-top: var(--s-6);
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .hw1-row { grid-template-columns: 1fr; gap: var(--s-2); }
+  .hw1-pair { grid-template-columns: 1fr; }
+  .hw2-split { grid-template-columns: 1fr; }
+  .hw2-side {
+    position: static;
+    padding-left: 0;
+    border-left: 0;
+    padding-top: var(--s-8);
+    border-top: 1px solid var(--ink);
+  }
+}
