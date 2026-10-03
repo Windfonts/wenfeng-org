@@ -3009,7 +3009,7 @@
         '<div class="gp-display">' +
           '<h1 class="for-design">报缺字</h1>' +
           '<h1 class="for-dev mono">/gap</h1>' +
-          '<p class="gp-lead for-design">一条短笺。缺字形、没收录、写错了，三件事里只写一件。不报覆盖率，也不收账号。</p>' +
+          '<p class="gp-lead for-design">一条短笺。<br class="gp-br" />缺字形、缺收录、写错了，三件事里报一件。</p>' +
           '<p class="gp-lead for-dev mono">kind=glyph|catalog|errata<br />POST 未接 · 无 coverage · 无账号 · sample glyph</p>' +
         '</div>' +
         '<section class="gp1-stage" aria-label="写一条短笺">' +
@@ -3087,15 +3087,15 @@
             '<p class="label for-design">边界</p>' +
             '<p class="label for-dev mono">bounds</p>' +
             '<div class="gp1-kv">' +
-              '<div><span class="k for-design">覆盖率</span><span class="k for-dev">coverage</span><span class="v for-design">不报。缺一个字就是缺一个字</span><span class="v for-dev mono">no rate</span></div>' +
-              '<div><span class="k for-design">账号</span><span class="k for-dev">auth</span><span class="v for-design">不收。联系方式可留可不留</span><span class="v for-dev mono">no account</span></div>' +
+              '<div><span class="k for-design">覆盖率</span><span class="k for-dev">coverage</span><span class="v for-design">不统计。缺一个字就是缺一个字</span><span class="v for-dev mono">no rate</span></div>' +
+              '<div><span class="k for-design">账号</span><span class="k for-dev">auth</span><span class="v for-design">不建账号。联系方式可留可不留</span><span class="v for-dev mono">no account</span></div>' +
               '<div><span class="k for-design">已收录</span><span class="k for-dev">/source</span><span class="v for-design">在目录里的，报缺字或勘误，不要再报缺收录</span><span class="v for-dev mono">in catalog → not this kind</span></div>' +
               '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v for-design">写错了去勘误。原文仍以许可页为准</span><span class="v for-dev mono">textState · 不改原文</span></div>' +
-              '<div><span class="k for-design">入口</span><span class="k for-dev">POST</span><span class="v for-design">页在。这一下还不会送出</span><span class="v for-dev mono">/gap · click → no request</span></div>' +
+              '<div><span class="k for-design">入口</span><span class="k for-dev">POST</span><span class="v for-design">表单还没接上，这一下不会送出</span><span class="v for-dev mono">/gap · click → no request</span></div>' +
             '</div>' +
           '</aside>' +
         '</section>' +
-        '<p class="gp-footnote for-design">标题是这件事，右栏只写边界。三种事由用胶囊换字段。样例里的字只是版式，不代表霞鹜文楷真的缺少。提交不会送出。对照别名 <a href="/gap-v1b.html">gap-v1b</a>。</p>' +
+        '<p class="gp-footnote for-design">样例里的字只是版式，不代表霞鹜文楷真的缺这个字。提交不会送出。对照别名 <a href="/gap-v1b.html">gap-v1b</a>。</p>' +
         '<p class="gp-footnote for-dev mono">gapPage · gp-v1b · /gap · no POST</p>' +
       '</div>' +
     '</section>';
