@@ -2818,3 +2818,16 @@ body.gp-v1b .gp1-kinds button {
   .gp1-dossier { padding: var(--s-5) 0 0; border-left: 0; border-top: 1px solid var(--ink); }
   .gp-field { grid-template-columns: 1fr; gap: var(--s-2); }
 }
+
+/* 首页：主搜索 / 可点数字条 / 最近核实 */
+.home-search { margin-bottom: var(--s-8); }
+.home-search .search { max-width: none; }
+.home-search .search .k { display: none; }
+.home-search .search input { height: 3.25rem; font-size: var(--fs-16, 1rem); }
+.stats.is-full { flex-wrap: wrap; }
+.stats.is-full .stat { flex: 1 1 0; color: inherit; text-decoration: none; transition: background .15s; }
+.stats.is-full .stat:hover b { text-decoration: underline; text-underline-offset: 0.12em; text-decoration-thickness: 2px; }
+.home-recent { margin-top: var(--s-12); }
+.home-recent-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--s-3); }
+.home-recent-head .label { margin: 0; }
+@media (max-width: 720px) { .stats.is-full .stat { flex: 1 1 45%; } .stats.is-full .stat + .stat:nth-child(3) { border-left: 0; padding-left: 0; } }

@@ -313,13 +313,15 @@ def page_home(data, fonts):
     cov = data.get("coverage") or {}
     n_src = sum(1 for f in fonts if status(f) == "source")
     n_full = sum(1 for f in fonts if lic(f).get("textState") == "full")
+    n_att = sum(1 for f in fonts if can_attest(f))
     body = '<p class="crumb"><span class="for-design">wenfeng.org</span><span class="for-dev mono">wenfeng.org /</span></p>'
     body += ('<div class="display"><h1>源文件</h1>'
-             '<p class="lead for-design">开源字体的源文件和许可原文。<br>能下载的直接下载，不允许再分发的核验后领取切片包。</p>'
+             '<p class="lead for-design">开源字体的源文件和许可原文。能下载的直接下载，不允许再分发的核验后领取切片包；标准开源协议的字体可出具授权证明。</p>'
              '<p class="lead for-dev mono">/license · /source · /gap<br>samples.json · offer · textState · GET /api/v1/fonts · /attest</p></div>')
     home_tasks = [
         ("查授权", '<span class="for-design">许可原文与三态结论</span><span class="for-dev mono">/license · textState</span>', "/license/", "shield", True),
         ("下源文件", '<span class="for-design">本站下载或官方下载，逐款标注</span><span class="for-dev mono">/source · offer</span>', "/source/", "download"),
+        ("出授权证明", '<span class="for-design">标准开源协议，%d 款可出证</span><span class="for-dev mono">/attest · can_attest</span>' % n_att, "/attest/", "certificate"),
         ("报缺字", '<span class="for-design">缺字形 / 缺收录 / 勘误</span><span class="for-dev mono">/gap · 提交未接</span>', "/gap/", "edit"),
     ]
     home_legend = [
@@ -329,26 +331,25 @@ def page_home(data, fonts):
         ("待核实", '<span class="for-design">许可原文还没有核对记录</span><span class="for-dev mono">offer=pending · textState≠full</span>'),
         ("未收录", '<span class="for-design">镜像还没收到这款，先去上游仓库或店面</span><span class="for-dev mono">offer=missing</span>'),
     ]
-    body += '<div class="split"><div>' + tasks(home_tasks) + '<div style="margin-top:var(--s-8)">%s</div></div>' % search()
-    body += aside("目录状态", kv_rows(home_legend, words=True)) + '</div>'
-    body += ('<div class="stats">'
-             '<div class="stat"><b>%d</b><span class="for-design">已收录</span><span class="for-dev mono">fonts[]</span></div>'
-             '<div class="stat"><b>%d</b><span class="for-design">本站下载</span><span class="for-dev mono">offer=source</span></div>'
-             '<div class="stat"><b>%d</b><span class="for-design">许可全文</span><span class="for-dev mono">textState=full</span></div>'
-             '<div class="stat"><b>%d</b><span class="for-design">镜像仓库</span><span class="for-dev mono">mirror</span></div>'
+    body += '<div class="home-search">%s</div>' % search()
+    body += '<div class="split"><div>' + tasks(home_tasks) + '</div>'
+    body += aside("目录状态", kv_rows(home_legend, words=True), '<a href="/how/">我们怎么核</a>') + '</div>'
+    gen = e((data.get("generated") or "")[:10])
+    stat = lambda n, d, v, href: ('<a class="stat" href="%s"><b>%d</b><span class="for-design">%s</span><span class="for-dev mono">%s</span></a>'
+                                  % (href, n, d, v))
+    body += ('<div class="stats is-full">%s%s%s%s'
              '<p class="stats-cap for-design">目录数据 · %s 更新</p>'
              '<p class="stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · %s · not live</p></div>'
-             % (len(fonts), n_src, n_full, cov.get("source_mirrors", 0),
-                e((data.get("generated") or "")[:10]), e((data.get("generated") or "")[:10])))
-    body += ('<section class="sec" style="margin-top:var(--s-12)"><div class="sec-grid"><div>'
-             '<p class="label for-design">关于本站</p><p class="label for-dev mono">route /</p>'
-             '<h2 class="for-design">查授权、下源文件、<br>报缺字。</h2>'
-             '<h2 class="for-dev mono">/license · /source<br>/gap · /attest</h2></div>'
-             '<div class="prose">'
-             '<p class="for-design">文风收录开源字体的源文件和许可原文，授权结论逐款核对原文。缺字形、缺收录或发现勘误，到报缺字页写一条短笺。提交还没接上，这一下不会送出。</p>'
-             '<p class="for-dev mono">data-view · .for-design / .for-dev · chrome() · GET /api/v1/fonts · samples.json</p>'
-             '<p class="acts" style="margin-top:var(--s-6)">%s%s%s</p></div></div></section>'
-             % (ink("查授权", "/license/", "shield"), link("打开目录", "/source/", "btn", "download"), link("怎么核", "/how/", "btn")))
+             % (stat(len(fonts), "已收录", "fonts[]", "/source/"),
+                stat(n_src, "本站下载", "offer=source", "/source/?st=source"),
+                stat(n_full, "许可全文", "textState=full", "/license/"),
+                stat(n_att, "可出证", "can_attest", "/attest/"), gen, gen))
+    recent = sorted((f for f in fonts if lic(f).get("verifiedAt")),
+                    key=lambda f: (lic(f).get("verifiedAt"), f["norm"]), reverse=True)[:8]
+    if recent:
+        body += ('<section class="home-recent"><div class="home-recent-head"><p class="label">'
+                 '<span class="for-design">最近核实</span><span class="for-dev mono">sort verifiedAt desc · 8</span></p>%s</div>%s</section>'
+                 % (link("查看全部", "/source/", "btn-text", "arrow-right"), index_rows(recent)))
     return layout("home", "", body, "home")
 
 
