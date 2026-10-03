@@ -75,7 +75,7 @@
   if (list) {
     var rows = $$('li', list), hideOn = $('[data-hide-on-search]'), input = $('[data-search]'), count = $('[data-count]'), empty = $('[data-empty]'), pager = $('[data-pager]');
     var state = { q: qs.get('q') || '', st: qs.get('st') || 'all' };
-    var PAGE = 50, page = parseInt(qs.get('page') || '1', 10) || 1;
+    var PAGE = 20, page = parseInt(qs.get('page') || '1', 10) || 1;
     function apply() {
       var q = state.q.trim().toLowerCase(), hits = [];
       rows.forEach(function (r) {
