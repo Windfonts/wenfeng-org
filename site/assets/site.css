@@ -2869,3 +2869,48 @@ body.gp-v1b .gp1-kinds button {
   .home-lower .index.is-3 li > a { grid-template-columns: minmax(0, 1fr) 6rem; }
   .home-lower .index .info { display: none; }
 }
+
+/* 首页字样带 — 先看字，再进目录；真字体样张（site.js lazyPreviews） */
+.home-strip { margin: var(--s-6) 0 0; }
+.home-strip .label { margin: 0 0 var(--s-2); }
+.home-strip-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-5);
+  padding: 0.6rem 0;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+.home-strip-row + .home-strip-row { border-top: 1px solid var(--rule); }
+.home-strip-row .snm {
+  flex: 0 0 10.5em;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title, 600);
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.home-strip-row .spr {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.35;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.home-strip-row .sst {
+  flex: 0 0 auto;
+  font-size: var(--fs-12, 0.75rem);
+  color: var(--gray);
+  white-space: nowrap;
+}
+.home-strip-row:hover .snm { color: var(--ink-hover, var(--ink)); text-decoration: underline; text-underline-offset: 0.2em; }
+@media (max-width: 720px) {
+  .home-strip-row { flex-wrap: wrap; gap: var(--s-2) var(--s-3); }
+  .home-strip-row .snm { flex: 1 0 100%; }
+  .home-strip-row .spr { flex: 1 1 100%; }
+}

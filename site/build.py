@@ -336,6 +336,24 @@ def page_home(data, fonts):
         ("03", "出授权证明", "标准开源协议，签发即登记", n_att, "款可出证", "/attest/", "certificate", "/attest · can_attest"),
         ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接"),
     ]
+    # 字样带：先看字，再进目录（真字体样张，site.js 懒加载）
+    SHOWCASE = ["Xwwk", "Dyh", "Arkp", "Syhtcjk", "Mkkzh", "Xxzt", "Zkxwt", "Qhddl"]
+    by_norm = {f["norm"]: f for f in fonts}
+    strip_rows = []
+    for n in SHOWCASE:
+        f = by_norm.get(n)
+        if not f or not f.get("family"):
+            continue
+        strip_rows.append(
+            '<a class="home-strip-row t-%s" href="/source/%s/" data-face-norm="%s" data-face-family="%s">'
+            '<span class="snm">%s</span><span class="spr">%s</span>'
+            '<span class="sst">%s<span class="mono"> →</span></span></a>'
+            % (e(f["norm"]), e(f["norm"]), e(f["norm"]), e(f["family"]), e(wf(f)),
+               e("风急天高猿啸哀 渚清沙白鸟飞回"), e(STATUS[status(f)][0])))
+    body += ('<section class="home-strip" aria-label="精选字样">'
+             '<p class="label">%s</p>%s</section>'
+             % (dd("先看字，再进目录", "showcase · lazy faces"), "".join(strip_rows)))
+
     body += '<nav class="home-cards" aria-label="办事">%s</nav>' % "".join(
         '<a class="home-card" href="%s"><span class="hc-top"><span class="idx">%s</span><span class="t-ico">%s</span></span>'
         '<span class="t-t">%s</span><span class="t-d">%s</span>'
@@ -798,7 +816,7 @@ def page_font(f):
         '<p class="fd1-more-label for-design">还能办的事</p>'
         '<p class="fd1-more-label for-dev mono">secondary</p>'
         '<div class="fd1-rows">%s</div>'
-        '<p class="fd-footnote for-design">动作按这一款的收录状态生成。对照别名 <a href="/font-v1b.html">font-v1b</a>。</p>'
+        '<p class="fd-footnote for-design">动作按这一款的收录状态生成。。</p>'
         '<p class="fd-footnote for-dev mono">renderFont · fd-v1b · /source/%s</p>'
         % (
             e(wf(f)), e(f["norm"]),
@@ -1077,7 +1095,7 @@ def page_licenses(fonts):
             + '</div>' if pack["foils"] else ''
         )
     )
-    foot_d = '还没检索时，这里用三款字演示三种结论；检索后换成命中。结论按收录记录生成，不是法律意见。对照别名 <a href="/license-v5b.html">license-v5b</a>。'
+    foot_d = '还没检索时，这里用三款字演示三种结论；检索后换成命中。结论按收录记录生成，不是法律意见。。'
     foot_v = 'licensesPage · lq-v5b · /license · demo'
 
     body = (
@@ -1774,7 +1792,7 @@ def page_use():
         '<a href="/slice"><span class="for-design">切片工具</span><span class="for-dev">/slice</span></a>'
         '<a href="/license"><span class="for-design">查授权</span><span class="for-dev">/license</span></a>'
         '</p>'
-        '<p class="us-footnote for-design">怎么核在 <a href="/how">/how</a>。对照别名 <a href="/use-v4b.html">use-v4b</a>。</p>'
+        '<p class="us-footnote for-design">怎么核在 <a href="/how">/how</a>。。</p>'
         '<p class="us-footnote for-dev mono">usePage · us-v4b · /use</p>'
         '</div>'
         '</section>'
@@ -1877,7 +1895,7 @@ def page_how():
         '<a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">/attest</span></a>'
         '<a href="/legal"><span class="for-design">法务说明</span><span class="for-dev">/legal</span></a>'
         '</p>'
-        '<p class="hw-footnote for-design">对照别名 <a href="/how-v1b.html">how-v1b</a>。</p>'
+        '<p class="hw-footnote for-design">状态词以这页为准，目录、条目、许可页同用这五个词。</p>'
         '<p class="hw-footnote for-dev mono">howPage · hw-v1b · /how</p>'
         '</div>'
         '</section>'
@@ -2162,7 +2180,7 @@ def page_about():
         '<p class="for-design">wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how">我们怎么核</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>'
         '<p class="for-dev mono">oss · SPDX text · chain + hash + original?<br />attest ≠ new rights · custom terms → text only<br />no file sale · no license sale · no grant<br />SPDX only · custom / unverified / unlisted → no attest<br />/legal#legal-scope · /how · wordpress → static · split deploy</p>'
         '</section>'
-        '<p class="ab-footnote for-design">对照别名 <a href="/about-v6b.html">about-v6b</a>。</p>'
+        '<p class="ab-footnote for-design">wenfeng.org 之外的主机不在这页说明范围。</p>'
         '<p class="ab-footnote for-dev mono">aboutPage · ab-v6b · /about</p>'
         '</div>'
         '</section>'
@@ -2267,7 +2285,7 @@ def page_gap():
         '</div>'
         '</aside>'
         '</section>'
-        '<p class="gp-footnote for-design">样例里的字只是版式，不代表霞鹜文楷真的缺这个字。提交不会送出。对照别名 <a href="/gap-v1b.html">gap-v1b</a>。</p>'
+        '<p class="gp-footnote for-design">样例里的字只是版式，不代表霞鹜文楷真的缺这个字。提交不会送出。。</p>'
         '<p class="gp-footnote for-dev mono">gapPage · gp-v1b · /gap · no POST</p>'
         '</div>'
         '</section>'
