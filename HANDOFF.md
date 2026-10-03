@@ -4,6 +4,13 @@
 
 站名活页顶栏是「文风 · 开源」。本仓是原型真源。只改本仓，不动 `fonts-front`。不部署 `wenfeng.org`，除非人明确要求（见 `README.md`、`DEPLOY.md`）。
 
+## 当前主线（10-03 夜，看完再改）
+
+- 真源：`main` `3815fd4`。预览 **`python3 site/serve.py --port 16031`**（v2 静态多页）。`:16030` 的 SPA 只对照，不要当活页改。
+- 首页：16030 丁版结构已移植进 v2，再加了出证侧栏 / hero 玄宗体 / 统计链接。Gemini 另有方案 `docs/plans/2026-10-03-home-redesign-plan.md`，**§7 四项未拍板，未派工**。
+- 集群记忆：`wenfeng-org-prototype-state` 夜⑰；边缘 `/api/css` 以夜⑯ 节点分裂为准，不要再用 10-01「六台全 200」。
+- 动手前：等人把 Gemini 会话交过来对完。边缘修 502、换 hero 字、加 `fallback=` 都要人点。
+
 ## 已落活页
 
 `paint()` 给这些路由单独的 body class。静态 HTML 是对照别名，活页由 `index.html` + `js/site.js` 渲染。
