@@ -4,12 +4,11 @@
 
 站名活页顶栏是「文风 · 开源」。本仓是原型真源。只改本仓，不动 `fonts-front`。不部署 `wenfeng.org`，除非人明确要求（见 `README.md`、`DEPLOY.md`）。
 
-## 当前主线（10-03 夜，看完再改）
+## 当前主线（10-04）
 
-- 真源：`main` `3815fd4`。预览 **`python3 site/serve.py --port 16031`**（v2 静态多页）。`:16030` 的 SPA 只对照，不要当活页改。
-- 首页：16030 丁版结构已移植进 v2，再加了出证侧栏 / hero 玄宗体 / 统计链接。Gemini 另有方案 `docs/plans/2026-10-03-home-redesign-plan.md`，**§7 四项未拍板，未派工**。
-- 集群记忆：`wenfeng-org-prototype-state` 夜⑰；边缘 `/api/css` 以夜⑯ 节点分裂为准，不要再用 10-01「六台全 200」。
-- 动手前：等人把 Gemini 会话交过来对完。边缘修 502、换 hero 字、加 `fallback=` 都要人点。
+- 真源仍是 v2：预览 **`python3 site/build.py && python3 site/serve.py --port 16031`**。`:16030` 只对照。
+- 首页：**定稿 D-09**，口径 **D-10**。顶栏 D-05：设计 / 开发 / 店面 / 放大 / 深浅。页脚甲。不部署线上，除非人点。
+- 边缘 `/api/css` 以夜⑯ 节点分裂为准。不部署 `wenfeng.org`，除非人点。
 
 ## 已落活页
 
@@ -17,7 +16,7 @@
 
 | 路由 | 方向 | 活页函数 | body class | 别名 | 样式 |
 |---|---|---|---|---|---|
-| `/` | 丁 | `home()` | `hv hv-v4` | `home-v4.html` | `css/home-versions.css` |
+| `/` | 丙′ 定稿 | `page_home()` | `lab-home-page` | `/lab/home-c/` | `lab-home.css` |
 | `/license` | 戊′ | `licensesPage()` | `lq lq-v5b` | `license-v5b.html` | `css/license-versions.css` |
 | `/source` | 乙′ | `listPage()` | `sd sd-v2b` | `source-v2b.html` | `css/source-versions.css` |
 | `/source/{norm}` | 甲′ | `renderFont()` | `fd fd-v1b` | `font-v1b.html`（样例霞鹜文楷） | `css/font-versions.css` |
@@ -74,7 +73,8 @@
 
 ## 必须守的规则
 
-- wenfeng.org 是源文件、许可、缺字，不是 CDN，不是店面。店面是 `app.windfonts.com`（fonts-front）。页脚写明：源文件、许可原文、缺字反馈；不做样张墙，不当 CDN。
+- wenfeng.org 是源文件、许可、缺字，不是 CDN，不是店面。店面是 `app.windfonts.com`（fonts-front）。页脚写明：源文件、许可原文、缺字反馈；不做样张墙，不当 CDN。造字编辑器不挂本站，但缺字要能导到造字平台；首页衬字「造字」合法（`DECISIONS.md` **D-10**）。
+- 国内口径：侧门常显「授权查询 / 获取证书 / 缺字勘误」，悬停衬字「正版 / 免费 / 造字」。后续收商业字体查询库、证书分免费与付费合规、缺字导造字平台。不要用「更正确」的词替换这三字。
 - 视觉是 fonts-front 的 B，落到本仓是 B soft + home-v4 丁工艺：白底、浅灰、胶囊；无投影、无红、无暖纸；字阶对齐丁。设计视图讲人话，开发视图只露路径 / ID / API。顶栏设计/开发开关、`localStorage wf-view`、`?view=` 已在 `css/shop.css` 和 `js/site.js`。
 - 微观界面先出至少两份完整整页，选定后再精修成 ′，然后才写入 `js/site.js`。不要用片段卡直接接线。已落活页都是这条路径。
 - 归档是 `staged` 时不要做成下载。`fontVerb()`：`files[archive].staged` 且有上游时，主动作是「去上游」，不是下载按钮。`primaryFile()` 跳过 `staged`。

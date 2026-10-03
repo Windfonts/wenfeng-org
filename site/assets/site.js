@@ -31,7 +31,8 @@
     link.href = FACE_CSS_TPL.replace('{F}', encodeURIComponent(family));
     link.onload = function () {
       var st = document.createElement('style');
-      st.textContent = '.t-' + norm + '{font-family:"WF-' + norm + '", var(--font-ui);}';
+      var fam = 'WF-' + (norm.charAt(0).toUpperCase() + norm.slice(1));
+      st.textContent = '.t-' + norm + '{font-family:"' + fam + '","WF-' + norm + '", var(--font-ui);}';
       document.head.appendChild(st);
     };
     document.head.appendChild(link);
@@ -55,7 +56,7 @@
     Array.prototype.forEach.call(els, function (el) { io.observe(el); });
   }
 
-  /* 深浅 / 设计·开发（同 fonts-front：localStorage wf-theme / wf-view） */
+  /* 深浅 / 设计·开发 / 放大（同店面：wf-theme / wf-view / wf-scale） */
   $$('[data-theme-toggle]').forEach(function (b) { b.addEventListener('click', function () {
     var d = document.documentElement.dataset.theme === 'dark';
     if (d) delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = 'dark';
@@ -69,6 +70,28 @@
   if (qs.get('view')) setView(qs.get('view') === 'dev' ? 'dev' : 'design');
   else setView(document.documentElement.dataset.view === 'dev' ? 'dev' : 'design');
   $$('[data-view-switch] [data-mode]').forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.mode); }); });
+  function largeType() {
+    try { return localStorage.getItem('wf-scale') === 'lg'; } catch (e) { return false; }
+  }
+  function applyScale(on) {
+    if (on) document.documentElement.dataset.scale = 'lg';
+    else delete document.documentElement.dataset.scale;
+    $$('[data-scale-toggle]').forEach(function (b) {
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.setAttribute('aria-label', on ? '还原字号' : '放大');
+    });
+  }
+  applyScale(largeType());
+  $$('[data-scale-toggle]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var next = !largeType();
+      try {
+        if (next) localStorage.setItem('wf-scale', 'lg');
+        else localStorage.removeItem('wf-scale');
+      } catch (e) {}
+      applyScale(next);
+    });
+  });
 
   /* 列表：搜索 + 状态筛选 */
   var list = $('[data-list]');
@@ -477,5 +500,54 @@
     }
   });
 
+  /* 首页 lab 甲：一款字轮换 */
+  var faceRoot = $('[data-home-face]');
+  if (faceRoot) {
+    var slides = $$('[data-face-slide]', faceRoot);
+    var i = 0;
+    function showFace(n) {
+      if (!slides.length) return;
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, j) { s.hidden = j !== i; });
+      var on = slides[i];
+      applyFontFace(on.getAttribute('data-face-norm'), on.getAttribute('data-face-family'));
+    }
+    var next = $('[data-face-next]', faceRoot);
+    if (next) next.addEventListener('click', function () { showFace(i + 1); });
+    showFace(0);
+  }
+
   lazyPreviews();
+
+  /* 首页：玄宗体包（主门活样张 + 侧门标题） */
+  (function loadXxzt() {
+    if (!document.querySelector('.lab-doors.is-prime')) return;
+    var fullCss = 'https://cn.windfonts.com/fonts-packages/Xxzt/Regular/full/result.css';
+    var started = false;
+    function loadPack() {
+      if (started) return;
+      started = true;
+      fetch(fullCss).then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.text();
+      }).then(function (css) {
+        var base = fullCss.replace(/result\.css$/, '');
+        var st = document.createElement('style');
+        st.textContent = css
+          .replace(/url\("\.\//g, 'url("' + base)
+          .replace(/url\('\.\//g, "url('" + base);
+        document.head.appendChild(st);
+      }).catch(function () {
+        applyFontFace('xxzt', 'wenfeng-xxzt');
+      });
+    }
+    loadPack();
+    var el = document.querySelector('.lab-find-live');
+    if (!el) return;
+    el.addEventListener('paste', function (ev) {
+      ev.preventDefault();
+      var t = (ev.clipboardData || window.clipboardData).getData('text/plain') || '';
+      document.execCommand('insertText', false, t.replace(/\r/g, ''));
+    });
+  })();
 })();

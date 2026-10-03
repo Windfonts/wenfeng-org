@@ -37,14 +37,22 @@ STATUS = OrderedDict([
     ("jump", ("官方下载", "本站不留文件，去作者或厂商的发布处")),
     ("ready", ("暂无下载", "许可已核实，源文件包还没上架")),
     ("pending", ("待核实", "许可原文还没有核对记录")),
-    ("missing", ("未收录", "镜像还没收到这款，先去上游仓库或店面")),
+    ("missing", ("未收录", "目录里还没有这款，可以报缺收录")),
 ])
 
-NAV = [("/", "源文件", ("home",)), ("/license/", "授权", ("license",)), ("/source/", "目录", ("source", "foundry")),
-       ("/attest/", "核验", ("attest", "v", "attests")), ("/about/", "关于", ("about", "legal", "use", "how", "gap"))]
-FOOT = [("办事", [("/license/", "查授权"), ("/source/", "下源文件"), ("/gap/", "报缺字"), ("/slice/", "切片")]),
-        ("核验", [("/attest/", "授权证明"), ("/how/", "怎么核"), ("/v/", "查证"), ("/api/v1/certs", "证明 API")]),
-        ("关于", [("/about/", "关于"), ("/legal/", "法务"), ("/use/", "用法"), ("/api/v1/fonts", "目录 API")])]
+NAV = [("/source/", "目录", ("source", "foundry")), ("/license/", "授权", ("license",)),
+       ("/attest/", "核验", ("attest", "v", "attests")), ("/use/", "用法", ("use", "how")),
+       ("/about/", "关于", ("about", "legal", "gap"))]
+# D-05：lab 与活页现稿同这一套，给人对比。
+NAV_LAB = NAV
+FOOT_REST = [
+    ("/slice/", "字体切片", "核验后领取", ""),
+    ("/source/", "存档目录", "源文件索引", ""),
+    ("/v/", "如何查询", "证书编号", ""),
+    ("/legal/", "法律声明", "操作说明", ""),
+    ("/api/v1/certs", "证明 API", "GET certs", "for-dev"),
+    ("/api/v1/fonts", "目录 API", "GET fonts", "for-dev"),
+]
 
 e = lambda s: html.escape("" if s is None else str(s), quote=True)
 SPRITE = re.sub(r"<\?xml[^>]*>\s*", "", (ROOT / "assets/icons.svg").read_text("utf-8"))
@@ -296,124 +304,331 @@ def filter_chips(fonts):
 
 # ---------- 外壳（= 定稿 chrome / footer） ----------
 
-def layout(section, title, body, dev="", extra_head="", body_class=""):
+def _foot_marks():
+    gh = (
+        '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener" class="is-gh"'
+        ' title="GitHub（即将离开文风）" aria-label="GitHub">%s%s</a></li>'
+        % (icon("github"), icon("external"))
+    )
+    fc = (
+        '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener" class="is-fc"'
+        ' title="FeiCode（即将离开文风）">'
+        '<img src="/assets/marks/feicode.svg" alt="FeiCode" width="32" height="28">%s</a></li>'
+        % icon("external")
+    )
+    return (
+        '<p class="foot-src-k">%s</p><ul class="foot-marks">%s%s</ul>'
+        % (_fv("源码与镜像", "origin · mirror"), gh, fc)
+    )
+
+
+def _foot_wm():
+    return ('<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span>'
+            '<span>文风</span><span class="wm-sub">· 开源</span></a>')
+
+
+def _foot_dev(dev):
+    return '<span class="for-dev mono"> · %s</span>' % e(dev) if dev else ""
+
+
+def _foot_bottom(dev=""):
+    icp = ('<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">'
+           '粤ICP备2023091240号-3</a>')
+    copy = ('<p>版权所有 · 文风 <span class="tm" aria-hidden="true">™</span>'
+            ' · © 2026 文派（广州）科技有限公司 · %s%s</p>' % (icp, _foot_dev(dev)))
+    links = ('<nav class="foot-bottom-links" aria-label="页脚条款">'
+             '<a href="/about/">关于</a><a href="/use/">文档</a></nav>')
+    return '<div class="site-foot-bottom">%s%s</div>' % (copy, links)
+
+
+def foot_lab(kind, dev=""):
+    """甲余项行（活页）/ 乙收束 / 丙办事横条。上下块都进 .container，底沿不拉满屏。"""
+    bottom = _foot_bottom(dev)
+    if kind == "a":
+        rest = "".join(
+            '<a href="%s"%s><span class="t">%s</span><span class="d">%s</span></a>' % (
+                h, (' class="%s"' % c if c else ""), e(t),
+                _fv(g, h.rstrip("/")) if not c else e(g),
+            )
+            for h, t, g, c in FOOT_REST
+        )
+        inner = (
+            '<div class="site-foot-inner">'
+            '<div class="site-foot-brand">%s'
+            '<p>开源字体直接下载，其余核验或去出处。不做样张墙。</p>%s</div>'
+            '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), _foot_marks(), rest)
+        )
+        cls = "site-foot is-foot-a"
+    elif kind == "b":
+        inner = (
+            '<div class="site-foot-inner">'
+            '<div class="site-foot-brand">%s'
+            '<p>开源字体直接下载，其余核验或去出处。不做样张墙。</p></div></div>' % _foot_wm()
+        )
+        cls = "site-foot is-foot-b"
+    else:
+        jobs = "".join(
+            '<a href="%s"><span class="idx">%s</span>%s</a>' % (h, i, t)
+            for i, h, t in (
+                ("01", "/license/", "授权查询"),
+                ("02", "/source/", "字体下载"),
+                ("03", "/attest/", "获取证书"),
+                ("04", "/gap/", "缺字勘误"),
+                ("05", "/slice/", "切片"),
+            )
+        )
+        inner = '<nav class="foot-jobs" aria-label="办事">%s</nav>' % jobs
+        cls = "site-foot is-foot-c"
+    return '<footer class="%s"><div class="container">%s%s</div></footer>' % (cls, inner, bottom)
+
+
+def foot_site(dev=""):
+    """活页页脚：甲。"""
+    return foot_lab("a", dev)
+
+
+def layout(section, title, body, dev="", extra_head="", body_class="", nav_items=None, wordmark_href="/", footer=None):
+    items = NAV if nav_items is None else nav_items
     nav = "".join('<a href="%s"%s>%s</a>' % (h, ' class="is-active"' if section in keys else "", t)
-                  for h, t, keys in NAV)
-    foot = "".join('<div class="site-foot-col"><h2>%s</h2>%s</div>' % (g, "".join(
-        '<a href="%s">%s</a>' % l for l in links)) for g, links in FOOT)
-    wm = '<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>'
+                  for h, t, keys in items)
+    wm = ('<a class="wordmark" href="%s"><span class="mark" aria-hidden="true"></span>'
+          '<span>文风</span><span class="wm-sub">· 开源</span></a>' % e(wordmark_href))
     b_cls = (' class="%s"' % e(body_class)) if body_class else ""
+    if footer is None:
+        footer = foot_site(dev)
     return """<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>%s</title>
-<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev'}catch(e){}</script>
+<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
 <link rel="stylesheet" href="/assets/tokens.css"><link rel="stylesheet" href="/assets/site.css">%s
 </head><body data-page="%s"%s>
 %s
 <header class="topbar"><div class="container topbar-inner">%s
 <nav class="topnav" aria-label="主导航">%s</nav>
 <div class="topbar-end">
+<div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+<button type="button" data-mode="design" class="is-on">设计</button>
+<button type="button" data-mode="dev">开发</button></div>
 <a href="https://app.windfonts.com/" target="_blank" rel="noopener" title="店面（样张与选字）">店面</a>
+<button type="button" class="icon-btn" data-scale-toggle aria-pressed="false" aria-label="放大"><svg class="icon" aria-hidden="true"><use href="#i-font-size"></use></svg></button>
 <button type="button" class="icon-btn" data-theme-toggle aria-label="切换深浅"><svg class="icon ico-moon" aria-hidden="true"><use href="#i-moon"></use></svg><svg class="icon ico-sun" aria-hidden="true"><use href="#i-sun"></use></svg></button></div>
 </div></header>
 <main class="container page">%s</main>
-<footer class="site-foot"><div class="container site-foot-inner"><div class="site-foot-brand">%s
-<p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p></div>%s</div>
-<div class="site-foot-bottom"><p>文派（广州）科技有限公司 · 文风开源%s</p><a href="https://app.windfonts.com/" target="_blank" rel="noopener">店面</a></div></footer>
+%s
 <script src="/assets/site.js" defer></script>
-</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, body, wm, foot,
-                     '<span class="for-dev mono"> · %s</span>' % e(dev) if dev else "")
+</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, body, footer)
 
 
 
 # ---------- 页面 ----------
 
-def page_home(data, fonts):
-    """首页 = 16030 丁版移植：大字+导语 → 三件事竖列（01 墨色）+ 检索 | 目录状态图例 → 统计条 → 关于本站。"""
+def _fv(d, v, cls=""):
+    p = (cls + " ") if cls else ""
+    return '<span class="%sfor-design">%s</span><span class="%sfor-dev mono">%s</span>' % (p, d, p, v)
+
+
+def home_prime(fonts, q_id):
+    """丙′ 主门 + 三侧门。活页与 /lab/home-c/ 共用。"""
+    n = len(fonts)
     n_src = sum(1 for f in fonts if status(f) == "source")
     n_full = sum(1 for f in fonts if lic(f).get("textState") == "full")
     n_att = sum(1 for f in fonts if can_attest(f))
+    find = (
+        '<div class="lab-door is-find">'
+        '<div class="lab-find-copy">'
+        '<p class="lab-find-kicker">%s</p>'
+        '<h1 class="lab-find-title">'
+        '<span class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-find-em">开源</span>商用字体</span>'
+        '<span class="for-dev mono">/source</span></h1>'
+        '<p class="d">%s</p></div>'
+        '<div class="lab-find-act">'
+        '<form class="search is-embed" action="/source/" method="get" role="search">'
+        '<label class="sr-only" for="%s">搜索字体</label>'
+        '<input id="%s" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+        '<button class="btn btn-ink" type="submit">%s搜索</button></form>'
+        '<p class="lab-find-more">%s</p></div></div>'
+        % (_fv("wenfeng.org", "wenfeng.org"),
+           _fv("能下载的直接下载。<br>不能再分发的去出处或领切片包。", "offer · /source"),
+           e(q_id), e(q_id), icon("search"),
+           _fv('<a href="/source/?st=source">本站下载 %d 款</a> · <a href="/source/">全部 %d 款 →</a>' % (n_src, n),
+               "offer=source · fonts[]=%d" % n))
+    )
+    return (
+        '<div class="lab-doors is-prime">'
+        '%s'
+        '<a class="lab-door is-side is-q1" href="/license/"><span class="lab-side-bg" aria-hidden="true">正版</span><span class="idx">01</span>'
+        '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a>'
+        '<a class="lab-door is-side is-q2" href="/attest/"><span class="lab-side-bg" aria-hidden="true">免费</span><span class="idx">02</span>'
+        '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a>'
+        '<a class="lab-door is-side is-q3" href="/gap/"><span class="lab-side-bg" aria-hidden="true">造字</span><span class="idx">03</span>'
+        '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a></div>'
+        % (find,
+           _fv("授权查询", "/license"), _fv("许可原文与结论。", "/license"),
+           _fv("%d 份 →" % n_full, "textState=full"),
+           _fv("获取证书", "/attest"), _fv("标准开源协议可出证。", "can_attest"),
+           _fv("%d 款 →" % n_att, "can_attest"),
+           _fv("缺字勘误", "/gap"), _fv("缺字形、缺收录、写错了。", "POST"),
+           _fv("入口未接 →", "POST 未接"))
+    )
+
+
+def page_home(data, fonts):
+    """首页活页：丙′（开源商用字体主门 + 三侧门）。"""
+    body = '<article class="lab-home">%s</article>' % home_prime(fonts, "q")
+    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    return layout("home", "", body, "/", extra_head=extra, body_class="lab-home-page")
+
+
+def _recent(fonts, st=None, n=8):
+    pool = [f for f in fonts if st is None or status(f) == st]
+    pool.sort(key=lambda f: f.get("verifiedAt") or "", reverse=True)
+    return pool[:n]
+
+
+def _frow(f):
+    st = status(f)
+    if st == "source":
+        verb, inked, href = "下载", True, "/source/%s/" % f["norm"]
+    elif st == "jump":
+        verb, inked, href = "去出处", False, "/source/%s/" % f["norm"]
+    elif st == "missing":
+        verb, inked, href = "报缺", False, "/gap/?norm=%s" % f["norm"]
+    else:
+        verb, inked, href = "看条目", False, "/source/%s/" % f["norm"]
+    face = f.get("family") or ""
+    cls = "frow t-%s" % e(f["norm"]) if face else "frow"
+    attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
+    info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空", f.get("foundry") or "未标注"]))
+    info_v = "%s · offer=%s · textState=%s" % (e(f["norm"]), e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
+    return ('<a class="%s" href="%s"%s>'
+            '<span class="fnm">%s</span>'
+            '<span class="finfo for-design">%s</span><span class="finfo for-dev mono">%s</span>'
+            '<span class="fst">%s</span>'
+            '<span class="fgo%s">%s →</span></a>'
+            % (cls, e(href), attrs, e(wf(f)), e(info_d), info_v, e(STATUS[st][0]),
+               " is-ink" if inked else "", e(verb)))
+
+
+def _shelf_pane(key, rows):
+    inner = "".join(_frow(f) for f in rows) or '<p class="empty">这一段暂时没有字体。</p>'
+    hidden = " hidden" if key != "source" else ""
+    return '<div class="fshelf"%s data-shelf-pane="%s">%s</div>' % (hidden, e(key), inner)
+
+
+def _face_fonts(fonts):
+    prefer = ["xwwk", "syhtsc", "systsc", "sourcehansanscnregular", "xwwktc", "xwwkgb"]
+    by_norm = {f["norm"]: f for f in fonts}
+    out = []
+    seen = set()
+    for n in prefer:
+        f = by_norm.get(n)
+        if f and f.get("family") and status(f) == "source":
+            out.append(f)
+            seen.add(n)
+    for f in _recent(fonts, "source", n=16):
+        if f["norm"] in seen or not f.get("family"):
+            continue
+        out.append(f)
+        seen.add(f["norm"])
+        if len(out) >= 6:
+            break
+    return out
+
+
+def page_lab_home(data, fonts, variant):
+    """首页对照稿。甲一字 / 乙索引 / 丙′。丙′ 已接活页 /。"""
+    n = len(fonts)
     gen = e((data.get("generated") or "")[:10])
-    try:
-        n_mirror = json.loads((ROOT / "data" / "export-report.json").read_text())["coverage"]["source_mirrors"]
-    except Exception:
-        n_mirror = 132
-    # hero 大字用目录字体渲染（玄宗体）；类名 t-xxzt 由懒加载 css 注入字体族，加载失败自然回退 var(--font-ui)
-    hero_face = next((f for f in fonts if f.get("norm") == "xxzt"), None)
-    hero_attrs = (' class="t-xxzt" data-face-norm="xxzt" data-face-family="%s"' % e(hero_face["family"])) if hero_face else ""
+    path = "/lab/home-%s/" % variant
+    names = (("a", "甲"), ("b", "乙"), ("c", "丙"))
+    self_name = dict(names)[variant]
 
     def fv(d, v, cls=""):
         p = (cls + " ") if cls else ""
         return '<span class="%sfor-design">%s</span><span class="%sfor-dev mono">%s</span>' % (p, d, p, v)
 
-    # 一、丁版三件事竖列：01 查授权整行铺墨；右栏目录状态图例，整行是进目录的筛选链接
-    tasks = [
-        ("01", "查授权", "许可原文与三态结论", "/license · textState", "/license/", "shield", True),
-        ("02", "下源文件", "本站下载或官方下载，逐款标注", "/source · offer", "/source/", "download", False),
-        ("03", "报缺字", "缺字形 / 缺收录 / 勘误", "/gap · 提交未接", "/gap/", "edit", False),
-    ]
-    tasks_html = "".join(
-        '<a class="hv4-task%s" href="%s" role="listitem"><span class="idx" aria-hidden="true">%s</span>'
-        '<span class="t-ico" aria-hidden="true">%s</span><span class="body"><span class="t-t">%s</span>%s</span>'
-        '<span class="arrow" aria-hidden="true">%s</span></a>'
-        % (" is-ink" if ink else "", href, idx, icon(ico), e(t), fv(e(d), v, "t-d"), icon("arrow-right"))
-        for idx, t, d, v, href, ico, ink in tasks)
+    others = "".join(
+        ' · <a href="/lab/home-%s/">看%s</a>' % (k, lab)
+        for k, lab in names if k != variant
+    )
+    flag = (
+        '<p class="lab-flag">%s%s · '
+        '<span class="seg" data-view-switch>'
+        '<button type="button" data-mode="design">设计</button>'
+        '<button type="button" data-mode="dev">开发</button></span> · 不是活页</p>'
+        % (fv("稿%s%s" % (self_name, "′" if variant == "c" else ""), path), others)
+    )
+    if variant == "a":
+        slides = []
+        for i, f in enumerate(_face_fonts(fonts)):
+            st = status(f)
+            verb = "下载" if st == "source" else "看条目"
+            hidden = "" if i == 0 else " hidden"
+            slides.append(
+                '<div class="lab-face-slide"%s data-face-slide data-face-norm="%s" data-face-family="%s">'
+                '<p class="lab-proof t-%s">%s</p>'
+                '<div class="lab-cap">'
+                '<span class="st">%s</span>'
+                '<a class="btn btn-ink" href="/source/%s/">%s</a></div></div>'
+                % (hidden, e(f["norm"]), e(f["family"]), e(f["norm"]), e(wf(f)),
+                   fv(e(STATUS[st][0]), "offer=" + st),
+                   e(f["norm"]), e(verb))
+            )
+        inner = (
+            '<div class="lab-face" data-home-face>%s'
+            '<div class="lab-cap"><button type="button" class="btn-text" data-face-next>换一款</button></div>'
+            '<form class="search is-embed" action="/source/" method="get" role="search">'
+            '<label class="sr-only" for="lab-q-a">搜索字体</label>'
+            '<input id="lab-q-a" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+            '<button class="btn btn-ink" type="submit">%s搜索</button></form></div>'
+            % ("".join(slides), icon("search"))
+        )
+    elif variant == "b":
+        inner = (
+            '<div class="lab-idx">'
+            '<p class="lab-idx-line">%s</p>'
+            '<div class="toolbar">'
+            '<div class="search is-embed is-live">'
+            '<label class="sr-only" for="lab-q-b">搜索字体</label>'
+            '<input id="lab-q-b" type="search" data-search placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+            '</div>%s</div>'
+            '<p class="count" data-count>%s</p>%s</div>'
+            % (fv("开源字体的源文件和许可原文。能下载的直接下载。", "/source"),
+               filter_chips(fonts),
+               fv("%d 款" % n, "fonts[]=%d" % n), index_rows(fonts))
+        )
+    else:
+        inner = home_prime(fonts, "lab-q-c")
+    body = '<article class="lab-home">%s%s</article>' % (flag, inner)
+    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    return layout("home", "首页稿%s" % self_name, body, path, extra_head=extra, body_class="lab-home-page",
+                  nav_items=NAV_LAB, wordmark_href=path)
 
-    legend = [("本站下载", "源文件在本站，进条目直接下载", "st=source", "source"),
-              ("官方下载", "本站不留文件，去作者或厂商的发布处", "st=jump", "jump"),
-              ("暂无下载", "许可已核实，源文件包还没上架", "st=ready", "ready"),
-              ("待核实", "许可原文还没有核对记录", "st=pending", "pending"),
-              ("未收录", "镜像还没收到这款，先去上游仓库或店面", "st=missing", "missing")]
-    legend_html = "".join(
-        '<a class="hv4-legend-row" href="/source/?%s"><span class="l-t">%s</span>%s</a>'
-        % (dev, e(t), fv(e(d), dev, "l-d")) for t, d, dev, st in legend)
 
-    search_html = ('<form class="hv4-search" action="/source/" method="get" role="search">'
-                   '<label class="sr-only" for="q">搜索字体</label>'
-                   '<span class="hv4-search-kicker" aria-hidden="true">检索</span>'
-                   '<input id="q" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
-                   '<button class="btn" type="submit">%s搜索</button></form>' % icon("search"))
-
-    attest_html = ('<div class="hv4-aside-block hv4-attest"><p class="hv4-aside-label">授权证明</p>'
-                   '<p class="hv4-attest-d for-design">标准开源协议可出具，签发即登记。</p>'
-                   '<p class="hv4-attest-d for-dev mono">can_attest=%d</p>'
-                   '<a class="hv4-attest-go" href="/attest/"><b>%d</b> 款可出证</a></div>' % (n_att, n_att))
-
-    # 二、统计条：戊式大数（顶横线 + 列间竖线，白底左对齐，读数不可点）
-    stats = [(len(fonts), "已收录", "fonts[]", "/source/"), (n_src, "本站下载", "offer=source", "/source/?st=source"),
-             (n_full, "许可全文", "textState=full", "/license/"), (n_mirror, "镜像仓库", "source_mirrors", "/source/")]
-    stats_html = "".join('<a class="hv4-stat" href="%s"><b>%d</b>%s</a>' % (h, v, fv(d, dv)) for v, d, dv, h in stats)
-
-    body = ('<section class="hv4-hero">'
-            '<p class="hv4-crumb">%s</p>'
-            '<div class="hv4-display"><h1%s>源文件</h1>%s</div>'
-            '<div class="hv4-split">'
-            '<div class="hv4-tasks" role="list">%s</div>'
-            '<aside class="hv4-aside" aria-label="目录状态怎么看"><div class="hv4-aside-block hv4-legend">'
-            '<p class="hv4-aside-label">目录状态</p><nav class="hv4-legend-rows" aria-label="按状态筛选目录">%s</nav></div>%s</aside>%s</div>'
-            '<div class="hv4-stats" aria-label="目录概况">%s'
-            '<p class="hv4-stats-cap for-design">目录数据 · %s 更新</p>'
-            '<p class="hv4-stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · %s</p>'
-            '</div></section>'
-            '<section class="hv4-about" aria-label="关于本站"><div class="hv4-about-grid">'
-            '<div class="hv4-about-title"><p class="kicker for-design">关于本站</p><p class="kicker for-dev mono">route /</p>'
-            '<h2 class="for-design">查授权、下源文件、<br>报缺字。</h2>'
-            '<h2 class="for-dev mono">/license · /source<br>/gap · /attest</h2></div>'
-            '<div class="hv4-about-body">'
-            '<p class="for-design">文风收录开源字体的源文件和许可原文，授权结论逐款核对原文。缺字形、缺收录或发现勘误，到报缺字页写一条短笺。提交还没接上，这一下不会送出。</p>'
-            '<p class="for-dev mono">data-view · .for-design / .for-dev · chrome() · GET /api/v1/fonts · samples.json</p>'
-            '<p class="acts">'
-            '<a class="btn btn-ink" href="/license/">%s查授权</a>'
-            '<a class="btn" href="/source/">%s打开目录</a>'
-            '<a class="btn" href="/how/">怎么核</a></p></div></div></section>'
-            % (fv("wenfeng.org", "wenfeng.org /"), hero_attrs,
-               fv('开源字体的源文件和许可原文。<br class="hv4-br">能下载的直接下载，不允许再分发的核验后领取切片包。',
-                  '/license · /source · /gap<br class="hv4-br"> samples.json · offer · textState · GET /api/v1/fonts · /attest', "hv4-lead"),
-               tasks_html, legend_html, attest_html, search_html, stats_html, gen, gen,
-               icon("shield"), icon("download")))
-    return layout("home", "", body, "home")
+def page_lab_foot(data, fonts, variant):
+    """页脚对照稿。首页骨架同活页，只换脚。"""
+    path = "/lab/foot-%s/" % variant
+    names = (("a", "甲"), ("b", "乙"), ("c", "丙"))
+    self_name = dict(names)[variant]
+    others = "".join(
+        ' · <a href="/lab/foot-%s/">看%s</a>' % (k, lab)
+        for k, lab in names if k != variant
+    )
+    flag = (
+        '<p class="lab-flag">%s%s · <a href="/">活页已接甲</a> · '
+        '<span class="seg" data-view-switch>'
+        '<button type="button" data-mode="design">设计</button>'
+        '<button type="button" data-mode="dev">开发</button></span> · 不是活页</p>'
+        % (_fv("页脚稿%s" % self_name, path), others)
+    )
+    body = '<article class="lab-home">%s%s</article>' % (flag, home_prime(fonts, "lab-fq-%s" % variant))
+    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    return layout(
+        "home", "页脚稿%s" % self_name, body, path, extra_head=extra,
+        body_class="lab-home-page lab-foot-page", footer=foot_lab(variant, path),
+    )
 
 
 def page_source(fonts):
@@ -2351,6 +2566,12 @@ def main():
         if not target.exists() and src.exists():
             target.symlink_to(src)
     write("/", page_home(data, fonts))
+    write("/lab/home-a/", page_lab_home(data, fonts, "a"))
+    write("/lab/home-b/", page_lab_home(data, fonts, "b"))
+    write("/lab/home-c/", page_lab_home(data, fonts, "c"))
+    write("/lab/foot-a/", page_lab_foot(data, fonts, "a"))
+    write("/lab/foot-b/", page_lab_foot(data, fonts, "b"))
+    write("/lab/foot-c/", page_lab_foot(data, fonts, "c"))
     write("/source/", page_source(fonts))
     write("/license/", page_licenses(fonts))
     for f in fonts:
