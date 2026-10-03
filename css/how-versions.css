@@ -1,6 +1,5 @@
-/* 怎么核整页 · 甲三条 / 乙四词
-   未接入 /how（活页仍是 page-pad / legal-block）。
-   字阶对齐 home-v4 丁。
+/* 怎么核整页 · 甲三条 / 甲′精修（当前，/how）/ 乙四词（已归档）
+   甲′同甲 IA，字阶与卷宗对齐 home-v4 丁。
    B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
 
 body.hw {
@@ -335,6 +334,125 @@ body.hw .wordmark .wm-sub {
     padding-left: 0;
     border-left: 0;
     padding-top: var(--s-8);
+    border-top: 1px solid var(--ink);
+  }
+}
+
+/* ============================================================
+   甲′ · how-v1b · 三条精修
+   同锁定甲 IA：三条门槛占舞台，状态词在下，取证与出证在墨线下面
+   抬升：标题下墨线 / 阶标墨色 / 门槛字阶 / 状态行悬停只填底 / 双栏墨线
+   ============================================================ */
+body.hw-v1b .hw-crumb .sep {
+  margin: 0 0.45em;
+  color: var(--gray-2);
+  opacity: 0.7;
+}
+body.hw-v1b .hw-display {
+  border-bottom-color: var(--ink);
+  margin-bottom: var(--s-10);
+  padding-bottom: var(--s-8);
+}
+body.hw-v1b .hw1-gate {
+  padding: var(--s-6) var(--s-8) var(--s-8) 0;
+}
+body.hw-v1b .hw1-gate + .hw1-gate {
+  padding-left: var(--s-8);
+}
+body.hw-v1b .hw1-idx {
+  color: var(--ink);
+  font-size: var(--fs-13);
+  letter-spacing: 0.08em;
+}
+body.hw-v1b .hw1-gate h2 {
+  font-size: clamp(2.15rem, 3.4vw, 3.05rem);
+  letter-spacing: -0.04em;
+}
+body.hw-v1b .hw1-gate h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  letter-spacing: -0.03em;
+  font-weight: var(--fw-body);
+}
+body.hw-v1b .hw1-gate p { max-width: 14em; }
+body.hw-v1b .hw1-refuse {
+  max-width: 52em;
+  margin-top: var(--s-8);
+  padding-top: 0;
+  border-top: 0;
+  font-size: var(--fs-16);
+}
+body.hw-v1b .hw1-refuse.mono {
+  font-size: var(--fs-12);
+}
+body.hw-v1b .hw-label {
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+body.hw-v1b .hw1-lex { margin-top: var(--s-12); }
+body.hw-v1b .hw1-row {
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+}
+body.hw-v1b .hw1-row b {
+  font-size: var(--fs-18);
+  letter-spacing: -0.03em;
+}
+body.hw-v1b .hw1-row b.mono {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-body);
+  font-size: var(--fs-12);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+body.hw-v1b .hw1-pair {
+  gap: 0;
+}
+body.hw-v1b .hw1-pair > section {
+  min-width: 0;
+  padding: var(--s-2) var(--s-8) 0 0;
+}
+body.hw-v1b .hw1-pair > section + section {
+  padding: var(--s-2) 0 0 var(--s-8);
+  border-left: 1px solid var(--ink);
+}
+body.hw-v1b .hw1-pair h2 {
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  letter-spacing: -0.035em;
+}
+body.hw-v1b .hw1-pair h2.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+body.hw-v1b .hw-lead,
+body.hw-v1b .hw1-refuse,
+body.hw-v1b .hw1-pair p {
+  text-wrap: pretty;
+}
+body.hw-v1b .hw1-pair p { max-width: 36em; }
+body.hw-v1b .hw1-pair a,
+body.hw-v1b .hw-acts a:not(.is-pill) {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+body.hw-v1b .hw-acts a {
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+@media (max-width: 900px) {
+  body.hw-v1b .hw1-gate { padding-right: 0; }
+  body.hw-v1b .hw1-gate + .hw1-gate { padding-left: 0; }
+  body.hw-v1b .hw1-row { grid-template-columns: 1fr; }
+  body.hw-v1b .hw1-pair > section,
+  body.hw-v1b .hw1-pair > section + section {
+    padding: 0;
+    border-left: 0;
+  }
+  body.hw-v1b .hw1-pair > section + section {
+    margin-top: var(--s-8);
+    padding-top: var(--s-6);
     border-top: 1px solid var(--ink);
   }
 }

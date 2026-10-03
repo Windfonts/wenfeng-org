@@ -2546,43 +2546,97 @@
   }
 
   function howPage() {
-    return '<div class="container page-pad">' +
-      '<div class="page-head is-compact">' +
-        '<p class="kicker">收录与核验</p>' +
-        '<h1>我们怎么核</h1>' +
-        '<p class="lead">文风只做两件事：把源文件交给你，把许可说清楚。这一页写明收录标准和核验方法。</p>' +
+    return '<section class="hw-hero">' +
+      '<div class="container">' +
+        '<p class="hw-crumb" aria-label="路径">' +
+          '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>收录与核验</span>' +
+          '<span class="for-dev mono">/how · hw-v1b</span>' +
+        '</p>' +
+        '<div class="hw-display">' +
+          '<h1 class="for-design">先过三条</h1>' +
+          '<h1 class="for-dev mono">3 gates</h1>' +
+          '<p class="hw-lead for-design">文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。状态词、取证、出证写在下面，不跟门槛并排。</p>' +
+          '<p class="hw-lead for-dev mono">text · source · official<br />lexicon and method below</p>' +
+        '</div>' +
+        '<ol class="hw1-gates" id="how-criteria">' +
+          '<li class="hw1-gate">' +
+            '<p class="hw1-idx">01</p>' +
+            '<h2 class="for-design">许可文本</h2>' +
+            '<h2 class="for-dev mono">text</h2>' +
+            '<p class="for-design">许可文本拿得到。</p>' +
+            '<p class="for-dev mono">license text in hand</p>' +
+          '</li>' +
+          '<li class="hw1-gate">' +
+            '<p class="hw1-idx">02</p>' +
+            '<h2 class="for-design">来源可查</h2>' +
+            '<h2 class="for-dev mono">source</h2>' +
+            '<p class="for-design">来源能查到作者或厂商。</p>' +
+            '<p class="for-dev mono">author or foundry</p>' +
+          '</li>' +
+          '<li class="hw1-gate">' +
+            '<p class="hw1-idx">03</p>' +
+            '<h2 class="for-design">官方渠道</h2>' +
+            '<h2 class="for-dev mono">official</h2>' +
+            '<p class="for-design">文件取自官方渠道。</p>' +
+            '<p class="for-dev mono">official channel only</p>' +
+          '</li>' +
+        '</ol>' +
+        '<p class="hw1-refuse for-design">来路不明的打包文件不收。许可写不清楚的，先标「待核实」，不提供文件，核对完成再更新状态。</p>' +
+        '<p class="hw1-refuse for-dev mono">unknown packs out · unclear → 待核实, no file</p>' +
+        '<section class="hw1-lex" id="how-status" aria-label="状态词">' +
+          '<p class="hw-label for-design">状态词 · 写在门槛下面</p>' +
+          '<p class="hw-label for-dev mono">offer words</p>' +
+          '<div class="hw1-row">' +
+            '<b class="for-design">本站下载</b>' +
+            '<b class="for-dev mono">offer=source</b>' +
+            '<span class="for-design">文件在本站，可以直接下载。</span>' +
+            '<span class="for-dev mono">file on this site</span>' +
+          '</div>' +
+          '<div class="hw1-row">' +
+            '<b class="for-design">官方下载</b>' +
+            '<b class="for-dev mono">official</b>' +
+            '<span class="for-design">本站不存文件，请到厂商或上游官方渠道下载。</span>' +
+            '<span class="for-dev mono">no local file</span>' +
+          '</div>' +
+          '<div class="hw1-row">' +
+            '<b class="for-design">未收录</b>' +
+            '<b class="for-dev mono">unlisted</b>' +
+            '<span class="for-design">这款字体还没收进镜像，先去上游取。</span>' +
+            '<span class="for-dev mono">not in the mirror</span>' +
+          '</div>' +
+          '<div class="hw1-row">' +
+            '<b class="for-design">待核实</b>' +
+            '<b class="for-dev mono">unverified</b>' +
+            '<span class="for-design">许可还没核对完，核对完成前不提供文件。</span>' +
+            '<span class="for-dev mono">no file until checked</span>' +
+          '</div>' +
+        '</section>' +
+        '<div class="hw1-pair">' +
+          '<section id="how-evidence">' +
+            '<h2 class="for-design">许可怎么取证</h2>' +
+            '<h2 class="for-dev mono">evidence</h2>' +
+            '<p class="for-design">以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、上游仓库的 LICENSE，三者有其一才算拿到原文。</p>' +
+            '<p class="for-design">取证时记录来源、日期和文本哈希。哈希的作用是：原文以后被改动或换版时，能对出变化。</p>' +
+            '<p class="for-design">每款字体的取证记录，在它的许可原文页里可以查到。</p>' +
+            '<p class="for-dev mono">embedded notice · package / page / LICENSE<br />source + date + hash<br />record on the license page</p>' +
+          '</section>' +
+          '<section id="how-cert">' +
+            '<h2 class="for-design">证明怎么签</h2>' +
+            '<h2 class="for-dev mono">attest</h2>' +
+            '<p class="for-design">只给采用标准开源协议的字体出证，文派（广州）科技有限公司是出证责任主体。出证时申报用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明和台账，作为授权范围的确认记录。每份证明有唯一编号，签发即写入<a href="/attest/ledger">签发台账</a>。</p>' +
+            '<p class="for-design">核对收到的证明：编号在台账查得到、内容与台账一致，才是文风签发的。编号对不上，按伪造处理。</p>' +
+            '<p class="for-dev mono">SPDX only · 文派 is the subject<br />usage into cert + ledger · unique serial<br />serial miss → forged</p>' +
+          '</section>' +
+        '</div>' +
+        '<p class="hw-acts">' +
+          '<a class="is-pill" href="/source"><span class="for-design">看目录</span><span class="for-dev">/source</span></a>' +
+          '<a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">/attest</span></a>' +
+          '<a href="/legal"><span class="for-design">法务说明</span><span class="for-dev">/legal</span></a>' +
+        '</p>' +
+        '<p class="hw-footnote for-design">门槛在上，词和核验在下。对照别名 <a href="/how-v1b.html">how-v1b</a>。</p>' +
+        '<p class="hw-footnote for-dev mono">howPage · hw-v1b · /how</p>' +
       '</div>' +
-      '<div class="legal-block" id="how-criteria">' +
-        '<h2>收录标准</h2>' +
-        '<p>收进目录的字体要满足三条：许可文本拿得到；来源能查到作者或厂商；文件取自官方渠道。</p>' +
-        '<p>来路不明的打包文件不收。许可写不清楚的，先标「待核实」，不提供文件，核对完成再更新状态。</p>' +
-      '</div>' +
-      '<div class="legal-block" id="how-status">' +
-        '<h2>状态词的含义</h2>' +
-        '<ul class="kv-words">' +
-          '<li><b>本站下载</b><span>文件在本站，可以直接下载。</span></li>' +
-          '<li><b>官方下载</b><span>本站不存文件，请到厂商或上游官方渠道下载。</span></li>' +
-          '<li><b>未收录</b><span>这款字体还没收进镜像，先去上游取。</span></li>' +
-          '<li><b>待核实</b><span>许可还没核对完，核对完成前不提供文件。</span></li>' +
-        '</ul>' +
-      '</div>' +
-      '<div class="legal-block" id="how-evidence">' +
-        '<h2>许可怎么取证</h2>' +
-        '<p>以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、上游仓库的 LICENSE，三者有其一才算拿到原文。</p>' +
-        '<p>取证时记录来源、日期和文本哈希。哈希的作用是：原文以后被改动或换版时，能对出变化。</p>' +
-        '<p>每款字体的取证记录，在它的许可原文页里可以查到。</p>' +
-      '</div>' +
-      '<div class="legal-block" id="how-cert">' +
-        '<h2>证明怎么签</h2>' +
-        '<p>只给采用标准开源协议的字体出证，文派（广州）科技有限公司是出证责任主体。出证时申报用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明和台账，作为授权范围的确认记录。每份证明有唯一编号，签发即写入<a href="/attest/ledger">签发台账</a>。</p>' +
-        '<p>核对收到的证明：编号在台账查得到、内容与台账一致，才是文风签发的。编号对不上，按伪造处理。</p>' +
-      '</div>' +
-      '<p class="acts page-acts">' +
-        '<a class="btn btn-ink" href="/source">看目录</a>' +
-        '<a class="btn" href="/attest">授权证明</a>' +
-        '<a class="btn" href="/legal">法务说明</a>' +
-      '</p>' +
-    '</div>';
+    '</section>';
   }
 
   // 字体 CSS 走公共 CDN cn（app.windfonts.com 是 OSS 壳站不做公共热链）。
@@ -3481,7 +3535,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : ('page-' + route.page))))));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : ('page-' + route.page)))))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();

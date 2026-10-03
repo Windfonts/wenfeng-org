@@ -35,10 +35,11 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/about-v4.html       丁 · 五不 · 已否
 # http://127.0.0.1:16030/about-v1.html       甲 · 三处 · 已否
 # http://127.0.0.1:16030/about-v2.html       乙 · 短文 · 已否
-# http://127.0.0.1:16030/how-options.html   怎么核枢纽（甲三条 / 乙四词 · 未落 /how）
-# http://127.0.0.1:16030/how-v1.html        甲 · 三条
-# http://127.0.0.1:16030/how-v2.html        乙 · 四词
-# http://127.0.0.1:16030/how               怎么核 · 旧壳
+# http://127.0.0.1:16030/how               怎么核 = 甲′（how-v1b 为静态别名）
+# http://127.0.0.1:16030/how-options.html   怎么核枢纽（甲′当前；甲原稿；乙已归档）
+# http://127.0.0.1:16030/how-v1b.html       甲′ · 三条精修
+# http://127.0.0.1:16030/how-v1.html        甲 · 原稿
+# http://127.0.0.1:16030/how-v2.html        乙 · 已归档
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -62,7 +63,8 @@ python3 preview.py --port 16030
 | `about-v6b.html` | 己′静态别名（`/about` 活页） |
 | `about-v6.html` | 关于原稿己（路径） |
 | `about-v1.html`…`about-v5.html` | 关于已否：甲三处 / 乙短文 / 丙三件 / 丁五不 / 戊来信 |
-| `how-v1.html` · `how-v2.html` | 怎么核对照：甲三条 / 乙四词（未落 `/how`） |
+| `how-v1b.html` | 甲′静态别名（`/how` 活页） |
+| `how-v1.html` · `how-v2.html` | 怎么核原稿甲 / 已归档乙 |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |
