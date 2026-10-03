@@ -1,6 +1,62 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-03",
   "records": [
+    {
+      "serial": "WF-20261003-215E61BBEC",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-03",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261003-13292B2401",
+      "norm": "Xxzt",
+      "catalogName": "文风·玄宗体",
+      "issuedAt": "2026-10-03",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "C2F8F609"
+    },
+    {
+      "serial": "WF-20261003-FCEE3919B1",
+      "norm": "Bkd",
+      "catalogName": "文风·爆呆",
+      "issuedAt": "2026-10-03",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "E564F06D",
+      "downloads": 1
+    },
+    {
+      "serial": "WF-20261003-F656B1FD59",
+      "norm": "Hcszt",
+      "catalogName": "文风·寒蝉手拙体",
+      "issuedAt": "2026-10-03",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "BD8B87D8"
+    },
+    {
+      "serial": "WF-20261003-3FCAD7EA0C",
+      "norm": "Mplus1",
+      "catalogName": "文风·M+ 1",
+      "issuedAt": "2026-10-03",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "04971E3F"
+    },
     {
       "serial": "WF-20261002-B38F85407E",
       "norm": "Xwwk",

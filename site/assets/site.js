@@ -418,17 +418,27 @@
   }
 
   /* 报缺字 */
-  var gap = $('[data-gap]');
-  if (gap) {
-    function kind(k) {
-      $$('[data-kind]', gap).forEach(function (b) { b.classList.toggle('is-on', b.dataset.kind === k); });
-      $$('[data-pane]', gap).forEach(function (p) { p.hidden = p.dataset.pane !== k; });
+  document.addEventListener('click', function (ev) {
+    var kindBtn = ev.target.closest('.gp1-kinds [data-kind]');
+    if (kindBtn) {
+      var kind = kindBtn.getAttribute('data-kind');
+      document.querySelectorAll('.gp1-kinds [data-kind]').forEach(function (b) {
+        var on = b === kindBtn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-pane]').forEach(function (pane) {
+        pane.hidden = pane.getAttribute('data-pane') !== kind;
+      });
+      return;
     }
-    $$('[data-kind]', gap).forEach(function (b) { b.addEventListener('click', function () { kind(b.dataset.kind); }); });
-    if (qs.get('kind')) kind(qs.get('kind'));
-    if (qs.get('norm') && gap.norm) gap.norm.value = qs.get('norm');
-    gap.addEventListener('submit', function (ev) { ev.preventDefault(); $('[data-sent]', gap).hidden = false; });
-  }
+    var hold = ev.target.closest('[data-hold]');
+    if (hold) {
+      var holdNote = document.querySelector('[data-hold-note]');
+      if (holdNote) holdNote.hidden = false;
+      return;
+    }
+  });
 
   lazyPreviews();
 })();
