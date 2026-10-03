@@ -1,6 +1,6 @@
-/* 报缺字整页 · 甲短笺 / 乙三事纵读
-   未挂 SPA。B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。
-   字阶与卷宗对齐 home-v4 丁。 */
+/* 报缺字整页 · 甲短笺 / 甲′精修（当前，/gap）/ 乙三事纵读（已归档）
+   甲′同甲 IA，字阶与卷宗对齐 home-v4 丁。
+   B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
 
 body.gp {
   min-height: 100vh;
@@ -274,4 +274,45 @@ body.gp .wordmark .wm-sub {
   .gp-lead { justify-self: start; padding-bottom: 0; }
   .gp1-dossier { padding: var(--s-5) 0 0; border-left: 0; border-top: 1px solid var(--ink); }
   .gp-field { grid-template-columns: 1fr; gap: var(--s-2); }
+}
+
+/* ============================================================
+   甲′ · gap-v1b · 短笺精修
+   同锁定甲 IA：标题是报缺字 + 左短笺 + 右栏边界
+   抬升：标题即丁的展示字阶 / 卷宗墨线拉满 / 字段悬停只填底
+   ============================================================ */
+body.gp-v1b .gp-display h1 {
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+body.gp-v1b .gp-display h1.mono {
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+}
+body.gp-v1b .gp1-kicker { letter-spacing: 0.06em; }
+body.gp-v1b .gp1-dossier {
+  align-self: stretch;
+  background: transparent;
+}
+body.gp-v1b .gp1-dossier .label { color: var(--ink); }
+body.gp-v1b .gp1-kv .v { line-height: var(--lh-body); }
+body.gp-v1b .gp1-kv .v.mono { letter-spacing: 0.01em; }
+body.gp-v1b .gp-field {
+  margin: 0 calc(-1 * var(--s-4));
+  padding-left: var(--s-4);
+  padding-right: var(--s-4);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+body.gp-v1b .gp-field:hover { background: var(--fill); }
+body.gp-v1b .gp-field input,
+body.gp-v1b .gp-field textarea { text-decoration: none; }
+body.gp-v1b .gp1-acts a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+body.gp-v1b .gp1-kinds button {
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }

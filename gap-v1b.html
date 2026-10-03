@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>报缺字 · 甲′ · 短笺 · 文风开源</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/gap-versions.css" />
+</head>
+<body class="gp gp-v1b" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/">源文件</a>
+        <a href="/license">授权</a>
+        <a href="/source">目录</a>
+        <a href="/attest">核验</a>
+        <a href="/about">关于</a>
+      </nav>
+      <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
+        <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/assets/icons.svg#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="gp-hero">
+      <div class="container">
+        <p class="gp-crumb" aria-label="路径">
+          <span class="for-design"><a href="/">首页</a> / 报缺字 · 样例未提交</span>
+          <span class="for-dev mono">/gap · alias gap-v1b</span>
+        </p>
+        <div class="gp-display">
+          <h1 class="for-design">报缺字</h1>
+          <h1 class="for-dev mono">/gap</h1>
+          <p class="gp-lead for-design">一条短笺。缺字形、没收录、写错了，三件事里只写一件。不报覆盖率，也不收账号。</p>
+          <p class="gp-lead for-dev mono">kind=glyph|catalog|errata<br />POST 未接 · 无 coverage · 无账号 · sample glyph</p>
+        </div>
+        <section class="gp1-stage" aria-label="写一条短笺">
+          <div class="gp1-letter">
+            <p class="gp1-kicker for-design">短笺</p>
+            <p class="gp1-kicker for-dev mono">one record</p>
+            <div class="gp1-kinds" role="tablist" aria-label="这一条是哪一件事">
+              <button type="button" role="tab" id="tab-glyph" data-kind="glyph" aria-controls="pane-glyph" aria-selected="true" class="is-on">缺字形</button>
+              <button type="button" role="tab" id="tab-catalog" data-kind="catalog" aria-controls="pane-catalog" aria-selected="false">缺收录</button>
+              <button type="button" role="tab" id="tab-errata" data-kind="errata" aria-controls="pane-errata" aria-selected="false">勘误</button>
+            </div>
+            <div class="gp1-fields" id="pane-glyph" role="tabpanel" aria-labelledby="tab-glyph" data-pane="glyph">
+              <label class="gp-field">
+                <span class="k for-design">哪一款</span>
+                <span class="k for-dev mono">norm</span>
+                <input type="text" value="文风·霞鹜文楷" />
+              </label>
+              <label class="gp-field is-char">
+                <span class="k for-design">缺的字</span>
+                <span class="k for-dev mono">codepoint</span>
+                <input type="text" value="龘" maxlength="8" />
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">在哪看到</span>
+                <span class="k for-dev mono">note</span>
+                <textarea rows="2">版式样例。不是已提交的反馈，也不表示这一款真的缺这个字。</textarea>
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">怎么回</span>
+                <span class="k for-dev mono">contact?</span>
+                <input type="text" placeholder="可选。不建账号" />
+              </label>
+            </div>
+            <div class="gp1-fields" id="pane-catalog" role="tabpanel" aria-labelledby="tab-catalog" data-pane="catalog" hidden>
+              <label class="gp-field">
+                <span class="k for-design">字体名</span>
+                <span class="k for-dev mono">name</span>
+                <input type="text" placeholder="目录里没有的名字" />
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">谁做的</span>
+                <span class="k for-dev mono">foundry</span>
+                <input type="text" placeholder="作者或厂商" />
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">出处</span>
+                <span class="k for-dev mono">upstream</span>
+                <input type="text" placeholder="仓库或发布页" />
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">怎么回</span>
+                <span class="k for-dev mono">contact?</span>
+                <input type="text" placeholder="可选。不建账号" />
+              </label>
+            </div>
+            <div class="gp1-fields" id="pane-errata" role="tabpanel" aria-labelledby="tab-errata" data-pane="errata" hidden>
+              <label class="gp-field">
+                <span class="k for-design">哪一款</span>
+                <span class="k for-dev mono">norm</span>
+                <input type="text" placeholder="短码或中文名" />
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">错在哪</span>
+                <span class="k for-dev mono">field</span>
+                <input type="text" placeholder="名字、许可或状态" />
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">应是</span>
+                <span class="k for-dev mono">correction</span>
+                <textarea rows="2" placeholder="写出你看到的原文"></textarea>
+              </label>
+              <label class="gp-field">
+                <span class="k for-design">怎么回</span>
+                <span class="k for-dev mono">contact?</span>
+                <input type="text" placeholder="可选。不建账号" />
+              </label>
+            </div>
+            <p class="gp1-acts">
+              <button type="button" data-hold>提交</button>
+              <a href="/source">先去目录核对</a>
+              <a href="/license">许可原文</a>
+            </p>
+            <p class="gp1-quiet for-design" data-hold-note hidden>入口还没接上。这一下没有送出。</p>
+            <p class="gp1-quiet for-dev mono">click → no request · route not in site.js</p>
+          </div>
+          <aside class="gp1-dossier" aria-label="边界">
+            <p class="label for-design">边界</p>
+            <p class="label for-dev mono">bounds</p>
+            <div class="gp1-kv">
+              <div><span class="k for-design">覆盖率</span><span class="k for-dev">coverage</span><span class="v for-design">不报。缺一个字就是缺一个字</span><span class="v for-dev mono">no rate</span></div>
+              <div><span class="k for-design">账号</span><span class="k for-dev">auth</span><span class="v for-design">不收。联系方式可留可不留</span><span class="v for-dev mono">no account</span></div>
+              <div><span class="k for-design">已收录</span><span class="k for-dev">/source</span><span class="v for-design">在目录里的，报缺字或勘误，不要再报缺收录</span><span class="v for-dev mono">in catalog → not this kind</span></div>
+              <div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v for-design">写错了去勘误。原文仍以许可页为准</span><span class="v for-dev mono">textState · 不改原文</span></div>
+              <div><span class="k for-design">入口</span><span class="k for-dev">POST</span><span class="v for-design">页在。这一下还不会送出</span><span class="v for-dev mono">/gap · click → no request</span></div>
+            </div>
+          </aside>
+        </section>
+        <p class="gp-footnote for-design">甲′静态别名，版式与活页相同。标题是这件事，右栏只写边界。三种事由用胶囊换字段。样例里的字只是版式，不代表霞鹜文楷真的缺少。提交不会送出。活页在 <a href="/gap">/gap</a>。原稿 <a href="/gap-v1.html">甲</a>。</p>
+        <p class="gp-footnote for-dev mono">alias gap-v1b · live route /gap · gapPage · no POST</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot">
+    <div class="container site-foot-inner">
+      <div class="site-foot-brand">
+        <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+        <p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>
+      </div>
+      <div class="site-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="/gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">授权证明</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>关于</h2>
+        <a href="/about">关于</a>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container site-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照别名 · 未部署生产</p>
+      <p class="site-foot-alts">报缺字
+        <a href="/gap-v1b.html" class="is-on">甲′ · 当前</a> ·
+        <a href="/gap-v1.html">甲 · 原稿</a> ·
+        <a href="/gap">活页 /gap</a> ·
+        <a href="/gap-options.html">枢纽</a>
+        · 已归档 <a href="/gap-v2.html">乙</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var VIEW_KEY = "wf-view";
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === "dev" ? "dev" : "design"; }
+        catch (e) { return "design"; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute("data-view", v === "dev" ? "dev" : "design");
+        document.querySelectorAll("[data-view-switch] [data-mode]").forEach(function (b) {
+          b.classList.toggle("is-on", b.getAttribute("data-mode") === (v === "dev" ? "dev" : "design"));
+        });
+      }
+      document.querySelectorAll("[data-view-switch] [data-mode]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var next = b.getAttribute("data-mode") === "dev" ? "dev" : "design";
+          try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+          applyView(next);
+        });
+      });
+      applyView(view());
+      var themeBtn = document.querySelector("[data-theme-toggle]");
+      if (themeBtn) themeBtn.addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute("data-theme") === "dark";
+        if (dark) { root.removeAttribute("data-theme"); try { localStorage.setItem("wf-theme", "light"); } catch (e) {} }
+        else { root.setAttribute("data-theme", "dark"); try { localStorage.setItem("wf-theme", "dark"); } catch (e) {} }
+      });
+      
+      document.querySelectorAll(".gp1-kinds [data-kind]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var kind = btn.getAttribute("data-kind");
+          document.querySelectorAll(".gp1-kinds [data-kind]").forEach(function (b) {
+            var on = b === btn;
+            b.classList.toggle("is-on", on);
+            b.setAttribute("aria-selected", on ? "true" : "false");
+          });
+          document.querySelectorAll("[data-pane]").forEach(function (pane) {
+            pane.hidden = pane.getAttribute("data-pane") !== kind;
+          });
+        });
+      });
+      var hold = document.querySelector("[data-hold]");
+      var note = document.querySelector("[data-hold-note]");
+      if (hold && note) hold.addEventListener("click", function () { note.hidden = false; });
+
+    })();
+  </script>
+</body>
+</html>

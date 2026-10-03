@@ -43,7 +43,7 @@ FONT_ROOT_REDIR = re.compile(r"^/font/([^/]+)/?$")
 SOURCE_NOSLASH = re.compile(r"^/source/([^/]+)$")
 FOUNDRY_NOSLASH = re.compile(r"^/foundry/([^/]+)$")
 SITE = re.compile(
-    r"^/(source|license|foundry|use|about|how|attest|legal|slice)(/[^/]+)?(/[^/]+)?/?$"
+    r"^/(source|license|foundry|use|about|how|attest|legal|slice|gap)(/[^/]+)?(/[^/]+)?/?$"
 )
 SLICE_NOSLASH = re.compile(r"^/slice/([^/]+)$")
 API_FONTS = re.compile(r"^/api/v1/fonts(?:/([^/]+))?$")

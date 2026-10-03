@@ -305,6 +305,7 @@
     else if (parts[0] === 'legal') page = 'legal';
     else if (parts[0] === 'slice' && parts[1]) { page = 'slice'; id = parts[1]; }
     else if (parts[0] === 'slice') page = 'slices';
+    else if (parts[0] === 'gap') page = 'gap';
     else page = 'notfound';
     return {
       page: page,
@@ -412,6 +413,7 @@
             '<h2>办事</h2>' +
             '<a href="/license">查授权</a>' +
             '<a href="/source">下源文件</a>' +
+            '<a href="/gap">报缺字</a>' +
             '<a href="/slice">切片</a>' +
           '</div>' +
           '<div class="site-foot-col">' +
@@ -595,7 +597,7 @@
           '<div class="hv4-display">' +
             '<h1>源文件</h1>' +
             '<p class="hv4-lead for-design">开源字体的源文件和许可原文。<br class="hv4-br" />能下载的直接下载，不允许再分发的核验后领取切片包。</p>' +
-            '<p class="hv4-lead for-dev mono">/license · /source · #gap<br class="hv4-br" /> samples.json · offer · textState · GET /api/v1/fonts · /attest</p>' +
+            '<p class="hv4-lead for-dev mono">/license · /source · /gap<br class="hv4-br" /> samples.json · offer · textState · GET /api/v1/fonts · /attest</p>' +
           '</div>' +
           '<div class="hv4-split">' +
             '<div class="hv4-tasks" role="list">' +
@@ -619,13 +621,13 @@
                 '</span>' +
                 '<span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>' +
               '</a>' +
-              '<a class="hv4-task" href="#gap" role="listitem">' +
+              '<a class="hv4-task" href="/gap" role="listitem">' +
                 '<span class="idx" aria-hidden="true">03</span>' +
                 '<span class="t-ico" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-edit"></use></svg></span>' +
                 '<span class="body">' +
                   '<span class="t-t">报缺字</span>' +
                   '<span class="t-d for-design">缺字形 / 缺收录 / 勘误</span>' +
-                  '<span class="t-d for-dev mono">#gap · 表单未接</span>' +
+                  '<span class="t-d for-dev mono">/gap · 提交未接</span>' +
                 '</span>' +
                 '<span class="arrow" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-arrow-right"></use></svg></span>' +
               '</a>' +
@@ -678,16 +680,16 @@
           '</div>' +
         '</div>' +
       '</section>' +
-      '<section class="hv4-about" id="gap" aria-label="关于本站">' +
+      '<section class="hv4-about" id="about" aria-label="关于本站">' +
         '<div class="container hv4-about-grid">' +
           '<div class="hv4-about-title">' +
             '<p class="kicker for-design">关于本站</p>' +
             '<p class="kicker for-dev mono">route /</p>' +
             '<h2 class="for-design">查授权、下源文件、<br />报缺字。</h2>' +
-            '<h2 class="for-dev mono">/license · /source<br />#gap · /attest</h2>' +
+            '<h2 class="for-dev mono">/license · /source<br />/gap · /attest</h2>' +
           '</div>' +
           '<div class="hv4-about-body">' +
-            '<p class="for-design">文风收录开源字体的源文件和许可原文，授权结论逐款核对原文。缺字形、缺收录或发现勘误，反馈入口开放后在这里提交。</p>' +
+            '<p class="for-design">文风收录开源字体的源文件和许可原文，授权结论逐款核对原文。缺字形、缺收录或发现勘误，到报缺字页写一条短笺。提交还没接上，这一下不会送出。</p>' +
             '<p class="for-dev mono">data-view · .for-design / .for-dev · chrome() · GET /api/v1/fonts · samples.json</p>' +
             '<p class="acts">' +
               '<a class="btn btn-ink" href="/license">' +
@@ -735,7 +737,7 @@
     var href = '/source/' + esc(f.norm) + '/';
     if (k === 'source') return { href: href, label: '下载', ink: true };
     if (k === 'jump') return { href: href, label: '去出处', ink: false };
-    if (k === 'missing') return { href: '/#gap', label: '报缺', ink: false };
+    if (k === 'missing') return { href: '/gap', label: '报缺', ink: false };
     return { href: href, label: '看条目', ink: false };
   }
 
@@ -828,7 +830,7 @@
             '<div class="sd2b-kv">' +
               '<div><span class="k for-design">源文件</span><span class="k for-dev">files</span><span class="v">能带走的在本站，不能再分发的不代发</span></div>' +
               '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v">结论在查授权，这张表不下判断</span></div>' +
-              '<div><span class="k for-design">缺字</span><span class="k for-dev">#gap</span><span class="v">缺字形、缺收录、勘误。不假装覆盖率</span></div>' +
+              '<div><span class="k for-design">缺字</span><span class="k for-dev">/gap</span><span class="v">缺字形、缺收录、勘误。不假装覆盖率</span></div>' +
               '<div><span class="k for-design">工具</span><span class="k for-dev">/slice</span><span class="v">切片、核验。不是托管分发</span></div>' +
               '<div><span class="k for-design">不是</span><span class="k for-dev">not</span><span class="v">网页字体 CDN、样张墙、店面选字</span></div>' +
             '</div>' +
@@ -1282,7 +1284,7 @@
           ? '源文件还没放在本站，也没有上游地址。先读已归档的许可，不要当成能下载。'
           : '许可和原件都还没核对。本站不下结论，也不给下载。',
         noteDev: 'offer=pending · textState=' + String((f.license || {}).textState || '∅') + ' · no file',
-        strongHref: readable ? ('/license/' + f.norm) : '/#gap',
+        strongHref: readable ? ('/license/' + f.norm) : '/gap',
         strongLabel: readable ? '读许可原文' : '报缺字'
       };
     }
@@ -1292,7 +1294,7 @@
       kickerDev: 'primary · missing',
       note: '这一款还没有源文件，也没有核对过的出处。可以报缺字。这里不放样张。',
       noteDev: 'offer=missing · no upstream',
-      strongHref: '/#gap',
+      strongHref: '/gap',
       strongLabel: '报缺字'
     };
   }
@@ -1322,10 +1324,10 @@
     }
     rows.push({
       n: n++,
-      href: '/#gap',
+      href: '/gap',
       t: '报缺字',
       d: '缺字形、勘误。不报覆盖率',
-      dv: '#gap',
+      dv: '/gap',
       go: '反馈'
     });
     var slice = fileOf(f, 'slice');
@@ -1589,7 +1591,7 @@
       acts.push({ href: '/source/' + f.norm + '/', label: '看目录条目', strong: !acts.length });
     }
     if (kind === 'mute') {
-      acts.push({ href: '/#gap', label: '报缺字', strong: !acts.length });
+      acts.push({ href: '/gap', label: '报缺字', strong: !acts.length });
     }
     return acts;
   }
@@ -1647,7 +1649,7 @@
     var spdx = attestSpdxOf(f) || '';
     var href = '/source/' + f.norm + '/';
     var go = '看条目 →';
-    if (kind === 'mute') { href = '/#gap'; go = '报缺字 →'; }
+    if (kind === 'mute') { href = '/gap'; go = '报缺字 →'; }
     else if (licenseReadable(f, {})) {
       href = '/license/' + f.norm;
       go = kind === 'open' ? '读原文 →' : '读要点 →';
@@ -2839,6 +2841,108 @@
     '</div></div>';
   }
 
+  function gapPage() {
+    return '<section class="gp-hero">' +
+      '<div class="container">' +
+        '<p class="gp-crumb" aria-label="路径">' +
+          '<span class="for-design"><a href="/">首页</a> / 报缺字 · 样例未提交</span>' +
+          '<span class="for-dev mono">/gap · gp-v1b</span>' +
+        '</p>' +
+        '<div class="gp-display">' +
+          '<h1 class="for-design">报缺字</h1>' +
+          '<h1 class="for-dev mono">/gap</h1>' +
+          '<p class="gp-lead for-design">一条短笺。缺字形、没收录、写错了，三件事里只写一件。不报覆盖率，也不收账号。</p>' +
+          '<p class="gp-lead for-dev mono">kind=glyph|catalog|errata<br />POST 未接 · 无 coverage · 无账号 · sample glyph</p>' +
+        '</div>' +
+        '<section class="gp1-stage" aria-label="写一条短笺">' +
+          '<div class="gp1-letter">' +
+            '<p class="gp1-kicker for-design">短笺</p>' +
+            '<p class="gp1-kicker for-dev mono">one record</p>' +
+            '<div class="gp1-kinds" role="tablist" aria-label="这一条是哪一件事">' +
+              '<button type="button" role="tab" id="tab-glyph" data-kind="glyph" aria-controls="pane-glyph" aria-selected="true" class="is-on">缺字形</button>' +
+              '<button type="button" role="tab" id="tab-catalog" data-kind="catalog" aria-controls="pane-catalog" aria-selected="false">缺收录</button>' +
+              '<button type="button" role="tab" id="tab-errata" data-kind="errata" aria-controls="pane-errata" aria-selected="false">勘误</button>' +
+            '</div>' +
+            '<div class="gp1-fields" id="pane-glyph" role="tabpanel" aria-labelledby="tab-glyph" data-pane="glyph">' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">哪一款</span><span class="k for-dev mono">norm</span>' +
+                '<input type="text" value="文风·霞鹜文楷" />' +
+              '</label>' +
+              '<label class="gp-field is-char">' +
+                '<span class="k for-design">缺的字</span><span class="k for-dev mono">codepoint</span>' +
+                '<input type="text" value="龘" maxlength="8" />' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">在哪看到</span><span class="k for-dev mono">note</span>' +
+                '<textarea rows="2">版式样例。不是已提交的反馈，也不表示这一款真的缺这个字。</textarea>' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">怎么回</span><span class="k for-dev mono">contact?</span>' +
+                '<input type="text" placeholder="可选。不建账号" />' +
+              '</label>' +
+            '</div>' +
+            '<div class="gp1-fields" id="pane-catalog" role="tabpanel" aria-labelledby="tab-catalog" data-pane="catalog" hidden>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">字体名</span><span class="k for-dev mono">name</span>' +
+                '<input type="text" placeholder="目录里没有的名字" />' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">谁做的</span><span class="k for-dev mono">foundry</span>' +
+                '<input type="text" placeholder="作者或厂商" />' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">出处</span><span class="k for-dev mono">upstream</span>' +
+                '<input type="text" placeholder="仓库或发布页" />' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">怎么回</span><span class="k for-dev mono">contact?</span>' +
+                '<input type="text" placeholder="可选。不建账号" />' +
+              '</label>' +
+            '</div>' +
+            '<div class="gp1-fields" id="pane-errata" role="tabpanel" aria-labelledby="tab-errata" data-pane="errata" hidden>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">哪一款</span><span class="k for-dev mono">norm</span>' +
+                '<input type="text" placeholder="短码或中文名" />' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">错在哪</span><span class="k for-dev mono">field</span>' +
+                '<input type="text" placeholder="名字、许可或状态" />' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">应是</span><span class="k for-dev mono">correction</span>' +
+                '<textarea rows="2" placeholder="写出你看到的原文"></textarea>' +
+              '</label>' +
+              '<label class="gp-field">' +
+                '<span class="k for-design">怎么回</span><span class="k for-dev mono">contact?</span>' +
+                '<input type="text" placeholder="可选。不建账号" />' +
+              '</label>' +
+            '</div>' +
+            '<p class="gp1-acts">' +
+              '<button type="button" data-hold>提交</button>' +
+              '<a href="/source">先去目录核对</a>' +
+              '<a href="/license">许可原文</a>' +
+            '</p>' +
+            '<p class="gp1-quiet for-design" data-hold-note hidden>入口还没接上。这一下没有送出。</p>' +
+            '<p class="gp1-quiet for-dev mono">click → no request · POST not wired</p>' +
+          '</div>' +
+          '<aside class="gp1-dossier" aria-label="边界">' +
+            '<p class="label for-design">边界</p>' +
+            '<p class="label for-dev mono">bounds</p>' +
+            '<div class="gp1-kv">' +
+              '<div><span class="k for-design">覆盖率</span><span class="k for-dev">coverage</span><span class="v for-design">不报。缺一个字就是缺一个字</span><span class="v for-dev mono">no rate</span></div>' +
+              '<div><span class="k for-design">账号</span><span class="k for-dev">auth</span><span class="v for-design">不收。联系方式可留可不留</span><span class="v for-dev mono">no account</span></div>' +
+              '<div><span class="k for-design">已收录</span><span class="k for-dev">/source</span><span class="v for-design">在目录里的，报缺字或勘误，不要再报缺收录</span><span class="v for-dev mono">in catalog → not this kind</span></div>' +
+              '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v for-design">写错了去勘误。原文仍以许可页为准</span><span class="v for-dev mono">textState · 不改原文</span></div>' +
+              '<div><span class="k for-design">入口</span><span class="k for-dev">POST</span><span class="v for-design">页在。这一下还不会送出</span><span class="v for-dev mono">/gap · click → no request</span></div>' +
+            '</div>' +
+          '</aside>' +
+        '</section>' +
+        '<p class="gp-footnote for-design">标题是这件事，右栏只写边界。三种事由用胶囊换字段。样例里的字只是版式，不代表霞鹜文楷真的缺少。提交不会送出。对照别名 <a href="/gap-v1b.html">gap-v1b</a>。</p>' +
+        '<p class="gp-footnote for-dev mono">gapPage · gp-v1b · /gap · no POST</p>' +
+      '</div>' +
+    '</section>';
+  }
+
   function titles(route, extra) {
     var map = {
       home: '源文件',
@@ -2859,6 +2963,7 @@
       legal: '法务',
       slices: '切片',
       slice: extra || '切片',
+      gap: '报缺字',
       notfound: '没有这一页'
     };
     document.title = (map[route.page] || '文风') + ' · wenfeng.org';
@@ -3086,6 +3191,25 @@
       setView(modeBtn.getAttribute('data-mode'));
       return;
     }
+    var kindBtn = ev.target.closest('.gp1-kinds [data-kind]');
+    if (kindBtn) {
+      var kind = kindBtn.getAttribute('data-kind');
+      document.querySelectorAll('.gp1-kinds [data-kind]').forEach(function (b) {
+        var on = b === kindBtn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-pane]').forEach(function (pane) {
+        pane.hidden = pane.getAttribute('data-pane') !== kind;
+      });
+      return;
+    }
+    var hold = ev.target.closest('[data-hold]');
+    if (hold) {
+      var holdNote = document.querySelector('[data-hold-note]');
+      if (holdNote) holdNote.hidden = false;
+      return;
+    }
     if (ev.target.closest('[data-theme-toggle]')) toggleTheme();
     if (ev.target.closest('[data-print-cert]')) {
       ev.preventDefault();
@@ -3304,7 +3428,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : ('page-' + route.page))));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : ('page-' + route.page)))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();
@@ -3346,6 +3470,7 @@
 
     var inner = '';
     if (route.page === 'home') inner = home(fonts);
+    else if (route.page === 'gap') inner = gapPage();
     else if (route.page === 'list') inner = listPage(fonts, route);
     else if (route.page === 'font') {
       var f = findFont(fonts, route.id);
@@ -3450,6 +3575,10 @@
   });
 
   guardExits();
+
+  if ((location.pathname === '/' || location.pathname === '/index.html') && location.hash === '#gap') {
+    location.replace('/gap');
+  }
 
   Promise.all([
     fetch('/samples.json').then(function (r) { return r.json(); }),
