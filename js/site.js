@@ -2107,7 +2107,7 @@
       "        <div class=\"us-display\">\n" +
       "          <h1 class=\"for-design\">先问</h1>\n" +
       "          <h1 class=\"for-dev mono\">ask first</h1>\n" +
-      "          <p class=\"us-lead for-design\">左边是你要问的，右边是回答。原件、切片、店面用字仍是三件不同的事，只是不并排、也不按先后四步。怎么核在另一页。</p>\n" +
+      "          <p class=\"us-lead for-design\">五个常见问题，各答各的：要文件、进主题、网页里用、注释能不能删、程序怎么查。</p>\n" +
       "          <p class=\"us-lead for-dev mono\">question | answer<br />not 3 cols · not 4 steps · not /how</p>\n" +
       "        </div>\n" +
       "\n" +
@@ -2196,7 +2196,7 @@
       "          <a href=\"/slice\"><span class=\"for-design\">切片工具</span><span class=\"for-dev\">/slice</span></a>\n" +
       "          <a href=\"/license\"><span class=\"for-design\">查授权</span><span class=\"for-dev\">/license</span></a>\n" +
       "        </p>\n" +
-      "        <p class=\"us-footnote for-design\">问题在左，回答在右，没有序号。对照别名 <a href=\"/use-v4b.html\">use-v4b</a>。怎么核在 <a href=\"/how\">/how</a>。</p>\n" +
+      "        <p class=\"us-footnote for-design\">怎么核在 <a href=\"/how\">/how</a>。对照别名 <a href=\"/use-v4b.html\">use-v4b</a>。</p>\n" +
       "        <p class=\"us-footnote for-dev mono\">usePage · us-v4b · /use</p>\n" +
       "      </div>\n" +
       "    </section>\n"
