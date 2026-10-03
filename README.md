@@ -26,6 +26,10 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/gap-v1b.html       甲′ · 短笺精修
 # http://127.0.0.1:16030/gap-v1.html         甲 · 原稿
 # http://127.0.0.1:16030/gap-v2.html         乙 · 已归档
+# http://127.0.0.1:16030/about-options.html  关于枢纽（甲三处 / 乙短文 · 未接入 /about）
+# http://127.0.0.1:16030/about-v1.html       甲 · 三处
+# http://127.0.0.1:16030/about-v2.html       乙 · 短文
+# http://127.0.0.1:16030/about             关于仍是旧壳
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -46,6 +50,7 @@ python3 preview.py --port 16030
 | `font-v1.html` · `font-v2.html` | 一款详情原稿甲 / 已归档乙 |
 | `gap-v1b.html` | 甲′静态别名（`/gap` 活页） |
 | `gap-v1.html` · `gap-v2.html` | 报缺字原稿甲 / 已归档乙 |
+| `about-v1.html` · `about-v2.html` | 关于对照：甲三处 / 乙短文（未接入 `/about`） |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |
