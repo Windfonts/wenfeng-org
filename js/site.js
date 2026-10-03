@@ -1763,51 +1763,83 @@
   }
 
   function licensePage(f, lic) {
-    var backLabel = canTake(f) ? '返回下载' : '返回这一款';
     var title = lic.title || f.licenseName || '许可原文';
     var body = lic.body || '';
-    var aka = esc(wfName(f));
+    var licO = f.license || {};
+    var ev0 = (lic && lic.evidence) || {};
+    var kind = String(lic.textKind || licO.textState || '');
     var orig = [];
     if (f.name) orig.push(esc(f.name));
     if (f.en) orig.push(esc(f.en));
-    if (orig.length) aka += '<span> · 原名 ' + orig.join(' · ') + '</span>';
-    var links = '<a href="/source/' + esc(f.norm) + '/">' + backLabel + '</a>';
-    if (canAttest(f)) {
-      links += '<a href="/attest/' + esc(f.norm) + '/">授权证明</a>';
-    }
-    if (f.shop) {
-      links += '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>去店面用</a>';
-    }
+    var sub = esc(wfName(f)) + ' · 原名 ' + (orig.length ? orig.join(' · ') : '—') +
+      (f.foundry ? ' · ' + esc(f.foundry) : '');
     var tier = licenseTier(f);
     var flagWord = tier ? tier.word : '许可原文';
-    var stateNote = '';
-    if (tier) {
-      stateNote = '<p class="license-state-note">' + esc(tier.note);
-      if (tier.word === '许可指引' && f.license && f.license.sourceUrl) {
-        var src = f.license.sourceUrl;
-        stateNote += '原文出处：<a href="' + esc(src) + '"' + hrefAttrs(src) + '>' +
-          esc(hostOf(src) || '上游原文') + '</a>';
+    var stateLine = '';
+    if (kind === 'full') {
+      stateLine = '已归档' + (licO.fetchedAt || ev0.fetchedAt ? ' · ' + esc(licO.fetchedAt || ev0.fetchedAt) + ' 取得' : '') + ' · 全文照录，未做删改。';
+    } else if (tier && tier.note) {
+      stateLine = esc(tier.note);
+      if (tier.word === '许可指引' && licO.sourceUrl) {
+        stateLine += '原文出处：<a href="' + esc(licO.sourceUrl) + '"' + hrefAttrs(licO.sourceUrl) + '>' +
+          esc(hostOf(licO.sourceUrl) || '上游原文') + '</a>';
       }
-      stateNote += '</p>';
     }
-    return '<div class="container font-page">' +
-      '<header class="font-head">' +
-        '<p class="crumb"><a href="/source">目录</a><span>/</span>' +
-          '<a href="/source/' + esc(f.norm) + '/">' + esc(wfName(f)) + '</a><span>/</span><span>许可</span></p>' +
-        '<p class="font-flag">' + flagWord + '</p>' +
-        '<h1>' + esc(title) + '</h1>' +
-        '<p class="font-aka">' + aka + '</p>' +
-        stateNote +
-      '</header>' +
-      (body
-        ? '<article class="license-sheet"><pre class="doc">' + esc(body) + '</pre></article>'
-        : '<div class="page-state is-fill"><p class="kicker">许可</p><h1>还没有原文</h1><p class="lead">这一款许可尚未收入文本。</p></div>') +
-      licenseEvidence(f, lic) +
-      '<div class="pack-meta is-after">' +
-        '<p class="pack-lic">' + esc(wfName(f)) + '</p>' +
-        '<p class="pack-meta-links">' + links + '</p>' +
+    var evRows = '';
+    if (licO.sourceUrl || ev0.url) {
+      var src = licO.sourceUrl || ev0.url;
+      evRows += '<div><span class="k for-design">来源</span><span class="k for-dev mono">sourceUrl</span><span class="v"><a href="' + esc(src) + '"' + hrefAttrs(src) + '>' + esc(hostOf(src) || src) + '</a></span></div>';
+    }
+    if (licO.fetchedAt || ev0.fetchedAt) {
+      evRows += '<div><span class="k for-design">取得</span><span class="k for-dev mono">fetchedAt</span><span class="v">' + esc(licO.fetchedAt || ev0.fetchedAt) + '</span></div>';
+    }
+    if (licO.textSha256) {
+      evRows += '<div><span class="k for-design">文本哈希</span><span class="k for-dev mono">textSha256</span><span class="v mono">' + esc(licO.textSha256) + '</span></div>';
+    }
+    if (licO.spdx === 'OFL-1.1' && (licO.rfn || licO.rfnNote)) {
+      evRows += '<div><span class="k for-design">保留名</span><span class="k for-dev mono">rfn</span><span class="v">' +
+        (licO.rfn ? esc(licO.rfn) : '未声明保留名') +
+        (licO.rfnNote ? '<span class="tool-quiet"> · ' + esc(licO.rfnNote) + '</span>' : '') + '</span></div>';
+    }
+    var ev = (evRows)
+      ? '<section class="lp10-evidence" aria-label="取证记录">' +
+          '<p class="label for-design">取证记录</p>' +
+          '<p class="label for-dev mono">evidence</p>' +
+          '<div class="lp10-kv">' + evRows + '</div>' +
+          (licO.textSha256
+            ? '<p class="lp10-note for-design">哈希对得上，原文就没被换过。</p>' +
+              '<p class="lp10-note for-dev mono">hash diff = tamper check</p>'
+            : '<p class="lp10-note for-design">文本哈希在归档文本时计算。</p>') +
+        '</section>'
+      : '';
+    var acts = '<p class="lp10-acts">' +
+      '<a class="is-strong" href="/source/' + esc(f.norm) + '/">返回条目</a>' +
+      (canAttest(f) ? '<a href="/attest/' + esc(f.norm) + '/">授权证明</a>' : '') +
+      (f.shop ? '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>去店面用</a>' : '') +
+    '</p>';
+    return '<section class="lp10-hero">' +
+      '<div class="container">' +
+        '<p class="lp10-crumb" aria-label="路径">' +
+          '<span class="for-design"><a href="/source">目录</a><span class="sep">/</span><a href="/source/' + esc(f.norm) + '/">' + esc(wfName(f)) + '</a><span class="sep">/</span>许可</span>' +
+          '<span class="for-dev mono">/license/' + esc(f.norm) + ' · lp-v10</span>' +
+        '</p>' +
+        '<div class="lp10-head">' +
+          '<p class="lp10-flag for-design">' + esc(flagWord) + '</p>' +
+          '<p class="lp10-flag for-dev mono">textKind=' + esc(kind || '∅') + '</p>' +
+          '<h1 class="for-design">' + esc(title) + '</h1>' +
+          '<h1 class="for-dev mono">' + esc(licO.spdx || f.licenseName || '—') + '</h1>' +
+          '<p class="lp10-sub">' + sub + '</p>' +
+          (stateLine ? '<p class="lp10-state for-design">' + stateLine + '</p>' : '') +
+          '<p class="lp10-state for-dev mono">textState=' + esc(String(licO.textState || '∅')) +
+            (licO.textSha256 ? ' · textSha256=' + esc(String(licO.textSha256).slice(0, 8)) + '…' : '') + '</p>' +
+        '</div>' +
+        (body
+          ? '<article class="lp10-sheet"><pre class="lp10-doc">' + esc(body) + '</pre></article>' + ev + acts
+          : '<div class="page-state is-fill"><p class="kicker">许可</p><h1>还没有原文</h1><p class="lead">这一款许可尚未收入文本。</p></div>') +
+        '<p class="lp10-footnote for-design">取证方法写在 <a href="/how">我们怎么核</a>。</p>' +
+        '<p class="lp10-footnote for-dev mono">licensePage · lp-v10 · data/license-text/' + esc(f.norm) + '.json</p>' +
       '</div>' +
-    '</div>';
+    '</section>';
   }
 
   function sliceReceiptRows(st) {
@@ -3592,7 +3624,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : (route.page === 'use' ? 'us us-v4b' : ('page-' + route.page))))))));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'license' ? 'lp lp-v10' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : (route.page === 'use' ? 'us us-v4b' : ('page-' + route.page)))))))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();
