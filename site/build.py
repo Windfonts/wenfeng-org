@@ -1366,75 +1366,28 @@ def page_foundry(g):
 
 def page_attest_index(fonts):
     ok = [f for f in fonts if can_attest(f)]
-    options = "".join(
-        '<option value="%s">%s</option>' % (e(f["norm"]), e(wf(f)))
-        for f in ok
-    )
-    rows = "".join(
-        '<li class="lic-row">'
-        '<a class="name" href="/attest/%s/">%s</a>'
-        '<span class="proto">%s</span>'
-        '<span class="status %s">%s</span>'
-        '<a class="go" href="/attest/%s/">证明</a>'
-        '</li>' % (
-            e(f["norm"]), e(wf(f)),
-            e(spdx_of(f)),
-            "is-source" if can_take(f) else "is-jump",
-            "本站下载" if can_take(f) else "官方下载",
-            e(f["norm"])
-        ) for f in ok
-    )
-    skipped_vendor = "、".join(
-        '<a href="/source/%s/">%s</a>' % (e(f["norm"]), e(wf(f)))
-        for f in fonts
-        if (f.get("offer") or "jump") not in ("pending", "missing") and not can_attest(f)
-    )
-    skipped_open = "、".join(
-        '<a href="/source/%s/">%s</a>' % (e(f["norm"]), e(wf(f)))
-        for f in fonts
-        if (f.get("offer") or "jump") in ("pending", "missing")
-    )
-
-    body = (
-        '<div class="page-head is-compact">'
-        '<p class="kicker">核验</p>'
-        '<h1>文风字体授权证明</h1>'
-        '<p class="lead">标准开源协议的字体，由文派（广州）科技有限公司作为责任主体出具授权证明，证实持有人处于有效的开源授权链条内；证明不是著作权人另行授权。立场与出证范围见关于和法务说明。</p>'
-        '</div>'
-        '<ul class="ways">'
-        '<li class="way"><p class="idx">主体</p><h2>文派科技签发</h2><p>文派（广州）科技有限公司作为责任主体出具开源授权证明。证面品牌是文风。文派不是字体著作权人。</p></li>'
-        '<li class="way"><p class="idx">范围</p><h2>只出标准开源</h2><p>OFL、MIT、Apache 等标准开源协议可出证。厂商自拟协议只提供原文下载。</p></li>'
-        '<li class="way"><p class="idx">核对</p><h2>编号 + JSON</h2><p>每份证明有唯一编号，附可核对的电子签名。把 JSON 贴到核对页即可核对。</p></li>'
-        '</ul>'
-        '<form class="gen-form no-print" data-attest-form action="/attest/go/" method="get">'
-        '<p class="kicker">生成器</p>'
-        '<label>字体<select name="norm">' + options + '</select></label>'
-        '<label>持证单位（可选）<input name="holder" type="text" placeholder="单位名称，只印在这一份副本上" autocomplete="organization"></label>'
-        '<label>统一社会信用代码（可选）<input name="uscc" type="text" placeholder="91440101MA…" autocomplete="off"></label>'
-        '<fieldset class="usage-check">'
-        '<legend>用途确认</legend>'
-        '<div class="opts">'
-        '<label><input type="checkbox" name="usage" value="web" checked>网页嵌入</label>'
-        '<label><input type="checkbox" name="usage" value="print">印刷物料</label>'
-        '<label><input type="checkbox" name="usage" value="embed">软件内嵌</label>'
-        '<label><input type="checkbox" name="usage" value="modify">修改衍生</label>'
-        '<label><input type="checkbox" name="usage" value="redistribute">再分发</label>'
-        '</div>'
-        '</fieldset>'
-        '<p class="acts">'
-        '<button class="btn btn-ink" type="submit">生成授权证明</button>'
-        '<a class="btn" href="/attest/verify/">核对一份 JSON</a>'
-        '<a class="btn" href="/attest/ledger/">签发台账</a>'
-        '<a class="btn" href="/legal/">法务说明</a>'
-        '</p>'
-        '</form>'
-        '<p class="count-line"><strong>' + str(len(ok)) + '</strong> 款可核验'
-        + ((' · 厂商协议只提供原文：' + skipped_vendor) if skipped_vendor else '')
-        + ((' · 待核实/未收录：' + skipped_open) if skipped_open else '')
-        + '</p>'
-        '<ul class="lic-index">' + rows + '</ul>'
-    )
-    return layout("attest", "文风字体授权证明", body, "/attest")
+    opts = "".join('<option value="%s">%s · %s</option>' % (e(f["norm"]), e(wf(f)), e(spdx_of(f))) for f in ok)
+    body = display("授权证明", "标准开源协议的字体，由文派（广州）科技有限公司出具证明，记录授权链、协议和原文哈希。证明不是著作权人另行授权。",
+                   [(None, "核验")], "核验")
+    form = ('<form class="form" action="/attest/go/" method="get" data-attest-form><label>字体<select name="norm" required>%s</select></label>'
+            '<div class="two"><label>持证单位（可选）<input name="holder" placeholder="只印在这一份副本上" autocomplete="organization"></label>'
+            '<label>统一社会信用代码（可选）<input name="uscc" placeholder="91440101MA…" autocomplete="off"></label></div>'
+            '<fieldset><legend>用途</legend><div class="checks">'
+            '<label><input type="checkbox" name="usage" value="web" checked>网页嵌入</label><label><input type="checkbox" name="usage" value="print">印刷物料</label>'
+            '<label><input type="checkbox" name="usage" value="embed">软件内嵌</label><label><input type="checkbox" name="usage" value="modify">修改衍生</label>'
+            '<label><input type="checkbox" name="usage" value="redistribute">再分发</label></div></fieldset>'
+            '<p class="acts"><button class="btn btn-ink">%s生成授权证明</button></p></form>' % (opts, icon("certificate")))
+    body += '<div class="split"><div>%s</div>%s</div>' % (form, aside("出证边界", kv_rows([
+        ("谁签发", "文派（广州）科技有限公司。文派不是字体的著作权人"), ("给谁出", "OFL、MIT、Apache 等标准开源协议"),
+        ("不出", "厂商自拟、还没核实、未收录的"), ("怎么核", "编号在台账查得到、内容一致才是真的")]), '<a href="/legal/#scope">出证范围</a>'))
+    body += '<p class="label">核验还能办的事</p>' + tasks([
+        ("核对一份 JSON", "贴进证明文件，看内容有没有被改过", "/attest/verify/", "verified"),
+        ("签发台账", "每份证明签发即登记", "/attest/ledger/", "history"),
+        ("证书查验", "编号 + 持证单位两要素", "/v/", "search"),
+        ("切片包", "不可再分发的字体，核验原包后领取", "/slice/", "scissors")])
+    body += '<p class="label" style="margin-top:var(--s-12)">可出证的字体 · %d 款</p><p class="count" data-count></p>' % len(ok)
+    body += index_rows(ok, go=lambda f: "出证").replace('href="/source/', 'href="/attest/')
+    return layout("attest", "授权证明", body, "/attest")
 
 
 def page_attest(f):
@@ -1480,21 +1433,11 @@ def page_lookup():
     extra = ('<link rel="stylesheet" href="/assets/shs/regular.css">\n'
              '<link rel="stylesheet" href="/assets/shs/bold.css">\n'
              '<link rel="stylesheet" href="/assets/shsans/bold.css">')
-    body = (
-        '<div class="page-head is-compact">'
-        '<p class="kicker">查证</p>'
-        '<h1>证书在线查验</h1>'
-        '<p class="lead">输入证明编号和持证单位名称，两项一致即显示对应证书、生成日期与下载次数。</p>'
-        '</div>'
-        '<form class="gen-form no-print" data-lookup>'
-        '<p class="kicker">两要素查验</p>'
-        '<label>证明编号<input name="s" type="text" placeholder="WF-…" autocomplete="off" required></label>'
-        '<label>持证单位<input name="holder" type="text" placeholder="单位名称，需与证明一致" autocomplete="organization" required></label>'
-        '<p class="acts"><button class="btn btn-ink" type="submit">查验</button></p>'
-        '</form>'
-        '<div id="lookup-result" data-out hidden></div>'
-    )
-    return layout("attest", "证书在线查验", body, "/v", extra_head=extra)
+    body = display("查证", "输入证明编号和持证单位，两项一致即显示证书信息。", [(None, "查证")], "核验", mid=True)
+    body += ('<div class="split"><div><form class="form" data-lookup><div class="two"><label>证明编号<input name="s" placeholder="WF-…" required></label>'
+             '<label>持证单位<input name="holder" placeholder="与证明上一致" required></label></div><p class="acts"><button class="btn btn-ink">查验</button></p></form>'
+             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([("两要素", "编号与单位须与证明完全一致"), ("查不到", "按伪造处理")])))
+    return layout("v", "查证", body, "/v", extra_head=extra)
 
 
 def slice_gate_of(f):
