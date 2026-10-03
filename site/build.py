@@ -276,7 +276,7 @@ def index_rows(fonts, go=None):
                 '<span class="go%s">%s</span></a></li>'
                 % (st, e(hay), href, e(f["norm"]), e(wf(f)), e(info_d), info_v, " is-ink" if inked else "", e(verb)))
     return ('<div class="index-head"><span>短码</span><span>名字</span><span>信息</span><span>动作</span></div>'
-            '<ul class="index" data-list>%s</ul><p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p>'
+            '<ul class="index" data-list>%s</ul><p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p><nav class="pager" data-pager hidden></nav>'
             % "".join(row(f) for f in fonts))
 
 

@@ -73,25 +73,54 @@
   /* 列表：搜索 + 状态筛选 */
   var list = $('[data-list]');
   if (list) {
-    var rows = $$('li', list), hideOn = $('[data-hide-on-search]'), input = $('[data-search]'), count = $('[data-count]'), empty = $('[data-empty]');
+    var rows = $$('li', list), hideOn = $('[data-hide-on-search]'), input = $('[data-search]'), count = $('[data-count]'), empty = $('[data-empty]'), pager = $('[data-pager]');
     var state = { q: qs.get('q') || '', st: qs.get('st') || 'all' };
+    var PAGE = 50, page = parseInt(qs.get('page') || '1', 10) || 1;
     function apply() {
-      var q = state.q.trim().toLowerCase(), n = 0;
+      var q = state.q.trim().toLowerCase(), hits = [];
       rows.forEach(function (r) {
         var hit = (!q || r.dataset.hay.indexOf(q) !== -1) && (state.st === 'all' || r.dataset.st === state.st);
-        r.hidden = !hit; if (hit) n++;
+        r._hit = hit; if (hit) hits.push(r);
       });
-      if (count) count.textContent = (q || state.st !== 'all') ? n + ' / ' + rows.length + ' 款' : rows.length + ' 款';
-      if (empty) empty.hidden = n > 0;
+      var pages = Math.max(1, Math.ceil(hits.length / PAGE));
+      if (page > pages) page = pages; if (page < 1) page = 1;
+      var start = (page - 1) * PAGE;
+      rows.forEach(function (r) { r.hidden = !r._hit; });
+      hits.forEach(function (r, i) { if (i < start || i >= start + PAGE) r.hidden = true; });
+      if (count) count.textContent = (q || state.st !== 'all') ? hits.length + ' / ' + rows.length + ' 款' : rows.length + ' 款';
+      if (empty) empty.hidden = hits.length > 0;
       if (hideOn) hideOn.hidden = !!q;
       $$('[data-filter]').forEach(function (b) { b.classList.toggle('is-on', b.dataset.filter === state.st); });
+      renderPager(pages);
       var u = new URL(location.href);
       state.q ? u.searchParams.set('q', state.q) : u.searchParams.delete('q');
       state.st !== 'all' ? u.searchParams.set('st', state.st) : u.searchParams.delete('st');
+      page > 1 ? u.searchParams.set('page', page) : u.searchParams.delete('page');
       history.replaceState(null, '', u);
     }
-    if (input) { input.value = state.q; input.addEventListener('input', function () { state.q = input.value; apply(); }); }
-    $$('[data-filter]').forEach(function (b) { b.addEventListener('click', function () { state.st = b.dataset.filter; apply(); }); });
+    function renderPager(pages) {
+      if (!pager) return;
+      if (pages <= 1) { pager.hidden = true; pager.innerHTML = ''; return; }
+      pager.hidden = false;
+      var html = '<button type="button" class="pg"' + (page <= 1 ? ' disabled' : '') + ' data-go="' + (page - 1) + '">上一页</button>';
+      for (var i = 1; i <= pages; i++) {
+        html += '<button type="button" class="pg' + (i === page ? ' is-on' : '') + '" data-go="' + i + '"' + (i === page ? ' aria-current="page"' : '') + '>' + i + '</button>';
+      }
+      html += '<button type="button" class="pg"' + (page >= pages ? ' disabled' : '') + ' data-go="' + (page + 1) + '">下一页</button>';
+      pager.innerHTML = html;
+      pager.querySelectorAll('[data-go]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (b.disabled) return;
+          var g = parseInt(b.dataset.go, 10);
+          if (!g || g === page) return;
+          page = g; apply();
+          var y = list.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+      });
+    }
+    if (input) { input.value = state.q; input.addEventListener('input', function () { state.q = input.value; page = 1; apply(); }); }
+    $$('[data-filter]').forEach(function (b) { b.addEventListener('click', function () { state.st = b.dataset.filter; page = 1; apply(); }); });
     apply();
   }
 

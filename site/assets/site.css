@@ -2870,3 +2870,10 @@ body.gp-v1b .gp1-kinds button {
   .home-lower .index .info { display: none; }
 }
 
+
+/* 目录分页 — 同 chip 视觉 */
+.pager { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; margin: var(--s-5) 0 0; }
+.pager .pg { height: 2rem; padding: 0 0.95rem; border: 0; border-radius: var(--radius-pill); background: var(--fill); font-size: var(--fs-13); font-family: inherit; color: var(--ink-2); cursor: pointer; transition: background var(--dur) var(--ease); }
+.pager .pg:hover:not(:disabled):not(.is-on) { background: var(--surface-2); }
+.pager .pg.is-on { background: var(--ink); color: var(--on-ink); font-weight: var(--fw-title); }
+.pager .pg:disabled { color: var(--gray-2); cursor: default; }
