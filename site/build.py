@@ -365,9 +365,7 @@ def page_home(data, fonts):
             '<span class="sst">%s<span class="mono"> →</span></span></a>'
             % (e(f["norm"]), e(f["norm"]), e(f["norm"]), e(f["family"]), e(wf(f)),
                e("风急天高猿啸哀 渚清沙白鸟飞回"), e(STATUS[status(f)][0])))
-    body += ('<section class="home-strip" aria-label="精选字样">'
-             '<p class="label">%s</p>%s</section>'
-             % (dd("先看字，再进目录", "showcase · lazy faces"), "".join(strip_rows)))
+    body += '<section class="home-strip" aria-label="精选字样">%s</section>' % "".join(strip_rows)
 
     body += '<nav class="home-cards" aria-label="办事">%s</nav>' % "".join(
         '<a class="home-card" href="%s"><span class="hc-top"><span class="idx">%s</span><span class="t-ico">%s</span></span>'
