@@ -1236,7 +1236,7 @@
         verb: real.kind === 'archive' ? '下载原件' : (real.label || '打开'),
         verbDev: fileNameFromHref(real.href) || real.format || real.kind,
         kickerDev: 'primary · file',
-        note: '原件在本站。这里不放样张，也不把网页字体当源文件。',
+        note: '原件在本站，下载的是源文件，不是网页字体。',
         noteDev: 'files[' + (real.kind || 'file') + '] · not woff2',
         strongHref: real.href,
         strongLabel: primaryLabel(real)
@@ -1247,7 +1247,7 @@
         verb: '去上游',
         verbDev: upstreamDev(up),
         kickerDev: 'primary · upstream',
-        note: '归档包稍后提供。现在到上游仓库取原件。这里不放样张，也不把网页字体当源文件。',
+        note: '归档包稍后提供，现在到上游仓库取原件。',
         noteDev: 'files[archive].staged · files[upstream] · not woff2',
         strongHref: up,
         strongLabel: '去上游仓库'
@@ -1258,7 +1258,7 @@
         verb: '去出处',
         verbDev: upstreamDev(up),
         kickerDev: 'primary · jump',
-        note: '原件不在本站。到出处取。这里不放样张，也不把网页字体当源文件。',
+        note: '原件不在本站，到出处取。',
         noteDev: 'offer=jump · upstream · not woff2',
         strongHref: up,
         strongLabel: '去出处'
@@ -1269,7 +1269,7 @@
         verb: '去上游',
         verbDev: upstreamDev(up),
         kickerDev: 'primary · upstream',
-        note: '这一款还没做成可带走的原件。上游在，许可尚未核对。这里不放样张。',
+        note: '这一款还没做成可以下载的原件。上游在，许可还没核对完。',
         noteDev: 'offer=' + offer + ' · upstream · textState=' + String((f.license || {}).textState || '∅'),
         strongHref: up,
         strongLabel: '去上游仓库'
@@ -1281,8 +1281,8 @@
         verbDev: 'offer=pending',
         kickerDev: 'primary · pending',
         note: readable
-          ? '源文件还没放在本站，也没有上游地址。先读已归档的许可，不要当成能下载。'
-          : '许可和原件都还没核对。本站不下结论，也不给下载。',
+          ? '源文件还没放在本站，也没有上游地址，先读已归档的许可。'
+          : '许可和原件都还没核对。本站不下结论，也不提供下载。',
         noteDev: 'offer=pending · textState=' + String((f.license || {}).textState || '∅') + ' · no file',
         strongHref: readable ? ('/license/' + f.norm) : '/gap',
         strongLabel: readable ? '读许可原文' : '报缺字'
@@ -1292,7 +1292,7 @@
       verb: '未收录',
       verbDev: 'offer=missing',
       kickerDev: 'primary · missing',
-      note: '这一款还没有源文件，也没有核对过的出处。可以报缺字。这里不放样张。',
+      note: '这一款还没有源文件，也没有核对过的出处，可以先报缺字。',
       noteDev: 'offer=missing · no upstream',
       strongHref: '/gap',
       strongLabel: '报缺字'
@@ -1326,7 +1326,7 @@
       n: n++,
       href: '/gap',
       t: '报缺字',
-      d: '缺字形、勘误。不报覆盖率',
+      d: '缺字形、勘误，从这个入口报',
       dv: '/gap',
       go: '反馈'
     });
@@ -1428,10 +1428,10 @@
             '</div>' +
           '</aside>' +
         '</section>' +
-        '<p class="fd1-more-label for-design">还能办</p>' +
+        '<p class="fd1-more-label for-design">还能办的事</p>' +
         '<p class="fd1-more-label for-dev mono">secondary</p>' +
         '<div class="fd1-rows">' + rows + '</div>' +
-        '<p class="fd-footnote for-design">先写这一款现在该做的动作，卷宗在右边。归档没放上来的，动作是去上游，不是下载。对照别名 <a href="/font-v1b.html">font-v1b</a>。</p>' +
+        '<p class="fd-footnote for-design">动作按这一款的收录状态生成。对照别名 <a href="/font-v1b.html">font-v1b</a>。</p>' +
         '<p class="fd-footnote for-dev mono">renderFont · fd-v1b · /source/' + esc(f.norm) + '</p>' +
       '</div>' +
     '</section>';
