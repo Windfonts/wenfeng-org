@@ -1,4 +1,4 @@
-/* 源文件目录整页 · 甲三轨 / 乙索引
+/* 源文件目录整页 · 甲三轨 / 乙索引（已否）· 丙厂商册 / 丁四事
    B soft：白底、浅灰面板、胶囊。无投影、无红、无暖纸。
    字阶与屑对齐 home-v4 丁。 */
 
@@ -372,4 +372,221 @@ body.sd .topnav a.is-active {
   .sd2-row .sd-act { grid-column: 2; justify-self: start; }
   .sd-search { flex-wrap: wrap; max-width: none; }
   .sd-search .btn { width: 100%; }
+}
+
+/* —— 丙 · 厂商册：按造字的人分册，整行浅灰面板。不是状态三栏 —— */
+.sd3-note {
+  margin: -0.25rem 0 var(--s-6);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+}
+.sd3-books { display: flex; flex-direction: column; }
+.sd3-book {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 12.5rem) minmax(0, 1fr);
+  gap: var(--s-4) var(--s-8);
+  align-items: start;
+  padding: var(--s-5) 0;
+  border-top: 1px solid var(--rule);
+}
+.sd3-book[hidden] { display: none; }
+.sd3-maker .idx {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+}
+.sd3-maker h2 {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.7rem, 2.6vw, 2.25rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.sd3-maker .count {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.sd3-maker .book-lead {
+  margin: 0.45rem 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.sd3-maker .book-lead.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+.sd3-panel {
+  min-width: 0;
+  padding: 0.15rem var(--s-5);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.sd3-rows { list-style: none; margin: 0; padding: 0; }
+.sd3-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--rule);
+}
+.sd3-row:first-child { border-top: 0; }
+.sd3-row[hidden] { display: none; }
+.sd3-id { min-width: 0; }
+.sd3-id .name {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.sd3-id .name:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+.sd3-id .meta {
+  margin: 0.2rem 0 0;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.sd3-id .meta.mono { font-family: var(--font-mono); }
+.sd3-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  flex-shrink: 0;
+}
+.sd3-side a:not(.sd-act) {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: var(--fs-12);
+}
+.sd3-side a:not(.sd-act):hover { color: var(--ink); text-decoration: underline; }
+
+/* —— 丁 · 四事：一行交叉源文件 / 许可 / 缺字 / 工具。不是索引表 —— */
+.sd4-caption {
+  margin: -0.25rem 0 var(--s-6);
+  max-width: 40em;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.sd4-caption.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+.sd4-legend {
+  display: grid;
+  grid-template-columns: 12.5rem minmax(0, 1fr);
+  gap: var(--s-5);
+  margin: 0 0 var(--s-3);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--ink);
+}
+.sd4-legend-cells {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.sd4-legend-cells span {
+  padding: 0 var(--s-4);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.sd4-legend-cells span.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.sd4-list { display: flex; flex-direction: column; gap: var(--s-3); }
+.sd4-font {
+  display: grid;
+  grid-template-columns: 12.5rem minmax(0, 1fr);
+  gap: var(--s-5);
+  align-items: center;
+}
+.sd4-font[hidden] { display: none; }
+.sd4-who .name {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.sd4-who .name:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+.sd4-who .meta {
+  margin: 0.2rem 0 0;
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.sd4-who .meta.mono { font-family: var(--font-mono); }
+.sd4-cells {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.sd4-cell {
+  min-width: 0;
+  padding: 0.85rem var(--s-4) 0.9rem;
+  border-left: 1px solid var(--rule);
+}
+.sd4-cell:first-child { border-left: 0; }
+.sd4-cell .cell-k {
+  display: none;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+}
+.sd4-cell .big {
+  display: block;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.sd4-cell .big.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0;
+}
+.sd4-cell .sub {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.sd4-cell .sub.mono { font-family: var(--font-mono); }
+.sd4-cell .sd-act { margin-top: 0.55rem; }
+.sd-empty {
+  margin: var(--s-4) 0 0;
+  font-size: var(--fs-14);
+  color: var(--gray);
+}
+.sd-empty[hidden] { display: none; }
+
+@media (max-width: 980px) {
+  .sd3-book { grid-template-columns: 1fr; gap: var(--s-3); }
+  .sd3-row { flex-direction: column; align-items: flex-start; }
+  .sd3-side { justify-content: flex-start; }
+  .sd4-legend { display: none; }
+  .sd4-font { grid-template-columns: 1fr; gap: var(--s-3); }
+  .sd4-cells { grid-template-columns: 1fr 1fr; }
+  .sd4-cell:nth-child(odd) { border-left: 0; }
+  .sd4-cell:nth-child(n + 3) { border-top: 1px solid var(--rule); }
+  .sd4-cell .cell-k { display: block; }
 }
