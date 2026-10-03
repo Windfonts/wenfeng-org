@@ -49,6 +49,10 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/use-v3.html        丙 · 两边 · 已归档
 # http://127.0.0.1:16030/use-v1.html        甲 · 三路 · 已归档
 # http://127.0.0.1:16030/use-v2.html        乙 · 工序 · 已归档
+# http://127.0.0.1:16030/legal-options.html  法务枢纽（甲范围 / 乙误读；未挂 /legal）
+# http://127.0.0.1:16030/legal-v1.html       甲 · 范围
+# http://127.0.0.1:16030/legal-v2.html       乙 · 误读
+# http://127.0.0.1:16030/legal              法务仍是旧壳
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -77,6 +81,7 @@ python3 preview.py --port 16030
 | `use-v4b.html` | 丁′静态别名（`/use` 活页） |
 | `use-v4.html` | 用法原稿丁（问句） |
 | `use-v1.html` · `use-v2.html` · `use-v3.html` · `use-v5.html` · `use-v6.html` | 用法已归档：甲三路 / 乙工序 / 丙两边 / 戊名目 / 己句注 |
+| `legal-v1.html` · `legal-v2.html` | 法务对照：甲范围 / 乙误读（未挂 `/legal`） |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |

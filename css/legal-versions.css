@@ -1,0 +1,361 @@
+/* 法务整页 · 甲范围 / 乙误读
+   两套信息结构，未挂 /legal。字阶对齐 home-v4 丁。
+   B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
+
+body.lg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+}
+body.lg main { flex: 1; }
+body.lg .wordmark .wm-sub {
+  font-weight: var(--fw-body);
+  color: var(--gray);
+  font-size: var(--fs-13);
+  margin-left: 0.15em;
+}
+
+.lg-hero { padding: var(--s-16) 0 var(--s-12); }
+.lg-crumb {
+  margin: 0 0 var(--s-8);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+.lg-crumb a { color: var(--gray-2); text-decoration: none; }
+.lg-crumb a:hover { color: var(--ink); }
+
+.lg-display {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: var(--s-6) var(--s-12);
+  align-items: end;
+  margin-bottom: var(--s-12);
+  padding-bottom: var(--s-10);
+  border-bottom: 1px solid var(--rule);
+}
+.lg-display h1 {
+  margin: 0;
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  font-weight: var(--fw-title);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.lg-display h1.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-weight: var(--fw-title);
+}
+.lg-lead {
+  margin: 0;
+  max-width: 28em;
+  justify-self: end;
+  padding-bottom: 0.35em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.lg-lead.mono { font-family: var(--font-mono); font-size: var(--fs-13); }
+.lg-footnote {
+  margin: var(--s-12) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  max-width: 46em;
+  line-height: var(--lh-body);
+}
+.lg-footnote a { color: var(--ink); }
+.lg-footnote.mono { font-family: var(--font-mono); font-size: var(--fs-12); }
+
+.lg-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  margin: var(--s-10) 0 0;
+}
+.lg-acts a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--fs-13);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.lg-acts a:hover { text-decoration: underline; }
+.lg-acts a.is-pill {
+  font-weight: var(--fw-title);
+  padding: 0.45rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+}
+.lg-acts a.is-pill:hover {
+  background: var(--ink-hover);
+  text-decoration: none;
+}
+
+.lg-label {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray-2);
+}
+.lg a:not(.is-pill) { text-underline-offset: 0.2em; }
+.lg code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--ink);
+}
+
+/* 甲 · 范围：出证 / 不出证占舞台，其余是细线条目 */
+.lg1-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.lg1-col { min-width: 0; padding: var(--s-2) var(--s-8) var(--s-2) 0; }
+.lg1-col + .lg1-col {
+  padding: var(--s-2) 0 var(--s-2) var(--s-8);
+  border-left: 1px solid var(--ink);
+}
+.lg1-idx {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray-2);
+}
+.lg1-col h2 {
+  margin: 0 0 var(--s-5);
+  font-size: clamp(2.15rem, 4vw, 3.15rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+.lg1-col h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  letter-spacing: -0.03em;
+  font-weight: var(--fw-body);
+}
+.lg1-list {
+  list-style: none;
+  margin: 0 0 var(--s-5);
+  padding: 0;
+}
+.lg1-list li {
+  padding: var(--s-3) 0;
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink);
+}
+.lg1-col p {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.lg1-col p.mono,
+.lg1-list.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.lg1-list.mono li { color: var(--gray); }
+
+.lg1-dossier { margin-top: var(--s-12); }
+.lg1-row {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: var(--s-3) var(--s-8);
+  align-items: start;
+  padding: var(--s-6) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.lg1-dossier .lg1-row:last-child { border-bottom: 1px solid var(--rule); }
+.lg1-row:hover { background: var(--fill); }
+.lg1-row h2 {
+  margin: 0;
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+.lg1-row h2.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.lg1-row p,
+.lg1-row li {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.lg1-row p:last-child,
+.lg1-row li:last-child { margin-bottom: 0; }
+.lg1-row p.mono,
+.lg1-row li.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.lg1-row ul,
+.lg1-row ol {
+  margin: 0;
+  padding-left: 1.15em;
+}
+.lg1-row a { color: var(--ink); }
+
+/* 乙 · 误读：六句占舞台，正面说明是四段，不左右分范围 */
+.lg2-no {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lg2-no > li {
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  column-gap: var(--s-6);
+  row-gap: var(--s-2);
+  align-items: baseline;
+  padding: var(--s-6) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.lg2-no > li:last-child { border-bottom: 1px solid var(--rule); }
+.lg2-no > li:hover { background: var(--fill); }
+.lg2-not {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+}
+.lg2-no h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.lg2-no h2.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-body);
+  letter-spacing: 0;
+}
+.lg2-fix {
+  grid-column: 2;
+  margin: 0;
+  max-width: 40em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.lg2-fix.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.lg2-chapters { margin-top: var(--s-4); }
+.lg2-ch {
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  column-gap: var(--s-6);
+  row-gap: var(--s-3);
+  align-items: baseline;
+  margin-top: var(--s-10);
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--ink);
+}
+.lg2-k {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+}
+.lg2-ch > h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.lg2-ch > h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: var(--fw-body);
+  letter-spacing: -0.02em;
+}
+.lg2-body {
+  grid-column: 2;
+  max-width: 40em;
+}
+.lg2-body h3 {
+  margin: var(--s-6) 0 var(--s-2);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+}
+.lg2-body h3.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-body);
+  color: var(--gray);
+  letter-spacing: 0.02em;
+}
+.lg2-body h3:first-child { margin-top: var(--s-2); }
+.lg2-body p,
+.lg2-body li {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.lg2-body p.mono { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray); }
+.lg2-body ul,
+.lg2-body ol { margin: 0 0 var(--s-4); padding-left: 1.15em; }
+.lg2-body a { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .lg-display { grid-template-columns: 1fr; }
+  .lg-lead { justify-self: start; padding-bottom: 0; }
+  .lg1-split { grid-template-columns: 1fr; }
+  .lg1-col { padding-right: 0; }
+  .lg1-col + .lg1-col {
+    margin-top: var(--s-8);
+    padding: var(--s-6) 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .lg1-row,
+  .lg2-no > li,
+  .lg2-ch { grid-template-columns: 1fr; }
+  .lg2-fix,
+  .lg2-body { grid-column: 1; }
+}
