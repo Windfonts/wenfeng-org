@@ -17,6 +17,7 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/           首页 = 丁（锁定 home-v4）
 # http://127.0.0.1:16030/home-v4.html 丁别名（对照）
 # http://127.0.0.1:16030/license    授权 = 戊′（license-v5b 为静态别名）
+# http://127.0.0.1:16030/source-options.html  目录整页甲三轨 / 乙索引
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```

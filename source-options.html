@@ -4,178 +4,69 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>目录卡片对照 · 文风 · 源文件</title>
+  <title>源文件目录完整对照 · 文风开源</title>
   <link rel="stylesheet" href="/from-app/css/fonts.css" />
   <link rel="stylesheet" href="/from-app/css/tokens.css" />
   <link rel="stylesheet" href="/css/options.css" />
+  <link rel="stylesheet" href="/css/home-versions.css" />
 </head>
-<body class="opt-body">
+<body class="opt-body hv-hub">
   <div class="optbar">
-    <b>目录卡片 · 甲乙丙</b>
-    <a href="#ver-jia">甲 字面卡</a>
-    <a href="#ver-yi">乙 横卡双列</a>
-    <a href="#ver-bing">丙 密格</a>
+    <b>源文件目录整页 · 甲 / 乙</b>
+    <a href="/source-v1.html">甲 · 三轨</a>
+    <a href="/source-v2.html">乙 · 索引</a>
     <a href="/options.html">对照索引</a>
-    <a href="/source">回现目录</a>
-    <span class="muted">≥2 清晰卡布局 · offer 四态词冻结</span>
+    <a href="/source">现网 /source（未改）</a>
+    <a href="/license">授权戊′</a>
+    <span class="muted">两套 IA · 未落 site.js · 一款详情不做</span>
   </div>
 
-  <div class="opt-wrap">
-    <p class="site-tag">旧版 A/B/C 以行表为主；本页改成三种<strong>卡片</strong>布局对照。筛选项仍保留，不做成字林样张墙。</p>
+  <div class="hv-hub-wrap">
+    <p class="site-tag">目录不再用一页里的卡片片段。两份可独立打开的整页，信息结构不同。视觉沿 home-v4 丁（大字阶、细线、等宽屑、设计/开发）和 fonts-front B（白底、浅灰圆角、胶囊，无投影、无红、无暖纸）。这一站是源文件、许可、缺字和工具，<strong>不是</strong>字体 CDN。</p>
+    <p class="hv-hub-intro">甲按能办的事分成三块：带走 / 出处 / 还缺。乙是一条文件名索引，右栏写清管什么、不管什么。示例不是全表。现网 <a href="/source">/source</a> 仍是旧列表。</p>
 
-    <!-- 甲 -->
-    <section class="opt-ver" id="ver-jia">
-      <h2>甲 · 字面卡三列</h2>
-      <p class="opt-diff"><b>差异：</b>大字面 + 状态徽章 + 底部 CTA；扫视觉找字最快。</p>
-      <span class="opt-tag">仓库感 · 可带走墨黑 CTA</span>
-      <div class="opt-demo">
-        <p class="kicker">文风 · 源文件 · /source</p>
-        <h1>按名字拿走</h1>
-        <div class="search">搜索字体名 / 厂商 / Norm…</div>
-        <div class="seg">
-          <span class="is-on">全部</span><span>可带走</span><span>官方下载</span><span>暂无下载</span><span>未收录</span>
+    <div class="hv-hub-grid">
+      <article class="hv-preview" id="ver-jia">
+        <div class="hv-preview-head">
+          <div>
+            <h2>甲 · 三轨</h2>
+            <span class="tag">按事分列 · 浅灰面板</span>
+          </div>
+          <a class="open" href="/source-v1.html">打开整页 →</a>
         </div>
-        <p class="count-line"><strong>556</strong> 款</p>
-        <div class="src-cards">
-          <div class="src-card">
-            <p class="zi">永</p>
-            <span class="st is-take">可带走</span>
-            <p class="name">文风·霞鹜文楷</p>
-            <p class="meta">OFL-1.1 · LXGW</p>
-            <a class="cta is-take" href="/source/Xwwk/">下载原件</a>
-          </div>
-          <div class="src-card">
-            <p class="zi">源</p>
-            <span class="st is-take">可带走</span>
-            <p class="name">文风·思源黑体</p>
-            <p class="meta">OFL-1.1 · Adobe</p>
-            <a class="cta is-take" href="#">下载原件</a>
-          </div>
-          <div class="src-card">
-            <p class="zi">普</p>
-            <span class="st">官方下载</span>
-            <p class="name">文风·阿里巴巴普惠体</p>
-            <p class="meta">禁再分发 · 去出处</p>
-            <a class="cta" href="#">去出处</a>
-          </div>
-          <div class="src-card">
-            <p class="zi">あ</p>
-            <span class="st is-take">可带走</span>
-            <p class="name">文风·方舟像素</p>
-            <p class="meta">MIT · Ark</p>
-            <a class="cta is-take" href="#">下载原件</a>
-          </div>
-          <div class="src-card">
-            <p class="zi">重</p>
-            <span class="st">暂无下载</span>
-            <p class="name">文风·猫啃扛重族黑</p>
-            <p class="meta">体积过大未镜像</p>
-            <a class="cta" href="#">查看</a>
-          </div>
-          <div class="src-card">
-            <p class="zi">无</p>
-            <span class="st">未收录</span>
-            <p class="name">文风·EBAS 无衬线</p>
-            <p class="meta">许可待核实</p>
-            <a class="cta" href="#">查看</a>
-          </div>
+        <p class="hv-preview-diff"><b>差异：</b>三列面板。01 带走（本站有文件）、02 出处（不代发）、03 还缺（暂无 / 待核实 / 未收录，缺字从这里走）。不是样张墙。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/source-v1.html" title="甲 三轨目录预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/source-v1.html" title="打开甲 · 三轨">打开甲完整目录页</a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- 乙 -->
-    <section class="opt-ver" id="ver-yi">
-      <h2>乙 · 横卡双列</h2>
-      <p class="opt-diff"><b>差异：</b>左字面右信息横卡，双列；比甲更省纵深、仍是卡不是行。</p>
-      <span class="opt-tag">信息密度中 · 动作靠右</span>
-      <div class="opt-demo">
-        <p class="kicker">文风 · 源文件 · /source</p>
-        <h1>按名字拿走</h1>
-        <div class="search">搜索…</div>
-        <div class="seg">
-          <span class="is-on">可带走</span><span>全部</span><span>官方下载</span><span>暂无</span>
+      <article class="hv-preview" id="ver-yi">
+        <div class="hv-preview-head">
+          <div>
+            <h2>乙 · 文件索引</h2>
+            <span class="tag">按名查 · 右栏口径</span>
+          </div>
+          <a class="open" href="/source-v2.html">打开整页 →</a>
         </div>
-        <div class="src-cards2">
-          <div class="src-card is-wide">
-            <p class="zi">永</p>
-            <div class="body">
-              <span class="st is-take">可带走</span>
-              <p class="name">文风·霞鹜文楷</p>
-              <p class="meta">OFL-1.1 · LXGW · Regular / Medium / Bold</p>
-            </div>
-            <a class="cta is-take" href="/source/Xwwk/">下载</a>
-          </div>
-          <div class="src-card is-wide">
-            <p class="zi">意</p>
-            <div class="body">
-              <span class="st is-take">可带走</span>
-              <p class="name">文风·得意黑</p>
-              <p class="meta">OFL · SmileySans</p>
-            </div>
-            <a class="cta is-take" href="#">下载</a>
-          </div>
-          <div class="src-card is-wide">
-            <p class="zi">普</p>
-            <div class="body">
-              <span class="st">官方下载</span>
-              <p class="name">文风·阿里巴巴普惠体</p>
-              <p class="meta">禁再分发 · 可核验切片</p>
-            </div>
-            <a class="cta" href="#">去出处</a>
-          </div>
-          <div class="src-card is-wide">
-            <p class="zi">衡</p>
-            <div class="body">
-              <span class="st is-take">可带走</span>
-              <p class="name">文风·权衡度量体</p>
-              <p class="meta">OFL · 店面已上 · 镜像待齐</p>
-            </div>
-            <a class="cta is-take" href="#">下载</a>
-          </div>
+        <p class="hv-preview-diff"><b>差异：</b>一条短码索引，胶囊筛状态。右栏只写边界：源文件、许可、缺字、工具，以及明确不是 CDN / 样张墙 / 店面。</p>
+        <div class="hv-frame-wrap">
+          <iframe src="/source-v2.html" title="乙 文件索引预览" loading="lazy" tabindex="-1"></iframe>
+          <a class="hv-frame-link" href="/source-v2.html" title="打开乙 · 索引">打开乙完整目录页</a>
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
 
-    <!-- 丙 -->
-    <section class="opt-ver" id="ver-bing">
-      <h2>丙 · 密格小卡</h2>
-      <p class="opt-diff"><b>差异：</b>两列密格，几乎无字面；扫名+状态最快，接近工具表但仍是卡单元。</p>
-      <span class="opt-tag">最高密度 · 少装饰</span>
-      <div class="opt-demo">
-        <p class="kicker">文风 · 源文件 · /source · 556 款</p>
-        <div class="search" style="padding:0.85rem 1.15rem">搜索字体名 / 厂商 / Norm…</div>
-        <div class="seg">
-          <span class="is-on">全部</span><span>可带走</span><span>官方下载</span><span>切片包</span><span>暂无</span><span>未收录</span>
-        </div>
-        <div class="src-dense">
-          <div class="cell">
-            <div><div class="name">文风·霞鹜文楷</div><div class="meta">OFL · 可带走</div></div>
-            <a class="cta" href="#">下载</a>
-          </div>
-          <div class="cell">
-            <div><div class="name">文风·思源黑体</div><div class="meta">OFL · 可带走</div></div>
-            <a class="cta" href="#">下载</a>
-          </div>
-          <div class="cell">
-            <div><div class="name">文风·阿里巴巴普惠体</div><div class="meta">禁再分发 · 官方</div></div>
-            <a class="cta is-jump" href="#">去出处</a>
-          </div>
-          <div class="cell">
-            <div><div class="name">文风·仓耳舒圆</div><div class="meta">需登录 · 官方</div></div>
-            <a class="cta is-jump" href="#">去出处</a>
-          </div>
-          <div class="cell">
-            <div><div class="name">文风·猫啃扛重族黑</div><div class="meta">暂无下载</div></div>
-            <a class="cta is-jump" href="#">查看</a>
-          </div>
-          <div class="cell">
-            <div><div class="name">文风·EBAS 无衬线</div><div class="meta">未收录 · 待核实</div></div>
-            <a class="cta is-jump" href="#">查看</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <p class="hv-hub-note">
+      <strong>打开：</strong>
+      <a href="/source-v1.html">/source-v1.html</a>（甲） ·
+      <a href="/source-v2.html">/source-v2.html</a>（乙）
+      · 预览 <code>http://127.0.0.1:16030/source-options.html</code>
+      · 样式 <code>css/source-versions.css</code>
+      · 现网 <a href="/source">/source</a> 未改
+      · 旧的一页三卡片段已从本枢纽撤下
+      · <strong>不做</strong>一款详情
+    </p>
   </div>
 </body>
 </html>

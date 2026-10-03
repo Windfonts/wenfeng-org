@@ -255,3 +255,19 @@
 - 有检索：主命中 + 至多 6 条陪衬；`/license/{norm}` 原文页未改
 - 别名：`license-v5b.html` 仍可打开（对照 / 枢纽 iframe）；「授权」指回 `/license`
 - 预览：`http://127.0.0.1:16030/license` 应与 `/license-v5b.html` 同一版式
+
+
+## 源文件目录 · 甲三轨 / 乙索引（2026-10-03）
+
+授权戊′已落 `/license` 之后，下一站是源文件目录。不做一款详情。
+
+| 文件 | 版 | 差异 |
+|---|---|---|
+| `source-v1.html` | 甲 · 三轨 | 按能办的事分三块浅灰面板：带走 / 出处 / 还缺。名字下挂许可、切片、缺字 |
+| `source-v2.html` | 乙 · 索引 | 一条短码文件名索引 + 胶囊筛状态；右栏只写边界（源文件 / 许可 / 缺字 / 工具，不是 CDN） |
+
+- 枢纽：`source-options.html`（旧的一页三卡片段已撤下）
+- 样式：`css/source-versions.css`（B soft：白底、浅灰、胶囊；无投影、无红、无暖纸；字阶对齐丁）
+- **未改** SPA `listPage()` / `/source`
+- 截图：`_shots/source-full-2026-10-03/`
+- 预览：`http://127.0.0.1:16030/source-options.html`
