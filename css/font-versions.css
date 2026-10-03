@@ -1,5 +1,5 @@
-/* 一款详情整页 · 甲动作舞台 / 乙四事纵读
-   同 home-v4 丁与目录乙′。未写入 SPA /source/{norm}。 */
+/* 一款详情整页 · 甲动作舞台 / 甲′精修（当前，/source/{norm}）/ 乙四事纵读（已归档）
+   甲′同甲 IA，字阶与卷宗对齐 home-v4 丁 / 授权戊′。 */
 
 body.fd {
   min-height: 100vh;
@@ -275,3 +275,40 @@ body.fd .wordmark .wm-sub {
   .fd1-row .go { grid-column: 2; visibility: visible; }
   .fd2-band { grid-template-columns: 1fr; gap: var(--s-3); align-items: start; }
 }
+
+/* ============================================================
+   甲′ · font-v1b · 动作舞台精修
+   同锁定甲 IA：动词占标题 + 右栏卷宗 + 下方细线
+   抬升：动词即丁的展示字阶 / 卷宗墨线拉满 / 行只填底、名字不加下划线
+   ============================================================ */
+body.fd-v1b .fd1-verb h1 {
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+body.fd-v1b .fd1-verb h1.mono {
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+}
+body.fd-v1b .fd1-verb .fname { line-height: var(--lh-snug); }
+body.fd-v1b .fd1-dossier {
+  align-self: stretch;
+  background: transparent;
+}
+body.fd-v1b .fd1-dossier .label { color: var(--ink); }
+body.fd-v1b .fd1-kv .v { line-height: var(--lh-body); }
+body.fd-v1b .fd1-kv .v.mono { letter-spacing: 0.01em; }
+body.fd-v1b .fd1-more-label { letter-spacing: 0.06em; }
+body.fd-v1b .fd1-acts a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+body.fd-v1b .fd1-row,
+body.fd-v1b .fd1-row:hover,
+body.fd-v1b .fd1-row:focus-visible {
+  text-decoration: none;
+}
+body.fd-v1b .fd1-row:hover,
+body.fd-v1b .fd1-row:focus-visible { background: var(--fill); }
+body.fd-v1b .fd1-row .t { text-decoration: none; }

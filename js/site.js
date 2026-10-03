@@ -1163,32 +1163,276 @@
       esc(parentName) + '</a></p>';
   }
 
-  function renderFont(f, licenses, fonts) {
-    var lic = licenses[f.norm] || {};
-    var foundry = f.foundry
-      ? '<p class="font-by"><span class="font-by-k">厂商</span> ' +
-        '<a href="/foundry/' + esc(f.foundrySlug) + '/">' + esc(f.foundry) + '</a></p>'
-      : '';
-    var weights = (f.weights && f.weights.length)
-      ? '<p class="font-weights">' + esc(f.weights.join(' · ')) + '</p>'
-      : '';
-    var lineageHtml = lineageLine(f, fonts);
-    return '<div class="container font-page">' +
-      '<header class="font-head">' +
-        '<p class="crumb"><a href="/source">目录</a><span>/</span><span>' +
-          esc(wfName(f)) + '</span></p>' +
-        '<p class="font-flag ' + statusClass(f) + '">' + esc(statusWord(f)) + '</p>' +
-        '<h1>' + esc(wfName(f)) + '</h1>' +
-        '<p class="font-aka">' + esc(f.name) +
-          (f.en && f.en !== f.name ? '<span> · ' + esc(f.en) + '</span>' : '') + '</p>' +
-        foundry +
-        weights +
-        lineageHtml +
-        '<p class="font-proof t-' + esc(f.norm) + '"' + faceAttrs(f) + '>' + PROOF + '</p>' +
-      '</header>' +
-      packSec(f, lic) +
-      fontSnapshot(f) +
-    '</div>';
+  function upstreamHref(f) {
+    var file = fileOf(f, 'upstream');
+    if (file && file.href) return file.href;
+    var mirror = (f.mirror || {}).upstream;
+    if (mirror) return mirror;
+    var jump = originJumps(f)[0];
+    return jump && jump.href ? jump.href : '';
+  }
+
+  function upstreamDossier(href) {
+    if (!href) return '—';
+    try {
+      var u = new URL(href);
+      var host = u.host.replace(/^www\./, '');
+      var parts = u.pathname.split('/').filter(Boolean);
+      if (host === 'github.com' && parts.length >= 2) return parts[0] + '/' + parts[1];
+      if (parts.length) return host + '/' + parts[0];
+      return host || href;
+    } catch (e) { return href; }
+  }
+
+  function upstreamDev(href) {
+    if (!href) return '∅';
+    try {
+      var u = new URL(href);
+      var host = u.host.replace(/^www\./, '');
+      var parts = u.pathname.split('/').filter(Boolean);
+      if (host === 'github.com' && parts.length) return 'github.com/' + parts[0];
+      return host || href;
+    } catch (e) { return href; }
+  }
+
+  function fontTextCell(f) {
+    var lic = f.license || {};
+    var ts = String(lic.textState || '');
+    var date = lic.verifiedAt || lic.fetchedAt || '';
+    if (ts === 'full') {
+      return {
+        d: date ? ('已归档 · ' + date) : (canAttest(f) ? '已归档 · 可出证' : '已归档'),
+        v: 'full' + (canAttest(f) ? ' · canAttest' : '')
+      };
+    }
+    if (ts === 'summary') return { d: '摘要 · 非全文', v: 'summary' };
+    if (ts === 'pointer') return { d: '指引 · 全文在上游', v: 'pointer' };
+    return { d: '空', v: '∅' };
+  }
+
+  function fontArchiveCell(f) {
+    var archive = fileOf(f, 'archive');
+    if (archive && archive.staged) {
+      return { d: '稍后提供', v: 'staged · ' + (archive.format || 'tar.gz') };
+    }
+    if (archive && archive.href) {
+      return { d: '可下载', v: fileNameFromHref(archive.href) || archive.format || 'file' };
+    }
+    if (offerOf(f) === 'missing') return { d: '未收录', v: 'none' };
+    return { d: '没有归档包', v: 'none' };
+  }
+
+  function fontVerb(f) {
+    var archive = fileOf(f, 'archive');
+    var staged = !!(archive && archive.staged);
+    var real = primaryFile(f);
+    var up = upstreamHref(f);
+    var offer = offerOf(f);
+    var readable = licenseReadable(f, {});
+    if (canTake(f) && real && real.href && real.kind !== 'upstream' && !real.staged) {
+      return {
+        verb: real.kind === 'archive' ? '下载原件' : (real.label || '打开'),
+        verbDev: fileNameFromHref(real.href) || real.format || real.kind,
+        kickerDev: 'primary · file',
+        note: '原件在本站。这里不放样张，也不把网页字体当源文件。',
+        noteDev: 'files[' + (real.kind || 'file') + '] · not woff2',
+        strongHref: real.href,
+        strongLabel: primaryLabel(real)
+      };
+    }
+    if (up && (staged || offer === 'source')) {
+      return {
+        verb: '去上游',
+        verbDev: upstreamDev(up),
+        kickerDev: 'primary · upstream',
+        note: '归档包稍后提供。现在到上游仓库取原件。这里不放样张，也不把网页字体当源文件。',
+        noteDev: 'files[archive].staged · files[upstream] · not woff2',
+        strongHref: up,
+        strongLabel: '去上游仓库'
+      };
+    }
+    if (up && offer === 'jump') {
+      return {
+        verb: '去出处',
+        verbDev: upstreamDev(up),
+        kickerDev: 'primary · jump',
+        note: '原件不在本站。到出处取。这里不放样张，也不把网页字体当源文件。',
+        noteDev: 'offer=jump · upstream · not woff2',
+        strongHref: up,
+        strongLabel: '去出处'
+      };
+    }
+    if (up) {
+      return {
+        verb: '去上游',
+        verbDev: upstreamDev(up),
+        kickerDev: 'primary · upstream',
+        note: '这一款还没做成可带走的原件。上游在，许可尚未核对。这里不放样张。',
+        noteDev: 'offer=' + offer + ' · upstream · textState=' + String((f.license || {}).textState || '∅'),
+        strongHref: up,
+        strongLabel: '去上游仓库'
+      };
+    }
+    if (offer === 'pending') {
+      return {
+        verb: readable ? '读许可' : '待核实',
+        verbDev: 'offer=pending',
+        kickerDev: 'primary · pending',
+        note: readable
+          ? '源文件还没放在本站，也没有上游地址。先读已归档的许可，不要当成能下载。'
+          : '许可和原件都还没核对。本站不下结论，也不给下载。',
+        noteDev: 'offer=pending · textState=' + String((f.license || {}).textState || '∅') + ' · no file',
+        strongHref: readable ? ('/license/' + f.norm) : '/#gap',
+        strongLabel: readable ? '读许可原文' : '报缺字'
+      };
+    }
+    return {
+      verb: '未收录',
+      verbDev: 'offer=missing',
+      kickerDev: 'primary · missing',
+      note: '这一款还没有源文件，也没有核对过的出处。可以报缺字。这里不放样张。',
+      noteDev: 'offer=missing · no upstream',
+      strongHref: '/#gap',
+      strongLabel: '报缺字'
+    };
+  }
+
+  function fontSecondary(f) {
+    var lic = f.license || {};
+    var rows = [];
+    var n = 2;
+    if (licenseReadable(f, {})) {
+      rows.push({
+        n: n++,
+        href: '/license/' + f.norm,
+        t: '许可原文',
+        d: lic.rfn ? '全文已归档，保留名以原文为准' : '全文已归档',
+        dv: '/license/' + f.norm + (lic.textSha256 ? ' · textSha256' : ''),
+        go: '阅读'
+      });
+    } else {
+      rows.push({
+        n: n++,
+        href: '/license/' + f.norm,
+        t: '许可原文',
+        d: '条款尚未核对',
+        dv: 'textState=' + String(lic.textState || '∅'),
+        go: '阅读'
+      });
+    }
+    rows.push({
+      n: n++,
+      href: '/#gap',
+      t: '报缺字',
+      d: '缺字形、勘误。不报覆盖率',
+      dv: '#gap',
+      go: '反馈'
+    });
+    var slice = fileOf(f, 'slice');
+    var sliceHref = (slice && slice.href) ? slice.href : ('/slice/' + f.norm + '/');
+    var sliceLater = !(slice && slice.href);
+    rows.push({
+      n: n++,
+      href: sliceHref,
+      t: '切片',
+      d: sliceLater ? '网页切片包稍后提供' : '网页切片包',
+      dv: sliceLater ? ('slice=' + (f.slice || 'planned')) : 'slice',
+      go: '工具'
+    });
+    if (f.shop) {
+      rows.push({
+        n: n++,
+        href: f.shop,
+        t: '店面',
+        d: '样张和选字在店面，不在这一站',
+        dv: 'shop',
+        go: '离开'
+      });
+    }
+    return rows;
+  }
+
+  function renderFont(f, licText, fonts) {
+    void fonts;
+    var verb = fontVerb(f);
+    var note = verb.note;
+    var visitor = f.visitorNote && String(f.visitorNote).trim();
+    if (visitor) {
+      var archive = fileOf(f, 'archive');
+      var staged = !!(archive && archive.staged);
+      note = visitor;
+      if (staged && note.indexOf('稍后') === -1 && note.indexOf('上游') === -1) {
+        note = '归档包稍后提供。' + note;
+      }
+    }
+    var spdx = attestSpdxOf(f) || '';
+    var proto = spdx || f.licenseName || '—';
+    var foundry = f.foundry || '未标注';
+    var textCell = fontTextCell(f);
+    var archCell = fontArchiveCell(f);
+    var mirrorState = (f.mirror || {}).state || '';
+    var up = upstreamHref(f);
+    var stagedFlag = !!(fileOf(f, 'archive') && fileOf(f, 'archive').staged);
+    var metaDev = f.norm + ' · offer=' + offerOf(f) +
+      (stagedFlag ? ' · archive.staged' : (' · textState=' + String((f.license || {}).textState || '∅')));
+    var acts = [{ href: verb.strongHref, label: verb.strongLabel, strong: true }];
+    if (licenseReadable(f, licText || {}) && verb.strongHref !== '/license/' + f.norm) {
+      acts.push({ href: '/license/' + f.norm, label: '读许可原文', strong: false });
+    }
+    if (canAttest(f)) acts.push({ href: '/attest/' + f.norm + '/', label: '授权证明', strong: false });
+    var actHtml = acts.map(function (a) {
+      return '<a' + (a.strong ? ' class="is-strong"' : '') + ' href="' + esc(a.href) + '"' +
+        hrefAttrs(a.href) + '>' + esc(a.label) + '</a>';
+    }).join('');
+    var rows = fontSecondary(f).map(function (r) {
+      return '<a class="fd1-row" href="' + esc(r.href) + '"' + hrefAttrs(r.href) + '>' +
+        '<span class="idx">' + idx2(r.n) + '</span>' +
+        '<span class="t">' + esc(r.t) + '</span>' +
+        '<span class="d for-design">' + esc(r.d) + '</span>' +
+        '<span class="d for-dev mono">' + esc(r.dv) + '</span>' +
+        '<span class="go">' + esc(r.go) + '</span>' +
+      '</a>';
+    }).join('');
+    return '<section class="fd-hero">' +
+      '<div class="container">' +
+        '<p class="fd-crumb" aria-label="路径">' +
+          '<span class="for-design"><a href="/source">目录</a> / ' + esc(wfName(f)) + '</span>' +
+          '<span class="for-dev mono">/source/' + esc(f.norm) + ' · fd-v1b</span>' +
+        '</p>' +
+        '<section class="fd1-stage" aria-label="这一款现在能做的事">' +
+          '<div class="fd1-verb">' +
+            '<p class="kicker for-design">现在</p>' +
+            '<p class="kicker for-dev mono">' + esc(verb.kickerDev) + '</p>' +
+            '<h1 class="for-design">' + esc(verb.verb) + '</h1>' +
+            '<h1 class="for-dev mono">' + esc(verb.verbDev) + '</h1>' +
+            '<p class="fname">' + esc(wfName(f)) + '</p>' +
+            '<p class="meta for-design">' + esc(proto) + ' · ' + esc(foundry) + ' · ' + esc(statusWord(f)) + '</p>' +
+            '<p class="meta for-dev mono">' + esc(metaDev) + '</p>' +
+            '<p class="note for-design">' + esc(note) + '</p>' +
+            '<p class="note for-dev mono">' + esc(verb.noteDev) + '</p>' +
+            '<p class="fd1-acts">' + actHtml + '</p>' +
+          '</div>' +
+          '<aside class="fd1-dossier" aria-label="卷宗">' +
+            '<p class="label for-design">卷宗</p>' +
+            '<p class="label for-dev mono">record</p>' +
+            '<div class="fd1-kv">' +
+              kvPair('短码', 'norm', f.norm, f.norm) +
+              kvPair('协议', 'spdx', proto, spdx || '∅') +
+              kvPair('厂商', 'foundry', foundry, f.foundrySlug || '—') +
+              kvPair('原文', 'textState', textCell.d, textCell.v) +
+              kvPair('归档', 'archive', archCell.d, archCell.v) +
+              kvPair('镜像', 'mirror', mirrorWord(mirrorState) || '—', mirrorState || '∅') +
+              kvPair('上游', 'upstream', upstreamDossier(up), up ? upstreamDossier(up) : '∅') +
+            '</div>' +
+          '</aside>' +
+        '</section>' +
+        '<p class="fd1-more-label for-design">还能办</p>' +
+        '<p class="fd1-more-label for-dev mono">secondary</p>' +
+        '<div class="fd1-rows">' + rows + '</div>' +
+        '<p class="fd-footnote for-design">先写这一款现在该做的动作，卷宗在右边。归档没放上来的，动作是去上游，不是下载。对照别名 <a href="/font-v1b.html">font-v1b</a>。</p>' +
+        '<p class="fd-footnote for-dev mono">renderFont · fd-v1b · /source/' + esc(f.norm) + '</p>' +
+      '</div>' +
+    '</section>';
   }
 
   function commentPanel(hero) {
@@ -3060,7 +3304,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : ('page-' + route.page)));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : ('page-' + route.page))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();

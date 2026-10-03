@@ -315,3 +315,19 @@
 - 样式：`css/font-versions.css`
 - 截图：`_shots/font-full-2026-10-03/` 与下载目录
 - 预览：`http://127.0.0.1:16030/detail-options.html`
+
+
+## 一款详情 · 锁回甲 · 甲′精修并落入 `/source/{norm}`（2026-10-03）
+
+冯选定甲（动作舞台）。不换信息结构。乙（四事纵读）归档。然后落入活页。
+
+| 文件 | 版 | 差异 |
+|---|---|---|
+| `font-v1b.html` | 甲′ | 同甲：动词占标题（去上游）+ 右栏卷宗 + 下方细线（许可 / 缺字 / 切片 / 店面）。动词用丁的展示字阶；卷宗墨线拉满、KV 无灰卡；细线悬停只填底，名字不加下划线；强墨动作 + 次级文字链；mono 屑 |
+
+- 活页：`/source/{norm}` → `renderFont()` 用甲′（`fd fd-v1b` + `css/font-versions.css`）
+- 归档包仍是 `staged`。主动作是去上游仓库，不把稍后的 tar.gz 做成下载按钮
+- 别名：`font-v1b.html` 仍可打开（样例霞鹜文楷）；「这一款」指回 `/source/{norm}`
+- 枢纽：`detail-options.html`（甲′ 当前方向；甲原稿；乙已归档）
+- 预览：`http://127.0.0.1:16030/source/Xwwk/` 应与 `/font-v1b.html` 同一版式
+
