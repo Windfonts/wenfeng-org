@@ -1211,3 +1211,117 @@ body.hv-hub.opt-body { /* reuse optbar from options.css */ }
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
 }
+
+/* ===== 首页改进对照（基于丁版）=====
+   己 v6 字样带 · 庚 v7 数字版 · 辛 v8 结合版 */
+
+/* 己 v6：精选字样带 — 款名 + 真字体样张 + 状态，细线分行 */
+.hv6-strip { margin: var(--s-6) 0 0; }
+.hv6-kicker {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+.hv6-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-5);
+  padding: 0.6rem 0;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.hv6-row + .hv6-row { border-top: 1px solid var(--rule-2, var(--rule)); }
+.hv6-name {
+  flex: 0 0 10.5em;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hv6-proof {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.35;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hv6-st {
+  flex: 0 0 auto;
+  font-size: var(--fs-12, 0.75rem);
+  color: var(--gray);
+  white-space: nowrap;
+}
+.hv6-row:hover .hv6-name { color: var(--ink-hover, var(--ink)); text-decoration: underline; text-underline-offset: 0.2em; }
+@media (max-width: 720px) {
+  .hv6-row { flex-wrap: wrap; gap: var(--s-2) var(--s-3); }
+  .hv6-name { flex: 1 0 100%; }
+  .hv6-proof { flex: 1 1 100%; }
+}
+
+/* 庚 v7 / 辛 v8：任务条带量 */
+.hv4-task .t-n {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: var(--fs-12, 0.75rem);
+  color: var(--gray);
+  letter-spacing: 0.02em;
+}
+.hv4-task .t-n b {
+  font-size: 1.05rem;
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.hv4-task .t-n.for-dev.mono { font-family: var(--font-mono); font-size: var(--fs-11, 0.6875rem); }
+
+/* 图例行带量 */
+.hv4-legend-row .l-n {
+  flex: 0 0 2.6em;
+  font-size: var(--fs-13, 0.8125rem);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* 辛 v8：正在看 — 真字样 + 换一款 */
+.hv8-now { margin: var(--s-4) 0 var(--s-5); }
+.hv8-proof {
+  margin: 0 0 var(--s-2);
+  font-size: clamp(1.9rem, 5.2vw, 3.4rem);
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hv8-cap {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin: 0;
+  font-size: var(--fs-13, 0.8125rem);
+  color: var(--gray);
+}
+.hv8-cap a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+#hv8-next {
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-pill, 999px);
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--fs-13, 0.8125rem);
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+}
+#hv8-next:hover { background: var(--ink); color: var(--paper); }
