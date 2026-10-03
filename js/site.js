@@ -2893,118 +2893,180 @@
   }
 
   function legalPage() {
-    return '<div class="container page-pad legal-page">' +
-      '<div class="page-head is-compact">' +
-        '<p class="kicker">法务</p>' +
-        '<h1>核验、许可与法务说明</h1>' +
-        '<p class="lead">这页是操作说明，不是法律意见。权利以各字体许可原文为准。</p>' +
+    return '<section class="lg-hero">' +
+      '<div class="container">' +
+        '<p class="lg-crumb" aria-label="路径">' +
+          '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>法务</span>' +
+          '<span class="for-dev mono">/legal · lg-v4</span>' +
+        '</p>' +
+        '<div class="lg-display">' +
+          '<h1 class="for-design">按先后</h1>' +
+          '<h1 class="for-dev mono">order</h1>' +
+          '<p class="lg-lead for-design">操作说明，不是法律意见。权利以各字体许可原文为准。</p>' +
+          '<p class="lg-lead for-dev mono">operating note · not legal advice · five moments</p>' +
+        '</div>' +
+      '<div class="lg4-seq">' +
+      '<section class="lg4-when" id="m-open">' +
+      '<div class="lg4-when-head">' +
+      '<p class="lg4-k">01</p>' +
+      '<h2 class="for-design">打开这页</h2>' +
+      '<h2 class="for-dev mono">open</h2>' +
       '</div>' +
-      '<nav class="legal-toc" aria-label="本页目录">' +
-        '<a href="#legal-oss">开源立场</a>' +
-        '<a href="#legal-scope">出证范围</a>' +
-        '<a href="#legal-what">核验是什么</a>' +
-        '<a href="#legal-issuer">签发主体</a>' +
-        '<a href="#legal-name">文风·命名</a>' +
-        '<a href="#legal-cn">著作权法</a>' +
-        '<a href="#legal-soft">软件保护条例</a>' +
-        '<a href="#legal-ofl">OFL 要点</a>' +
-        '<a href="#legal-sign">电子签名</a>' +
-        '<a href="#legal-buy">企业采购</a>' +
-        '<a href="#legal-redist">再分发</a>' +
-        '<a href="#legal-phish">待核实</a>' +
-        '<a href="#legal-takedown">下架与异议</a>' +
-        '<a href="#legal-misread">常见误读</a>' +
-      '</nav>' +
-      '<div class="legal-block" id="legal-oss">' +
-        '<h2>开源立场</h2>' +
-        '<p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>' +
-        '<p>对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。</p>' +
-        '<p>其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。</p>' +
+      '<div class="lg4-grid">' +
+      '<article id="legal-oss">' +
+      '<h3 class="for-design">这页是什么</h3>' +
+      '<h3 class="for-dev mono">page</h3>' +
+      '<p class="for-design">操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p>' +
+      '<p class="for-dev mono">operating note · not a lawyer review</p>' +
+      '</article>' +
+      '<article>' +
+      '<h3 class="for-design">谁在按原文办事</h3>' +
+      '<h3 class="for-dev mono">stance</h3>' +
+      '<p class="for-design">文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>' +
+      '<p class="for-dev mono">文派 stands on OSS · download / webfont / attest</p>' +
+      '</article>' +
+      '<article id="legal-what">' +
+      '<h3 class="for-design">证明是什么</h3>' +
+      '<h3 class="for-dev mono">what</h3>' +
+      '<p class="for-design">《文风字体授权证明》记录某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填档案里「要一份盖章件」的缺口。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p>' +
+      '<p class="for-dev mono">chain + hash + original? + redist<br />attest ≠ new rights · no assignment · not 软著 · not notary</p>' +
+      '</article>' +
       '</div>' +
-      '<div class="legal-block" id="legal-scope">' +
-        '<h2>出证范围</h2>' +
-        '<p>可出证的标准开源协议：SIL Open Font License 1.1、MIT、Apache License 2.0、IPA Font License、CC0、CC BY / CC BY-SA（不含 NC）、M+，以及带 Font Exception 的 GPL。CC 系授权的字体出证时，证明内保留作者署名，满足署名条款。</p>' +
-        '<p>不出证：厂商自拟的授权协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的字体、许可还没核实的、未收录的。这类字如有授权原文，只提供下载。</p>' +
+      '</section>' +
+      '<section class="lg4-when" id="m-text">' +
+      '<div class="lg4-when-head">' +
+      '<p class="lg4-k">02</p>' +
+      '<h2 class="for-design">对着原文</h2>' +
+      '<h2 class="for-dev mono">text</h2>' +
       '</div>' +
-      '<div class="legal-block" id="legal-what">' +
-        '<h2>核验是什么</h2>' +
-        '<p>文风授权证明是文派科技提供的开源授权证明服务。它记录：某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填的是企业档案里「要一份盖章件」的缺口。</p>' +
-        '<p>它<strong>不是</strong>著作权人出具的授权书，<strong>不</strong>创造新的使用权，<strong>不</strong>等于软著登记或公证。</p>' +
+      '<div class="lg4-grid">' +
+      '<div class="lg4-span" id="legal-scope">' +
+      '<h3 class="for-design">先看协议是不是标准开源</h3>' +
+      '<h3 class="for-dev mono">spdx</h3>' +
+      '<ul class="lg4-pills for-design">' +
+      '<li>SIL Open Font License 1.1</li>' +
+      '<li>MIT</li>' +
+      '<li>Apache License 2.0</li>' +
+      '<li>IPA Font License</li>' +
+      '<li>CC0</li>' +
+      '<li>CC BY / CC BY-SA（不含 NC）</li>' +
+      '<li>M+</li>' +
+      '<li>带 Font Exception 的 GPL</li>' +
+      '</ul>' +
+      '<p class="for-design">上面这些才出证。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC 系出证时，证明内保留作者署名。</p>' +
+      '<p class="for-design">厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p>' +
+      '<p class="for-dev mono">OFL-1.1 · MIT · Apache-2.0 · IPA · CC0 · CC-BY / CC-BY-SA no NC · M+ · GPL+FE<br />CC keeps attribution<br />custom / unverified / unlisted → text only, no attest, no grant</p>' +
       '</div>' +
-      '<div class="legal-block" id="legal-issuer">' +
-        '<h2>签发主体</h2>' +
-        '<p>签发人：<strong>文派（广州）科技有限公司</strong>。证面品牌：<strong>文风</strong>。产品：wenfeng.org。</p>' +
-        '<p>文派科技是文风的运营主体和出证责任主体，不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。授权证明记录的是开源协议在收录时的状态，不是「文派授权你商用这款字」。</p>' +
+      '<article id="legal-ofl">' +
+      '<h3 class="for-design">OFL 在本站怎么读</h3>' +
+      '<h3 class="for-dev mono">ofl</h3>' +
+      '<p class="for-design">可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名未获作者书面允许，派生件不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 更宽。</p>' +
+      '<p class="for-dev mono">use / modify / redist · no selling the font alone · RFN · MIT wider</p>' +
+      '</article>' +
+      '<article id="legal-cn">' +
+      '<h3 class="for-design">国内把字库当什么</h3>' +
+      '<h3 class="for-dev mono">copyright</h3>' +
+      '<p class="for-design">字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是给这份材料。侵权投诉仍走著作权人。</p>' +
+      '<p class="for-dev mono">software work · glyph-as-art unsettled<br />archive paper ≠ extra grant · complaints to the rightsholder</p>' +
+      '</article>' +
+      '<article id="legal-soft">' +
+      '<h3 class="for-design">文件是软件复制品</h3>' +
+      '<h3 class="for-dev mono">software</h3>' +
+      '<p class="for-design">TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p>' +
+      '<p class="for-dev mono">file as software copy · no per-package review</p>' +
+      '</article>' +
       '</div>' +
-      '<div class="legal-block" id="legal-name">' +
-        '<h2>文风·命名</h2>' +
-        '<p>本站收录名、核验主名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是把字体改成文风的作品。</p>' +
-        '<p>字体文件内的版权声明、name 表、OFL 保留名（Reserved Font Name）仍用原名。派生件若以后出现，必须另起新名，不能带保留名。本核验只针对未改名的收录原件或切片包。</p>' +
+      '</section>' +
+      '<section class="lg4-when" id="m-lines">' +
+      '<div class="lg4-when-head">' +
+      '<p class="lg4-k">03</p>' +
+      '<h2 class="for-design">看证上三行</h2>' +
+      '<h2 class="for-dev mono">lines</h2>' +
       '</div>' +
-      '<div class="legal-block" id="legal-cn">' +
-        '<h2>国内法务通常问的</h2>' +
-        '<p>《著作权法》：字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，采购时不要把「开源」理解成「字形不受保护」。</p>' +
-        '<p>开源许可是著作权人允许他人使用的书面条款。企业使用 OFL / MIT 字体，通常不必再向作者另签一份「授权证明」，但采购、审计、客户验收仍常要归档材料。核验就是给这份材料。</p>' +
-        '<p>网页嵌入、安装到操作系统、把字体文件再分发给客户，三种行为边界不同。本证用三行结论分开写：网页嵌入、再分发原件、本平台是否提供原件。</p>' +
-        '<p>侵权投诉仍走著作权人。本页不是法律意见，不能替代律师审查具体项目。</p>' +
+      '<div class="lg4-grid">' +
+      '<article id="legal-issuer">' +
+      '<h3 class="for-design">谁签发，名字怎么写</h3>' +
+      '<h3 class="for-dev mono">issuer · name</h3>' +
+      '<p class="for-design">签发人是文派（广州）科技有限公司。证面品牌是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p>' +
+      '<p class="for-design">收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、name 表、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p>' +
+      '<p class="for-dev mono">文派（广州）科技有限公司 · not the rightsholder<br />文风· is a catalog name · RFN stays · no 软著 number</p>' +
+      '</article>' +
+      '<article>' +
+      '<h3 class="for-design">三行结论</h3>' +
+      '<h3 class="for-dev mono">three lines</h3>' +
+      '<p class="for-design">网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p>' +
+      '<p class="for-dev mono">embed / redist original / site offers the file<br />CSS embed ≠ installer</p>' +
+      '</article>' +
+      '<article id="legal-sign">' +
+      '<h3 class="for-design">签名验的是改没改过</h3>' +
+      '<h3 class="for-dev mono">sign</h3>' +
+      '<p class="for-design">平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是 CA 签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p>' +
+      '<p class="for-dev mono">platform key · not reliable e-sign · not CA<br />JSON is auxiliary · 印迹 unrelated</p>' +
+      '</article>' +
       '</div>' +
-      '<div class="legal-block" id="legal-soft">' +
-        '<h2>《计算机软件保护条例》</h2>' +
-        '<p>字库文件（TTF / OTF / 源工程）在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；许可禁止再分发时，把文件拷进客户交付包就可能越权。</p>' +
-        '<p>本核验只记录平台读到的条款结论，不代替对交付包、安装包、App 内嵌的逐项审查。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p>' +
+      '</section>' +
+      '<section class="lg4-when" id="m-file">' +
+      '<div class="lg4-when-head">' +
+      '<p class="lg4-k">04</p>' +
+      '<h2 class="for-design">放进档案</h2>' +
+      '<h2 class="for-dev mono">archive</h2>' +
       '</div>' +
-      '<div class="legal-block" id="legal-ofl">' +
-        '<h2>OFL 1.1 在本站怎么读</h2>' +
-        '<p>可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发（不得单独出售字体本身）。保留名：未获作者书面允许，派生件不能用原名。本站切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。</p>' +
-        '<p>MIT 更宽。阿里巴巴普惠体、仓耳、HarmonyOS、MiSans、OPPO 等厂商协议：本站只提供授权原文下载，<strong>不出具《文风字体授权证明》</strong>。常见条款是免费商用、禁止再分发字体文件；是否可商用，以厂商原文为准。</p>' +
+      '<div class="lg4-grid">' +
+      '<div class="lg4-span" id="legal-buy">' +
+      '<h3 class="for-design">采购留下这四样</h3>' +
+      '<h3 class="for-dev mono">keep</h3>' +
+      '<ol class="lg4-steps for-design">' +
+      '<li>保存本核验 PDF / 打印件和 JSON。</li>' +
+      '<li>保存许可原文（本站 <a href="/license">/license/{短码}</a>）。</li>' +
+      '<li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li>' +
+      '<li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li>' +
+      '</ol>' +
+      '<p class="for-dev mono">PDF + JSON · license text · hash if taken · holder ≠ licensee</p>' +
       '</div>' +
-      '<div class="legal-block" id="legal-sign">' +
-        '<h2>《电子签名法》和本证</h2>' +
-        '<p>授权证明由平台密钥签名，贴到核对页即可验证内容是否被改过。它不是可靠电子签名，也不是 CA 签发的数字证书，只是平台的核验记录。</p>' +
-        '<p>不要把它交给公证处当「已公证」。需要公证或电子认证时，另走法定程序。核验 JSON 可以作辅助证据：证明某日平台对某哈希、某 SPDX 做过签名。</p>' +
+      '<div class="lg4-span" id="legal-redist">' +
+      '<h3 class="for-design">要带走文件的时候</h3>' +
+      '<h3 class="for-dev mono">redist</h3>' +
+      '<p class="for-design">许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{短码}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。本原型只模拟流程，不上传服务器，也不把原件再切一遍。</p>' +
+      '<p class="for-design">不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p>' +
+      '<p class="for-dev mono">offer=source → original · else no file / no attest<br />/slice after you hold the file · SHA-256 · prototype does not upload<br />do not copy woff2 · do not edit the license URL · no selling the file</p>' +
       '</div>' +
-      '<div class="legal-block" id="legal-buy">' +
-        '<h2>企业采购归档建议</h2>' +
-        '<ol>' +
-          '<li>保存本核验 PDF / 打印件和 JSON。</li>' +
-          '<li>保存许可原文（本站 /license/{短码}）。</li>' +
-          '<li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li>' +
-          '<li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li>' +
-        '</ol>' +
       '</div>' +
-      '<div class="legal-block" id="legal-redist">' +
-        '<h2>再分发</h2>' +
-        '<p>许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{短码}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。本原型只模拟流程，不上传服务器，也不把原件再切一遍。</p>' +
-        '<p>不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。</p>' +
+      '</section>' +
+      '<section class="lg4-when" id="m-mail">' +
+      '<div class="lg4-when-head">' +
+      '<p class="lg4-k">05</p>' +
+      '<h2 class="for-design">有异议再写信</h2>' +
+      '<h2 class="for-dev mono">mail</h2>' +
       '</div>' +
-      '<div class="legal-block" id="legal-phish">' +
-        '<h2>待核实与未收录</h2>' +
-        '<p>许可尚未核对、或源文件还没进镜像的款，<strong>不出核验</strong>。不要把店面能预览当成可以安装、可以再分发。</p>' +
-        '<p>钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p>' +
+      '<div class="lg4-grid">' +
+      '<article id="legal-phish">' +
+      '<h3 class="for-design">还没核对的</h3>' +
+      '<h3 class="for-dev mono">unverified</h3>' +
+      '<p class="for-design">许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p>' +
+      '<p class="for-dev mono">no attest · preview ≠ install · read the text</p>' +
+      '</article>' +
+      '<article id="legal-takedown">' +
+      '<h3 class="for-design">写给 license@wenfeng.org</h3>' +
+      '<h3 class="for-dev mono">takedown</h3>' +
+      '<p class="for-design">收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p>' +
+      '<p class="for-dev mono">license@wenfeng.org · hold as 待核实 · catalog status is the record</p>' +
+      '</article>' +
+      '<article id="legal-name">' +
+      '<h3 class="for-design">另走的程序</h3>' +
+      '<h3 class="for-dev mono">later</h3>' +
+      '<p class="for-design">派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要拿这张证明去顶。</p>' +
+      '<p class="for-dev mono">future derivative needs a new name · notary is a separate process</p>' +
+      '</article>' +
       '</div>' +
-      '<div class="legal-block" id="legal-takedown">' +
-        '<h2>下架与异议</h2>' +
-        '<p>收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。</p>' +
-        '<p>核实期间，该条目标为「待核实」，暂停出证，也不提供文件。</p>' +
-        '<p>确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。</p>' +
-        '<p>被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p>' +
+      '</section>' +
       '</div>' +
-      '<div class="legal-block" id="legal-misread">' +
-        '<h2>常见误读</h2>' +
-        '<ul>' +
-          '<li>「文派把著作权转给你」：没有这种授权。文派出具的是开源授权证明，标题是《文风字体授权证明》。权利仍以许可原文为准。</li>' +
-          '<li>「厂商协议也能盖文派的章」：不能。标准开源协议才出证；厂商自拟协议只提供原文下载。</li>' +
-          '<li>「被授权人」：持证单位只表示这份副本放在哪家单位档案里。</li>' +
-          '<li>「软著号 / 商标转让」：本证不写。文风· 是收录名，不是把原字体改成文风的作品，也不转移商标。</li>' +
-          '<li>「盖了章就能卖字体文件」：OFL 禁止单独出售字体本身；厂商不允许再分发的字体更不能卖文件。</li>' +
-          '<li>「印迹印章」：视觉签章产品与本证无关，不要混用。</li>' +
-        '</ul>' +
+        '<p class="lg-acts">' +
+          '<a class="is-pill" href="/attest"><span class="for-design">授权证明</span><span class="for-dev">/attest</span></a>' +
+          '<a href="/license"><span class="for-design">许可原文</span><span class="for-dev">/license</span></a>' +
+          '<a href="/how"><span class="for-design">我们怎么核</span><span class="for-dev">/how</span></a>' +
+        '</p>' +
       '</div>' +
-      '<p class="acts page-acts">' +
-        '<a class="btn btn-ink" href="/attest">生成核验</a>' +
-        '<a class="btn" href="/license">许可原文</a>' +
-      '</p>' +
-    '</div>';
+    '</section>';
   }
 
   function apiJson(url) {
@@ -3624,7 +3686,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'license' ? 'lp lp-v10' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : (route.page === 'use' ? 'us us-v4b' : ('page-' + route.page)))))))));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'license' ? 'lp lp-v10' : (route.page === 'legal' ? 'lg lg-v4' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : (route.page === 'use' ? 'us us-v4b' : ('page-' + route.page))))))))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();
