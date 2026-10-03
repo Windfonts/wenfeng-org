@@ -1099,21 +1099,305 @@
     '</li>';
   }
 
-  function licensesPage(fonts, route) {
-    var list = fonts.filter(function (f) { return matchQ(f, route.q); });
-    return '<div class="container page-pad">' +
-      '<div class="page-head is-compact">' +
-        '<p class="kicker">许可</p>' +
-        '<h1>许可原文</h1>' +
-        '<p class="lead">按字体列出授权原文。嵌入代码里的授权标注地址不能改动，源文件和下载在目录。</p>' +
-      '</div>' +
-      commentPanel(true) +
-      searchForm('/license', route.q) +
-      '<p class="count-line"><strong>' + list.length + '</strong> 款</p>' +
-      (list.length
-        ? '<ul class="lic-index">' + list.map(licRow).join('') + '</ul>'
-        : '<div class="page-state"><p class="kicker">许可</p><h1>没有这一款</h1><p class="lead">换个名字搜。</p></div>') +
+  function idx2(n) {
+    return (n < 10 ? '0' : '') + n;
+  }
+
+  function licenseKind(f) {
+    var lic = f.license || {};
+    var ts = String(lic.textState || '');
+    var name = f.licenseName || '';
+    var spdx = attestSpdxOf(f);
+    var open = ts === 'full' && ATTEST_SPDX.indexOf(spdx) !== -1 && f.distribution !== false;
+    var unverified = !name || name === '待核实' || ts === 'missing' || ts === '';
+    if (open) return 'open';
+    if (unverified) return 'mute';
+    return 'hold';
+  }
+
+  function licenseRank(fonts, q) {
+    var qq = String(q || '').trim().toLowerCase();
+    var list = fonts.filter(function (f) { return matchQ(f, qq); });
+    function score(f) {
+      var n = String(f.norm || '').toLowerCase();
+      var name = String(f.name || '').toLowerCase();
+      var wf = '文风·' + name;
+      if (n === qq || name === qq || wf === qq) return 0;
+      if (name.indexOf(qq) === 0 || n.indexOf(qq) === 0 || wf.indexOf(qq) === 0) return 1;
+      return 2;
+    }
+    list.sort(function (a, b) {
+      var d = score(a) - score(b);
+      if (d) return d;
+      return String(a.name || '').localeCompare(String(b.name || ''), 'zh');
+    });
+    return list;
+  }
+
+  function textStateWord(f) {
+    var ts = String((f.license || {}).textState || '');
+    if (ts === 'full') return canAttest(f) ? '已归档 · 可出证' : '已归档';
+    if (ts === 'summary') return '摘要 · 非全文';
+    if (ts === 'pointer') return '指引 · 全文在上游';
+    return '空';
+  }
+
+  function rightsCells(f, kind) {
+    if (kind === 'open') {
+      return [
+        ['商用', 'commercial', '允许', 'yes'],
+        ['修改', 'modify', '允许', 'yes'],
+        ['再分发', 'redistribute', '允许', 'yes']
+      ];
+    }
+    if (kind === 'mute') {
+      return [
+        ['商用', 'commercial', '未核实', '—'],
+        ['修改', 'modify', '未核实', '—'],
+        ['再分发', 'redistribute', '未核实', '—']
+      ];
+    }
+    if (f.distribution === false) {
+      return [
+        ['商用', 'commercial', '以原文为准', 'see text'],
+        ['修改', 'modify', '以原文为准', 'see text'],
+        ['再分发', 'redistribute', '本站不代分发', 'distribution=false']
+      ];
+    }
+    return [
+      ['商用', 'commercial', '以原文为准', 'see text'],
+      ['修改', 'modify', '以原文为准', 'see text'],
+      ['再分发', 'redistribute', '以原文为准', 'see text']
+    ];
+  }
+
+  function verdictCopy(f, kind) {
+    var ts = String((f.license || {}).textState || '');
+    if (kind === 'open') {
+      return {
+        state: '可商用<br />可改<br />可分发',
+        stateDev: 'commercial<br />modify<br />redistribute',
+        line: '可商用 · 可改 · 可分发',
+        note: canTake(f)
+          ? '开源许可已核对原文。原件在目录可带走，可出授权证明。'
+          : '开源许可已核对原文。源文件还没放在本站，结论仍可查。',
+        noteDev: (canTake(f) ? 'canTake' : ('offer=' + offerOf(f))) +
+          (canAttest(f) ? ' · canAttest' : '') +
+          ' · GET /api/v1/licenses/' + f.norm
+      };
+    }
+    if (kind === 'mute') {
+      return {
+        state: '未核实',
+        stateDev: 'textState=' + (ts || '∅'),
+        line: '未核实',
+        note: '许可原文还没有核对记录。本站不出结论，也不出证。',
+        noteDev: 'no conclusion · no attest'
+      };
+    }
+    if (f.distribution === false) {
+      return {
+        state: '仅查询<br />不可下载',
+        stateDev: 'distribution=false<br />no file here',
+        line: '仅查询 · 不可下载',
+        note: '本站不代分发这款源文件。条款以厂商或上游发布件为准。',
+        noteDev: 'offer=' + offerOf(f) + ' · textState=' + (ts || '∅')
+      };
+    }
+    if (ts === 'full') {
+      return {
+        state: '原文已归档<br />非开源协议',
+        stateDev: 'textState=full<br />spdx∉attest',
+        line: '原文已归档 · 非开源协议',
+        note: '全文在本站，但不是标准开源协议。以原文为准，不在出证范围内。',
+        noteDev: 'license text on file · attest blocked'
+      };
+    }
+    return {
+      state: '仅查询<br />全文在上游',
+      stateDev: 'textState=' + (ts || '∅') + '<br />not archived',
+      line: '仅查询 · 全文在上游',
+      note: '本站还没有归档全文。先看出处，不要把名称当成许可结论。',
+      noteDev: 'pointer · upstream text'
+    };
+  }
+
+  function stageActs(f, kind) {
+    var acts = [];
+    if (kind !== 'mute' && licenseReadable(f, {})) {
+      acts.push({ href: '/license/' + f.norm, label: '打开许可原文', strong: true });
+    }
+    if (canTake(f)) {
+      acts.push({ href: '/source/' + f.norm + '/', label: '下源文件', strong: !acts.length });
+    }
+    if (canAttest(f)) {
+      acts.push({ href: '/attest/' + f.norm + '/', label: '授权证明', strong: false });
+    }
+    if (!canTake(f)) {
+      acts.push({ href: '/source/' + f.norm + '/', label: '看目录条目', strong: !acts.length });
+    }
+    if (kind === 'mute') {
+      acts.push({ href: '/#gap', label: '报缺字', strong: !acts.length });
+    }
+    return acts;
+  }
+
+  function kvPair(kd, kv, vd, vv) {
+    return '<div>' +
+      '<span class="k for-design">' + esc(kd) + '</span>' +
+      '<span class="k for-dev">' + esc(kv) + '</span>' +
+      '<span class="v for-design">' + esc(vd) + '</span>' +
+      '<span class="v for-dev mono">' + esc(vv) + '</span>' +
     '</div>';
+  }
+
+  function licenseStage(f) {
+    var kind = licenseKind(f);
+    var copy = verdictCopy(f, kind);
+    var spdx = attestSpdxOf(f) || '';
+    var foundry = f.foundry || '未标注';
+    var proto = spdx || f.licenseName || '—';
+    var acts = stageActs(f, kind).map(function (a) {
+      return '<a' + (a.strong ? ' class="is-strong"' : '') + ' href="' + esc(a.href) + '">' + esc(a.label) + '</a>';
+    }).join('');
+    var rights = rightsCells(f, kind).map(function (row) {
+      return kvPair(row[0], row[1], row[2], row[3]);
+    }).join('');
+    var verdict = '<div class="lq5b-verdict">' +
+      '<p class="kicker for-design" data-lq-kicker-d></p>' +
+      '<p class="kicker for-dev mono" data-lq-kicker-v></p>' +
+      '<p class="state for-design">' + copy.state + '</p>' +
+      '<p class="state for-dev mono">' + copy.stateDev + '</p>' +
+      '<p class="fname">' + esc(wfName(f)) + '</p>' +
+      '<p class="meta for-design">' + esc(proto) + ' · ' + esc(foundry) + ' · ' + esc(statusWord(f)) + '</p>' +
+      '<p class="meta for-dev mono">' + esc(f.norm) + ' · spdx=' + esc(spdx || '∅') + ' · offer=' + esc(offerOf(f)) + '</p>' +
+      '<p class="note for-design">' + esc(copy.note) + '</p>' +
+      '<p class="note for-dev mono">' + esc(copy.noteDev) + '</p>' +
+      '<p class="acts">' + acts + '</p>' +
+    '</div>';
+    var dossier = '<aside class="lq5b-dossier" aria-label="卷宗字段">' +
+      '<p class="label">卷宗</p>' +
+      '<div class="lq5b-kv">' +
+        kvPair('短码', 'norm', f.norm, f.norm) +
+        kvPair('协议', 'spdx', proto, spdx || '∅') +
+        kvPair('厂商', 'foundry', foundry, f.foundrySlug || '—') +
+        kvPair('原文', 'textState', textStateWord(f), textStateWord(f) === '空' ? '∅' : String((f.license || {}).textState || '∅')) +
+        kvPair('源文件', 'offer', statusWord(f), offerOf(f)) +
+        rights +
+      '</div>' +
+    '</aside>';
+    return { kind: kind, copy: copy, verdict: verdict, dossier: dossier };
+  }
+
+  function licenseFoil(f, n) {
+    var kind = licenseKind(f);
+    var copy = verdictCopy(f, kind);
+    var spdx = attestSpdxOf(f) || '';
+    var href = '/source/' + f.norm + '/';
+    var go = '看条目 →';
+    if (kind === 'mute') { href = '/#gap'; go = '报缺 →'; }
+    else if (licenseReadable(f, {})) {
+      href = '/license/' + f.norm;
+      go = kind === 'open' ? '读原文 →' : '读要点 →';
+    }
+    return '<a class="lq5b-foil' + (kind === 'mute' ? ' is-mute' : '') + '" role="listitem" href="' + esc(href) + '">' +
+      '<span class="idx" aria-hidden="true">' + idx2(n) + '</span>' +
+      '<span class="state">' + esc(copy.line) + '</span>' +
+      '<span class="body">' +
+        '<span class="fname">' + esc(wfName(f)) + '</span>' +
+        '<span class="meta for-design">' + esc(spdx || f.licenseName || '待核实') + ' · ' + esc(f.foundry || '未标注') + ' · ' + esc(statusWord(f)) + '</span>' +
+        '<span class="meta for-dev mono">' + esc(f.norm) + ' · textState=' + esc(String((f.license || {}).textState || '∅')) + ' · offer=' + esc(offerOf(f)) + '</span>' +
+      '</span>' +
+      '<span class="go" aria-hidden="true">' + esc(go) + '</span>' +
+    '</a>';
+  }
+
+  function licenseDemo(fonts) {
+    var primary = findFont(fonts, 'Xwwk');
+    var foils = [findFont(fonts, 'Albbpht'), findFont(fonts, 'Higure')].filter(Boolean);
+    if (!primary) {
+      for (var i = 0; i < fonts.length; i++) {
+        if (licenseKind(fonts[i]) === 'open') { primary = fonts[i]; break; }
+      }
+    }
+    return { primary: primary, foils: foils, demo: true, more: 0 };
+  }
+
+  function licensesPage(fonts, route) {
+    var q = String(route.q || '').trim();
+    var pack;
+    if (!q) pack = licenseDemo(fonts);
+    else {
+      var ranked = licenseRank(fonts, q);
+      var shown = ranked.slice(1, 7);
+      pack = {
+        primary: ranked[0] || null,
+        foils: shown,
+        demo: false,
+        more: Math.max(0, ranked.length - 1 - shown.length)
+      };
+    }
+    var stage = '';
+    if (!pack.primary) {
+      stage = '<section class="lq5b-stage" aria-label="没有命中">' +
+        '<div class="lq5b-verdict">' +
+          '<p class="kicker for-design">没有命中</p>' +
+          '<p class="kicker for-dev mono">q miss</p>' +
+          '<p class="state">没有<br />这一款</p>' +
+          '<p class="note for-design">换个名字，或去目录按状态看。本站查的是授权结论，不是字体 CDN。</p>' +
+          '<p class="note for-dev mono">matchQ miss · /source</p>' +
+          '<p class="acts"><a class="is-strong" href="/source">打开目录</a><a href="/license">清空检索</a></p>' +
+        '</div>' +
+      '</section>';
+    } else {
+      var built = licenseStage(pack.primary);
+      var kickerD = pack.demo ? '示范命中 · 01' : '主命中 · 01';
+      var kickerV = pack.demo ? 'demo · not a query' : 'primary · q hit';
+      built.verdict = built.verdict
+        .replace('data-lq-kicker-d>', 'data-lq-kicker-d>' + kickerD)
+        .replace('data-lq-kicker-v>', 'data-lq-kicker-v>' + kickerV);
+      var foilLabelD = pack.demo ? '另两态怎么读' : (pack.foils.length ? '同次检索另见' : '同次检索没有其他命中');
+      var foilLabelV = pack.demo ? 'foils · other tiers' : 'foils · same query';
+      if (pack.more) foilLabelD += ' · 还有 ' + pack.more + ' 款未展开';
+      stage = '<section class="lq5b-stage" aria-label="主命中">' +
+        built.verdict + built.dossier +
+      '</section>' +
+      '<p class="lq5b-foils-label for-design">' + esc(foilLabelD) + '</p>' +
+      '<p class="lq5b-foils-label for-dev mono">' + esc(foilLabelV) + '</p>' +
+      (pack.foils.length
+        ? '<div class="lq5b-foils" role="list">' + pack.foils.map(function (f, i) { return licenseFoil(f, i + 2); }).join('') + '</div>'
+        : '');
+    }
+    var footD = pack.demo
+      ? '未检索时，舞台用来读三态，不是某次搜索的结果。搜索后换成命中。结论按收录记录生成，不是法律意见。对照别名 <a href="/license-v5b.html">license-v5b</a>。'
+      : ('结论按收录记录生成，不是法律意见。' + (q ? '检索「' + esc(q) + '」。' : ''));
+    var footV = 'licensesPage · lq-v5b · /license' + (q ? ' · q=' + esc(q) : ' · demo');
+    return '<section class="lq5b-hero">' +
+      '<div class="container">' +
+        '<p class="lq5b-crumb" aria-label="路径">' +
+          '<span class="for-design">wenfeng.org / 授权</span>' +
+          '<span class="for-dev mono">wenfeng.org /license</span>' +
+        '</p>' +
+        '<div class="lq5b-display">' +
+          '<h1 class="for-design">查授权</h1>' +
+          '<h1 class="for-dev mono">/license</h1>' +
+          '<p class="lq5b-lead for-design">一次把结论写大。<br class="lq5b-br" />主命中占舞台；另两态压成细线陪衬。</p>' +
+          '<p class="lq5b-lead for-dev mono">q → primary hit · license fields<br class="lq5b-br" /> secondary tiers as foils</p>' +
+        '</div>' +
+        '<form class="lq5b-search" action="/license" method="get" role="search">' +
+          '<span class="lq5b-search-kicker" aria-hidden="true">检索</span>' +
+          '<label class="sr-only" for="q">搜索字体</label>' +
+          '<input id="q" name="q" type="search" value="' + esc(q) + '" placeholder="中文名、英文、短码、厂商…" autocomplete="off" />' +
+          '<button class="btn btn-ink" type="submit">' +
+            '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>' +
+            '搜索' +
+          '</button>' +
+        '</form>' +
+        stage +
+        '<p class="lq5b-footnote for-design">' + footD + '</p>' +
+        '<p class="lq5b-footnote for-dev mono">' + footV + '</p>' +
+      '</div>' +
+    '</section>';
   }
 
   function licenseTier(f) {
@@ -2208,7 +2492,7 @@
       home: '源文件',
       list: '目录',
       font: extra || '字体',
-      licenses: '许可',
+      licenses: '查授权',
       license: (extra || '') + ' 许可',
       foundries: '厂商',
       foundry: extra || '厂商',
@@ -2668,7 +2952,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : ('page-' + route.page);
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : ('page-' + route.page));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();

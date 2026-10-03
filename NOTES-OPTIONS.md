@@ -244,3 +244,14 @@
 - 截图：`_shots/license-full-2026-10-02/license-v5b-desktop.png`
 - 预览：`http://127.0.0.1:16030/license-v5b.html`
 
+
+
+## 授权查询 · 戊′落入 SPA `/license`（2026-10-03）
+
+冯说「先就这个，接着来」。戊′不再只是静态稿。
+
+- 活页：`/license` → `licensesPage()` 用戊′主命中舞台（`lq lq-v5b` + `css/license-versions.css`）
+- 无检索：三态示范（霞鹜文楷 / 普惠体 / 日暮黑体），结论按收录记录，不照抄别名里不准确的「许可空」
+- 有检索：主命中 + 至多 6 条陪衬；`/license/{norm}` 原文页未改
+- 别名：`license-v5b.html` 仍可打开（对照 / 枢纽 iframe）；「授权」指回 `/license`
+- 预览：`http://127.0.0.1:16030/license` 应与 `/license-v5b.html` 同一版式

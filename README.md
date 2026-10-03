@@ -16,6 +16,7 @@ cd ~/Projects/wenfeng-org
 python3 preview.py --port 16030
 # http://127.0.0.1:16030/           首页 = 丁（锁定 home-v4）
 # http://127.0.0.1:16030/home-v4.html 丁别名（对照）
+# http://127.0.0.1:16030/license    授权 = 戊′（license-v5b 为静态别名）
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -30,6 +31,7 @@ python3 preview.py --port 16030
 |---|---|
 | `index.html` + `js/site.js` + `css/` | 完整站 SPA；`/` = 丁首页 |
 | `home-v4.html` | 丁静态别名（枢纽对照） |
+| `license-v5b.html` | 戊′静态别名（`/license` 活页） |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |
