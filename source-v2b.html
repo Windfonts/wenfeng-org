@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>目录 · 乙′ · 索引 · 文风开源</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/source-versions.css" />
+</head>
+<body class="sd sd-v2b" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/">源文件</a>
+        <a href="/license">授权</a>
+        <a href="/source" class="is-active">目录</a>
+        <a href="/attest">核验</a>
+        <a href="/about">关于</a>
+      </nav>
+      <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
+        <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/assets/icons.svg#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="sd-hero">
+      <div class="container">
+        <p class="sd-crumb" aria-label="路径">
+          <span class="for-design">wenfeng.org / 目录</span>
+          <span class="for-dev mono">wenfeng.org /source · alias source-v2b</span>
+        </p>
+        <div class="sd-display">
+          <div>
+            <p class="sd-kicker for-design">乙′ · 源文件目录</p>
+            <p class="sd-kicker for-dev mono">ia · name index</p>
+            <h1 class="for-design">索引</h1>
+            <h1 class="for-dev mono">/source</h1>
+          </div>
+          <p class="sd-lead for-design">一条文件名索引。<br class="sd-br" />右边只写这一站的边界。不管样张，也不当 CDN。</p>
+          <p class="sd-lead for-dev mono">norm · name · offer · action<br class="sd-br" /> aside = boundary</p>
+        </div>
+        <form class="sd-search" data-sd-form action="/source" method="get" role="search">
+          <span class="sd-search-kicker" aria-hidden="true">检索</span>
+          <label class="sr-only" for="q">搜索字体</label>
+          <input id="q" data-sd-q name="q" type="search" placeholder="中文名、短码、厂商…" autocomplete="off" />
+          <button class="btn btn-ink" type="submit">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+            搜索
+          </button>
+        </form>
+        <div class="sd2b-split">
+          <div>
+            <nav class="sd2b-pills" aria-label="按状态筛选示例">
+              <a href="/source-v2b.html" data-sd-offer="all" class="is-on">全部</a>
+              <a href="/source-v2b.html?offer=source" data-sd-offer="source">本站下载</a>
+              <a href="/source-v2b.html?offer=jump" data-sd-offer="jump">官方下载</a>
+              <a href="/source-v2b.html?offer=later" data-sd-offer="later">暂无下载</a>
+              <a href="/source-v2b.html?offer=check" data-sd-offer="check">待核实</a>
+              <a href="/source-v2b.html?offer=missing" data-sd-offer="missing">未收录</a>
+            </nav>
+            <p class="sd2b-count">示例 <span data-sd-hit>14</span> 条 · 目录 556 · 2026-10-01</p>
+            <div class="sd2b-legend" aria-hidden="true">
+              <span>短码</span>
+              <span>名字</span>
+              <span class="for-design">记录</span>
+              <span class="for-dev">offer</span>
+              <span>动作</span>
+            </div>
+            <ul class="sd2b-rows">
+              <li class="sd2b-row" data-sd-row data-offer="source" data-blob="霞鹜文楷 xwwk lxgw ofl wenkai">
+                <span class="norm">Xwwk</span>
+                <a class="name" href="/source/Xwwk/">文风·霞鹜文楷</a>
+                <span class="meta for-design">OFL-1.1 · LXGW · 本站下载</span>
+                <span class="meta for-dev mono">Xwwk · offer=source · textState=full</span>
+                <a class="go is-ink" href="/source/Xwwk/">下载</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="source" data-blob="寒蝉手拙体 hcszt ofl">
+                <span class="norm">Hcszt</span>
+                <a class="name" href="/source/Hcszt/">文风·寒蝉手拙体</a>
+                <span class="meta for-design">OFL-1.1 · 寒蝉字型 · 本站下载</span>
+                <span class="meta for-dev mono">Hcszt · offer=source · textState=full</span>
+                <a class="go is-ink" href="/source/Hcszt/">下载</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="source" data-blob="合简黑体 hjht guiwonder ofl">
+                <span class="norm">Hjht</span>
+                <a class="name" href="/source/Hjht/">文风·合简黑体</a>
+                <span class="meta for-design">OFL-1.1 · GuiWonder · 本站下载</span>
+                <span class="meta for-dev mono">Hjht · offer=source · textState=full</span>
+                <a class="go is-ink" href="/source/Hjht/">下载</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="source" data-blob="械黑 frexsans frex ofl">
+                <span class="norm">Frexsans</span>
+                <a class="name" href="/source/Frexsans/">文风·械黑</a>
+                <span class="meta for-design">OFL-1.1 · 械黑计划 · 本站下载</span>
+                <span class="meta for-dev mono">Frexsans · offer=source · textState=full</span>
+                <a class="go is-ink" href="/source/Frexsans/">下载</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="jump" data-blob="仓耳小丸子 cexwz 造字工房">
+                <span class="norm">Cexwz</span>
+                <a class="name" href="/source/Cexwz/">文风·仓耳小丸子</a>
+                <span class="meta for-design">厂商声明 · 造字工房 · 官方下载</span>
+                <span class="meta for-dev mono">Cexwz · offer=jump · textState=full</span>
+                <a class="go" href="/source/Cexwz/">去出处</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="jump" data-blob="猫啃扛重族黑 mkkzh maoken ofl">
+                <span class="norm">Mkkzh</span>
+                <a class="name" href="/source/Mkkzh/">文风·猫啃扛重族黑</a>
+                <span class="meta for-design">OFL-1.1 · 猫啃网 · 官方下载</span>
+                <span class="meta for-dev mono">Mkkzh · offer=jump · textState=full</span>
+                <a class="go" href="/source/Mkkzh/">去出处</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="jump" data-blob="濑户字体 lhzt ofl">
+                <span class="norm">Lhzt</span>
+                <a class="name" href="/source/Lhzt/">文风·濑户字体</a>
+                <span class="meta for-design">OFL-1.1 · 濑户字体 · 官方下载</span>
+                <span class="meta for-dev mono">Lhzt · offer=jump · textState=full</span>
+                <a class="go" href="/source/Lhzt/">去出处</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="jump" data-blob="包图小白体 btxbt baotu">
+                <span class="norm">Btxbt</span>
+                <a class="name" href="/source/Btxbt/">文风·包图小白体</a>
+                <span class="meta for-design">厂商协议 · Baotu · 官方下载</span>
+                <span class="meta for-dev mono">Btxbt · offer=jump · textState=pointer</span>
+                <a class="go" href="/source/Btxbt/">去出处</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="later" data-blob="黑糖梅子糖 bspsc lxgw 暂无">
+                <span class="norm">Bspsc</span>
+                <a class="name" href="/source/Bspsc/">文风·黑糖梅子糖</a>
+                <span class="meta for-design">OFL-1.1 · LXGW · 暂无下载</span>
+                <span class="meta for-dev mono">Bspsc · offer=pending · textState=full</span>
+                <a class="go" href="/source/Bspsc/">看条目</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="later" data-blob="鼎猎珠海体 dlzht 丁烈 暂无">
+                <span class="norm">Dlzht</span>
+                <a class="name" href="/source/Dlzht/">文风·鼎猎珠海体</a>
+                <span class="meta for-design">厂商协议 · 丁烈 · 暂无下载</span>
+                <span class="meta for-dev mono">Dlzht · offer=pending · distribution=false</span>
+                <a class="go" href="/source/Dlzht/">看条目</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="check" data-blob="阿里巴巴普惠体 albbpht alibaba 待核实">
+                <span class="norm">Albbpht</span>
+                <a class="name" href="/source/Albbpht/">文风·阿里巴巴普惠体</a>
+                <span class="meta for-design">厂商协议 · Alibaba · 待核实</span>
+                <span class="meta for-dev mono">Albbpht · offer=pending · textState=pointer</span>
+                <a class="go" href="/source/Albbpht/">看条目</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="check" data-blob="ebas 无衬线 qzkswjz 待核实">
+                <span class="norm">Qzkswjz</span>
+                <a class="name" href="/source/Qzkswjz/">文风·EBAS 无衬线体</a>
+                <span class="meta for-design">厂商协议 · 待核实</span>
+                <span class="meta for-dev mono">Qzkswjz · offer=pending · textState=pointer</span>
+                <a class="go" href="/source/Qzkswjz/">看条目</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="missing" data-blob="日暮黑体 higure 未收录 待核实">
+                <span class="norm">Higure</span>
+                <a class="name" href="/source/Higure/">文风·日暮黑体</a>
+                <span class="meta for-design">许可空 · 未收录</span>
+                <span class="meta for-dev mono">Higure · offer=missing · textState=missing</span>
+                <a class="go" href="/#gap">报缺</a>
+              </li>
+              <li class="sd2b-row" data-sd-row data-offer="missing" data-blob="普通圆黑 futehodo 未收录">
+                <span class="norm">Futehodo</span>
+                <a class="name" href="/source/Futehodo/">文风·普通圆黑</a>
+                <span class="meta for-design">许可空 · 未收录</span>
+                <span class="meta for-dev mono">Futehodo · offer=missing · textState=missing</span>
+                <a class="go" href="/#gap">报缺</a>
+              </li>
+            </ul>
+            <p class="sd2b-empty" data-sd-empty hidden>示例里没有这个名字。全表在 <a href="/source">/source</a>。</p>
+          </div>
+          <aside class="sd2b-aside" aria-label="这一站管什么">
+            <p class="label for-design">这一站</p>
+            <p class="label for-dev mono">boundary</p>
+            <div class="sd2b-kv">
+              <div><span class="k for-design">源文件</span><span class="k for-dev">files</span><span class="v">能带走的在本站，不能再分发的不代发</span></div>
+              <div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v">结论在查授权，这张表不下判断</span></div>
+              <div><span class="k for-design">缺字</span><span class="k for-dev">#gap</span><span class="v">缺字形、缺收录、勘误。不假装覆盖率</span></div>
+              <div><span class="k for-design">工具</span><span class="k for-dev">/slice</span><span class="v">切片、核验。不是托管分发</span></div>
+              <div><span class="k for-design">不是</span><span class="k for-dev">not</span><span class="v">网页字体 CDN、样张墙、店面选字</span></div>
+            </div>
+            <p class="note for-design">胶囊只筛这一页的示例。全表在活页目录，版式与此相同。</p>
+            <p class="note for-dev mono">alias filter · live list = /source</p>
+          </aside>
+        </div>
+        <p class="sd-footnote for-design">乙′ · 同乙的文件名索引和右栏边界，工艺对齐首页丁。活页 <a href="/source">/source</a> 已是这一版。丙、丁整页已否，甲已否。一款详情另有对照，还没写入条目页。</p>
+        <p class="sd-footnote for-dev mono">source-v2b · sd-v2b · listPage · detail comps not in SPA</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot">
+    <div class="container site-foot-inner">
+      <div class="site-foot-brand">
+        <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+        <p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>
+      </div>
+      <div class="site-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="/#gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">授权证明</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>关于</h2>
+        <a href="/about">关于</a>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container site-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照别名 · 未部署生产</p>
+      <p class="site-foot-alts">目录
+        <a href="/source-v2b.html" class="is-on">乙′ · 当前</a> ·
+        <a href="/source-v2.html">乙 · 原稿</a> ·
+        <a href="/source">活页 /source</a> ·
+        <a href="/source-options.html">枢纽</a>
+        · 已否
+        <a href="/source-v1.html">甲</a> /
+        <a href="/source-v3.html">丙</a> /
+        <a href="/source-v4.html">丁</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var VIEW_KEY = 'wf-view';
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === 'dev' ? 'dev' : 'design'; }
+        catch (e) { return 'design'; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute('data-view', v === 'dev' ? 'dev' : 'design');
+        document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+          b.classList.toggle('is-on', b.getAttribute('data-mode') === (v === 'dev' ? 'dev' : 'design'));
+        });
+      }
+      function setView(v) {
+        var next = v === 'dev' ? 'dev' : 'design';
+        try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+        applyView(next);
+      }
+      try {
+        var qv = new URLSearchParams(location.search).get('view');
+        if (qv === 'dev' || qv === 'design') localStorage.setItem(VIEW_KEY, qv);
+      } catch (e) {}
+      applyView(view());
+      document.querySelectorAll('[data-view-switch] [data-mode]').forEach(function (b) {
+        b.addEventListener('click', function () { setView(b.getAttribute('data-mode')); });
+      });
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute('data-theme') === 'dark';
+        if (dark) { root.removeAttribute('data-theme'); try { localStorage.setItem('wf-theme', 'light'); } catch (e) {} }
+        else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('wf-theme', 'dark'); } catch (e) {} }
+        this.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? '切换到浅色' : '切换到深色');
+      });
+      var input = document.querySelector('[data-sd-q]');
+      var rows = Array.prototype.slice.call(document.querySelectorAll('[data-sd-row]'));
+      var pills = Array.prototype.slice.call(document.querySelectorAll('[data-sd-offer]'));
+      var params = new URLSearchParams(location.search);
+      var offer = params.get('offer') || 'all';
+      if (input && params.get('q')) input.value = params.get('q');
+      function apply() {
+        var qq = (input && input.value || '').trim().toLowerCase();
+        var n = 0;
+        rows.forEach(function (row) {
+          var okOffer = offer === 'all' || row.getAttribute('data-offer') === offer;
+          var blob = (row.getAttribute('data-blob') || '').toLowerCase();
+          var show = okOffer && (!qq || blob.indexOf(qq) !== -1);
+          row.hidden = !show;
+          if (show) n += 1;
+        });
+        var empty = document.querySelector('[data-sd-empty]');
+        if (empty) empty.hidden = n !== 0;
+        var hit = document.querySelector('[data-sd-hit]');
+        if (hit) hit.textContent = String(n);
+        pills.forEach(function (p) {
+          p.classList.toggle('is-on', (p.getAttribute('data-sd-offer') || 'all') === offer);
+        });
+      }
+      pills.forEach(function (p) {
+        p.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          offer = p.getAttribute('data-sd-offer') || 'all';
+          var url = new URL(location.href);
+          if (offer === 'all') url.searchParams.delete('offer');
+          else url.searchParams.set('offer', offer);
+          history.replaceState(null, '', url);
+          apply();
+        });
+      });
+      var form = document.querySelector('[data-sd-form]');
+      if (form) form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        apply();
+      });
+      if (input) input.addEventListener('input', apply);
+      apply();
+    })();
+  </script>
+</body>
+</html>

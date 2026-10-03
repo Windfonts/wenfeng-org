@@ -705,33 +705,141 @@
       '</section>';
   }
 
-  function listPage(fonts, route) {
-    var list = fonts.filter(function (f) { return matchQ(f, route.q) && byOffer(f, route.offer); });
-    var hiddenOffer = route.offer && route.offer !== 'all'
-      ? '<input type="hidden" name="offer" value="' + esc(route.offer) + '">'
-      : '';
-    var countNote = '';
-    if (route.offer === 'slice') {
-      var gated = list.filter(function (f) { return !!sliceGateOf(f); }).length;
-      var planned = list.length - gated;
-      var parts = [];
-      if (gated) parts.push(gated + ' 款上传原包核验后领取');
-      if (planned) parts.push(planned + ' 款切片包稍后提供');
-      countNote = parts.length ? ' · ' + parts.join('，') : '';
+  function indexOfferKey(f) {
+    var o = offerOf(f);
+    if (o === 'pending') {
+      return ((f.license || {}).textState === 'full') ? 'later' : 'check';
     }
-    return '<div class="container page-pad">' +
-      '<div class="page-head is-compact">' +
-        '<p class="kicker">目录</p>' +
-        '<h1>按名字拿走</h1>' +
+    if (o === 'source' || o === 'jump' || o === 'missing') return o;
+    return 'jump';
+  }
+
+  function matchIndex(f, offer) {
+    if (!offer || offer === 'all') return true;
+    if (offer === 'pending') return offerOf(f) === 'pending';
+    if (offer === 'slice') return byOffer(f, 'slice');
+    return indexOfferKey(f) === offer;
+  }
+
+  function licShort(f) {
+    var lic = f.license || {};
+    var spdx = lic.spdx || licenseSpdx(f.licenseName);
+    if (spdx) return spdx;
+    var n = f.licenseName || '';
+    if (!n || n === '待核实') return '许可空';
+    return n;
+  }
+
+  function indexAct(f) {
+    var k = indexOfferKey(f);
+    var href = '/source/' + esc(f.norm) + '/';
+    if (k === 'source') return { href: href, label: '下载', ink: true };
+    if (k === 'jump') return { href: href, label: '去出处', ink: false };
+    if (k === 'missing') return { href: '/#gap', label: '报缺', ink: false };
+    return { href: href, label: '看条目', ink: false };
+  }
+
+  function indexPillHref(id, q) {
+    var parts = [];
+    if (id && id !== 'all') parts.push('offer=' + encodeURIComponent(id));
+    if (q) parts.push('q=' + encodeURIComponent(q));
+    return '/source' + (parts.length ? '?' + parts.join('&') : '');
+  }
+
+  function listPage(fonts, route) {
+    var offer = route.offer || 'all';
+    var list = fonts.filter(function (f) { return matchQ(f, route.q) && matchIndex(f, offer); });
+    try {
+      var coll = new Intl.Collator('zh-Hans-CN');
+      list.sort(function (a, b) {
+        return coll.compare(a.name || '', b.name || '') || coll.compare(a.norm || '', b.norm || '');
+      });
+    } catch (e) {}
+    var pills = [
+      { id: 'all', label: '全部' },
+      { id: 'source', label: '本站下载' },
+      { id: 'jump', label: '官方下载' },
+      { id: 'later', label: '暂无下载' },
+      { id: 'check', label: '待核实' },
+      { id: 'missing', label: '未收录' }
+    ];
+    var pillHtml = pills.map(function (k) {
+      var on = (offer === 'pending' && (k.id === 'later' || k.id === 'check')) || k.id === offer;
+      return '<a href="' + indexPillHref(k.id, route.q) + '"' + (on ? ' class="is-on"' : '') + '>' + k.label + '</a>';
+    }).join('');
+    var rows = list.map(function (f) {
+      var act = indexAct(f);
+      var textState = (f.license || {}).textState || '—';
+      var maker = f.foundry || '未标注';
+      return '<li class="sd2b-row">' +
+        '<span class="norm">' + esc(f.norm) + '</span>' +
+        '<a class="name" href="/source/' + esc(f.norm) + '/">' + esc(wfName(f)) + '</a>' +
+        '<span class="meta for-design">' + esc(licShort(f)) + ' · ' + esc(maker) + ' · ' + esc(statusWord(f)) + '</span>' +
+        '<span class="meta for-dev mono">' + esc(f.norm) + ' · offer=' + esc(offerOf(f)) + ' · textState=' + esc(textState) + '</span>' +
+        '<a class="go' + (act.ink ? ' is-ink' : '') + '" href="' + act.href + '">' + esc(act.label) + '</a>' +
+      '</li>';
+    }).join('');
+    var empty = list.length
+      ? ''
+      : '<p class="sd2b-empty">没有这个名字。换个短码，或看<a href="/source">全部目录</a>。</p>';
+    var qNote = route.q ? ' · 「' + esc(route.q) + '」' : '';
+    var footD = '按短码和名字找。胶囊筛的是这张目录。授权结论不在这里下。对照别名 <a href="/source-v2b.html">source-v2b</a>。';
+    var footV = 'listPage · sd-v2b · /source' + (route.q ? ' · q=' + esc(route.q) : '') + (offer !== 'all' ? ' · offer=' + esc(offer) : '');
+    return '<section class="sd-hero">' +
+      '<div class="container">' +
+        '<p class="sd-crumb" aria-label="路径">' +
+          '<span class="for-design">wenfeng.org / 目录</span>' +
+          '<span class="for-dev mono">wenfeng.org /source · sd-v2b</span>' +
+        '</p>' +
+        '<div class="sd-display">' +
+          '<div>' +
+            '<p class="sd-kicker for-design">源文件目录</p>' +
+            '<p class="sd-kicker for-dev mono">ia · name index</p>' +
+            '<h1 class="for-design">索引</h1>' +
+            '<h1 class="for-dev mono">/source</h1>' +
+          '</div>' +
+          '<p class="sd-lead for-design">一条文件名索引。<br class="sd-br" />右边只写这一站的边界。不管样张，也不当 CDN。</p>' +
+          '<p class="sd-lead for-dev mono">norm · name · offer · action<br class="sd-br" /> aside = boundary</p>' +
+        '</div>' +
+        '<form class="sd-search" action="/source" method="get" role="search">' +
+          '<span class="sd-search-kicker" aria-hidden="true">检索</span>' +
+          '<label class="sr-only" for="q">搜索字体</label>' +
+          '<input id="q" name="q" type="search" value="' + esc(route.q) + '" placeholder="中文名、短码、厂商…" autocomplete="off" />' +
+          (offer && offer !== 'all' ? '<input type="hidden" name="offer" value="' + esc(offer) + '">' : '') +
+          '<button class="btn btn-ink" type="submit">' +
+            '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>' +
+            '搜索' +
+          '</button>' +
+        '</form>' +
+        '<div class="sd2b-split">' +
+          '<div>' +
+            '<nav class="sd2b-pills" aria-label="按状态筛选">' + pillHtml + '</nav>' +
+            '<p class="sd2b-count"><span>' + list.length + '</span> 条' + qNote + ' · 目录 ' + fonts.length + '</p>' +
+            '<div class="sd2b-legend" aria-hidden="true">' +
+              '<span>短码</span><span>名字</span>' +
+              '<span class="for-design">记录</span><span class="for-dev">offer</span><span>动作</span>' +
+            '</div>' +
+            (rows ? '<ul class="sd2b-rows">' + rows + '</ul>' : '') +
+            empty +
+          '</div>' +
+          '<aside class="sd2b-aside" aria-label="这一站管什么">' +
+            '<p class="label for-design">这一站</p>' +
+            '<p class="label for-dev mono">boundary</p>' +
+            '<div class="sd2b-kv">' +
+              '<div><span class="k for-design">源文件</span><span class="k for-dev">files</span><span class="v">能带走的在本站，不能再分发的不代发</span></div>' +
+              '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v">结论在查授权，这张表不下判断</span></div>' +
+              '<div><span class="k for-design">缺字</span><span class="k for-dev">#gap</span><span class="v">缺字形、缺收录、勘误。不假装覆盖率</span></div>' +
+              '<div><span class="k for-design">工具</span><span class="k for-dev">/slice</span><span class="v">切片、核验。不是托管分发</span></div>' +
+              '<div><span class="k for-design">不是</span><span class="k for-dev">not</span><span class="v">网页字体 CDN、样张墙、店面选字</span></div>' +
+            '</div>' +
+            '<p class="note for-design">胶囊筛整张目录。右栏是这一站的边界，不是某一款的状态。</p>' +
+            '<p class="note for-dev mono">offer · textState · samples.json</p>' +
+          '</aside>' +
+        '</div>' +
+        '<p class="sd-footnote for-design">' + footD + '</p>' +
+        '<p class="sd-footnote for-dev mono">' + footV + '</p>' +
       '</div>' +
-      searchForm('/source', route.q, hiddenOffer) +
-      filterBar(route.offer, route.q) +
-      '<p class="count-line"><strong>' + list.length + '</strong> 款' +
-        (route.q ? ' · 「' + esc(route.q) + '」' : '') +
-        countNote +
-      '</p>' +
-      (route.q ? cards(list, false, route.offer) : groupedCards(list, route.offer)) +
-    '</div>';
+    '</section>';
   }
 
   function fileOf(f, kind) {
@@ -2952,7 +3060,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : ('page-' + route.page));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : ('page-' + route.page)));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();
