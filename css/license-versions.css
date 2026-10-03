@@ -2073,3 +2073,123 @@ body.lq main { flex: 1; }
   .lq7-search .btn, .lq8-search .btn, .lq9-search .btn { width: 100%; }
   .lq8-stub { grid-template-columns: 4.5rem minmax(0, 1fr) auto; }
 }
+
+/* 许可原文页对照 · 甲 lp-v10 文书（原文通栏主角） · 乙 lp-v11 档案（原文+侧栏取证）
+   共用：白底、细线、mono 小标签；文本 pre 照录 */
+.lp10-crumb, .lp11-crumb {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray-2);
+}
+.lp10-crumb a, .lp11-crumb a { color: inherit; }
+.lp10-head, .lp11-head { padding: var(--s-4) 0 var(--s-5); border-top: 1px solid var(--rule); }
+.lp10-flag, .lp11-flag {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+.lp10-head h1, .lp11-head h1 {
+  margin: 0 0 var(--s-2);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.lp10-sub, .lp11-sub { margin: 0 0 var(--s-2); font-size: var(--fs-14); color: var(--ink-2); }
+.lp10-state, .lp11-state { margin: 0; font-size: var(--fs-13, 0.8125rem); color: var(--gray); }
+.lp10-state.for-dev.mono, .lp11-state.for-dev.mono, .lp11-state.mono { font-family: var(--font-mono); font-size: var(--fs-11, 0.6875rem); }
+
+/* 甲 · 文书：阅读列 */
+.lp10-sheet { padding: var(--s-5) 0 0; }
+.lp10-doc {
+  margin: 0 auto;
+  max-width: 44em;
+  font-size: var(--fs-14);
+  line-height: 1.75;
+  color: var(--ink-2);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.lp10-evidence {
+  margin: var(--s-6) auto 0;
+  max-width: 44em;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--rule);
+}
+.lp10-evidence .label, .lp11-rail .label {
+  margin: 0 0 var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+.lp10-kv div, .lp11-kv div {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: 0.45rem 0;
+  min-width: 0;
+}
+.lp10-kv div + div, .lp11-kv div + div { border-top: 1px solid var(--rule-2, var(--rule)); }
+.lp10-kv .k, .lp11-kv .k { flex: 0 0 4.5em; font-size: var(--fs-13, 0.8125rem); color: var(--gray); }
+.lp10-kv .k.for-dev, .lp11-kv .k.for-dev { font-family: var(--font-mono); font-size: var(--fs-11, 0.6875rem); }
+.lp10-kv .v, .lp11-kv .v { flex: 1 1 auto; min-width: 0; font-size: var(--fs-13, 0.8125rem); color: var(--ink); overflow-wrap: break-word; }
+.lp10-kv .v.mono, .lp11-kv .v.mono { font-family: var(--font-mono); font-size: var(--fs-11, 0.6875rem); color: var(--ink-2); }
+.lp10-kv .v a, .lp11-kv .v a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.lp10-note { margin: var(--s-3) 0 0; font-size: var(--fs-13, 0.8125rem); color: var(--gray); }
+.lp10-acts, .lp11-acts { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin: var(--s-5) 0 0; }
+.lp10-acts a, .lp11-acts a { color: var(--ink); text-decoration: none; font-size: var(--fs-14); }
+.lp10-acts a.is-strong, .lp11-acts a.is-strong {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--ink);
+  color: var(--paper);
+}
+.lp10-footnote, .lp11-footnote {
+  margin: var(--s-6) 0 0;
+  padding: var(--s-3) 0 var(--s-6);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-12, 0.75rem);
+  color: var(--gray-2);
+}
+.lp10-footnote a, .lp11-footnote a { color: inherit; }
+
+/* 乙 · 档案：两栏 */
+.lp11-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  gap: var(--s-8);
+  align-items: start;
+  padding-top: var(--s-2);
+}
+.lp11-sheet { min-width: 0; }
+.lp11-sheet .lp11-state { margin: 0 0 var(--s-4); }
+.lp11-doc {
+  margin: 0;
+  font-size: var(--fs-14);
+  line-height: 1.75;
+  color: var(--ink-2);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.lp11-rail {
+  position: sticky;
+  top: var(--topbar-h, 4rem);
+  padding: var(--s-4) 0 0 var(--s-5);
+  border-left: 1px solid var(--ink);
+}
+.lp11-rail-note { margin: var(--s-3) 0 0; font-size: var(--fs-12, 0.75rem); color: var(--gray); }
+.lp11-rail-note a { color: inherit; }
+.lp11-footnote { margin: var(--s-6) 0 0; }
+
+@media (max-width: 900px) {
+  .lp11-split { grid-template-columns: 1fr; gap: var(--s-5); }
+  .lp11-rail { position: static; border-left: 0; border-top: 1px solid var(--ink); padding: var(--s-4) 0 0; }
+}

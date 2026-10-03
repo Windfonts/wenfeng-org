@@ -566,3 +566,11 @@
 - **未改** `legalPage()` / `/legal`
 - 截图：下载目录 `legal-v3.png` / `legal-v4.png`
 - 预览：`http://127.0.0.1:16030/legal-options.html`
+
+## 10-03 15:30 [CC] 许可原文页两份整页（真数据，待选）
+
+`/license/{norm}` 首批对照，样例 Xwwk（数据全真：textSha256=1a25e35d…、fetchedAt=2026-09-26、rfn 五名、github 出处；文本 5123 字照录）。样式接 license-versions.css 尾部 lp10/lp11 段。
+
+- **甲 · 文书 `license-v10.html`**：原文 44em 通栏照录，取证记录（来源/取得/哈希/保留名）在文末。
+- **乙 · 档案 `license-v11.html`**：原文左、取证档案右栏 sticky 吸边，动作常驻。
+- 枢纽已登记 license-query-options.html #ver-license-text。选版后精修再接 `licensePage()`。
