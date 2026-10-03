@@ -1,4 +1,4 @@
-/* 关于整页 · 甲三处 / 乙短文（已否）· 丙三件 / 丁五不
+/* 关于整页 · 甲三处 / 乙短文 / 丙三件 / 丁五不（已否）· 戊来信 / 己路径
    同 home-v4 丁的字阶与细线。未接入 /about。
    B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
 
@@ -464,3 +464,239 @@ body.ab .wordmark .wm-sub {
   .ab3-job { grid-template-columns: 1fr; gap: var(--s-2); }
   .ab3-idx { margin-top: 0; }
 }
+
+/* 戊 · 来信：正文一条墨线边，落款在信内，店面与造字在信外附言。
+   不是三列，不是右栏地图，不是横账，不是否定字阶。 */
+.ab5-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2) var(--s-6);
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.ab5-meta .for-dev { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray-2); }
+.ab5-date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.04em;
+  color: var(--gray-2);
+}
+.ab5-sheet {
+  max-width: 44em;
+  padding-left: var(--s-8);
+  border-left: 1px solid var(--ink);
+}
+.ab5-body p {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-16);
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+.ab5-body p.mono,
+.ab5-body p.for-dev {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  line-height: 1.65;
+  color: var(--gray);
+}
+.ab5-body a { color: var(--ink); }
+.ab5-sign {
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+}
+.ab5-sign .who {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ab5-sign .who.mono { font-family: var(--font-mono); font-size: var(--fs-12); font-weight: var(--fw-body); color: var(--gray); }
+.ab5-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  margin: 0;
+}
+.ab5-acts a.is-pill,
+.ab6-node .act a.is-pill {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-title);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+}
+.ab5-acts a.is-pill:hover,
+.ab6-node .act a.is-pill:hover { background: var(--ink-hover); text-decoration: none; }
+.ab5-acts a:not(.is-pill) {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+}
+.ab5-acts a:not(.is-pill):hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.ab5-ps {
+  max-width: 44em;
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.ab5-ps .label,
+.ab6-note .label,
+.ab6-root {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray-2);
+}
+.ab5-ps .label { display: block; margin: 0 0 var(--s-2); }
+.ab5-ps p { margin: 0; }
+.ab5-ps a { color: var(--ink); }
+.ab5-ps p.mono,
+.ab5-ps p.for-dev { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray); }
+
+/* 己 · 路径：主机名下的缩进路径。别的主机另起，不并排。
+   说明在树下，不写成右栏，也不写成横条账本。 */
+.ab6-root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-3) var(--s-4);
+  margin: 0 0 var(--s-2);
+}
+.ab6-root .host {
+  font-family: var(--font-mono);
+  font-size: var(--fs-20);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.ab6-root.is-other { margin-top: var(--s-8); }
+.ab6-root.is-other .host {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+}
+.ab6-tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--rule);
+}
+.ab6-tree.is-other { border-left-color: var(--rule); }
+.ab6-node {
+  position: relative;
+  display: grid;
+  grid-template-columns: 14.5rem 4.5rem minmax(0, 1fr) auto;
+  gap: var(--s-3) var(--s-4);
+  align-items: baseline;
+  margin: 0;
+  padding: var(--s-4) var(--s-3) var(--s-4) var(--s-6);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: background var(--dur) var(--ease);
+}
+.ab6-node::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.35em;
+  width: 0.85rem;
+  border-top: 1px solid var(--rule);
+}
+.ab6-node:hover { background: var(--fill); }
+.ab6-node .path {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+}
+a.ab6-node .path,
+.ab6-node a.path:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.ab6-node .path.is-quiet { color: var(--gray); text-decoration: none; }
+.ab6-node .name {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ab6-node .name.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-body);
+  color: var(--gray);
+}
+.ab6-node .gloss {
+  margin: 0;
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.ab6-node .gloss.mono,
+.ab6-node .gloss.for-dev {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.ab6-node .act a:not(.is-pill) {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ab6-node .act a:not(.is-pill):hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.ab6-note {
+  margin-top: var(--s-10);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  max-width: 46em;
+}
+.ab6-note .label { display: block; margin: 0 0 var(--s-4); }
+.ab6-note p { margin: 0 0 var(--s-3); font-size: var(--fs-16); line-height: var(--lh-body); color: var(--ink-2); }
+.ab6-note p:last-child { margin-bottom: 0; }
+.ab6-note a { color: var(--ink); }
+.ab6-note p.mono,
+.ab6-note p.for-dev {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+
+@media (max-width: 900px) {
+  .ab5-sheet { padding-left: var(--s-5); }
+  .ab6-node { grid-template-columns: 1fr; gap: var(--s-1); }
+  .ab6-node .act { margin-top: var(--s-2); }
+}
+
+.ab6-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-3) var(--s-4);
+  padding-top: var(--s-4);
+}
+.ab6-branch .limb {
+  flex: none;
+  width: 1.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-14);
+  color: var(--gray-2);
+}
+.ab6-branch .path { flex: none; }
+.ab6-branch .name { flex: none; }
+.ab6-branch .act { margin-left: auto; }
+.ab6-branch .gloss {
+  margin: var(--s-1) 0 var(--s-4) 1.75rem;
+  padding-left: var(--s-4);
+  max-width: 40em;
+}
+.ab6-tree { border-left: 0; }
+.ab6-branch { padding-left: var(--s-2); }
+.ab6-branch:hover { background: var(--fill); border-radius: var(--radius-sm); }
