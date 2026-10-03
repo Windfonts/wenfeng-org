@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{if(localStorage.getItem("wf-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");var v=localStorage.getItem("wf-view");var q=new URLSearchParams(location.search).get("view");if(q==="dev"||q==="design"){v=q;localStorage.setItem("wf-view",q)}document.documentElement.setAttribute("data-view",v==="dev"?"dev":"design")}catch(e){document.documentElement.setAttribute("data-view","design")}})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>用法 · 乙 · 工序 · 文风开源</title>
+  <link rel="stylesheet" href="/css/shop.css" />
+  <link rel="stylesheet" href="/css/use-versions.css" />
+</head>
+<body class="us us-v2" data-site="org">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+      <nav class="topnav" aria-label="主导航">
+        <a href="/">源文件</a>
+        <a href="/license">授权</a>
+        <a href="/source">目录</a>
+        <a href="/attest">核验</a>
+        <a href="/about">关于</a>
+      </nav>
+      <div class="topbar-end">
+        <div class="seg view-switch" data-view-switch role="group" aria-label="视图">
+          <button type="button" data-mode="design" class="is-on">设计</button>
+          <button type="button" data-mode="dev">开发</button>
+        </div>
+        <a class="shop-link" href="https://app.windfonts.com/" title="店面（样张与选字）">店面</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="切换主题">
+          <svg class="icon ico-moon" aria-hidden="true"><use href="/assets/icons.svg#i-moon"></use></svg>
+          <svg class="icon ico-sun" aria-hidden="true"><use href="/assets/icons.svg#i-sun"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="us-hero">
+      <div class="container">
+        <p class="us-crumb" aria-label="路径">
+          <span class="for-design"><a href="/">首页</a><span class="sep">/</span>用法 · 工序</span>
+          <span class="for-dev mono">comp use-v2 · /use still old shell</span>
+        </p>
+        <div class="us-display">
+          <h1 class="for-design">按序来</h1>
+          <h1 class="for-dev mono">in order</h1>
+          <p class="us-lead for-design">原件、切片、店面用字不是同一件事。按你要做的事往下读。代码写在那一步里面，不另起三列。怎么核在另一页。</p>
+          <p class="us-lead for-dev mono">archive → slice → hosted → api<br />code inside the step · not /how</p>
+        </div>
+
+        <ol class="us2-steps">
+          <li class="us2-step">
+            <p class="us1-idx">01</p>
+            <div>
+              <h2 class="for-design">拿原件</h2>
+              <h2 class="for-dev mono">archive</h2>
+              <p class="us-prose for-design">TTF / OTF / 上游仓库归档。给自建站、主题作者。许可允许时才再分发。</p>
+              <p class="us-prose for-dev mono">ttf · otf · upstream archive · redistribute only if allowed</p>
+            </div>
+          </li>
+          <li class="us2-step" id="theme">
+            <p class="us1-idx">02</p>
+            <div>
+              <h2 class="for-design">放进主题</h2>
+              <h2 class="for-dev mono">enqueue</h2>
+              <p class="us-prose for-design">切片包给 WordPress 和静态站本地 @font-face。开源字体的切片包稍后提供。不允许再分发的免费商用字体：上传从厂商下载的原包 zip（不要解压），核验通过后领取。走<a href="/slice">切片工具</a>。</p>
+              <p class="us-prose for-dev mono">local @font-face · oss slice later · no-redist zip → /slice</p>
+              <p class="us-prose for-design">解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>
+              <p class="us-prose for-dev mono">whole folder · fonts.css intact · do not split</p>
+              <pre class="us-code">// functions.php 里排队引入
+wp_enqueue_style(
+  'wenfeng-slice-xwwk',
+  get_theme_file_uri( '/fonts/wenfeng-slice-Xwwk/fonts.css' ),
+  array(),
+  null
+);
+
+/* 或在主题 style.css 顶部 */
+@import url( "./fonts/wenfeng-slice-Xwwk/fonts.css" );</pre>
+            </div>
+          </li>
+          <li class="us2-step">
+            <p class="us1-idx">03</p>
+            <div>
+              <h2 class="for-design">网页里用</h2>
+              <h2 class="for-dev mono">hosted</h2>
+              <p class="us-prose for-design">cn.windfonts.com 托管 CSS 和字体分片。不是本站下载，不要拿去二次托管。</p>
+              <p class="us-prose for-dev mono">cn.windfonts.com · not a download · no rehost</p>
+              <p class="us-prose for-design">不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。注释里的 <code>https://wenfeng.org/license</code> 要留着。</p>
+              <p class="us-prose for-dev mono">do not copy hosted woff2 · keep license comment</p>
+              <p class="us-label for-design">嵌入代码里这一行不能改</p>
+              <p class="us-label for-dev mono">comment · keep</p>
+              <pre class="us-code">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>
+            </div>
+          </li>
+          <li class="us2-step" id="api">
+            <p class="us1-idx">04</p>
+            <div>
+              <h2 class="for-design">再查目录</h2>
+              <h2 class="for-dev mono">/api/v1</h2>
+              <p class="us-prose for-design">免费和商业都可以查。商业字只出字段，<code>files</code> 为空。不是店面的 <code>/api/css</code>。<code>lineage</code> 字段为造字平台预留，现在恒为 <code>null</code>。</p>
+              <p class="us-prose for-dev mono">commercial → fields only, files [] · not shop /api/css · lineage = null</p>
+
+          <ul class="us-api">
+            <li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>
+            <li><a href="/api/v1/fonts?offer=source"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>
+            <li><a href="/api/v1/fonts?q=%E9%9C%9E%E9%B9%AD"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>
+            <li><a href="/api/v1/fonts/Xwwk"><code>GET /api/v1/fonts/Xwwk</code><span>一款 · 有 files</span></a></li>
+            <li><a href="/api/v1/fonts/Albbpht"><code>GET /api/v1/fonts/Albbpht</code><span>files 为空</span></a></li>
+            <li><a href="/api/v1/licenses/Xwwk"><code>GET /api/v1/licenses/Xwwk</code><span>许可原文</span></a></li>
+            <li><a href="/api/v1/foundries"><code>GET /api/v1/foundries</code><span>厂商</span></a></li>
+            <li><a href="/api/v1/certs"><code>GET /api/v1/certs</code><span>可核验目录</span></a></li>
+            <li><a href="/api/v1/certs/Xwwk"><code>GET /api/v1/certs/Xwwk</code><span>一款核验 JSON</span></a></li>
+            <li><span class="api-row"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>
+          </ul>
+
+              <pre class="us-code">GET /api/v1/fonts/{norm}
+{
+  "norm": "Xwwk",
+  "name": "霞鹜文楷",
+  "distribution": true,
+  "offer": "source",
+  "files": [ { "kind": "archive", "href": "…" } ]
+}</pre>
+            </div>
+          </li>
+        </ol>
+
+        <p class="us-acts">
+          <a class="is-pill" href="/source"><span class="for-design">下源文件</span><span class="for-dev">/source</span></a>
+          <a href="/slice"><span class="for-design">切片工具</span><span class="for-dev">/slice</span></a>
+          <a href="/license"><span class="for-design">查授权</span><span class="for-dev">/license</span></a>
+        </p>
+        <p class="us-footnote for-design">乙 · 工序。四步纵读，代码写在步骤里。另一套是 <a href="/use-v1.html">甲 · 三路</a>。活页 <a href="/use">/use</a> 仍是旧壳。怎么核在 <a href="/how">/how</a>。</p>
+        <p class="us-footnote for-dev mono">use-v2 · sequence · code inside the step · /use unwired</p>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-foot">
+    <div class="container site-foot-inner">
+      <div class="site-foot-brand">
+        <a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span><span>文风</span><span class="wm-sub">· 开源</span></a>
+        <p>源文件、许可原文、缺字反馈。开源字体直接下载，其余核验或去出处。不做样张墙，不当 CDN。</p>
+      </div>
+      <div class="site-foot-col">
+        <h2>办事</h2>
+        <a href="/license">查授权</a>
+        <a href="/source">下源文件</a>
+        <a href="/gap">报缺字</a>
+        <a href="/slice">切片</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>核验</h2>
+        <a href="/attest">授权证明</a>
+        <a href="/how">怎么核</a>
+        <a href="/v">查证</a>
+      </div>
+      <div class="site-foot-col">
+        <h2>关于</h2>
+        <a href="/about">关于</a>
+        <a href="/legal">法务</a>
+        <a href="/foundry">厂商</a>
+        <a href="/use">用法</a>
+      </div>
+    </div>
+    <div class="container site-foot-bottom">
+      <p>文派（广州）科技有限公司 · 对照稿 · 未部署生产</p>
+      <p class="site-foot-alts">用法
+        <a href="/use-v1.html">甲 · 三路</a> ·
+        <a href="/use-v2.html" class="is-on">乙 · 工序</a> ·
+        <a href="/use">活页 /use</a> ·
+        <a href="/use-options.html">枢纽</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var VIEW_KEY = "wf-view";
+      function view() {
+        try { return localStorage.getItem(VIEW_KEY) === "dev" ? "dev" : "design"; }
+        catch (e) { return "design"; }
+      }
+      function applyView(v) {
+        document.documentElement.setAttribute("data-view", v === "dev" ? "dev" : "design");
+        document.querySelectorAll("[data-view-switch] [data-mode]").forEach(function (b) {
+          b.classList.toggle("is-on", b.getAttribute("data-mode") === (v === "dev" ? "dev" : "design"));
+        });
+      }
+      document.querySelectorAll("[data-view-switch] [data-mode]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var next = b.getAttribute("data-mode") === "dev" ? "dev" : "design";
+          try { localStorage.setItem(VIEW_KEY, next); } catch (e) {}
+          applyView(next);
+        });
+      });
+      applyView(view());
+      var themeBtn = document.querySelector("[data-theme-toggle]");
+      if (themeBtn) themeBtn.addEventListener("click", function () {
+        var root = document.documentElement;
+        var dark = root.getAttribute("data-theme") === "dark";
+        if (dark) { root.removeAttribute("data-theme"); try { localStorage.setItem("wf-theme", "light"); } catch (e) {} }
+        else { root.setAttribute("data-theme", "dark"); try { localStorage.setItem("wf-theme", "dark"); } catch (e) {} }
+      });
+    })();
+  </script>
+</body>
+</html>

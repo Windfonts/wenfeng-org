@@ -1,0 +1,313 @@
+/* 用法整页 · 甲三路 / 乙工序
+   怎么用这个站，不是怎么核。文案沿用活页 /use。
+   字阶与卷宗对齐 home-v4 丁。
+   B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
+
+body.us {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+}
+body.us main { flex: 1; }
+body.us .wordmark .wm-sub {
+  font-weight: var(--fw-body);
+  color: var(--gray);
+  font-size: var(--fs-13);
+  margin-left: 0.15em;
+}
+
+.us-hero { padding: var(--s-16) 0 var(--s-12); }
+.us-crumb {
+  margin: 0 0 var(--s-8);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+.us-crumb a { color: var(--gray-2); text-decoration: none; }
+.us-crumb a:hover { color: var(--ink); }
+.us-crumb .sep { margin: 0 0.45em; color: var(--gray-2); opacity: 0.7; }
+
+.us-display {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: var(--s-6) var(--s-12);
+  align-items: end;
+  margin-bottom: var(--s-12);
+  padding-bottom: var(--s-10);
+  border-bottom: 1px solid var(--ink);
+}
+.us-display h1 {
+  margin: 0;
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  font-weight: var(--fw-title);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.us-display h1.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-weight: var(--fw-body);
+}
+.us-lead {
+  margin: 0;
+  max-width: 26em;
+  justify-self: end;
+  padding-bottom: 0.35em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.us-lead.mono { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--gray); }
+.us-footnote {
+  margin: var(--s-12) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  max-width: 46em;
+  line-height: var(--lh-body);
+}
+.us-footnote a { color: var(--ink); }
+.us-footnote.mono { font-family: var(--font-mono); font-size: var(--fs-12); }
+
+.us-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  margin: var(--s-8) 0 0;
+}
+.us-acts a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--fs-13);
+  text-underline-offset: 0.2em;
+}
+.us-acts a:hover { text-decoration: underline; }
+.us-acts a.is-pill {
+  font-weight: var(--fw-title);
+  padding: 0.45rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+.us-acts a.is-pill:hover {
+  background: var(--ink-hover);
+  text-decoration: none;
+}
+
+.us-label {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.us-keep {
+  margin: var(--s-8) 0 0;
+  max-width: 46em;
+  color: var(--ink-2);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+}
+.us-keep.mono { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray); }
+.us-keep a,
+.us-prose a,
+.us-api a { color: var(--ink); }
+.us-keep code,
+.us-prose code,
+.us-step code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--ink);
+}
+
+.us-comment { margin-top: var(--s-6); }
+.us-code {
+  margin: var(--s-4) 0 0;
+  padding: var(--s-5) var(--s-5);
+  border: 0;
+  border-left: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  box-shadow: none;
+}
+
+/* 甲 · 三路：拿走方式占舞台，主题和接口在墨线下面 */
+.us1-ways {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.us1-way {
+  min-width: 0;
+  padding: var(--s-6) var(--s-8) var(--s-8) 0;
+}
+.us1-way + .us1-way {
+  padding-left: var(--s-8);
+  border-left: 1px solid var(--ink);
+}
+.us1-idx {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.us1-way h2 {
+  margin: 0 0 var(--s-3);
+  font-size: clamp(2.15rem, 3.4vw, 3.05rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.us1-way h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  letter-spacing: -0.03em;
+  font-weight: var(--fw-body);
+}
+.us1-way p {
+  margin: 0;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+  max-width: 16em;
+}
+.us1-way p.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.us1-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--s-8) var(--s-12);
+  margin-top: var(--s-12);
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--ink);
+}
+.us1-pair h2 {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-20);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+}
+.us1-pair h2.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.us-prose {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.us-prose.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.us-api {
+  list-style: none;
+  margin: var(--s-4) 0 0;
+  padding: 0;
+}
+.us-api li {
+  border-top: 1px solid var(--rule);
+}
+.us-api li:last-child { border-bottom: 1px solid var(--rule); }
+.us-api a,
+.us-api .api-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: var(--s-3);
+  align-items: baseline;
+  padding: var(--s-3) var(--s-3);
+  margin: 0 calc(-1 * var(--s-3));
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--dur) var(--ease);
+}
+.us-api a:hover { background: var(--fill); }
+.us-api code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--ink);
+}
+.us-api span {
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+
+/* 乙 · 工序：按要做的事纵读，代码写在步骤里 */
+.us2-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.us2-step {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: var(--s-4) var(--s-8);
+  padding: var(--s-8) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur) var(--ease);
+}
+.us2-steps .us2-step:last-child { border-bottom: 1px solid var(--ink); }
+.us2-step:hover { background: var(--fill); }
+.us2-step .us1-idx { margin: 0.35em 0 0; }
+.us2-step h2 {
+  margin: 0;
+  font-size: clamp(2.15rem, 4.2vw, 3.35rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.us2-step h2.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  font-weight: var(--fw-body);
+  letter-spacing: -0.03em;
+}
+.us2-step .us-prose { max-width: 40em; margin-top: var(--s-3); }
+.us2-step .us-code { max-width: 46em; }
+
+@media (max-width: 900px) {
+  .us-display { grid-template-columns: 1fr; }
+  .us-lead { justify-self: start; padding-bottom: 0; }
+  .us1-ways { grid-template-columns: 1fr; }
+  .us1-way + .us1-way {
+    margin-top: var(--s-6);
+    padding-top: var(--s-6);
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .us1-pair { grid-template-columns: 1fr; }
+  .us-api a,
+  .us-api .api-row { grid-template-columns: 1fr; }
+  .us2-step { grid-template-columns: 1fr; gap: var(--s-2); }
+}

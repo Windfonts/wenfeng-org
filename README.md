@@ -40,6 +40,10 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/how-v1b.html       甲′ · 三条精修
 # http://127.0.0.1:16030/how-v1.html        甲 · 原稿
 # http://127.0.0.1:16030/how-v2.html        乙 · 已归档
+# http://127.0.0.1:16030/use-options.html   用法枢纽（甲三路 / 乙工序；未落 /use）
+# http://127.0.0.1:16030/use-v1.html        甲 · 三路
+# http://127.0.0.1:16030/use-v2.html        乙 · 工序
+# http://127.0.0.1:16030/use               用法仍是旧壳
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -65,6 +69,7 @@ python3 preview.py --port 16030
 | `about-v1.html`…`about-v5.html` | 关于已否：甲三处 / 乙短文 / 丙三件 / 丁五不 / 戊来信 |
 | `how-v1b.html` | 甲′静态别名（`/how` 活页） |
 | `how-v1.html` · `how-v2.html` | 怎么核原稿甲 / 已归档乙 |
+| `use-v1.html` · `use-v2.html` | 用法对照甲三路 / 乙工序（未落 `/use`） |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |
