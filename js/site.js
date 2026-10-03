@@ -1008,7 +1008,7 @@
       links += '<a href="/attest/' + esc(f.norm) + '/">授权证明</a>';
     }
     if (f.shop && (!primary || primary.href !== f.shop)) {
-      links += '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>网页里用</a>';
+      links += '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>去店面用</a>';
     }
     var mirrorState = (f.mirror || {}).state;
     var offer = offerOf(f);
@@ -1179,8 +1179,8 @@
         stateDev: 'commercial<br />modify<br />redistribute',
         line: '可商用 · 可改 · 可分发',
         note: canTake(f)
-          ? '开源许可已核对原文。原件在目录可带走，可出授权证明。'
-          : '开源许可已核对原文。源文件还没放在本站，结论仍可查。',
+          ? '开源许可已核对原文。原件在目录直接下载，可出授权证明。'
+          : '开源许可已核对原文。源文件还没放在本站，结论不受影响。',
         noteDev: (canTake(f) ? 'canTake' : ('offer=' + offerOf(f))) +
           (canAttest(f) ? ' · canAttest' : '') +
           ' · GET /api/v1/licenses/' + f.norm
@@ -1295,7 +1295,7 @@
     var spdx = attestSpdxOf(f) || '';
     var href = '/source/' + f.norm + '/';
     var go = '看条目 →';
-    if (kind === 'mute') { href = '/#gap'; go = '报缺 →'; }
+    if (kind === 'mute') { href = '/#gap'; go = '报缺字 →'; }
     else if (licenseReadable(f, {})) {
       href = '/license/' + f.norm;
       go = kind === 'open' ? '读原文 →' : '读要点 →';
@@ -1344,7 +1344,7 @@
           '<p class="kicker for-design">没有命中</p>' +
           '<p class="kicker for-dev mono">q miss</p>' +
           '<p class="state">没有<br />这一款</p>' +
-          '<p class="note for-design">换个名字，或去目录按状态看。本站查的是授权结论，不是字体 CDN。</p>' +
+          '<p class="note for-design">换个名字，或去目录按状态看。</p>' +
           '<p class="note for-dev mono">matchQ miss · /source</p>' +
           '<p class="acts"><a class="is-strong" href="/source">打开目录</a><a href="/license">清空检索</a></p>' +
         '</div>' +
@@ -1356,9 +1356,9 @@
       built.verdict = built.verdict
         .replace('data-lq-kicker-d>', 'data-lq-kicker-d>' + kickerD)
         .replace('data-lq-kicker-v>', 'data-lq-kicker-v>' + kickerV);
-      var foilLabelD = pack.demo ? '另两态怎么读' : (pack.foils.length ? '同次检索另见' : '同次检索没有其他命中');
+      var foilLabelD = pack.demo ? '其他两种结论 · 示例' : (pack.foils.length ? '同一检索的其他命中' : '没有其他命中');
       var foilLabelV = pack.demo ? 'foils · other tiers' : 'foils · same query';
-      if (pack.more) foilLabelD += ' · 还有 ' + pack.more + ' 款未展开';
+      if (pack.more) foilLabelD += ' · 还有 ' + pack.more + ' 款没列出';
       stage = '<section class="lq5b-stage" aria-label="主命中">' +
         built.verdict + built.dossier +
       '</section>' +
@@ -1369,7 +1369,7 @@
         : '');
     }
     var footD = pack.demo
-      ? '未检索时，舞台用来读三态，不是某次搜索的结果。搜索后换成命中。结论按收录记录生成，不是法律意见。对照别名 <a href="/license-v5b.html">license-v5b</a>。'
+      ? '还没检索时，这里用三款字演示三种结论；检索后换成命中。结论按收录记录生成，不是法律意见。对照别名 <a href="/license-v5b.html">license-v5b</a>。'
       : ('结论按收录记录生成，不是法律意见。' + (q ? '检索「' + esc(q) + '」。' : ''));
     var footV = 'licensesPage · lq-v5b · /license' + (q ? ' · q=' + esc(q) : ' · demo');
     return '<section class="lq5b-hero">' +
@@ -1381,8 +1381,8 @@
         '<div class="lq5b-display">' +
           '<h1 class="for-design">查授权</h1>' +
           '<h1 class="for-dev mono">/license</h1>' +
-          '<p class="lq5b-lead for-design">一次把结论写大。<br class="lq5b-br" />主命中占舞台；另两态压成细线陪衬。</p>' +
-          '<p class="lq5b-lead for-dev mono">q → primary hit · license fields<br class="lq5b-br" /> secondary tiers as foils</p>' +
+          '<p class="lq5b-lead for-design">查一款字体的授权结论：<br class="lq5b-br" />能不能商用、能不能改、能不能再分发。</p>' +
+          '<p class="lq5b-lead for-dev mono">q → verdict · license fields<br class="lq5b-br" /> spdx · textState · offer</p>' +
         '</div>' +
         '<form class="lq5b-search" action="/license" method="get" role="search">' +
           '<span class="lq5b-search-kicker" aria-hidden="true">检索</span>' +
@@ -1422,7 +1422,7 @@
       links += '<a href="/attest/' + esc(f.norm) + '/">授权证明</a>';
     }
     if (f.shop) {
-      links += '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>网页里用</a>';
+      links += '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>去店面用</a>';
     }
     var tier = licenseTier(f);
     var flagWord = tier ? tier.word : '许可原文';
@@ -1628,7 +1628,7 @@
   function slicePage(f, fonts) {
     var gate = sliceGateOf(f);
     var shop = f.shop
-      ? '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>网页里用</a>'
+      ? '<a href="' + esc(f.shop) + '"' + hrefAttrs(f.shop) + '>去店面用</a>'
       : '';
     var lead = gate
       ? '从' + esc(f.foundry || '厂商') +
@@ -1747,7 +1747,7 @@
       '<div class="page-head is-compact">' +
         '<p class="kicker">用法</p>' +
         '<h1>三种拿走方式</h1>' +
-        '<p class="lead">原件、切片、网页里用不是同一件事。</p>' +
+        '<p class="lead">原件、切片、店面用字不是同一件事。</p>' +
       '</div>' +
       '<ul class="ways">' +
         '<li class="way">' +
