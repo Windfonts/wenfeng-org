@@ -2880,3 +2880,30 @@ body.gp-v1b .gp1-kinds button {
 .pager .pg:disabled { color: var(--gray-2); opacity: 0.55; cursor: default; text-decoration: none; }
 .pager .dots { color: var(--gray-2); font-size: var(--fs-13); }
 .pager .pg-info { font-size: var(--fs-12, 0.75rem); color: var(--gray-2); margin-left: var(--s-2); }
+
+/* 目录列表 — 谱系行风格（app detail .lin-row 同款）：名字即主角、悬停灰底、meta 悬停才现 */
+.lin-list { display: grid; gap: 2px; }
+.lrow {
+  display: flex; align-items: center; gap: var(--s-4);
+  min-width: 0;
+  padding: var(--s-3);
+  border-radius: var(--radius-sm);
+  color: var(--ink); text-decoration: none;
+}
+.lrow:hover { background: var(--fill); text-decoration: none; }
+.lrow .lnm {
+  flex: 1; min-width: 0;
+  font-size: var(--fs-22); line-height: 1.2;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.lrow .lrel { flex: none; font-size: var(--fs-12); color: var(--gray); }
+.lrow .lmeta {
+  margin-left: auto; visibility: hidden; flex: none;
+  font-size: var(--fs-12); color: var(--gray); line-height: 1.2;
+  white-space: nowrap; text-align: right;
+}
+.lrow:hover .lmeta, [data-view="dev"] .lrow .lmeta { visibility: visible; }
+.lrow .lgo { flex: none; font-size: var(--fs-13); color: var(--ink); }
+.lrow .lgo.is-ink { font-weight: var(--fw-title); }
+.lrow.is-miss { color: var(--gray); }
+.lrow.is-miss .lnm { color: var(--gray); }

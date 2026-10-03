@@ -271,12 +271,17 @@ def index_rows(fonts, go=None):
                 verb, inked, href = "报缺", False, "/gap/?norm=%s" % e(f["norm"])
             else:
                 verb, inked, href = "看条目", False, "/source/%s/" % e(f["norm"])
-        return ('<li data-st="%s" data-hay="%s"><a href="%s"><span class="norm">%s</span>'
-                '<span class="nm">%s</span><span class="info"><span class="for-design">%s</span><span class="for-dev mono">%s</span></span>'
-                '<span class="go%s">%s</span></a></li>'
-                % (st, e(hay), href, e(f["norm"]), e(wf(f)), e(info_d), info_v, " is-ink" if inked else "", e(verb)))
-    return ('<div class="index-head"><span>短码</span><span>名字</span><span>信息</span><span>动作</span></div>'
-            '<ul class="index" data-list>%s</ul><p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p><nav class="pager" data-pager hidden></nav>'
+        face = f.get("family") or ""
+        cls = "lrow t-%s" % e(f["norm"]) if face else "lrow"
+        attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
+        return ('<li data-st="%s" data-hay="%s"><a class="%s" href="%s"%s>'
+                '<span class="lnm">%s</span>'
+                '<span class="lrel">%s</span>'
+                '<span class="lmeta for-design">%s</span><span class="lmeta for-dev mono">%s</span>'
+                '<span class="lgo%s">%s</span></a></li>'
+                % (st, e(hay), cls, href, attrs, e(wf(f)), e(STATUS[st][0]), e(info_d), info_v,
+                   " is-ink" if inked else "", e(verb)))
+    return ('<ul class="lin-list" data-list>%s</ul><p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p><nav class="pager" data-pager hidden></nav>'
             % "".join(row(f) for f in fonts))
 
 
