@@ -2213,7 +2213,7 @@
         '<div class="ab-display">' +
           '<h1 class="for-design">从根往下</h1>' +
           '<h1 class="for-dev mono">origin tree</h1>' +
-          '<p class="ab-lead for-design">先看这一名下面挂着什么。源文件、许可、缺字、证明是路径。店面和造字是别的名字，不跟路径并排。</p>' +
+          '<p class="ab-lead for-design">wenfeng.org 下面挂四条路径：源文件、许可、缺字、证明。店面和造字在别的名字下。</p>' +
           '<p class="ab-lead for-dev mono">/source · /license · /gap · /attest<br />other hosts are not children</p>' +
         '</div>' +
         '<p class="ab6-root">' +
@@ -2229,7 +2229,7 @@
               '<span class="name for-dev mono">offer</span>' +
               '<span class="act"><a class="is-pill" href="/source"><span class="for-design">看目录</span><span class="for-dev">GET</span></a></span>' +
             '</div>' +
-            '<p class="gloss for-design">开源原件和开源切片可自选带走。不允许再分发的，核验后领切片包。不当 CDN。</p>' +
+            '<p class="gloss for-design">源文件本站下载。不允许再分发的，核验后领切片包。</p>' +
             '<p class="gloss for-dev mono">offer · slice · no file sale · not a CDN</p>' +
           '</li>' +
           '<li class="ab6-branch">' +
@@ -2239,7 +2239,7 @@
               '<span class="name for-dev mono">text</span>' +
               '<span class="act"><a href="/license"><span class="for-design">查授权</span><span class="for-dev">GET</span></a></span>' +
             '</div>' +
-            '<p class="gloss for-design">授权原文要收，只是一小块。证明不替代原文，也不新设权利。</p>' +
+            '<p class="gloss for-design">许可原文已收档。证明不替代原文，也不新设权利。</p>' +
             '<p class="gloss for-dev mono">text · attest ≠ new rights</p>' +
           '</li>' +
           '<li class="ab6-branch">' +
@@ -2249,7 +2249,7 @@
               '<span class="name for-dev mono">gap</span>' +
               '<span class="act"><a href="/gap"><span class="for-design">报缺字</span><span class="for-dev">GET</span></a></span>' +
             '</div>' +
-            '<p class="gloss for-design">缺字形、缺收录、勘误在这里说。造字不在这条路径上。</p>' +
+            '<p class="gloss for-design">缺字形、缺收录、勘误在这里说。</p>' +
             '<p class="gloss for-dev mono">/gap · submit unwired · editor not a child</p>' +
           '</li>' +
           '<li class="ab6-branch">' +
@@ -2277,7 +2277,7 @@
               '<span class="name for-dev mono">shop</span>' +
               '<span class="act"><a href="https://app.windfonts.com/"><span class="for-design">去店面</span><span class="for-dev">shop</span></a></span>' +
             '</div>' +
-            '<p class="gloss for-design">样张、选字、网页里用、控制台和账号。本站不做样张墙。</p>' +
+            '<p class="gloss for-design">样张、选字、店面用字、控制台和账号。</p>' +
             '<p class="gloss for-dev mono">specimens · account · console</p>' +
           '</li>' +
           '<li class="ab6-branch">' +
@@ -2291,7 +2291,7 @@
           '</li>' +
         '</ol>' +
         '<section class="ab6-note" aria-label="说明">' +
-          '<p class="label for-design">说明 · 写在路径下面，不占路径的结构</p>' +
+          '<p class="label for-design">说明</p>' +
           '<p class="label for-dev mono">note · under the tree</p>' +
           '<p class="for-design">文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>' +
           '<p class="for-design">对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。</p>' +
@@ -2299,7 +2299,7 @@
           '<p class="for-design">wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how">我们怎么核</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>' +
           '<p class="for-dev mono">oss · SPDX text · chain + hash + original?<br />attest ≠ new rights · custom terms → text only<br />no file sale · no license sale · no grant<br />SPDX only · custom / unverified / unlisted → no attest<br />/legal#legal-scope · /how · wordpress → static · split deploy</p>' +
         '</section>' +
-        '<p class="ab-footnote for-design">路径挂在这一名下面，别的主机另起。说明写在树下，不占路径的结构。对照别名 <a href="/about-v6b.html">about-v6b</a>。</p>' +
+        '<p class="ab-footnote for-design">对照别名 <a href="/about-v6b.html">about-v6b</a>。</p>' +
         '<p class="ab-footnote for-dev mono">aboutPage · ab-v6b · /about</p>' +
       '</div>' +
     '</section>';
