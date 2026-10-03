@@ -1,4 +1,4 @@
-/* 用法整页 · 甲三路 / 乙工序（已否）· 丙两边 / 丁问句
+/* 用法整页 · 甲三路 / 乙工序 / 丙两边 / 丁问句（已否）· 戊名目 / 己句注
    怎么用这个站，不是怎么核。文案沿用活页 /use。
    字阶与卷宗对齐 home-v4 丁。
    B soft：白底、浅灰、胶囊。无投影、无红、无暖纸。 */
@@ -425,4 +425,133 @@ body.us .wordmark .wm-sub {
   .us3-cite { padding-left: 0; }
   .us4-asks > li { grid-template-columns: 1fr; gap: var(--s-3); }
   .us4-asks h2 { position: static; }
+}
+
+/* 戊 · 名目：一张账。行是名字，列是属性。不是三列舞台。 */
+.us5-ledger {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid var(--ink);
+}
+.us5-ledger th,
+.us5-ledger td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--s-6) var(--s-5) var(--s-6) 0;
+  border-bottom: 1px solid var(--rule);
+  font-weight: var(--fw-body);
+}
+.us5-ledger thead th {
+  padding-top: var(--s-3);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+.us5-ledger tbody th {
+  width: 7.5rem;
+  padding-right: var(--s-6);
+  font-size: var(--fs-20);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.us5-ledger tbody th.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.us5-col-where { width: 11rem; }
+.us5-col-count { width: 13.5rem; }
+.us5-where,
+.us5-count {
+  font-size: var(--fs-14);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.us5-count { color: var(--ink); }
+.us5-where.mono,
+.us5-count.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.us5-ledger tbody tr:hover th,
+.us5-ledger tbody tr:hover td { background: var(--fill); }
+.us5-ledger .us-prose { max-width: 40em; }
+.us5-ledger .us-code,
+.us5-ledger .us-api { max-width: 42em; }
+.us5-ledger .us-code { margin-top: var(--s-4); }
+
+/* 己 · 句注：一句正文，注写在句子下面。不是左问右答。 */
+.us6-canon {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.us6-unit {
+  padding: var(--s-10) 0 var(--s-8);
+  border-bottom: 1px solid var(--rule);
+}
+.us6-sentence {
+  margin: 0;
+  max-width: 16em;
+  font-size: clamp(1.85rem, 3.4vw, 2.85rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.us6-sentence.mono {
+  max-width: 28em;
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2.1vw, 1.55rem);
+  font-weight: var(--fw-body);
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+  color: var(--gray);
+}
+.us6-note {
+  margin: var(--s-6) 0 0;
+  padding: 0 0 0 var(--s-6);
+  border-left: 1px solid var(--ink);
+  max-width: 46em;
+}
+.us6-note-label {
+  margin: 0 0 var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.us6-note-label.mono { color: var(--gray); letter-spacing: 0.04em; }
+.us6-note .us-prose { max-width: 40em; }
+.us6-note .us-code,
+.us6-note .us-api { max-width: 42em; }
+
+@media (max-width: 900px) {
+  .us5-ledger,
+  .us5-ledger thead,
+  .us5-ledger tbody,
+  .us5-ledger tr,
+  .us5-ledger th,
+  .us5-ledger td { display: block; width: auto; }
+  .us5-ledger thead { display: none; }
+  .us5-ledger tbody th { width: auto; padding-bottom: 0; border-bottom: 0; }
+  .us5-ledger td { padding-top: var(--s-2); }
+  .us5-ledger td[data-k]::before {
+    content: attr(data-k);
+    display: block;
+    margin-bottom: var(--s-1);
+    font-family: var(--font-mono);
+    font-size: var(--fs-12);
+    letter-spacing: 0.06em;
+    color: var(--gray);
+  }
+  .us6-sentence { max-width: none; }
 }
