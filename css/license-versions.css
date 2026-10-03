@@ -1133,6 +1133,337 @@ body.lq main { flex: 1; }
 .optbar .muted { color: var(--gray); }
 
 /* ============================================================
+   戊′ · license-v5b · 主命中舞台精修
+   同锁定戊 IA：超大结论 + 右栏卷宗 + 下方细线陪衬
+   抬升：tokens / 字阶对齐丁首页 / mono 屑 / 悬停克制 / 动作层级
+   ============================================================ */
+.lq-v5b .lq5b-hero {
+  padding: var(--s-16) 0 var(--s-12);
+}
+
+.lq5b-crumb {
+  margin: 0 0 var(--s-8);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+
+.lq5b-display {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  gap: var(--s-6) var(--s-12);
+  align-items: end;
+  margin-bottom: var(--s-10);
+  padding-bottom: var(--s-10);
+  border-bottom: 1px solid var(--rule);
+}
+.lq5b-display h1 {
+  margin: 0;
+  font-size: clamp(3.25rem, 9vw, 5.75rem);
+  font-weight: var(--fw-title);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.lq5b-display h1.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  letter-spacing: -0.03em;
+}
+.lq5b-lead {
+  margin: 0;
+  max-width: 22em;
+  justify-self: end;
+  padding-bottom: 0.35em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.lq5b-lead.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-14);
+  letter-spacing: 0.01em;
+}
+.lq5b-br { display: none; }
+
+.lq5b-search {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-10);
+  max-width: 40rem;
+}
+.lq5b-search-kicker {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.06em;
+  margin-right: var(--s-1);
+}
+.lq5b-search input {
+  flex: 1;
+  min-width: 0;
+  height: 2.85rem;
+  padding: 0 1.15rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  font-size: var(--fs-14);
+  color: var(--ink);
+}
+.lq5b-search input::placeholder { color: var(--gray-2); }
+.lq5b-search input:hover,
+.lq5b-search input:focus { background: var(--surface); }
+.lq5b-search input:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* 主舞台：非对称 — 左结论大数 / 右卷宗细线 */
+.lq5b-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  gap: var(--s-8) var(--s-12);
+  align-items: start;
+  margin-bottom: var(--s-10);
+  padding-bottom: var(--s-10);
+  border-bottom: 1px solid var(--rule);
+}
+.lq5b-verdict { min-width: 0; }
+.lq5b-verdict .kicker {
+  margin: 0 0 var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.06em;
+}
+.lq5b-verdict .state {
+  margin: 0 0 var(--s-6);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  color: var(--ink);
+}
+.lq5b-verdict .fname {
+  margin: 0 0 var(--s-2);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-snug);
+}
+.lq5b-verdict .meta {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.lq5b-verdict .meta.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.01em;
+}
+.lq5b-verdict .note {
+  margin: 0 0 var(--s-6);
+  max-width: 28em;
+  font-size: var(--fs-16);
+  color: var(--ink-2);
+  line-height: var(--lh-body);
+}
+.lq5b-verdict .note.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  letter-spacing: 0.01em;
+}
+
+/* 动作：强墨胶囊 + 次级文字链（悬停克制） */
+.lq5b-verdict .acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) var(--s-5);
+}
+.lq5b-verdict .acts a {
+  font-size: var(--fs-13);
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+@media (hover: hover) {
+  .lq5b-verdict .acts a:not(.is-strong) { text-decoration: none; }
+  .lq5b-verdict .acts a:not(.is-strong):hover,
+  .lq5b-verdict .acts a:not(.is-strong):focus-visible {
+    text-decoration: underline;
+  }
+}
+.lq5b-verdict .acts a.is-strong {
+  font-weight: var(--fw-title);
+  text-decoration: none;
+  padding: 0.45rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+.lq5b-verdict .acts a.is-strong:hover {
+  background: var(--ink-hover);
+  text-decoration: none;
+}
+
+/* 卷宗：同 hv4-aside — 左墨线、开放 KV、无灰卡 */
+.lq5b-dossier {
+  align-self: stretch;
+  padding: var(--s-5) 0 var(--s-2) var(--s-6);
+  border-left: 1px solid var(--ink);
+  background: transparent;
+  min-width: 0;
+}
+.lq5b-dossier .label {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  font-weight: var(--fw-title);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.lq5b-kv { display: grid; gap: 0; }
+.lq5b-kv div {
+  display: grid;
+  grid-template-columns: 4.75em minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-14);
+}
+.lq5b-kv div:first-child { border-top: 0; padding-top: 0; }
+.lq5b-kv .k { color: var(--gray); }
+.lq5b-kv .v { color: var(--ink); letter-spacing: -0.01em; }
+.lq5b-kv .v.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  letter-spacing: 0.01em;
+}
+
+.lq5b-foils-label {
+  margin: 0 0 var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11, 0.6875rem);
+  color: var(--gray-2);
+  letter-spacing: 0.02em;
+}
+
+/* 陪衬行：谱系悬停（fill，无位移动画）；箭头悬停才显 */
+.lq5b-foils {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.lq5b-foil {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1.1fr) minmax(0, 1fr) auto;
+  gap: var(--s-3) var(--s-4);
+  align-items: baseline;
+  padding: var(--s-4) var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
+  border-top: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  color: inherit;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+.lq5b-foil:first-child { border-top: 1px solid var(--rule); }
+.lq5b-foil:last-child { border-bottom: 1px solid var(--rule); }
+.lq5b-foil:hover { text-decoration: none; background: var(--fill); }
+.lq5b-foil .idx {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+}
+.lq5b-foil .state {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.015em;
+  line-height: var(--lh-snug);
+}
+.lq5b-foil .body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.lq5b-foil .fname {
+  font-size: var(--fs-14);
+  color: var(--ink-2);
+  letter-spacing: -0.01em;
+}
+.lq5b-foil .meta {
+  font-size: var(--fs-12);
+  color: var(--gray);
+  line-height: var(--lh-body);
+}
+.lq5b-foil .meta.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+.lq5b-foil .go {
+  font-size: var(--fs-13);
+  color: var(--gray-2);
+  white-space: nowrap;
+  justify-self: end;
+}
+@media (hover: hover) {
+  .lq5b-foil .go { visibility: hidden; }
+  .lq5b-foil:hover .go,
+  .lq5b-foil:focus-visible .go { visibility: visible; color: var(--ink); }
+}
+.lq5b-foil.is-mute .state,
+.lq5b-foil.is-mute .fname { color: var(--gray); }
+.lq5b-foil.is-mute .go { color: var(--gray-2); }
+
+.lq5b-footnote {
+  margin: var(--s-12) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  max-width: 42em;
+  line-height: var(--lh-body);
+}
+.lq5b-footnote a { color: var(--ink); }
+.lq5b-footnote.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+
+@media (max-width: 900px) {
+  .lq-v5b .lq5b-hero { padding: var(--s-10) 0 var(--s-8); }
+  .lq5b-display { grid-template-columns: 1fr; }
+  .lq5b-lead { justify-self: start; max-width: 32em; }
+  .lq5b-br { display: inline; }
+  .lq5b-stage { grid-template-columns: 1fr; }
+  .lq5b-dossier {
+    padding-left: 0;
+    padding-top: var(--s-6);
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .lq5b-foil {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: var(--s-2) var(--s-3);
+  }
+  .lq5b-foil .state { grid-column: 2; }
+  .lq5b-foil .body { grid-column: 2; }
+  .lq5b-foil .go { grid-column: 2; justify-self: start; visibility: visible; }
+  .lq5b-search { flex-wrap: wrap; max-width: none; }
+  .lq5b-search .btn { width: 100%; }
+}
+
+/* ============================================================
    庚辛壬 · 换向新稿（非裁决轨 / 主命中 / 对读栏）
    B soft · home-v4 丁工艺：大数统计、字阶、设计/开发、细线
    ============================================================ */

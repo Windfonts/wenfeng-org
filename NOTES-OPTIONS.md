@@ -228,3 +228,19 @@
 - **未改** `js/site.js` `licensesPage()` / `/license`
 - 截图：`_shots/license-full-2026-10-02/`（v7/v8/v9）
 - 预览：`http://127.0.0.1:16030/license-query-options.html`
+
+
+## 授权查询 · 锁回戊 · 戊′精修（2026-10-03）
+
+冯否<strong>庚辛壬</strong>：「都不行，还是先 v5」。锁回<strong>戊 · 主命中舞台</strong>。本轮不换 IA，按 home-v4 丁工艺抬升：
+
+| 文件 | 版 | 差异 |
+|---|---|---|
+| `license-v5b.html` | 戊′ | 同戊：超大结论 + 右栏卷宗 + 下方细线陪衬。字阶对齐丁；结论即大数；卷宗墨线 KV；陪衬行谱系悬停；动作强墨+次级链；mono 屑 |
+
+- 枢纽：`license-query-options.html`（戊′ 当前方向；戊原稿；庚辛壬/丁己/己′/甲乙丙归档）
+- 样式：`css/license-versions.css`（`.lq5b-*`）
+- **未改** SPA `licensesPage()` / `/license`
+- 截图：`_shots/license-full-2026-10-02/license-v5b-desktop.png`
+- 预览：`http://127.0.0.1:16030/license-v5b.html`
+
