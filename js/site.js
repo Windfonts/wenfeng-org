@@ -2097,59 +2097,110 @@
   }
 
   function usePage() {
-    return '<div class="container page-pad">' +
-      '<div class="page-head is-compact">' +
-        '<p class="kicker">用法</p>' +
-        '<h1>三种拿走方式</h1>' +
-        '<p class="lead">原件、切片、店面用字不是同一件事。</p>' +
-      '</div>' +
-      '<ul class="ways">' +
-        '<li class="way">' +
-          '<p class="idx">01</p>' +
-          '<h2>原件</h2>' +
-          '<p>TTF / OTF / 上游仓库归档。给自建站、主题作者。许可允许时才再分发。</p>' +
-        '</li>' +
-        '<li class="way">' +
-          '<p class="idx">02</p>' +
-          '<h2>切片包</h2>' +
-          '<p>给 WordPress 和静态站本地 @font-face。开源字体的切片包稍后提供。不允许再分发的免费商用字体：上传从厂商下载的原包 zip（不要解压），核验通过后领取。</p>' +
-        '</li>' +
-        '<li class="way">' +
-          '<p class="idx">03</p>' +
-          '<h2>网页里用</h2>' +
-          '<p>cn.windfonts.com 托管 CSS 和字体分片。不是本站下载，不要拿去二次托管。</p>' +
-        '</li>' +
-      '</ul>' +
-      commentPanel(true) +
-      '<p class="wp-note">不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体走 <a href="/slice">切片工具</a>。</p>' +
-      '<div class="section-head" id="theme"><h2>切片包进主题</h2></div>' +
-      '<p class="wp-note">解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>' +
-      '<pre class="code api-sample">// functions.php 里排队引入\n' +
-      'wp_enqueue_style(\n' +
-      '  \'wenfeng-slice-xwwk\',\n' +
-      '  get_theme_file_uri( \'/fonts/wenfeng-slice-Xwwk/fonts.css\' ),\n' +
-      '  array(),\n' +
-      '  null\n' +
-      ');\n' +
-      '\n' +
-      '/* 或在主题 style.css 顶部 */\n' +
-      '@import url( "./fonts/wenfeng-slice-Xwwk/fonts.css" );</pre>' +
-      '<div class="section-head" id="api"><h2>目录 API</h2></div>' +
-      '<p class="wp-note">免费和商业都可以查。商业字只出字段，<code>files</code> 为空。不是店面的 <code>/api/css</code>。<code>lineage</code> 字段为造字平台预留，现在恒为 <code>null</code>。</p>' +
-      '<ul class="api-list">' +
-        '<li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>' +
-        '<li><a href="/api/v1/fonts?offer=source"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>' +
-        '<li><a href="/api/v1/fonts?q=' + encodeURIComponent('霞鹜') + '"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>' +
-        '<li><a href="/api/v1/fonts/Xwwk"><code>GET /api/v1/fonts/Xwwk</code><span>一款 · 有 files</span></a></li>' +
-        '<li><a href="/api/v1/fonts/Albbpht"><code>GET /api/v1/fonts/Albbpht</code><span>files 为空</span></a></li>' +
-        '<li><a href="/api/v1/licenses/Xwwk"><code>GET /api/v1/licenses/Xwwk</code><span>许可原文</span></a></li>' +
-        '<li><a href="/api/v1/foundries"><code>GET /api/v1/foundries</code><span>厂商</span></a></li>' +
-        '<li><a href="/api/v1/certs"><code>GET /api/v1/certs</code><span>可核验目录</span></a></li>' +
-        '<li><a href="/api/v1/certs/Xwwk"><code>GET /api/v1/certs/Xwwk</code><span>一款核验 JSON</span></a></li>' +
-        '<li><span class="api-row"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>' +
-      '</ul>' +
-      '<pre class="code api-sample">GET /api/v1/fonts/{norm}\n{\n  "norm": "Xwwk",\n  "name": "霞鹜文楷",\n  "distribution": true,\n  "offer": "source",\n  "files": [ { "kind": "archive", "href": "…" } ]\n}</pre>' +
-    '</div>';
+    return (
+      "<section class=\"us-hero\">\n" +
+      "      <div class=\"container\">\n" +
+      "        <p class=\"us-crumb\" aria-label=\"路径\">\n" +
+      "          <span class=\"for-design\"><a href=\"/\">首页</a><span class=\"sep\">/</span>用法</span>\n" +
+      "          <span class=\"for-dev mono\">/use · us-v4b</span>\n" +
+      "        </p>\n" +
+      "        <div class=\"us-display\">\n" +
+      "          <h1 class=\"for-design\">先问</h1>\n" +
+      "          <h1 class=\"for-dev mono\">ask first</h1>\n" +
+      "          <p class=\"us-lead for-design\">左边是你要问的，右边是回答。原件、切片、店面用字仍是三件不同的事，只是不并排、也不按先后四步。怎么核在另一页。</p>\n" +
+      "          <p class=\"us-lead for-dev mono\">question | answer<br />not 3 cols · not 4 steps · not /how</p>\n" +
+      "        </div>\n" +
+      "\n" +
+      "        <ol class=\"us4-asks\">\n" +
+      "          <li>\n" +
+      "            <h2 class=\"for-design\">要文件本身？</h2>\n" +
+      "            <h2 class=\"for-dev mono\">want the file?</h2>\n" +
+      "            <div class=\"us4-a\">\n" +
+      "              <p class=\"us-prose for-design\">拿原件。TTF / OTF / 上游仓库归档。给自建站、主题作者。许可允许时才再分发。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">ttf · otf · upstream archive<br />redistribute only if allowed</p>\n" +
+      "            </div>\n" +
+      "          </li>\n" +
+      "          <li id=\"theme\">\n" +
+      "            <h2 class=\"for-design\">要放进主题？</h2>\n" +
+      "            <h2 class=\"for-dev mono\">into a theme?</h2>\n" +
+      "            <div class=\"us4-a\">\n" +
+      "              <p class=\"us-prose for-design\">用切片包，给 WordPress 和静态站本地 @font-face。开源字体的切片包稍后提供。不允许再分发的免费商用字体：上传从厂商下载的原包 zip（不要解压），核验通过后领取。走<a href=\"/slice\">切片工具</a>。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">local @font-face<br />oss slice later · no-redist zip → /slice</p>\n" +
+      "              <p class=\"us-prose for-design\">解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">whole folder · fonts.css intact · do not split</p>\n" +
+      "              <pre class=\"us-code\">// functions.php 里排队引入\n" +
+      "wp_enqueue_style(\n" +
+      "  'wenfeng-slice-xwwk',\n" +
+      "  get_theme_file_uri( '/fonts/wenfeng-slice-Xwwk/fonts.css' ),\n" +
+      "  array(),\n" +
+      "  null\n" +
+      ");\n" +
+      "\n" +
+      "/* 或在主题 style.css 顶部 */\n" +
+      "@import url( \"./fonts/wenfeng-slice-Xwwk/fonts.css\" );</pre>\n" +
+      "            </div>\n" +
+      "          </li>\n" +
+      "          <li>\n" +
+      "            <h2 class=\"for-design\">只在网页里用？</h2>\n" +
+      "            <h2 class=\"for-dev mono\">cite, not save?</h2>\n" +
+      "            <div class=\"us4-a\">\n" +
+      "              <p class=\"us-prose for-design\">用 cn.windfonts.com 托管的 CSS 和字体分片。这不是本站下载，不要拿去二次托管。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">cn.windfonts.com<br />not a download · no rehost</p>\n" +
+      "              <p class=\"us-prose for-design\">不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。托管分片不是原件，也不是切片包。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">do not copy hosted woff2 · not the source file</p>\n" +
+      "            </div>\n" +
+      "          </li>\n" +
+      "          <li>\n" +
+      "            <h2 class=\"for-design\">这一行能删吗？</h2>\n" +
+      "            <h2 class=\"for-dev mono\">drop the comment?</h2>\n" +
+      "            <div class=\"us4-a\">\n" +
+      "              <p class=\"us-prose for-design\">不能。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体走<a href=\"/slice\">切片工具</a>。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">keep license comment · no-redist → /slice</p>\n" +
+      "              <p class=\"us-label for-design\">嵌入代码里这一行不能改</p>\n" +
+      "              <p class=\"us-label for-dev mono\">comment · keep</p>\n" +
+      "              <pre class=\"us-code\">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>\n" +
+      "            </div>\n" +
+      "          </li>\n" +
+      "          <li id=\"api\">\n" +
+      "            <h2 class=\"for-design\">用程序查？</h2>\n" +
+      "            <h2 class=\"for-dev mono\">query it?</h2>\n" +
+      "            <div class=\"us4-a\">\n" +
+      "              <p class=\"us-prose for-design\">查目录 API。免费和商业都可以查。商业字只出字段，<code>files</code> 为空。不是店面的 <code>/api/css</code>。<code>lineage</code> 字段为造字平台预留，现在恒为 <code>null</code>。</p>\n" +
+      "              <p class=\"us-prose for-dev mono\">commercial → fields only, files []<br />not shop /api/css · lineage = null</p>\n" +
+      "              <ul class=\"us-api\">\n" +
+      "            <li><a href=\"/api/v1/fonts\"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/fonts?offer=source\"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/fonts?q=%E9%9C%9E%E9%B9%AD\"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/fonts/Xwwk\"><code>GET /api/v1/fonts/Xwwk</code><span>一款 · 有 files</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/fonts/Albbpht\"><code>GET /api/v1/fonts/Albbpht</code><span>files 为空</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/licenses/Xwwk\"><code>GET /api/v1/licenses/Xwwk</code><span>许可原文</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/foundries\"><code>GET /api/v1/foundries</code><span>厂商</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/certs\"><code>GET /api/v1/certs</code><span>可核验目录</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/certs/Xwwk\"><code>GET /api/v1/certs/Xwwk</code><span>一款核验 JSON</span></a></li>\n" +
+      "            <li><span class=\"api-row\"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>\n" +
+      "          </ul>\n" +
+      "          <pre class=\"us-code\">GET /api/v1/fonts/{norm}\n" +
+      "{\n" +
+      "  \"norm\": \"Xwwk\",\n" +
+      "  \"name\": \"霞鹜文楷\",\n" +
+      "  \"distribution\": true,\n" +
+      "  \"offer\": \"source\",\n" +
+      "  \"files\": [ { \"kind\": \"archive\", \"href\": \"…\" } ]\n" +
+      "}</pre>\n" +
+      "            </div>\n" +
+      "          </li>\n" +
+      "        </ol>\n" +
+      "\n" +
+      "        <p class=\"us-acts\">\n" +
+      "          <a class=\"is-pill\" href=\"/source\"><span class=\"for-design\">下源文件</span><span class=\"for-dev\">/source</span></a>\n" +
+      "          <a href=\"/slice\"><span class=\"for-design\">切片工具</span><span class=\"for-dev\">/slice</span></a>\n" +
+      "          <a href=\"/license\"><span class=\"for-design\">查授权</span><span class=\"for-dev\">/license</span></a>\n" +
+      "        </p>\n" +
+      "        <p class=\"us-footnote for-design\">问题在左，回答在右，没有序号。对照别名 <a href=\"/use-v4b.html\">use-v4b</a>。怎么核在 <a href=\"/how\">/how</a>。</p>\n" +
+      "        <p class=\"us-footnote for-dev mono\">usePage · us-v4b · /use</p>\n" +
+      "      </div>\n" +
+      "    </section>\n"
+    );
   }
 
   function aboutPage() {
@@ -3535,7 +3586,7 @@
     }
 
     function paint(inner, extra) {
-      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : ('page-' + route.page)))))));
+      document.body.className = route.page === 'home' ? 'hv hv-v4' : (route.page === 'licenses' ? 'lq lq-v5b' : (route.page === 'list' ? 'sd sd-v2b' : (route.page === 'font' ? 'fd fd-v1b' : (route.page === 'gap' ? 'gp gp-v1b' : (route.page === 'about' ? 'ab ab-v6b' : (route.page === 'how' ? 'hw hw-v1b' : (route.page === 'use' ? 'us us-v4b' : ('page-' + route.page))))))));
       document.body.setAttribute('data-site', 'org');
       app.innerHTML = chrome(route) + '<main>' + inner + '</main>' + footer();
       lazyPreviews();

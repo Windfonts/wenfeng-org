@@ -40,14 +40,15 @@ python3 preview.py --port 16030
 # http://127.0.0.1:16030/how-v1b.html       甲′ · 三条精修
 # http://127.0.0.1:16030/how-v1.html        甲 · 原稿
 # http://127.0.0.1:16030/how-v2.html        乙 · 已归档
-# http://127.0.0.1:16030/use-options.html   用法枢纽（戊名目 / 己句注；甲至丁已否；未落 /use）
-# http://127.0.0.1:16030/use-v5.html        戊 · 名目
-# http://127.0.0.1:16030/use-v6.html        己 · 句注
-# http://127.0.0.1:16030/use-v3.html        丙 · 两边 · 已否
-# http://127.0.0.1:16030/use-v4.html        丁 · 问句 · 已否
-# http://127.0.0.1:16030/use-v1.html        甲 · 三路 · 已否
-# http://127.0.0.1:16030/use-v2.html        乙 · 工序 · 已否
-# http://127.0.0.1:16030/use               用法仍是旧壳
+# http://127.0.0.1:16030/use               用法 = 丁′（use-v4b 为静态别名）
+# http://127.0.0.1:16030/use-options.html   用法枢纽（丁′当前；丁原稿；甲乙丙戊己已归档）
+# http://127.0.0.1:16030/use-v4b.html       丁′ · 问句精修
+# http://127.0.0.1:16030/use-v4.html        丁 · 原稿
+# http://127.0.0.1:16030/use-v5.html        戊 · 名目 · 已归档
+# http://127.0.0.1:16030/use-v6.html        己 · 句注 · 已归档
+# http://127.0.0.1:16030/use-v3.html        丙 · 两边 · 已归档
+# http://127.0.0.1:16030/use-v1.html        甲 · 三路 · 已归档
+# http://127.0.0.1:16030/use-v2.html        乙 · 工序 · 已归档
 # http://127.0.0.1:16030/options.html  结构对照 lab（首页 IA · 授权结果 · 目录卡）
 # http://127.0.0.1:16030/lab         旧稿 A–F 对照
 ```
@@ -73,8 +74,9 @@ python3 preview.py --port 16030
 | `about-v1.html`…`about-v5.html` | 关于已否：甲三处 / 乙短文 / 丙三件 / 丁五不 / 戊来信 |
 | `how-v1b.html` | 甲′静态别名（`/how` 活页） |
 | `how-v1.html` · `how-v2.html` | 怎么核原稿甲 / 已归档乙 |
-| `use-v5.html` · `use-v6.html` | 用法重做戊名目 / 己句注（未落 `/use`） |
-| `use-v1.html` … `use-v4.html` | 用法已否：甲三路 / 乙工序 / 丙两边 / 丁问句 |
+| `use-v4b.html` | 丁′静态别名（`/use` 活页） |
+| `use-v4.html` | 用法原稿丁（问句） |
+| `use-v1.html` · `use-v2.html` · `use-v3.html` · `use-v5.html` · `use-v6.html` | 用法已归档：甲三路 / 乙工序 / 丙两边 / 戊名目 / 己句注 |
 | `preview.py` / `build.py` / `deploy.sh` | 本地预览、静态构建、部署脚本 |
 | `samples.json` / `data/` | 演示样本与许可数据 |
 | `options.html` · `*-options.html` · `NOTES-OPTIONS.md` | **lab**：对照选项，未定稿 |
