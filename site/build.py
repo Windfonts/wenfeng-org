@@ -344,22 +344,20 @@ def page_home(data, fonts):
                 search(),
                 dd("已收录 <b>%d</b> 款 · 目录 %s 更新" % (len(fonts), gen), "fonts[]=%d · generated %s · not live" % (len(fonts), gen))))
 
-    # 字样带：真字体样张（site.js 懒加载）
-    # 字样带：先看字，再进目录（真字体样张，site.js 懒加载）
-    SHOWCASE = ["xwwk", "dyh", "arkp", "syhtcjk", "mkkzh", "xxzt", "zkxwt", "qhddl"]
-    by_norm = {f["norm"]: f for f in fonts}
-    strip_rows = []
-    for n in SHOWCASE:
-        f = by_norm.get(n)
-        if not f or not f.get("family"):
-            continue
-        strip_rows.append(
-            '<a class="home-strip-row t-%s" href="/source/%s/" data-face-norm="%s" data-face-family="%s">'
-            '<span class="snm">%s</span><span class="spr">%s</span>'
-            '<span class="sst">%s<span class="mono"> →</span></span></a>'
-            % (e(f["norm"]), e(f["norm"]), e(f["norm"]), e(f["family"]), e(wf(f)),
-               e("风急天高猿啸哀 渚清沙白鸟飞回"), e(STATUS[status(f)][0])))
-    body += '<section class="home-strip" aria-label="精选字样">%s</section>' % "".join(strip_rows)
+    # 二、四件事：四栏等宽，数字就是每件事的量
+    cards = [
+        ("01", "查授权", "许可原文与三态结论", n_full, "份许可全文", "/license/", "shield", "/license · textState=full"),
+        ("02", "下源文件", "本站下载或官方下载，逐款标注", n_src, "款本站下载", "/source/", "download", "/source · offer=source"),
+        ("03", "出授权证明", "标准开源协议，签发即登记", n_att, "款可出证", "/attest/", "certificate", "/attest · can_attest"),
+        ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接"),
+    ]
+    body += '<nav class="home-cards" aria-label="办事">%s</nav>' % "".join(
+        '<a class="home-card" href="%s"><span class="hc-top"><span class="idx">%s</span><span class="t-ico">%s</span></span>'
+        '<span class="t-t">%s</span><span class="t-d">%s</span>'
+        '<span class="hc-num">%s<span class="u">%s</span></span>'
+        '<span class="arrow">%s</span></a>'
+        % (href, idx, icon(ico), e(t), dd(e(d), v), ("<b>%d</b>" % n) if n is not None else "", e(u), icon("arrow-right"))
+        for idx, t, d, n, u, href, ico, v in cards)
 
 
     # 二、最近核实（左）| 目录状态图例（右）：图例解释的正是左边列表里的状态词
