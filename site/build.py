@@ -133,7 +133,8 @@ def is_gated(f):
 
 
 def wf(f):
-    return "文风·" + (f.get("name") or "")
+    # 「文风·」前缀只在证书证面（preview._catalog_name）；页面显示一律原名
+    return f.get("name") or ""
 
 
 def short_url(u):
@@ -819,7 +820,7 @@ def page_font(f):
         '<p class="fd1-more-label for-design">还能办的事</p>'
         '<p class="fd1-more-label for-dev mono">secondary</p>'
         '<div class="fd1-rows">%s</div>'
-        '<p class="fd-footnote for-design">动作按这一款的收录状态生成。。</p>'
+        '<p class="fd-footnote for-design">动作按这一款的收录状态生成。</p>'
         '<p class="fd-footnote for-dev mono">renderFont · fd-v1b · /source/%s</p>'
         % (
             e(wf(f)), e(f["norm"]),
@@ -1163,7 +1164,7 @@ def page_license(f, licenses):
         orig.append(e(f["en"]))
     orig_str = " · ".join(orig) if orig else "—"
     foundry_part = (" · " + e(f["foundry"])) if f.get("foundry") else ""
-    sub = e(wf(f)) + " · 原名 " + orig_str + foundry_part
+    sub = orig_str + foundry_part
 
     tier = license_tier(f)
     flag_word = tier["word"] if tier else "许可原文"
@@ -2217,7 +2218,7 @@ def page_gap():
         '<div class="gp1-fields" id="pane-glyph" role="tabpanel" aria-labelledby="tab-glyph" data-pane="glyph">'
         '<label class="gp-field">'
         '<span class="k for-design">哪一款</span><span class="k for-dev mono">norm</span>'
-        '<input type="text" value="文风·霞鹜文楷" />'
+        '<input type="text" value="霞鹜文楷" />'
         '</label>'
         '<label class="gp-field is-char">'
         '<span class="k for-design">缺的字</span><span class="k for-dev mono">codepoint</span>'

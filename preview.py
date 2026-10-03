@@ -604,7 +604,7 @@ class Handler(SimpleHTTPRequestHandler):
                     pass
             cert = _build_attestation(
                 next((f for f in _load_samples().get("fonts") or []
-                      if f.get("norm") == norm), None),
+                      if str(f.get("norm") or "").lower() == str(norm).lower()), None),
                 _load_licenses(),
                 holder=(query.get("holder") or [""])[0],
                 usage=[u for u in (query.get("usage") or [""])[0].split(",") if u],
@@ -732,7 +732,7 @@ class Handler(SimpleHTTPRequestHandler):
                     }
                 )
                 return True
-            hit = next((f for f in fonts if f.get("norm") == norm), None)
+            hit = next((f for f in fonts if str(f.get("norm") or "").lower() == str(norm).lower()), None)
             if not hit:
                 self._send_json({"error": "not_found", "norm": norm}, 404)
                 return True
