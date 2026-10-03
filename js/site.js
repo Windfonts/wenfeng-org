@@ -1152,9 +1152,9 @@
     }
     if (kind === 'mute') {
       return [
-        ['商用', 'commercial', '未核实', '—'],
-        ['修改', 'modify', '未核实', '—'],
-        ['再分发', 'redistribute', '未核实', '—']
+        ['商用', 'commercial', '待核实', '—'],
+        ['修改', 'modify', '待核实', '—'],
+        ['再分发', 'redistribute', '待核实', '—']
       ];
     }
     if (f.distribution === false) {
@@ -1188,9 +1188,9 @@
     }
     if (kind === 'mute') {
       return {
-        state: '未核实',
+        state: '待核实',
         stateDev: 'textState=' + (ts || '∅'),
-        line: '未核实',
+        line: '待核实',
         note: '许可原文还没有核对记录。本站不出结论，也不出证。',
         noteDev: 'no conclusion · no attest'
       };
@@ -1836,7 +1836,7 @@
       '</div>' +
       '<div class="legal-block" id="about-scope">' +
         '<h2>出证范围</h2>' +
-        '<p>只给采用标准开源协议的字体出证；厂商自拟条款、许可未核实、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。</p>' +
+        '<p>只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。</p>' +
       '</div>' +
       '<p class="quiet-note">收录与核验的方法写在<a href="/how">我们怎么核</a>。wenfeng.org 以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>' +
       '<p class="acts page-acts">' +
@@ -2374,7 +2374,7 @@
       '<div class="legal-block" id="legal-scope">' +
         '<h2>出证范围</h2>' +
         '<p>可出证的标准开源协议：SIL Open Font License 1.1、MIT、Apache License 2.0、IPA Font License、CC0、CC BY / CC BY-SA（不含 NC）、M+，以及带 Font Exception 的 GPL。CC 系授权的字体出证时，证明内保留作者署名，满足署名条款。</p>' +
-        '<p>不出证：厂商自拟的授权协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的字体、许可未核实的、未收录的。这类字如有授权原文，只提供下载。</p>' +
+        '<p>不出证：厂商自拟的授权协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的字体、许可还没核实的、未收录的。这类字如有授权原文，只提供下载。</p>' +
       '</div>' +
       '<div class="legal-block" id="legal-what">' +
         '<h2>核验是什么</h2>' +
