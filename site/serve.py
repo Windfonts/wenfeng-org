@@ -23,6 +23,14 @@ class Handler(preview.Handler):
 
     def _maybe_special(self):
         path = unquote(urlparse(self.path).path)
+        # 旧大写 URL 一律 301 到小写
+        low = path.lower()
+        if low != path and not path.startswith("/api/"):
+            self.send_response(301)
+            self.send_header("Location", low)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return True
         if path.startswith("/api/"):
             return super()._maybe_special()
         if path.startswith("/font/"):

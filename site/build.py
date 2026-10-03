@@ -76,7 +76,22 @@ def load():
         fonts.sort(key=lambda f: order_map.get(f["norm"], 99999))
     except Exception:
         fonts.sort(key=lambda f: (f.get("name") or "").encode("gbk", "ignore"))
+    # 对外一律小写：显示、链接、属性、路由全走小写 norm（文件名查找走 _text_path）
+    for f in fonts:
+        f["norm"] = str(f.get("norm") or "").lower()
+    licenses = {str(k).lower(): v for k, v in licenses.items()}
     return data, fonts, licenses
+
+
+_TEXT_MAP = None
+
+
+def _text_path(norm):
+    global _TEXT_MAP
+    if _TEXT_MAP is None:
+        d = ROOT / "data/license-text"
+        _TEXT_MAP = {p.stem.lower(): p for p in d.glob("*.json")} if d.is_dir() else {}
+    return _TEXT_MAP.get(str(norm).lower())
 
 
 def status(f):
@@ -337,7 +352,7 @@ def page_home(data, fonts):
         ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接"),
     ]
     # 字样带：先看字，再进目录（真字体样张，site.js 懒加载）
-    SHOWCASE = ["Xwwk", "Dyh", "Arkp", "Syhtcjk", "Mkkzh", "Xxzt", "Zkxwt", "Qhddl"]
+    SHOWCASE = ["xwwk", "dyh", "arkp", "syhtcjk", "mkkzh", "xxzt", "zkxwt", "qhddl"]
     by_norm = {f["norm"]: f for f in fonts}
     strip_rows = []
     for n in SHOWCASE:
@@ -1142,8 +1157,8 @@ def license_tier(f):
 
 def page_license(f, licenses):
     norm = f["norm"]
-    p = ROOT / "data/license-text" / (norm + ".json")
-    text_data = json.loads(p.read_text("utf-8")) if p.exists() else None
+    tp = _text_path(norm)
+    text_data = json.loads(tp.read_text("utf-8")) if tp else None
     lic_meta = licenses.get(norm) or {}
     lic_obj = text_data or lic_meta or {}
 

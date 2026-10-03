@@ -502,7 +502,7 @@ class Handler(SimpleHTTPRequestHandler):
             fonts = data.get("fonts") or []
             norm = m.group(1)
             if norm:
-                hit = next((f for f in fonts if f.get("norm") == norm), None)
+                hit = next((f for f in fonts if str(f.get("norm") or "").lower() == norm.lower()), None)
                 if not hit:
                     self._send_json({"error": "not_found", "norm": norm}, 404)
                     return True
