@@ -331,61 +331,80 @@ def layout(section, title, body, dev="", extra_head="", body_class=""):
 # ---------- 页面 ----------
 
 def page_home(data, fonts):
+    """首页 = 16030 丁版移植：大字+导语 → 三件事竖列（01 墨色）+ 检索 | 目录状态图例 → 统计条 → 关于本站。"""
     n_src = sum(1 for f in fonts if status(f) == "source")
     n_full = sum(1 for f in fonts if lic(f).get("textState") == "full")
-    n_att = sum(1 for f in fonts if can_attest(f))
     gen = e((data.get("generated") or "")[:10])
-    dd = lambda d, v: '<span class="for-design">%s</span><span class="for-dev mono">%s</span>' % (d, v)
+    try:
+        n_mirror = json.loads((ROOT / "data" / "export-report.json").read_text())["coverage"]["source_mirrors"]
+    except Exception:
+        n_mirror = 132
 
-    # 一、页头：大字 + 导语；下沿一行 = 主搜索 | 收录说明（两栏与全站 display 同比例）
-    body = '<p class="crumb">%s</p>' % dd("wenfeng.org", "wenfeng.org /")
-    body += ('<header class="home-hero">'
-             '<h1>源文件</h1>'
-             '<p class="lead">%s</p>'
-             '<div class="home-search">%s</div>'
-             '<p class="home-meta">%s</p>'
-             '</header>'
-             % (dd("开源字体的源文件和许可原文。能下载的直接下载，不允许再分发的核验后领取切片包，标准开源协议可出具授权证明。",
-                   "/license · /source · /attest · /gap<br>samples.json · offer · textState · GET /api/v1/fonts"),
-                search(),
-                dd("已收录 <b>%d</b> 款 · 目录 %s 更新" % (len(fonts), gen), "fonts[]=%d · generated %s · not live" % (len(fonts), gen))))
+    def fv(d, v, cls=""):
+        p = (cls + " ") if cls else ""
+        return '<span class="%sfor-design">%s</span><span class="%sfor-dev mono">%s</span>' % (p, d, p, v)
 
-    # 二、四件事：收成一条窄的圆角模条（居中、左右圆角、不占满行宽），一行一款：图标+名称+数字
-    cards = [
-        ("01", "查授权", "许可原文与三态结论", n_full, "份许可全文", "/license/", "shield", "/license · textState=full"),
-        ("02", "下源文件", "本站下载或官方下载，逐款标注", n_src, "款本站下载", "/source/", "download", "/source · offer=source"),
-        ("03", "出授权证明", "标准开源协议，签发即登记", n_att, "款可出证", "/attest/", "certificate", "/attest · can_attest"),
-        ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接"),
+    # 一、丁版三件事竖列：01 查授权整行铺墨；右栏目录状态图例，整行是进目录的筛选链接
+    tasks = [
+        ("01", "查授权", "许可原文与三态结论", "/license · textState", "/license/", "shield", True),
+        ("02", "下源文件", "本站下载或官方下载，逐款标注", "/source · offer", "/source/", "download", False),
+        ("03", "报缺字", "缺字形 / 缺收录 / 勘误", "/gap · 提交未接", "/gap/", "edit", False),
     ]
-    body += '<nav class="home-cards" aria-label="办事">%s</nav>' % "".join(
-        '<a class="home-cell" href="%s"><span class="t-ico">%s</span><span class="t-t">%s</span>%s</a>'
-        % (href, icon(ico), e(t),
-           ('<span class="hc-num"><b>%d</b><span class="u">%s</span></span>' % (n, e(u))) if n is not None
-           else '<span class="hc-act">%s</span>' % e(u))
-        for idx, t, d, n, u, href, ico, v in cards)
+    tasks_html = "".join(
+        '<a class="hv4-task%s" href="%s" role="listitem"><span class="idx" aria-hidden="true">%s</span>'
+        '<span class="t-ico" aria-hidden="true">%s</span><span class="body"><span class="t-t">%s</span>%s</span>'
+        '<span class="arrow" aria-hidden="true">%s</span></a>'
+        % (" is-ink" if ink else "", href, idx, icon(ico), e(t), fv(e(d), v, "t-d"), icon("arrow-right"))
+        for idx, t, d, v, href, ico, ink in tasks)
 
+    legend = [("本站下载", "源文件在本站，进条目直接下载", "st=source", "source"),
+              ("官方下载", "本站不留文件，去作者或厂商的发布处", "st=jump", "jump"),
+              ("暂无下载", "许可已核实，源文件包还没上架", "st=ready", "ready"),
+              ("待核实", "许可原文还没有核对记录", "st=pending", "pending"),
+              ("未收录", "镜像还没收到这款，先去上游仓库或店面", "st=missing", "missing")]
+    legend_html = "".join(
+        '<a class="hv4-legend-row" href="/source/?%s"><span class="l-t">%s</span>%s</a>'
+        % (dev, e(t), fv(e(d), dev, "l-d")) for t, d, dev, st in legend)
 
-    # 二、最近核实（左）| 目录状态图例（右）：图例解释的正是左边列表里的状态词。
-    # 图例词直接链进目录筛选；状态词留在「协议 · 厂商 · 状态」灰串里（full 版式样）
-    recent = sorted((f for f in fonts if lic(f).get("verifiedAt")),
-                    key=lambda f: (lic(f).get("verifiedAt"), f["norm"]), reverse=True)[:6]
-    rows = "".join(
-        '<li><a href="/source/%s/"><span class="nm">%s</span><span class="info">%s</span><span class="go mono">%s</span></a></li>'
-        % (e(f["norm"]), e(wf(f)),
-           dd(e(" · ".join(filter(None, [spdx_of(f) or f.get("licenseName"), f.get("foundry"), STATUS[status(f)][0]]))),
-              "%s · offer=%s" % (e(f["norm"]), e(f.get("offer") or "jump"))),
-           e(lic(f).get("verifiedAt")))
-        for f in recent)
-    legend = '<dl class="kv-rows is-words">%s</dl>' % "".join(
-        '<div><dt><a href="/source/?st=%s">%s</a></dt><dd>%s</dd></div>'
-        % (k, e(STATUS[k][0]), dd(e(STATUS[k][1]), v)) for k, v in [
-            ("source", "offer=source"), ("jump", "offer=jump"), ("ready", "offer=pending · textState=full"),
-            ("pending", "offer=pending · textState≠full"), ("missing", "offer=missing")])
-    body += ('<div class="split home-lower"><section>'
-             '<div class="home-sub"><p class="label">%s</p>%s</div>'
-             '<ul class="index is-3">%s</ul></section>%s</div>'
-             % (dd("最近核实", "sort verifiedAt desc · 6"), link("全部目录", "/source/", "btn-text"), rows,
-                aside("目录状态", legend, '<a href="/how/">我们怎么核 →</a>')))
+    search_html = ('<form class="hv4-search" action="/source/" method="get" role="search">'
+                   '<label class="sr-only" for="q">搜索字体</label>'
+                   '<span class="hv4-search-kicker" aria-hidden="true">检索</span>'
+                   '<input id="q" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+                   '<button class="btn" type="submit">%s搜索</button></form>' % icon("search"))
+
+    # 二、统计条：戊式大数（顶横线 + 列间竖线，白底左对齐，读数不可点）
+    stats = [(len(fonts), "已收录", "fonts[]"), (n_src, "本站下载", "offer=source"),
+             (n_full, "许可全文", "textState=full"), (n_mirror, "镜像仓库", "source_mirrors")]
+    stats_html = "".join('<div class="hv4-stat"><b>%d</b>%s</div>' % (v, fv(d, dv)) for v, d, dv in stats)
+
+    body = ('<section class="hv4-hero">'
+            '<p class="hv4-crumb">%s</p>'
+            '<div class="hv4-display"><h1>源文件</h1>%s</div>'
+            '<div class="hv4-split">'
+            '<div class="hv4-tasks" role="list">%s</div>'
+            '<aside class="hv4-aside" aria-label="目录状态怎么看"><div class="hv4-aside-block hv4-legend">'
+            '<p class="hv4-aside-label">目录状态</p><nav class="hv4-legend-rows" aria-label="按状态筛选目录">%s</nav>'
+            '</div></aside>%s</div>'
+            '<div class="hv4-stats" aria-label="目录概况">%s'
+            '<p class="hv4-stats-cap for-design">目录数据 · %s 更新</p>'
+            '<p class="hv4-stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · %s</p>'
+            '</div></section>'
+            '<section class="hv4-about" aria-label="关于本站"><div class="hv4-about-grid">'
+            '<div class="hv4-about-title"><p class="kicker for-design">关于本站</p><p class="kicker for-dev mono">route /</p>'
+            '<h2 class="for-design">查授权、下源文件、<br>报缺字。</h2>'
+            '<h2 class="for-dev mono">/license · /source<br>/gap · /attest</h2></div>'
+            '<div class="hv4-about-body">'
+            '<p class="for-design">文风收录开源字体的源文件和许可原文，授权结论逐款核对原文。缺字形、缺收录或发现勘误，到报缺字页写一条短笺。提交还没接上，这一下不会送出。</p>'
+            '<p class="for-dev mono">data-view · .for-design / .for-dev · chrome() · GET /api/v1/fonts · samples.json</p>'
+            '<p class="acts">'
+            '<a class="btn btn-ink" href="/license/">%s查授权</a>'
+            '<a class="btn" href="/source/">%s打开目录</a>'
+            '<a class="btn" href="/how/">怎么核</a></p></div></div></section>'
+            % (fv("wenfeng.org", "wenfeng.org /"),
+               fv('开源字体的源文件和许可原文。<br class="hv4-br">能下载的直接下载，不允许再分发的核验后领取切片包。',
+                  '/license · /source · /gap<br class="hv4-br"> samples.json · offer · textState · GET /api/v1/fonts · /attest', "hv4-lead"),
+               tasks_html, legend_html, search_html, stats_html, gen, gen,
+               icon("shield"), icon("download")))
     return layout("home", "", body, "home")
 
 
