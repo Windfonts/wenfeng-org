@@ -2606,7 +2606,7 @@
         '<div class="hw-display">' +
           '<h1 class="for-design">先过三条</h1>' +
           '<h1 class="for-dev mono">3 gates</h1>' +
-          '<p class="hw-lead for-design">文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。状态词、取证、出证写在下面，不跟门槛并排。</p>' +
+          '<p class="hw-lead for-design">文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。</p>' +
           '<p class="hw-lead for-dev mono">text · source · official<br />lexicon and method below</p>' +
         '</div>' +
         '<ol class="hw1-gates" id="how-criteria">' +
@@ -2635,7 +2635,7 @@
         '<p class="hw1-refuse for-design">来路不明的打包文件不收。许可写不清楚的，先标「待核实」，不提供文件，核对完成再更新状态。</p>' +
         '<p class="hw1-refuse for-dev mono">unknown packs out · unclear → 待核实, no file</p>' +
         '<section class="hw1-lex" id="how-status" aria-label="状态词">' +
-          '<p class="hw-label for-design">状态词 · 写在门槛下面</p>' +
+          '<p class="hw-label for-design">状态词</p>' +
           '<p class="hw-label for-dev mono">offer words</p>' +
           '<div class="hw1-row">' +
             '<b class="for-design">本站下载</b>' +
@@ -2650,16 +2650,22 @@
             '<span class="for-dev mono">no local file</span>' +
           '</div>' +
           '<div class="hw1-row">' +
-            '<b class="for-design">未收录</b>' +
-            '<b class="for-dev mono">unlisted</b>' +
-            '<span class="for-design">这款字体还没收进镜像，先去上游取。</span>' +
-            '<span class="for-dev mono">not in the mirror</span>' +
+            '<b class="for-design">暂无下载</b>' +
+            '<b class="for-dev mono">offer=pending · textState=full</b>' +
+            '<span class="for-design">许可已核实，源文件包还没上架。</span>' +
+            '<span class="for-dev mono">no file yet</span>' +
           '</div>' +
           '<div class="hw1-row">' +
             '<b class="for-design">待核实</b>' +
             '<b class="for-dev mono">unverified</b>' +
             '<span class="for-design">许可还没核对完，核对完成前不提供文件。</span>' +
             '<span class="for-dev mono">no file until checked</span>' +
+          '</div>' +
+          '<div class="hw1-row">' +
+            '<b class="for-design">未收录</b>' +
+            '<b class="for-dev mono">unlisted</b>' +
+            '<span class="for-design">这款字体还没收进镜像，先去上游取。</span>' +
+            '<span class="for-dev mono">not in the mirror</span>' +
           '</div>' +
         '</section>' +
         '<div class="hw1-pair">' +
@@ -2684,7 +2690,7 @@
           '<a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">/attest</span></a>' +
           '<a href="/legal"><span class="for-design">法务说明</span><span class="for-dev">/legal</span></a>' +
         '</p>' +
-        '<p class="hw-footnote for-design">门槛在上，词和核验在下。对照别名 <a href="/how-v1b.html">how-v1b</a>。</p>' +
+        '<p class="hw-footnote for-design">对照别名 <a href="/how-v1b.html">how-v1b</a>。</p>' +
         '<p class="hw-footnote for-dev mono">howPage · hw-v1b · /how</p>' +
       '</div>' +
     '</section>';
