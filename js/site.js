@@ -816,7 +816,7 @@
         '<div class="sd2b-split">' +
           '<div>' +
             '<nav class="sd2b-pills" aria-label="按状态筛选">' + pillHtml + '</nav>' +
-            '<p class="sd2b-count"><span>' + list.length + '</span> 款' + qNote + ' · 全部 ' + fonts.length + ' 款</p>' +
+            '<p class="sd2b-count"><span>' + list.length + '</span> 款' + qNote + (offer !== 'all' || route.q ? ' · 全部 ' + fonts.length + ' 款' : '') + '</p>' +
             '<div class="sd2b-legend" aria-hidden="true">' +
               '<span>短码</span><span>名字</span>' +
               '<span class="for-design">信息</span><span class="for-dev">offer</span><span>动作</span>' +
