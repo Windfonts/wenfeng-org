@@ -310,46 +310,58 @@ def layout(section, title, body, dev="", extra_head="", body_class=""):
 # ---------- 页面 ----------
 
 def page_home(data, fonts):
-    cov = data.get("coverage") or {}
     n_src = sum(1 for f in fonts if status(f) == "source")
     n_full = sum(1 for f in fonts if lic(f).get("textState") == "full")
     n_att = sum(1 for f in fonts if can_attest(f))
-    body = '<p class="crumb"><span class="for-design">wenfeng.org</span><span class="for-dev mono">wenfeng.org /</span></p>'
-    body += ('<div class="display"><h1>源文件</h1>'
-             '<p class="lead for-design">开源字体的源文件和许可原文。能下载的直接下载，不允许再分发的核验后领取切片包；标准开源协议的字体可出具授权证明。</p>'
-             '<p class="lead for-dev mono">/license · /source · /gap<br>samples.json · offer · textState · GET /api/v1/fonts · /attest</p></div>')
-    home_tasks = [
-        ("查授权", '<span class="for-design">许可原文与三态结论</span><span class="for-dev mono">/license · textState</span>', "/license/", "shield", True),
-        ("下源文件", '<span class="for-design">本站下载或官方下载，逐款标注</span><span class="for-dev mono">/source · offer</span>', "/source/", "download"),
-        ("出授权证明", '<span class="for-design">标准开源协议，%d 款可出证</span><span class="for-dev mono">/attest · can_attest</span>' % n_att, "/attest/", "certificate"),
-        ("报缺字", '<span class="for-design">缺字形 / 缺收录 / 勘误</span><span class="for-dev mono">/gap · 提交未接</span>', "/gap/", "edit"),
-    ]
-    home_legend = [
-        ("本站下载", '<span class="for-design">源文件在本站，进条目直接下载</span><span class="for-dev mono">offer=source</span>'),
-        ("官方下载", '<span class="for-design">本站不留文件，去作者或厂商的发布处</span><span class="for-dev mono">offer=jump</span>'),
-        ("暂无下载", '<span class="for-design">许可已核实，源文件包还没上架</span><span class="for-dev mono">offer=pending · textState=full</span>'),
-        ("待核实", '<span class="for-design">许可原文还没有核对记录</span><span class="for-dev mono">offer=pending · textState≠full</span>'),
-        ("未收录", '<span class="for-design">镜像还没收到这款，先去上游仓库或店面</span><span class="for-dev mono">offer=missing</span>'),
-    ]
-    body += '<div class="home-search">%s</div>' % search()
-    body += '<div class="split"><div>' + tasks(home_tasks) + '</div>'
-    body += aside("目录状态", kv_rows(home_legend, words=True), '<a href="/how/">我们怎么核</a>') + '</div>'
     gen = e((data.get("generated") or "")[:10])
-    stat = lambda n, d, v, href: ('<a class="stat" href="%s"><b>%d</b><span class="for-design">%s</span><span class="for-dev mono">%s</span></a>'
-                                  % (href, n, d, v))
-    body += ('<div class="stats is-full">%s%s%s%s'
-             '<p class="stats-cap for-design">目录数据 · %s 更新</p>'
-             '<p class="stats-cap for-dev mono">GET /api/v1/fonts · samples.json / export-report · %s · not live</p></div>'
-             % (stat(len(fonts), "已收录", "fonts[]", "/source/"),
-                stat(n_src, "本站下载", "offer=source", "/source/?st=source"),
-                stat(n_full, "许可全文", "textState=full", "/license/"),
-                stat(n_att, "可出证", "can_attest", "/attest/"), gen, gen))
+    dd = lambda d, v: '<span class="for-design">%s</span><span class="for-dev mono">%s</span>' % (d, v)
+
+    # 一、页头：大字 + 导语；下沿一行 = 主搜索 | 收录说明（两栏与全站 display 同比例）
+    body = '<p class="crumb">%s</p>' % dd("wenfeng.org", "wenfeng.org /")
+    body += ('<header class="home-hero">'
+             '<h1>源文件</h1>'
+             '<p class="lead">%s</p>'
+             '<div class="home-search">%s</div>'
+             '<p class="home-meta">%s</p>'
+             '</header>'
+             % (dd("开源字体的源文件和许可原文。能下载的直接下载，不允许再分发的核验后领取切片包，标准开源协议可出具授权证明。",
+                   "/license · /source · /attest · /gap<br>samples.json · offer · textState · GET /api/v1/fonts"),
+                search(),
+                dd("已收录 <b>%d</b> 款 · 目录 %s 更新" % (len(fonts), gen), "fonts[]=%d · generated %s · not live" % (len(fonts), gen))))
+
+    # 二、四件事：四栏等宽，数字就是每件事的量
+    cards = [
+        ("01", "查授权", "许可原文与三态结论", n_full, "份许可全文", "/license/", "shield", "/license · textState=full"),
+        ("02", "下源文件", "本站下载或官方下载，逐款标注", n_src, "款本站下载", "/source/", "download", "/source · offer=source"),
+        ("03", "出授权证明", "标准开源协议，签发即登记", n_att, "款可出证", "/attest/", "certificate", "/attest · can_attest"),
+        ("04", "报缺字", "缺字形、缺收录、勘误", None, "写一条短笺", "/gap/", "edit", "/gap · POST 未接"),
+    ]
+    body += '<nav class="home-cards" aria-label="办事">%s</nav>' % "".join(
+        '<a class="home-card" href="%s"><span class="hc-top"><span class="idx">%s</span><span class="t-ico">%s</span></span>'
+        '<span class="t-t">%s</span><span class="t-d">%s</span>'
+        '<span class="hc-num">%s<span class="u">%s</span></span>'
+        '<span class="arrow">%s</span></a>'
+        % (href, idx, icon(ico), e(t), dd(e(d), v), ("<b>%d</b>" % n) if n is not None else "", e(u), icon("arrow-right"))
+        for idx, t, d, n, u, href, ico, v in cards)
+
+    # 三、最近核实（左）| 目录状态图例（右）：图例解释的正是左边列表里的状态词
     recent = sorted((f for f in fonts if lic(f).get("verifiedAt")),
-                    key=lambda f: (lic(f).get("verifiedAt"), f["norm"]), reverse=True)[:8]
-    if recent:
-        body += ('<section class="home-recent"><div class="home-recent-head"><p class="label">'
-                 '<span class="for-design">最近核实</span><span class="for-dev mono">sort verifiedAt desc · 8</span></p>%s</div>%s</section>'
-                 % (link("查看全部", "/source/", "btn-text", "arrow-right"), index_rows(recent)))
+                    key=lambda f: (lic(f).get("verifiedAt"), f["norm"]), reverse=True)[:6]
+    rows = "".join(
+        '<li><a href="/source/%s/"><span class="nm">%s</span><span class="info">%s</span><span class="go mono">%s</span></a></li>'
+        % (e(f["norm"]), e(wf(f)),
+           dd(e(" · ".join(filter(None, [spdx_of(f) or f.get("licenseName"), f.get("foundry"), STATUS[status(f)][0]]))),
+              "%s · offer=%s" % (e(f["norm"]), e(f.get("offer") or "jump"))),
+           e(lic(f).get("verifiedAt")))
+        for f in recent)
+    legend = [(STATUS[k][0], dd(e(STATUS[k][1]), v)) for k, v in [
+        ("source", "offer=source"), ("jump", "offer=jump"), ("ready", "offer=pending · textState=full"),
+        ("pending", "offer=pending · textState≠full"), ("missing", "offer=missing")]]
+    body += ('<div class="split home-lower"><section>'
+             '<div class="home-sub"><p class="label">%s</p>%s</div>'
+             '<ul class="index is-3">%s</ul></section>%s</div>'
+             % (dd("最近核实", "sort verifiedAt desc · 6"), link("全部目录", "/source/", "btn-text"), rows,
+                aside("目录状态", kv_rows(legend, words=True), '<a href="/how/">我们怎么核 →</a>')))
     return layout("home", "", body, "home")
 
 
