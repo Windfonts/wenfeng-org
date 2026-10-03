@@ -101,3 +101,14 @@ origin  ssh://git@feicode.com:2222/Windfonts/wenfeng-org.git
 ```
 
 分支 `main`。过程备忘在 `NOTES-OPTIONS.md`。枢纽从 `options.html` 和各 `*-options.html` 进。
+
+## 2026-10-03 v2 静态重做与字体对齐 [GC]
+
+- 新站在 `site/`（静态多页，`python3 site/build.py && python3 site/serve.py --port 16031`），说明见 `site/README.md`。
+- 一份 layout、一份 `site.css`、一份 `site.js`，全部路由保留（source/license/attest/slice/foundry/use/how/legal/about/gap/v）。
+- 根目录历史过程稿（*-v*.html、*-options.html、a–f、hifi、home-*、lab、from-app、_shots）移至 `archive/prototype-2026-09/` 归档。旧版对照原型（16030）保留未动。
+- 字体与证面严格对齐 16030 真源：
+  1. 默认恢复 16030 经典正式证面（双框、金线织纹、寒蝉宽黑体「文风字体」水印、思源宋体 `WF-Systsc` 骨架、思源黑体 `WF-Syhtsc` 表格与朱红印章），保留 16031 现代极简版式备用，支持一键切换与记忆。
+  2. 修复寒蝉宽黑体四个字形（15 体, 16 文, 18 风, 19 字）的 `@font-face` 声明。
+  3. `site/build.py` 通过软链引用 `assets/shs` 与 `assets/shsans` 分片，并在 `page_attest` 与 `page_lookup` 通过 `extra_head` 预加载样式表；`site.js` 实现 `lazyPreviews()` 与 WebFont 按需加载。
+- 调整完毕并验证通过后执行提交合并。

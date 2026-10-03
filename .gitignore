@@ -8,3 +8,4 @@ dist/
 
 # Prototype / fake secrets — never commit
 data/attest-hmac.json
+site/dist/

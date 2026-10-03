@@ -1,0 +1,125 @@
+/* 文风字体 v4 · 设计令牌（B：柔和 · 圆润）
+   - 界面只用黑白灰。黑只给：主按钮、选中态、字标头像。带图头像白底（--face）。
+   - 层次：纯白页面 + 浅灰填充面板，面板里的控件是白的。不画边框，不用投影。
+   - 语义色（--ok / --warn / --caution）只给许可档位与出处信誉等结论信号，不进导航、按钮、选中态。
+   - 字重反差：标题 / 字体名 / 选中项 700，其余 400。不用 500 / 600。
+   - UI 字体：阿里巴巴普惠体（页面用字子集，见 fonts.css）。缺字落到系统黑体。
+   - 深色模式：所有颜色走令牌，[data-theme="dark"] 一处覆写。 */
+:root {
+  color-scheme: light;
+  /* 色：表面 */
+  --page: #ffffff;        /* 页面底：纯白 */
+  --surface: #f5f5f5;     /* 面板 / 卡片：浅灰填充 */
+  --paper: #ffffff;       /* 面板内的控件：白 */
+  --face: #ffffff;        /* 带图头像底：深浅都白，logo 按白底画 */
+  --fill: #f0f0f0;        /* 白页上的小件填充：默认按钮 / 标签 / 导航 / 搜索 */
+  --surface-2: #e6e6e6;   /* 填充件 hover */
+  --well: #f0f0f0;        /* 输入框 / 代码块 */
+  --rule: #e6e6e6;        /* 极少数需要分隔线的地方（KV 表、表格） */
+  --rule-2: #efefef;
+
+  /* 色：文字 */
+  --ink: #111111;
+  --ink-2: #333333;
+  --gray: #666666;
+  --gray-2: #9a9a9a;
+  --on-ink: #ffffff;      /* 黑块上的文字 */
+  --on-ink-2: rgba(255, 255, 255, 0.62);
+  --ink-hover: #000000;   /* 主按钮 hover */
+  --paper-hover: #e8e8e8; /* 黑块上的浅色按钮 hover */
+  --scrim: rgba(17, 17, 17, 0.32);
+  --accent: var(--ink);   /* 没有彩色点缀；历史用法统一落到墨黑 */
+
+  /* 色：语义（仅许可 / 信誉结论；不进 chrome） */
+  --ok: #1f7a3f;          /* 开源商用档芯片底 */
+  --on-ok: #ffffff;       /* 开源芯片字 */
+  --warn: #8a6d1a;        /* 信誉「一般」、警告字色 */
+  --warn-edge: #b08a2e;   /* 警告描边 */
+  --caution: #a05a2c;     /* 官网失效等暖警示 */
+
+  /* 字 */
+  --font-ui: "Alibaba PuHuiTi", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-wordmark: "wenfeng-hckht", "Chill K Sans Medium", var(--font-ui);
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --fs-11: 0.6875rem;
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-28: 1.75rem;
+  --fs-40: 2.5rem;
+  --fs-64: 4rem;
+  --fs-96: 6rem;
+  --fs-144: 9rem;
+
+  --fw-body: 400;
+  --fw-label: 400;
+  --fw-title: 700;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-body: 1.6;
+
+  /* 间距（4px 基准） */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-8: 2rem;
+  --s-10: 2.5rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+  --s-20: 5rem;
+  --s-24: 6rem;
+
+  /* 版 */
+  --container: 96rem;
+  --gutter: var(--s-6);
+  --topbar-h: 4rem;
+  --controlbar-h: 3.75rem;
+  --rail-w: 14rem;
+  --radius: 16px;         /* 面板 / 卡片 */
+  --radius-sm: 10px;      /* 面板内控件 */
+  --radius-pill: 999px;   /* 按钮 / 标签 / 输入 */
+  --shadow: none;         /* B 不用投影，靠填充分层 */
+  --shadow-hover: none;
+
+  /* 动效 */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 160ms;
+}
+
+/* 深色模式：所有颜色在这里一次翻转；存 localStorage.wf-theme，顶栏 / 侧栏有切换 */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #111111;
+  --surface: #1c1c1c;
+  --paper: #2a2a2a;
+  --face: #ffffff;        /* 带图头像深色模式仍白底 */
+  --fill: #262626;
+  --surface-2: #333333;
+  --well: #262626;
+  --rule: #2c2c2c;
+  --rule-2: #232323;
+  --ink: #f2f2f2;
+  --ink-2: #d6d6d6;
+  --gray: #9a9a9a;
+  --gray-2: #6a6a6a;
+  --on-ink: #111111;
+  --on-ink-2: rgba(0, 0, 0, 0.6);
+  --ink-hover: #ffffff;
+  --paper-hover: #3a3a3a;
+  --scrim: rgba(0, 0, 0, 0.55);
+  --ok: #2c8f52;
+  --on-ok: #ffffff;
+  --warn: #cbb06a;
+  --warn-edge: #8a7434;
+  --caution: #c48a5c;
+  --shadow: none;
+  --shadow-hover: none;
+}
