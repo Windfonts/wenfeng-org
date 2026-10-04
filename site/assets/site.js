@@ -23,10 +23,11 @@
   /* 字体 WebFont 动态加载与懒加载（同 16030） */
   var FACE_CSS_TPL = 'https://cn.windfonts.com/api/css?family={F}&weight=400&subset=zh-common&version=zh-common';
   var MISS_KEY = 'wf-webfont-miss';
-  var MISS_TTL = 7 * 24 * 3600 * 1000;
+  var FACE_PACK_BASE = 'https://cn.windfonts.com/fonts-packages/';
+  var MISS_TTL = 24 * 3600 * 1000;
   var FACE_PACK = 'https://cn.windfonts.com/fonts-packages/{N}/{W}/full/result.css';
   var facesLoaded = {};
-  function applyFontFace(norm, family, useFull) {
+  function applyFontFace(norm, family, useFull, wname) {
     if (!norm) return;
     if (useFull && facesLoaded[norm] === 'full') return;
     if (!useFull && facesLoaded[norm]) return;
@@ -81,30 +82,45 @@
     function markMiss() {
       try { miss[norm] = Date.now(); localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
     }
-    fetch(FACE_CSS_TPL.replace('{F}', encodeURIComponent(family)))
-      .then(function (r) {
-        if (r.status === 404) markMiss();
+    function injectCss(css, base) {
+      /* 包里的族名（WF-*、windfonts-*）和字重档不归我们管：统一改写成 wenfeng-{norm} + 400，
+         派生字体（如 975 黑体挂普惠体包）才能命中；包内分片是相对路径，就地补全。 */
+      var fixed = css
+        .replace(/font-weight\s*:\s*[^;]+;/gi, 'font-weight:400;')
+        .replace(/font-family\s*:\s*[^;]+;/gi, 'font-family:"' + famCss + '";')
+        .replace(/url\("\.\//g, 'url("' + base)
+        .replace(/url\('\.\//g, "url('" + base);
+      var st = document.createElement('style');
+      st.textContent = fixed;
+      document.head.appendChild(st);
+      applyClass(famCss);
+      try {
+        var nameEl = document.querySelector('[data-face-norm="' + norm + '"]');
+        var text = nameEl ? (nameEl.textContent || '').slice(0, 24) : '';
+        document.fonts.load('16px "' + famCss + '"', text).catch(function () {});
+      } catch (e) {}
+    }
+    /* 包直取优先：/fonts-packages/{Norm}/{Weight}/{subset}/result.css。
+       API 索引收录不全（阿里健康体、玄宗等 API 404 但包在），zh-common 缺档升 full。 */
+    var cap = norm.charAt(0).toUpperCase() + norm.slice(1);
+    var wn = wname || 'Regular';
+    var tries = [
+      FACE_PACK_BASE + encodeURIComponent(cap) + '/' + encodeURIComponent(wn) + '/zh-common/result.css',
+      FACE_PACK_BASE + encodeURIComponent(cap) + '/' + encodeURIComponent(wn) + '/full/result.css',
+      FACE_PACK_BASE + encodeURIComponent(cap) + '/Regular/full/result.css',
+      FACE_CSS_TPL.replace('{F}', encodeURIComponent(family))
+    ];
+    (function next(i) {
+      if (i >= tries.length) { markMiss(); applyClass(famCss); return; }
+      fetch(tries[i]).then(function (r) {
         if (!r.ok) throw new Error(String(r.status));
         return r.text();
-      })
-      .then(function (css) {
+      }).then(function (css) {
+        if (css.indexOf('@font-face') === -1) throw new Error('not css');
         try { delete miss[norm]; localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
-        /* 包里的族名（WF-*）和字重档（Thin 等）不归我们管：统一改写成 wenfeng-{norm} + 400，
-           派生字体（如 975 黑体挂普惠体包）才能命中。 */
-        var fixed = css
-          .replace(/font-weight\s*:\s*[^;]+;/gi, 'font-weight:400;')
-          .replace(/font-family\s*:\s*[^;]+;/gi, 'font-family:"' + famCss + '";');
-        var st = document.createElement('style');
-        st.textContent = fixed;
-        document.head.appendChild(st);
-        applyClass(famCss);
-        try {
-          var nameEl = document.querySelector('[data-face-norm="' + norm + '"]');
-          var text = nameEl ? (nameEl.textContent || '').slice(0, 24) : '';
-          document.fonts.load('16px "' + famCss + '"', text).catch(function () {});
-        } catch (e) {}
-      })
-      .catch(function () { applyClass(famCss); });
+        injectCss(css, tries[i].replace(/[^/]+$/, ''));
+      }).catch(function () { next(i + 1); });
+    })(0);
   }
   function lazyPreviews() {
     var els = document.querySelectorAll('[data-face-norm]');
@@ -113,7 +129,8 @@
       applyFontFace(
         el.getAttribute('data-face-norm'),
         el.getAttribute('data-face-family'),
-        el.getAttribute('data-face-full') === '1'
+        el.getAttribute('data-face-full') === '1',
+        el.getAttribute('data-face-weight')
       );
     }
     if (!('IntersectionObserver' in window)) {
@@ -167,18 +184,27 @@
     });
   });
 
-  /* 列表：搜索 + 状态筛选 */
-  var list = $('[data-list]');
-  if (list) {
-    var rows = $$('li', list), hideOn = $('[data-hide-on-search]'), showOn = $('[data-show-on-search]'), licLayout = $('[data-lic-layout]'), input = $('[data-search]'), count = $('[data-count]'), empty = $('[data-empty]'), pager = $('[data-pager]');
+  /* 列表：搜索 + 状态筛选 + 分页。可在动态插入台账后再次调用。 */
+  function bindFilterList(list) {
+    if (!list || list.getAttribute('data-bound')) return;
+    list.setAttribute('data-bound', '1');
+    var root = list.parentNode || document;
+    var rows = $$('li', list);
+    var hideOn = $('[data-hide-on-search]');
+    var showOn = $('[data-show-on-search]');
+    var licLayout = $('[data-lic-layout]');
+    var input = $('[data-search]');
+    var count = $('[data-count]');
+    var empty = $('[data-empty]', root);
+    var pager = $('[data-pager]', root);
     var state = { q: qs.get('q') || '', st: qs.get('st') || 'all', letter: qs.get('letter') || 'all' };
     var PAGE = parseInt(list.getAttribute('data-page-size') || '20', 10) || 20;
     var page = parseInt(qs.get('page') || '1', 10) || 1;
     var letterBtns = $$('[data-letter-filter]');
     var letterMark = $('[data-letter-mark]');
+    var unit = list.getAttribute('data-unit') || '款';
     function apply() {
       var q = state.q.trim().toLowerCase(), hits = [];
-      /* 授权页：无检索词时不铺名单，避免折叠层里仍可聚焦 */
       var licIdle = !!(licLayout && !q);
       rows.forEach(function (r) {
         var hit = !licIdle
@@ -192,12 +218,15 @@
       var start = (page - 1) * PAGE;
       rows.forEach(function (r) { r.hidden = !r._hit; });
       hits.forEach(function (r, i) { if (i < start || i >= start + PAGE) r.hidden = true; });
-      if (count) count.textContent = licIdle ? '' : ((q || state.st !== 'all' || state.letter !== 'all') ? hits.length + ' / ' + rows.length + ' 款' : rows.length + ' 款');
+      if (count) {
+        count.textContent = licIdle ? '' : ((q || state.st !== 'all' || state.letter !== 'all')
+          ? hits.length + ' / ' + rows.length + ' ' + unit
+          : rows.length + ' ' + unit);
+      }
       if (empty) empty.hidden = licIdle || hits.length > 0;
       if (hideOn) hideOn.hidden = !!q;
       if (licLayout) licLayout.classList.toggle('is-hit', !!q);
       if (showOn) {
-        /* 授权页用 is-hit 做过渡，不用 hidden（display:none 无法过渡） */
         if (licLayout) {
           showOn.hidden = false;
           showOn.setAttribute('aria-hidden', q ? 'false' : 'true');
@@ -246,8 +275,13 @@
         });
       });
     }
-    if (input) { input.value = state.q; input.addEventListener('input', function () { state.q = input.value; page = 1; apply(); }); }
-    $$('[data-filter]').forEach(function (b) { b.addEventListener('click', function () { state.st = b.dataset.filter; page = 1; apply(); }); });
+    if (input) {
+      input.value = state.q;
+      input.addEventListener('input', function () { state.q = input.value; page = 1; apply(); });
+    }
+    $$('[data-filter]').forEach(function (b) {
+      b.addEventListener('click', function () { state.st = b.dataset.filter; page = 1; apply(); });
+    });
     letterBtns.forEach(function (b) {
       b.addEventListener('click', function () {
         state.letter = b.getAttribute('data-letter-filter') || 'all';
@@ -255,18 +289,135 @@
         apply();
       });
     });
+    var pick = list.getAttribute('data-pick');
+    if (pick) {
+      list.addEventListener('click', function (ev) {
+        var a = ev.target.closest && ev.target.closest('a.lrow');
+        if (!a) return;
+        ev.preventDefault();
+        var li = a.closest('li');
+        var val = li && (li.getAttribute('data-norm') || '');
+        if (!val) return;
+        var hid = $('[name="' + pick + '"]');
+        if (hid) hid.value = val;
+        $$('.lrow.is-on', list).forEach(function (x) { x.classList.remove('is-on'); });
+        a.classList.add('is-on');
+        var hint = $('[data-attest-picked]');
+        var nm = a.querySelector('.lnm');
+        if (hint && nm) hint.textContent = '已选 ' + nm.textContent.trim();
+      });
+    }
     apply();
   }
+  bindFilterList($('[data-list]'));
 
-  /* 授权证明：表单跳转 */
+  /* 授权证明：办事台 + 字体预测提示 */
   var form = $('[data-attest-form]');
-  if (form) form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var fd = new FormData(form), p = new URLSearchParams();
-    ['holder', 'uscc'].forEach(function (k) { if (fd.get(k)) p.set(k, fd.get(k)); });
-    var u = fd.getAll('usage'); if (u.length) p.set('usage', u.join(','));
-    location.href = '/attest/' + encodeURIComponent(fd.get('norm')) + '/' + (p.toString() ? '?' + p : '');
-  });
+  if (form) {
+    var qIn = $('[data-attest-q]', form);
+    var hid = $('[data-attest-norm]', form);
+    var hitsEl = $('[data-attest-hits]', form);
+    var idxEl = $('[data-attest-index]', form);
+    var catalog = [];
+    try { catalog = JSON.parse(idxEl ? idxEl.textContent : '[]'); } catch (err) { catalog = []; }
+    var active = -1;
+    var shown = [];
+    function closeHits() {
+      if (hitsEl) { hitsEl.hidden = true; hitsEl.innerHTML = ''; }
+      if (qIn) qIn.setAttribute('aria-expanded', 'false');
+      active = -1;
+      shown = [];
+    }
+    function pick(item) {
+      if (!item) return;
+      hid.value = item.norm;
+      qIn.value = item.name;
+      closeHits();
+    }
+    function resolveQuery() {
+      if (hid.value) return hid.value;
+      var q = (qIn.value || '').trim().toLowerCase();
+      if (!q) return '';
+      var exact = catalog.filter(function (it) {
+        return it.norm.toLowerCase() === q || it.name.toLowerCase() === q;
+      });
+      if (exact.length === 1) return exact[0].norm;
+      var hits = catalog.filter(function (it) { return (it.hay || '').indexOf(q) !== -1; });
+      return hits.length === 1 ? hits[0].norm : '';
+    }
+    function paint(hits) {
+      shown = hits.slice(0, 6);
+      active = shown.length ? 0 : -1;
+      if (!shown.length) {
+        hitsEl.hidden = false;
+        hitsEl.innerHTML = '<li class="at-suggest-empty">没有可出证的匹配。换个名字试试。</li>';
+        qIn.setAttribute('aria-expanded', 'true');
+        return;
+      }
+      hitsEl.hidden = false;
+      qIn.setAttribute('aria-expanded', 'true');
+      hitsEl.innerHTML = shown.map(function (it, i) {
+        return '<li><button type="button" role="option" data-i="' + i + '" class="' + (i === active ? 'is-on' : '') + '">' +
+          '<span class="nm">' + esc(it.name) + '</span><span class="sp">' + esc(it.spdx) + '</span></button></li>';
+      }).join('');
+    }
+    function mark() {
+      $$('button', hitsEl).forEach(function (b, i) { b.classList.toggle('is-on', i === active); });
+    }
+    if (qIn && hitsEl) {
+      qIn.addEventListener('input', function () {
+        hid.value = '';
+        var q = qIn.value.trim().toLowerCase();
+        if (!q) { closeHits(); return; }
+        paint(catalog.filter(function (it) { return (it.hay || '').indexOf(q) !== -1; }));
+      });
+      qIn.addEventListener('keydown', function (ev) {
+        if (hitsEl.hidden) return;
+        if (ev.key === 'ArrowDown') {
+          ev.preventDefault();
+          if (!shown.length) return;
+          active = (active + 1) % shown.length;
+          mark();
+        } else if (ev.key === 'ArrowUp') {
+          ev.preventDefault();
+          if (!shown.length) return;
+          active = (active - 1 + shown.length) % shown.length;
+          mark();
+        } else if (ev.key === 'Enter' && shown.length && active >= 0) {
+          ev.preventDefault();
+          pick(shown[active]);
+        } else if (ev.key === 'Escape') {
+          closeHits();
+        }
+      });
+      hitsEl.addEventListener('mousedown', function (ev) {
+        var b = ev.target.closest('button[data-i]');
+        if (!b) return;
+        ev.preventDefault();
+        pick(shown[parseInt(b.getAttribute('data-i'), 10)]);
+      });
+      document.addEventListener('click', function (ev) {
+        if (!form.contains(ev.target)) closeHits();
+      });
+    }
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var fd = new FormData(form), p = new URLSearchParams();
+      var norm = hid.value || resolveQuery();
+      if (!norm) {
+        if (qIn) qIn.focus();
+        paint(catalog.filter(function (it) {
+          var q = (qIn.value || '').trim().toLowerCase();
+          return q && (it.hay || '').indexOf(q) !== -1;
+        }));
+        return;
+      }
+      hid.value = norm;
+      ['holder', 'uscc'].forEach(function (k) { if (fd.get(k)) p.set(k, fd.get(k)); });
+      var u = fd.getAll('usage'); if (u.length) p.set('usage', u.join(','));
+      location.href = '/attest/' + encodeURIComponent(norm) + '/' + (p.toString() ? '?' + p : '');
+    });
+  }
   if ($('[data-attest-go]')) location.replace('/attest/' + encodeURIComponent(qs.get('norm') || '') + '/?' + qs);
 
   /* 授权证明：16030 经典正式证面（默认）+ 16031 极简备用版式 */
@@ -601,10 +752,18 @@
   var lg = $('[data-ledger]');
   if (lg) api('/api/v1/certs/issued').then(function (r) {
     var rec = (r.records || []).slice().reverse();
-    lg.innerHTML = '<p class="count">' + rec.length + ' 份</p><ul class="index is-3">' + rec.map(function (x) {
-      return '<li><a href="/attest/' + esc(x.norm) + '/"><span class="nm mono">' + esc(x.serial) + '</span><span class="info">' + esc(x.catalogName) + ' · ' + esc((x.usage || []).join('、')) +
-        '</span><span class="go">' + esc(x.issuedAt) + '</span></a></li>';
-    }).join('') + '</ul>';
+    if (!rec.length) {
+      lg.innerHTML = '<p class="quiet">签发后的记录会出现在这里。</p>';
+      return;
+    }
+    lg.innerHTML = '<ul class="lin-list" data-list data-page-size="20" data-unit="份">' + rec.map(function (x) {
+      var hay = esc((x.serial || '') + ' ' + (x.catalogName || '') + ' ' + ((x.usage || []).join(' '))).toLowerCase();
+      return '<li data-hay="' + hay + '"><a class="lrow" href="/attest/' + esc(x.norm) + '/">' +
+        '<span class="lnm">' + esc(x.catalogName) + '</span>' +
+        '<span class="lrel">' + esc(x.serial) + '</span>' +
+        '<span class="lgo">' + esc(x.issuedAt) + '</span></a></li>';
+    }).join('') + '</ul><p class="empty" data-empty hidden>没有匹配的记录。</p><nav class="pager" data-pager hidden></nav>';
+    bindFilterList(lg.querySelector('[data-list]'));
   }).catch(function (e) { lg.innerHTML = result(false, '台账暂不可用', '<p>' + esc(e.message) + '</p>'); });
 
   /* 查验 */
@@ -804,4 +963,18 @@
       });
     });
   });
+})();
+
+/* 主门 h1 第二词轮换（商用/免费/高级/精品），5.2s 交叉淡入 */
+(function () {
+  var rot = document.querySelector('[data-rot]');
+  if (!rot) return;
+  var spans = rot.children;
+  if (spans.length < 2) return;
+  var i = 0;
+  setInterval(function () {
+    spans[i].classList.remove('is-on');
+    i = (i + 1) % spans.length;
+    spans[i].classList.add('is-on');
+  }, 5200);
 })();
