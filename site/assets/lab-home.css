@@ -328,6 +328,10 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
 @font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/7ea7.woff2") format("woff2"); unicode-range: U+7EA7; }
 @font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/7cbe.woff2") format("woff2"); unicode-range: U+7CBE; }
 @font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/54c1.woff2") format("woff2"); unicode-range: U+54C1; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/6240.woff2") format("woff2"); unicode-range: U+6240; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/5199.woff2") format("woff2"); unicode-range: U+5199; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/4e66.woff2") format("woff2"); unicode-range: U+4E66; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/6cd5.woff2") format("woff2"); unicode-range: U+6CD5; }
 .lab-rot { display: inline-grid; }
 .lab-rot > span {
   grid-area: 1 / 1;
