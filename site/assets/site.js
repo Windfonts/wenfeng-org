@@ -31,9 +31,10 @@
     if (!family && !useFull) return;
     facesLoaded[norm] = useFull ? 'full' : true;
     var famName = 'WF-' + (norm.charAt(0).toUpperCase() + norm.slice(1));
-    function applyClass() {
+    function applyClass(famCss) {
+      var stack = famCss ? '"' + famCss + '", ' : '';
       var st = document.createElement('style');
-      st.textContent = '.t-' + norm + '{font-family:"' + famName + '","WF-' + norm + '", var(--font-ui);}';
+      st.textContent = '.t-' + norm + '{font-family:' + stack + '"' + famName + '","WF-' + norm + '", var(--font-ui);}';
       document.head.appendChild(st);
     }
     function loadPack(done) {
@@ -71,11 +72,27 @@
       });
       return;
     }
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = FACE_CSS_TPL.replace('{F}', encodeURIComponent(family));
-    link.onload = applyClass;
-    document.head.appendChild(link);
+    var famCss = 'wenfeng-' + norm;
+    fetch(FACE_CSS_TPL.replace('{F}', encodeURIComponent(family)))
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.text();
+      })
+      .then(function (css) {
+        /* 包里的族名（WF-*）和字重档（Thin 等）不归我们管：统一改写成 wenfeng-{norm} + 400，
+           派生字体（如 975 黑体挂普惠体包）才能命中。 */
+        var fixed = css
+          .replace(/font-weight\s*:\s*[^;]+;/gi, 'font-weight:400;')
+          .replace(/font-family\s*:\s*[^;]+;/gi, 'font-family:"' + famCss + '";');
+        var st = document.createElement('style');
+        st.textContent = fixed;
+        document.head.appendChild(st);
+        applyClass(famCss);
+        var nameEl = document.querySelector('.t-' + norm);
+        var text = nameEl ? (nameEl.textContent || '').slice(0, 24) : '';
+        try { document.fonts.load('16px "' + famCss + '"', text).catch(function () {}); } catch (e) {}
+      })
+      .catch(function () { applyClass(famCss); });
   }
   function lazyPreviews() {
     var els = document.querySelectorAll('[data-face-norm]');
@@ -98,7 +115,10 @@
         loadEl(e.target);
       });
     }, { rootMargin: '140px' });
-    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+    Array.prototype.forEach.call(els, function (el) {
+      if (el.offsetParent !== null) loadEl(el);
+      else io.observe(el);
+    });
   }
 
   /* 深浅 / 设计·开发 / 放大（同店面：wf-theme / wf-view / wf-scale） */
