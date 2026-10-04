@@ -378,10 +378,7 @@ def _foot_marks():
         ' title="GitHub 镜像（即将离开文风）" aria-label="GitHub 镜像">'
         '<svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub<span class="x">↗</span></a></li>'
     )
-    return (
-        '<p class="foot-src-k">%s</p><ul class="foot-marks">%s%s</ul>'
-        % (_fv("源码与镜像", "origin · mirror"), fc, gh)
-    )
+    return '<ul class="foot-marks">%s%s</ul>' % (fc, gh)
 
 
 def _foot_wm():
