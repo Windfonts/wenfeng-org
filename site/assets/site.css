@@ -32,11 +32,11 @@ main { flex: 1; }
 .topbar-inner { height: 100%; display: flex; align-items: center; gap: var(--s-8); }
 .wordmark { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--fs-16); font-weight: var(--fw-title); white-space: nowrap; }
 /* 字标与 APP 同套：寒蝉宽黑体 Medium（本地切片只盖「文风」二字） */
-.wordmark .wm-name { font-family: "wenfeng-hckht", "Chill K Sans Medium", var(--font-ui); font-weight: 500; letter-spacing: 0.01em; }
+.wordmark .wm-name, .wordmark .wm-sub { font-family: "wenfeng-hckht", "Chill K Sans Medium", var(--font-ui); font-weight: 500; letter-spacing: 0.01em; }
 .wordmark:hover { text-decoration: none; }
 .wordmark .mark { position: relative; width: 24px; height: 24px; border-radius: 6px; background: var(--ink); display: block; }
 .wordmark .mark::before { content: ""; position: absolute; inset: 0; background: var(--on-ink); -webkit-mask: url("wenfeng-mark.png") center / 66% no-repeat; mask: url("wenfeng-mark.png") center / 66% no-repeat; }
-.wordmark .wm-sub { font-weight: var(--fw-body); color: var(--gray); font-size: var(--fs-13); margin-left: 0.15em; }
+.wordmark .wm-sub { color: var(--gray); font-size: var(--fs-13); margin-left: 0.35em; }
 .topnav { display: flex; gap: var(--s-1); min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .topnav a { padding: 0.4rem 0.7rem; border-radius: var(--radius-pill); color: var(--gray); white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
 .topnav a:hover { color: var(--ink); text-decoration: none; background: var(--fill); }
