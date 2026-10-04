@@ -582,18 +582,22 @@
   var lk = $('[data-lookup]');
   if (lk) {
     if (qs.get('s')) lk.s.value = qs.get('s');
-    lk.addEventListener('submit', function (ev) {
-      ev.preventDefault();
+    if (qs.get('holder')) lk.holder.value = qs.get('holder');
+    function runLookup() {
       var out = $('[data-out]');
       api('/api/v1/certs/lookup?s=' + encodeURIComponent(lk.s.value) + '&holder=' + encodeURIComponent(lk.holder.value)).then(function (r) {
         if (r.error) {
           out.innerHTML = result(false, r.error === 'holder_mismatch' ? '持证单位不一致' : '查不到这个编号',
-            '<p>编号与单位须与证明上完全一致。查不到的，按伪造处理。</p>'); return;
+            '<p>编号与单位须与证明上完全一致。通用记录填「通用核验记录」。查不到的，按伪造处理。</p>'); return;
         }
+        var holder = r.holder ? esc(r.holder) : '通用核验记录';
+        var cert = r.href ? '<p class="acts"><a class="btn btn-ink" href="' + esc(r.href) + '">打开证明页</a></p>' : '';
         out.innerHTML = result(true, '证书有效', '<dl class="kv-rows"><div><dt>字体</dt><dd>' + esc(r.catalogName) + '</dd></div><div><dt>协议</dt><dd>' + esc(r.spdx) +
-          '</dd></div><div><dt>持证单位</dt><dd>' + esc(r.holder) + '</dd></div><div><dt>签发日期</dt><dd>' + esc(r.issuedAt) + '</dd></div><div><dt>下载次数</dt><dd>' + esc(r.downloads) + '</dd></div></dl>');
+          '</dd></div><div><dt>持证单位</dt><dd>' + holder + '</dd></div><div><dt>签发日期</dt><dd>' + esc(r.issuedAt) + '</dd></div><div><dt>下载次数</dt><dd>' + esc(r.downloads) + '</dd></div></dl>' + cert);
       }).catch(function (e) { out.innerHTML = result(false, '查验服务暂不可用', '<p>' + esc(e.message) + '</p>'); });
-    });
+    }
+    lk.addEventListener('submit', function (ev) { ev.preventDefault(); runLookup(); });
+    if (qs.get('s') && qs.get('holder')) runLookup();
   }
 
   /* 切片包：本地核验原包 */

@@ -857,7 +857,13 @@ class Handler(SimpleHTTPRequestHandler):
             if not hit:
                 self._send_json({"error": "not_found"}, 404)
                 return True
-            if (hit.get("holder") or "").strip() != holder:
+            want = (hit.get("holder") or "").strip()
+            got = holder.strip()
+            if want:
+                if got != want:
+                    self._send_json({"error": "holder_mismatch"}, 403)
+                    return True
+            elif got not in ("", "通用核验记录"):
                 self._send_json({"error": "holder_mismatch"}, 403)
                 return True
             self._send_json({

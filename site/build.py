@@ -2458,10 +2458,18 @@ def page_verify():
         kicker="核验",
         dev="/attest/verify",
     )
-    body += ('<div class="split"><div><form class="form" data-verify><label>证明 JSON<textarea name="json" rows="12" '
+    body += ('<div class="split at-tool"><div><form class="form" data-verify><label>证明 JSON<textarea name="json" rows="12" '
              'placeholder=\'{ "type": "wenfeng.attestation.v1", … }\'></textarea></label><p class="acts"><button class="btn btn-ink">核对</button></p></form>'
-             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([("签名", "平台密钥，验的是改没改过"), ("不是", "可靠电子签名或 CA 证书"), ("另见", '<a href="/attest/ledger/">签发台账</a>')])))
-    return layout("attest", "核对证明", body, "/attest/verify")
+             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([
+                 ("核对方式", "平台密钥校验 JSON 完整性"),
+                 ("效力", "核对内容是否被改动；不构成司法意义上的电子签章"),
+                 ("另见", '<a href="/attest/ledger/">签发台账</a>'),
+             ])))
+    return layout(
+        "attest", "核对证明", body, "/attest/verify",
+        extra_head=pages_css("attest"),
+        body_class="page-attest page-attest-tool",
+    )
 
 
 def page_ledger():
@@ -2472,8 +2480,12 @@ def page_ledger():
         kicker="核验",
         dev="/attest/ledger",
     )
-    body += '<div data-ledger><p class="quiet">正在读取台账…</p></div>'
-    return layout("attest", "签发台账", body, "/attest/ledger")
+    body += '<div class="at-tool" data-ledger><p class="quiet">正在读取台账…</p></div>'
+    return layout(
+        "attest", "签发台账", body, "/attest/ledger",
+        extra_head=pages_css("attest"),
+        body_class="page-attest page-attest-tool",
+    )
 
 
 def page_lookup():
@@ -2487,10 +2499,19 @@ def page_lookup():
         kicker="核验",
         dev="/v · serial + holder",
     )
-    body += ('<div class="split"><div><form class="form" data-lookup><div class="two"><label>证明编号<input name="s" placeholder="WF-…" required></label>'
-             '<label>持证单位<input name="holder" placeholder="与证明上一致" required></label></div><p class="acts"><button class="btn btn-ink">查验</button></p></form>'
-             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([("两要素", "编号与单位须与证明完全一致"), ("查不到", "按伪造处理")])))
-    return layout("v", "查证", body, "/v", extra_head=extra)
+    body += ('<div class="split at-tool"><div><form class="form" data-lookup><div class="two"><label>证明编号<input name="s" placeholder="WF-…" required></label>'
+             '<label>持证单位<input name="holder" placeholder="与证明一致；通用记录填「通用核验记录」" required></label></div>'
+             '<p class="acts"><button class="btn btn-ink">查验</button></p></form>'
+             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([
+                 ("两要素", "编号与持证单位须与证明完全一致"),
+                 ("通用记录", "未填单位时，持证单位填「通用核验记录」"),
+                 ("查不到", "编号不在台账，按伪造处理"),
+             ])))
+    return layout(
+        "v", "查证", body, "/v",
+        extra_head=extra + "\n" + pages_css("attest"),
+        body_class="page-attest page-attest-tool",
+    )
 
 
 def slice_gate_of(f):

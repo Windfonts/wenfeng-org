@@ -119,3 +119,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* 核对 / 台账 / 查证：与办事台同一套 split + 侧注 */
+.page-attest-tool .page-mast {
+  margin-bottom: var(--s-8);
+  padding-bottom: 0;
+}
+.page-attest-tool .page-mast::after {
+  display: none;
+}
+.page-attest-tool .at-tool .aside {
+  padding-top: var(--s-1);
+}
+.page-attest-tool [data-ledger] .index a {
+  align-items: baseline;
+}
