@@ -20,7 +20,13 @@
         "at": "2026-10-04",
         "event": "archive",
         "url": "https://www.alibabafonts.com/",
-        "note": "登记厂商出处；全文在官网，本站不托管原件"
+        "note": "登记厂商出处；发行包/OSS 许可原文待入库"
+      },
+      {
+        "at": "2026-10-04",
+        "event": "reverify",
+        "url": "https://www.alibabafonts.com/",
+        "note": "复核：font-licenses 无 LICENSE；CDN wenfeng/fonts 下未核到 albbpht/license* 对象"
       }
     ]
   }

@@ -49,7 +49,7 @@
   margin: 0 0 var(--s-6);
 }
 
-/* 作者声明：通栏单列，不进双栏 */
+/* 作者声明：通栏；保留名外露，版权原文默认展开、可折起 */
 .page-license-norm .licn-origin {
   margin: 0 0 var(--s-5);
   padding: var(--s-4) 0 var(--s-5);
@@ -63,11 +63,8 @@
   letter-spacing: 0.06em;
   color: var(--gray);
 }
-.page-license-norm .licn-origin .licn-pre {
-  max-width: none;
-}
 .page-license-norm .licn-origin-rfn {
-  margin: var(--s-3) 0 0;
+  margin: 0 0 var(--s-2);
   max-width: 40em;
   font-size: var(--fs-14);
   line-height: 1.65;
@@ -76,6 +73,29 @@
 .page-license-norm .licn-origin-rfn.is-note {
   font-size: var(--fs-13);
   color: var(--gray);
+}
+.page-license-norm .licn-origin-more {
+  margin: var(--s-3) 0 0;
+  max-width: 48rem;
+}
+.page-license-norm .licn-origin-more > summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+  user-select: none;
+}
+.page-license-norm .licn-origin-more > summary::-webkit-details-marker { display: none; }
+.page-license-norm .licn-origin-more > summary::before {
+  content: "▸ ";
+  color: var(--gray-2, var(--gray));
+}
+.page-license-norm .licn-origin-more[open] > summary::before { content: "▾ "; }
+.page-license-norm .licn-origin-more > summary:hover { color: var(--ink); }
+.page-license-norm .licn-origin-more .licn-pre {
+  margin-top: var(--s-3);
+  max-width: none;
 }
 
 /* OFL 双栏：只排协议段落 */
@@ -119,6 +139,7 @@
   letter-spacing: 0;
 }
 
+/* 段对齐：同顶起步；不拉齐行高（译文短于原文属正常） */
 .page-license-norm .licn-pair {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -126,9 +147,6 @@
   align-items: start;
   padding: var(--s-5) 0;
   border-top: 1px solid var(--rule);
-}
-.page-license-norm .licn-pair:first-of-type {
-  border-top-color: var(--rule);
 }
 
 .page-license-norm .licn-cell {
@@ -185,6 +203,29 @@
   padding-top: var(--s-5);
   border-top: 1px solid var(--rule);
 }
+.page-license-norm .licn-vendor-note {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-14);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.page-license-norm .licn-vendor-lab {
+  display: block;
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+.page-license-norm .licn-vendor-sum {
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-14);
+  line-height: 1.65;
+  color: var(--ink);
+}
+.page-license-norm .licn-vendor-sum .licn-vendor-lab {
+  margin-bottom: var(--s-2);
+}
 .page-license-norm .licn-arts {
   margin: var(--s-5) 0 0;
   padding-top: var(--s-4);
@@ -204,6 +245,23 @@
   margin-top: var(--s-2);
   font-size: var(--fs-12);
   color: var(--gray);
+}
+.page-license-norm .licn-art.is-pdf {
+  flex: 1 1 100%;
+  max-width: 40em;
+}
+.page-license-norm .licn-art.is-pdf figcaption {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  letter-spacing: 0.06em;
+}
+.page-license-norm .licn-pdf {
+  display: block;
+  width: 100%;
+  height: min(70vh, 36rem);
+  border: 1px solid var(--rule);
+  background: var(--fill, #f6f6f6);
 }
 
 /* 取证：证据层，等宽小字，不用卷宗表；顶线通栏 */
@@ -235,7 +293,24 @@
 .page-license-norm .licn-ev-line a:hover { color: var(--ink); }
 .page-license-norm .licn-ev-hash {
   margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.6rem;
 }
+.page-license-norm .licn-copy {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  color: var(--gray);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.page-license-norm .licn-copy:hover { color: var(--ink); }
 .page-license-norm .licn-ev-h {
   margin: var(--s-3) 0 var(--s-1);
   font-family: var(--font-mono);

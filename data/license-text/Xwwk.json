@@ -18,6 +18,13 @@
         "url": "https://github.com/lxgw/LxgwWenKai",
         "textSha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0",
         "note": "首次归档上游仓原文"
+      },
+      {
+        "at": "2026-10-04",
+        "event": "reverify",
+        "url": "https://github.com/lxgw/LxgwWenKai",
+        "textSha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0",
+        "note": "复核上游仓原文，哈希未变"
       }
     ]
   },

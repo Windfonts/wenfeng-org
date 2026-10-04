@@ -1,65 +1,88 @@
-/* 授权查询 /license/：巨字居中一屏；检索后收束并淡入结果 */
+/* 授权查询 /license/
+   空态：整块居中一屏（无右侧栏、无衬字）
+   命中：左对齐收束，结果在检索下 */
 
 .page-license {
-  --lic-dur: 0.38s;
+  --lic-dur: 0.42s;
   --lic-ease: var(--ease, cubic-bezier(0.2, 0, 0, 1));
 }
 
 .page-license .page {
-  padding-top: var(--s-6);
+  padding-top: 0;
+  /* 吃掉主栏默认左对齐感，让空态能真正居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .page-license .lic-page {
   display: flex;
   flex-direction: column;
-  width: min(40rem, 100%);
+  align-items: center;
+  width: 100%;
   margin: 0;
-  min-height: calc(100vh - 11rem);
+  min-height: calc(100vh - 8.5rem);
   justify-content: center;
   padding: var(--s-10) 0 var(--s-12);
+  text-align: center;
+  transition:
+    min-height var(--lic-dur) var(--lic-ease),
+    padding var(--lic-dur) var(--lic-ease),
+    align-items var(--lic-dur) step-end,
+    text-align var(--lic-dur) step-end;
+}
+
+.page-license .lic-page.is-hit {
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 0;
+  padding: var(--s-8) 0 var(--s-16);
   text-align: left;
   transition:
     min-height var(--lic-dur) var(--lic-ease),
     padding var(--lic-dur) var(--lic-ease),
-    width var(--lic-dur) var(--lic-ease);
-}
-
-.page-license .lic-page.is-hit {
-  justify-content: flex-start;
-  min-height: 0;
-  width: min(44rem, 100%);
-  padding-top: var(--s-4);
+    align-items 0s linear,
+    text-align 0s linear;
 }
 
 .page-license .lic-stage {
-  width: 100%;
+  width: min(34rem, 100%);
+  transition: width var(--lic-dur) var(--lic-ease);
+}
+.page-license .lic-page.is-hit .lic-stage {
+  width: min(46rem, 100%);
 }
 
 .page-license .lic-giant {
-  margin: 0 0 var(--s-6);
+  margin: 0 0 var(--s-5);
   font-family: "WF-Xxzt", "Libian SC", "STLibian", "Songti SC", serif;
-  font-size: clamp(3.4rem, 11vw, 6.75rem);
+  font-size: clamp(4rem, 14vw, 7.5rem);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  transition: font-size var(--lic-dur) var(--lic-ease), margin var(--lic-dur) var(--lic-ease);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  transition:
+    font-size var(--lic-dur) var(--lic-ease),
+    margin var(--lic-dur) var(--lic-ease),
+    letter-spacing var(--lic-dur) var(--lic-ease);
 }
 .page-license .lic-page.is-hit .lic-giant {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  margin-bottom: var(--s-4);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-bottom: var(--s-12);
+  letter-spacing: -0.02em;
 }
 
 .page-license .lic-lead {
-  margin: 0 0 var(--s-8);
-  max-width: 28em;
+  margin: 0 auto var(--s-8);
+  max-width: 22em;
   font-size: var(--fs-15);
   line-height: 1.65;
   color: var(--ink-2);
   transition:
-    opacity calc(var(--lic-dur) * 0.75) var(--lic-ease),
+    opacity calc(var(--lic-dur) * 0.65) var(--lic-ease),
     max-height var(--lic-dur) var(--lic-ease),
     margin var(--lic-dur) var(--lic-ease);
-  max-height: 6em;
+  max-height: 5.5em;
   overflow: hidden;
 }
 .page-license .lic-page.is-hit .lic-lead {
@@ -70,33 +93,42 @@
 }
 
 .page-license .lic-stage .search {
-  margin: 0 0 var(--s-4);
-  max-width: 32rem;
-  transition: max-width var(--lic-dur) var(--lic-ease);
+  margin: 0 auto var(--s-4);
+  max-width: 28rem;
+  text-align: left;
+  transition: max-width var(--lic-dur) var(--lic-ease), margin var(--lic-dur) var(--lic-ease);
 }
 .page-license .lic-page.is-hit .lic-stage .search {
   max-width: none;
+  margin: 0 0 var(--s-4);
 }
 
 .page-license .lic-foot {
   margin: 0;
   font-size: var(--fs-13);
   color: var(--gray);
-  transition: opacity calc(var(--lic-dur) * 0.7) var(--lic-ease);
+  transition:
+    opacity calc(var(--lic-dur) * 0.6) var(--lic-ease),
+    max-height var(--lic-dur) var(--lic-ease);
+  max-height: 2em;
+  overflow: hidden;
 }
 .page-license .lic-page.is-hit .lic-foot {
-  opacity: 0.55;
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
 }
 
-/* 结果：网格行高 0→1，避免 display:none 硬切 */
+/* 结果 */
 .page-license .lic-hits-wrap {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
+  width: min(46rem, 100%);
   margin-top: 0;
   transition:
     grid-template-rows var(--lic-dur) var(--lic-ease),
-    opacity calc(var(--lic-dur) * 0.9) var(--lic-ease),
+    opacity calc(var(--lic-dur) * 0.85) var(--lic-ease),
     margin-top var(--lic-dur) var(--lic-ease);
 }
 .page-license .lic-page.is-hit .lic-hits-wrap {
@@ -114,7 +146,7 @@
 }
 
 .page-license .lic-hits .count {
-  margin: 0 0 var(--s-4);
+  margin: 0 0 var(--s-8);
   font-family: var(--font-mono);
   font-size: var(--fs-12);
   color: var(--gray);
@@ -124,37 +156,36 @@
 .page-license .lin-list > li {
   border-bottom: 1px solid var(--rule);
   opacity: 0;
-  transform: translateY(0.4rem);
+  transform: translateY(0.35rem);
   transition:
-    opacity 0.28s var(--lic-ease),
-    transform 0.28s var(--lic-ease);
+    opacity 0.3s var(--lic-ease),
+    transform 0.3s var(--lic-ease);
 }
 .page-license .lic-page.is-hit .lin-list > li {
   opacity: 1;
   transform: none;
 }
-/* 错落入场，最多前 12 条 */
-.page-license .lic-page.is-hit .lin-list > li:nth-child(1) { transition-delay: 0.04s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(2) { transition-delay: 0.07s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(3) { transition-delay: 0.1s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(4) { transition-delay: 0.13s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(5) { transition-delay: 0.16s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(6) { transition-delay: 0.19s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(7) { transition-delay: 0.22s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(8) { transition-delay: 0.25s; }
-.page-license .lic-page.is-hit .lin-list > li:nth-child(9) { transition-delay: 0.28s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(1) { transition-delay: 0.03s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(2) { transition-delay: 0.06s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(3) { transition-delay: 0.09s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(4) { transition-delay: 0.12s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(5) { transition-delay: 0.15s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(6) { transition-delay: 0.18s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(7) { transition-delay: 0.21s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(8) { transition-delay: 0.24s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(9) { transition-delay: 0.27s; }
 .page-license .lic-page.is-hit .lin-list > li:nth-child(10) { transition-delay: 0.3s; }
 .page-license .lic-page.is-hit .lin-list > li:nth-child(11) { transition-delay: 0.32s; }
 .page-license .lic-page.is-hit .lin-list > li:nth-child(12) { transition-delay: 0.34s; }
 
 .page-license .lrow {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 4.75em 3.25em;
+  grid-template-columns: minmax(0, 1fr) 4.5em 3.5em;
   grid-template-areas: "nm st go";
   align-items: baseline;
-  column-gap: var(--s-5);
-  padding: var(--s-5) var(--s-3);
-  margin: 0 calc(-1 * var(--s-3));
+  column-gap: var(--s-6);
+  padding: 1.5rem var(--s-4);
+  margin: 0 calc(-1 * var(--s-4));
   border-radius: var(--radius-sm);
   border-bottom: 0;
   box-shadow: none;
@@ -165,8 +196,8 @@
 }
 .page-license .lrow .lnm {
   grid-area: nm;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  line-height: 1.2;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.35;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -186,7 +217,7 @@
   position: relative;
   justify-self: end;
   width: 100%;
-  padding-right: 0.9em;
+  padding-right: 0.95em;
   text-align: right;
   font-family: var(--font-mono);
   font-size: var(--fs-12);
@@ -211,12 +242,27 @@
 .page-license .lrow:hover .lgo::after,
 .page-license .lrow:focus-visible .lgo::after { opacity: 1; }
 .page-license .lrow .lmeta { display: none; }
-.page-license .pager { margin-top: var(--s-5); }
+.page-license .pager { margin-top: var(--s-8); }
+.page-license .empty {
+  margin: var(--s-6) 0 0;
+  font-size: var(--fs-14);
+  color: var(--ink-2);
+}
 
 @media (max-width: 640px) {
+  .page-license .lic-page {
+    min-height: calc(100vh - 8rem);
+    padding: var(--s-8) 0 var(--s-10);
+  }
+  .page-license .lic-giant {
+    font-size: clamp(3.25rem, 16vw, 5rem);
+  }
   .page-license .lrow {
-    grid-template-columns: minmax(0, 1fr) 3.25em;
+    grid-template-columns: minmax(0, 1fr) 3.5em;
     grid-template-areas: "nm go" "st go";
+    row-gap: 0.4rem;
+    padding: 1.25rem var(--s-3);
+    margin: 0 calc(-1 * var(--s-3));
   }
   .page-license .lrow .lrel {
     justify-self: start;
@@ -226,6 +272,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .page-license .lic-page,
+  .page-license .lic-stage,
   .page-license .lic-giant,
   .page-license .lic-lead,
   .page-license .lic-stage .search,
@@ -233,5 +280,8 @@
   .page-license .lic-hits-wrap,
   .page-license .lin-list > li {
     transition: none !important;
+  }
+  .page-license .lic-page.is-hit .lin-list > li {
+    transition-delay: 0s !important;
   }
 }
