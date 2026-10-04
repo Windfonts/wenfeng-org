@@ -365,21 +365,6 @@ def filter_chips(fonts, with_count=False):
 
 # ---------- 外壳（= 定稿 chrome / footer） ----------
 
-def _foot_marks():
-    fc = (
-        '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener"'
-        ' title="feiCode 源码（即将离开文风）" aria-label="feiCode 源码">'
-        '<img src="/assets/marks/feicode.svg" alt="" width="26" height="22">feiCode<span class="x">↗</span></a></li>'
-    )
-    gh = (
-        '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener"'
-        ' title="GitHub 镜像（即将离开文风）" aria-label="GitHub 镜像">'
-        '<svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub<span class="x">↗</span></a></li>'
-    )
-    return (
-        '<p class="foot-src-k">%s</p><ul class="foot-marks">%s%s</ul>'
-        % (_fv("源码与镜像", "origin · mirror"), fc, gh)
-    )
 
 
 def _foot_wm():
@@ -417,16 +402,14 @@ def foot_lab(kind, dev=""):
         )
         inner = (
             '<div class="site-foot-inner">'
-            '<div class="site-foot-brand">%s'
-            '<p>开源字体直接下载，其余核验或去出处。不做样张墙。</p>%s</div>'
-            '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), _foot_marks(), rest)
+            '<div class="site-foot-brand">%s</div>'
+            '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), rest)
         )
         cls = "site-foot is-foot-a"
     elif kind == "b":
         inner = (
             '<div class="site-foot-inner">'
-            '<div class="site-foot-brand">%s'
-            '<p>开源字体直接下载，其余核验或去出处。不做样张墙。</p></div></div>' % _foot_wm()
+            '<div class="site-foot-brand">%s</div></div>' % _foot_wm()
         )
         cls = "site-foot is-foot-b"
     else:
@@ -538,7 +521,7 @@ def home_prime(fonts, q_id):
         '<div class="lab-find-copy">'
         '<p class="lab-find-kicker">%s</p>'
         '<h1 class="lab-find-title">'
-        '<span class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-find-em">开源</span>商用字体</span>'
+        '<span class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-find-em">开源</span><span class="lab-rot" data-rot aria-hidden="true"><span class="is-on">商用字体</span><span>免费字体</span><span>高级字体</span><span>精品字体</span></span>'
         '<span class="for-dev mono">/source</span></h1>'
         '<p class="d">%s</p></div>'
         '<div class="lab-find-act">'

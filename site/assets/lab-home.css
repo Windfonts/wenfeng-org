@@ -320,3 +320,26 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
   margin-right: 0.45em;
   letter-spacing: 0.04em;
 }
+
+/* 主门 h1 第二词轮换：免费/高级/精品，玄宗静态切片（U+514D/8D39/9AD8/7EA7/7CBE/54C1） */
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/514d.woff2") format("woff2"); unicode-range: U+514D; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/8d39.woff2") format("woff2"); unicode-range: U+8D39; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/9ad8.woff2") format("woff2"); unicode-range: U+9AD8; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/7ea7.woff2") format("woff2"); unicode-range: U+7EA7; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/7cbe.woff2") format("woff2"); unicode-range: U+7CBE; }
+@font-face { font-family: "WF-Xxzt"; font-weight: 400; font-display: swap; src: url("/assets/wfxxzt/54c1.woff2") format("woff2"); unicode-range: U+54C1; }
+.lab-rot { display: inline-grid; }
+.lab-rot > span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s var(--ease), visibility 0s linear 0.6s;
+}
+.lab-rot > span.is-on {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s var(--ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-rot > span { transition: none; }
+}
