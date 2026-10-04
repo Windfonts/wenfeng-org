@@ -1,0 +1,237 @@
+/* 授权查询 /license/：巨字居中一屏；检索后收束并淡入结果 */
+
+.page-license {
+  --lic-dur: 0.38s;
+  --lic-ease: var(--ease, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.page-license .page {
+  padding-top: var(--s-6);
+}
+
+.page-license .lic-page {
+  display: flex;
+  flex-direction: column;
+  width: min(40rem, 100%);
+  margin: 0;
+  min-height: calc(100vh - 11rem);
+  justify-content: center;
+  padding: var(--s-10) 0 var(--s-12);
+  text-align: left;
+  transition:
+    min-height var(--lic-dur) var(--lic-ease),
+    padding var(--lic-dur) var(--lic-ease),
+    width var(--lic-dur) var(--lic-ease);
+}
+
+.page-license .lic-page.is-hit {
+  justify-content: flex-start;
+  min-height: 0;
+  width: min(44rem, 100%);
+  padding-top: var(--s-4);
+}
+
+.page-license .lic-stage {
+  width: 100%;
+}
+
+.page-license .lic-giant {
+  margin: 0 0 var(--s-6);
+  font-family: "WF-Xxzt", "Libian SC", "STLibian", "Songti SC", serif;
+  font-size: clamp(3.4rem, 11vw, 6.75rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  transition: font-size var(--lic-dur) var(--lic-ease), margin var(--lic-dur) var(--lic-ease);
+}
+.page-license .lic-page.is-hit .lic-giant {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin-bottom: var(--s-4);
+}
+
+.page-license .lic-lead {
+  margin: 0 0 var(--s-8);
+  max-width: 28em;
+  font-size: var(--fs-15);
+  line-height: 1.65;
+  color: var(--ink-2);
+  transition:
+    opacity calc(var(--lic-dur) * 0.75) var(--lic-ease),
+    max-height var(--lic-dur) var(--lic-ease),
+    margin var(--lic-dur) var(--lic-ease);
+  max-height: 6em;
+  overflow: hidden;
+}
+.page-license .lic-page.is-hit .lic-lead {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.page-license .lic-stage .search {
+  margin: 0 0 var(--s-4);
+  max-width: 32rem;
+  transition: max-width var(--lic-dur) var(--lic-ease);
+}
+.page-license .lic-page.is-hit .lic-stage .search {
+  max-width: none;
+}
+
+.page-license .lic-foot {
+  margin: 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  transition: opacity calc(var(--lic-dur) * 0.7) var(--lic-ease);
+}
+.page-license .lic-page.is-hit .lic-foot {
+  opacity: 0.55;
+}
+
+/* 结果：网格行高 0→1，避免 display:none 硬切 */
+.page-license .lic-hits-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  transition:
+    grid-template-rows var(--lic-dur) var(--lic-ease),
+    opacity calc(var(--lic-dur) * 0.9) var(--lic-ease),
+    margin-top var(--lic-dur) var(--lic-ease);
+}
+.page-license .lic-page.is-hit .lic-hits-wrap {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--s-8);
+}
+.page-license .lic-hits {
+  overflow: hidden;
+  min-height: 0;
+  text-align: left;
+}
+.page-license .lic-page.is-hit .lic-hits {
+  overflow: visible;
+}
+
+.page-license .lic-hits .count {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.page-license .lin-list { gap: 0; }
+.page-license .lin-list > li {
+  border-bottom: 1px solid var(--rule);
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition:
+    opacity 0.28s var(--lic-ease),
+    transform 0.28s var(--lic-ease);
+}
+.page-license .lic-page.is-hit .lin-list > li {
+  opacity: 1;
+  transform: none;
+}
+/* 错落入场，最多前 12 条 */
+.page-license .lic-page.is-hit .lin-list > li:nth-child(1) { transition-delay: 0.04s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(2) { transition-delay: 0.07s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(3) { transition-delay: 0.1s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(4) { transition-delay: 0.13s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(5) { transition-delay: 0.16s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(6) { transition-delay: 0.19s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(7) { transition-delay: 0.22s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(8) { transition-delay: 0.25s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(9) { transition-delay: 0.28s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(10) { transition-delay: 0.3s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(11) { transition-delay: 0.32s; }
+.page-license .lic-page.is-hit .lin-list > li:nth-child(12) { transition-delay: 0.34s; }
+
+.page-license .lrow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4.75em 3.25em;
+  grid-template-areas: "nm st go";
+  align-items: baseline;
+  column-gap: var(--s-5);
+  padding: var(--s-5) var(--s-3);
+  margin: 0 calc(-1 * var(--s-3));
+  border-radius: var(--radius-sm);
+  border-bottom: 0;
+  box-shadow: none;
+}
+.page-license .lrow:hover {
+  background: var(--fill);
+  text-decoration: none;
+}
+.page-license .lrow .lnm {
+  grid-area: nm;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page-license .lrow .lrel {
+  grid-area: st;
+  justify-self: end;
+  width: 100%;
+  text-align: right;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.page-license .lrow .lgo {
+  grid-area: go;
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  padding-right: 0.9em;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: color var(--dur, 0.2s) var(--ease, ease);
+}
+.page-license .lrow .lgo.is-ink {
+  color: var(--ink);
+  font-weight: var(--fw-title);
+}
+.page-license .lrow:hover .lgo { color: var(--ink); }
+.page-license .lrow .lgo::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity var(--dur, 0.2s) var(--ease, ease);
+}
+.page-license .lrow:hover .lgo::after,
+.page-license .lrow:focus-visible .lgo::after { opacity: 1; }
+.page-license .lrow .lmeta { display: none; }
+.page-license .pager { margin-top: var(--s-5); }
+
+@media (max-width: 640px) {
+  .page-license .lrow {
+    grid-template-columns: minmax(0, 1fr) 3.25em;
+    grid-template-areas: "nm go" "st go";
+  }
+  .page-license .lrow .lrel {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-license .lic-page,
+  .page-license .lic-giant,
+  .page-license .lic-lead,
+  .page-license .lic-stage .search,
+  .page-license .lic-foot,
+  .page-license .lic-hits-wrap,
+  .page-license .lin-list > li {
+    transition: none !important;
+  }
+}

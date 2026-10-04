@@ -1,6 +1,6 @@
 # wenfeng.org 首页重做：设计与开发方案
 
-日期：2026-10-03　起草：Gemini CLI [GC]　状态：**待冯拍板 §7 的 4 项后派工**
+日期：2026-10-03　起草：Gemini CLI [GC]　状态：**甲 · 丁′、乙 · 四栏已作废（2026-10-04，见 DECISIONS D-06）。首页方向改为货架，对照 `/lab/home-a/` `/lab/home-b/`。**
 
 基线提交：`3815fd4`（origin/main）。工位：Mac `~/Projects/wenfeng-org`。预览：`site/serve.py --port 16031`。16030 只作历史参照。
 

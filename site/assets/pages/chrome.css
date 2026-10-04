@@ -1,0 +1,192 @@
+/* 全站页头：玄宗小一档。首页不用这套。 */
+
+.page-mast {
+  position: relative;
+  padding: var(--s-4) 0 var(--s-8);
+  margin: 0 0 var(--s-10);
+}
+.page-mast::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent 0%, var(--rule) 52%, var(--rule) 100%);
+}
+.page-mast .ph-kicker {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  letter-spacing: 0.02em;
+}
+.page-mast h1.xxzt {
+  margin: 0;
+  font-family: "WF-Xxzt", "Libian SC", "STLibian", "Songti SC", serif;
+  font-size: clamp(2.4rem, 5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: 0;
+}
+.page-mast h1.is-face {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+.page-mast .ph-lead {
+  margin: var(--s-5) 0 0;
+  max-width: 36em;
+  font-size: var(--fs-16);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.page .crumb { margin: 0 0 var(--s-6); }
+.page .crumb a { color: var(--gray); }
+.page .crumb a:hover { color: var(--ink); }
+
+.aside { border-left-color: var(--rule); }
+
+.search.is-bare .k { display: none; }
+.search.is-bare { position: relative; max-width: none; width: 100%; }
+.search.is-bare input {
+  width: 100%;
+  height: var(--s-12);
+  padding-right: 1.15rem; /* live 无按钮；有提交钮时再加宽 */
+}
+.search.is-bare:has(.btn) input {
+  padding-right: 6.5rem;
+}
+.search.is-bare.is-live input {
+  padding-right: 1.15rem;
+}
+.search.is-bare input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.search.is-bare input[type="search"]::-webkit-search-decoration,
+.search.is-bare input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.search.is-bare .btn {
+  position: absolute;
+  right: var(--s-1);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form label {
+  display: block;
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.form input,
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  margin-top: var(--s-2);
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--fill);
+  color: var(--ink);
+}
+.form textarea { min-height: 10rem; resize: vertical; }
+.form .two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+.form fieldset {
+  margin: 0 0 var(--s-6);
+  padding: 0;
+  border: 0;
+}
+.form legend {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.form .checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-5);
+}
+.form .checks label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--fs-14);
+}
+
+.sec-h {
+  margin: var(--s-10) 0 var(--s-4);
+  font-family: "WF-Xxzt", "Libian SC", "STLibian", "Songti SC", serif;
+  font-size: var(--fs-22);
+  font-weight: 400;
+}
+.row-go {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+  gap: var(--s-3) var(--s-4);
+  align-items: center;
+  padding: var(--s-5) var(--s-3);
+  margin: 0 calc(-1 * var(--s-3));
+  border-bottom: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  color: inherit;
+  text-decoration: none;
+}
+.row-go:hover { background: var(--fill); text-decoration: none; }
+.row-go .idx { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray-2); }
+.row-go .t { font-size: var(--fs-16); }
+.row-go .d { display: block; margin-top: 0.2rem; font-size: var(--fs-13); color: var(--gray); }
+.row-go .go { font-family: var(--font-mono); font-size: var(--fs-12); }
+
+.verdict-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-6);
+}
+.verdict-lines span {
+  display: inline-flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 0.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  font-size: var(--fs-13);
+}
+
+.sheet {
+  max-width: 42em;
+  padding: var(--s-8);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.sheet pre {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: var(--fs-13);
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .form .two { grid-template-columns: 1fr; }
+  .split, .split.is-wide { grid-template-columns: 1fr; }
+  .aside {
+    padding: var(--s-6) 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+  }
+}

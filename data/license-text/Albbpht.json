@@ -1,0 +1,27 @@
+{
+  "norm": "Albbpht",
+  "title": "阿里巴巴普惠体授权协议",
+  "textKind": "pointer",
+  "body": "",
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://www.alibabafonts.com/",
+      "label": "阿里巴巴字体官网（授权说明）"
+    }
+  ],
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://www.alibabafonts.com/",
+    "fetchedAt": "2026-10-04",
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://www.alibabafonts.com/",
+        "note": "登记厂商出处；全文在官网，本站不托管原件"
+      }
+    ]
+  }
+}

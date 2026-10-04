@@ -1,0 +1,257 @@
+/* 目录对照稿 甲五态门 / 乙字谱 / 丙一字台。活页 /source/ 不用。 */
+
+.ls-lab .page { padding-top: var(--s-4); padding-bottom: var(--s-8); }
+.ls-lab .lab-flag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  margin: 0 0 var(--s-4);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.ls-lab .lab-flag a { color: var(--ink); }
+
+.ls-stage {
+  position: relative;
+  min-height: calc(100vh - var(--topbar-h, 3.5rem) - 7rem);
+}
+.ls-stage::before,
+.ls-stage::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(to right, transparent 0%, var(--rule) 52%, var(--rule) 100%);
+}
+.ls-stage::before { top: 0; }
+.ls-stage::after { bottom: 0; }
+
+.ls-k {
+  margin: 0 0 var(--s-5);
+  font-family: var(--font-mono);
+  font-size: var(--fs-16);
+  color: var(--gray);
+}
+.ls-stage h1.xxzt {
+  margin: 0 0 var(--s-5);
+  font-size: clamp(3.25rem, 8vw, 5.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+.ls-stage .d {
+  margin: 0 0 var(--s-8);
+  max-width: 22em;
+  font-size: var(--fs-16);
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+
+.ls-names { list-style: none; margin: 0; padding: 0; }
+.ls-name {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) 0;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.ls-name:hover { text-decoration: none; }
+.ls-name .nm {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.2;
+  min-width: 0;
+}
+.ls-name .go {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+/* 甲 · 左检索台 + 右五态门 */
+.ls-a .ls-stage.is-doors {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+  grid-template-areas: "find sides";
+}
+.ls-a .ls-find {
+  grid-area: find;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: var(--s-10) var(--s-10) var(--s-10) 0;
+  border-right: 1px solid var(--rule);
+}
+.ls-a .ls-find .search { margin: 0 0 var(--s-5); }
+.ls-a .ls-find .ls-names {
+  margin-top: var(--s-6);
+  max-height: 42vh;
+  overflow: auto;
+}
+.ls-a .ls-sides {
+  grid-area: sides;
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+.ls-door {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-2);
+  margin: 0;
+  padding: var(--s-5) var(--s-8);
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  min-height: 0;
+}
+.ls-door:last-child { border-bottom: 0; }
+.ls-door .idx {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+}
+.ls-door h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+.ls-door .go {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+.ls-bg {
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.32em;
+  z-index: 0;
+  font-size: clamp(4.5rem, 12vw, 8rem);
+  line-height: 0.9;
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity var(--dur, 0.2s) var(--ease, ease);
+}
+.ls-door > :not(.ls-bg) { position: relative; z-index: 1; }
+.ls-door:hover,
+.ls-door.is-on { background: var(--surface); }
+.ls-door:hover .ls-bg,
+.ls-door:focus-visible .ls-bg,
+.ls-door.is-on .ls-bg { opacity: 0.1; }
+
+/* 乙 · 字谱 */
+.ls-b .ls-stage.is-spine {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+  overflow: hidden;
+}
+.ls-mark {
+  position: absolute;
+  right: 4%;
+  bottom: -0.22em;
+  z-index: 0;
+  font-size: clamp(12rem, 38vw, 22rem);
+  line-height: 0.8;
+  color: var(--ink);
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+}
+.ls-spine-copy,
+.ls-spine-list { position: relative; z-index: 1; min-width: 0; }
+.ls-spine-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--s-10) var(--s-8) var(--s-10) 0;
+  border-right: 1px solid var(--rule);
+}
+.ls-lets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: var(--s-6) 0 var(--s-4);
+}
+.ls-let {
+  margin: 0;
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1;
+  cursor: pointer;
+}
+.ls-let.is-on { background: var(--ink); color: var(--page); }
+.ls-spine-list {
+  padding: var(--s-10) 0 var(--s-10) var(--s-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ls-b .ls-name .nm { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+
+/* 丙 · 一字台 */
+.ls-c .ls-stage.is-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--s-12) 0;
+  max-width: 52rem;
+}
+.ls-giant {
+  margin: 0 0 var(--s-8);
+  font-size: clamp(3.5rem, 11vw, 7rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+.ls-one-act {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+  margin: 0 0 var(--s-10);
+}
+.ls-one-act .btn-text {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: var(--fs-14);
+}
+.ls-c .search.is-embed { max-width: 36rem; }
+.ls-one-foot {
+  margin: var(--s-5) 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+
+@media (max-width: 900px) {
+  .ls-stage { min-height: 0; }
+  .ls-a .ls-stage.is-doors,
+  .ls-b .ls-stage.is-spine { grid-template-columns: 1fr; }
+  .ls-a .ls-find,
+  .ls-spine-copy { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .ls-a .ls-find .ls-names { max-height: none; }
+  .ls-a .ls-sides { grid-template-rows: none; }
+  .ls-door { border-right: 0; }
+  .ls-mark { font-size: clamp(8rem, 50vw, 14rem); }
+  .ls-giant { font-size: clamp(2.6rem, 16vw, 4.5rem); }
+}

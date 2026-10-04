@@ -96,13 +96,21 @@
   /* 列表：搜索 + 状态筛选 */
   var list = $('[data-list]');
   if (list) {
-    var rows = $$('li', list), hideOn = $('[data-hide-on-search]'), input = $('[data-search]'), count = $('[data-count]'), empty = $('[data-empty]'), pager = $('[data-pager]');
-    var state = { q: qs.get('q') || '', st: qs.get('st') || 'all' };
-    var PAGE = 20, page = parseInt(qs.get('page') || '1', 10) || 1;
+    var rows = $$('li', list), hideOn = $('[data-hide-on-search]'), showOn = $('[data-show-on-search]'), licLayout = $('[data-lic-layout]'), input = $('[data-search]'), count = $('[data-count]'), empty = $('[data-empty]'), pager = $('[data-pager]');
+    var state = { q: qs.get('q') || '', st: qs.get('st') || 'all', letter: qs.get('letter') || 'all' };
+    var PAGE = parseInt(list.getAttribute('data-page-size') || '20', 10) || 20;
+    var page = parseInt(qs.get('page') || '1', 10) || 1;
+    var letterBtns = $$('[data-letter-filter]');
+    var letterMark = $('[data-letter-mark]');
     function apply() {
       var q = state.q.trim().toLowerCase(), hits = [];
+      /* 授权页：无检索词时不铺名单，避免折叠层里仍可聚焦 */
+      var licIdle = !!(licLayout && !q);
       rows.forEach(function (r) {
-        var hit = (!q || r.dataset.hay.indexOf(q) !== -1) && (state.st === 'all' || r.dataset.st === state.st);
+        var hit = !licIdle
+          && (!q || (r.dataset.hay || '').indexOf(q) !== -1)
+          && (state.st === 'all' || r.dataset.st === state.st)
+          && (state.letter === 'all' || r.dataset.letter === state.letter);
         r._hit = hit; if (hit) hits.push(r);
       });
       var pages = Math.max(1, Math.ceil(hits.length / PAGE));
@@ -110,14 +118,28 @@
       var start = (page - 1) * PAGE;
       rows.forEach(function (r) { r.hidden = !r._hit; });
       hits.forEach(function (r, i) { if (i < start || i >= start + PAGE) r.hidden = true; });
-      if (count) count.textContent = (q || state.st !== 'all') ? hits.length + ' / ' + rows.length + ' 款' : rows.length + ' 款';
-      if (empty) empty.hidden = hits.length > 0;
+      if (count) count.textContent = licIdle ? '' : ((q || state.st !== 'all' || state.letter !== 'all') ? hits.length + ' / ' + rows.length + ' 款' : rows.length + ' 款');
+      if (empty) empty.hidden = licIdle || hits.length > 0;
       if (hideOn) hideOn.hidden = !!q;
+      if (licLayout) licLayout.classList.toggle('is-hit', !!q);
+      if (showOn) {
+        /* 授权页用 is-hit 做过渡，不用 hidden（display:none 无法过渡） */
+        if (licLayout) {
+          showOn.hidden = false;
+          showOn.setAttribute('aria-hidden', q ? 'false' : 'true');
+          if ('inert' in showOn) showOn.inert = !q;
+        } else {
+          showOn.hidden = !q;
+        }
+      }
       $$('[data-filter]').forEach(function (b) { b.classList.toggle('is-on', b.dataset.filter === state.st); });
+      letterBtns.forEach(function (b) { b.classList.toggle('is-on', b.getAttribute('data-letter-filter') === state.letter); });
+      if (letterMark) letterMark.textContent = state.letter === 'all' ? '录' : state.letter;
       renderPager(pages);
       var u = new URL(location.href);
       state.q ? u.searchParams.set('q', state.q) : u.searchParams.delete('q');
       state.st !== 'all' ? u.searchParams.set('st', state.st) : u.searchParams.delete('st');
+      state.letter !== 'all' ? u.searchParams.set('letter', state.letter) : u.searchParams.delete('letter');
       page > 1 ? u.searchParams.set('page', page) : u.searchParams.delete('page');
       history.replaceState(null, '', u);
     }
@@ -152,6 +174,13 @@
     }
     if (input) { input.value = state.q; input.addEventListener('input', function () { state.q = input.value; page = 1; apply(); }); }
     $$('[data-filter]').forEach(function (b) { b.addEventListener('click', function () { state.st = b.dataset.filter; page = 1; apply(); }); });
+    letterBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.letter = b.getAttribute('data-letter-filter') || 'all';
+        page = 1;
+        apply();
+      });
+    });
     apply();
   }
 
@@ -519,9 +548,9 @@
 
   lazyPreviews();
 
-  /* 首页：玄宗体包（主门活样张 + 侧门标题） */
+  /* 玄宗体包：首页主门 + 全站 .xxzt 标题 */
   (function loadXxzt() {
-    if (!document.querySelector('.lab-doors.is-prime')) return;
+    if (!document.querySelector('.lab-doors.is-prime, h1.xxzt, .xxzt')) return;
     var fullCss = 'https://cn.windfonts.com/fonts-packages/Xxzt/Regular/full/result.css';
     var started = false;
     function loadPack() {
@@ -550,4 +579,68 @@
       document.execCommand('insertText', false, t.replace(/\r/g, ''));
     });
   })();
+
+  /* 目录稿丙：左行右预览 */
+  (function srcPreview() {
+    var pane = document.querySelector('[data-src-preview]');
+    var list = document.querySelector('[data-list]');
+    if (!pane || !list) return;
+    var proof = pane.querySelector('[data-pv-proof]');
+    var nameEl = pane.querySelector('[data-pv-name]');
+    var stEl = pane.querySelector('[data-pv-st]');
+    var go = pane.querySelector('[data-pv-go]');
+    function show(a) {
+      if (!a || !a.classList.contains('lrow')) return;
+      var li = a.closest('li');
+      var norm = a.getAttribute('data-face-norm') || '';
+      var family = a.getAttribute('data-face-family') || '';
+      var nm = a.querySelector('.lnm');
+      var rel = a.querySelector('.lrel');
+      var verb = a.querySelector('.lgo');
+      if (nm) nameEl.textContent = nm.textContent;
+      if (rel) stEl.textContent = rel.textContent;
+      if (go) {
+        go.href = a.getAttribute('href') || '#';
+        go.textContent = verb ? verb.textContent : '看条目';
+      }
+      if (proof) {
+        proof.className = 'ls-proof' + (norm ? ' t-' + norm : '');
+        if (norm) {
+          proof.setAttribute('data-face-norm', norm);
+          proof.setAttribute('data-face-family', family);
+          applyFontFace(norm, family);
+        }
+      }
+      $$('.lrow.is-on', list).forEach(function (x) { x.classList.remove('is-on'); });
+      a.classList.add('is-on');
+    }
+    list.addEventListener('mouseover', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a.lrow');
+      if (a) show(a);
+    });
+    list.addEventListener('focusin', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a.lrow');
+      if (a) show(a);
+    });
+    var first = list.querySelector('li:not([hidden]) a.lrow');
+    if (first) show(first);
+  })();
+
+  /* 许可原文：原文 / 译文切换 */
+  $$('[data-lic-lang-root]').forEach(function (root) {
+    var switcher = $('[data-lic-lang-switch]', root);
+    if (!switcher) return;
+    function show(lang) {
+      root.setAttribute('data-lang', lang);
+      $$('[data-lic-lang]', switcher).forEach(function (b) {
+        b.classList.toggle('is-on', b.getAttribute('data-lic-lang') === lang);
+      });
+      $$('[data-lic-pane]', root).forEach(function (pane) {
+        pane.hidden = pane.getAttribute('data-lic-pane') !== lang;
+      });
+    }
+    $$('[data-lic-lang]', switcher).forEach(function (b) {
+      b.addEventListener('click', function () { show(b.getAttribute('data-lic-lang')); });
+    });
+  });
 })();

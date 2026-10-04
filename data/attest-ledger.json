@@ -1,6 +1,78 @@
 {
-  "generated": "2026-10-01",
+  "generated": "2026-10-04",
   "records": [
+    {
+      "serial": "WF-20261004-B5655FB73B",
+      "norm": "Fmthei",
+      "catalogName": "文风·范美黑体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "0FB9B508"
+    },
+    {
+      "serial": "WF-20261004-20DC5560AA",
+      "norm": "Ckbf",
+      "catalogName": "文风·偏歪的黑趣体",
+      "issuedAt": "2026-10-04",
+      "holder": "汉中菲比斯网络技术有限公司",
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "0673FDC8"
+    },
+    {
+      "serial": "WF-20261004-70765F2DD1",
+      "norm": "Ffs",
+      "catalogName": "文风·飞花宋体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "FFC8435D"
+    },
+    {
+      "serial": "WF-20261004-9F0BB9A7BF",
+      "norm": "Hei975",
+      "catalogName": "文风·975 黑体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "FFD8591C"
+    },
+    {
+      "serial": "WF-20261004-DA1605C400",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261004-A6C53D1E96",
+      "norm": "Hei975",
+      "catalogName": "文风·975 黑体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "FFD8591C"
+    },
     {
       "serial": "WF-20261001-0040535ECD",
       "norm": "Xxzt",
