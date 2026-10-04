@@ -30,7 +30,7 @@ main { flex: 1; }
 /* —— 外壳（= shop.css） —— */
 .topbar { position: sticky; top: 0; z-index: 40; height: var(--topbar-h); background: var(--page); }
 .topbar-inner { height: 100%; display: flex; align-items: center; gap: var(--s-8); }
-.wordmark { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--fs-16); font-weight: var(--fw-title); white-space: nowrap; }
+.wordmark { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--fs-16); font-weight: 700; white-space: nowrap; }
 /* 字标与 APP 同套：icon.webp 方标 + 寒蝉宽黑 Medium「文风开源」连写 */
 .wordmark .wm-name { font-family: "wenfeng-hckht", "Chill K Sans Medium", var(--font-ui); font-weight: 500; letter-spacing: 0.01em; }
 .wordmark .wm-alt { color: var(--gray); }
@@ -3138,7 +3138,12 @@ body.gp-v1b .gp1-kinds button {
 }
 @media (max-width: 768px) {
   :root { --gutter: 1rem; }
+  /* 参 APP：页眉单行 56px；主导航行滚过首屏后收起（顶部仍双行，保留五项直达） */
+  .topbar { height: auto; }
+  .topbar + main { scroll-margin-top: 64px; }
 }
+@media (max-width: 720px) {
+  .topnav a { padding: 0.4rem 0.7rem; font-size: var(--fs-13); }
 @media (max-width: 720px) {
   /* 顶栏两行：字标 | 放大/主题 一行，主导航独占一行。五项导航加右区在窄屏塞不进一行，
      .topnav 会被挤成 0 宽滚动盒，链接等于整个消失——所以视图切换与店面在移动端收起 */

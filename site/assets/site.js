@@ -982,3 +982,26 @@
     }, DWELL[i]);
   })();
 })();
+
+
+/* 移动端：主导航行滚过首屏后吸顶隐藏（顶部仍双行可直达），上滚回显 */
+(function () {
+  if (!window.matchMedia || !matchMedia('(max-width: 720px)').matches) return;
+  var nav = document.querySelector('.topnav');
+  var bar = document.querySelector('.topbar');
+  if (!nav || !bar) return;
+  var lastY = window.scrollY, hidden = false;
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    var pastHero = y > window.innerHeight * 0.6;
+    var want = pastHero && y > lastY;
+    if (want !== hidden) {
+      hidden = want;
+      nav.style.transition = 'opacity .2s ease';
+      nav.style.opacity = hidden ? '0' : '1';
+      nav.style.pointerEvents = hidden ? 'none' : 'auto';
+      bar.style.height = hidden ? '' : '';
+    }
+    lastY = y;
+  }, { passive: true });
+})();
