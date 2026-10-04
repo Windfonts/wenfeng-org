@@ -112,11 +112,24 @@ main { flex: 1; }
   color: var(--gray-2);
   visibility: hidden;
 }
-.foot-rest .d { font-size: var(--fs-12); color: var(--gray-2); }
+/* 描述悬停才显（D-12）：空间常留不跳版，只淡入淡出 */
+.foot-rest .d {
+  font-size: var(--fs-12);
+  color: var(--gray-2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
 .foot-rest a:hover { text-decoration: none; }
 @media (hover: hover) {
   .foot-rest a:hover .t::after,
   .foot-rest a:focus-visible .t::after { visibility: visible; }
+  .foot-rest a:hover .d,
+  .foot-rest a:focus-visible .d {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--dur) var(--ease);
+  }
 }
 .site-foot-bottom {
   display: flex;

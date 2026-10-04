@@ -50,6 +50,8 @@ FOOT_REST = [
     ("/source/", "存档目录", "源文件索引", ""),
     ("/v/", "如何查询", "证书编号", ""),
     ("/legal/", "法律声明", "操作说明", ""),
+    ("https://icons.motucloud.com/", "字体图标", "墨图爱可", ""),
+    ("https://app.windfonts.com/", "网页字体", "样张与选字", ""),
     ("/api/v1/certs", "证明 API", "GET certs", "for-dev"),
     ("/api/v1/fonts", "目录 API", "GET fonts", "for-dev"),
 ]
@@ -395,8 +397,11 @@ def foot_lab(kind, dev=""):
     bottom = _foot_bottom(dev)
     if kind == "a":
         rest = "".join(
-            '<a href="%s"%s><span class="t">%s</span><span class="d">%s</span></a>' % (
-                h, (' class="%s"' % c if c else ""), e(t),
+            '<a href="%s"%s%s><span class="t">%s</span><span class="d">%s</span></a>' % (
+                h,
+                (' class="%s"' % c) if c else (' class="is-ext"' if h.startswith("http") else ""),
+                (' target="_blank" rel="noopener" title="%s（即将离开文风）"' % e(t)) if h.startswith("http") else "",
+                e(t),
                 _fv(g, h.rstrip("/")) if not c else e(g),
             )
             for h, t, g, c in FOOT_REST
