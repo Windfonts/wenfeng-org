@@ -279,9 +279,8 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
   /* 参 APP 移动端：主门内距收拢、标题走视口缩放 */
   .lab-doors.is-prime .is-find { padding: var(--s-8) 0 var(--s-6); }
   .lab-find-title { font-size: clamp(3rem, 13vw, 3.75rem); }
-  .lab-doors.is-prime .is-side { padding: var(--s-8) var(--gutter); text-align: center; }
-  .lab-doors.is-prime .is-side .d { margin-left: auto; margin-right: auto; }
-  .lab-doors.is-prime .is-side .go { justify-content: center; display: flex; }
+  /* 侧门移动端：满屏宽、左对齐（人定，不居中）；左右留 gutter 舒展 */
+  .lab-doors.is-prime .is-side { padding: var(--s-8) var(--gutter); }
   /* 「开源」独占一行——不锁的话窄屏会在第 5 个字处硬折，把「商用」拆开；
      格子 1fr 收成 minmax(0,1fr)，导语放开 keep-all：两者都会把内容顶出视口 */
   .lab-find-live .lab-find-em { display: block; }
@@ -290,7 +289,9 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "find" "q1" "q2" "q3";
     min-height: 0;
+    margin: 0 calc(-1 * var(--gutter));
   }
+  .lab-doors.is-prime > * { padding-left: var(--gutter); padding-right: var(--gutter); }
   .lab-doors.is-prime .is-find {
     border-right: 0;
     border-bottom: 1px solid var(--rule);

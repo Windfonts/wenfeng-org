@@ -104,8 +104,26 @@
 
 ### D-14 长会话 4746 结论归档（2026-10-04）
 - 首页/目录/许可三分型/核验簇/说明页均按 D-09/D-11 落活页，证面经典+极简冻结（D-03）。
-- 切片直链 `/pack/slice/{norm}.zip` 同站 Referer 防盗链，OSS `pack/slice/` + 发布 `worker/wf-worker.js` 才生效；普惠体类走核验领取。
+- ~~切片直链 `/pack/slice/{norm}.zip`~~ **[已作废 2026-10-04，见 D-15]**。人当场说链接不对。
 - 文案一律正向表述；`site/check.py` 构建基线保持 2148 页（实测 2157），不得下调掩盖缺页。
+
+### D-15 包在 OSS，条目页「还能办的事」不放空链接（2026-10-04）
+人（Cursor `4746a3b9` 末句）：链接不对；包文件应该都在 OSS；`/source/alhyznht/` 这类详细页里的「还能办的事」要重新设计。
+
+2026-10-04 对公网 HEAD，无 Referer：
+
+| 地址 | 结果 |
+|---|---|
+| `https://cn.windfonts.com/fonts-packages/Alhyznht/Regular/zh-common/result.css` | 200 |
+| `https://cn.windfonts.com/fonts-packages/Xwwk/Regular/full/result.css` | 200 |
+| `https://cn.windfonts.com/wenfeng-original/Xwwk.tar.gz` | 404 |
+| `https://cn.windfonts.com/wenfeng-slice/Xwwk.zip` | 404 |
+| `https://wenfeng-org.oss-cn-guangzhou.aliyuncs.com/pack/slice/Alhyznht.zip` | 上一会话所写，对象不存在 |
+
+- 113 条 `wenfeng-original/{norm}.tar.gz` 全是 `staged`，页面本来就不给出下载。`export-wenfeng.py` 的 `ARCHIVE_HREF_PREFIX` 仍是占位。
+- 已上架的是网页分片：`fonts-packages/{Norm}/{Weight}/{subset}/result.css`，名单 `data/webfonts.json`（354）。无 Referer 也是 200，不要写成已经做了防盗链。
+- 条目页「还能办的事」用紧凑任务行，不重复主按钮。有真实 `files[slice].href` 才叫切片包；否则可再分发且在名单里的，链上面的 result.css，标题写「网页分片」。`distribution=false` 不给这条。有 `sliceGate` 的才进 `/slice/{norm}/`。
+- `/slice/` 不再把开源款铺成「看下载页 / 稍后提供」。
 
 ## 三、台账变更记录
 
@@ -145,6 +163,7 @@
 - `2026-10-04`：人：字标「开源」二字也用寒蝉宽黑，去掉中间的点。记录人：[CC]。
 - `2026-10-04`：人：字标照 APP——方标用 app 的 assets/icon.webp，「文风开源」连写无点无空隙，导航胶囊回到 0.4rem 0.85rem（与 APP 一致）。记录人：[CC]。
 - `2026-10-04`：人：字标「开源」恢复灰色（文风墨色、开源灰，字体连写不变）。记录人：[CC]。
+- `2026-10-04`：人：切片链接不对，包在 OSS；条目页「还能办的事」重做。D-14 的 `/pack/slice/` 作废。冻结 **D-15**。记录人：[Grok]。
 
 ### D-13 首页文案访客化 + 「切片包」对外更名「即用字库」（2026-10-04）
 人：首页文案按真实访客视角重写；「切片包」对外更名「即用字库」，首页先换，全站统一待一轮。
@@ -174,3 +193,4 @@
 - `2026-10-04`：人：菜单好好看（参 APP 菜单实测 41px 项高/14px/0 缝）。≤720 导航行落：项内距 0.55rem 0.7rem（项高 44px 触控标准）、字号 14、项间 gap s-1、行底 1px 规则线与内容分界、左右贴 gutter 对齐字标。记录人：[CC]。
 - `2026-10-04`：人：app 什么样 wenfeng 就怎么样。移动菜单照 fonts-front topmenu 全套移植：≤960 隐导航行/店面/视图切换，汉堡钮（menu/close 双态图标）开抽屉=搜索框+五项链接+视图切换；点链接/Esc/再点钮三路关闭；桌面零变化。中途 site.css 被吃掉一个 @media 闭括号（720 块吞了后面全部规则致桌面泄露），配平修复。记录人：[CC]。
 - `2026-10-04`：人：页眉错位/三块没全宽/页脚链接没调。落：≤960 页眉抽屉模式收单行 56px 垂直居中（抹两行残留偏移）；≤900 侧门移动端内容居中+内距 s-8/gutter（D-09 内容居中在移动端丢失补回）；≤720 页脚链接 3 列改 2 列、行距 s-4（APP 式疏朗）。桌面零变化（64px/左对齐/3 列）。记录人：[CC]。
+- `2026-10-04`：人：侧门移动端要满宽、不要居中。≤900 门网格负 margin 吃掉 gutter 真满宽（x=0 w=390），门内容左对齐、左右 gutter 舒展；居中排版撤。桌面不变。记录人：[CC]。
