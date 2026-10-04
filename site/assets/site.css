@@ -145,6 +145,7 @@ main { flex: 1; }
 }
 .site-foot-bottom a { color: var(--gray); }
 .site-foot-bottom .tm { font-size: 0.72em; vertical-align: super; line-height: 0; }
+.reg { font-size: 0.72em; vertical-align: super; line-height: 0; }
 .foot-bottom-links {
   display: flex;
   flex-wrap: wrap;
