@@ -3143,7 +3143,10 @@ body.gp-v1b .gp1-kinds button {
   .topbar + main { scroll-margin-top: 64px; }
 }
 @media (max-width: 720px) {
-  .topnav a { padding: 0.4rem 0.7rem; font-size: var(--fs-13); }
+  /* 参 APP 菜单：触控目标 ≥44px、14px 字、项间 4px，行底规则线与内容分界 */
+  .topnav { gap: var(--s-1); padding: 0 var(--gutter) 0.3rem; margin: 0 calc(-1 * var(--gutter)); border-bottom: 1px solid var(--rule); }
+  .topnav a { padding: 0.55rem 0.7rem; font-size: var(--fs-14); }
+  .topnav a.is-active { background: var(--fill); }
 @media (max-width: 720px) {
   /* 顶栏两行：字标 | 放大/主题 一行，主导航独占一行。五项导航加右区在窄屏塞不进一行，
      .topnav 会被挤成 0 宽滚动盒，链接等于整个消失——所以视图切换与店面在移动端收起 */
