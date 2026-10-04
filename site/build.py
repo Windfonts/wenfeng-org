@@ -58,6 +58,11 @@ FOOT_REST = [
 
 e = lambda s: html.escape("" if s is None else str(s), quote=True)
 SPRITE = re.sub(r"<\?xml[^>]*>\s*", "", (ROOT / "assets/icons.svg").read_text("utf-8"))
+# cn.windfonts.com 有 web 包的字体名单（api/css 探测产物 data/webfonts.json；包上架后重跑探测刷新）
+try:
+    WEBFONTS = set(k.lower() for k in json.loads((ROOT / "data/webfonts.json").read_text("utf-8"))["fonts"].keys())
+except Exception:
+    WEBFONTS = set()
 
 
 # ---------- 数据 ----------
@@ -289,9 +294,10 @@ def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
                 verb, inked, href = "看条目", False, "/source/%s/" % e(f["norm"])
         if href_of:
             href = href_of(f)
-        face = f.get("family") or ""
+        face = f.get("family") or "" if f["norm"] in WEBFONTS else ""
         cls = "lrow t-%s" % e(f["norm"]) if face else "lrow"
-        attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
+        wname = "Regular" if "Regular" in (f.get("weights") or []) else ((f.get("weights") or ["Regular"])[0])
+        attrs = ' data-face-norm="%s" data-face-family="%s" data-face-weight="%s"' % (e(f["norm"]), e(face), e(wname)) if face else ""
         return ('<li data-st="%s" data-hay="%s" data-letter="%s"><a class="%s" href="%s"%s>'
                 '<span class="lnm">%s</span>'
                 '<span class="lrel">%s</span>'
