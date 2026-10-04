@@ -1,0 +1,121 @@
+/* 出证入口 /attest/：办事台（表单 + 边界），第二屏任务行 */
+
+.page-attest .page-mast {
+  margin-bottom: var(--s-8);
+  padding-bottom: 0;
+}
+.page-attest .page-mast::after {
+  display: none;
+}
+.page-attest .page-mast .ph-lead {
+  max-width: 28em;
+}
+
+.page-attest .at-desk {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(12rem, 0.85fr);
+  gap: var(--s-8) var(--s-12);
+  align-items: start;
+  margin: 0 0 var(--s-12);
+}
+
+.page-attest .at-desk-main {
+  min-width: 0;
+}
+
+.page-attest .at-form {
+  max-width: none;
+  gap: var(--s-5);
+}
+
+/* 下拉：自绘箭头，避免原生箭头在胶囊框里错位 */
+.page-attest .at-form select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 2.75rem;
+  background-color: var(--well);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1.15rem center;
+  background-size: 0.75rem 0.5rem;
+  line-height: 1.25;
+}
+
+/* 用途胶囊：压过 .form label / .form input 的 grid+width:100% */
+.page-attest .at-form .checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.page-attest .at-form .checks label {
+  display: inline-flex !important; /* 压过 .form label 的 grid */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  width: auto;
+  height: 2.15rem;
+  padding: 0 1rem;
+  margin: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--ink-2);
+  font-size: var(--fs-13);
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.page-attest .at-form .checks label:has(input:checked) {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+.page-attest .at-form .checks input {
+  -webkit-appearance: checkbox;
+  appearance: auto;
+  display: inline-block !important;
+  width: 0.9rem !important;
+  height: 0.9rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 0 0 auto;
+  border-radius: 0;
+  background: none;
+  accent-color: var(--ink);
+  vertical-align: middle;
+}
+
+.page-attest .at-form .acts {
+  margin-top: var(--s-2);
+}
+
+.page-attest .at-desk .aside {
+  padding-top: var(--s-1);
+}
+
+.page-attest .at-more {
+  padding-top: var(--s-10);
+  border-top: 1px solid var(--rule);
+}
+
+.page-attest .at-more .label {
+  margin: 0 0 var(--s-4);
+}
+
+.page-attest .at-more .tasks {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .page-attest .at-desk {
+    grid-template-columns: 1fr;
+    gap: var(--s-8);
+  }
+  .page-attest .at-desk .aside {
+    padding: var(--s-5) 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .page-attest .at-form .two {
+    grid-template-columns: 1fr;
+  }
+}

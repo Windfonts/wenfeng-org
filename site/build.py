@@ -262,17 +262,21 @@ def status_words():
     return kv_rows([(STATUS[k][0], e(STATUS[k][1])) for k in STATUS], words=True)
 
 
-def index_rows(fonts, go=None, href_of=None, list_attrs=""):
+def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
     def row(f):
         st = status(f)
         hay = " ".join(filter(None, [f.get("name"), f.get("en"), f.get("norm"), f.get("foundry"),
                                      f.get("licenseName")] + (f.get("aliases") or []))).lower()
+        rel = rel_of(f) if rel_of else STATUS[st][0]
         info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空",
-                                          f.get("foundry") or "未标注", STATUS[st][0]]))
+                                          f.get("foundry") or "未标注", rel]))
         info_v = "%s · offer=%s · textState=%s" % (e(f["norm"]), e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
         if go:
-            verb = go(f)
-            inked = False
+            got = go(f)
+            if isinstance(got, tuple):
+                verb, inked = got[0], bool(got[1]) if len(got) > 1 else False
+            else:
+                verb, inked = got, (got == "读原文")
             href = "/source/%s/" % e(f["norm"])
         else:
             if st == "source":
@@ -293,7 +297,7 @@ def index_rows(fonts, go=None, href_of=None, list_attrs=""):
                 '<span class="lrel">%s</span>'
                 '<span class="lmeta for-design">%s</span><span class="lmeta for-dev mono">%s</span>'
                 '<span class="lgo%s">%s</span></a></li>'
-                % (st, e(hay), e(letter_of(f)), cls, href, attrs, e(wf(f)), e(STATUS[st][0]), e(info_d), info_v,
+                % (st, e(hay), e(letter_of(f)), cls, href, attrs, e(wf(f)), e(rel), e(info_d), info_v,
                    " is-ink" if inked else "", e(verb)))
     return ('<ul class="lin-list" data-list%s>%s</ul><p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p><nav class="pager" data-pager hidden></nav>'
             % ((" " + list_attrs if list_attrs else ""), "".join(row(f) for f in fonts)))
@@ -441,7 +445,13 @@ def foot_site(dev=""):
 
 
 def pages_css(*names):
-    return "\n".join('<link rel="stylesheet" href="/assets/pages/%s.css">' % n for n in names)
+    # 带 mtime 防预览缓存旧样式
+    bits = []
+    for n in names:
+        p = HERE / "assets" / "pages" / ("%s.css" % n)
+        v = int(p.stat().st_mtime) if p.is_file() else 0
+        bits.append('<link rel="stylesheet" href="/assets/pages/%s.css?v=%d">' % (n, v))
+    return "\n".join(bits)
 
 
 def page_head(title, lead, crumbs=(), kicker="", dev="", face_attrs="", sub=""):
@@ -1280,7 +1290,11 @@ def page_font(f):
     body += '<p class="acts fn-acts">%s</p>' % "".join(acts)
     body += '<div class="fn-layout"><div class="fn-main">'
     if face:
-        body += '<p class="fn-proof t-%s">%s</p>' % (e(f["norm"]), e(PROOF))
+        body += '<p class="fn-proof t-%s"%s data-face-full="1">%s</p>' % (e(f["norm"]), face_attrs, e(PROOF))
+    else:
+        body += '<p class="fn-proof t-%s" data-face-norm="%s" data-face-full="1">%s</p>' % (
+            e(f["norm"]), e(f["norm"]), e(PROOF)
+        )
     body += file_html
     body += '<div class="fn-more"><p class="fn-label">还能办的事</p>%s</div></div>' % rows
     body += aside("这一款", dossier) + '</div>'
@@ -1525,26 +1539,37 @@ def license_demo(fonts):
 
 
 def page_licenses(fonts):
-    """授权查询：巨字即题；无面包屑、无沿线。检索后结果落在检索下方（无右侧栏）。"""
+    """授权查询：巨字即题；无右侧栏；检索后结果落在检索下方。"""
     n_full = sum(1 for f in fonts if lic(f).get("textState") == "full")
+
+    def lic_rel(f):
+        ts = str(lic(f).get("textState") or "")
+        if ts == "full":
+            return "有全文"
+        if ts == "pointer":
+            return "去出处"
+        if ts == "summary":
+            return "有要点"
+        return "待核实"
 
     def go(f):
         ts = str(lic(f).get("textState") or "")
         if ts == "full":
-            return "读原文"
+            return "读原文", True
         if ts == "pointer":
-            return "去出处"
-        return "看条目"
+            return "去出处", False
+        return "看条目", False
 
     stage = (
         '<div class="lic-stage">'
         '<h1 class="lic-giant xxzt">授权查询</h1>'
-        '<p class="lic-lead for-design">查一款字的许可结论。有全文的进原文；没有的只标状态。不是法律意见。</p>'
+        '<p class="lic-lead for-design">查一款字有没有许可全文。有全文的进原文；没有的只标状态。不是法律意见。</p>'
         '<p class="lic-lead for-dev mono">/license · textState · full=%d</p>'
         '%s'
         '<p class="lic-foot for-design">全文 %d 份</p>'
+        '<p class="lic-foot for-dev mono">textState=full · %d</p>'
         '</div>'
-        % (n_full, search(action="/license/", live=True), n_full)
+        % (n_full, search(action="/license/", live=True, ph="中文名、英文、短码…"), n_full, n_full)
     )
     results = (
         '<div class="lic-hits-wrap" data-show-on-search aria-hidden="true">'
@@ -1553,7 +1578,8 @@ def page_licenses(fonts):
         '%s'
         '</div></div>'
         % index_rows(
-            fonts, go=go, href_of=lambda f: "/license/%s/" % e(f["norm"]),
+            fonts, go=go, rel_of=lic_rel,
+            href_of=lambda f: "/license/%s/" % e(f["norm"]),
             list_attrs='data-page-size="12"',
         )
     )
@@ -1712,6 +1738,125 @@ def license_kind_of(f, lic_obj):
     return "empty"
 
 
+# font-licenses 仓；部分家族共用一份声明（仓耳）
+_FONT_LIC_ROOTS = (
+    ROOT.parent / "font-licenses" / "licenses",
+    Path.home() / "Projects" / "font-licenses" / "licenses",
+)
+_LICENSE_PACK_ALIAS = {
+    "cezkzdbs": "cexwz",
+    "cesyt": "cexwz",
+}
+# CDN 上已核到的 OSS 原件（font-licenses README 2026-09-24）
+_OSS_LICENSE_HREF = {
+    "opsa": (
+        "https://cn.windfonts.com/wenfeng/fonts/opsa/license.0%20License%20Notice",
+        "text",
+        "OSS 归档原件",
+    ),
+    "dlzht": (
+        "https://cn.windfonts.com/wenfeng/fonts/dlzht/license.pdf",
+        "pdf",
+        "OSS 归档 PDF",
+    ),
+}
+
+
+def font_licenses_root():
+    for p in _FONT_LIC_ROOTS:
+        if p.is_dir():
+            return p
+    return None
+
+
+def _norm_key(norm):
+    return (norm or "").strip().lower()
+
+
+def license_pack_name(norm):
+    """font-licenses 目录名（小写）；仓耳等共用包走别名。"""
+    k = _norm_key(norm)
+    return _LICENSE_PACK_ALIAS.get(k, k)
+
+
+def license_pack_dir(norm):
+    root = font_licenses_root()
+    if not root:
+        return None
+    pack = license_pack_name(norm)
+    d = root / pack
+    return d if d.is_dir() else None
+
+
+def load_archived_license_body(norm, current=""):
+    """license-text 无 body 时，回退读 font-licenses 仓 LICENSE。"""
+    if (current or "").strip():
+        return current
+    d = license_pack_dir(norm)
+    if not d:
+        return ""
+    lic_path = d / "LICENSE"
+    if not lic_path.is_file():
+        return ""
+    return lic_path.read_text("utf-8", errors="replace").strip()
+
+
+def merge_license_artifacts(norm, arts):
+    """合并 JSON artifacts、本地 PDF、已知 OSS 链接。"""
+    out = []
+    seen = set()
+
+    def add(item):
+        href = (item.get("href") or "").strip()
+        if not href or href in seen:
+            return
+        seen.add(href)
+        out.append(item)
+
+    for a in arts or []:
+        if isinstance(a, dict):
+            add(a)
+    key = _norm_key(norm)
+    # 构建期拷到 /assets/licenses/{norm}/license.pdf（沿用条目 norm 大小写）
+    local_pdf = "/assets/licenses/%s/license.pdf" % norm
+    pack = license_pack_dir(norm)
+    if pack and (pack / "license.pdf").is_file():
+        add({"kind": "pdf", "href": local_pdf, "label": "归档 PDF 原件"})
+    oss = _OSS_LICENSE_HREF.get(key)
+    if oss:
+        href, kind, lab = oss
+        add({"kind": kind, "href": href, "label": lab})
+    return out
+
+
+def copy_license_files(fonts):
+    """把 font-licenses 里的 PDF 拷进 dist，供许可页展示。
+
+    共用包（如仓耳 cexwz）会同时拷到各引用 norm 目录。
+    """
+    root = font_licenses_root()
+    if not root:
+        return 0
+    # pack_name -> {page_norm, ...}  page_norm 保持条目原有大小写
+    needed = {}
+    for f in fonts:
+        norm = f["norm"]
+        pack_name = license_pack_name(norm)
+        pdf = root / pack_name / "license.pdf"
+        if not pdf.is_file():
+            continue
+        needed.setdefault(pack_name, set()).add(norm)
+    n = 0
+    for pack_name, norms in needed.items():
+        pdf = root / pack_name / "license.pdf"
+        for norm in norms:
+            dest_dir = DIST / "assets" / "licenses" / norm
+            dest_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(pdf, dest_dir / "license.pdf")
+            n += 1
+    return n
+
+
 _EV_EVENT_ZH = {
     "archive": "归档",
     "reverify": "复核",
@@ -1760,7 +1905,9 @@ def evidence_block(f, lic_obj):
             '<p class="licn-ev-hash">'
             '<span class="for-design">文本哈希 </span>'
             '<span class="for-dev">textSha256 </span>'
-            '<span class="mono">%s</span></p>' % e(sha)
+            '<span class="mono" data-lic-hash>%s</span>'
+            '<button type="button" class="licn-copy" data-lic-copy="%s">复制</button>'
+            "</p>" % (e(sha), e(sha))
         )
 
     hist = list(ev0.get("history") or [])
@@ -1812,9 +1959,13 @@ def page_license(f, licenses):
         lic_obj.update(text_data)
 
     title = lic_obj.get("title") or f.get("licenseName") or "许可原文"
-    body_text = lic_obj.get("body") or ""
+    body_text = load_archived_license_body(norm, lic_obj.get("body") or "")
     body_zh = (lic_obj.get("bodyZh") or "").strip()
     lic_o = lic(f)
+    # 回填 body 后再判型（有归档正文即可展示；厂商款仍走 vendor）
+    if body_text and not (lic_obj.get("body") or "").strip():
+        lic_obj = dict(lic_obj)
+        lic_obj["body"] = body_text
     kind = license_kind_of(f, lic_obj)
     names = rfn_names(f)
     words, rights_note, _rk = rights(f)
@@ -1872,16 +2023,22 @@ def page_license(f, licenses):
                     '<p class="licn-origin-rfn is-note for-design">%s</p>'
                     % e(lic_o["rfnNote"])
                 )
+            # 版权原文默认折起，保留名始终外露
+            more = ""
+            if preamble:
+                more = (
+                    '<details class="licn-origin-more" open>'
+                    '<summary><span class="for-design">版权原文</span>'
+                    '<span class="for-dev mono">copyright block</span></summary>'
+                    '<pre class="licn-pre is-en">%s</pre></details>'
+                    % mark_license_text(preamble, names)
+                )
             origin = (
                 '<section class="licn-origin" aria-label="作者声明">'
                 '<p class="licn-origin-h"><span class="for-design">作者声明</span>'
                 '<span class="for-dev mono">copyright · rfn</span></p>'
                 '%s%s</section>'
-                % (
-                    ('<pre class="licn-pre is-en">%s</pre>' % mark_license_text(preamble, names))
-                    if preamble else "",
-                    "".join(rfn_bits),
-                )
+                % (more, "".join(rfn_bits))
             )
 
         rows = []
@@ -1901,13 +2058,14 @@ def page_license(f, licenses):
                     '<span class="for-dev mono">%s</span></p>'
                     '<div class="licn-pre is-zh">%s</div></div>'
                     '<div data-lic-pane="en" hidden>'
-                    '<p class="licn-cell-h"><span class="for-design">%s</span>'
+                    '<p class="licn-cell-h">'
+                    '<span class="for-design">原版（同左）· %s</span>'
                     '<span class="for-dev mono">%s</span></p>'
                     '<pre class="licn-pre is-en">%s</pre></div>'
                     '</div></div>'
                     % (
                         e(en_h), e(en_h), en_body,
-                        e(zh_h), e(zh_h), zh_body,
+                        e(zh_h), e(en_h), zh_body,
                         e(en_h), e(en_h), en_body,
                     )
                 )
@@ -1950,13 +2108,36 @@ def page_license(f, licenses):
                 % (right_toggle, "".join(rows))
             )
         sheet = origin + dual
-        lead = "%s。%s" % (e(face), e(rights_note))
         kick = "许可原文"
     elif kind == "vendor":
-        arts = lic_obj.get("artifacts") or []
+        arts = merge_license_artifacts(norm, lic_obj.get("artifacts") or [])
         reader = []
+        note = (f.get("visitorNote") or "").strip()
         if body_text:
-            reader.append('<pre class="licn-pre is-zh">%s</pre>' % mark_license_text(body_text, names))
+            reader.append(
+                '<p class="licn-vendor-lab for-design">归档原文</p>'
+                '<p class="licn-vendor-lab for-dev mono">archived body</p>'
+                '<pre class="licn-pre is-zh">%s</pre>' % mark_license_text(body_text, names)
+            )
+            if note:
+                reader.append(
+                    '<p class="licn-vendor-sum for-design"><span class="licn-vendor-lab">要点</span>%s</p>'
+                    % e(note)
+                )
+        else:
+            reader.append(
+                '<p class="licn-vendor-note for-design">'
+                "本站还没有可展示的授权原文归档。请先去出处查阅。"
+                "</p>"
+                '<p class="licn-vendor-note for-dev mono">no archived body · pointer only</p>'
+            )
+            if note:
+                reader.append(
+                    '<p class="licn-vendor-sum for-design"><span class="licn-vendor-lab">本站摘记</span>%s</p>'
+                    % e(note)
+                )
+        if src and not any((a.get("href") == src) for a in arts):
+            arts.append({"kind": "html", "href": src, "label": "去厂商出处"})
         art_bits = []
         for a in arts:
             href = a.get("href") or ""
@@ -1970,17 +2151,28 @@ def page_license(f, licenses):
                     % (e(href), e(lab), e(lab))
                 )
             elif k == "pdf":
-                art_bits.append('<p class="licn-art">%s</p>' % ink("打开 PDF · %s" % lab, href))
+                art_bits.append(
+                    '<figure class="licn-art is-pdf">'
+                    '<figcaption>%s</figcaption>'
+                    '<iframe class="licn-pdf" src="%s" title="%s"></iframe>'
+                    '<p>%s</p></figure>'
+                    % (e(lab), e(href), e(lab), ink("打开 PDF", href))
+                )
             else:
                 art_bits.append(
-                    '<p class="licn-art">%s</p>' % link(lab, href, "btn-text")
+                    '<p class="licn-art">%s</p>' % ink(lab, href)
                 )
         if art_bits:
-            reader.append('<div class="licn-arts">%s</div>' % "".join(art_bits))
-        if not reader:
-            reader.append('<p class="quiet for-design">本站不托管厂商授权原件。请用上方出处自行查阅。</p>')
+            reader.append(
+                '<p class="licn-vendor-lab for-design">原件</p>'
+                '<div class="licn-arts">%s</div>' % "".join(art_bits)
+            )
         sheet = '<div class="licn-reader">%s</div>' % "".join(reader)
-        lead = "%s。%s" % (e(face), e(rights_note))
+        lead = (
+            "%s。以下为归档的厂商授权原文。" % e(face)
+            if body_text else
+            "%s。厂商协议以出处原文为准。" % e(face)
+        )
         kick = "厂商协议"
     else:
         sheet = (
@@ -1993,6 +2185,10 @@ def page_license(f, licenses):
         )
         lead = "%s。许可原文还没有核对记录。" % e(face)
         kick = "待归档"
+
+    if kind == "open":
+        # 商用结论留给条目页；许可页导语只说原文
+        lead = "%s。以下为归档许可原文。" % e(face)
 
     body = page_head(
         title, lead,
@@ -2118,63 +2314,138 @@ def page_foundry(g):
 
 
 def page_attest_index(fonts):
+    """出证入口：办事台（表单 + 边界）；第二屏仅四项办事。无下挂可出证列表。"""
     ok = [f for f in fonts if can_attest(f)]
-    opts = "".join('<option value="%s">%s · %s</option>' % (e(f["norm"]), e(wf(f)), e(spdx_of(f))) for f in ok)
-    body = page_head(
-        "授权证明",
-        "标准开源协议的字体，由文派（广州）科技有限公司出具证明，记录授权链、协议和原文哈希。证明不是著作权人另行授权。",
-        crumbs=[(None, "核验")],
-        kicker="核验",
-        dev="/attest · SPDX · ledger",
+    opts = "".join(
+        '<option value="%s">%s · %s</option>' % (e(f["norm"]), e(wf(f)), e(spdx_of(f)))
+        for f in ok
     )
-    form = ('<form class="form" action="/attest/go/" method="get" data-attest-form><label>字体<select name="norm" required>%s</select></label>'
-            '<div class="two"><label>持证单位（可选）<input name="holder" placeholder="只印在这一份副本上" autocomplete="organization"></label>'
-            '<label>统一社会信用代码（可选）<input name="uscc" placeholder="91440101MA…" autocomplete="off"></label></div>'
-            '<fieldset><legend>用途</legend><div class="checks">'
-            '<label><input type="checkbox" name="usage" value="web" checked>网页嵌入</label><label><input type="checkbox" name="usage" value="print">印刷物料</label>'
-            '<label><input type="checkbox" name="usage" value="embed">软件内嵌</label><label><input type="checkbox" name="usage" value="modify">修改衍生</label>'
-            '<label><input type="checkbox" name="usage" value="redistribute">再分发</label></div></fieldset>'
-            '<p class="acts"><button class="btn btn-ink">%s生成授权证明</button></p></form>' % (opts, icon("certificate")))
-    body += '<div class="split"><div>%s</div>%s</div>' % (form, aside("出证边界", kv_rows([
-        ("谁签发", "文派（广州）科技有限公司。文派不是字体的著作权人"), ("给谁出", "OFL、MIT、Apache 等标准开源协议"),
-        ("不出", "厂商自拟、还没核实、未收录的"), ("怎么核", "编号在台账查得到、内容一致才是真的")]), '<a href="/legal/#scope">出证范围</a>'))
-    body += '<p class="label">核验还能办的事</p>' + tasks([
-        ("核对一份 JSON", "贴进证明文件，看内容有没有被改过", "/attest/verify/", "verified"),
-        ("签发台账", "每份证明签发即登记", "/attest/ledger/", "history"),
-        ("证书查验", "编号 + 持证单位两要素", "/v/", "search"),
-        ("切片包", "不可再分发的字体，核验原包后领取", "/slice/", "scissors")])
-    body += '<p class="label" style="margin-top:var(--s-12)">可出证的字体 · %d 款</p><p class="count" data-count></p>' % len(ok)
-    body += index_rows(ok, go=lambda f: "出证").replace('href="/source/', 'href="/attest/')
-    return layout("attest", "授权证明", body, "/attest")
+    # 不用 page_head：它在有 dev 时会挂 crumb；本页只要 kicker + 玄宗题 + 导语
+    mast = (
+        '<header class="page-mast">'
+        '<p class="ph-kicker">核验</p>'
+        '<h1 class="xxzt">授权证明</h1>'
+        '<p class="ph-lead for-design">标准开源协议的字体，由文派（广州）科技有限公司出具证明，'
+        "记录授权链、协议和原文哈希。证明不是著作权人另行授权。</p>"
+        '<p class="ph-lead for-dev mono">/attest · SPDX · ledger</p>'
+        "</header>"
+    )
+    form = (
+        '<form class="form at-form" action="/attest/go/" method="get" data-attest-form>'
+        '<label>字体<select name="norm" required>%s</select></label>'
+        '<div class="two">'
+        '<label>持证单位（可选）'
+        '<input name="holder" placeholder="只印在这一份副本上" autocomplete="organization">'
+        '</label>'
+        '<label>统一社会信用代码（可选）'
+        '<input name="uscc" placeholder="91440101MA…" autocomplete="off">'
+        '</label></div>'
+        '<fieldset><legend>用途</legend><div class="checks">'
+        '<label><input type="checkbox" name="usage" value="web" checked>网页嵌入</label>'
+        '<label><input type="checkbox" name="usage" value="print">印刷物料</label>'
+        '<label><input type="checkbox" name="usage" value="embed">软件内嵌</label>'
+        '<label><input type="checkbox" name="usage" value="modify">修改衍生</label>'
+        '<label><input type="checkbox" name="usage" value="redistribute">再分发</label>'
+        '</div></fieldset>'
+        '<p class="acts"><button class="btn btn-ink" type="submit">%s生成授权证明</button></p>'
+        '</form>'
+    ) % (opts, icon("certificate"))
+    bound = aside(
+        "出证边界",
+        kv_rows([
+            ("谁签发", "文派（广州）科技有限公司。文派不是字体的著作权人"),
+            ("给谁出", "OFL、MIT、Apache 等标准开源协议"),
+            ("不出", "厂商自拟、还没核实、未收录的"),
+            ("怎么核", "编号在台账查得到、内容一致才是真的"),
+        ]),
+        '<a href="/legal/#scope">出证范围</a>',
+    )
+    more = (
+        '<section class="at-more" aria-label="核验还能办的事">'
+        '<p class="label">核验还能办的事</p>%s</section>'
+        % tasks([
+            ("核对一份 JSON", "贴进证明文件，看内容有没有被改过", "/attest/verify/", "verified"),
+            ("签发台账", "每份证明签发即登记", "/attest/ledger/", "history"),
+            ("证书查验", "编号 + 持证单位两要素", "/v/", "search"),
+            ("切片包", "不可再分发的字体，核验原包后领取", "/slice/", "scissors"),
+        ])
+    )
+    body = (
+        '%s<div class="at-desk"><div class="at-desk-main">%s</div>%s</div>%s'
+        % (mast, form, bound, more)
+    )
+    return layout(
+        "attest", "授权证明", body, "/attest",
+        extra_head=pages_css("attest"),
+        body_class="page-attest",
+    )
 
 
 def page_attest(f):
-    body = page_head(
-        "%s 授权证明" % wf(f),
-        "两套证面：经典红章默认，极简备用。证书公章除外，外壳跟全站同一顶栏页脚。",
-        crumbs=[("/attest/", "核验"), (None, wf(f))],
-        kicker="证书",
-        dev="/attest/%s · classic|minimal" % f["norm"],
+    """单款证书页：通栏标题；左徽章 / 右证面（按钮在证面顶栏）。证面不动。"""
+    name = wf(f)
+    mast = (
+        '<header class="page-mast atn-mast">'
+        '<p class="atn-back"><a href="/attest/">← 出证入口</a></p>'
+        '<h1 class="xxzt">%s 授权证明</h1>'
+        '<p class="ph-lead for-design">下载 PDF、打印，或挂徽章。证面可切极简。</p>'
+        '<p class="ph-lead for-dev mono">/attest/%s · classic|minimal</p>'
+        "</header>"
+    ) % (e(name), e(f["norm"]))
+    side = (
+        '<aside class="atn-side no-print">'
+        '<section class="atn-embed" data-share hidden>'
+        '<p class="label">嵌入徽章</p>'
+        '<p class="atn-embed-lead">三种样式；细条可选黑白。下载或复制嵌入代码。</p>'
+        '<div class="atn-embed-controls">'
+        '<div class="seg atn-badge-pick" data-badge-variants role="group" aria-label="徽章样式">'
+        '<button type="button" class="is-on" data-badge-kind="plaque">牌匾</button>'
+        '<button type="button" data-badge-kind="dark">深底</button>'
+        '<button type="button" data-badge-kind="slim">细条</button>'
+        "</div>"
+        '<div class="seg atn-badge-tone" data-badge-tone hidden role="group" aria-label="细条黑白">'
+        '<button type="button" class="is-on" data-badge-tone-v="slim-ink">黑</button>'
+        '<button type="button" data-badge-tone-v="slim-paper">白</button>'
+        "</div></div>"
+        '<p class="atn-embed-badge"><img class="share-badge" data-badge-img src="" alt="授权证明徽章预览"></p>'
+        '<pre class="code" data-embed></pre>'
+        '<p class="acts">'
+        '<button class="btn" type="button" data-copy>%s复制嵌入代码</button>'
+        '<a class="btn" href="#" data-badge-dl download>下载 SVG</a>'
+        "</p></section></aside>"
+    ) % icon("copy")
+    stage = (
+        '<div class="atn-main">'
+        '<div class="atn-panel">'
+        '<div class="atn-toolbar no-print" data-cert-tools hidden>'
+        '<div class="atn-tools-main">'
+        '<button class="btn btn-ink" type="button" data-pdf>%s下载 PDF（A4）</button>'
+        '<button class="btn" type="button" data-print>打印</button>'
+        '<button class="btn" type="button" data-json>JSON</button>'
+        '<p class="atn-tools-links">'
+        '<a href="/license/%s/">许可原文</a>'
+        '<a href="/attest/ledger/">台账</a>'
+        "</p></div>"
+        '<div class="seg atn-switch" data-cert-switcher role="group" aria-label="证面样式">'
+        '<button type="button" class="is-on" data-cert-style="classic">经典</button>'
+        '<button type="button" data-cert-style="minimal">极简</button>'
+        "</div></div>"
+        '<div class="cert-stage atn-stage" data-cert data-norm="%s"%s>'
+        '<p class="quiet">正在生成证明…</p></div></div></div>'
+    ) % (icon("download"), e(f["norm"]), e(f["norm"]),
+         (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "")
+    extra = (
+        pages_css("attest-norm") + "\n"
+        '<link rel="stylesheet" href="/assets/shs/regular.css">\n'
+        '<link rel="stylesheet" href="/assets/shs/bold.css">\n'
+        '<link rel="stylesheet" href="/assets/shsans/bold.css">'
     )
-    tools = ('<div class="acts no-print" data-cert-tools hidden style="margin-bottom:var(--s-8);justify-content:space-between;align-items:center">'
-             '<div class="acts"><button class="btn btn-ink" data-pdf>%s下载 PDF（A4）</button>'
-             '<button class="btn" data-print>打印</button><button class="btn" data-json>下载 JSON</button>%s%s</div>'
-             '<div class="seg" data-cert-switcher><button type="button" class="is-on" data-cert-style="classic">经典证书（默认）</button>'
-             '<button type="button" data-cert-style="minimal">极简备用</button></div></div>'
-             % (icon("download"), link("许可原文", "/license/%s/" % f["norm"]), link("台账", "/attest/ledger/")))
-    share = ('<section class="sec no-print" data-share hidden><div class="sec-grid"><div><p class="label">分享证书</p><h2>把授权证明挂到自己的网站</h2></div>'
-             '<div class="prose"><p>贴一段代码，徽章由文风服务器按编号出图，站点改不了内容；访客点击直达在线查验。</p>'
-             '<p><img class="share-badge" data-badge-img src="" alt="授权证明徽章预览" style="max-height:48px"></p>'
-             '<pre class="code" data-embed></pre>'
-             '<p class="acts"><button class="btn" data-copy>%s复制嵌入代码</button></p></div></div></section>'
-             % icon("copy"))
-    extra = ('<link rel="stylesheet" href="/assets/shs/regular.css">\n'
-             '<link rel="stylesheet" href="/assets/shs/bold.css">\n'
-             '<link rel="stylesheet" href="/assets/shsans/bold.css">')
-    body += tools + ('<div class="cert-stage" data-cert data-norm="%s"><p class="quiet">正在生成证明…</p></div>' % e(f["norm"])) + share
-    return layout("attest", "%s 授权证明" % f["name"], body, "attest", extra_head=extra)
-
-
+    body = '%s<div class="atn-layout">%s%s</div>' % (mast, side, stage)
+    return layout(
+        "attest", "%s 授权证明" % f["name"], body, "attest",
+        extra_head=extra,
+        body_class="page-attest-norm",
+    )
 def page_attest_go():
     return layout("attest", "生成授权证明", page_head("正在跳转", "按所选字体打开证书页。", kicker="核验", dev="/attest/go") + '<p class="quiet" data-attest-go>正在跳转…</p>')
 
@@ -3111,6 +3382,7 @@ def main():
         src = ROOT / "assets" / name
         if not target.exists() and src.exists():
             target.symlink_to(src)
+    n_lic_pdf = copy_license_files(fonts)
     write("/", page_home(data, fonts))
     write("/lab/home-a/", page_lab_home(data, fonts, "a"))
     write("/lab/home-b/", page_lab_home(data, fonts, "b"))
@@ -3139,7 +3411,10 @@ def main():
                      ("/legal/", page_legal), ("/about/", page_about), ("/gap/", page_gap)]:
         write(path, fn())
     write("404.html", page_404())
-    print("built %d pages -> %s" % (sum(1 for _ in DIST.rglob("index.html")), DIST))
+    print(
+        "built %d pages -> %s (license pdf %d)"
+        % (sum(1 for _ in DIST.rglob("index.html")), DIST, n_lic_pdf)
+    )
 
 
 if __name__ == "__main__":

@@ -112,7 +112,7 @@ main { flex: 1; }
   visibility: hidden;
 }
 .foot-rest a.is-ext .t::after { content: " ↗"; }
-/* 描述悬停才显（D-12）：空间常留不跳版，只淡入淡出 */
+/* 描述悬停才显（D-11）：空间常留不跳版，只淡入淡出 */
 .foot-rest .d {
   font-size: var(--fs-12);
   color: var(--gray-2);
@@ -582,20 +582,153 @@ a.task.is-ink:hover { background: var(--ink-hover); }
   color: var(--cert-red); opacity: 0.75;
 }
 
-/* 备用极简版式（16031 原版，通过切换按钮使用） */
-.cert-minimal { max-width: 50rem; margin: 0 auto; padding: var(--s-12) var(--s-12) var(--s-10); border-radius: var(--radius); background: var(--surface); color: var(--ink); font-family: var(--font-ui); }
-.cert-minimal header { text-align: center; padding-bottom: var(--s-8); margin-bottom: var(--s-8); border-bottom: 1px solid var(--rule); }
-.cert-minimal header .mono { font-size: var(--fs-11); color: var(--gray); letter-spacing: 0.2em; }
-.cert-minimal header h2 { font-size: var(--fs-28); letter-spacing: 0.15em; margin: var(--s-2) 0; font-weight: var(--fw-title); }
-.cert-minimal .fn { text-align: center; font-size: var(--fs-22); font-weight: var(--fw-title); }
-.cert-minimal .fe { text-align: center; color: var(--gray); margin-bottom: var(--s-8); }
-.cert-minimal .kv-rows > div { grid-template-columns: 7em minmax(0, 1fr); }
-.cert-minimal .concl { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); margin: var(--s-8) 0; }
-.cert-minimal .concl div { padding: var(--s-4); border-radius: var(--radius-sm); background: var(--paper); font-size: var(--fs-12); color: var(--gray); }
-.cert-minimal .concl b { display: block; margin-top: var(--s-1); font-size: var(--fs-16); color: var(--ink); }
-.cert-minimal .not { list-style: disc; padding-left: 1.2em; font-size: var(--fs-12); color: var(--gray); }
-.cert-minimal footer { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s-6); margin-top: var(--s-8); padding-top: var(--s-6); border-top: 1px solid var(--rule); font-size: var(--fs-12); color: var(--gray); }
-.cert-minimal footer img { width: 5.5rem; height: 5.5rem; }
+/* 极简版式：A4 画幅（794×1123），屏上所见即打印所得；气质回到克制留白 */
+.cert-minimal {
+  position: relative;
+  width: 794px;
+  max-width: 100%;
+  min-height: 1123px;
+  height: 1123px;
+  margin: 0 auto;
+  padding: 3rem 3.4rem 2.4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  box-shadow: 0 24px 60px rgba(40, 24, 10, 0.12);
+  overflow: hidden;
+}
+.cert-minimal header {
+  text-align: center;
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid var(--rule);
+  flex: none;
+}
+.cert-minimal .cm-kicker {
+  margin: 0;
+  font-size: var(--fs-11);
+  color: var(--gray);
+  letter-spacing: 0.22em;
+}
+.cert-minimal header h2 {
+  font-size: 1.85rem;
+  letter-spacing: 0.22em;
+  margin: 0.55rem 0 0.45rem;
+  font-weight: var(--fw-title);
+  line-height: 1.25;
+}
+.cert-minimal .cm-meta {
+  margin: 0;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+.cert-minimal .cm-spdx {
+  display: inline-block;
+  margin-left: 0.45em;
+  padding: 0.1em 0.45em;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+  vertical-align: 0.05em;
+}
+.cert-minimal .cm-proto {
+  margin: 0.55rem 0 0;
+  font-size: var(--fs-11);
+  letter-spacing: 0.12em;
+  color: var(--gray);
+}
+.cert-minimal .cm-face {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  flex: none;
+}
+.cert-minimal .fn {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: var(--fw-title);
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.cert-minimal .fe {
+  margin: 0.4rem 0 0;
+  color: var(--gray);
+  font-size: var(--fs-14);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.cert-minimal .kv-rows {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+}
+.cert-minimal .kv-rows > div {
+  grid-template-columns: 6.5em minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.72rem 0;
+  font-size: var(--fs-14);
+  align-items: baseline;
+}
+.cert-minimal .kv-rows dt { letter-spacing: 0.04em; }
+.cert-minimal .kv-rows dd { overflow-wrap: anywhere; line-height: 1.55; }
+.cert-minimal .kv-rows code,
+.cert-minimal .kv-rows .hash {
+  font-size: 0.86em;
+  word-break: break-all;
+}
+.cert-minimal .concl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+  margin: 1.5rem 0 1.2rem;
+  flex: none;
+}
+.cert-minimal .concl div {
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  font-size: var(--fs-12);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+.cert-minimal .concl b {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.1rem;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+.cert-minimal .not {
+  list-style: disc;
+  padding-left: 1.25em;
+  margin: 0 0 0.4rem;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: 1.75;
+  flex: none;
+}
+.cert-minimal footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s-6);
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: 1.65;
+  flex: none;
+}
+.cert-minimal footer p { margin: 0; }
+.cert-minimal footer .mono { font-size: var(--fs-11); letter-spacing: 0.02em; }
+.cert-minimal footer img { width: 5.4rem; height: 5.4rem; flex: none; border: 1px solid var(--rule); background: #fff; }
 
 /* 响应式与打印 */
 @media screen and (max-width: 880px) {
@@ -611,7 +744,7 @@ a.task.is-ink:hover { background: var(--ink-hover); }
   .cert-sign { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
   .cert-sign-off { align-self: flex-end; }
   .cert-mark { font-size: 2.8rem; letter-spacing: 0.7rem; }
-  .cert-minimal { padding: var(--s-8) var(--s-5); }
+  .cert-minimal { width: 100%; height: auto; min-height: 0; padding: 1.4rem 1.1rem 1.2rem; box-shadow: none; }
   .cert-minimal .concl { grid-template-columns: 1fr; }
 }
 
@@ -624,7 +757,16 @@ a.task.is-ink:hover { background: var(--ink-hover); }
   .cert-sheet { width: 210mm !important; height: 296.5mm !important; margin: 0 auto !important; box-shadow: none !important; }
   .cert-inner { min-height: 0 !important; height: 100% !important; display: flex !important; flex-direction: column !important; }
   .cert-chop { mix-blend-mode: normal !important; }
-  .cert-minimal { background: none !important; padding: 0 !important; max-width: none !important; }
+  .cert-minimal {
+    width: 210mm !important;
+    height: 296.5mm !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 14mm 16mm 12mm !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+  }
 }
 
 /* 一款详情整页 · 甲′精修（/source/{norm}） */

@@ -22,35 +22,80 @@
 
   /* 字体 WebFont 动态加载与懒加载（同 16030） */
   var FACE_CSS_TPL = 'https://cn.windfonts.com/api/css?family={F}&weight=400&subset=zh-common&version=zh-common';
+  var FACE_PACK = 'https://cn.windfonts.com/fonts-packages/{N}/{W}/full/result.css';
   var facesLoaded = {};
-  function applyFontFace(norm, family) {
-    if (!norm || !family || facesLoaded[norm]) return;
-    facesLoaded[norm] = true;
+  function applyFontFace(norm, family, useFull) {
+    if (!norm) return;
+    if (useFull && facesLoaded[norm] === 'full') return;
+    if (!useFull && facesLoaded[norm]) return;
+    if (!family && !useFull) return;
+    facesLoaded[norm] = useFull ? 'full' : true;
+    var famName = 'WF-' + (norm.charAt(0).toUpperCase() + norm.slice(1));
+    function applyClass() {
+      var st = document.createElement('style');
+      st.textContent = '.t-' + norm + '{font-family:"' + famName + '","WF-' + norm + '", var(--font-ui);}';
+      document.head.appendChild(st);
+    }
+    function loadPack(done) {
+      var weights = ['Regular', 'Light', 'Medium', 'Bold'];
+      (function next(i) {
+        if (i >= weights.length) {
+          if (done) done();
+          return;
+        }
+        var url = FACE_PACK.replace('{N}', encodeURIComponent(norm)).replace('{W}', weights[i]);
+        fetch(url).then(function (r) {
+          if (!r.ok) throw new Error(String(r.status));
+          return r.text();
+        }).then(function (css) {
+          if (css.indexOf('@font-face') === -1) throw new Error('not css');
+          var base = url.replace(/result\.css$/, '');
+          var st = document.createElement('style');
+          st.textContent = css
+            .replace(/url\("\.\//g, 'url("' + base)
+            .replace(/url\('\.\//g, "url('" + base);
+          document.head.appendChild(st);
+          applyClass();
+        }).catch(function () { next(i + 1); });
+      })(0);
+    }
+    if (useFull) {
+      loadPack(function () {
+        if (family) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = FACE_CSS_TPL.replace('{F}', encodeURIComponent(family));
+          link.onload = applyClass;
+          document.head.appendChild(link);
+        }
+      });
+      return;
+    }
     var link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = FACE_CSS_TPL.replace('{F}', encodeURIComponent(family));
-    link.onload = function () {
-      var st = document.createElement('style');
-      var fam = 'WF-' + (norm.charAt(0).toUpperCase() + norm.slice(1));
-      st.textContent = '.t-' + norm + '{font-family:"' + fam + '","WF-' + norm + '", var(--font-ui);}';
-      document.head.appendChild(st);
-    };
+    link.onload = applyClass;
     document.head.appendChild(link);
   }
   function lazyPreviews() {
     var els = document.querySelectorAll('[data-face-norm]');
     if (!els.length) return;
+    function loadEl(el) {
+      applyFontFace(
+        el.getAttribute('data-face-norm'),
+        el.getAttribute('data-face-family'),
+        el.getAttribute('data-face-full') === '1'
+      );
+    }
     if (!('IntersectionObserver' in window)) {
-      Array.prototype.forEach.call(els, function (el) {
-        applyFontFace(el.getAttribute('data-face-norm'), el.getAttribute('data-face-family'));
-      });
+      Array.prototype.forEach.call(els, loadEl);
       return;
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         io.unobserve(e.target);
-        applyFontFace(e.target.getAttribute('data-face-norm'), e.target.getAttribute('data-face-family'));
+        loadEl(e.target);
       });
     }, { rootMargin: '140px' });
     Array.prototype.forEach.call(els, function (el) { io.observe(el); });
@@ -328,7 +373,11 @@
           '<div class="cert-scope-grid">' + scopeHtml + '</div>' +
         '</div>' +
         '<div class="cert-sample">' +
-          '<p class="cert-sample-text t-' + esc(cert.norm) + '">风急天高猿啸哀　渚清沙白鸟飞回</p>' +
+          '<p class="cert-sample-text t-' + esc(cert.norm) + '"' +
+            (stage && stage.getAttribute('data-face-family')
+              ? ' data-face-norm="' + esc(cert.norm) + '" data-face-family="' + esc(stage.getAttribute('data-face-family')) + '" data-face-full="1"'
+              : '') +
+          '>两个黄鹂鸣翠柳　一行白鹭上青天</p>' +
         '</div>' +
         '<p class="cert-memo"><b>声明</b>　文派（广州）科技有限公司系平台运营与分发主体，并非该字体原始著作权人。本证明不改变、不替代原始授权条款，亦非著作权人出具的授权书；字体的使用、修改及分发，以原始授权协议及著作权人声明为准。签发记录留存不少于六年。</p>' +
         '<p class="cert-hereby">特此证明</p>' +
@@ -351,9 +400,17 @@
     var L = c.license || {}, C = c.conclusions || {}, yn = function (b) { return b ? '可以' : '不可以'; };
     var row = function (k, v) { return v ? '<div><dt>' + esc(k) + '</dt><dd>' + v + '</dd></div>' : ''; };
     return '<article class="cert cert-minimal">' +
-      '<header><p class="mono">WENFENG · ATTESTATION</p><h2>' + esc(c.title) + '</h2><p class="mono">编号 ' + esc(c.serial) + '</p>' +
-      (c.prototype ? '<span class="proto">原型样张，不作正式存档</span>' : '') + '</header>' +
-      '<p class="fn">' + esc(c.catalogName) + '</p><p class="fe">' + esc(c.originalName) + (c.originalEn ? ' · ' + esc(c.originalEn) : '') + '</p>' +
+      '<header>' +
+        '<p class="cm-kicker mono">WENFENG · ATTESTATION</p>' +
+        '<h2>' + esc(c.title) + '</h2>' +
+        '<p class="cm-meta mono">编号 ' + esc(c.serial) +
+          (L.spdx ? ' <span class="cm-spdx">' + esc(L.spdx) + '</span>' : '') + '</p>' +
+        (c.prototype ? '<p class="cm-proto">原型样张，不作正式存档</p>' : '') +
+      '</header>' +
+      '<div class="cm-face">' +
+        '<p class="fn">' + esc(c.catalogName) + '</p>' +
+        '<p class="fe">' + esc(c.originalName) + (c.originalEn ? ' · ' + esc(c.originalEn) : '') + '</p>' +
+      '</div>' +
       '<dl class="kv-rows">' +
         row('持证单位', esc(c.holder)) + row('信用代码', esc(c.uscc)) +
         row('申报用途', esc((c.usage || []).join('、'))) +
@@ -365,7 +422,7 @@
       '</dl>' +
       '<div class="concl"><div>网页嵌入<b>' + yn(C.embed) + '</b></div><div>再分发原件<b>' + yn(C.redistributeFiles) + '</b></div><div>本站提供原件<b>' + (C.platformOffersSource ? '是' : '否') + '</b></div></div>' +
       '<ul class="not">' + (c.not || []).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
-      '<footer><div>签发：' + esc((c.issuer || {}).legalName) + '<br>日期：' + esc(c.issuedAt) + '<br>签名：' + esc((c.signature || {}).alg) + ' · ' + esc(((c.signature || {}).value || '').slice(0, 16)) + '…</div>' +
+      '<footer><div><p>签发：' + esc((c.issuer || {}).legalName) + '</p><p>日期：' + esc(c.issuedAt) + '</p><p class="mono">签名：' + esc((c.signature || {}).alg) + ' · ' + esc(((c.signature || {}).value || '').slice(0, 16)) + '…</p></div>' +
       '<img src="/api/v1/certs/qr?s=' + encodeURIComponent(c.serial) + '" alt="查验二维码"></footer></article>';
   }
 
@@ -407,9 +464,9 @@
         }
         stage.innerHTML = renderClassicCert(activeCert);
       }
-      if (activeCert.norm) {
-        var fam = activeCert.originalName || (activeCert.catalogName ? activeCert.catalogName.replace(/^文风[·\s]*/, '') : '');
-        applyFontFace(activeCert.norm, fam);
+      if (activeCert.norm && stage) {
+        var fam = stage.getAttribute('data-face-family') || '';
+        if (fam) applyFontFace(activeCert.norm, fam, true);
       }
       $$('[data-cert-style]').forEach(function (b) {
         b.classList.toggle('is-on', b.dataset.certStyle === certStyle);
@@ -422,7 +479,12 @@
       updateCertView();
       var tools = $('[data-cert-tools]'); if (tools) tools.hidden = false;
       var printBtn = $('[data-print]'); if (printBtn) printBtn.onclick = function () { print(); };
-      var pdfBtn = $('[data-pdf]'); if (pdfBtn) pdfBtn.onclick = function () { location.href = '/api/v1/certs/' + encodeURIComponent(norm) + '/pdf?' + p; };
+      var pdfBtn = $('[data-pdf]'); if (pdfBtn) pdfBtn.onclick = function () {
+        var q = new URLSearchParams(p.toString());
+        if (certStyle === 'minimal') q.set('style', 'minimal');
+        var qsPdf = q.toString();
+        location.href = '/api/v1/certs/' + encodeURIComponent(norm) + '/pdf' + (qsPdf ? '?' + qsPdf : '');
+      };
       var jsonBtn = $('[data-json]'); if (jsonBtn) jsonBtn.onclick = function () {
         var d = Object.assign({}, c); delete d._status;
         var a = document.createElement('a');
@@ -432,11 +494,64 @@
       $$('[data-cert-style]').forEach(function (b) {
         b.onclick = function () { certStyle = b.dataset.certStyle; updateCertView(); };
       });
-      var code = '<a href="https://wenfeng.org/v/?s=' + c.serial + '"><img src="https://wenfeng.org/badge/' + c.serial + '.svg" alt="文风字体授权证明"></a>';
-      var embedEl = $('[data-embed]'); if (embedEl) embedEl.textContent = code;
-      var badgeImg = $('[data-badge-img]'); if (badgeImg) badgeImg.src = '/api/v1/certs/badge?s=' + encodeURIComponent(c.serial);
+      var badgeKind = 'plaque';
+      var slimTone = 'slim-ink';
+      try {
+        var savedV = localStorage.getItem('wf-badge-v');
+        if (savedV === 'dark') badgeKind = 'dark';
+        else if (savedV === 'slim' || savedV === 'slim-ink' || savedV === 'slim-paper') {
+          badgeKind = 'slim';
+          slimTone = savedV === 'slim-paper' ? 'slim-paper' : 'slim-ink';
+        } else if (savedV === 'plaque') badgeKind = 'plaque';
+      } catch (e) {}
+      function badgeVariant() {
+        return badgeKind === 'slim' ? slimTone : badgeKind;
+      }
+      function publicBadgeSrc(serial, v) {
+        var src = 'https://wenfeng.org/badge/' + serial + '.svg';
+        return v && v !== 'plaque' ? src + '?v=' + encodeURIComponent(v) : src;
+      }
+      function apiBadgeSrc(serial, v, download) {
+        var src = '/api/v1/certs/badge?s=' + encodeURIComponent(serial) + '&v=' + encodeURIComponent(v || 'plaque');
+        return download ? src + '&download=1' : src;
+      }
+      function embedCode(serial, v) {
+        return '<a href="https://wenfeng.org/v/?s=' + serial + '"><img src="' + publicBadgeSrc(serial, v) + '" alt="文风字体授权证明"></a>';
+      }
+      function refreshBadge() {
+        var v = badgeVariant();
+        var code = embedCode(c.serial, v);
+        var embedEl = $('[data-embed]'); if (embedEl) embedEl.textContent = code;
+        var badgeImg = $('[data-badge-img]'); if (badgeImg) badgeImg.src = apiBadgeSrc(c.serial, v);
+        var dl = $('[data-badge-dl]');
+        if (dl) {
+          dl.href = apiBadgeSrc(c.serial, v, true);
+          dl.setAttribute('download', 'wenfeng-badge-' + c.serial.toLowerCase() + '-' + v + '.svg');
+        }
+        $$('[data-badge-kind]').forEach(function (b) {
+          b.classList.toggle('is-on', b.dataset.badgeKind === badgeKind);
+        });
+        var tone = $('[data-badge-tone]');
+        if (tone) tone.hidden = badgeKind !== 'slim';
+        $$('[data-badge-tone-v]').forEach(function (b) {
+          b.classList.toggle('is-on', b.dataset.badgeToneV === slimTone);
+        });
+        try { localStorage.setItem('wf-badge-v', v); } catch (e) {}
+        return code;
+      }
       var shareSec = $('[data-share]'); if (shareSec) shareSec.hidden = false;
-      var copyBtn = $('[data-copy]'); if (copyBtn) copyBtn.onclick = function (ev) { navigator.clipboard.writeText(code); ev.target.textContent = '已复制'; };
+      refreshBadge();
+      $$('[data-badge-kind]').forEach(function (b) {
+        b.onclick = function () { badgeKind = b.dataset.badgeKind; refreshBadge(); };
+      });
+      $$('[data-badge-tone-v]').forEach(function (b) {
+        b.onclick = function () { slimTone = b.dataset.badgeToneV; refreshBadge(); };
+      });
+      var copyBtn = $('[data-copy]');
+      if (copyBtn) copyBtn.onclick = function (ev) {
+        navigator.clipboard.writeText(embedCode(c.serial, badgeVariant()));
+        ev.target.textContent = '已复制';
+      };
     }).catch(function (err) { stage.innerHTML = result(false, '证明服务暂不可用', '<p>' + esc(err.message) + '</p>'); });
   }
 
@@ -641,6 +756,19 @@
     }
     $$('[data-lic-lang]', switcher).forEach(function (b) {
       b.addEventListener('click', function () { show(b.getAttribute('data-lic-lang')); });
+    });
+  });
+
+  /* 许可原文：复制文本哈希 */
+  $$('[data-lic-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var t = btn.getAttribute('data-lic-copy') || '';
+      if (!t || !navigator.clipboard) return;
+      navigator.clipboard.writeText(t).then(function () {
+        var prev = btn.textContent;
+        btn.textContent = '已复制';
+        setTimeout(function () { btn.textContent = prev; }, 1200);
+      });
     });
   });
 })();

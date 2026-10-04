@@ -27,6 +27,8 @@ from datetime import datetime, timezone, timedelta
 import qrcode
 import qrcode.image.svg
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from html import escape as html_escape
+from typing import Optional
 from urllib.parse import parse_qs, quote, unquote, urlparse
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -85,6 +87,198 @@ def _badge_font_css():
 
 
 BADGE_FONT_CSS = _badge_font_css()
+
+# 徽章：plaque 牌匾 · dark 深底 · slim-ink/slim-paper 细条黑白（slim=细条黑别名）
+BADGE_VARIANTS = ("plaque", "dark", "slim", "slim-ink", "slim-paper")
+
+
+def _badge_face_name(catalog: str) -> str:
+    """徽章第二行用短名：去掉「文风·」前缀。"""
+    name = (catalog or "").strip() or "文风字体"
+    if name.startswith("文风·"):
+        return name[3:]
+    if name.startswith("文风"):
+        return name[2:].lstrip("· ").lstrip() or name
+    return name
+
+
+def _badge_fit_text(text: str, size: float, max_w: float) -> str:
+    """按估算宽度截断，避免长字体名撑破徽章。"""
+    raw = text or ""
+    if _badge_text_w(raw, size) <= max_w:
+        return raw
+    ell = "…"
+    ell_w = _badge_text_w(ell, size)
+    out = ""
+    for ch in raw:
+        if _badge_text_w(out + ch, size) + ell_w > max_w:
+            return out + ell
+        out += ch
+    return out
+
+
+def _badge_text_w(text: str, size: float) -> float:
+    """粗估中英混排文本宽度（徽章排版用）。"""
+    w = 0.0
+    for ch in text or "":
+        o = ord(ch)
+        if o > 0x2E80 or ch in "·—…":
+            w += size * 0.96
+        else:
+            w += size * 0.55
+    return w
+
+
+def _normalize_badge_variant(variant: str) -> str:
+    v = (variant or "plaque").strip().lower()
+    if v == "slim":
+        return "slim-ink"
+    if v in BADGE_VARIANTS and v != "slim":
+        return v
+    return "plaque"
+
+
+def _badge_spdx_tag(spdx: Optional[str]) -> str:
+    """徽章上的短协议标签（如 OFL-1.1）。"""
+    return (spdx or "").strip()
+
+
+def _render_badge_svg(
+    catalog: str,
+    variant: str = "plaque",
+    spdx: Optional[str] = None,
+) -> str:
+    """按样式生成授权证明徽章 SVG。
+
+    Args:
+        catalog: 台账收录名（如「文风·霞鹜文楷」）。
+        variant: plaque | dark | slim | slim-ink | slim-paper。
+        spdx: 短协议标识（如 OFL-1.1），写入可见文案。
+
+    Returns:
+        SVG 字符串。细条含 logo 的左右分栏；牌匾/深底压矮比例。
+    """
+    v = _normalize_badge_variant(variant)
+    full = catalog or "文风字体"
+    face = _badge_face_name(full)
+    tag = _badge_spdx_tag(spdx)
+    label = html_escape(full)
+    title = ("%s · %s" % (full, tag)) if tag else full
+    title_esc = html_escape(title)
+    ink, paper, gold = "#26200f", "#fcf9f1", "#d9c07a"
+    head = "授权证明"
+    aria = ("%s %s · %s" % (label, head, html_escape(tag))) if tag else ("%s %s" % (label, head))
+
+    if v in ("slim-ink", "slim-paper"):
+        # 细条：矮比例；左栏留 logo + 文案，右栏 SPDX；字名只进 title
+        dark = v == "slim-ink"
+        right_label = tag or "ATTEST"
+        h = 28
+        icon = 16
+        icon_pad = 7.0
+        gap = 9.0
+        left_fs, right_fs = 11.0, 10.0
+        tracking = 1.0
+        left_end = 14.0
+        right_pad = 14.0
+        text_w = _badge_text_w(head, left_fs) + tracking * max(0, len(head) - 1) + 4
+        left_w = int(icon_pad + icon + gap + text_w + left_end)
+        right_w = int(max(72, right_pad * 2 + _badge_text_w(right_label, right_fs) + 6))
+        w = left_w + right_w
+        if dark:
+            left_bg, left_fg = ink, paper
+            right_bg, right_fg = "#3d3628", gold
+        else:
+            left_bg, left_fg = "#efece4", ink
+            right_bg, right_fg = "#e0d9cc", "#5c4f3a"
+        ty = h * 0.5 + left_fs * 0.34
+        icon_y = (h - icon) / 2
+        text_x = icon_pad + icon + gap
+        return (
+            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+            'width="%d" height="%d" viewBox="0 0 %d %d" role="img" aria-label="%s">'
+            '<title>%s</title><style>%s</style>'
+            '<defs><clipPath id="b"><rect width="%d" height="%d" rx="6"/></clipPath></defs>'
+            '<g clip-path="url(#b)">'
+            '<rect width="%d" height="%d" fill="%s"/>'
+            '<rect x="%d" width="%d" height="%d" fill="%s"/>'
+            '</g>'
+            '<image x="%.1f" y="%.1f" width="%d" height="%d" '
+            'xlink:href="data:image/png;base64,%s"/>'
+            '<text x="%.1f" y="%.1f" text-anchor="start" '
+            'font-family="wf-hckht, PingFang SC, sans-serif" font-size="%.0f" '
+            'letter-spacing="%.1f" fill="%s">%s</text>'
+            '<text x="%.1f" y="%.1f" text-anchor="start" '
+            'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
+            'font-size="%.0f" fill="%s">%s</text></svg>'
+        ) % (
+            w, h, w, h, aria, title_esc, BADGE_FONT_CSS,
+            w, h,
+            w, h, left_bg,
+            left_w, right_w, h, right_bg,
+            icon_pad, icon_y, icon, icon, BADGE_ICON_B64,
+            text_x, ty, left_fs, tracking, left_fg, head,
+            left_w + right_pad, ty, right_fs, right_fg, html_escape(right_label),
+        )
+
+    # 牌匾 / 深底：压矮（约 52 高），按文案定宽
+    h = 52
+    icon = 24
+    icon_x = 12.0
+    text_x = 44.0
+    pad_r = 14.0
+    max_text = 120.0
+    if tag:
+        tag_bit = " · %s" % tag
+        name = _badge_fit_text(face, 8.5, max(24, max_text - _badge_text_w(tag_bit, 8.5)))
+        line2 = ("%s%s" % (name, tag_bit)) if name else tag
+    else:
+        line2 = _badge_fit_text(face, 8.5, max_text)
+    line2_esc = html_escape(line2)
+    title_w = _badge_text_w(head, 13) + 8
+    sub_w = _badge_text_w(line2, 8.5)
+    w = int(max(158, min(200, text_x + max(title_w, sub_w) + pad_r)))
+    icon_y = (h - icon) / 2
+    title_y, sub_y = 22.5, 40.0
+
+    if v == "dark":
+        return (
+            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+            'width="%d" height="%d" viewBox="0 0 %d %d" role="img" aria-label="%s">'
+            '<title>%s</title><style>%s</style>'
+            '<rect x="0.75" y="0.75" width="%d" height="%d" rx="8" fill="%s" stroke="#4a4334" stroke-width="1.4"/>'
+            '<rect x="4.5" y="4.5" width="%d" height="%d" rx="5" fill="none" stroke="#3a3428" stroke-width="0.5"/>'
+            '<image x="%.1f" y="%.1f" width="%d" height="%d" xlink:href="data:image/png;base64,%s"/>'
+            '<text x="%.1f" y="%.1f" font-family="wf-hckht, PingFang SC, sans-serif" '
+            'font-size="13" letter-spacing="2" fill="%s">%s</text>'
+            '<text x="%.1f" y="%.1f" font-family="PingFang SC, Microsoft YaHei, sans-serif" '
+            'font-size="8.5" fill="#c4b89a">%s</text></svg>'
+        ) % (
+            w, h, w, h, aria, title_esc, BADGE_FONT_CSS,
+            w - 1.5, h - 1.5, ink, w - 9, h - 9,
+            icon_x, icon_y, icon, icon, BADGE_ICON_B64,
+            text_x, title_y, paper, head,
+            text_x, sub_y, line2_esc,
+        )
+
+    return (
+        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+        'width="%d" height="%d" viewBox="0 0 %d %d" role="img" aria-label="%s">'
+        '<title>%s</title><style>%s</style>'
+        '<rect x="0.75" y="0.75" width="%d" height="%d" rx="8" fill="%s" stroke="%s" stroke-width="1.4"/>'
+        '<rect x="4.5" y="4.5" width="%d" height="%d" rx="5" fill="none" stroke="#ddd4c2" stroke-width="0.5"/>'
+        '<image x="%.1f" y="%.1f" width="%d" height="%d" xlink:href="data:image/png;base64,%s"/>'
+        '<text x="%.1f" y="%.1f" font-family="wf-hckht, PingFang SC, sans-serif" '
+        'font-size="13" letter-spacing="2" fill="%s">%s</text>'
+        '<text x="%.1f" y="%.1f" font-family="PingFang SC, Microsoft YaHei, sans-serif" '
+        'font-size="8.5" fill="#6b5b45">%s</text></svg>'
+    ) % (
+        w, h, w, h, aria, title_esc, BADGE_FONT_CSS,
+        w - 1.5, h - 1.5, paper, gold, w - 9, h - 9,
+        icon_x, icon_y, icon, icon, BADGE_ICON_B64,
+        text_x, title_y, ink, head,
+        text_x, sub_y, line2_esc,
+    )
 
 
 def _load_samples():
@@ -387,10 +581,10 @@ def _build_attestation(font, licenses, holder=None, issued_at=None, usage=None, 
             "note": "原型用下载地址摘要，生产换成原件 sha256",
         },
         "not": [
-            "本文件不是著作权人出具的授权书",
-            "文派（广州）科技有限公司不是该字体的著作权人",
-            "文风· 是本站收录名，文件内 name 表与保留名仍是原名",
-            "权利以许可原文为准，核验不增加也不减少条款",
+            "本证明是开源许可的核验记录，授权以著作权人发布的许可原文为准。",
+            "著作权归原作者或厂商。文派（广州）科技有限公司负责核对与出具本证明。",
+            "「文风·」是本站收录名。字体文件内的 name 表、协议中的保留名，均沿用原名。",
+            "使用范围以许可原文为准。核验按原文条款记录。",
         ],
         "issuedAt": now,
         "prototype": True,
@@ -571,7 +765,7 @@ class Handler(SimpleHTTPRequestHandler):
             norm = unquote(m.group(1))
             query = parse_qs(parsed.query)
             forward = []
-            for key in ("holder", "uscc", "usage"):
+            for key in ("holder", "uscc", "usage", "style"):
                 val = (query.get(key) or [""])[0]
                 if val:
                     from urllib.parse import quote as _q
@@ -624,40 +818,28 @@ class Handler(SimpleHTTPRequestHandler):
         if m:
             query = parse_qs(parsed.query)
             serial = (query.get("s") or [""])[0].strip().upper()
+            variant = _normalize_badge_variant((query.get("v") or ["plaque"])[0])
+            want_dl = (query.get("download") or [""])[0] in ("1", "true", "yes")
             hit = next((r for r in _load_ledger() if r.get("serial") == serial), None)
             if not hit:
                 self._send_json({"error": "not_found"}, 404)
                 return True
             catalog = hit.get("catalogName") or ""
-            w, h = 156, 56
-            ink, paper, gold = "#26200f", "#fcf9f1", "#d9c07a"
-            svg = (
-                '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
-                'width="%d" height="%d" viewBox="0 0 %d %d" role="img" aria-label="%s 授权证明">'
-                '<style>%s</style>'
-                '<rect x="0.75" y="0.75" width="%d" height="%d" rx="8" fill="%s" stroke="%s" stroke-width="1.5"/>'
-                '<rect x="4.5" y="4.5" width="%d" height="%d" rx="5" fill="none" stroke="#ddd4c2" stroke-width="0.5"/>'
-                '<image x="10" y="13" width="30" height="30" xlink:href="data:image/png;base64,%s"/>'
-                '<text x="48" y="26" font-family="wf-hckht, PingFang SC, sans-serif" '
-                'font-size="13" letter-spacing="2" fill="%s">授权证明</text>'
-                '<text x="48" y="44" font-family="PingFang SC, Microsoft YaHei, sans-serif" '
-                'font-size="8.5" fill="#6b5b45">%s</text></svg>'
-            ) % (
-                w, h, w, h, catalog,
-                BADGE_FONT_CSS,
-                w - 1.5, h - 1.5, paper, gold,
-                w - 9, h - 9,
-                BADGE_ICON_B64,
-                ink,
-                catalog,
-            )
-            body = svg.encode("utf-8")
+            spdx = hit.get("spdx") or ""
+            body = _render_badge_svg(catalog, variant, spdx=spdx).encode("utf-8")
+            fname = "wenfeng-badge-%s-%s.svg" % (serial.lower(), variant)
             self.send_response(200)
-            self.send_header("Content-Type", "image/svg+xml")
+            self.send_header("Content-Type", "image/svg+xml; charset=utf-8")
             self.send_header("Cache-Control", "no-store")
+            if want_dl:
+                self.send_header(
+                    "Content-Disposition",
+                    'attachment; filename="%s"' % fname,
+                )
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
-            self.wfile.write(body)
+            if self.command != "HEAD":
+                self.wfile.write(body)
             return True
         m = API_LOOKUP.match(path)
         if m:

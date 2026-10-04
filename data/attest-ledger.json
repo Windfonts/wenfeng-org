@@ -2,6 +2,160 @@
   "generated": "2026-10-04",
   "records": [
     {
+      "serial": "WF-20261004-429651CBBD",
+      "norm": "Hcjss",
+      "catalogName": "文风·寒蝉锦书宋",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "027F6F68"
+    },
+    {
+      "serial": "WF-20261004-CDC0D45EF0",
+      "norm": "Ffs",
+      "catalogName": "文风·飞花宋体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "FFC8435D"
+    },
+    {
+      "serial": "WF-20261004-A9AA474EB1",
+      "norm": "Fb16",
+      "catalogName": "文风·流行点阵体16",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "E72B94FB"
+    },
+    {
+      "serial": "WF-20261004-1BAF14B07E",
+      "norm": "Hei975",
+      "catalogName": "文风·975 黑体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "FFD8591C"
+    },
+    {
+      "serial": "WF-20261004-6234C4DAF8",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261004-F15EF8E6A0",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261004-E3B638D409",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261004-E59E877C9C",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261004-AB7DAEB5BC",
+      "norm": "Jzkgeht",
+      "catalogName": "文风·瀞之库格尔黑体",
+      "issuedAt": "2026-10-04",
+      "holder": "汉中菲比斯网络技术有限公司",
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入",
+        "印刷物料",
+        "软件内嵌",
+        "修改衍生",
+        "再分发"
+      ],
+      "uscc": null,
+      "licenseHash": "0983ABED"
+    },
+    {
+      "serial": "WF-20261004-D118E2B2D3",
+      "norm": "Hei975",
+      "catalogName": "文风·975 黑体",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入",
+        "印刷物料",
+        "软件内嵌",
+        "修改衍生",
+        "再分发"
+      ],
+      "uscc": null,
+      "licenseHash": "FFD8591C"
+    },
+    {
+      "serial": "WF-20261004-CB40C6D651",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
+    {
+      "serial": "WF-20261004-C7B7BF9944",
+      "norm": "Hcjss",
+      "catalogName": "文风·寒蝉锦书宋",
+      "issuedAt": "2026-10-04",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "027F6F68"
+    },
+    {
       "serial": "WF-20261004-B5655FB73B",
       "norm": "Fmthei",
       "catalogName": "文风·范美黑体",

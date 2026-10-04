@@ -1,0 +1,206 @@
+/* 单款证书页外壳 /attest/{norm}/
+   通栏标题；左徽章 / 右证面（按钮在证面顶栏）。证面本身不动 */
+
+.page-attest-norm .page {
+  padding-top: var(--s-8);
+}
+
+.page-attest-norm .atn-mast {
+  margin: 0 0 var(--s-6);
+  padding: 0 0 var(--s-5);
+}
+.page-attest-norm .atn-mast::after {
+  display: none;
+}
+.page-attest-norm .atn-back {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-13);
+}
+.page-attest-norm .atn-back a {
+  color: var(--gray);
+  text-decoration: none;
+}
+.page-attest-norm .atn-back a:hover {
+  color: var(--ink);
+}
+.page-attest-norm .atn-mast h1.xxzt {
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  line-height: 1.2;
+}
+.page-attest-norm .atn-mast .ph-lead {
+  margin-top: var(--s-4);
+  max-width: 32em;
+  font-size: var(--fs-15);
+}
+
+/* 左徽章 / 右证面 */
+.page-attest-norm .atn-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+  gap: var(--s-8) var(--s-10);
+  align-items: start;
+}
+
+.page-attest-norm .atn-side {
+  position: sticky;
+  top: calc(var(--topbar-h) + var(--s-4));
+  min-width: 0;
+}
+
+.page-attest-norm .atn-main {
+  min-width: 0;
+}
+
+/* 证面舞台：顶栏贴按钮 */
+.page-attest-norm .atn-panel {
+  border-radius: var(--radius);
+  background: var(--fill);
+  overflow: hidden;
+}
+.page-attest-norm .atn-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3) var(--s-4);
+  margin: 0;
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+}
+.page-attest-norm .atn-tools-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.page-attest-norm .atn-tools-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 0.9em;
+  margin: 0 0 0 var(--s-2);
+  font-size: var(--fs-13);
+}
+.page-attest-norm .atn-tools-links a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.page-attest-norm .atn-tools-links a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.page-attest-norm .atn-stage {
+  margin: 0;
+  padding: var(--s-5);
+  background: transparent;
+  overflow: auto;
+}
+.page-attest-norm .atn-stage > .quiet {
+  text-align: center;
+  padding: var(--s-10) 0;
+}
+.page-attest-norm .atn-stage .cert-sheet,
+.page-attest-norm .atn-stage .cert-minimal {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-attest-norm .atn-embed {
+  max-width: none;
+}
+.page-attest-norm .atn-embed .label {
+  margin: 0 0 var(--s-2);
+}
+.page-attest-norm .atn-embed-lead {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-13);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.page-attest-norm .atn-embed-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-3);
+}
+.page-attest-norm .atn-embed-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.5rem;
+  margin: 0 0 var(--s-3);
+  padding: var(--s-3);
+  border-radius: var(--radius);
+  background: var(--fill);
+}
+.page-attest-norm .atn-embed-badge .share-badge {
+  display: block;
+  max-width: 100%;
+  max-height: 72px;
+  width: auto;
+  height: auto;
+}
+.page-attest-norm .atn-embed .code {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-12);
+  max-height: 7.5rem;
+  overflow: auto;
+}
+.page-attest-norm .atn-embed .acts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin: 0;
+}
+.page-attest-norm .atn-embed .acts .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .page-attest-norm .atn-layout {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+  .page-attest-norm .atn-side {
+    position: static;
+    order: 2;
+  }
+  .page-attest-norm .atn-main {
+    order: 1;
+  }
+  .page-attest-norm .atn-embed .acts {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .page-attest-norm .atn-embed .acts .btn {
+    width: auto;
+  }
+  .page-attest-norm .atn-stage {
+    padding: var(--s-4) var(--s-2);
+  }
+}
+
+@media print {
+  .page-attest-norm .atn-mast,
+  .page-attest-norm .atn-side,
+  .page-attest-norm .atn-toolbar {
+    display: none !important;
+  }
+  .page-attest-norm .atn-layout {
+    display: block;
+  }
+  .page-attest-norm .atn-panel {
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  .page-attest-norm .atn-stage {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+}
