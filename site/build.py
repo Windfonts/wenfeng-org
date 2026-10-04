@@ -367,6 +367,23 @@ def filter_chips(fonts, with_count=False):
 
 
 
+def _foot_marks():
+    fc = (
+        '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener"'
+        ' title="feiCode 源码（即将离开文风）" aria-label="feiCode 源码">'
+        '<img src="/assets/marks/feicode.svg" alt="" width="26" height="22">feiCode<span class="x">↗</span></a></li>'
+    )
+    gh = (
+        '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener"'
+        ' title="GitHub 镜像（即将离开文风）" aria-label="GitHub 镜像">'
+        '<svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub<span class="x">↗</span></a></li>'
+    )
+    return (
+        '<p class="foot-src-k">%s</p><ul class="foot-marks">%s%s</ul>'
+        % (_fv("源码与镜像", "origin · mirror"), fc, gh)
+    )
+
+
 def _foot_wm():
     return ('<a class="wordmark" href="/"><img class="wm-ico" src="/assets/icon.webp" alt="" width="24" height="24">'
             '<span class="wm-name">文风<span class="wm-alt">开源</span></span></a>')
@@ -402,8 +419,8 @@ def foot_lab(kind, dev=""):
         )
         inner = (
             '<div class="site-foot-inner">'
-            '<div class="site-foot-brand">%s</div>'
-            '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), rest)
+            '<div class="site-foot-brand">%s%s</div>'
+            '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), _foot_marks(), rest)
         )
         cls = "site-foot is-foot-a"
     elif kind == "b":

@@ -162,3 +162,4 @@
 - `2026-10-04`：人：目录列表字体名一律真字样，参照 APP 详情页谱系列表。实现=site.js 加载器照 APP ensureFontCss 改写包 css（族名统一 wenfeng-{norm}、字重统一 400，派生字如 975 黑体挂普惠体包也能命中），当前页 20 行急加载+其余 IntersectionObserver，document.fonts.load 预取名字分片。记录人：[CC]。
 - `2026-10-04`：人报 404 刷屏（wenfeng-alijkt 等无包字体）。定案=懒加载回退纯 IO（首版急加载在分页 init 前跑，556 行全发请求）；缺包 localStorage 记忆 7 天 TTL；注入选择器改 [data-face-norm]（.t-975… 数字开头是非法选择器被丢）。阿里健康体等确认为 cn 无包，404 属预期。记录人：[CC]。
 - `2026-10-04`：目录真字降噪二轮：api/css 探测 556 款仅 354 款有 web 包（阿里健康体等 202 款未收录进 API 索引），名单烘成 data/webfonts.json、构建期门控 index_rows 只给有包行发请求；缺包记忆 TTL 收紧 24h（API 节点间不稳，同 URL 200/404 漂移）。剩余根治=管线发布「字体↔包」清单或 API 补全索引（待派）。记录人：[CC]。
+- `2026-10-04`：人纠正：「先都不要」指页脚 feiCode/GitHub 两按钮，非说明句。按钮已恢复（feiCode 源码在前 + GitHub 镜像 + 源码与镜像 kicker）；说明句「开源字体直接下载…不做样张墙」维持删除。记录人：[CC]。
