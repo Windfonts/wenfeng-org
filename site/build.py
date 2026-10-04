@@ -548,7 +548,7 @@ def home_prime(fonts, q_id):
         '<button class="btn btn-ink" type="submit">%s搜索</button></form>'
         '<p class="lab-find-more">%s</p></div></div>'
         % (_fv("wenfeng.org", "wenfeng.org"),
-           _fv("每款字体许可均已核对原文，无需登录，直接下载。文风云<span class=\"reg\">®</span>提供自托管所需即用字库切片。", "offer · /source"),
+           _fv("每款字体均已核对许可原文，无需登录即可下载。文风云<span class=\"reg\">®</span>另提供即用字库切片，支持自托管。", "offer · /source"),
            e(q_id), e(q_id), icon("search"),
            _fv('<a href="/source/">收录 %d 款</a> · <a href="/source/?st=source">本站可下载 %d 款 →</a>' % (n, n_src),
                "offer=source · fonts[]=%d" % n))
