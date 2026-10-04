@@ -535,7 +535,7 @@ def home_prime(fonts, q_id):
         '<div class="lab-find-copy">'
         '<p class="lab-find-kicker">%s</p>'
         '<h1 class="lab-find-title">'
-        '<span class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-find-em">开源</span><span class="lab-rot" data-rot aria-hidden="true"><span class="is-on">商用字体</span><span>免费字体</span><span>高级字体</span><span>精品字体</span></span>'
+        '<span class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-rot" data-rot><span class="is-on lab-find-em">开源</span><span class="lab-find-em">免费</span><span class="lab-find-em">高级</span><span class="lab-find-em">精品</span></span>商用字体'
         '<span class="for-dev mono">/source</span></h1>'
         '<p class="d">%s</p></div>'
         '<div class="lab-find-act">'
