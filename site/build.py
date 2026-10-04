@@ -557,11 +557,11 @@ def home_prime(fonts, q_id):
         '<a class="lab-door is-side is-q3" href="/gap/"><span class="lab-side-bg" aria-hidden="true">造字</span><span class="idx">03</span>'
         '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a></div>'
         % (find,
-           _fv("授权查询", "/license"), _fv("精心收录多款字体许可，开放公众查询。", "/license"),
+           _fv("授权查询", "/license"), _fv("收录多款字体许可，开放公众查询。", "/license"),
            _fv("%d 份许可全文 →" % n_full, "textState=full"),
-           _fv("获取证书", "/attest"), _fv("解决企业用字合规流程，在线申请证书。", "can_attest"),
+           _fv("获取证书", "/attest"), _fv("解决企业用字合规，在线申请证书。", "can_attest"),
            _fv("%d 款可出证 →" % n_att, "can_attest"),
-           _fv("缺字勘误", "/gap"), _fv("共创开源字体及字型库，缺字错字报告。", "POST"),
+           _fv("缺字勘误", "/gap"), _fv("开源字体及字型库，缺字错字报告。", "POST"),
            _fv("即将开放 →", "POST 未接"))
     )
 
