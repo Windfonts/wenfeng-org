@@ -362,8 +362,8 @@ def filter_chips(fonts, with_count=False):
 def _foot_marks():
     fc = (
         '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener"'
-        ' title="FeiCode 源码（即将离开文风）" aria-label="FeiCode 源码">'
-        '<img src="/assets/marks/feicode.svg" alt="" width="26" height="22">FeiCode<span class="x">↗</span></a></li>'
+        ' title="feiCode 源码（即将离开文风）" aria-label="feiCode 源码">'
+        '<img src="/assets/marks/feicode.svg" alt="" width="26" height="22">feiCode<span class="x">↗</span></a></li>'
     )
     gh = (
         '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener"'
