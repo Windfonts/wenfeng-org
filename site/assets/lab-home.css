@@ -223,7 +223,6 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
 }
 .lab-doors.is-prime .is-find .d {
   margin: 0;
-  max-width: 20em;
   font-size: var(--fs-16);
   color: var(--ink-2);
   line-height: var(--lh-body);
