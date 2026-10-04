@@ -22,6 +22,8 @@
 
   /* 字体 WebFont 动态加载与懒加载（同 16030） */
   var FACE_CSS_TPL = 'https://cn.windfonts.com/api/css?family={F}&weight=400&subset=zh-common&version=zh-common';
+  var MISS_KEY = 'wf-webfont-miss';
+  var MISS_TTL = 7 * 24 * 3600 * 1000;
   var FACE_PACK = 'https://cn.windfonts.com/fonts-packages/{N}/{W}/full/result.css';
   var facesLoaded = {};
   function applyFontFace(norm, family, useFull) {
@@ -34,7 +36,7 @@
     function applyClass(famCss) {
       var stack = famCss ? '"' + famCss + '", ' : '';
       var st = document.createElement('style');
-      st.textContent = '.t-' + norm + '{font-family:' + stack + '"' + famName + '","WF-' + norm + '", var(--font-ui);}';
+      st.textContent = '[data-face-norm="' + norm + '"]{font-family:' + stack + '"' + famName + '","WF-' + norm + '", var(--font-ui);}';
       document.head.appendChild(st);
     }
     function loadPack(done) {
@@ -73,12 +75,20 @@
       return;
     }
     var famCss = 'wenfeng-' + norm;
+    var miss = {};
+    try { miss = JSON.parse(localStorage.getItem(MISS_KEY) || '{}'); } catch (e) {}
+    if (miss[norm] && Date.now() - miss[norm] < MISS_TTL) { applyClass(famCss); return; }
+    function markMiss() {
+      try { miss[norm] = Date.now(); localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
+    }
     fetch(FACE_CSS_TPL.replace('{F}', encodeURIComponent(family)))
       .then(function (r) {
+        if (r.status === 404) markMiss();
         if (!r.ok) throw new Error(String(r.status));
         return r.text();
       })
       .then(function (css) {
+        try { delete miss[norm]; localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
         /* 包里的族名（WF-*）和字重档（Thin 等）不归我们管：统一改写成 wenfeng-{norm} + 400，
            派生字体（如 975 黑体挂普惠体包）才能命中。 */
         var fixed = css
@@ -88,9 +98,11 @@
         st.textContent = fixed;
         document.head.appendChild(st);
         applyClass(famCss);
-        var nameEl = document.querySelector('.t-' + norm);
-        var text = nameEl ? (nameEl.textContent || '').slice(0, 24) : '';
-        try { document.fonts.load('16px "' + famCss + '"', text).catch(function () {}); } catch (e) {}
+        try {
+          var nameEl = document.querySelector('[data-face-norm="' + norm + '"]');
+          var text = nameEl ? (nameEl.textContent || '').slice(0, 24) : '';
+          document.fonts.load('16px "' + famCss + '"', text).catch(function () {});
+        } catch (e) {}
       })
       .catch(function () { applyClass(famCss); });
   }
@@ -115,10 +127,7 @@
         loadEl(e.target);
       });
     }, { rootMargin: '140px' });
-    Array.prototype.forEach.call(els, function (el) {
-      if (el.offsetParent !== null) loadEl(el);
-      else io.observe(el);
-    });
+    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
   }
 
   /* 深浅 / 设计·开发 / 放大（同店面：wf-theme / wf-view / wf-scale） */
