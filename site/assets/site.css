@@ -3136,6 +3136,9 @@ body.gp-v1b .gp1-kinds button {
   .hv4-br { display: inline; }
   .hv4-aside { padding-left: 0; padding-top: var(--s-4); border-left: 0; border-top: 1px solid var(--rule); }
 }
+@media (max-width: 768px) {
+  :root { --gutter: 1rem; }
+}
 @media (max-width: 720px) {
   /* 顶栏两行：字标 | 放大/主题 一行，主导航独占一行。五项导航加右区在窄屏塞不进一行，
      .topnav 会被挤成 0 宽滚动盒，链接等于整个消失——所以视图切换与店面在移动端收起 */
