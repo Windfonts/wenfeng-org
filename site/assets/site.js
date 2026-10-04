@@ -965,16 +965,20 @@
   });
 })();
 
-/* 主门 h1 第二词轮换（商用/免费/高级/精品），5.2s 交叉淡入 */
+/* 主门 h1 首词轮换（开源/免费/手写/书法/精品）。首词「开源」是站名立场，停留加倍 */
 (function () {
   var rot = document.querySelector('[data-rot]');
   if (!rot) return;
   var spans = rot.children;
   if (spans.length < 2) return;
+  var DWELL = [10400, 5200, 5200, 5200, 5200];
   var i = 0;
-  setInterval(function () {
-    spans[i].classList.remove('is-on');
-    i = (i + 1) % spans.length;
-    spans[i].classList.add('is-on');
-  }, 5200);
+  (function next() {
+    setTimeout(function () {
+      spans[i].classList.remove('is-on');
+      i = (i + 1) % spans.length;
+      spans[i].classList.add('is-on');
+      next();
+    }, DWELL[i]);
+  })();
 })();
