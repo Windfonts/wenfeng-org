@@ -67,6 +67,7 @@ main { flex: 1; }
   padding-bottom: var(--s-10);
 }
 .site-foot-brand .wordmark { margin-bottom: var(--s-3); }
+.site-foot-brand .foot-tagline { margin: var(--s-4) 0 0; max-width: 28em; font-size: var(--fs-13); color: var(--gray); letter-spacing: 0.02em; }
 .site-foot-brand p { max-width: 28em; font-size: var(--fs-13); color: var(--gray); }
 .foot-src-k {
   margin: var(--s-5) 0 var(--s-3);

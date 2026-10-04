@@ -416,14 +416,16 @@ def foot_lab(kind, dev=""):
         )
         inner = (
             '<div class="site-foot-inner">'
-            '<div class="site-foot-brand">%s%s</div>'
+            '<div class="site-foot-brand">%s%s'
+            '<p class="foot-tagline">文派文风，开源字体，中文之美，世界共享。</p></div>'
             '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), _foot_marks(), rest)
         )
         cls = "site-foot is-foot-a"
     elif kind == "b":
         inner = (
             '<div class="site-foot-inner">'
-            '<div class="site-foot-brand">%s</div></div>' % _foot_wm()
+            '<div class="site-foot-brand">%s'
+            '<p class="foot-tagline">文派文风，开源字体，中文之美，世界共享。</p></div></div>' % _foot_wm()
         )
         cls = "site-foot is-foot-b"
     else:
