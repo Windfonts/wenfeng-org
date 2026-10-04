@@ -38,7 +38,7 @@ main { flex: 1; }
 .wordmark .wm-ico { display: block; width: 24px; height: 24px; border-radius: 6px; }
 [data-theme="dark"] .wordmark .wm-ico { filter: invert(1); }
 .topnav { display: flex; gap: var(--s-1); min-width: 0; overflow-x: auto; scrollbar-width: none; }
-.topnav a { padding: 0.4rem 0.85rem; border-radius: var(--radius-pill); color: var(--gray); white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
+.topnav a { padding: 0.4rem 1.5rem; border-radius: var(--radius-pill); color: var(--gray); white-space: nowrap; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
 .topnav a:hover { color: var(--ink); text-decoration: none; background: var(--fill); }
 .topnav a.is-active { color: var(--ink); background: var(--fill); font-weight: var(--fw-title); }
 .topbar-end { margin-left: auto; display: flex; align-items: center; gap: var(--s-2); }
