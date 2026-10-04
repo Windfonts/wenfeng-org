@@ -1847,8 +1847,7 @@ body.page-slice > main.page {
 .status.is-source { background: var(--ink); color: var(--on-ink); }
 .status.is-missing, .status.is-pending { color: var(--gray-2); }
 
-body.page-foundries > main.page,
-body.page-foundry > main.page {
+body.page-foundries > main.page {
   padding-top: 0;
 }
 

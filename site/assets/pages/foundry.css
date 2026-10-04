@@ -1,0 +1,29 @@
+/* 厂商 /foundry/：行样式跟目录一套；索引无状态列 */
+
+.page-foundry .page-mast {
+  margin-bottom: var(--s-8);
+  padding-bottom: var(--s-8);
+}
+
+.page-foundry main.page > .count {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+.page-foundry .src-main > .count {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+
+/* 索引行：名字 · 款数 · 看目录，无 lmeta */
+.page-foundry .lin-list:not([data-list]) .lrow {
+  grid-template-columns: minmax(0, 1fr) 4.75em 3.5em;
+  grid-template-areas: "nm st go";
+}
+.page-foundry .lin-list:not([data-list]) .lrow .lnm {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+}

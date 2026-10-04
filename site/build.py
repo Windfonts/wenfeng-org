@@ -2038,7 +2038,7 @@ def page_license(f, licenses):
                 '<p class="licn-origin-h"><span class="for-design">作者声明</span>'
                 '<span class="for-dev mono">copyright · rfn</span></p>'
                 '%s%s</section>'
-                % (more, "".join(rfn_bits))
+                % ("".join(rfn_bits), more)
             )
 
         rows = []
@@ -2281,36 +2281,59 @@ def font_specimen_card(f, offer=None):
 
 
 def page_foundries(groups):
-    rows = "".join(
-        '<a class="row-go" href="/foundry/%s/"><span class="idx">%02d</span>'
-        '<span class="body"><span class="t">%s</span><span class="d">%d 款</span></span>'
-        '<span class="go">看目录</span></a>'
-        % (e(g["slug"]), i + 1, e(g["name"]), len(g["fonts"]))
-        for i, g in enumerate(groups)
-    )
+    """厂商索引：行样式与目录同一套。"""
+    n = sum(len(g["fonts"]) for g in groups)
+    items = []
+    for g in groups:
+        items.append(
+            '<li><a class="lrow" href="/foundry/%s/">'
+            '<span class="lnm">%s</span>'
+            '<span class="lrel">%d 款</span>'
+            '<span class="lgo">看目录</span></a></li>'
+            % (e(g["slug"]), e(g["name"]), len(g["fonts"]))
+        )
     body = page_head(
         "厂商",
         "按出品方编目。点进去是该组织名下的款。",
-        crumbs=[(None, "厂商")],
-        kicker="wenfeng.org",
-        dev="/foundry · foundrySlug",
+        crumbs=[("/source/", "目录"), (None, "厂商")],
+        dev="/foundry · foundrySlug · %d orgs · %d fonts" % (len(groups), n),
     )
-    body += rows or '<p class="quiet">还没有按厂商归类的条目。</p>'
-    return layout("foundry", "厂商", body, "/foundry")
+    body += (
+        '<p class="count">%d 家</p><ul class="lin-list">%s</ul>'
+        % (len(groups), "".join(items))
+        if items else
+        '<p class="quiet">还没有按厂商归类的条目。</p>'
+    )
+    return layout(
+        "foundry", "厂商", body, "/foundry",
+        extra_head=pages_css("source", "foundry"),
+        body_class="page-source page-foundry",
+    )
 
 
 def page_foundry(g):
     body = page_head(
         g["name"],
-        "目录里归属「%s」的字体。" % e(g["name"]),
+        "目录里归属「%s」的字体。能下载的进条目拿文件。" % e(g["name"]),
         crumbs=[("/foundry/", "厂商"), (None, g["name"])],
-        kicker="%d 款" % len(g["fonts"]),
-        dev="/foundry/%s" % g["slug"],
+        dev="/foundry/%s · %d" % (g["slug"], len(g["fonts"])),
     )
-    body += index_rows(g["fonts"]) if g["fonts"] else (
-        '<p class="quiet">没有这一类。换一个筛选，或<a href="/source/">回目录</a>。</p>'
+    body += (
+        '<div class="src-layout">'
+        '<div class="src-main">'
+        '<p class="count">%d 款</p>'
+        '%s</div></div>'
+        % (
+            len(g["fonts"]),
+            index_rows(g["fonts"]) if g["fonts"] else
+            '<p class="quiet">没有这一类。换一个筛选，或<a href="/source/">回目录</a>。</p>',
+        )
     )
-    return layout("foundry", g["name"], body, "/foundry/%s" % g["slug"])
+    return layout(
+        "foundry", g["name"], body, "/foundry/%s" % g["slug"],
+        extra_head=pages_css("source", "foundry"),
+        body_class="page-source page-foundry",
+    )
 
 
 def page_attest_index(fonts):
