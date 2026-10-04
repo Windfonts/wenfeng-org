@@ -356,20 +356,19 @@ def filter_chips(fonts, with_count=False):
 # ---------- 外壳（= 定稿 chrome / footer） ----------
 
 def _foot_marks():
-    gh = (
-        '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener" class="is-gh"'
-        ' title="GitHub（即将离开文风）" aria-label="GitHub">%s%s</a></li>'
-        % (icon("github"), icon("external"))
-    )
     fc = (
-        '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener" class="is-fc"'
-        ' title="FeiCode（即将离开文风）">'
-        '<img src="/assets/marks/feicode.svg" alt="FeiCode" width="32" height="28">%s</a></li>'
-        % icon("external")
+        '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener"'
+        ' title="FeiCode 源码（即将离开文风）" aria-label="FeiCode 源码">'
+        '<img src="/assets/marks/feicode.svg" alt="" width="26" height="22">FeiCode<span class="x">↗</span></a></li>'
+    )
+    gh = (
+        '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener"'
+        ' title="GitHub 镜像（即将离开文风）" aria-label="GitHub 镜像">'
+        '<svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub<span class="x">↗</span></a></li>'
     )
     return (
         '<p class="foot-src-k">%s</p><ul class="foot-marks">%s%s</ul>'
-        % (_fv("源码与镜像", "origin · mirror"), gh, fc)
+        % (_fv("源码与镜像", "origin · mirror"), fc, gh)
     )
 
 
