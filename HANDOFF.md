@@ -1,3 +1,5 @@
+> 10-04 夜：长会话 4746 已整理（首页丙′定稿/许可ABC/核验簇/切片防盗链），集群记忆 wenfeng-org-prototype-state 已补，DECISIONS D-14。当前构建 2157 页，check 基线 2148。
+
 # 交接 · wenfeng-org
 
 日期：2026-10-03。依据 `NOTES-OPTIONS.md`、`index.html`、`js/site.js` 的 `parsePath()` / `paint()`、`preview.py` 的 `SITE`。不新开页面。
@@ -119,3 +121,10 @@ origin  ssh://git@feicode.com:2222/Windfonts/wenfeng-org.git
   2. 修复寒蝉宽黑体四个字形（15 体, 16 文, 18 风, 19 字）的 `@font-face` 声明。
   3. `site/build.py` 通过软链引用 `assets/shs` 与 `assets/shsans` 分片，并在 `page_attest` 与 `page_lookup` 通过 `extra_head` 预加载样式表；`site.js` 实现 `lazyPreviews()` 与 WebFont 按需加载。
 - 调整完毕并验证通过后执行提交合并。
+
+## 2026-10-04 22:15 - [CC] 首次部署上线（da1185a）
+
+- 人指令「提交推送并部署一版上线」。通道=DEPLOY.md §2：dist 2206 文件 → scp 推 modiqi → `aliyun --profile wenpai` 双层上传 oss://wenfeng-org（HTML/数据 no-cache、woff2/png/webp immutable）。
+- 坑：macOS tar 带出 4376 个 `._*` AppleDouble（文件数 6582 vs 本地 2206），`COPYFILE_DISABLE=1 tar --exclude='._*'` 重打后对齐。
+- 线上核验全绿：品牌句「持续更新、许可清晰」/data-rot 轮换标记/文风云®/三侧门句/导语/轮换切片 6d3e.woff2 200/lab-home.css 玄宗新码点/目录路由 /source/Xwwk/ 200。CF 缓存未清（HTML no-cache 自重验证）。
+- modiqi 工位已归还（~/wf-deploy/ 残留 dist 包与解包目录，下次可覆盖）。
