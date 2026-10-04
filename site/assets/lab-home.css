@@ -281,6 +281,8 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
   .lab-find-title { font-size: clamp(3rem, 13vw, 3.75rem); }
   /* 侧门移动端：满屏宽、左对齐（人定，不居中）；左右留 gutter 舒展 */
   .lab-doors.is-prime .is-side { padding: var(--s-8) var(--gutter); }
+  /* hero 区有自己的容器边距：大字/导语/检索不贴屏缘 */
+  .lab-doors.is-prime .is-find { padding: var(--s-10) var(--gutter) var(--s-8); }
   /* 「开源」独占一行——不锁的话窄屏会在第 5 个字处硬折，把「商用」拆开；
      格子 1fr 收成 minmax(0,1fr)，导语放开 keep-all：两者都会把内容顶出视口 */
   .lab-find-live .lab-find-em { display: block; }

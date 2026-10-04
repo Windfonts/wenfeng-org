@@ -121,8 +121,9 @@
 | `https://wenfeng-org.oss-cn-guangzhou.aliyuncs.com/pack/slice/Alhyznht.zip` | 上一会话所写，对象不存在 |
 
 - 113 条 `wenfeng-original/{norm}.tar.gz` 全是 `staged`，页面本来就不给出下载。`export-wenfeng.py` 的 `ARCHIVE_HREF_PREFIX` 仍是占位。
-- 已上架的是网页分片：`fonts-packages/{Norm}/{Weight}/{subset}/result.css`，名单 `data/webfonts.json`（354）。无 Referer 也是 200，不要写成已经做了防盗链。
-- 条目页「还能办的事」用紧凑任务行，不重复主按钮。有真实 `files[slice].href` 才叫切片包；否则可再分发且在名单里的，链上面的 result.css，标题写「网页分片」。`distribution=false` 不给这条。有 `sliceGate` 的才进 `/slice/{norm}/`。
+- 已上架的网页分片：`fonts-packages/{Norm}/{Weight}/{subset}/result.css`，名单 `data/webfonts.json`（354）。无 Referer 也是 200，不要写成已经做了防盗链。
+- 同日又对这 556 款探了三份索引（`data/oss-packs.json`）：`license/index.json` 200 的 270 款；`slice/index.json` 200 的 10 款（Btot、Dlzht、Dyh、Hclck2、Ibmps、Ljmc、Opsa、Xwmh、Yzklct、Zkklt）；`source/index.json` 在这 556 款里是 0。桶上另有不在这批目录里的源文件索引（例如 TaigiHuninn 的 `schemes/*.ttf` 200），本站页面不编造它们的地址。
+- 条目页「还能办的事」用紧凑任务行，不带图标，不重复主按钮。有真实 `files[slice].href` 才叫切片包；否则可再分发的，链 slice 索引里的 `cssUrl`，没有索引就链上面的 result.css，标题写「网页分片」。`distribution=false` 不给这条（Dlzht 有切片索引也不给）。有 `sliceGate` 的才进 `/slice/{norm}/`。
 - `/slice/` 不再把开源款铺成「看下载页 / 稍后提供」。
 
 ## 三、台账变更记录
@@ -194,3 +195,4 @@
 - `2026-10-04`：人：app 什么样 wenfeng 就怎么样。移动菜单照 fonts-front topmenu 全套移植：≤960 隐导航行/店面/视图切换，汉堡钮（menu/close 双态图标）开抽屉=搜索框+五项链接+视图切换；点链接/Esc/再点钮三路关闭；桌面零变化。中途 site.css 被吃掉一个 @media 闭括号（720 块吞了后面全部规则致桌面泄露），配平修复。记录人：[CC]。
 - `2026-10-04`：人：页眉错位/三块没全宽/页脚链接没调。落：≤960 页眉抽屉模式收单行 56px 垂直居中（抹两行残留偏移）；≤900 侧门移动端内容居中+内距 s-8/gutter（D-09 内容居中在移动端丢失补回）；≤720 页脚链接 3 列改 2 列、行距 s-4（APP 式疏朗）。桌面零变化（64px/左对齐/3 列）。记录人：[CC]。
 - `2026-10-04`：人：侧门移动端要满宽、不要居中。≤900 门网格负 margin 吃掉 gutter 真满宽（x=0 w=390），门内容左对齐、左右 gutter 舒展；居中排版撤。桌面不变。记录人：[CC]。
+- `2026-10-05`：人：hero 要单独容器边距。≤900 主门补左右 gutter（padding s-10 gutter s-8）——满宽改造时 hero 左右被压成 0 的回归修复；侧门仍满宽。桌面不变。记录人：[CC]。
