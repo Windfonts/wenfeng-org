@@ -67,7 +67,7 @@ main { flex: 1; }
   padding-bottom: var(--s-10);
 }
 .site-foot-brand .wordmark { margin-bottom: var(--s-3); }
-.site-foot-brand .foot-tagline { margin: var(--s-4) 0 0; max-width: 28em; font-size: var(--fs-13); color: var(--gray); letter-spacing: 0.02em; }
+.site-foot-brand .foot-tagline { margin: 0 0 var(--s-5); max-width: 28em; font-size: var(--fs-13); color: var(--gray); letter-spacing: 0.02em; }
 .site-foot-brand p { max-width: 28em; font-size: var(--fs-13); color: var(--gray); }
 .foot-src-k {
   margin: var(--s-5) 0 var(--s-3);
@@ -1728,10 +1728,6 @@ body.fd-v1b .fd1-row .t { text-decoration: none; }
 .tool-index.is-quiet .tool-index-name { font-weight: var(--fw-body); }
 .tool-index.is-quiet .tool-index-go { color: var(--gray); font-weight: var(--fw-body); }
 
-body.page-slices > main.page,
-body.page-slice > main.page {
-  padding-top: 0;
-}
 
 @media (max-width: 40rem) {
   .tool-index-row { grid-template-columns: 1fr auto; }
@@ -1856,8 +1852,8 @@ body.page-foundries > main.page {
 }
 
 /* —— 怎么核（/how · hw-v1b） —— */
-body.hw-v1b > main.page,
 body.us-v4b > main.page,
+body.hw-v1b > main.page,
 body.lg-v4 > main.page,
 body.ab-v6b > main.page,
 body.gp-v1b > main.page { padding-top: 0; }
