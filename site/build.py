@@ -377,8 +377,8 @@ def _foot_marks():
 
 
 def _foot_wm():
-    return ('<a class="wordmark" href="/"><span class="mark" aria-hidden="true"></span>'
-            '<span class="wm-name">文风</span><span class="wm-sub">开源</span></a>')
+    return ('<a class="wordmark" href="/"><img class="wm-ico" src="/assets/icon.webp" alt="" width="24" height="24">'
+            '<span class="wm-name">文风开源</span></a>')
 
 
 def _foot_dev(dev):
@@ -482,8 +482,8 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
     items = NAV if nav_items is None else nav_items
     nav = "".join('<a href="%s"%s>%s</a>' % (h, ' class="is-active"' if section in keys else "", t)
                   for h, t, keys in items)
-    wm = ('<a class="wordmark" href="%s"><span class="mark" aria-hidden="true"></span>'
-          '<span class="wm-name">文风</span><span class="wm-sub">开源</span></a>' % e(wordmark_href))
+    wm = ('<a class="wordmark" href="%s"><img class="wm-ico" src="/assets/icon.webp" alt="" width="24" height="24">'
+          '<span class="wm-name">文风开源</span></a>' % e(wordmark_href))
     b_cls = (' class="%s"' % e(body_class)) if body_class else ""
     if footer is None:
         footer = foot_site(dev)
