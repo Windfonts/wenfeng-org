@@ -248,7 +248,7 @@ def tasks(items, compact=False, start=1):
         task(start + i, *it) for i, it in enumerate(items)))
 
 
-def search(action="/source/", ph="中文名、英文、短码、厂商…", live=False):
+def search(action="/source/", ph="中文名、英文名、厂商…", live=False):
     if live:
         return ('<div class="search is-bare is-live"><label class="sr-only" for="q-live">搜索字体</label>'
                 '<input id="q-live" type="search" data-search placeholder="%s" aria-label="搜索字体" autocomplete="off"></div>' % e(ph))
@@ -538,13 +538,13 @@ def home_prime(fonts, q_id):
         '<div class="lab-find-act">'
         '<form class="search is-embed" action="/source/" method="get" role="search">'
         '<label class="sr-only" for="%s">搜索字体</label>'
-        '<input id="%s" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+        '<input id="%s" name="q" type="search" placeholder="中文名、英文名、厂商…" autocomplete="off">'
         '<button class="btn btn-ink" type="submit">%s搜索</button></form>'
         '<p class="lab-find-more">%s</p></div></div>'
         % (_fv("wenfeng.org", "wenfeng.org"),
-           _fv("能下载的直接下载。<br>不能再分发的去出处或领切片包。", "offer · /source"),
+           _fv("每一款的许可都核对过原文。<br>允许再分发的直接下载，其余核验后领即用字库。", "offer · /source"),
            e(q_id), e(q_id), icon("search"),
-           _fv('<a href="/source/?st=source">本站下载 %d 款</a> · <a href="/source/">全部 %d 款 →</a>' % (n_src, n),
+           _fv('<a href="/source/">收录 %d 款</a> · <a href="/source/?st=source">本站可下载 %d 款 →</a>' % (n, n_src),
                "offer=source · fonts[]=%d" % n))
     )
     return (
@@ -557,12 +557,12 @@ def home_prime(fonts, q_id):
         '<a class="lab-door is-side is-q3" href="/gap/"><span class="lab-side-bg" aria-hidden="true">造字</span><span class="idx">03</span>'
         '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a></div>'
         % (find,
-           _fv("授权查询", "/license"), _fv("许可原文与结论。", "/license"),
-           _fv("%d 份 →" % n_full, "textState=full"),
-           _fv("获取证书", "/attest"), _fv("标准开源协议可出证。", "can_attest"),
-           _fv("%d 款 →" % n_att, "can_attest"),
-           _fv("缺字勘误", "/gap"), _fv("缺字形、缺收录、写错了。", "POST"),
-           _fv("入口未接 →", "POST 未接"))
+           _fv("授权查询", "/license"), _fv("这款字能不能商用，看许可原文。", "/license"),
+           _fv("%d 份许可全文 →" % n_full, "textState=full"),
+           _fv("获取证书", "/attest"), _fv("商用要留凭证，可申请出证。", "can_attest"),
+           _fv("%d 款可出证 →" % n_att, "can_attest"),
+           _fv("缺字勘误", "/gap"), _fv("字缺了、写错了？报给我们。", "POST"),
+           _fv("即将开放 →", "POST 未接"))
     )
 
 
@@ -673,7 +673,7 @@ def page_lab_home(data, fonts, variant):
             '<div class="lab-cap"><button type="button" class="btn-text" data-face-next>换一款</button></div>'
             '<form class="search is-embed" action="/source/" method="get" role="search">'
             '<label class="sr-only" for="lab-q-a">搜索字体</label>'
-            '<input id="lab-q-a" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+            '<input id="lab-q-a" name="q" type="search" placeholder="中文名、英文名、厂商…" autocomplete="off">'
             '<button class="btn btn-ink" type="submit">%s搜索</button></form></div>'
             % ("".join(slides), icon("search"))
         )
@@ -684,7 +684,7 @@ def page_lab_home(data, fonts, variant):
             '<div class="toolbar">'
             '<div class="search is-embed is-live">'
             '<label class="sr-only" for="lab-q-b">搜索字体</label>'
-            '<input id="lab-q-b" type="search" data-search placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+            '<input id="lab-q-b" type="search" data-search placeholder="中文名、英文名、厂商…" autocomplete="off">'
             '</div>%s</div>'
             '<p class="count" data-count>%s</p>%s</div>'
             % (fv("开源字体的源文件和许可原文。能下载的直接下载。", "/source"),
@@ -842,7 +842,7 @@ def page_lab_source(fonts, variant):
             '%s'
             '<form class="search is-embed" action="/source/" method="get" role="search">'
             '<label class="sr-only" for="lab-q-one">搜索字体</label>'
-            '<input id="lab-q-one" name="q" type="search" placeholder="中文名、英文、短码、厂商…" autocomplete="off">'
+            '<input id="lab-q-one" name="q" type="search" placeholder="中文名、英文名、厂商…" autocomplete="off">'
             '<button class="btn btn-ink" type="submit">%s搜索</button></form>'
             '<p class="ls-one-foot for-design">这一屏只放一款。要名单，搜了进活页目录。</p>'
             '</div>'
