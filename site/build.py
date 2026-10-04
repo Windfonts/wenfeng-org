@@ -510,12 +510,17 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <button type="button" data-mode="dev">开发</button></div>
 <a href="https://app.windfonts.com/" target="_blank" rel="noopener" title="店面（样张与选字）">店面</a>
 <button type="button" class="icon-btn" data-scale-toggle aria-pressed="false" aria-label="放大"><svg class="icon" aria-hidden="true"><use href="#i-font-size"></use></svg></button>
-<button type="button" class="icon-btn" data-theme-toggle aria-label="切换深浅"><svg class="icon ico-moon" aria-hidden="true"><use href="#i-moon"></use></svg><svg class="icon ico-sun" aria-hidden="true"><use href="#i-sun"></use></svg></button></div>
+<button type="button" class="icon-btn" data-theme-toggle aria-label="切换深浅"><svg class="icon ico-moon" aria-hidden="true"><use href="#i-moon"></use></svg><svg class="icon ico-sun" aria-hidden="true"><use href="#i-sun"></use></svg></button>
+<button type="button" class="icon-btn menu-btn" data-menu-toggle aria-expanded="false" aria-controls="topmenu" aria-label="菜单"><svg class="icon ico-menu" aria-hidden="true"><use href="#i-menu"></use></svg><svg class="icon ico-close" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+<nav class="topmenu" id="topmenu" hidden aria-label="移动端菜单">
+<form class="topmenu-search" action="/source/" method="get" role="search"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input type="search" name="q" placeholder="搜索字体、厂商" aria-label="搜索字体" autocomplete="off"></form>
+<div class="topmenu-links">%s</div>
+<div class="seg view-switch" data-view-switch role="group" aria-label="视图"><button type="button" data-mode="design" class="is-on">设计</button><button type="button" data-mode="dev">开发</button></div></nav>
 </div></header>
 <main class="container page">%s</main>
 %s
 <script src="/assets/site.js" defer></script>
-</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, body, footer)
+</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, nav, body, footer)
 
 
 

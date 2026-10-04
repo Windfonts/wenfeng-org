@@ -3147,6 +3147,7 @@ body.gp-v1b .gp1-kinds button {
   .topnav { gap: var(--s-1); padding: 0 var(--gutter) 0.3rem; margin: 0 calc(-1 * var(--gutter)); border-bottom: 1px solid var(--rule); }
   .topnav a { padding: 0.55rem 0.7rem; font-size: var(--fs-14); }
   .topnav a.is-active { background: var(--fill); }
+}
 @media (max-width: 720px) {
   /* 顶栏两行：字标 | 放大/主题 一行，主导航独占一行。五项导航加右区在窄屏塞不进一行，
      .topnav 会被挤成 0 宽滚动盒，链接等于整个消失——所以视图切换与店面在移动端收起 */
@@ -3208,3 +3209,27 @@ body.gp-v1b .gp1-kinds button {
 .lrow .lgo.is-ink { font-weight: var(--fw-title); }
 .lrow.is-miss { color: var(--gray); }
 .lrow.is-miss .lnm { color: var(--gray); }
+
+/* —— 移动端菜单抽屉（照 fonts-front topmenu 同套） —— */
+.menu-btn { display: none !important; }
+.menu-btn .ico-close { display: none; }
+.menu-btn[aria-expanded="true"] .ico-menu { display: none; }
+.menu-btn[aria-expanded="true"] .ico-close { display: block; }
+.topmenu { position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: var(--s-1); padding: var(--s-3) var(--gutter) var(--s-4); background: var(--page); border-bottom: 1px solid var(--rule); z-index: 39; }
+.topmenu[hidden] { display: none; }
+.topmenu-search { position: relative; margin-bottom: var(--s-2); }
+.topmenu-search .icon { position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; color: var(--gray-2); }
+.topmenu-search input { width: 100%; height: 2.75rem; padding: 0 1rem 0 2.5rem; border: 0; border-radius: var(--radius-pill); background: var(--fill); font-size: var(--fs-14); color: var(--ink); }
+.topmenu-links { display: grid; gap: var(--s-1); }
+.topmenu-links a { padding: 0.6rem 0.9rem; border-radius: var(--radius-sm); color: var(--ink-2); font-weight: var(--fw-label); }
+.topmenu-links a.is-active { background: var(--fill); color: var(--ink); }
+.topmenu .view-switch { width: 100%; margin-top: var(--s-2); }
+.topmenu .view-switch button { flex: 1; text-align: center; }
+@media (max-width: 960px) {
+  .topnav { display: none; }
+  .topbar-end > a { display: none; }
+  .topbar-end .view-switch { display: none; }
+  .menu-btn { display: inline-grid !important; }
+  .topbar { position: sticky; }
+  .topbar-inner { gap: var(--s-2); }
+}

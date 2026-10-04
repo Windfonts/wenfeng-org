@@ -983,7 +983,6 @@
   })();
 })();
 
-
 /* 移动端：主导航行滚过首屏后吸顶隐藏（顶部仍双行可直达），上滚回显 */
 (function () {
   if (!window.matchMedia || !matchMedia('(max-width: 720px)').matches) return;
@@ -1004,4 +1003,21 @@
     }
     lastY = y;
   }, { passive: true });
+})();
+
+/* 移动端菜单抽屉（照 fonts-front：钮切换、点链接收、Esc 收） */
+(function () {
+  var btn = document.querySelector('[data-menu-toggle]');
+  var menu = document.getElementById('topmenu');
+  if (!btn || !menu) return;
+  function setMenu(open) {
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? '关闭菜单' : '菜单');
+  }
+  btn.addEventListener('click', function () { setMenu(menu.hidden); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) { setMenu(false); e.preventDefault(); }
+  });
 })();
