@@ -93,7 +93,7 @@ main { flex: 1; }
 .foot-marks .icon { width: 0.85rem; height: 0.85rem; color: var(--gray-2); }
 .foot-rest {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   gap: var(--s-5) var(--s-10);
 }
 .foot-rest a {
@@ -112,6 +112,7 @@ main { flex: 1; }
   color: var(--gray-2);
   visibility: hidden;
 }
+.foot-rest a.is-ext .t::after { content: " ↗"; }
 /* 描述悬停才显（D-12）：空间常留不跳版，只淡入淡出 */
 .foot-rest .d {
   font-size: var(--fs-12);
@@ -3005,6 +3006,8 @@ body.gp-v1b .gp1-kinds button {
   .topnav a { padding: 0.4rem 0.5rem; }
   .split, .split.is-wide { grid-template-columns: 1fr; }
   .site-foot-inner { gap: var(--s-6); }
+  .foot-rest { grid-template-columns: repeat(3, 1fr); gap: var(--s-5) var(--s-5); }
+  .foot-rest a { min-width: 0; }
   .hv4-task { grid-template-columns: 2rem minmax(0, 1fr) auto auto; grid-template-rows: auto auto; gap: var(--s-2) var(--s-3); padding: var(--s-4) var(--s-2); margin: 0 calc(-1 * var(--s-2)); }
   .hv4-task .idx { display: none; }
   .hv4-task .t-ico { grid-row: 1 / span 2; align-self: start; }
