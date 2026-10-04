@@ -277,8 +277,12 @@ a.lab-door.is-side:focus-visible .lab-side-bg { opacity: 0.1; }
 
 @media (max-width: 900px) {
   .lab-proof { font-size: clamp(2.5rem, 14vw, 4rem); }
+  /* 「开源」独占一行——不锁的话窄屏会在第 5 个字处硬折，把「商用」拆开；
+     格子 1fr 收成 minmax(0,1fr)，导语放开 keep-all：两者都会把内容顶出视口 */
+  .lab-find-live .lab-find-em { display: block; }
+  .lab-doors.is-prime .is-find .d { word-break: normal; }
   .lab-doors.is-prime {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "find" "q1" "q2" "q3";
     min-height: 0;
   }

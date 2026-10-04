@@ -2983,9 +2983,13 @@ body.gp-v1b .gp1-kinds button {
   .hv4-aside { padding-left: 0; padding-top: var(--s-4); border-left: 0; border-top: 1px solid var(--rule); }
 }
 @media (max-width: 720px) {
-  .topbar-inner { gap: var(--s-4); }
-  .topbar-end .view-switch button { padding: 0.24rem 0.5rem; }
-  .topbar-end > a { white-space: nowrap; }
+  /* 顶栏两行：字标 | 放大/主题 一行，主导航独占一行。五项导航加右区在窄屏塞不进一行，
+     .topnav 会被挤成 0 宽滚动盒，链接等于整个消失——所以视图切换与店面在移动端收起 */
+  .topbar { height: auto; }
+  .topbar-inner { height: auto; flex-wrap: wrap; gap: 0.3rem 0.5rem; }
+  .topbar-end .view-switch, .topbar-end > a { display: none; }
+  .topnav { order: 9; flex: 1 0 100%; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter) 0.3rem; gap: 0; }
+  .topnav a { padding: 0.4rem 0.5rem; }
   .split, .split.is-wide { grid-template-columns: 1fr; }
   .site-foot-inner { gap: var(--s-6); }
   .hv4-task { grid-template-columns: 2rem minmax(0, 1fr) auto auto; grid-template-rows: auto auto; gap: var(--s-2) var(--s-3); padding: var(--s-4) var(--s-2); margin: 0 calc(-1 * var(--s-2)); }
