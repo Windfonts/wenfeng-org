@@ -391,7 +391,7 @@ def _foot_dev(dev):
 
 
 def _foot_bottom(dev=""):
-    icp = ('<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">'
+    icp = ('<a class="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">'
            '粤ICP备2023091240号-3</a>')
     copy = ('<p>版权所有 · 文风 <span class="tm" aria-hidden="true">™</span>'
             ' · © 2026 文派（广州）科技有限公司 · %s%s</p>' % (icp, _foot_dev(dev)))

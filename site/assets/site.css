@@ -3143,6 +3143,8 @@ body.gp-v1b .gp1-kinds button {
   .topbar + main { scroll-margin-top: 64px; }
 }
 @media (max-width: 720px) {
+  /* 人定：手机端版权行不显示备案号（DOM 保留，桌面照旧） */
+  .site-foot-bottom .icp { display: none; }
   /* 参 APP 菜单：触控目标 ≥44px、14px 字、项间 4px，行底规则线与内容分界 */
   .topnav { gap: var(--s-1); padding: 0 var(--gutter) 0.3rem; margin: 0 calc(-1 * var(--gutter)); border-bottom: 1px solid var(--rule); }
   .topnav a { padding: 0.55rem 0.7rem; font-size: var(--fs-14); }
