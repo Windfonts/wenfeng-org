@@ -268,7 +268,16 @@
 .page-attest-norm .atn-embed-toggle::-webkit-details-marker { display: none; }
 .page-attest-norm .atn-embed-toggle:hover { border-color: var(--ink-2); }
 .page-attest-norm .atn-embed-arrow { color: var(--gray-2); }
-.page-attest-norm .atn-embed[open] .atn-embed-toggle { border-bottom: 0; border-radius: var(--radius) var(--radius) 0 0; }
+/* 展开态：内容包进摘要钮的容器，成一个完整抽屉 */
+.page-attest-norm .atn-embed[open] {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0 var(--s-4) var(--s-4);
+  background: var(--page);
+}
+.page-attest-norm .atn-embed[open] .atn-embed-toggle { border: 0; border-radius: 0; padding: var(--s-3) 0; margin: 0 calc(-1 * var(--s-4)); padding-inline: var(--s-4); }
+.page-attest-norm .atn-embed[open] .atn-embed-lead,
+.page-attest-norm .atn-embed[open] .label { margin-top: 0; }
 .page-attest-norm .atn-embed[open] .atn-embed-arrow { transform: rotate(180deg); }
 .page-attest-norm .atn-embed .label,
 .page-attest-norm .atn-embed .atn-embed-lead,
@@ -277,7 +286,7 @@
 .page-attest-norm .atn-embed .code,
 .page-attest-norm .atn-embed .acts { margin-top: var(--s-3); }
 .page-attest-norm .atn-embed .code {
-  max-height: 4.5rem;
+  max-height: 6.5rem;
   overflow: hidden;
   position: relative;
 }
