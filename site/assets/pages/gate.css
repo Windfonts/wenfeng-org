@@ -1,0 +1,413 @@
+/* 用法、关于。怎么核和法务仍用 read.css。 */
+
+body.page-gate main.page { padding-top: var(--s-8); }
+.page-gate .page-mast {
+  margin-bottom: var(--s-4);
+  padding-top: 0;
+  padding-bottom: var(--s-4);
+}
+body.page-use .page-mast,
+body.page-about .page-mast {
+  margin-bottom: var(--s-8);
+  padding-bottom: var(--s-6);
+}
+body.page-gate .page-mast h1.xxzt {
+  line-height: 1.4;
+}
+.page-gate [id] {
+  scroll-margin-top: calc(var(--topbar-h) + var(--s-4));
+}
+
+.gate-triptych {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.gate-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--s-8) var(--s-6) var(--s-6) 0;
+  color: inherit;
+  text-decoration: none;
+}
+div.gate-col { cursor: default; }
+.gate-col + .gate-col {
+  padding-left: var(--s-6);
+  border-left: 1px solid var(--rule);
+}
+a.gate-col:hover {
+  text-decoration: none;
+}
+a.gate-col:hover .gate-go {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.gate-n {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray-2);
+  font-variant-numeric: tabular-nums;
+}
+.gate-name {
+  display: block;
+  margin-top: var(--s-5);
+  font-size: clamp(3rem, 6vw, 4.75rem);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.gate-name.mono {
+  font-weight: var(--fw-body);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.gate-foot {
+  margin-top: var(--s-6);
+  max-width: none;
+}
+.gate-line {
+  display: block;
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-14);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.gate-line.mono { font-size: var(--fs-13); }
+.gate-go {
+  display: block;
+  margin-top: var(--s-4);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-title);
+  color: var(--ink);
+}
+.gate-go.is-quiet {
+  font-weight: var(--fw-body);
+  color: var(--gray);
+}
+.gate-go.mono {
+  font-weight: var(--fw-body);
+}
+
+/* 用法 01–03：横排路径，与关于「店面/造字」同形，避免三列大字抢页头 */
+.gate-paths {
+  margin: 0 0 var(--s-4);
+  border-top: 1px solid var(--rule);
+}
+.gate-path {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(4.5rem, 6.5rem) minmax(0, 1fr) auto;
+  column-gap: var(--s-5);
+  align-items: baseline;
+  padding: var(--s-6) 0;
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+div.gate-path { cursor: default; }
+a.gate-path:hover { text-decoration: none; }
+a.gate-path:hover .gate-go {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.gate-path .gate-n {
+  align-self: start;
+  padding-top: 0.55em;
+}
+.gate-path-name {
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+.gate-path-name.mono {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+.gate-path-line {
+  min-width: 0;
+  font-size: var(--fs-14);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.gate-path .gate-go {
+  margin-top: 0;
+  white-space: nowrap;
+  justify-self: end;
+}
+
+/* 用法：整页只留页头沿线。路径与下文、各节之间靠间距，不再叠横线 */
+body.page-use .gate-paths {
+  border-top: 0;
+  margin: var(--s-2) 0 0;
+}
+body.page-use .gate-path {
+  border-bottom: 0;
+  padding: var(--s-5) 0;
+}
+body.page-use .gate-paths + .gate-band {
+  margin-top: var(--s-10);
+  padding-top: var(--s-10);
+  border-top: 0;
+}
+body.page-use .gate-band {
+  border-top: 0;
+  padding: var(--s-10) 0;
+}
+body.page-use .gate-band + .gate-band {
+  padding-top: var(--s-8);
+}
+body.page-use .gate-api a,
+body.page-use .gate-api .api-row {
+  border-bottom: 0;
+  padding: 0.55rem 0;
+}
+body.page-use .gate-api {
+  row-gap: var(--s-2);
+}
+
+.gate-band {
+  display: grid;
+  grid-template-columns: minmax(8rem, 14rem) minmax(0, 1fr);
+  gap: var(--s-6) var(--s-10);
+  align-items: start;
+  padding: var(--s-12) 0;
+  border-top: 1px solid var(--rule);
+}
+.gate-band h2 {
+  margin: 0;
+  font-size: var(--fs-20);
+  font-weight: var(--fw-title);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.gate-band h2.mono {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-body);
+  letter-spacing: 0;
+}
+.gate-band-body { min-width: 0; }
+.gate-band-body p {
+  margin: 0 0 var(--s-4);
+  max-width: 40em;
+  font-size: var(--fs-16);
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.gate-band-body p:last-child { margin-bottom: 0; }
+.gate-band-body a { color: var(--ink); text-underline-offset: 0.18em; }
+.gate-label {
+  margin: var(--s-5) 0 var(--s-2);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+.gate-code {
+  margin: var(--s-4) 0 0;
+  padding: var(--s-5);
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  background: var(--fill);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.gate-api {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--s-12);
+}
+.gate-api a,
+.gate-api .api-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+.gate-api a:hover code { text-decoration: underline; text-underline-offset: 0.18em; }
+.gate-api code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  overflow-wrap: anywhere;
+}
+.gate-api span {
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.gate-sample {
+  margin: var(--s-6) 0 0;
+  padding: var(--s-4) var(--s-5);
+  line-height: 1.5;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+}
+.gate-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-8);
+  margin: var(--s-8) 0 0;
+  font-size: var(--fs-14);
+}
+/* 盖过 .gate-band-body p 的 margin 简写，否则贴死代码块 */
+.gate-band-body .gate-acts {
+  margin: var(--s-8) 0 0;
+}
+.gate-acts a { color: var(--ink); font-weight: var(--fw-title); text-decoration: none; }
+.gate-acts a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+.gate-foot-note {
+  margin: var(--s-6) 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+  line-height: 1.65;
+}
+.gate-foot-note a { color: var(--ink); }
+
+.about-mark {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+.about-go.is-quiet {
+  font-weight: var(--fw-body);
+  color: var(--gray);
+}
+.about-else-host {
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+
+/* 关于：整页一种节奏——路径横排 + 眉题；立场不再左右分栏 */
+body.page-about .gate-paths {
+  border-top: 0;
+  margin: var(--s-2) 0 0;
+}
+body.page-about .gate-path {
+  border-bottom: 0;
+  padding: var(--s-4) 0;
+}
+body.page-about .gate-path-name {
+  font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+}
+body.page-about .about-else {
+  margin-top: var(--s-10);
+  padding-top: 0;
+  border-top: 0;
+  max-width: 42em;
+}
+body.page-about .gate-paths.is-else {
+  margin-top: 0;
+}
+body.page-about .gate-paths.is-else .gate-path {
+  grid-template-columns: minmax(4rem, 5.25rem) minmax(0, 1fr) auto;
+  padding: var(--s-3) 0;
+}
+body.page-about .gate-paths.is-else .gate-path-name {
+  font-size: var(--fs-20);
+}
+body.page-about .about-stance {
+  display: block;
+  max-width: none;
+  margin-top: var(--s-10);
+  padding-top: 0;
+}
+body.page-about .about-stance .about-mark {
+  margin-bottom: var(--s-5);
+}
+body.page-about .about-stance-body {
+  /* 边界长文：阅读列居中偏左（与全宽路径行的节奏衔接），字号一档 */
+  max-width: 56em;
+  margin-left: calc((100% - 56em) / 4);
+}
+body.page-about .about-stance-body p {
+  font-size: var(--fs-17, 1.0625rem);
+}
+body.page-about .about-stance-body p {
+  margin: 0 0 var(--s-5);
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+body.page-about .about-stance-body p:last-child { margin-bottom: 0; }
+body.page-about .about-stance-body a {
+  color: var(--ink);
+  text-underline-offset: 0.18em;
+}
+body.page-about .gate-foot-note {
+  margin-top: var(--s-8);
+}
+
+.gate-name.for-design {
+  font-family: "WF-Xxzt", "Libian SC", "STLibian", "Songti SC", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .gate-triptych {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .gate-col {
+    padding: var(--s-8) 0;
+  }
+  .gate-col + .gate-col {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .gate-name { font-size: clamp(2.5rem, 14vw, 3.5rem); }
+  .gate-path {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    row-gap: var(--s-2);
+    padding: var(--s-5) 0;
+  }
+  .gate-path-name { grid-column: 2; }
+  .gate-path-line {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .gate-path .gate-go {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    margin-top: var(--s-2);
+  }
+  .gate-band,
+  .gate-api {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body.page-about .gate-paths.is-else .gate-path {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--s-2);
+  }
+  body.page-about .gate-paths.is-else .gate-path-name { grid-column: 1; }
+  body.page-about .gate-paths.is-else .gate-path-line {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  body.page-about .gate-paths.is-else .gate-go {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    margin-top: var(--s-2);
+  }
+}
