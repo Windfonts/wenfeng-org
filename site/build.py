@@ -2987,11 +2987,11 @@ def page_use():
     )
     body = page_head(
         "用法",
-        "三条去向：原件、切片、网页。注释留着，目录用 API 查。",
+        "下载字体原件，领取切片包，或将字体嵌入网站界面。",
         crumbs=[(None, "用法")],
         dev="/use",
     ) + paths + bands
-    return layout("use", "用法", body, "/use", extra_head=pages_css("gate"), body_class="page-gate page-use", desc='字体拿去怎么用：原件下载、切片自托管、网页字体接入的用法说明。' )
+    return layout("use", "用法", body, "/use", extra_head=pages_css("gate"), body_class="page-gate page-use", desc='字体用在软件界面与网站界面：下载原件、领取切片包、嵌入接入。' )
 
 
 def page_how():
