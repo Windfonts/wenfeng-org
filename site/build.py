@@ -2818,12 +2818,17 @@ def page_attest(f):
         '<header class="page-mast atn-mast">'
         '<p class="atn-back"><a href="/attest/">← 出证入口</a></p>'
         '<h1 class="xxzt">%s 授权证明</h1>'
-        '<p class="ph-lead">下载 PDF、打印，或挂徽章。证面可切极简。</p>'
+        '<p class="ph-lead">这款字体的商用合规凭证：许可授权链、开源协议与原文哈希，一页看全。可下载 PDF 存档或打印，证面可切极简。</p>'
         '<p class="ph-lead for-dev mono">/attest/%s · classic|minimal</p>'
         "</header>"
     ) % (e(name), e(f["norm"]))
     side = (
         '<aside class="atn-side no-print">'
+        '<section class="atn-note">'
+        '<p class="label">授权说明</p>'
+        '<p class="atn-note-p">这份证明记录该字体的许可核验结果：授权来自谁、适用哪份开源协议、原文是否存档可查。证明不是著作权人的授权书，字体权利仍以许可原文为准。</p>'
+        '<p class="atn-note-p">把下方的证明徽章嵌入你的网站，等于对外声明「本项目使用的字体已完成合规核验」，点击徽章可回到本页查看完整内容。采购归档请下载 PDF，编号可在核验页查验。</p>'
+        '</section>'
         '<section class="atn-embed" data-share hidden>'
         '<p class="label">嵌入徽章</p>'
         '<p class="atn-embed-lead">三种样式；细条可选黑白。下载或复制嵌入代码。</p>'

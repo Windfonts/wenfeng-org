@@ -204,3 +204,14 @@
     overflow: visible !important;
   }
 }
+
+/* ⑤ 移动端：下载 PDF 独占一行加大（第一视觉动线） */
+@media (max-width: 720px) {
+  .page-attest-norm .atn-tools-main { flex-wrap: nowrap; }
+  .page-attest-norm .atn-tools-main [data-pdf] {
+    flex: 1 1 100%;
+    order: -1;
+    height: 3rem;
+    font-size: var(--fs-15, 0.9375rem);
+  }
+}

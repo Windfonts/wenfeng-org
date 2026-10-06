@@ -13,49 +13,94 @@
     return fetch(url, opt).then(function (r) {
       var ct = r.headers.get('content-type') || '';
       if (ct.indexOf('json') === -1) throw new Error('证明服务没有随这个部署开放。');
-      return r.json().then(function (j) { j._status = r.status; return j; });
+      return r.json().then(function (j) {
+        if (!j || typeof j !== 'object' || Array.isArray(j)) {
+          throw new Error('证明服务返回的不是一份记录。');
+        }
+        j._status = r.status;
+        return j;
+      });
     });
   }
+  function icon(name) {
+    return '<svg class="icon" aria-hidden="true"><use href="#i-' + name + '"></use></svg>';
+  }
   function result(ok, title, body) {
-    return '<div class="result ' + (ok ? 'is-ok' : 'is-bad') + '"><h3>' + esc(title) + '</h3>' + (body || '') + '</div>';
+    return '<div class="result ' + (ok ? 'is-ok' : 'is-bad') + '"><h3>' +
+      icon(ok ? 'verified' : 'close') + esc(title) + '</h3>' + (body || '') + '</div>';
   }
 
-  /* 字体 WebFont 动态加载与懒加载（同 16030） */
+  /* 字体 WebFont：目录名字照 APP 谱系列表。
+     包目录用 data-face-pack（OSS 原样大小写），子集用 data-face-subset，
+     族名改写成店面 data-face-family，样式只作用在名字（.lnm），状态/去向仍是界面字。 */
   var FACE_CSS_TPL = 'https://cn.windfonts.com/api/css?family={F}&weight=400&subset=zh-common&version=zh-common';
-  var MISS_KEY = 'wf-webfont-miss';
+  var MISS_KEY = 'wf-webfont-miss-v2';
   var FACE_PACK_BASE = 'https://cn.windfonts.com/fonts-packages/';
   var MISS_TTL = 24 * 3600 * 1000;
-  var FACE_PACK = 'https://cn.windfonts.com/fonts-packages/{N}/{W}/full/result.css';
   var facesLoaded = {};
-  function applyFontFace(norm, family, useFull, wname) {
+  function shopFamily(family, norm) {
+    if (family) return String(family).replace(/["']/g, '');
+    return 'wenfeng-' + String(norm || '').toLowerCase();
+  }
+  function shopStack(famCss) {
+    var alt = famCss.indexOf('wenfeng-') === 0 ? famCss.replace(/^wenfeng-/, 'windfonts-') : '';
+    var parts = ['"' + famCss + '"'];
+    if (alt) parts.push('"' + alt + '"');
+    parts.push('"PingFang SC"', '"Microsoft YaHei"', 'system-ui', 'sans-serif');
+    return parts.join(', ');
+  }
+  function packFolder(pack, norm) {
+    if (pack) return pack;
+    var n = String(norm || '');
+    return n ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+  }
+  function faceSelector(norm) {
+    var n = String(norm).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    return '[data-face-norm="' + n + '"] .lnm,' +
+      '[data-face-norm="' + n + '"] .nm,' +
+      'h1.is-face[data-face-norm="' + n + '"],' +
+      '[data-face-norm="' + n + '"].fn-proof,' +
+      '[data-face-norm="' + n + '"][data-face-slide]';
+  }
+  function applyFontFace(norm, family, useFull, wname, pack, subset) {
     if (!norm) return;
     if (useFull && facesLoaded[norm] === 'full') return;
     if (!useFull && facesLoaded[norm]) return;
     if (!family && !useFull) return;
     facesLoaded[norm] = useFull ? 'full' : true;
-    var famName = 'WF-' + (norm.charAt(0).toUpperCase() + norm.slice(1));
-    function applyClass(famCss) {
-      var stack = famCss ? '"' + famCss + '", ' : '';
+    var famCss = shopFamily(family, norm);
+    function applyClass() {
+      if (document.querySelector('style[data-wf-face="' + norm + '"]')) return;
       var st = document.createElement('style');
-      st.textContent = '[data-face-norm="' + norm + '"]{font-family:' + stack + '"' + famName + '","WF-' + norm + '", var(--font-ui);}';
+      st.setAttribute('data-wf-face', norm);
+      st.textContent = faceSelector(norm) + '{font-family:' + shopStack(famCss) + ';font-weight:400;}';
       document.head.appendChild(st);
     }
+    function siblingWeight(w) {
+      var k = String(w || '').toLowerCase();
+      if (k === 'normal') return 'Regular';
+      if (k === 'regular') return 'Normal';
+      return '';
+    }
     function loadPack(done) {
-      var weights = ['Regular', 'Light', 'Medium', 'Bold'];
+      var folder = packFolder(pack, norm);
+      var seq = [];
+      var seen = {};
+      [wname || 'Regular', 'Regular', 'Normal', 'Light', 'Medium', 'Bold'].forEach(function (w) {
+        if (w && !seen[w]) { seen[w] = 1; seq.push(w); }
+      });
       (function next(i) {
-        if (i >= weights.length) {
-          if (done) done();
-          return;
-        }
-        var url = FACE_PACK.replace('{N}', encodeURIComponent(norm)).replace('{W}', weights[i]);
+        if (i >= seq.length) { if (done) done(); return; }
+        var url = FACE_PACK_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(seq[i]) + '/full/result.css';
         fetch(url).then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
           return r.text();
         }).then(function (css) {
           if (css.indexOf('@font-face') === -1) throw new Error('not css');
-          var base = url.replace(/result\.css$/, '');
+          var base = url.replace(/[^/]+$/, '');
           var st = document.createElement('style');
           st.textContent = css
+            .replace(/font-family\s*:\s*[^;]+;/gi, 'font-family:"' + famCss + '";')
             .replace(/url\("\.\//g, 'url("' + base)
             .replace(/url\('\.\//g, "url('" + base);
           document.head.appendChild(st);
@@ -75,76 +120,98 @@
       });
       return;
     }
-    var famCss = 'wenfeng-' + norm;
     var miss = {};
     try { miss = JSON.parse(localStorage.getItem(MISS_KEY) || '{}'); } catch (e) {}
-    if (miss[norm] && Date.now() - miss[norm] < MISS_TTL) { applyClass(famCss); return; }
+    var missId = packFolder(pack, norm) + '|' + (subset || '') + '|' + (wname || 'Regular');
+    if (miss[missId] && Date.now() - miss[missId] < MISS_TTL) return;
     function markMiss() {
-      try { miss[norm] = Date.now(); localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
+      try { miss[missId] = Date.now(); localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
     }
     function injectCss(css, base) {
-      /* 包里的族名（WF-*、windfonts-*）和字重档不归我们管：统一改写成 wenfeng-{norm} + 400，
-         派生字体（如 975 黑体挂普惠体包）才能命中；包内分片是相对路径，就地补全。 */
       var fixed = css
         .replace(/font-weight\s*:\s*[^;]+;/gi, 'font-weight:400;')
         .replace(/font-family\s*:\s*[^;]+;/gi, 'font-family:"' + famCss + '";')
         .replace(/url\("\.\//g, 'url("' + base)
         .replace(/url\('\.\//g, "url('" + base);
       var st = document.createElement('style');
+      st.setAttribute('data-wf-family', famCss);
+      st.setAttribute('data-wf-norm', norm);
       st.textContent = fixed;
       document.head.appendChild(st);
-      applyClass(famCss);
+      applyClass();
       try {
-        var nameEl = document.querySelector('[data-face-norm="' + norm + '"]');
-        var text = nameEl ? (nameEl.textContent || '').slice(0, 24) : '';
-        document.fonts.load('16px "' + famCss + '"', text).catch(function () {});
+        var nameEl = document.querySelector('[data-face-norm="' + norm + '"] .lnm, [data-face-norm="' + norm + '"]');
+        var text = nameEl ? (nameEl.textContent || '').trim().slice(0, 24) : '';
+        document.fonts.load('400 22px "' + famCss + '"', text).catch(function () {});
       } catch (e) {}
     }
-    /* 包直取优先：/fonts-packages/{Norm}/{Weight}/{subset}/result.css。
-       API 索引收录不全（阿里健康体、玄宗等 API 404 但包在），zh-common 缺档升 full。 */
-    var cap = norm.charAt(0).toUpperCase() + norm.slice(1);
+    var folder = packFolder(pack, norm);
     var wn = wname || 'Regular';
-    var tries = [
-      FACE_PACK_BASE + encodeURIComponent(cap) + '/' + encodeURIComponent(wn) + '/zh-common/result.css',
-      FACE_PACK_BASE + encodeURIComponent(cap) + '/' + encodeURIComponent(wn) + '/full/result.css',
-      FACE_PACK_BASE + encodeURIComponent(cap) + '/Regular/full/result.css',
-      FACE_CSS_TPL.replace('{F}', encodeURIComponent(family))
-    ];
+    var sib = siblingWeight(wn);
+    var tries = [];
+    function addTry(sub, w) {
+      tries.push(FACE_PACK_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(w) + '/' + sub + '/result.css');
+    }
+    if (subset === 'full') {
+      addTry('full', wn);
+      if (sib) addTry('full', sib);
+      if (wn !== 'Regular') addTry('full', 'Regular');
+    } else {
+      addTry('zh-common', wn);
+      if (sib) addTry('zh-common', sib);
+      addTry('full', wn);
+      if (sib) addTry('full', sib);
+      if (wn !== 'Regular') addTry('full', 'Regular');
+    }
+    if (family) tries.push(FACE_CSS_TPL.replace('{F}', encodeURIComponent(family)));
     (function next(i) {
-      if (i >= tries.length) { markMiss(); applyClass(famCss); return; }
+      if (i >= tries.length) { markMiss(); return; }
       fetch(tries[i]).then(function (r) {
         if (!r.ok) throw new Error(String(r.status));
         return r.text();
       }).then(function (css) {
         if (css.indexOf('@font-face') === -1) throw new Error('not css');
-        try { delete miss[norm]; localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
+        try { delete miss[missId]; localStorage.setItem(MISS_KEY, JSON.stringify(miss)); } catch (e) {}
         injectCss(css, tries[i].replace(/[^/]+$/, ''));
       }).catch(function () { next(i + 1); });
     })(0);
   }
+  function faceShown(el) {
+    if (!el || el.hidden) return false;
+    var li = el.closest('li');
+    if (li && li.hidden) return false;
+    return true;
+  }
+  function loadFaceEl(el) {
+    applyFontFace(
+      el.getAttribute('data-face-norm'),
+      el.getAttribute('data-face-family'),
+      el.getAttribute('data-face-full') === '1',
+      el.getAttribute('data-face-weight'),
+      el.getAttribute('data-face-pack'),
+      el.getAttribute('data-face-subset')
+    );
+  }
+  function loadVisibleFaces() {
+    $$('[data-face-norm]').forEach(function (el) {
+      if (faceShown(el)) loadFaceEl(el);
+    });
+  }
   function lazyPreviews() {
     var els = document.querySelectorAll('[data-face-norm]');
     if (!els.length) return;
-    function loadEl(el) {
-      applyFontFace(
-        el.getAttribute('data-face-norm'),
-        el.getAttribute('data-face-family'),
-        el.getAttribute('data-face-full') === '1',
-        el.getAttribute('data-face-weight')
-      );
-    }
-    if (!('IntersectionObserver' in window)) {
-      Array.prototype.forEach.call(els, loadEl);
-      return;
-    }
+    loadVisibleFaces();
+    if (!('IntersectionObserver' in window)) return;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         io.unobserve(e.target);
-        loadEl(e.target);
+        loadFaceEl(e.target);
       });
     }, { rootMargin: '140px' });
-    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+    Array.prototype.forEach.call(els, function (el) {
+      if (!faceShown(el)) io.observe(el);
+    });
   }
 
   /* 深浅 / 设计·开发 / 放大（同店面：wf-theme / wf-view / wf-scale） */
@@ -204,7 +271,7 @@
     var letterMark = $('[data-letter-mark]');
     var unit = list.getAttribute('data-unit') || '款';
     function apply() {
-      var q = state.q.trim().toLowerCase(), hits = [];
+      var q = String(state.q || '').trim().toLowerCase(), hits = [];
       var licIdle = !!(licLayout && !q);
       rows.forEach(function (r) {
         var hit = !licIdle
@@ -239,6 +306,7 @@
       letterBtns.forEach(function (b) { b.classList.toggle('is-on', b.getAttribute('data-letter-filter') === state.letter); });
       if (letterMark) letterMark.textContent = state.letter === 'all' ? '录' : state.letter;
       renderPager(pages);
+      loadVisibleFaces();
       var u = new URL(location.href);
       state.q ? u.searchParams.set('q', state.q) : u.searchParams.delete('q');
       state.st !== 'all' ? u.searchParams.set('st', state.st) : u.searchParams.delete('st');
@@ -339,7 +407,7 @@
       var q = (qIn.value || '').trim().toLowerCase();
       if (!q) return '';
       var exact = catalog.filter(function (it) {
-        return it.norm.toLowerCase() === q || it.name.toLowerCase() === q;
+        return String(it.norm || '').toLowerCase() === q || String(it.name || '').toLowerCase() === q;
       });
       if (exact.length === 1) return exact[0].norm;
       var hits = catalog.filter(function (it) { return (it.hay || '').indexOf(q) !== -1; });
@@ -350,7 +418,7 @@
       active = shown.length ? 0 : -1;
       if (!shown.length) {
         hitsEl.hidden = false;
-        hitsEl.innerHTML = '<li class="at-suggest-empty">没有可出证的匹配。换个名字试试。</li>';
+        hitsEl.innerHTML = '<li class="at-suggest-empty">' + icon('search') + '<span>没有可出证的匹配。换个名字试试。</span></li>';
         qIn.setAttribute('aria-expanded', 'true');
         return;
       }
@@ -480,7 +548,7 @@
     var issuer = (cert.issuer && cert.issuer.legalName) || '文派（广州）科技有限公司';
     var licName = (cert.license && cert.license.name) || '';
     var origin = (cert.license && cert.license.origin) || null;
-    var holderCell = cert.holder ? esc(cert.holder) : '通用核验记录';
+    var holderCell = cert.holder ? esc(cert.holder) : '（未填写持证单位）';
     var infoCells = [
       ['收录名称（分发版）', esc(cert.catalogName)],
       ['持证单位', holderCell]
@@ -493,11 +561,11 @@
 
     var chainNodes = [
       origin
-        ? { icon: 'user', role: '原始授权方', name: origin.rootAuthor + '「' + origin.rootWork + '」', sub: '衍生收录，授权沿袭' }
+        ? { icon: 'user', role: '原始授权方', name: origin.rootAuthor + '「' + origin.rootWork + '」', sub: '基于该原作衍生收录，许可允许修改后分发' }
         : { icon: 'user', role: '原始授权方', name: cert.foundry || cert.originalName || '', sub: cert.originalEn || '原创设计' },
       { icon: 'book', role: '开源协议', name: licName, sub: '' },
       { icon: 'shield', role: '平台收录分发', name: '文风字体', sub: '出证责任主体', solid: true },
-      { icon: 'idcard', role: '持证单位', name: cert.holder || '通用核验记录', sub: '证明持有' }
+      { icon: 'idcard', role: '持证单位', name: cert.holder || '（未填写持证单位）', sub: '证明持有' }
     ];
     var chainFlow = chainNodes.map(function (n, i) {
       var node = '<div class="chain-node">' +
@@ -658,6 +726,11 @@
 
     api('/api/v1/certs/' + encodeURIComponent(norm) + '?' + p).then(function (c) {
       activeCert = c;
+      if (!c || c.error || !c.serial) {
+        if (c && c.error) updateCertView();
+        else stage.innerHTML = result(false, '这份证明没有编号', '<p>接口没有返回 serial，徽章先不生成。</p>');
+        return;
+      }
       updateCertView();
       var tools = $('[data-cert-tools]'); if (tools) tools.hidden = false;
       var printBtn = $('[data-print]'); if (printBtn) printBtn.onclick = function () { print(); };
@@ -708,7 +781,7 @@
         var dl = $('[data-badge-dl]');
         if (dl) {
           dl.href = apiBadgeSrc(c.serial, v, true);
-          dl.setAttribute('download', 'wenfeng-badge-' + c.serial.toLowerCase() + '-' + v + '.svg');
+          dl.setAttribute('download', 'wenfeng-badge-' + String(c.serial).toLowerCase() + '-' + v + '.svg');
         }
         $$('[data-badge-kind]').forEach(function (b) {
           b.classList.toggle('is-on', b.dataset.badgeKind === badgeKind);
@@ -732,7 +805,8 @@
       var copyBtn = $('[data-copy]');
       if (copyBtn) copyBtn.onclick = function (ev) {
         navigator.clipboard.writeText(embedCode(c.serial, badgeVariant()));
-        ev.target.textContent = '已复制';
+        var t = copyBtn.querySelector('[data-copy-label]') || copyBtn;
+        t.textContent = '已复制';
       };
     }).catch(function (err) { stage.innerHTML = result(false, '证明服务暂不可用', '<p>' + esc(err.message) + '</p>'); });
   }
@@ -764,7 +838,7 @@
         '<span class="lnm">' + esc(x.catalogName) + '</span>' +
         '<span class="lrel">' + esc(x.serial) + '</span>' +
         '<span class="lgo">' + esc(x.issuedAt) + '</span></a></li>';
-    }).join('') + '</ul><p class="empty" data-empty hidden>没有匹配的记录。</p><nav class="pager" data-pager hidden></nav>';
+    }).join('') + '</ul><p class="empty" data-empty hidden>' + icon('search') + '<span>没有匹配的记录。</span></p><nav class="pager" data-pager hidden></nav>';
     bindFilterList(lg.querySelector('[data-list]'));
   }).catch(function (e) { lg.innerHTML = result(false, '台账暂不可用', '<p>' + esc(e.message) + '</p>'); });
 
@@ -781,7 +855,7 @@
             '<p>编号与单位须与证明上完全一致。通用记录填「通用核验记录」。查不到的，按伪造处理。</p>'); return;
         }
         var holder = r.holder ? esc(r.holder) : '通用核验记录';
-        var cert = r.href ? '<p class="acts"><a class="btn btn-ink" href="' + esc(r.href) + '">打开证明页</a></p>' : '';
+        var cert = r.href ? '<p class="acts"><a class="btn btn-ink" href="' + esc(r.href) + '">' + icon('certificate') + '打开证明页</a></p>' : '';
         out.innerHTML = result(true, '证书有效', '<dl class="kv-rows"><div><dt>字体</dt><dd>' + esc(r.catalogName) + '</dd></div><div><dt>协议</dt><dd>' + esc(r.spdx) +
           '</dd></div><div><dt>持证单位</dt><dd>' + holder + '</dd></div><div><dt>签发日期</dt><dd>' + esc(r.issuedAt) + '</dd></div><div><dt>下载次数</dt><dd>' + esc(r.downloads) + '</dd></div></dl>' + cert);
       }).catch(function (e) { out.innerHTML = result(false, '查验服务暂不可用', '<p>' + esc(e.message) + '</p>'); });
@@ -790,32 +864,34 @@
     if (qs.get('s') && qs.get('holder')) runLookup();
   }
 
-  /* 切片包：本地核验原包 */
-  var drop = $('[data-drop]');
-  if (drop) {
-    var file = $('input', drop), out = $('[data-out]');
-    function check(f) {
-      if (!f) return;
-      out.innerHTML = result(true, '正在计算摘要…', '<p>' + esc(f.name) + '</p>');
-      f.arrayBuffer().then(function (buf) {
-        var u8 = new Uint8Array(buf);
-        if (!(u8[0] === 0x50 && u8[1] === 0x4b)) { out.innerHTML = result(false, '不是 zip 原包', '<p>请放入从厂商下载、尚未解压的 zip。</p>'); return; }
-        return crypto.subtle.digest('SHA-256', buf).then(function (h) {
-          var hex = Array.prototype.map.call(new Uint8Array(h), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
-          var want = drop.dataset.sha;
-          if (!want) out.innerHTML = result(false, '这款的原包摘要尚未登记', '<p>暂时不能领取。你的文件摘要：</p><code class="hash">' + hex + '</code>');
-          else if (hex === want) out.innerHTML = result(true, '核验通过', '<p>原型阶段，切片包生成尚未接入。</p>');
-          else out.innerHTML = result(false, '摘要不一致', '<p>这不是收录时的官方原包，或文件已被改动。</p><code class="hash">' + hex + '</code>');
-        });
+  /* 报缺字 */
+  (function () {
+    var kinds = document.querySelector('.gp1-kinds');
+    if (!kinds) return;
+    function showKind(kind) {
+      var btn = kinds.querySelector('[data-kind="' + kind + '"]');
+      if (!btn) return;
+      kinds.querySelectorAll('[data-kind]').forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-pane]').forEach(function (pane) {
+        pane.hidden = pane.getAttribute('data-pane') !== kind;
       });
     }
-    file.addEventListener('change', function () { check(file.files[0]); });
-    ['dragover', 'dragenter'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('is-over'); }); });
-    ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function () { drop.classList.remove('is-over'); }); });
-    drop.addEventListener('drop', function (e) { e.preventDefault(); check(e.dataTransfer.files[0]); });
-  }
-
-  /* 报缺字 */
+    if (qs.get('kind')) showKind(qs.get('kind'));
+    var gapNorm = qs.get('norm');
+    var gapName = qs.get('name') || gapNorm;
+    if (gapName) {
+      document.querySelectorAll('[data-gap-name]').forEach(function (inp) {
+        if (!inp.value || inp.value === '霞鹜文楷') inp.value = gapName;
+      });
+      var ch = document.querySelector('[data-gap-char]');
+      if (ch && ch.value === '龘') ch.value = '';
+      if (gapNorm && !qs.get('kind')) showKind('errata');
+    }
+  })();
   document.addEventListener('click', function (ev) {
     var kindBtn = ev.target.closest('.gp1-kinds [data-kind]');
     if (kindBtn) {
