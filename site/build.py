@@ -642,7 +642,7 @@ def home_prime(fonts, q_id):
         '<button class="btn btn-ink" type="submit">%s搜索</button></form>'
         '<p class="lab-find-more">%s</p></div></div>'
         % ("wenfeng.org",
-           _how_dual("自由使用，无需登录，即可下载。文风云<span class=\"reg\">®</span>另提供即用字库切片，支持自托管。", "offer · /source"),
+           _fv("每款字体均已核对许可原文，无需登录即可下载。文风云<span class=\"reg\">®</span>另提供即用字库切片，支持自托管。", "offer · /source"),
            e(q_id), e(q_id), icon("search"),
            _how_dual('<a href="/source/">收录 %d 款</a> · <a href="/source/?st=source">本站可下载 %d 款 →</a>' % (n, n_src),
                      "offer=source · fonts[]=%d" % n))
@@ -657,11 +657,11 @@ def home_prime(fonts, q_id):
         '<a class="lab-door is-side is-q3" href="/gap/"><span class="lab-side-bg" aria-hidden="true">造字</span><span class="idx">03</span>'
         '<h2 class="xxzt">%s</h2><p class="d">%s</p><span class="go">%s</span></a></div>'
         % (find,
-           _how_dual("授权查询", "/license"), _how_dual("收录多款字体，开放公众查询。", "/license"),
+           _how_dual("授权查询", "/license"), _how_dual("收录多款字体许可，开放公众查询。", "/license"),
            _how_dual("%d 份许可全文 →" % n_full, "textState=full"),
-           _how_dual("获取证书", "/attest"), _how_dual("企业用字合规，在线申请证书。", "can_attest"),
+           _how_dual("获取证书", "/attest"), _how_dual("解决企业用字合规，在线申请证书。", "can_attest"),
            _how_dual("%d 款可出证 →" % n_att, "can_attest"),
-           _how_dual("缺字勘误", "/gap"), _how_dual("开源字型库，缺、错字报告。", "POST"),
+           _how_dual("缺字勘误", "/gap"), _how_dual("开源字体及字型库，缺字错字报告。", "POST"),
            _how_dual("即将开放 →", "POST 未接"))
     )
 
