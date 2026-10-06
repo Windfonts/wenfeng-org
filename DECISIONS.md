@@ -120,10 +120,10 @@
 | `https://cn.windfonts.com/wenfeng-slice/Xwwk.zip` | 404 |
 | `https://wenfeng-org.oss-cn-guangzhou.aliyuncs.com/pack/slice/Alhyznht.zip` | 上一会话所写，对象不存在 |
 
-- 113 条 `wenfeng-original/{norm}.tar.gz` 全是 `staged`，页面本来就不给出下载。`export-wenfeng.py` 的 `ARCHIVE_HREF_PREFIX` 仍是占位。
+- 113 条 `wenfeng-original/{norm}.tar.gz` 全是 `staged`，**本站 tar.gz 仍不放直链**（404）。`export-wenfeng.py` 的 `ARCHIVE_HREF_PREFIX` 仍是占位。2026-10-06：人「依次做，已经有很多了」——113 款上游全是 GitHub `owner/repo`，`archive/HEAD.zip` 公网 200，条目主按钮「下载」指向该 zip，不当 404 tar.gz。
 - 已上架的网页分片：`fonts-packages/{Norm}/{Weight}/{subset}/result.css`，名单 `data/webfonts.json`（354）。无 Referer 也是 200，不要写成已经做了防盗链。
 - 同日又对这 556 款探了三份索引（`data/oss-packs.json`）：`license/index.json` 200 的 270 款；`slice/index.json` 200 的 10 款（Btot、Dlzht、Dyh、Hclck2、Ibmps、Ljmc、Opsa、Xwmh、Yzklct、Zkklt）；`source/index.json` 在这 556 款里是 0。桶上另有不在这批目录里的源文件索引（例如 TaigiHuninn 的 `schemes/*.ttf` 200），本站页面不编造它们的地址。
-- 条目页「还能办的事」用紧凑任务行，不带图标，不重复主按钮。有真实 `files[slice].href` 才叫切片包；否则可再分发的，链 slice 索引里的 `cssUrl`，没有索引就链上面的 result.css，标题写「网页分片」。`distribution=false` 不给这条（Dlzht 有切片索引也不给）。有 `sliceGate` 的才进 `/slice/{norm}/`。
+- 条目页「还能办的事」用紧凑任务行，不重复主按钮。有真实 `files[slice].href` 才叫切片包；否则可再分发的，链 slice 索引里的 `cssUrl`，没有索引就链上面的 result.css，标题写「网页字体」。`distribution=false` 不给网页分片（Dlzht 有切片索引也不给）。有 `sliceGate` 的才进 `/slice/{norm}/` 核验台；禁再分发且 `webfonts.json` 已有包的，核验通过后打包管线 CSS/woff2，不放 404 zip，也不给未切片的 39 款空闸。
 - `/slice/` 不再把开源款铺成「看下载页 / 稍后提供」。
 
 ### D-16 双视图口径纠正（2026-10-06）
@@ -232,3 +232,5 @@
 - `2026-10-06`：长文组余项 20+ 全清：/legal 掐半与行话 12 处（才出证/CC 系/派生件/核验就是给/仍走/证面/JSON/整包摘要/钓鱼条款三连排/去顶/文风下架主语）；/use/ 8 处（注释留着/给自建站/三连否定/整只引入/只出字段/开源款）；/slice 2、条目卡 3、attest 2、about 4（含「造字平台为独立产品，上线后从本站进入」替换内部路线图指代）。记录人：[CC]。
 - `2026-10-06`：关于页细修：路径 04 对齐「厂商自拟协议、尚未核实、未收录的，不出证」；路径 03 统一「都从一个入口报」；造字行「域名未定」→「独立产品（上线后从本站进入）」（内部状态不外露）；边界段 4-5 连否定拆句（不销售字体文件或授权…出证只面向…）；版式=边界长文阅读列 56em 居中偏左、17px、行高 1.85（原 42em 挤左列右空白）。记录人：[CC]。
 - `2026-10-06`：文本审查收尾——/how/ 页题「怎么核」（掐半）统一为「我们怎么核验」（与全站链接文字/页脚「如何查询」动词口径对齐；title+page_head+面包屑三处）。导航「用法」入口不动（/how 是用法域子页）。记录人：[CC]。
+- `2026-10-06`：人：切片工具和下载都没看到；「依次做，已经有很多了」。下载：113 款 GitHub HEAD.zip。切片：先前把 41 款空闸当成工具，错了。用法三条是原件 / 切片包 / 网页；`/slice/` 只核验禁再分发；管线成品是 `fonts-packages` 的 CSS+woff2（354），不是 404 的 `wenfeng-slice` zip。现只给已有包的禁再分发款开闸（普惠体、传趣），核验后打包真 woff2。未提交。记录人：[Cursor]。
+- `2026-10-06`：人：边界段全是「不不不」烦死了。三段正面化重写：「不替代/不创设」→「证明与许可原文并行使用：原文定权利，证明作凭证」；厂商段两连「不」→「商用授权由各厂商决定，证明业务不涉及」；第三段五连「不」→「专注授权核对与源文件分发……不在出证范围内」（删不销售/不代理/不代表三连与「曾基于 WordPress」）。「不」字 11→2（均法律必需）。法律完整表述仍在 /legal。记录人：[CC]。
