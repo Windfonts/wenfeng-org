@@ -1,3 +1,5 @@
+> 10-06 CyberCDN 清混写缓存：[Cursor]。10 边 `/var/cache/openresty/windfonts` 按 `fonts-packages/{含大写}/` 删缓存（合计约 11.9 万条）。抽样：`xxzt/xwwk/hcszt` 小写 200，混写 `Xxzt/Xwwk/Hcszt` 404。日志 devops `~/bin/mixed-pack-cdn-purge.log`。
+>
 > 10-06 档案版式冻结：[Cursor]。`/source/{norm}/` 版式已冻（样字→领取→怎么用标签页；`wenfeng-{norm}/fonts.css`；侧栏档案号）。真源 `docs/pages/source-norm.md` + DESIGN §8.3。已提交并推 FeiCode `5812918`。生产 OSS 待 modiqi 可连后再 `deploy.sh --bucket wenfeng-org --go`。
 >
 > 10-06 包名缩短：[Cursor]。装机目录与 zip 用 `wenfeng-{norm}/`（去中间 `slice`）；`wenfeng-` 品牌前缀仍不可丢。「切片」只在领取文案。未提交。
