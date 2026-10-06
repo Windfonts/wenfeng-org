@@ -1,4 +1,4 @@
-> 10-06 档案版式冻结：[Cursor]。`/source/{norm}/` 版式已冻（样字→领取→怎么用标签页；`wenfeng-{norm}/fonts.css`；侧栏档案号）。真源 `docs/pages/source-norm.md` + DESIGN §8.3。未发生产前先发本提交。
+> 10-06 档案版式冻结：[Cursor]。`/source/{norm}/` 版式已冻（样字→领取→怎么用标签页；`wenfeng-{norm}/fonts.css`；侧栏档案号）。真源 `docs/pages/source-norm.md` + DESIGN §8.3。已提交并推 FeiCode `5812918`。生产 OSS 待 modiqi 可连后再 `deploy.sh --bucket wenfeng-org --go`。
 >
 > 10-06 包名缩短：[Cursor]。装机目录与 zip 用 `wenfeng-{norm}/`（去中间 `slice`）；`wenfeng-` 品牌前缀仍不可丢。「切片」只在领取文案。未提交。
 >
