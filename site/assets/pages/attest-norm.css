@@ -108,6 +108,23 @@
   margin-right: auto;
 }
 
+
+/* 授权说明：与证面纸张同语系——浅底圆角块，正文 13px 行高舒展 */
+.page-attest-norm .atn-note {
+  padding: var(--s-4);
+  border-radius: var(--radius);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+.page-attest-norm .atn-note .label { margin-bottom: var(--s-2); }
+.page-attest-norm .atn-note-p {
+  margin: 0 0 var(--s-2);
+  font-size: var(--fs-13);
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+.page-attest-norm .atn-note-p:last-child { margin-bottom: 0; }
+
 .page-attest-norm .atn-embed {
   max-width: none;
 }
@@ -207,11 +224,13 @@
 
 /* ⑤ 移动端：下载 PDF 独占一行加大（第一视觉动线） */
 @media (max-width: 720px) {
-  .page-attest-norm .atn-tools-main { flex-wrap: nowrap; }
+  .page-attest-norm .atn-toolbar { padding: var(--s-3); gap: var(--s-2); }
+  .page-attest-norm .atn-tools-main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--s-2); }
+  .page-attest-norm .atn-tools-main .btn { height: 2.75rem; padding: 0 0.4rem; font-size: var(--fs-13); justify-content: center; }
   .page-attest-norm .atn-tools-main [data-pdf] {
-    flex: 1 1 100%;
-    order: -1;
+    grid-column: 1 / -1;
     height: 3rem;
     font-size: var(--fs-15, 0.9375rem);
   }
+  .page-attest-norm .atn-tools-links { grid-column: 1 / -1; display: flex; gap: var(--s-4); }
 }
