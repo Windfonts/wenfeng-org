@@ -329,7 +329,7 @@
       shown = [];
     }
     function pick(item) {
-      if (!item) return;
+      if (!item || !qIn || !hid) return;
       hid.value = item.norm;
       qIn.value = item.name;
       closeHits();
@@ -401,6 +401,8 @@
       });
     }
     form.addEventListener('submit', function (ev) {
+      /* 旧版 <select> 表单没有 qIn/hid：放行原生 submit，别在这里空指针 */
+      if (!qIn || !hid) return;
       ev.preventDefault();
       var fd = new FormData(form), p = new URLSearchParams();
       var norm = hid.value || resolveQuery();
