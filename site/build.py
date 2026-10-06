@@ -124,6 +124,14 @@ def load():
     # 对外一律小写：显示、链接、属性、路由全走小写 norm（文件名查找走 _text_path）
     for f in fonts:
         f["norm"] = str(f.get("norm") or "").lower()
+        shop = f.get("shop") or ""
+        if "/fonts/" in shop:
+            f["shop"] = re.sub(
+                r"(/fonts/)([^/?#]+)",
+                lambda m: m.group(1) + m.group(2).lower(),
+                shop,
+                count=1,
+            )
     licenses = {str(k).lower(): v for k, v in licenses.items()}
     return data, fonts, licenses
 
@@ -248,6 +256,17 @@ def ink(label, href, ico=None):
     return link(label, href, "btn-ink", ico)
 
 
+def soft_btn(label, href, ico=None):
+    """次级钮：有按钮形，不抢墨。"""
+    if not href:
+        return ""
+    ext = str(href).startswith("http")
+    return '<a class="btn" href="%s"%s>%s%s</a>' % (
+        e(href), ' target="_blank" rel="noopener"' if ext else "",
+        icon(ico) if ico else "", e(label),
+    )
+
+
 def crumb(*items, dev=""):
     parts = ['<a href="/">wenfeng.org</a>'] + [
         ('<a href="%s">%s</a>' % (e(h), e(t)) if h else e(t)) for h, t in items]
@@ -259,6 +278,26 @@ def display(title, lead, crumbs=(), kicker="", mid=False):
     return ('%s<div class="display%s"><div>%s<h1>%s</h1></div><p class="lead">%s</p></div>'
             % (crumb(*crumbs) if crumbs else "", " is-mid" if mid else "",
                '<p class="label">%s</p>' % e(kicker) if kicker else "", e(title), lead))
+
+
+
+def font_dossier_html(f, up_cell, text_cell, arch_cell, mirror_state):
+    """侧栏「这一款」：编号作档案号，字段上标签下值。"""
+    rows = [
+        ("原文", e(text_cell["d"])),
+        ("归档", e(arch_cell["d"])),
+        ("镜像", e(mirror_word(mirror_state) or "—")),
+        ("出处", up_cell),
+    ]
+    body = "".join(
+        '<div><dt>%s</dt><dd>%s</dd></div>' % (e(k), v)
+        for k, v in rows if v not in (None, "")
+    )
+    return (
+        '<p class="fn-dossier-id mono">%s</p>'
+        '<dl class="fn-dossier">%s</dl>'
+        % (e(f["norm"]), body)
+    )
 
 
 def kv_rows(rows, words=False):
@@ -1018,6 +1057,25 @@ def github_archive_zip(href):
     return "https://github.com/%s/%s/archive/HEAD.zip" % (owner, repo)
 
 
+def github_repo_name(href):
+    """从 GitHub 地址或 archive/HEAD.zip 取出仓库名。"""
+    if not href:
+        return ""
+    from urllib.parse import urlparse
+    try:
+        u = urlparse(href)
+    except Exception:
+        return ""
+    host = re.sub(r"^www\.", "", u.netloc or "")
+    parts = [p for p in (u.path or "").split("/") if p]
+    if host != "github.com" or len(parts) < 2:
+        return ""
+    repo = parts[1]
+    if repo.endswith(".git"):
+        repo = repo[:-4]
+    return repo
+
+
 def primary_file(f):
     arch = file_of(f, "archive")
     if arch and arch.get("href") and not arch.get("staged"):
@@ -1026,15 +1084,45 @@ def primary_file(f):
     if first and first.get("kind") not in ("upstream", "git"):
         return first
     if can_take(f):
-        z = github_archive_zip(upstream_href(f))
+        up = upstream_href(f)
+        z = github_archive_zip(up)
         if z:
+            repo = github_repo_name(up) or github_repo_name(z) or (f.get("norm") or "source")
             return {
                 "kind": "archive",
-                "label": (f.get("name") or f.get("norm") or "源文件") + " 源文件",
+                "label": "%s.zip" % repo,
                 "format": "zip",
                 "href": z,
+                "via": "github",
             }
     return None
+
+
+def archive_display_name(file, f=None):
+    """给人看的包名。GitHub HEAD.zip 回退显示仓库名，不露裸 HEAD.zip。"""
+    if not file:
+        return "源文件"
+    href = file.get("href") or ""
+    via = file.get("via") or ""
+    if via == "github" or "/archive/HEAD.zip" in href:
+        repo = github_repo_name(href)
+        if not repo and f:
+            repo = github_repo_name(upstream_href(f))
+        if repo:
+            return "%s.zip" % repo
+        if f and f.get("en"):
+            return "%s.zip" % re.sub(r"\s+", "", f["en"])
+        if f and f.get("norm"):
+            return "%s.zip" % f["norm"]
+    label = (file.get("label") or "").strip()
+    name = file_name_from_href(href)
+    if name and name != "HEAD.zip":
+        return name
+    if label and "源文件" not in label:
+        return label
+    if label:
+        return label
+    return name or "源文件"
 
 
 def primary_label(file):
@@ -1167,10 +1255,14 @@ def font_text_cell(f):
 
 def font_archive_cell(f):
     archive = file_of(f, "archive")
+    if archive and archive.get("href") and not archive.get("staged"):
+        return {"d": "可下载", "v": archive_display_name(archive, f)}
+    # 本站 tar 未就绪，但 GitHub HEAD.zip 可下
+    if can_take(f) and github_archive_zip(upstream_href(f)):
+        repo = github_repo_name(upstream_href(f)) or "repo"
+        return {"d": "GitHub 源码包", "v": "github · %s.zip" % repo}
     if archive and archive.get("staged"):
         return {"d": "稍后提供", "v": "staged · " + (archive.get("format") or "tar.gz")}
-    if archive and archive.get("href"):
-        return {"d": "可下载", "v": file_name_from_href(archive["href"]) or archive.get("format") or "file"}
     if (f.get("offer") or "jump") == "missing":
         return {"d": "未收录", "v": "none"}
     return {"d": "没有归档包", "v": "none"}
@@ -1381,16 +1473,201 @@ def font_more(f, verb):
     )
 
 
+
+def font_take_howto_html(f):
+    """怎么用：授权标注常显；引入示例用标签页，每页完整可复制代码。"""
+    norm = f["norm"]
+    pack = "wenfeng-%s" % norm
+    family = f.get("family") or ("wenfeng-%s" % norm)
+    path = "./fonts/%s/fonts.css" % pack
+    wp_path = "/fonts/%s/fonts.css" % pack
+    css_comment = (
+        "/* 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；"
+        "请保留本授权标注 https://wenfeng.org/license */"
+    )
+    samples = [
+        (
+            "HTML",
+            "%s\n"
+            '<link rel="stylesheet" href="%s">'
+            % (COMMENT, path),
+        ),
+        (
+            "CSS",
+            "%s\n"
+            '@import url("%s");\n\n'
+            "body {\n"
+            "  font-family: %s, system-ui, sans-serif;\n"
+            "}"
+            % (css_comment, path, family),
+        ),
+        (
+            "WordPress",
+            "// functions.php：整夹放进主题 fonts/ 后排队引入\n"
+            "// 授权标注已写在 fonts.css，勿删\n"
+            "wp_enqueue_style(\n"
+            "  '%s',\n"
+            "  get_theme_file_uri( '%s' ),\n"
+            "  array(),\n"
+            "  null\n"
+            ");"
+            % (pack, wp_path),
+        ),
+    ]
+
+    def code_block(body):
+        # 结构对齐 APP：.code + 右上角 .copy + pre
+        return (
+            '<div class="code">'
+            '<button type="button" class="copy" data-fn-copy>复制</button>'
+            '<pre>%s</pre></div>'
+            % e(body)
+        )
+
+    tabs = []
+    panels = []
+    for i, (label, body) in enumerate(samples):
+        on = " is-on" if i == 0 else ""
+        hid = "" if i == 0 else " hidden"
+        tabs.append(
+            '<button type="button"%s data-fn-tab="%s" role="tab"'
+            ' aria-selected="%s">%s</button>'
+            % (
+                ' class="is-on"' if i == 0 else "",
+                e(label),
+                "true" if i == 0 else "false",
+                e(label),
+            )
+        )
+        panels.append(
+            '<div class="fn-take-panel" data-fn-panel="%s" role="tabpanel"%s>%s</div>'
+            % (e(label), hid, code_block(body))
+        )
+
+    return (
+        '<div class="fn-take-howto" id="howto">'
+        '<p class="fn-label">怎么用</p>'
+        '<p class="fn-take-note">解压后<strong>整夹保留</strong>，引入包内 <code>fonts.css</code>。'
+        '目录名带 <code>wenfeng-</code> 前缀，勿改。静态站、任意前端都能用；'
+        '不要拆文件，也不要删注释。</p>'
+        '<p class="fn-take-label">授权标注 · 须保留</p>'
+        '%s'
+        '<p class="fn-take-label">引入示例</p>'
+        '<div class="seg fn-take-tabs" data-fn-tabs role="tablist" aria-label="引入示例">%s</div>'
+        '%s'
+        '<p class="fn-take-more"><a href="/use/">用法全文</a></p>'
+        '</div>'
+        % (
+            code_block(COMMENT),
+            "".join(tabs),
+            "".join(panels),
+        )
+    )
+
+
+def font_take_html(f):
+    """原件 + 切片包：两行同构；切片墨钮、原件次级钮。"""
+    gated = is_gated(f)
+    archive = file_of(f, "archive")
+    up = upstream_href(f)
+    staged = bool(archive and archive.get("staged"))
+    rows = []
+
+    real = primary_file(f)
+    if real and real.get("href") and real.get("kind") != "upstream" and not real.get("staged"):
+        fname = archive_display_name(real, f)
+        size_s = fmt_bytes(real.get("bytes") or real.get("size"))
+        bits = [fname]
+        via_gh = real.get("via") == "github" or "/archive/HEAD.zip" in (real.get("href") or "")
+        if via_gh:
+            bits.append("GitHub 源码仓")
+        if size_s:
+            bits.append(size_s)
+        rows.append(
+            '<div class="fn-take-row">'
+            '<span class="fn-take-kind">原件</span>'
+            '<span class="fn-take-info mono">%s</span>'
+            '%s</div>'
+            % (
+                e(" · ".join(bits)),
+                soft_btn("下载", real["href"], VERB_ICO.get("下载") or "download"),
+            )
+        )
+        if via_gh:
+            rows.append(
+                '<p class="fn-take-orig-note">上游仓库打包下载，内含完整源文件；'
+                '不是单个精修 TTF / OTF。本站 OSS 包就绪后会换正式直链。</p>'
+            )
+    elif not gated:
+        tip = "正在上架到本站 OSS，就绪后本页直下。"
+        if staged:
+            tip = "OSS 原件包整理中，就绪后本页直下。"
+        go = ""
+        if up:
+            go = ' <a class="fn-file-go" href="%s" target="_blank" rel="noopener">看出处</a>' % e(up)
+        rows.append(
+            '<div class="fn-take-row is-wait">'
+            '<span class="fn-take-kind">原件</span>'
+            '<span class="fn-take-info is-mute">%s%s</span></div>'
+            % (e(tip), go)
+        )
+
+    slice_bare = slice_desk_html(f, bare=True, chrome="quiet")
+    if gated:
+        # 闸控：交包台吃满主栏，不套开源双行骨架
+        return (
+            '<div class="fn-take is-gate" id="take">'
+            '<p class="fn-label">领取切片包</p>'
+            '<p class="fn-take-hint">交官方尚未解压的 zip，核验后领取。原件不离开本机。</p>'
+            '<div class="fn-slice-block">%s</div>%s</div>'
+            % (slice_bare, font_take_howto_html(f))
+        )
+
+    rows.append(
+        '<div class="fn-take-row is-slice">'
+        '<span class="fn-take-kind">切片包</span>'
+        '<span class="fn-take-info">woff2 · CSS</span>'
+        '<div class="fn-slice-inline">%s</div></div>'
+        % slice_bare
+    )
+    return (
+        '<div class="fn-take" id="take">'
+        '<p class="fn-label">领取</p>'
+        '<div class="fn-take-list">%s</div>%s</div>'
+        % ("".join(rows), font_take_howto_html(f))
+    )
+
+
+def font_quiet_more(f):
+    """还能办的事：安静文字链，不抢领取。"""
+    bits = []
+    if f.get("shop"):
+        bits.append('<a href="%s">在线选字</a>' % e(f["shop"]))
+    bits.append('<a href="/gap/?norm=%s">报缺字</a>' % e(f["norm"]))
+    bits.append(
+        '<a href="/gap/?norm=%s&name=%s">信息有误？</a>'
+        % (e(f["norm"]), e(wf(f)))
+    )
+    return '<p class="fn-quiet-more">%s</p>' % " · ".join(bits)
+
+
 def page_font(f):
-    """档案页：经典档案馆版式。顶栏主动作；样字；文件；切片包。"""
+    """档案页：甲 · 并路领取。顶栏许可/证明；样字；同构领取双行；侧栏。"""
     verb = font_verb(f)
     st = status(f)
     st_label = STATUS[st][0]
     note = (f.get("visitorNote") or "").strip() or verb["note"]
     archive = file_of(f, "archive")
     up = upstream_href(f)
-    if archive and archive.get("staged") and "稍后" not in note and not github_archive_zip(up):
+    if (
+        archive and archive.get("staged")
+        and "稍后" not in note
+        and not github_archive_zip(up)
+        and not (primary_file(f) or {}).get("href")
+    ):
         note = "原件正在上架到本站 OSS。" + note
+    if not (f.get("visitorNote") or "").strip() and st == "source":
+        note = "原件与切片包可直接领取。"
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
     foundry = f.get("foundry") or "未标注"
@@ -1404,14 +1681,10 @@ def page_font(f):
     mirror_state = (f.get("mirror") or {}).get("state") or ""
     face = f.get("family") or ""
     face_attrs = face_attrs_of(f, require_pack=False)
-    gated = is_gated(f)
-    staged = bool(archive and archive.get("staged"))
 
     lic_href = "/license/%s/" % f["norm"]
     acts = []
-    if verb.get("strongHref") and verb.get("strongLabel"):
-        acts.append(ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"])))
-    if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
+    if license_readable(f, None):
         acts.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
     if can_attest(f):
         acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
@@ -1421,51 +1694,7 @@ def page_font(f):
         ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (e(up), e(up_label)))
         if up else e(up_label)
     )
-    dossier = kv_rows([
-        ("目录编号", e(f["norm"])),
-        ("协议", e(proto)),
-        ("厂商", foundry_html),
-        ("原文", e(text_cell["d"])),
-        ("归档", e(arch_cell["d"])),
-        ("镜像", e(mirror_word(mirror_state) or "—")),
-        ("出处", up_cell),
-    ])
-
-    file_html = ""
-    real = primary_file(f)
-    if real and real.get("href") and real.get("kind") != "upstream" and not real.get("staged"):
-        fname = file_name_from_href(real["href"]) or real.get("label") or "源文件"
-        size_s = fmt_bytes(real.get("bytes") or real.get("size"))
-        sha = real.get("sha256") or ""
-        meta_dev = sha or real.get("format") or real.get("kind") or ""
-        file_html = (
-            '<div class="fn-file">'
-            '<p class="fn-label">原件</p>'
-            '<a class="fn-file-row" href="%s"%s>'
-            '<span class="fn-file-name">%s</span>'
-            '%s%s</a></div>'
-            % (
-                e(real["href"]),
-                ' target="_blank" rel="noopener"' if str(real["href"]).startswith("http") else "",
-                e(fname),
-                ('<span class="fn-file-size">%s</span>' % e(size_s)) if size_s else "",
-                ('<span class="fn-file-sha for-dev mono">%s</span>' % e(meta_dev)) if meta_dev else "",
-            )
-        )
-    elif not gated:
-        # 可分发：原件都会进 OSS
-        tip = "正在上架到本站 OSS，就绪后本页直下。"
-        if staged:
-            tip = "OSS 原件包整理中，就绪后本页直下。"
-        extra = ""
-        if up:
-            extra = ' <a class="fn-file-go" href="%s" target="_blank" rel="noopener">看出处</a>' % e(up)
-        file_html = (
-            '<div class="fn-file is-wait">'
-            '<p class="fn-label">原件</p>'
-            '<p class="fn-file-wait">%s%s</p></div>'
-            % (e(tip), extra)
-        )
+    dossier = font_dossier_html(f, up_cell, text_cell, arch_cell, mirror_state)
 
     evidence = " · ".join(
         x for x in (
@@ -1484,7 +1713,8 @@ def page_font(f):
         face_attrs=face_attrs,
         sub=evidence,
     )
-    body += '<p class="acts fn-acts">%s</p>' % "".join(acts)
+    if acts:
+        body += '<p class="acts fn-acts">%s</p>' % "".join(acts)
     body += '<div class="fn-layout"><div class="fn-main">'
     if face:
         body += '<p class="fn-proof t-%s"%s data-face-full="1">%s</p>' % (
@@ -1494,15 +1724,9 @@ def page_font(f):
         body += '<p class="fn-proof t-%s" data-face-norm="%s" data-face-full="1">%s</p>' % (
             e(f["norm"]), e(f["norm"]), e(PROOF),
         )
-    body += file_html
-    body += slice_desk_html(f, chrome="quiet")
-    body += font_more(f, verb) + '</div>'
+    body += font_take_html(f)
+    body += font_quiet_more(f) + '</div>'
     body += aside("这一款", dossier) + '</div>'
-    body += (
-        '<p class="fn-errata quiet">'
-        '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
-        % (e(f["norm"]), e(wf(f)))
-    )
     return layout(
         "source", wf(f), body, "/source/%s" % f["norm"],
         extra_head=pages_css("source-norm", "slice") + "\n" + pages_js("slice"),
@@ -1520,15 +1744,22 @@ def _font_by_norm(fonts, norm):
 
 
 def _lab_font_bits(f):
-    """对照稿共用件。句子与按钮词跟活页同一套。"""
+    """对照稿共用件。领取与安静链跟活页同一套。"""
     verb = font_verb(f)
     st = status(f)
     st_label = STATUS[st][0]
     note = (f.get("visitorNote") or "").strip() or verb["note"]
     archive = file_of(f, "archive")
     up = upstream_href(f)
-    if archive and archive.get("staged") and "稍后" not in note and not github_archive_zip(up):
-        note = "归档包稍后提供。" + note
+    if (
+        archive and archive.get("staged")
+        and "稍后" not in note
+        and not github_archive_zip(up)
+        and not (primary_file(f) or {}).get("href")
+    ):
+        note = "原件正在上架到本站 OSS。" + note
+    if not (f.get("visitorNote") or "").strip() and st == "source":
+        note = "原件与切片包可直接领取。"
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
     foundry = f.get("foundry") or "未标注"
@@ -1542,81 +1773,52 @@ def _lab_font_bits(f):
     mirror_state = (f.get("mirror") or {}).get("state") or ""
     face_attrs = face_attrs_of(f, require_pack=False)
     lic_href = "/license/%s/" % f["norm"]
-    acts = []
-    if verb.get("strongHref") and verb.get("strongLabel"):
-        acts.append(ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"])))
-    if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
-        acts.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
+
+    acts_doc = []
+    if license_readable(f, None):
+        acts_doc.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
     if can_attest(f):
-        acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
-    sec = []
-    strong = (verb.get("strongHref") or "").rstrip("/")
-    if license_readable(f, None) and strong != lic_href.rstrip("/"):
-        sec.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
-    if can_attest(f) and strong != ("/attest/%s/" % f["norm"]).rstrip("/"):
-        sec.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
-    dossier = kv_rows([
-        ("目录编号", e(f["norm"])),
-        ("协议", e(proto)),
-        ("厂商", foundry_html),
-        ("原文", e(text_cell["d"])),
-        ("归档", e(arch_cell["d"])),
-        ("镜像", e(mirror_word(mirror_state) or "—")),
-        ("出处", e(upstream_dossier(up))),
-    ])
-    file_html = ""
-    real = primary_file(f)
-    if real and real.get("href") and real.get("kind") != "upstream" and not real.get("staged"):
-        fname = file_name_from_href(real["href"]) or real.get("label") or "源文件"
-        size_s = fmt_bytes(real.get("bytes") or real.get("size"))
-        file_html = (
-            '<a class="fn-file-row" href="%s"%s>'
-            '<span class="fn-file-name">%s</span>%s</a>'
-            % (
-                e(real["href"]),
-                ' target="_blank" rel="noopener"' if str(real["href"]).startswith("http") else "",
-                e(fname),
-                ('<span class="fn-file-size">%s</span>' % e(size_s)) if size_s else "",
-            )
-        )
-    proof = '<p class="lf-proof t-%s"%s data-face-full="1">%s</p>' % (
+        acts_doc.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
+
+    up_label = upstream_dossier(up) if up else "—"
+    up_cell = (
+        ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (e(up), e(up_label)))
+        if up else e(up_label)
+    )
+    dossier = font_dossier_html(f, up_cell, text_cell, arch_cell, mirror_state)
+
+    evidence = " · ".join(
+        x for x in (
+            (f.get("en") or "").strip(),
+            proto if proto != "—" else "",
+            foundry if foundry != "未标注" else "",
+        ) if x
+    ) or (f.get("en") or "")
+    lead = "%s。%s" % (e(st_label), e(note))
+    proof = '<p class="fn-proof t-%s"%s data-face-full="1">%s</p>' % (
         e(f["norm"]), face_attrs, e(PROOF),
     )
-    orig_btn = ""
-    if verb.get("strongHref") and verb.get("strongLabel"):
-        orig_btn = ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"]))
-    slice_mode = "gate" if is_gated(f) else "open"
-    slice_word = "交原包后领取" if slice_mode == "gate" else "可直接领取"
     return {
-        "verb": verb,
-        "st": st,
-        "st_label": st_label,
-        "note": note,
-        "acts": "".join(acts),
-        "sec": "".join(sec),
-        "orig_btn": orig_btn,
+        "lead": lead,
+        "evidence": evidence,
+        "acts_doc": "".join(acts_doc),
         "dossier": dossier,
-        "file_html": file_html,
+        "take": font_take_html(f),
         "proof": proof,
         "face_attrs": face_attrs,
-        "more": font_more(f, verb),
-        "slice": slice_desk_html(f, chrome="quiet"),
-        "slice_bare": slice_desk_html(f, bare=True, chrome="quiet"),
-        "slice_mode": slice_mode,
-        "slice_word": slice_word,
+        "more_quiet": font_quiet_more(f),
         "name": wf(f),
-        "en": f.get("en") or "",
         "norm": f["norm"],
+        "st_label": st_label,
         "proto": proto,
-        "foundry_html": foundry_html,
     }
 
 
 def page_lab_font(fonts, variant, demo="xwwk"):
-    """条目对照稿（对齐店面详情气质）。甲贴近店面 / 乙卡组 / 丙通栏 / 丁侧栏优先。活页不动。"""
+    """条目对照：甲=活页同构；乙先领后赏；丙通栏。"""
     f = _font_by_norm(fonts, demo)
     b = _lab_font_bits(f)
-    names = (("a", "甲"), ("b", "乙"), ("c", "丙"), ("d", "丁"))
+    names = (("a", "甲"), ("b", "乙"), ("c", "丙"))
     self_name = dict(names)[variant]
     others = "".join(
         ' · <a href="/lab/font-%s/%s">看%s</a>' % (k, "" if demo == "xwwk" else "albbpht/", lab)
@@ -1634,125 +1836,71 @@ def page_lab_font(fonts, variant, demo="xwwk"):
             '<a href="/lab/font-%s/">开源款</a>'
             ' · <span class="lf-demo is-on">禁再分发</span>' % variant
         )
+    blurb = {
+        "a": "并路 · 领取同构双行（与活页一致）",
+        "b": "先领后赏 · 领取紧贴顶栏",
+        "c": "疏朗通栏 · 无侧栏",
+    }[variant]
     flag = (
-        '<p class="lab-flag">稿%s<span class="for-dev mono"> · %s</span>%s · '
-        '<a href="/source/%s/">活页未改</a> · %s</p>'
-        % (self_name, path, others, e(f["norm"]), demos)
+        '<p class="lab-flag">稿%s · %s<span class="for-dev mono"> · %s</span>%s · '
+        '<a href="/source/%s/">活页</a> · %s</p>'
+        % (self_name, blurb, path, others, e(f["norm"]), demos)
     )
 
-    dots = []
-    if f.get("foundrySlug"):
-        dots.append(
-            '<a class="lf-dot-f" href="/foundry/%s/">%s</a>'
-            % (e(f["foundrySlug"]), e(f.get("foundry") or ""))
-        )
-    elif f.get("foundry"):
-        dots.append("<span>%s</span>" % e(f["foundry"]))
-    if b.get("proto"):
-        dots.append("<span>%s</span>" % e(b["proto"]))
-    dots.append('<span class="lf-chip">%s</span>' % e(b["st_label"]))
-    dotlist = '<p class="lf-dotlist">%s</p>' % "".join(dots)
-
-    # 开源：标题右侧并排「下载」与领取台（安静一钮）；禁再分发领取进主栏
-    acts_bits = []
-    if b["orig_btn"]:
-        acts_bits.append(b["orig_btn"])
-    if b["slice_mode"] == "open":
-        acts_bits.append(b["slice_bare"])
-    title_actions = (
-        ('<div class="lf-actions">%s</div>' % "".join(acts_bits)) if acts_bits else ""
-    )
-
-    title_block = (
-        '<div class="lf-title">'
-        '<div class="lf-title-main">'
-        '<h1 class="is-face t-%s"%s>%s%s</h1>'
-        '%s</div>%s</div>'
-        % (
-            e(f["norm"]), b["face_attrs"], e(b["name"]),
-            ('<small class="mono">%s</small>' % e(b["en"])) if b["en"] else "",
-            dotlist, title_actions,
-        )
-    )
-    wall = (
-        '<div class="lf-wall">'
-        '<p class="lf-wall-sample t-%s"%s data-face-full="1">%s</p>'
-        '</div>'
-        % (e(f["norm"]), b["face_attrs"], e(PROOF))
-    )
-
-    if b["slice_mode"] == "gate":
-        take_panel = (
-            '<section class="lf-panel" id="slice-wrap">'
-            '<div class="lf-panel-head"><h2>即用字库</h2>'
-            '<p class="lf-panel-note">交官方 zip 核验后领取。原件不离开本机。</p></div>'
-            '<div class="lf-panel-pad">%s</div></section>'
-            % b["slice_bare"]
-        )
-    else:
-        take_panel = (
-            '<section class="lf-panel">'
-            '<div class="lf-panel-head"><h2>即用字库</h2></div>'
-            '<div class="lf-panel-pad">'
-            '<p class="lf-panel-note">从上方领取。解压后引入 fonts.css，保留授权注释。</p>'
-            "</div></section>"
-        )
-
-    more_panel = ""
-    if b["sec"]:
-        more_panel = (
-            '<section class="lf-panel">'
-            '<div class="lf-panel-head"><h2>许可与证明</h2></div>'
-            '<div class="lf-panel-pad"><p class="lf-quiet-links">%s</p></div></section>'
-            % b["sec"]
-        )
-    side = aside("资料", b["dossier"])
-    gap = (
-        '<p class="lf-quiet-links">'
-        '<a href="/gap/?norm=%s">报缺字</a>'
-        '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
-        % (e(f["norm"]), e(f["norm"]), e(b["name"]))
+    head = page_head(
+        b["name"],
+        b["lead"],
+        crumbs=[("/source/", "目录"), (None, b["name"])],
+        dev="/lab/font-%s · %s" % (variant, f["norm"]),
+        face_attrs=b["face_attrs"],
+        sub=b["evidence"],
     )
 
     if variant == "a":
         inner = (
-            "%s%s"
-            '<div class="lf-body"><div class="lf-main">%s%s%s</div>%s</div>'
-            % (wall, title_block, take_panel, more_panel, gap, side)
+            '%s'
+            '<p class="acts fn-acts">%s</p>'
+            '<div class="fn-layout"><div class="fn-main">'
+            '%s%s%s</div>%s</div>'
+            % (
+                head, b["acts_doc"],
+                b["proof"], b["take"], b["more_quiet"],
+                aside("这一款", b["dossier"]),
+            )
         )
     elif variant == "b":
         inner = (
-            '<div class="lf-pair">%s%s</div>'
-            '<div class="lf-body"><div class="lf-main">%s%s%s</div>%s</div>'
-            % (wall, title_block, take_panel, more_panel, gap, side)
-        )
-    elif variant == "c":
-        inner = (
-            "%s%s"
-            '<div class="lf-main is-solo">%s%s'
-            '<section class="lf-panel"><div class="lf-panel-head"><h2>资料</h2></div>'
-            '<div class="lf-panel-pad">%s</div></section>%s</div>'
-            % (wall, title_block, take_panel, more_panel, b["dossier"], gap)
+            '%s'
+            '<p class="acts fn-acts">%s</p>'
+            '<div class="fn-layout"><div class="fn-main">'
+            '%s%s%s</div>%s</div>'
+            % (
+                head, b["acts_doc"],
+                b["take"], b["proof"], b["more_quiet"],
+                aside("这一款", b["dossier"]),
+            )
         )
     else:
+        meta = '<div class="lf-meta">%s</div>' % b["dossier"]
         inner = (
-            '<div class="lf-top">'
-            '<div class="lf-top-main">%s%s</div>%s</div>'
-            '<div class="lf-main is-solo">%s%s%s</div>'
-            % (wall, title_block, side, take_panel, more_panel, gap)
+            '%s'
+            '<p class="acts fn-acts">%s</p>'
+            '<div class="fn-main is-solo">'
+            '%s%s%s%s</div>'
+            % (
+                head, b["acts_doc"],
+                meta, b["take"], b["proof"], b["more_quiet"],
+            )
         )
 
-    body = (
-        '<p class="crumb"><a href="/">wenfeng.org</a><span class="sep">/</span>'
-        '<a href="/source/">目录</a><span class="sep">/</span>%s'
-        '<span class="for-dev"> · %s</span></p>'
-        '%s<div class="lf-lab is-%s">%s</div>'
-        % (e(b["name"]), e(path), flag, variant, inner)
-    )
+    body = flag + '<div class="lf-lab is-%s">%s</div>' % (variant, inner)
     return layout(
         "source", "%s · 稿%s" % (b["name"], self_name), body, path,
-        extra_head=pages_css("lab-font", "slice") + "\n" + pages_js("slice"),
-        body_class="lab-font-page lab-font-%s" % variant,
+        extra_head=(
+            pages_css("source-norm", "lab-font", "slice")
+            + "\n" + pages_js("slice")
+        ),
+        body_class="page-font lab-font-page lab-font-%s" % variant,
     )
 
 
@@ -2897,7 +3045,7 @@ def page_attest(f):
         '<a class="btn atn-link-btn" href="/attest/ledger/">证明记录</a>'
         '</section>'
         '<details class="atn-embed" data-share>'
-        '<summary class="atn-embed-toggle">获取嵌入徽章<span class="atn-embed-arrow" aria-hidden="true">▾</span></summary>'
+        '<summary class="atn-embed-toggle">获取嵌入徽章<svg class="icon atn-embed-arrow" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>'
         '<p class="label">嵌入徽章</p>'
         '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
         '<div class="atn-embed-controls">'
@@ -3265,13 +3413,13 @@ def page_use():
         '<p>解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>'
         '<pre class="gate-code">// functions.php 里排队引入\n'
         'wp_enqueue_style(\n'
-        "  'wenfeng-slice-xwwk',\n"
-        "  get_theme_file_uri( '/fonts/wenfeng-slice-Xwwk/fonts.css' ),\n"
+        "  'wenfeng-xwwk',\n"
+        "  get_theme_file_uri( '/fonts/wenfeng-xwwk/fonts.css' ),\n"
         '  array(),\n'
         '  null\n'
         ');\n\n'
         '/* 或在主题 style.css 顶部 */\n'
-        '@import url( "./fonts/wenfeng-slice-Xwwk/fonts.css" );</pre>'
+        '@import url( "./fonts/wenfeng-xwwk/fonts.css" );</pre>'
         '</div></section>'
         '<section class="gate-band" id="api">'
         '<h2>目录 API</h2>'
@@ -3281,17 +3429,17 @@ def page_use():
         '<li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>'
         '<li><a href="/api/v1/fonts?offer=source"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>'
         '<li><a href="/api/v1/fonts?q=%E9%9C%9E%E9%B9%AD"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>'
-        '<li><a href="/api/v1/fonts/Xwwk"><code>GET /api/v1/fonts/Xwwk</code><span>一款 · 有 files</span></a></li>'
-        '<li><a href="/api/v1/fonts/Albbpht"><code>GET /api/v1/fonts/Albbpht</code><span>files 为空</span></a></li>'
-        '<li><a href="/api/v1/licenses/Xwwk"><code>GET /api/v1/licenses/Xwwk</code><span>许可原文</span></a></li>'
+        '<li><a href="/api/v1/fonts/xwwk"><code>GET /api/v1/fonts/xwwk</code><span>一款 · 有 files</span></a></li>'
+        '<li><a href="/api/v1/fonts/albbpht"><code>GET /api/v1/fonts/albbpht</code><span>files 为空</span></a></li>'
+        '<li><a href="/api/v1/licenses/xwwk"><code>GET /api/v1/licenses/xwwk</code><span>许可原文</span></a></li>'
         '<li><a href="/api/v1/foundries"><code>GET /api/v1/foundries</code><span>厂商</span></a></li>'
         '<li><a href="/api/v1/certs"><code>GET /api/v1/certs</code><span>可核验目录</span></a></li>'
-        '<li><a href="/api/v1/certs/Xwwk"><code>GET /api/v1/certs/Xwwk</code><span>一款核验 JSON</span></a></li>'
+        '<li><a href="/api/v1/certs/xwwk"><code>GET /api/v1/certs/xwwk</code><span>一款核验 JSON</span></a></li>'
         '<li><span class="api-row"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>'
         '</ul>'
         '<pre class="gate-code gate-sample">GET /api/v1/fonts/{norm}\n'
         '{\n'
-        '  "norm": "Xwwk",\n'
+        '  "norm": "xwwk",\n'
         '  "name": "霞鹜文楷",\n'
         '  "distribution": true,\n'
         '  "offer": "source",\n'
@@ -3955,7 +4103,7 @@ def main():
     write("/lab/about-d/", page_lab_about("d"))
     write("/lab/about-e/", page_lab_about("e"))
     write("/lab/about-f/", page_lab_about("f"))
-    for v in ("a", "b", "c", "d"):
+    for v in ("a", "b", "c"):
         write("/lab/font-%s/" % v, page_lab_font(fonts, v, "xwwk"))
         write("/lab/font-%s/albbpht/" % v, page_lab_font(fonts, v, "albbpht"))
     write("/source/", page_source(fonts))
