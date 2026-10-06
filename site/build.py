@@ -60,9 +60,20 @@ e = lambda s: html.escape("" if s is None else str(s), quote=True)
 SPRITE = re.sub(r"<\?xml[^>]*>\s*", "", (ROOT / "assets/icons.svg").read_text("utf-8"))
 # cn.windfonts.com 有 web 包的字体名单（api/css 探测产物 data/webfonts.json；包上架后重跑探测刷新）
 try:
-    WEBFONTS = set(k.lower() for k in json.loads((ROOT / "data/webfonts.json").read_text("utf-8"))["fonts"].keys())
+    _wf_map = json.loads((ROOT / "data/webfonts.json").read_text("utf-8"))["fonts"]
+    WEBFONT_SUBSET = {k.lower(): v for k, v in _wf_map.items()}
+    WEBFONT_CANON = {k.lower(): k for k in _wf_map}
+    WEBFONTS = set(WEBFONT_SUBSET)
 except Exception:
+    WEBFONT_SUBSET = {}
+    WEBFONT_CANON = {}
     WEBFONTS = set()
+# 2026-10-04 对 cn.windfonts.com 的索引探测。只有 200 的才写进来。键按文件名原样。
+try:
+    OSS_PACKS = json.loads((ROOT / "data/oss-packs.json").read_text("utf-8")).get("fonts") or {}
+except Exception:
+    OSS_PACKS = {}
+OSS_PACKS_LOWER = {str(k).lower(): v for k, v in OSS_PACKS.items()}
 
 
 # ---------- 数据 ----------
@@ -241,11 +252,13 @@ def task(i, title, desc, href=None, ico=None, inked=False):
     attr = ' href="%s"' % e(href) if href else ""
     if href and str(href).startswith("http"):
         attr += ' target="_blank" rel="noopener"'
+    t = e(title)
+    d = e(desc) if desc else desc
     return ('<%s class="task%s"%s><span class="idx">%02d</span>%s<span class="body"><span class="t-t">%s</span>'
             '<span class="t-d">%s</span></span><span class="arrow">%s</span></%s>'
             % (tag, " is-ink" if inked else "", attr, i,
                '<span class="t-ico">%s</span>' % icon(ico) if ico else "<span></span>",
-               e(title), desc, icon("arrow-right") if href else "", tag))
+               t, d, icon("arrow-right") if href else "", tag))
 
 
 def tasks(items, compact=False, start=1):
@@ -261,6 +274,31 @@ def search(action="/source/", ph="中文名、英文名、厂商…", live=False
             '<label class="sr-only" for="q">搜索字体</label>'
             '<input id="q" name="q" type="search" placeholder="%s" aria-label="搜索字体" autocomplete="off">'
             '<button class="btn btn-ink" type="submit">%s搜索</button></form>' % (e(action), e(ph), icon("search")))
+
+
+
+def face_attrs_of(f, weight=True, require_pack=True):
+    """目录/条目用的网页包属性。pack 用 OSS 原样大小写，subset 用探测结果。"""
+    face = f.get("family") or ""
+    norm_key = str(f.get("norm") or "").lower()
+    if require_pack and norm_key not in WEBFONTS:
+        face = ""
+    if not face:
+        return ""
+    pack = WEBFONT_CANON.get(norm_key) or f["norm"]
+    subset = WEBFONT_SUBSET.get(norm_key) or ""
+    weights = f.get("weights") or ["Regular"]
+    wname = "Regular" if "Regular" in weights else weights[0]
+    parts = [
+        ' data-face-norm="%s"' % e(f["norm"]),
+        ' data-face-family="%s"' % e(face),
+        ' data-face-pack="%s"' % e(pack),
+    ]
+    if weight:
+        parts.append(' data-face-weight="%s"' % e(wname))
+    if subset:
+        parts.append(' data-face-subset="%s"' % e(subset))
+    return "".join(parts)
 
 
 def status_words():
@@ -289,15 +327,14 @@ def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
             elif st == "jump":
                 verb, inked, href = "去出处", False, "/source/%s/" % e(f["norm"])
             elif st == "missing":
-                verb, inked, href = "报缺", False, "/gap/?norm=%s" % e(f["norm"])
+                verb, inked, href = "报缺收录", False, "/gap/?norm=%s" % e(f["norm"])
             else:
                 verb, inked, href = "看条目", False, "/source/%s/" % e(f["norm"])
         if href_of:
             href = href_of(f)
-        face = f.get("family") or "" if f["norm"] in WEBFONTS else ""
+        attrs = face_attrs_of(f)
+        face = bool(attrs)
         cls = "lrow t-%s" % e(f["norm"]) if face else "lrow"
-        wname = "Regular" if "Regular" in (f.get("weights") or []) else ((f.get("weights") or ["Regular"])[0])
-        attrs = ' data-face-norm="%s" data-face-family="%s" data-face-weight="%s"' % (e(f["norm"]), e(face), e(wname)) if face else ""
         return ('<li data-st="%s" data-hay="%s" data-letter="%s"><a class="%s" href="%s"%s>'
                 '<span class="lnm">%s</span>'
                 '<span class="lrel">%s</span>'
@@ -400,25 +437,44 @@ def _foot_bottom(dev=""):
     return '<div class="site-foot-bottom">%s%s</div>' % (copy, links)
 
 
+def _foot_rest_nav():
+    rest = "".join(
+        '<a href="%s"%s%s><span class="t">%s</span><span class="d">%s</span></a>' % (
+            h,
+            (' class="%s"' % c) if c else (' class="is-ext"' if h.startswith("http") else ""),
+            (' target="_blank" rel="noopener" title="%s（即将离开文风）"' % e(t)) if h.startswith("http") else "",
+            e(t),
+            _how_dual(g, h.rstrip("/")) if not c else e(g),
+        )
+        for h, t, g, c in FOOT_REST
+    )
+    return '<nav class="foot-rest" aria-label="页脚">%s</nav>' % rest
+
+
+def _foot_brand(kind="stack"):
+    tag = '<p class="foot-tagline">文派文风，开源字体，持续更新、许可清晰。</p>'
+    if kind == "row":
+        return (
+            '<div class="site-foot-brand is-row">%s'
+            '<div class="foot-brand-copy">%s%s</div></div>'
+            % (_foot_wm(), tag, _foot_marks())
+        )
+    if kind == "line":
+        return (
+            '<div class="site-foot-brand is-line">'
+            '<div class="foot-brand-head">%s%s</div>%s</div>'
+            % (_foot_wm(), tag, _foot_marks())
+        )
+    return '<div class="site-foot-brand">%s%s%s</div>' % (_foot_wm(), tag, _foot_marks())
+
+
 def foot_lab(kind, dev=""):
     """甲余项行（活页）/ 乙收束 / 丙办事横条。上下块都进 .container，底沿不拉满屏。"""
     bottom = _foot_bottom(dev)
     if kind == "a":
-        rest = "".join(
-            '<a href="%s"%s%s><span class="t">%s</span><span class="d">%s</span></a>' % (
-                h,
-                (' class="%s"' % c) if c else (' class="is-ext"' if h.startswith("http") else ""),
-                (' target="_blank" rel="noopener" title="%s（即将离开文风）"' % e(t)) if h.startswith("http") else "",
-                e(t),
-                _fv(g, h.rstrip("/")) if not c else e(g),
-            )
-            for h, t, g, c in FOOT_REST
-        )
         inner = (
-            '<div class="site-foot-inner">'
-            '<div class="site-foot-brand">%s'
-            '<p class="foot-tagline">文派文风，开源字体，持续更新、许可清晰。</p>%s</div>'
-            '<nav class="foot-rest" aria-label="页脚">%s</nav></div>' % (_foot_wm(), _foot_marks(), rest)
+            '<div class="site-foot-inner">%s%s</div>'
+            % (_foot_brand("line"), _foot_rest_nav())
         )
         cls = "site-foot is-foot-a"
     elif kind == "b":
@@ -459,6 +515,15 @@ def pages_css(*names):
     return "\n".join(bits)
 
 
+def pages_js(*names):
+    bits = []
+    for n in names:
+        p = HERE / "assets" / "pages" / ("%s.js" % n)
+        v = int(p.stat().st_mtime) if p.is_file() else 0
+        bits.append('<script src="/assets/pages/%s.js?v=%d" defer></script>' % (n, v))
+    return "\n".join(bits)
+
+
 def page_head(title, lead, crumbs=(), kicker="", dev="", face_attrs="", sub=""):
     cr = crumb(*crumbs, dev=dev) if crumbs or dev else ""
     kick = ('<p class="ph-kicker">%s</p>' % e(kicker)) if kicker else ""
@@ -475,12 +540,6 @@ def page_head(title, lead, crumbs=(), kicker="", dev="", face_attrs="", sub=""):
     lead_d = '<p class="ph-lead for-design">%s</p>' % lead
     lead_v = ('<p class="ph-lead for-dev mono">%s</p>' % e(dev)) if dev else ""
     return '%s<header class="page-mast">%s%s%s%s%s</header>' % (cr, kick, h1, sub_h, lead_d, lead_v)
-
-
-def _strip_hero(html):
-    html = re.sub(r'<p class="\w+-crumb"[^>]*>.*?</p>\s*', "", html, count=1, flags=re.S)
-    html = re.sub(r'<div class="\w+-display">.*?</div>\s*', "", html, count=1, flags=re.S)
-    return html
 
 
 def layout(section, title, body, dev="", extra_head="", body_class="", nav_items=None, wordmark_href="/", footer=None):
@@ -531,6 +590,11 @@ def _fv(d, v, cls=""):
     return '<span class="%sfor-design">%s</span><span class="%sfor-dev mono">%s</span>' % (p, d, p, v)
 
 
+def _how_dual(design, dev):
+    """人话常显；开发视图追加字段。design 可含已安全的 HTML。"""
+    return '%s<span class="for-dev mono"> · %s</span>' % (design, e(dev))
+
+
 def home_prime(fonts, q_id):
     """丙′ 主门 + 三侧门。活页与 /lab/home-c/ 共用。"""
     n = len(fonts)
@@ -551,28 +615,28 @@ def home_prime(fonts, q_id):
         '<input id="%s" name="q" type="search" placeholder="中文名、英文名、厂商…" autocomplete="off">'
         '<button class="btn btn-ink" type="submit">%s搜索</button></form>'
         '<p class="lab-find-more">%s</p></div></div>'
-        % (_fv("wenfeng.org", "wenfeng.org"),
-           _fv("每款字体均已核对许可原文，无需登录即可下载。文风云<span class=\"reg\">®</span>另提供即用字库切片，支持自托管。", "offer · /source"),
+        % ("wenfeng.org",
+           _how_dual("自由使用，无需登录，即可下载。文风云<span class=\"reg\">®</span>另提供即用字库切片，支持自托管。", "offer · /source"),
            e(q_id), e(q_id), icon("search"),
-           _fv('<a href="/source/">收录 %d 款</a> · <a href="/source/?st=source">本站可下载 %d 款 →</a>' % (n, n_src),
-               "offer=source · fonts[]=%d" % n))
+           _how_dual('<a href="/source/">收录 %d 款</a> · <a href="/source/?st=source">本站可下载 %d 款 →</a>' % (n, n_src),
+                     "offer=source · fonts[]=%d" % n))
     )
     return (
         '<div class="lab-doors is-prime">'
         '%s'
         '<a class="lab-door is-side is-q1" href="/license/"><span class="lab-side-bg" aria-hidden="true">正版</span><span class="idx">01</span>'
-        '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a>'
+        '<h2 class="xxzt">%s</h2><p class="d">%s</p><span class="go">%s</span></a>'
         '<a class="lab-door is-side is-q2" href="/attest/"><span class="lab-side-bg" aria-hidden="true">免费</span><span class="idx">02</span>'
-        '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a>'
+        '<h2 class="xxzt">%s</h2><p class="d">%s</p><span class="go">%s</span></a>'
         '<a class="lab-door is-side is-q3" href="/gap/"><span class="lab-side-bg" aria-hidden="true">造字</span><span class="idx">03</span>'
-        '<h2>%s</h2><p class="d">%s</p><span class="go">%s</span></a></div>'
+        '<h2 class="xxzt">%s</h2><p class="d">%s</p><span class="go">%s</span></a></div>'
         % (find,
-           _fv("授权查询", "/license"), _fv("收录多款字体许可，开放公众查询。", "/license"),
-           _fv("%d 份许可全文 →" % n_full, "textState=full"),
-           _fv("获取证书", "/attest"), _fv("解决企业用字合规，在线申请证书。", "can_attest"),
-           _fv("%d 款可出证 →" % n_att, "can_attest"),
-           _fv("缺字勘误", "/gap"), _fv("开源字体及字型库，缺字错字报告。", "POST"),
-           _fv("即将开放 →", "POST 未接"))
+           _how_dual("授权查询", "/license"), _how_dual("收录多款字体，开放公众查询。", "/license"),
+           _how_dual("%d 份许可全文 →" % n_full, "textState=full"),
+           _how_dual("获取证书", "/attest"), _how_dual("企业用字合规，在线申请证书。", "can_attest"),
+           _how_dual("%d 款可出证 →" % n_att, "can_attest"),
+           _how_dual("缺字勘误", "/gap"), _how_dual("开源字型库，缺、错字报告。", "POST"),
+           _how_dual("即将开放 →", "POST 未接"))
     )
 
 
@@ -603,10 +667,10 @@ def _frow(f):
     cls = "frow t-%s" % e(f["norm"]) if face else "frow"
     attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
     info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空", f.get("foundry") or "未标注"]))
-    info_v = "%s · offer=%s · textState=%s" % (e(f["norm"]), e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
+    info_v = "offer=%s · textState=%s" % (e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
     return ('<a class="%s" href="%s"%s>'
             '<span class="fnm">%s</span>'
-            '<span class="finfo for-design">%s</span><span class="finfo for-dev mono">%s</span>'
+            '<span class="finfo">%s<span class="for-dev mono"> · %s</span></span>'
             '<span class="fst">%s</span>'
             '<span class="fgo%s">%s →</span></a>'
             % (cls, e(href), attrs, e(wf(f)), e(info_d), info_v, e(STATUS[st][0]),
@@ -733,11 +797,43 @@ def page_lab_foot(data, fonts, variant):
     )
 
 
+def page_lab_foot_left(data, fonts, variant):
+    """页脚左侧对照。甲横排 / 乙同行。活页仍是直叠。"""
+    path = "/lab/foot-left-%s/" % variant
+    names = (("a", "甲"), ("b", "乙"))
+    self_name = dict(names)[variant]
+    others = "".join(
+        ' · <a href="/lab/foot-left-%s/">看%s</a>' % (k, lab)
+        for k, lab in names if k != variant
+    )
+    flag = (
+        '<p class="lab-flag">左侧稿%s<span class="for-dev mono"> · %s</span>%s · '
+        '<a href="/">活页直叠</a></p>'
+        % (self_name, path, others)
+    )
+    left = "row" if variant == "a" else "line"
+    inner = (
+        '<div class="site-foot-inner">%s%s</div>'
+        % (_foot_brand(left), _foot_rest_nav())
+    )
+    footer = (
+        '<footer class="site-foot is-foot-a">'
+        '<div class="container">%s%s</div></footer>'
+        % (inner, _foot_bottom(path))
+    )
+    body = '<article class="lab-home">%s%s</article>' % (flag, home_prime(fonts, "lab-fl-%s" % variant))
+    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    return layout(
+        "home", "页脚左侧%s" % self_name, body, path, extra_head=extra,
+        body_class="lab-home-page lab-foot-page", footer=footer,
+    )
+
+
 def page_source(fonts):
     n = len(fonts)
     body = page_head(
         "字型目录",
-        "我要的那一款在哪一行。能下载的进条目拿文件，不能的去出处或报缺。",
+        "我要的那一款在哪一行。能下载的进条目拿文件，不能的去出处或报缺收录。",
         crumbs=[(None, "字型目录")],
         dev="/source · offer · fonts[]=%d" % n,
     )
@@ -1153,63 +1249,75 @@ def font_verb(f, lic_text=None):
     }
 
 
-def font_secondary(f):
-    l = lic(f)
-    rows = []
-    n = 2
+def oss_pack(f):
+    return OSS_PACKS_LOWER.get(str(f.get("norm") or "").lower()) or {}
+
+
+def oss_webfont_css(f):
+    """网页分片入口。优先用 slice/index.json 里的 cssUrl，否则用已探测的 result.css。不编 zip。"""
+    if f.get("distribution") is False:
+        return None
+    norm_key = str(f.get("norm") or "").lower()
+    subset = WEBFONT_SUBSET.get(norm_key)
+    weights = f.get("weights") or ["Regular"]
+    weight = "Regular" if "Regular" in weights else (weights[0] if weights else "Regular")
+    css_items = oss_pack(f).get("sliceCss") or []
+    want = "zh-common" if subset == "zh-common" else ("full" if subset == "full" else "")
+
+    def match(it, w, sub):
+        path = it.get("css") or ""
+        if w and not path.startswith(w + "/"):
+            return False
+        if sub and ("/%s/" % sub) not in ("/" + path):
+            return False
+        return bool(it.get("url"))
+
+    for it in css_items:
+        if match(it, weight, want):
+            return it["url"]
+    for it in css_items:
+        if match(it, weight, ""):
+            return it["url"]
+    if css_items and css_items[0].get("url"):
+        return css_items[0]["url"]
+    if not subset:
+        return None
+    canon = WEBFONT_CANON.get(norm_key) or f["norm"]
+    return "https://cn.windfonts.com/fonts-packages/%s/%s/%s/result.css" % (
+        canon, weight, subset)
+
+
+def font_more(f, verb):
+    """还能办的事：不重复主按钮。只放探测到的地址。"""
+    items = []
     norm = f["norm"]
-    if license_readable(f, None):
-        d = "全文已归档，保留名以原文为准" if l.get("rfn") else "全文已归档"
-        dv = "/license/%s%s" % (norm, " · textSha256" if l.get("textSha256") else "")
-        rows.append({
-            "n": n,
-            "href": "/license/%s/" % norm,
-            "t": "许可原文",
-            "d": d,
-            "dv": dv,
-            "go": "阅读"
-        })
-    else:
-        rows.append({
-            "n": n,
-            "href": "/license/%s/" % norm,
-            "t": "许可原文",
-            "d": "条款尚未核对",
-            "dv": "textState=%s" % (l.get("textState") or "∅"),
-            "go": "阅读"
-        })
-    n += 1
-    rows.append({
-        "n": n,
-        "href": "/gap/?norm=%s" % norm,
-        "t": "报缺字",
-        "d": "缺字形、勘误，从这个入口报",
-        "dv": "/gap",
-        "go": "反馈"
-    })
-    n += 1
+    primary = (verb.get("strongHref") or "").rstrip("/")
+
+    def add(title, desc, href):
+        if not href or href.rstrip("/") == primary:
+            return
+        items.append((title, desc, href))
+
     slice_fl = file_of(f, "slice")
-    slice_href = slice_fl["href"] if (slice_fl and slice_fl.get("href")) else ("/slice/%s/" % norm)
-    slice_later = not (slice_fl and slice_fl.get("href"))
-    rows.append({
-        "n": n,
-        "href": slice_href,
-        "t": "切片",
-        "d": "网页切片包稍后提供" if slice_later else "网页切片包",
-        "dv": ("slice=%s" % (f.get("slice") or "planned")) if slice_later else "slice",
-        "go": "工具"
-    })
-    n += 1
+    slice_href = slice_fl.get("href") if slice_fl else None
+    if slice_href:
+        add("切片包", "对象存储上的包。从本页打开再领取。", slice_href)
+    elif slice_gate_of(f):
+        add("领取切片", "放入官方未解压 zip，核验后领取。", "/slice/%s/" % norm)
+    else:
+        css = oss_webfont_css(f)
+        if css:
+            add("网页分片", "样式表和 woff2 在对象存储，按字重引用。", css)
     if f.get("shop"):
-        rows.append({
-            "n": n,
-            "href": f["shop"],
-            "t": "店面",
-            "d": "样张和选字在店面，不在这一站",
-            "dv": "shop",
-            "go": "离开"
-        })
-    return rows
+        add("店面", "样张和选字。", f["shop"])
+    add("报缺字", "缺字形或勘误。", "/gap/?norm=%s" % norm)
+    if not items:
+        return ""
+    return (
+        '<div class="fn-more">'
+        '<p class="fn-label">还能办的事</p>%s</div>'
+        % tasks(items, compact=True)
+    )
 
 
 def page_font(f):
@@ -1230,21 +1338,19 @@ def page_font(f):
     mirror_state = (f.get("mirror") or {}).get("state") or ""
     up = upstream_href(f)
     face = f.get("family") or ""
-    face_attrs = ""
-    if face:
-        face_attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face))
+    face_attrs = face_attrs_of(f, require_pack=False)
 
     lic_href = "/license/%s/" % f["norm"]
     acts = []
     if verb.get("strongHref") and verb.get("strongLabel"):
         acts.append(ink(verb["strongLabel"], verb["strongHref"]))
     if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
-        acts.append(link("读许可原文", lic_href, "btn-text"))
+        acts.append(link("读许可原文", lic_href))
     if can_attest(f):
-        acts.append(link("授权证明", "/attest/%s/" % f["norm"], "btn-text"))
+        acts.append(link("授权证明", "/attest/%s/" % f["norm"]))
 
     dossier = kv_rows([
-        ("短码", e(f["norm"])),
+        ("目录编号", e(f["norm"])),
         ("协议", e(proto)),
         ("厂商", foundry_html),
         ("原文", e(text_cell["d"])),
@@ -1252,19 +1358,6 @@ def page_font(f):
         ("镜像", e(mirror_word(mirror_state) or "—")),
         ("上游", e(upstream_dossier(up))),
     ])
-
-    sec = font_secondary(f)
-    if verb.get("strongHref", "").rstrip("/") == lic_href.rstrip("/"):
-        sec = [r for r in sec if r.get("href", "").rstrip("/") != lic_href.rstrip("/")]
-    rows = "".join(
-        '<a class="row-go" href="%s"%s><span class="idx">%02d</span><span class="body"><span class="t">%s</span>'
-        '<span class="d for-design">%s</span><span class="d for-dev mono">%s</span></span><span class="go">%s</span></a>'
-        % (
-            e(r["href"]),
-            ' target="_blank" rel="noopener"' if str(r["href"]).startswith("http") else "",
-            i, e(r["t"]), e(r["d"]), e(r["dv"]), e(r["go"])
-        ) for i, r in enumerate(sec, 2)
-    )
 
     file_html = ""
     real = primary_file(f)
@@ -1283,7 +1376,7 @@ def page_font(f):
                 e(real["href"]),
                 ' target="_blank" rel="noopener"' if str(real["href"]).startswith("http") else "",
                 e(fname),
-                ('<span class="fn-file-size for-design">%s</span>' % e(size_s)) if size_s else "",
+                ('<span class="fn-file-size">%s</span>' % e(size_s)) if size_s else "",
                 ('<span class="fn-file-sha for-dev mono">%s</span>' % e(meta_dev)) if meta_dev else "",
             )
         )
@@ -1306,9 +1399,13 @@ def page_font(f):
             e(f["norm"]), e(f["norm"]), e(PROOF)
         )
     body += file_html
-    body += '<div class="fn-more"><p class="fn-label">还能办的事</p>%s</div></div>' % rows
+    body += font_more(f, verb) + '</div>'
     body += aside("这一款", dossier) + '</div>'
-    body += '<p class="fn-errata quiet"><a href="/gap/?norm=%s">信息有误？</a></p>' % e(f["norm"])
+    body += (
+        '<p class="fn-errata quiet">'
+        '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
+        % (e(f["norm"]), e(wf(f)))
+    )
     return layout(
         "source", wf(f), body, "/source/%s" % f["norm"],
         extra_head=pages_css("source-norm"), body_class="page-font",
@@ -1431,13 +1528,15 @@ def stage_acts(f, kind):
 
 
 def lq_kv_pair(kd, kv, vd, vv):
+    v_dev = (
+        '<span class="for-dev mono"> · %s</span>' % e(vv)
+        if vv not in (None, "", vd) else ""
+    )
     return (
         '<div>'
-        '<span class="k for-design">%s</span>'
-        '<span class="k for-dev">%s</span>'
-        '<span class="v for-design">%s</span>'
-        '<span class="v for-dev mono">%s</span>'
-        '</div>' % (e(kd), e(kv), e(vd), e(vv))
+        '<span class="k">%s<span class="for-dev mono"> · %s</span></span>'
+        '<span class="v">%s%s</span>'
+        '</div>' % (e(kd), e(kv), e(vd), v_dev)
     )
 
 
@@ -1460,15 +1559,13 @@ def license_stage(f):
     )
     verdict = (
         '<div class="lq5b-verdict">'
-        '<p class="kicker for-design" data-lq-kicker-d></p>'
-        '<p class="kicker for-dev mono" data-lq-kicker-v></p>'
-        '<p class="state for-design">%s</p>'
-        '<p class="state for-dev mono">%s</p>'
+        '<p class="kicker"><span data-lq-kicker-d></span>'
+        '<span class="for-dev mono" data-lq-kicker-v></span></p>'
+        '<p class="state">%s<span class="for-dev mono"> · %s</span></p>'
         '<p class="fname">%s</p>'
-        '<p class="meta for-design">%s · %s · %s</p>'
-        '<p class="meta for-dev mono">%s · spdx=%s · offer=%s</p>'
-        '<p class="note for-design">%s</p>'
-        '<p class="note for-dev mono">%s</p>'
+        '<p class="meta">%s · %s · %s'
+        '<span class="for-dev mono"> · %s · spdx=%s · offer=%s</span></p>'
+        '<p class="note">%s<span class="for-dev mono"> · %s</span></p>'
         '<p class="acts">%s</p>'
         '</div>' % (
             copy["state"],
@@ -1487,7 +1584,7 @@ def license_stage(f):
         '<aside class="lq5b-dossier" aria-label="卷宗字段">'
         '<p class="label">卷宗</p>'
         '<div class="lq5b-kv">'
-        + lq_kv_pair("短码", "norm", f["norm"], f["norm"])
+        + lq_kv_pair("目录编号", "norm", f["norm"], f["norm"])
         + lq_kv_pair("协议", "spdx", proto, spdx or "∅")
         + lq_kv_pair("厂商", "foundry", foundry, foundry_slug)
         + lq_kv_pair("原文", "textState", ts_word, ts_dev)
@@ -1518,8 +1615,8 @@ def license_foil(f, n):
         '<span class="state">%s</span>'
         '<span class="body">'
         '<span class="fname">%s</span>'
-        '<span class="meta for-design">%s · %s · %s</span>'
-        '<span class="meta for-dev mono">%s · textState=%s · offer=%s</span>'
+        '<span class="meta">%s · %s · %s'
+        '<span class="for-dev mono"> · %s · textState=%s · offer=%s</span></span>'
         '</span>'
         '<span class="go" aria-hidden="true">%s</span>'
         '</a>' % (
@@ -1573,13 +1670,13 @@ def page_licenses(fonts):
     stage = (
         '<div class="lic-stage">'
         '<h1 class="lic-giant xxzt">授权查询</h1>'
-        '<p class="lic-lead for-design">查一款字有没有许可全文。有全文的进原文；没有的只标状态。不是法律意见。</p>'
-        '<p class="lic-lead for-dev mono">/license · textState · full=%d</p>'
+        '<p class="lic-lead">查一款字有没有许可全文。有全文的进原文；没有的只标状态。不是法律意见。'
+        '<span class="for-dev mono"> · /license · textState · full=%d</span></p>'
         '%s'
-        '<p class="lic-foot for-design">全文 %d 份</p>'
-        '<p class="lic-foot for-dev mono">textState=full · %d</p>'
+        '<p class="lic-foot">全文 %d 份'
+        '<span class="for-dev mono"> · textState=full · %d</span></p>'
         '</div>'
-        % (n_full, search(action="/license/", live=True, ph="中文名、英文、短码…"), n_full, n_full)
+        % (n_full, search(action="/license/", live=True, ph="中文名、英文、目录编号…"), n_full, n_full)
     )
     results = (
         '<div class="lic-hits-wrap" data-show-on-search aria-hidden="true">'
@@ -1903,21 +2000,17 @@ def evidence_block(f, lic_obj):
     if fetched:
         bits.append(e(fetched))
     if source_lab or method:
-        bits.append(
-            '<span class="for-design">%s</span><span class="for-dev">%s</span>'
-            % (e(source_lab or method), e(method or source_lab))
-        )
+        bits.append(_how_dual(source_lab or method, method or source_lab))
     line = '<p class="licn-ev-line">%s</p>' % " · ".join(bits) if bits else ""
 
     hash_html = ""
     if sha:
         hash_html = (
             '<p class="licn-ev-hash">'
-            '<span class="for-design">文本哈希 </span>'
-            '<span class="for-dev">textSha256 </span>'
+            '%s '
             '<span class="mono" data-lic-hash>%s</span>'
             '<button type="button" class="licn-copy" data-lic-copy="%s">复制</button>'
-            "</p>" % (e(sha), e(sha))
+            "</p>" % (_how_dual("文本哈希", "textSha256"), e(sha), e(sha))
         )
 
     hist = list(ev0.get("history") or [])
@@ -1929,8 +2022,7 @@ def evidence_block(f, lic_obj):
             ev = h.get("event") or "archive"
             bits_h = [
                 e(h.get("at") or "—"),
-                '<span class="for-design">%s</span><span class="for-dev">%s</span>'
-                % (e(_EV_EVENT_ZH.get(ev, ev)), e(ev)),
+                _how_dual(_EV_EVENT_ZH.get(ev, ev), ev),
             ]
             if h.get("note"):
                 bits_h.append(e(h["note"]))
@@ -1941,20 +2033,16 @@ def evidence_block(f, lic_obj):
                 )
             items.append("<li>%s</li>" % " · ".join(bits_h))
         hist_html = (
-            '<p class="licn-ev-h for-design">变更</p>'
-            '<p class="licn-ev-h for-dev mono">evidence.history</p>'
-            '<ol class="licn-timeline">%s</ol>' % "".join(items)
+            '<p class="licn-ev-h">%s</p>'
+            '<ol class="licn-timeline">%s</ol>'
+            % (_how_dual("变更", "evidence.history"), "".join(items))
         )
 
-    how = (
-        '<p class="licn-how for-design">说明见 <a href="/how/">我们怎么核</a>。</p>'
-        '<p class="licn-how for-dev mono"><a href="/how/">/how</a> · evidence method</p>'
-    )
+    how = '<p class="licn-how">说明见 <a href="/how/">我们怎么核</a>。</p>'
     return (
         '<section class="licn-evidence" aria-label="取证记录">'
-        '<p class="label for-design">取证记录</p>'
-        '<p class="label for-dev mono">evidence</p>'
-        "%s%s%s%s</section>" % (line, hash_html, hist_html, how)
+        '<p class="label">%s</p>'
+        "%s%s%s%s</section>" % (_how_dual("取证记录", "evidence"), line, hash_html, hist_html, how)
     )
 
 
@@ -1999,11 +2087,11 @@ def page_license(f, licenses):
         acts.append(ink("出授权证明", "/attest/%s/" % norm))
     if kind == "vendor" and src:
         acts.append(ink("去厂商原文", src))
-    acts.append(link("返回条目", "/source/%s/" % norm, "btn-text"))
+    acts.append(link("返回条目", "/source/%s/" % norm))
     if kind != "open" and can_attest(f):
-        acts.append(link("授权证明", "/attest/%s/" % norm, "btn-text"))
+        acts.append(link("授权证明", "/attest/%s/" % norm))
     if is_gated(f):
-        acts.append(link("切片工具", "/slice/%s/" % norm, "btn-text"))
+        acts.append(link("切片工具", "/slice/%s/" % norm))
 
     meta_bits = [("<span>%s</span>" % e(w)) for w in words]
     meta_bits.append("<span>%s</span>" % e(spdx))
@@ -2024,13 +2112,13 @@ def page_license(f, licenses):
             rfn_bits = []
             if names:
                 rfn_bits.append(
-                    '<p class="licn-origin-rfn for-design">保留名：%s。'
+                    '<p class="licn-origin-rfn">保留名：%s。'
                     "衍生字体不得沿用，除非权利人书面同意。</p>"
                     % e("、".join(names))
                 )
             if lic_o.get("rfnNote"):
                 rfn_bits.append(
-                    '<p class="licn-origin-rfn is-note for-design">%s</p>'
+                    '<p class="licn-origin-rfn is-note">%s</p>'
                     % e(lic_o["rfnNote"])
                 )
             # 版权原文默认折起，保留名始终外露
@@ -2038,15 +2126,13 @@ def page_license(f, licenses):
             if preamble:
                 more = (
                     '<details class="licn-origin-more" open>'
-                    '<summary><span class="for-design">版权原文</span>'
-                    '<span class="for-dev mono">copyright block</span></summary>'
+                    '<summary>版权原文</summary>'
                     '<pre class="licn-pre is-en">%s</pre></details>'
                     % mark_license_text(preamble, names)
                 )
             origin = (
                 '<section class="licn-origin" aria-label="作者声明">'
-                '<p class="licn-origin-h"><span class="for-design">作者声明</span>'
-                '<span class="for-dev mono">copyright · rfn</span></p>'
+                '<p class="licn-origin-h">作者声明</p>'
                 '%s%s</section>'
                 % ("".join(rfn_bits), more)
             )
@@ -2059,24 +2145,20 @@ def page_license(f, licenses):
                 rows.append(
                     '<div class="licn-pair">'
                     '<div class="licn-cell">'
-                    '<p class="licn-cell-h"><span class="for-design">%s</span>'
-                    '<span class="for-dev mono">%s</span></p>'
+                    '<p class="licn-cell-h">%s</p>'
                     '<pre class="licn-pre is-en">%s</pre></div>'
                     '<div class="licn-cell">'
                     '<div data-lic-pane="zh">'
-                    '<p class="licn-cell-h"><span class="for-design">%s</span>'
-                    '<span class="for-dev mono">%s</span></p>'
+                    '<p class="licn-cell-h">%s</p>'
                     '<div class="licn-pre is-zh">%s</div></div>'
                     '<div data-lic-pane="en" hidden>'
-                    '<p class="licn-cell-h">'
-                    '<span class="for-design">原版（同左）· %s</span>'
-                    '<span class="for-dev mono">%s</span></p>'
+                    '<p class="licn-cell-h">原版（同左）· %s</p>'
                     '<pre class="licn-pre is-en">%s</pre></div>'
                     '</div></div>'
                     % (
-                        e(en_h), e(en_h), en_body,
-                        e(zh_h), e(en_h), zh_body,
-                        e(en_h), e(en_h), en_body,
+                        e(en_h), en_body,
+                        e(zh_h), zh_body,
+                        e(en_h), en_body,
                     )
                 )
         elif body_text:
@@ -2111,8 +2193,7 @@ def page_license(f, licenses):
                 '<div class="licn-dual-head">'
                 '<div class="licn-dual-h">'
                 '<div class="licn-dual-lab">'
-                '<span class="for-design">原文</span>'
-                '<span class="for-dev mono">body</span></div>'
+                '原文</div>'
                 '<div class="licn-dual-right">%s</div></div>'
                 '</div>%s</div>'
                 % (right_toggle, "".join(rows))
@@ -2125,8 +2206,7 @@ def page_license(f, licenses):
         note = (f.get("visitorNote") or "").strip()
         if body_text:
             reader.append(
-                '<p class="licn-vendor-lab for-design">归档原文</p>'
-                '<p class="licn-vendor-lab for-dev mono">archived body</p>'
+                '<p class="licn-vendor-lab">归档原文</p>'
                 '<pre class="licn-pre is-zh">%s</pre>' % mark_license_text(body_text, names)
             )
             if note:
@@ -2136,10 +2216,9 @@ def page_license(f, licenses):
                 )
         else:
             reader.append(
-                '<p class="licn-vendor-note for-design">'
+                '<p class="licn-vendor-note">'
                 "本站还没有可展示的授权原文归档。请先去出处查阅。"
                 "</p>"
-                '<p class="licn-vendor-note for-dev mono">no archived body · pointer only</p>'
             )
             if note:
                 reader.append(
@@ -2174,7 +2253,7 @@ def page_license(f, licenses):
                 )
         if art_bits:
             reader.append(
-                '<p class="licn-vendor-lab for-design">原件</p>'
+                '<p class="licn-vendor-lab">原件</p>'
                 '<div class="licn-arts">%s</div>' % "".join(art_bits)
             )
         sheet = '<div class="licn-reader">%s</div>' % "".join(reader)
@@ -2185,12 +2264,15 @@ def page_license(f, licenses):
         )
         kick = "厂商协议"
     else:
+        ts_empty = lic_o.get("textState") or "∅"
         sheet = (
-            '<p class="quiet for-design">这一款许可尚未收入文本。'
-            "%s或<a href=\"/gap/?norm=%s\">报缺</a>。</p>"
+            '<p class="quiet">这一款许可尚未收入文本。'
+            "%s或<a href=\"/gap/?norm=%s\">报缺</a>。"
+            '<span class="for-dev mono"> · textState=%s</span></p>'
             % (
                 ('可先<a href="%s" target="_blank" rel="noopener">去出处</a>，' % e(src)) if src else "",
                 e(norm),
+                e(ts_empty),
             )
         )
         lead = "%s。许可原文还没有核对记录。" % e(face)
@@ -2291,16 +2373,17 @@ def font_specimen_card(f, offer=None):
 
 
 def page_foundries(groups):
-    """厂商索引：行样式与目录同一套。"""
+    """厂商索引：行样式与目录同一套；可搜厂商名。"""
     n = sum(len(g["fonts"]) for g in groups)
     items = []
     for g in groups:
+        hay = " ".join(filter(None, [g.get("name"), g.get("slug")])).lower()
         items.append(
-            '<li><a class="lrow" href="/foundry/%s/">'
+            '<li data-hay="%s"><a class="lrow" href="/foundry/%s/">'
             '<span class="lnm">%s</span>'
             '<span class="lrel">%d 款</span>'
             '<span class="lgo">看目录</span></a></li>'
-            % (e(g["slug"]), e(g["name"]), len(g["fonts"]))
+            % (e(hay), e(g["slug"]), e(g["name"]), len(g["fonts"]))
         )
     body = page_head(
         "厂商",
@@ -2309,15 +2392,30 @@ def page_foundries(groups):
         dev="/foundry · foundrySlug · %d orgs · %d fonts" % (len(groups), n),
     )
     body += (
-        '<p class="count">%d 家</p><ul class="lin-list">%s</ul>'
-        % (len(groups), "".join(items))
-        if items else
-        '<p class="quiet">还没有按厂商归类的条目。</p>'
+        '<div class="src-layout">'
+        '<div class="src-main">'
+        '<div class="src-band">'
+        '%s'
+        '<p class="count" data-count>%d 家</p>'
+        '</div>'
+        '%s'
+        '</div></div>'
+        % (
+            search(action="/foundry/", ph="厂商名、目录编号…", live=True),
+            len(groups),
+            (
+                '<ul class="lin-list" data-list data-page-size="24" data-unit="家">%s</ul>'
+                '<p class="empty" data-empty hidden>没有匹配的厂商。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p>'
+                '<nav class="pager" data-pager hidden></nav>'
+                % "".join(items)
+            ) if items else
+            '<p class="quiet">还没有按厂商归类的条目。</p>',
+        )
     )
     return layout(
         "foundry", "厂商", body, "/foundry",
         extra_head=pages_css("source", "foundry"),
-        body_class="page-source page-foundry",
+        body_class="page-source page-foundry page-foundries",
     )
 
 
@@ -2331,11 +2429,15 @@ def page_foundry(g):
     body += (
         '<div class="src-layout">'
         '<div class="src-main">'
-        '<p class="count">%d 款</p>'
+        '<div class="src-band">'
+        '%s'
+        '<p class="count" data-count>%d 款</p>'
+        '</div>'
         '%s</div></div>'
         % (
+            search(action="/foundry/%s/" % g["slug"], ph="中文名、英文、目录编号…", live=True),
             len(g["fonts"]),
-            index_rows(g["fonts"]) if g["fonts"] else
+            index_rows(g["fonts"], list_attrs='data-page-size="20"') if g["fonts"] else
             '<p class="quiet">没有这一类。换一个筛选，或<a href="/source/">回目录</a>。</p>',
         )
     )
@@ -2365,12 +2467,13 @@ def page_attest_index(fonts):
     )
     form = (
         '<form class="form at-form" action="/attest/go/" method="get" data-attest-form>'
-        '<label>字体<select name="norm" required>%s</select></label>'
+        '<label><span>字体</span>'
+        '<select name="norm" required>%s</select></label>'
         '<div class="two">'
-        '<label>持证单位（可选）'
+        '<label><span>持证单位（可选）</span>'
         '<input name="holder" placeholder="只印在这一份副本上" autocomplete="organization">'
         '</label>'
-        '<label>统一社会信用代码（可选）'
+        '<label><span>统一社会信用代码（可选）</span>'
         '<input name="uscc" placeholder="91440101MA…" autocomplete="off">'
         '</label></div>'
         '<fieldset><legend>用途</legend><div class="checks">'
@@ -2386,19 +2489,19 @@ def page_attest_index(fonts):
     bound = aside(
         "出证边界",
         kv_rows([
-            ("谁签发", "文派（广州）科技有限公司。文派不是字体的著作权人"),
-            ("给谁出", "OFL、MIT、Apache 等标准开源协议"),
-            ("不出", "厂商自拟、还没核实、未收录的"),
-            ("怎么核", "编号在台账查得到、内容一致才是真的"),
-        ]),
-        '<a href="/legal/#scope">出证范围</a>',
-    )
+            ("签发方", _how_dual("文派（广州）科技有限公司，逐款核对许可原文后出具", "issuer · not rightsholder")),
+            ("适用范围", _how_dual("OFL、MIT、Apache 等标准开源协议的字体，商用凭证", "SPDX only")),
+            ("不予出证", _how_dual("厂商自拟协议、尚未核实、未收录的字体", "custom / unverified / unlisted")),
+            ("如何核验", _how_dual("每份证明有唯一编号，在核验页输入即可比对原文", "serial ∈ ledger")),
+        ], words=True),
+        '<a href="/legal/#legal-scope">出证范围</a><p class="aside-note">出证服务当前免费。</p>',
+    ).replace('<aside class="aside">', '<aside class="aside" id="attest-bound">', 1)
     more = (
         '<section class="at-more" aria-label="核验还能办的事">'
         '<p class="label">核验还能办的事</p>%s</section>'
         % tasks([
             ("核对一份 JSON", "贴进证明文件，看内容有没有被改过", "/attest/verify/", "verified"),
-            ("签发台账", "每份证明签发即登记", "/attest/ledger/", "history"),
+            ("证明记录", "每份证明签发即登记", "/attest/ledger/", "history"),
             ("证书查验", "编号 + 持证单位两要素", "/v/", "search"),
             ("切片包", "不可再分发的字体，核验原包后领取", "/slice/", "scissors"),
         ])
@@ -2421,7 +2524,7 @@ def page_attest(f):
         '<header class="page-mast atn-mast">'
         '<p class="atn-back"><a href="/attest/">← 出证入口</a></p>'
         '<h1 class="xxzt">%s 授权证明</h1>'
-        '<p class="ph-lead for-design">下载 PDF、打印，或挂徽章。证面可切极简。</p>'
+        '<p class="ph-lead">下载 PDF、打印，或挂徽章。证面可切极简。</p>'
         '<p class="ph-lead for-dev mono">/attest/%s · classic|minimal</p>'
         "</header>"
     ) % (e(name), e(f["norm"]))
@@ -2457,7 +2560,7 @@ def page_attest(f):
         '<button class="btn" type="button" data-json>JSON</button>'
         '<p class="atn-tools-links">'
         '<a href="/license/%s/">许可原文</a>'
-        '<a href="/attest/ledger/">台账</a>'
+        '<a href="/attest/ledger/">证明记录</a>'
         "</p></div>"
         '<div class="seg atn-switch" data-cert-switcher role="group" aria-label="证面样式">'
         '<button type="button" class="is-on" data-cert-style="classic">经典</button>'
@@ -2465,8 +2568,10 @@ def page_attest(f):
         "</div></div>"
         '<div class="cert-stage atn-stage" data-cert data-norm="%s"%s>'
         '<p class="quiet">正在生成证明…</p></div></div></div>'
-    ) % (icon("download"), e(f["norm"]), e(f["norm"]),
-         (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "")
+    ) % (
+        icon("download"), e(f["norm"]), e(f["norm"]),
+        (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "",
+    )
     extra = (
         pages_css("attest-norm") + "\n"
         '<link rel="stylesheet" href="/assets/shs/regular.css">\n'
@@ -2491,13 +2596,23 @@ def page_verify():
         kicker="核验",
         dev="/attest/verify",
     )
-    body += ('<div class="split at-tool"><div><form class="form" data-verify><label>证明 JSON<textarea name="json" rows="12" '
-             'placeholder=\'{ "type": "wenfeng.attestation.v1", … }\'></textarea></label><p class="acts"><button class="btn btn-ink">核对</button></p></form>'
-             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([
-                 ("核对方式", "平台密钥校验 JSON 完整性"),
-                 ("效力", "核对内容是否被改动；不构成司法意义上的电子签章"),
-                 ("另见", '<a href="/attest/ledger/">签发台账</a>'),
-             ])))
+    body += (
+        '<div class="split at-tool"><div>'
+        '<form class="form" data-verify>'
+        '<label><span>证明 JSON</span>'
+        '<textarea name="json" rows="12" '
+        'placeholder=\'{ "type": "wenfeng.attestation.v1", … }\'></textarea></label>'
+        '<p class="acts"><button class="btn btn-ink">核对</button></p></form>'
+        '<div data-out></div></div>%s</div>'
+        % aside(
+            "说明",
+            kv_rows([
+                ("核对方式", _how_dual("平台密钥校验 JSON 完整性", "platform key")),
+                ("效力", _how_dual("核对内容是否被改动；不构成司法意义上的电子签章", "not e-sign")),
+                ("另见", '<a href="/attest/ledger/">证明记录</a>'),
+            ], words=True),
+        )
+    )
     return layout(
         "attest", "核对证明", body, "/attest/verify",
         extra_head=pages_css("attest"),
@@ -2507,15 +2622,19 @@ def page_verify():
 
 def page_ledger():
     body = page_head(
-        "台账",
+        "证明记录",
         "每份证明签发即登记。编号查不到的，按伪造处理。",
-        crumbs=[("/attest/", "核验"), (None, "台账")],
+        crumbs=[("/attest/", "核验"), (None, "证明记录")],
         kicker="核验",
         dev="/attest/ledger",
     )
-    body += '<div class="at-tool" data-ledger><p class="quiet">正在读取台账…</p></div>'
+    body += (
+        '<div class="at-tool" data-ledger>'
+        '<p class="quiet">正在读取证明记录…</p>'
+        '<span class="for-dev mono"> · GET ledger</span></div>'
+    )
     return layout(
-        "attest", "签发台账", body, "/attest/ledger",
+        "attest", "证明记录", body, "/attest/ledger",
         extra_head=pages_css("attest"),
         body_class="page-attest page-attest-tool",
     )
@@ -2532,14 +2651,25 @@ def page_lookup():
         kicker="核验",
         dev="/v · serial + holder",
     )
-    body += ('<div class="split at-tool"><div><form class="form" data-lookup><div class="two"><label>证明编号<input name="s" placeholder="WF-…" required></label>'
-             '<label>持证单位<input name="holder" placeholder="与证明一致；通用记录填「通用核验记录」" required></label></div>'
-             '<p class="acts"><button class="btn btn-ink">查验</button></p></form>'
-             '<div data-out></div></div>%s</div>' % aside("说明", kv_rows([
-                 ("两要素", "编号与持证单位须与证明完全一致"),
-                 ("通用记录", "未填单位时，持证单位填「通用核验记录」"),
-                 ("查不到", "编号不在台账，按伪造处理"),
-             ])))
+    body += (
+        '<div class="split at-tool"><div>'
+        '<form class="form" data-lookup><div class="two">'
+        '<label><span>证明编号</span>'
+        '<input name="s" placeholder="WF-…" required></label>'
+        '<label><span>持证单位</span>'
+        '<input name="holder" placeholder="与证明一致；通用记录填「通用核验记录」" required>'
+        '</label></div>'
+        '<p class="acts"><button class="btn btn-ink">查验</button></p></form>'
+        '<div data-out></div></div>%s</div>'
+        % aside(
+            "说明",
+            kv_rows([
+                ("两要素", _how_dual("编号与持证单位须与证明完全一致", "serial + holder")),
+                ("通用记录", _how_dual("未填单位时，持证单位填「通用核验记录」", "holder = 通用核验记录")),
+                ("查不到", _how_dual("编号在证明记录里查不到，按伪造处理", "miss → forged")),
+            ], words=True),
+        )
+    )
     return layout(
         "v", "查证", body, "/v",
         extra_head=extra + "\n" + pages_css("attest"),
@@ -2567,34 +2697,36 @@ def page_slices(fonts):
 
     planned_html = ""
     if planned:
-        items = "".join(
-            '<li><a class="tool-index-row" href="/source/%s/">'
-            '<span class="tool-index-name">%s</span>'
-            '<span class="tool-index-meta">%s</span>'
-            '<span class="tool-index-go">看下载页</span>'
-            '</a></li>'
-            % (e(f["norm"]), e(wf(f)), e(f.get("foundry") or "未标注"))
-            for f in planned
-        )
         planned_html = (
-            '<p class="count-line"><strong>%d</strong> 款开源字体，切片包稍后直接提供</p>'
-            '<ul class="tool-index is-quiet">%s</ul>' % (len(planned), items)
+            '<p class="tool-note">开源可再分发的网页分片在 '
+            '<code>cn.windfonts.com/fonts-packages</code>。'
+            "单独的切片 zip 还没有对象，这里不放直链。</p>"
         )
 
     gated_html = ""
     if gated:
-        items = "".join(
-            '<li><a class="tool-index-row" href="/slice/%s/">'
-            '<span class="tool-index-name">%s</span>'
-            '<span class="tool-index-meta">%s</span>'
-            '<span class="tool-index-go">领取</span>'
-            '</a></li>'
-            % (e(f["norm"]), e(wf(f)), e(f.get("foundry") or "未标注"))
-            for f in gated
-        )
-        gated_html = '<ul class="tool-index">%s</ul>' % items
+        items = []
+        for f in gated:
+            attrs = face_attrs_of(f)
+            nm_cls = "tool-index-name lnm" if attrs else "tool-index-name"
+            items.append(
+                '<li><a class="tool-index-row"%s href="/slice/%s/">'
+                '<span class="%s">%s</span>'
+                '<span class="tool-index-meta">%s</span>'
+                '<span class="tool-index-go">领取</span>'
+                '</a></li>'
+                % (
+                    attrs, e(f["norm"]),
+                    nm_cls, e(wf(f)),
+                    e(f.get("foundry") or "未标注"),
+                )
+            )
+        gated_html = '<ul class="tool-index">%s</ul>' % "".join(items)
     else:
-        gated_html = '<p class="tool-note">目录里还没有需要核验原包的款。</p>'
+        gated_html = (
+            '<p class="tool-note">目录里还没有需要核验原包的款。</p>'
+            '<span class="for-dev mono"> · sliceGate = 0</span>'
+        )
 
     body = page_head(
         "切片",
@@ -2604,29 +2736,35 @@ def page_slices(fonts):
         dev="/slice · local hash · no upload",
     )
     body += (
-        '<div class="tool-page">'
-        '<ol class="tool-how">'
-        '<li><span>01</span><div><strong>原包</strong><p>尚未解压的官方 zip</p></div></li>'
-        '<li><span>02</span><div><strong>核验</strong><p>浏览器里计算整包摘要</p></div></li>'
-        '<li><span>03</span><div><strong>切片包</strong><p>woff2 与 CSS，供自托管</p></div></li>'
+        '<div class="src-layout"><div class="src-main">'
+        '<ol class="read-steps-inline">'
+        '<li><span>01</span><div>'
+        '<strong>原包</strong>'
+        '<p>尚未解压的官方 zip</p></div></li>'
+        '<li><span>02</span><div>'
+        '<strong>核验</strong>'
+        '<p>浏览器里计算整包摘要<span class="for-dev mono"> · SHA-256</span></p></div></li>'
+        '<li><span>03</span><div>'
+        '<strong>切片包</strong>'
+        '<p>woff2 与 CSS，供自托管</p></div></li>'
         '</ol>'
-        '<p class="count-line"><strong>%d</strong> 款上传原包核验后领取</p>'
-        '%s'
-        '%s'
-        '<p class="tool-aside">开源字体不必走核验，到<a href="/source/">目录</a>直接拿原件。</p>'
-        '</div>'
-        % (len(gated), gated_html, planned_html)
+        '<p class="count-line">'
+        '<strong>%d</strong> 款上传原包核验后领取</p>'
+        '%s%s</div>%s</div>'
+        % (
+            len(gated), gated_html, planned_html,
+            aside(
+                "开源",
+                '<p class="read-p">开源字体不必走核验，到'
+                '<a href="/source/">目录</a>直接拿原件。</p>',
+            ),
+        )
     )
-    return layout("slice", "切片", body, "/slice", body_class="page-slices")
+    return layout("slice", "切片", body, "/slice", extra_head=pages_css("slice"), body_class="page-slices")
 
 
 def page_slice(f, fonts=None):
     gate = slice_gate_of(f)
-    shop_link = ""
-    if f.get("shop"):
-        is_http = f["shop"].startswith("http://") or f["shop"].startswith("https://")
-        attrs = " target=\"_blank\" rel=\"noopener noreferrer\"" if is_http else ""
-        shop_link = '<a href="%s"%s>去店面用</a>' % (e(f["shop"]), attrs)
 
     if gate:
         lead = "从%s取得的官方 zip，尚未解压。核验通过后领取切片包。" % e(f.get("foundry") or "厂商")
@@ -2635,8 +2773,11 @@ def page_slice(f, fonts=None):
             orig_href = gate["origin"]["href"]
             is_http = orig_href.startswith("http://") or orig_href.startswith("https://")
             attrs = " target=\"_blank\" rel=\"noopener noreferrer\"" if is_http else ""
-            origin_html = '<p class="tool-origin">原包在<a href="%s"%s>%s</a>取。</p>' % (
-                e(orig_href), attrs, e(gate["origin"].get("label") or "出处")
+            origin_html = (
+                '<p class="tool-origin">原包在<a href="%s"%s>%s</a>取。</p>'
+                % (
+                    e(orig_href), attrs, e(gate["origin"].get("label") or "出处"),
+                )
             )
         inner = (
             '<div data-slice-body>'
@@ -2656,11 +2797,17 @@ def page_slice(f, fonts=None):
             '</section>'
             '<section class="tool-stage is-wait">'
             '<p class="tool-idx">02</p>'
-            '<div class="tool-slot"><h2>核验</h2><p class="tool-note">放入原包后计算整包摘要。体积只作预检。</p></div>'
+            '<div class="tool-slot">'
+            '<h2>核验</h2>'
+            '<p class="tool-note">放入原包后计算整包摘要。体积只作预检。'
+            '<span class="for-dev mono"> · SHA-256</span></p></div>'
             '</section>'
             '<section class="tool-stage is-lock">'
             '<p class="tool-idx">03</p>'
-            '<div class="tool-slot"><h2>切片包</h2><p class="tool-pack-name">文风切片包 · %s</p><p class="tool-note">核验通过后在此领取。</p></div>'
+            '<div class="tool-slot">'
+            '<h2>切片包</h2>'
+            '<p class="tool-pack-name">文风切片包 · %s</p>'
+            '<p class="tool-note">核验通过后在此领取。</p></div>'
             '</section>'
             '</div>'
             '</div>'
@@ -2697,19 +2844,23 @@ def page_slice(f, fonts=None):
             '<div class="tool-board">'
             '<section class="tool-stage is-lock">'
             '<p class="tool-idx">01</p>'
-            '<div class="tool-slot"><h2>原包</h2><p class="tool-note">开源可再分发，不必放入原包。</p></div>'
+            '<div class="tool-slot">'
+            '<h2>原包</h2>'
+            '<p class="tool-note">开源可再分发，不必放入原包。</p></div>'
             '</section>'
             '<section class="tool-stage is-lock">'
             '<p class="tool-idx">02</p>'
-            '<div class="tool-slot"><h2>核验</h2><p class="tool-note">本站不核对此款原包。</p></div>'
+            '<div class="tool-slot">'
+            '<h2>核验</h2>'
+            '<p class="tool-note">本站不核对此款原包。</p></div>'
             '</section>'
             '<section class="tool-stage">'
             '<p class="tool-idx">03</p>'
             '<div class="tool-slot">'
             '<h2>切片包</h2>'
-            '<p class="tool-pack-name">原件可直接拿走</p>'
-            '<p class="tool-note">切片包稍后由本站直接提供，不用走这道核验。</p>'
-            '<p class="tool-actions"><a class="btn btn-ink btn-take" href="/source/%s/">去下载</a></p>'
+            '<p class="tool-pack-name">不必核验原包</p>'
+            '<p class="tool-note">网页分片在 cn.windfonts.com。单独的切片 zip 还没有，不放直链。</p>'
+            '<p class="tool-actions"><a class="btn btn-ink btn-take" href="/source/%s/">回条目</a></p>'
             '</div>'
             '</section>'
             '</div>'
@@ -2731,7 +2882,11 @@ def page_slice(f, fonts=None):
                 e(x["norm"]), " selected" if x["norm"] == f["norm"] else "", e(wf(x))
             ) for x in gated_fonts
         )
-        pick_html = '<label class="tool-pick">核验对象<select data-slice-pick>%s</select></label>' % opts
+        pick_html = (
+            '<label class="tool-pick">'
+            '<span>核验对象</span>'
+            '<select data-slice-pick>%s</select></label>' % opts
+        )
 
     face_html = (
         '<div class="tool-face">'
@@ -2744,13 +2899,23 @@ def page_slice(f, fonts=None):
         % (e(wf(f)), face_meta, pick_html)
     )
 
+    if f.get("shop"):
+        is_http = f["shop"].startswith("http://") or f["shop"].startswith("https://")
+        attrs = " target=\"_blank\" rel=\"noopener noreferrer\"" if is_http else ""
+        shop_link = (
+            '<a href="%s"%s>去店面用 ↗</a>'
+            % (e(f["shop"]), attrs)
+        )
+    else:
+        shop_link = ""
+
     foot_html = (
         '<p class="tool-legal">授权证明只记录收录与核验结果，不构成再分发授权，也不代表著作权人另行授权。</p>'
         '<p class="tool-links">'
         '<a href="/source/%s/">下载页</a>'
-        '<a href="/license/%s">许可原文</a>'
+        '<a href="/license/%s/">许可原文</a>'
         '%s'
-        '<a href="/slice">工具首页</a>'
+        '<a href="/slice/">工具首页</a>'
         '</p>'
         % (e(f["norm"]), e(f["norm"]), shop_link)
     )
@@ -2761,51 +2926,68 @@ def page_slice(f, fonts=None):
         crumbs=[("/slice/", "切片"), (None, wf(f))],
         kicker="本地处理 · 文件不离开本机",
         dev="/slice/%s" % f["norm"],
-        face_attrs=(' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(f.get("family") or "")) if f.get("family") else ""),
+        face_attrs=face_attrs_of(f, require_pack=False),
     )
     body += (
-        '<div class="tool-page"%s>'
-        '%s'
-        '%s'
-        '%s'
-        '</div>'
-        % (gate_attrs, face_html, inner, foot_html)
+        '<div class="sl-desk"%s>'
+        '<div class="sl-main">%s%s</div>'
+        '%s</div>'
+        % (gate_attrs, face_html, inner, aside("说明", foot_html))
     )
-    return layout("slice", wf(f), body, "/slice/%s/" % f["norm"], body_class="page-slice")
+    return layout(
+        "slice", wf(f), body, "/slice/%s/" % f["norm"],
+        extra_head=pages_css("slice") + "\n" + pages_js("slice"),
+        body_class="page-slice",
+    )
+
+
+def _read_layout(section, title, body, path):
+    return layout(
+        section, title, body, path,
+        body_class="page-read page-%s" % section,
+        extra_head=pages_css("read"),
+    )
 
 
 def page_use():
-    body = (
-        '<section class="us-hero">'
-        '<div class="container">'
-        '<p class="us-crumb" aria-label="路径">'
-        '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>用法</span>'
-        '<span class="for-dev mono">/use · us-v4b</span>'
-        '</p>'
-        '<div class="us-display">'
-        '<h1 class="for-design">先问</h1>'
-        '<h1 class="for-dev mono">ask first</h1>'
-        '<p class="us-lead for-design">五个常见问题，各答各的：要文件、进主题、网页里用、注释能不能删、程序怎么查。</p>'
-        '<p class="us-lead for-dev mono">question | answer<br />not 3 cols · not 4 steps · not /how</p>'
+    paths = (
+        '<div class="gate-paths" aria-label="三条去向">'
+        '<a class="gate-path" id="path-file" href="/source/">'
+        '<span class="gate-n">01</span>'
+        '<span class="gate-path-name xxzt">原件</span>'
+        '<span class="gate-path-line">TTF / OTF 或上游归档。给自建站、主题作者。许可允许时才再分发。'
+        '<span class="for-dev mono"> · /source</span></span>'
+        '<span class="gate-go">看目录 →</span>'
+        '</a>'
+        '<a class="gate-path" id="path-slice" href="/slice/">'
+        '<span class="gate-n">02</span>'
+        '<span class="gate-path-name xxzt">切片</span>'
+        '<span class="gate-path-line">给 WordPress 与静态站本地 @font-face。开源款稍后提供；禁再分发款上传厂商原包 zip，核验后领取。'
+        '<span class="for-dev mono"> · /slice</span></span>'
+        '<span class="gate-go">切片工具 →</span>'
+        '</a>'
+        '<div class="gate-path" id="path-web">'
+        '<span class="gate-n">03</span>'
+        '<span class="gate-path-name xxzt">网页</span>'
+        '<span class="gate-path-line">用 cn.windfonts.com 托管的 CSS 与分片。不是本站下载，不要二次托管，也不当源文件。'
+        '<span class="for-dev mono"> · hosted CSS</span></span>'
+        '<span class="gate-go is-quiet">不提供下载</span>'
         '</div>'
-        '<ol class="us4-asks">'
-        '<li>'
-        '<h2 class="for-design">要文件本身？</h2>'
-        '<h2 class="for-dev mono">want the file?</h2>'
-        '<div class="us4-a">'
-        '<p class="us-prose for-design">拿原件。TTF / OTF / 上游仓库归档。给自建站、主题作者。许可允许时才再分发。</p>'
-        '<p class="us-prose for-dev mono">ttf · otf · upstream archive<br />redistribute only if allowed</p>'
         '</div>'
-        '</li>'
-        '<li id="theme">'
-        '<h2 class="for-design">要放进主题？</h2>'
-        '<h2 class="for-dev mono">into a theme?</h2>'
-        '<div class="us4-a">'
-        '<p class="us-prose for-design">用切片包，给 WordPress 和静态站本地 @font-face。开源字体的切片包稍后提供。不允许再分发的免费商用字体：上传从厂商下载的原包 zip（不要解压），核验通过后领取。走<a href="/slice">切片工具</a>。</p>'
-        '<p class="us-prose for-dev mono">local @font-face<br />oss slice later · no-redist zip → /slice</p>'
-        '<p class="us-prose for-design">解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>'
-        '<p class="us-prose for-dev mono">whole folder · fonts.css intact · do not split</p>'
-        '<pre class="us-code">// functions.php 里排队引入\n'
+    )
+    bands = (
+        '<section class="gate-band" id="comment">'
+        '<h2>注释不能删</h2>'
+        '<div class="gate-band-body">'
+        '<p>不能。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体走<a href="/slice/">切片工具</a>。</p>'
+        '<p class="gate-label">嵌入代码里这一行不能改</p>'
+        '<pre class="gate-code">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>'
+        '</div></section>'
+        '<section class="gate-band" id="enqueue">'
+        '<h2>进主题</h2>'
+        '<div class="gate-band-body">'
+        '<p>解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>'
+        '<pre class="gate-code">// functions.php 里排队引入\n'
         'wp_enqueue_style(\n'
         "  'wenfeng-slice-xwwk',\n"
         "  get_theme_file_uri( '/fonts/wenfeng-slice-Xwwk/fonts.css' ),\n"
@@ -2814,36 +2996,12 @@ def page_use():
         ');\n\n'
         '/* 或在主题 style.css 顶部 */\n'
         '@import url( "./fonts/wenfeng-slice-Xwwk/fonts.css" );</pre>'
-        '</div>'
-        '</li>'
-        '<li>'
-        '<h2 class="for-design">只在网页里用？</h2>'
-        '<h2 class="for-dev mono">cite, not save?</h2>'
-        '<div class="us4-a">'
-        '<p class="us-prose for-design">用 cn.windfonts.com 托管的 CSS 和字体分片。这不是本站下载，不要拿去二次托管。</p>'
-        '<p class="us-prose for-dev mono">cn.windfonts.com<br />not a download · no rehost</p>'
-        '<p class="us-prose for-design">不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。托管分片不是原件，也不是切片包。</p>'
-        '<p class="us-prose for-dev mono">do not copy hosted woff2 · not the source file</p>'
-        '</div>'
-        '</li>'
-        '<li>'
-        '<h2 class="for-design">这一行能删吗？</h2>'
-        '<h2 class="for-dev mono">drop the comment?</h2>'
-        '<div class="us4-a">'
-        '<p class="us-prose for-design">不能。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体走<a href="/slice">切片工具</a>。</p>'
-        '<p class="us-prose for-dev mono">keep license comment · no-redist → /slice</p>'
-        '<p class="us-label for-design">嵌入代码里这一行不能改</p>'
-        '<p class="us-label for-dev mono">comment · keep</p>'
-        '<pre class="us-code">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>'
-        '</div>'
-        '</li>'
-        '<li id="api">'
-        '<h2 class="for-design">用程序查？</h2>'
-        '<h2 class="for-dev mono">query it?</h2>'
-        '<div class="us4-a">'
-        '<p class="us-prose for-design">查目录 API。免费和商业都可以查。商业字只出字段，<code>files</code> 为空。不是店面的 <code>/api/css</code>。<code>lineage</code> 字段为造字平台预留，现在恒为 <code>null</code>。</p>'
-        '<p class="us-prose for-dev mono">commercial → fields only, files []<br />not shop /api/css · lineage = null</p>'
-        '<ul class="us-api">'
+        '</div></section>'
+        '<section class="gate-band" id="api">'
+        '<h2>目录 API</h2>'
+        '<div class="gate-band-body">'
+        '<p>查目录 API。免费和商业都可以查。商业字只出字段，<code>files</code> 为空。不是店面的 <code>/api/css</code>。<code>lineage</code> 字段为造字平台预留，现在恒为 <code>null</code>。</p>'
+        '<ul class="gate-api">'
         '<li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>'
         '<li><a href="/api/v1/fonts?offer=source"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>'
         '<li><a href="/api/v1/fonts?q=%E9%9C%9E%E9%B9%AD"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>'
@@ -2855,464 +3013,512 @@ def page_use():
         '<li><a href="/api/v1/certs/Xwwk"><code>GET /api/v1/certs/Xwwk</code><span>一款核验 JSON</span></a></li>'
         '<li><span class="api-row"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>'
         '</ul>'
-        '<pre class="us-code">GET /api/v1/fonts/{norm}\n'
+        '<pre class="gate-code gate-sample">GET /api/v1/fonts/{norm}\n'
         '{\n'
         '  "norm": "Xwwk",\n'
         '  "name": "霞鹜文楷",\n'
         '  "distribution": true,\n'
         '  "offer": "source",\n'
-        '  "files": [ { "kind": "archive", "href": "…" } ]\n'
+        '  "files": [ { "kind": "archive", "href": "…" } ],\n'
+        '  "lineage": null\n'
         '}</pre>'
-        '</div>'
-        '</li>'
-        '</ol>'
-        '<p class="us-acts">'
-        '<a class="is-pill" href="/source"><span class="for-design">下源文件</span><span class="for-dev">/source</span></a>'
-        '<a href="/slice"><span class="for-design">切片工具</span><span class="for-dev">/slice</span></a>'
-        '<a href="/license"><span class="for-design">查授权</span><span class="for-dev">/license</span></a>'
+        '<p class="gate-acts">'
+        '<a href="/source/">下源文件</a>'
+        '<a href="/slice/">切片工具</a>'
+        '<a href="/license/">查授权</a>'
         '</p>'
-        '<p class="us-footnote for-design">怎么核在 <a href="/how">/how</a>。。</p>'
-        '<p class="us-footnote for-dev mono">usePage · us-v4b · /use</p>'
-        '</div>'
-        '</section>'
+        '</div></section>'
+        '<p class="gate-foot-note">怎么核在 <a href="/how/">我们怎么核</a>。</p>'
     )
     body = page_head(
         "用法",
-        "五个常见问题，各答各的：要文件、进主题、网页里用、注释能不能删、程序怎么查。",
+        "三条去向：原件、切片、网页。注释留着，目录用 API 查。",
         crumbs=[(None, "用法")],
-        kicker="wenfeng.org",
         dev="/use",
-    ) + _strip_hero(body)
-    return layout("use", "用法", body, "/use", body_class="us us-v4b", extra_head=pages_css("prose"))
+    ) + paths + bands
+    return layout("use", "用法", body, "/use", extra_head=pages_css("gate"), body_class="page-gate page-use")
 
 
 def page_how():
-    body = (
-        '<section class="hw-hero">'
-        '<div class="container">'
-        '<p class="hw-crumb" aria-label="路径">'
-        '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>收录与核验</span>'
-        '<span class="for-dev mono">/how · hw-v1b</span>'
-        '</p>'
-        '<div class="hw-display">'
-        '<h1 class="for-design">先过三条</h1>'
-        '<h1 class="for-dev mono">3 gates</h1>'
-        '<p class="hw-lead for-design">文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。</p>'
-        '<p class="hw-lead for-dev mono">text · source · official<br />lexicon and method below</p>'
+    main = (
+        '<ol class="read-asks" id="how-criteria">'
+        '<li>'
+        '<p class="read-idx">01</p>'
+        '<div>'
+        '<h2>许可文本</h2>'
+        '<p class="read-p">许可文本拿得到。</p>'
         '</div>'
-        '<ol class="hw1-gates" id="how-criteria">'
-        '<li class="hw1-gate">'
-        '<p class="hw1-idx">01</p>'
-        '<h2 class="for-design">许可文本</h2>'
-        '<h2 class="for-dev mono">text</h2>'
-        '<p class="for-design">许可文本拿得到。</p>'
-        '<p class="for-dev mono">license text in hand</p>'
         '</li>'
-        '<li class="hw1-gate">'
-        '<p class="hw1-idx">02</p>'
-        '<h2 class="for-design">来源可查</h2>'
-        '<h2 class="for-dev mono">source</h2>'
-        '<p class="for-design">来源能查到作者或厂商。</p>'
-        '<p class="for-dev mono">author or foundry</p>'
+        '<li>'
+        '<p class="read-idx">02</p>'
+        '<div>'
+        '<h2>来源可查</h2>'
+        '<p class="read-p">来源能查到作者或厂商。</p>'
+        '</div>'
         '</li>'
-        '<li class="hw1-gate">'
-        '<p class="hw1-idx">03</p>'
-        '<h2 class="for-design">官方渠道</h2>'
-        '<h2 class="for-dev mono">official</h2>'
-        '<p class="for-design">文件取自官方渠道。</p>'
-        '<p class="for-dev mono">official channel only</p>'
+        '<li>'
+        '<p class="read-idx">03</p>'
+        '<div>'
+        '<h2>官方渠道</h2>'
+        '<p class="read-p">文件取自官方渠道。</p>'
+        '</div>'
         '</li>'
         '</ol>'
-        '<p class="hw1-refuse for-design">来路不明的打包文件不收。许可写不清楚的，先标「待核实」，不提供文件，核对完成再更新状态。</p>'
-        '<p class="hw1-refuse for-dev mono">unknown packs out · unclear → 待核实, no file</p>'
-        '<section class="hw1-lex" id="how-status" aria-label="状态词">'
-        '<p class="hw-label for-design">状态词</p>'
-        '<p class="hw-label for-dev mono">offer words</p>'
-        '<div class="hw1-row">'
-        '<b class="for-design">本站下载</b>'
-        '<b class="for-dev mono">offer=source</b>'
-        '<span class="for-design">文件在本站，可以直接下载。</span>'
-        '<span class="for-dev mono">file on this site</span>'
-        '</div>'
-        '<div class="hw1-row">'
-        '<b class="for-design">官方下载</b>'
-        '<b class="for-dev mono">official</b>'
-        '<span class="for-design">本站不存文件，请到厂商或上游官方渠道下载。</span>'
-        '<span class="for-dev mono">no local file</span>'
-        '</div>'
-        '<div class="hw1-row">'
-        '<b class="for-design">暂无下载</b>'
-        '<b class="for-dev mono">offer=pending · textState=full</b>'
-        '<span class="for-design">许可已核实，源文件包还没上架。</span>'
-        '<span class="for-dev mono">no file yet</span>'
-        '</div>'
-        '<div class="hw1-row">'
-        '<b class="for-design">待核实</b>'
-        '<b class="for-dev mono">unverified</b>'
-        '<span class="for-design">许可还没核对完，核对完成前不提供文件。</span>'
-        '<span class="for-dev mono">no file until checked</span>'
-        '</div>'
-        '<div class="hw1-row">'
-        '<b class="for-design">未收录</b>'
-        '<b class="for-dev mono">unlisted</b>'
-        '<span class="for-design">这款字体还没收进镜像，先去上游取。</span>'
-        '<span class="for-dev mono">not in the mirror</span>'
-        '</div>'
+        '<p class="read-p">来路不明的打包文件不收。许可写不清楚的，先标「待核实」，不提供文件，核对完成再更新状态。</p>'
+        '<section class="read-moment" id="how-evidence">'
+        '<p class="read-idx">04</p>'
+        '<h2>许可怎么取证</h2>'
+        '<article class="read-art">'
+        '<p class="read-p">以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、上游仓库的 LICENSE，三者有其一才算拿到原文。</p>'
+        '<p class="read-p">取证时记录来源、日期和文本哈希。哈希的作用是：原文以后被改动或换版时，能对出变化。</p>'
+        '<p class="read-p">每款字体的取证记录，在它的许可原文页里可以查到。</p>'
+        '</article>'
         '</section>'
-        '<div class="hw1-pair">'
-        '<section id="how-evidence">'
-        '<h2 class="for-design">许可怎么取证</h2>'
-        '<h2 class="for-dev mono">evidence</h2>'
-        '<p class="for-design">以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、上游仓库的 LICENSE，三者有其一才算拿到原文。</p>'
-        '<p class="for-design">取证时记录来源、日期和文本哈希。哈希的作用是：原文以后被改动或换版时，能对出变化。</p>'
-        '<p class="for-design">每款字体的取证记录，在它的许可原文页里可以查到。</p>'
-        '<p class="for-dev mono">embedded notice · package / page / LICENSE<br />source + date + hash<br />record on the license page</p>'
+        '<section class="read-moment" id="how-cert">'
+        '<p class="read-idx">05</p>'
+        '<h2>证明怎么签</h2>'
+        '<article class="read-art">'
+        '<p class="read-p">只给采用标准开源协议的字体出证，文派（广州）科技有限公司是出证责任主体。出证时申报用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明和证明记录，作为授权范围的确认记录。每份证明有唯一编号，签发即登记。<a href="/attest/ledger/">查看证明记录</a>。</p>'
+        '<p class="read-p">核对收到的证明：编号在证明记录里查得到、内容与证明记录一致，才是文风签发的。编号对不上，按伪造处理。</p>'
+        '</article>'
         '</section>'
-        '<section id="how-cert">'
-        '<h2 class="for-design">证明怎么签</h2>'
-        '<h2 class="for-dev mono">attest</h2>'
-        '<p class="for-design">只给采用标准开源协议的字体出证，文派（广州）科技有限公司是出证责任主体。出证时申报用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明和台账，作为授权范围的确认记录。每份证明有唯一编号，签发即写入<a href="/attest/ledger">签发台账</a>。</p>'
-        '<p class="for-design">核对收到的证明：编号在台账查得到、内容与台账一致，才是文风签发的。编号对不上，按伪造处理。</p>'
-        '<p class="for-dev mono">SPDX only · 文派 is the subject<br />usage into cert + ledger · unique serial<br />serial miss → forged</p>'
-        '</section>'
-        '</div>'
-        '<p class="hw-acts">'
-        '<a class="is-pill" href="/source"><span class="for-design">看目录</span><span class="for-dev">/source</span></a>'
-        '<a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">/attest</span></a>'
-        '<a href="/legal"><span class="for-design">法务说明</span><span class="for-dev">/legal</span></a>'
+        '<p class="read-acts">'
+        '<a href="/source/">看目录</a>'
+        '<a href="/attest/">授权证明</a>'
+        '<a href="/legal/">法务说明</a>'
         '</p>'
-        '<p class="hw-footnote for-design">状态词以这页为准，目录、条目、许可页同用这五个词。</p>'
-        '<p class="hw-footnote for-dev mono">howPage · hw-v1b · /how</p>'
-        '</div>'
-        '</section>'
+        '<p class="read-foot">状态词以这页为准，目录、条目、许可页同用这五个词。</p>'
     )
+    side = aside(
+        "五态",
+        kv_rows([
+            ("本站下载", _how_dual("文件在本站，可以直接下载。", "offer=source")),
+            ("官方下载", _how_dual("本站不存文件，请到厂商或上游官方渠道下载。", "official")),
+            ("暂无下载", _how_dual("许可已核实，源文件包还没上架。", "offer=pending · textState=full")),
+            ("待核实", _how_dual("许可还没核对完，核对完成前不提供文件。", "unverified")),
+            ("未收录", _how_dual("这款字体还没收进镜像，先去上游取。", "unlisted")),
+        ], words=True),
+    ).replace('<aside class="aside">', '<aside class="aside" id="how-status">', 1)
     body = page_head(
         "怎么核",
         "文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。",
         crumbs=[(None, "怎么核")],
-        kicker="wenfeng.org",
-        dev="/how · text · source · official",
-    ) + _strip_hero(body)
-    return layout("how", "怎么核", body, "/how", body_class="hw hw-v1b", extra_head=pages_css("prose"))
+        dev="/how",
+    ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (main, side)
+    return _read_layout("how", "怎么核", body, "/how")
 
 
 def page_legal():
-    body = (
-        '<section class="lg-hero">'
-        '<div class="container">'
-        '<p class="lg-crumb" aria-label="路径">'
-        '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>法务</span>'
-        '<span class="for-dev mono">/legal · lg-v4</span>'
-        '</p>'
-        '<div class="lg-display">'
-        '<h1 class="for-design">按先后</h1>'
-        '<h1 class="for-dev mono">order</h1>'
-        '<p class="lg-lead for-design">操作说明，不是法律意见。权利以各字体许可原文为准。</p>'
-        '<p class="lg-lead for-dev mono">operating note · not legal advice · five moments</p>'
-        '</div>'
-        '<div class="lg4-seq">'
-        '<section class="lg4-when" id="m-open">'
-        '<div class="lg4-when-head">'
-        '<p class="lg4-k">01</p>'
-        '<h2 class="for-design">打开这页</h2>'
-        '<h2 class="for-dev mono">open</h2>'
-        '</div>'
-        '<div class="lg4-grid">'
-        '<article id="legal-oss">'
-        '<h3 class="for-design">这页是什么</h3>'
-        '<h3 class="for-dev mono">page</h3>'
-        '<p class="for-design">操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p>'
-        '<p class="for-dev mono">operating note · not a lawyer review</p>'
-        '</article>'
-        '<article>'
-        '<h3 class="for-design">谁在按原文办事</h3>'
-        '<h3 class="for-dev mono">stance</h3>'
-        '<p class="for-design">文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>'
-        '<p class="for-dev mono">文派 stands on OSS · download / webfont / attest</p>'
-        '</article>'
-        '<article id="legal-what">'
-        '<h3 class="for-design">证明是什么</h3>'
-        '<h3 class="for-dev mono">what</h3>'
-        '<p class="for-design">《文风字体授权证明》记录某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填档案里「要一份盖章件」的缺口。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p>'
-        '<p class="for-dev mono">chain + hash + original? + redist<br />attest ≠ new rights · no assignment · not 软著 · not notary</p>'
-        '</article>'
-        '</div>'
-        '</section>'
-        '<section class="lg4-when" id="m-text">'
-        '<div class="lg4-when-head">'
-        '<p class="lg4-k">02</p>'
-        '<h2 class="for-design">对着原文</h2>'
-        '<h2 class="for-dev mono">text</h2>'
-        '</div>'
-        '<div class="lg4-grid">'
-        '<div class="lg4-span" id="legal-scope">'
-        '<h3 class="for-design">先看协议是不是标准开源</h3>'
-        '<h3 class="for-dev mono">spdx</h3>'
-        '<ul class="lg4-pills for-design">'
-        '<li>SIL Open Font License 1.1</li>'
-        '<li>MIT</li>'
-        '<li>Apache License 2.0</li>'
-        '<li>IPA Font License</li>'
-        '<li>CC0</li>'
-        '<li>CC BY / CC BY-SA（不含 NC）</li>'
-        '<li>M+</li>'
-        '<li>带 Font Exception 的 GPL</li>'
-        '</ul>'
-        '<p class="for-design">上面这些才出证。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC 系出证时，证明内保留作者署名。</p>'
-        '<p class="for-design">厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p>'
-        '<p class="for-dev mono">OFL-1.1 · MIT · Apache-2.0 · IPA · CC0 · CC-BY / CC-BY-SA no NC · M+ · GPL+FE<br />CC keeps attribution<br />custom / unverified / unlisted → text only, no attest, no grant</p>'
-        '</div>'
-        '<article id="legal-ofl">'
-        '<h3 class="for-design">OFL 在本站怎么读</h3>'
-        '<h3 class="for-dev mono">ofl</h3>'
-        '<p class="for-design">可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名未获作者书面允许，派生件不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 更宽。</p>'
-        '<p class="for-dev mono">use / modify / redist · no selling the font alone · RFN · MIT wider</p>'
-        '</article>'
-        '<article id="legal-cn">'
-        '<h3 class="for-design">国内把字库当什么</h3>'
-        '<h3 class="for-dev mono">copyright</h3>'
-        '<p class="for-design">字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是给这份材料。侵权投诉仍走著作权人。</p>'
-        '<p class="for-dev mono">software work · glyph-as-art unsettled<br />archive paper ≠ extra grant · complaints to the rightsholder</p>'
-        '</article>'
-        '<article id="legal-soft">'
-        '<h3 class="for-design">文件是软件复制品</h3>'
-        '<h3 class="for-dev mono">software</h3>'
-        '<p class="for-design">TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p>'
-        '<p class="for-dev mono">file as software copy · no per-package review</p>'
-        '</article>'
-        '</div>'
-        '</section>'
-        '<section class="lg4-when" id="m-lines">'
-        '<div class="lg4-when-head">'
-        '<p class="lg4-k">03</p>'
-        '<h2 class="for-design">看证上三行</h2>'
-        '<h2 class="for-dev mono">lines</h2>'
-        '</div>'
-        '<div class="lg4-grid">'
-        '<article id="legal-issuer">'
-        '<h3 class="for-design">谁签发，名字怎么写</h3>'
-        '<h3 class="for-dev mono">issuer · name</h3>'
-        '<p class="for-design">签发人是文派（广州）科技有限公司。证面品牌是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p>'
-        '<p class="for-design">收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、name 表、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p>'
-        '<p class="for-dev mono">文派（广州）科技有限公司 · not the rightsholder<br />文风· is a catalog name · RFN stays · no 软著 number</p>'
-        '</article>'
-        '<article>'
-        '<h3 class="for-design">三行结论</h3>'
-        '<h3 class="for-dev mono">three lines</h3>'
-        '<p class="for-design">网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p>'
-        '<p class="for-dev mono">embed / redist original / site offers the file<br />CSS embed ≠ installer</p>'
-        '</article>'
-        '<article id="legal-sign">'
-        '<h3 class="for-design">签名验的是改没改过</h3>'
-        '<h3 class="for-dev mono">sign</h3>'
-        '<p class="for-design">平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是 CA 签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p>'
-        '<p class="for-dev mono">platform key · not reliable e-sign · not CA<br />JSON is auxiliary · 印迹 unrelated</p>'
-        '</article>'
-        '</div>'
-        '</section>'
-        '<section class="lg4-when" id="m-file">'
-        '<div class="lg4-when-head">'
-        '<p class="lg4-k">04</p>'
-        '<h2 class="for-design">放进档案</h2>'
-        '<h2 class="for-dev mono">archive</h2>'
-        '</div>'
-        '<div class="lg4-grid">'
-        '<div class="lg4-span" id="legal-buy">'
-        '<h3 class="for-design">采购留下这四样</h3>'
-        '<h3 class="for-dev mono">keep</h3>'
-        '<ol class="lg4-steps for-design">'
-        '<li>保存本核验 PDF / 打印件和 JSON。</li>'
-        '<li>保存许可原文（本站 <a href="/license">/license/{短码}</a>）。</li>'
-        '<li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li>'
-        '<li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li>'
-        '</ol>'
-        '<p class="for-dev mono">PDF + JSON · license text · hash if taken · holder ≠ licensee</p>'
-        '</div>'
-        '<div class="lg4-span" id="legal-redist">'
-        '<h3 class="for-design">要带走文件的时候</h3>'
-        '<h3 class="for-dev mono">redist</h3>'
-        '<p class="for-design">许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{短码}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。本原型只模拟流程，不上传服务器，也不把原件再切一遍。</p>'
-        '<p class="for-design">不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p>'
-        '<p class="for-dev mono">offer=source → original · else no file / no attest<br />/slice after you hold the file · SHA-256 · prototype does not upload<br />do not copy woff2 · do not edit the license URL · no selling the file</p>'
-        '</div>'
-        '</div>'
-        '</section>'
-        '<section class="lg4-when" id="m-mail">'
-        '<div class="lg4-when-head">'
-        '<p class="lg4-k">05</p>'
-        '<h2 class="for-design">有异议再写信</h2>'
-        '<h2 class="for-dev mono">mail</h2>'
-        '</div>'
-        '<div class="lg4-grid">'
-        '<article id="legal-phish">'
-        '<h3 class="for-design">还没核对的</h3>'
-        '<h3 class="for-dev mono">unverified</h3>'
-        '<p class="for-design">许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p>'
-        '<p class="for-dev mono">no attest · preview ≠ install · read the text</p>'
-        '</article>'
-        '<article id="legal-takedown">'
-        '<h3 class="for-design">写给 license@wenfeng.org</h3>'
-        '<h3 class="for-dev mono">takedown</h3>'
-        '<p class="for-design">收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p>'
-        '<p class="for-dev mono">license@wenfeng.org · hold as 待核实 · catalog status is the record</p>'
-        '</article>'
-        '<article id="legal-name">'
-        '<h3 class="for-design">另走的程序</h3>'
-        '<h3 class="for-dev mono">later</h3>'
-        '<p class="for-design">派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要拿这张证明去顶。</p>'
-        '<p class="for-dev mono">future derivative needs a new name · notary is a separate process</p>'
-        '</article>'
-        '</div>'
-        '</section>'
-        '</div>'
-        '<p class="lg-acts">'
-        '<a class="is-pill" href="/attest"><span class="for-design">授权证明</span><span class="for-dev">/attest</span></a>'
-        '<a href="/license"><span class="for-design">许可原文</span><span class="for-dev">/license</span></a>'
-        '<a href="/how"><span class="for-design">我们怎么核</span><span class="for-dev">/how</span></a>'
-        '</p>'
-        '</div>'
-        '</section>'
-    )
+    seq = '<section class="read-moment" id="m-open"><p class="read-idx">01</p><h2>打开这页</h2><article class="read-art" id="legal-oss"><h3>这页是什么</h3><p>操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p></article><article class="read-art"><h3>谁在按原文办事</h3><p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p></article><article class="read-art" id="legal-what"><h3>证明是什么</h3><p>《文风字体授权证明》记录某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填档案里「要一份盖章件」的缺口。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p></article></section><section class="read-moment" id="m-text"><p class="read-idx">02</p><h2>对着原文</h2><article class="read-art" id="legal-scope"><h3>先看协议是不是标准开源</h3><ul class="read-pills"><li>SIL Open Font License 1.1</li><li>MIT</li><li>Apache License 2.0</li><li>IPA Font License</li><li>CC0</li><li>CC BY / CC BY-SA（不含 NC）</li><li>M+</li><li>带 Font Exception 的 GPL</li></ul><p>上面这些才出证。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC 系出证时，证明内保留作者署名。</p><p>厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p></article><article class="read-art" id="legal-ofl"><h3>OFL 在本站怎么读</h3><p>可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名未获作者书面允许，派生件不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 更宽。</p></article><article class="read-art" id="legal-cn"><h3>国内把字库当什么</h3><p>字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是给这份材料。侵权投诉仍走著作权人。</p></article><article class="read-art" id="legal-soft"><h3>文件是软件复制品</h3><p>TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p></article></section><section class="read-moment" id="m-lines"><p class="read-idx">03</p><h2>看证上三行</h2><article class="read-art" id="legal-issuer"><h3>谁签发，名字怎么写</h3><p>签发人是文派（广州）科技有限公司。证面品牌是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p><p>收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、name 表、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p></article><article class="read-art"><h3>三行结论</h3><p>网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p></article><article class="read-art" id="legal-sign"><h3>签名验的是改没改过</h3><p>平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是 CA 签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p></article></section><section class="read-moment" id="m-file"><p class="read-idx">04</p><h2>放进档案</h2><article class="read-art" id="legal-buy"><h3>采购留下这四样</h3><ol class="read-steps"><li>保存本核验 PDF / 打印件和 JSON。</li><li>保存许可原文（本站 <a href="/license">/license/{目录编号}</a>）。</li><li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li><li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li></ol></article><article class="read-art" id="legal-redist"><h3>要带走文件的时候</h3><p>许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{目录编号}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。本原型只模拟流程，不上传服务器，也不把原件再切一遍。</p><p>不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p></article></section><section class="read-moment" id="m-mail"><p class="read-idx">05</p><h2>有异议再写信</h2><article class="read-art" id="legal-phish"><h3>还没核对的</h3><p>许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p></article><article class="read-art" id="legal-takedown"><h3>写给 license@wenfeng.org</h3><p>收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p></article><article class="read-art" id="legal-name"><h3>另走的程序</h3><p>派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要拿这张证明去顶。</p></article></section>'
+    acts = '<p class="read-acts"><a href="/attest">授权证明</a><a href="/license">许可原文</a><a href="/how">我们怎么核</a></p>'
+    side = aside(
+        "出证边界",
+        kv_rows([
+            ("出证", _how_dual("只给标准开源协议", "SPDX only")),
+            ("不出", _how_dual("厂商自拟、待核实、未收录", "custom / unverified / unlisted")),
+            ("原文", '<a href="/license/">许可原文</a>'),
+            ("名单", '<a href="#legal-scope">协议范围</a>'),
+            ("异议", '<a href="mailto:license@wenfeng.org">license@wenfeng.org</a>'),
+        ], words=True),
+    ).replace('<aside class="aside">', '<aside class="aside" id="legal-bound">', 1)
     body = page_head(
         "法务",
-        "出证边界、档案该留什么、证明验的是改没改过。栏位清晰，不是营销页。",
+        "操作说明，不是法律意见。权利以各字体许可原文为准。",
         crumbs=[(None, "法务")],
-        kicker="wenfeng.org",
-        dev="/legal · scope",
-    ) + _strip_hero(body)
-    return layout("legal", "法务", body, "/legal", body_class="lg lg-v4", extra_head=pages_css("prose"))
+        dev="/legal",
+    ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (seq + acts, side)
+    return _read_layout("legal", "法务", body, "/legal")
+
+
+
+def _about_copy():
+    """关于页已拍板文案（路径/站外/边界）。结构变，句子不动。"""
+    lead = "wenfeng.org 下面挂四条路径：源文件、许可、缺字、证明。店面和造字在别的名字下。"
+    paths = [
+        ("01", "源文件", "源文件本站下载。不允许再分发的，核验后领即用字库。",
+         "/source/", "看目录 →", "/source"),
+        ("02", "许可", "许可原文已收档。证明不替代原文，也不新设权利。",
+         "/license/", "查授权 →", "/license"),
+        ("03", "缺字", "缺字形、缺收录、勘误在这里说。",
+         "/gap/", "报缺字 →", "/gap"),
+        ("04", "证明", "只给标准开源协议出证。厂商自拟、还没核实、未收录的，不出。",
+         "/attest/", "授权证明 →", "/attest"),
+    ]
+    else_items = [
+        ("店面", "app.windfonts.com",
+         "样张、选字、店面用字、控制台和账号。",
+         "https://app.windfonts.com/", "去店面 ↗", "shop", True),
+        ("造字", "域名未定",
+         "编辑器放在独立新域，不挂在本站。本站以后只做入口和收录。",
+         None, "暂无", "none", False),
+    ]
+    stance = [
+        "文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。",
+        "对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。",
+        "其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。",
+        'wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal/#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how/">我们怎么核</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。',
+    ]
+    foot = "wenfeng.org 之外的主机不在这页说明范围。"
+    return lead, paths, else_items, stance, foot
+
+
+def _about_stance_html(stance):
+    return "".join("<p>%s</p>" % p for p in stance)
 
 
 def page_about():
+    """本站地图：四条路径横排 + 站外两项 + 边界说明。骨架对齐用法。"""
+    lead, paths, else_items, stance, foot = _about_copy()
+    path_rows = []
+    for n, name, line, href, go, dev in paths:
+        path_rows.append(
+            '<a class="gate-path" href="%s">'
+            '<span class="gate-n">%s</span>'
+            '<span class="gate-path-name xxzt">%s</span>'
+            '<span class="gate-path-line">%s<span class="for-dev mono"> · %s</span></span>'
+            '<span class="gate-go">%s</span></a>'
+            % (e(href), e(n), e(name), e(line), e(dev), e(go))
+        )
+    else_rows = []
+    for name, host, line, href, go, dev, linked in else_items:
+        line_html = (
+            '<span class="about-else-host">%s</span> · %s'
+            '<span class="for-dev mono"> · %s</span>'
+            % (e(host), e(line), e(dev))
+        )
+        if linked:
+            else_rows.append(
+                '<a class="gate-path" href="%s" target="_blank" rel="noopener">'
+                '<span class="gate-path-name xxzt">%s</span>'
+                '<span class="gate-path-line">%s</span>'
+                '<span class="gate-go">%s</span></a>'
+                % (e(href), e(name), line_html, e(go))
+            )
+        else:
+            else_rows.append(
+                '<div class="gate-path">'
+                '<span class="gate-path-name xxzt">%s</span>'
+                '<span class="gate-path-line">%s</span>'
+                '<span class="gate-go is-quiet">%s</span></div>'
+                % (e(name), line_html, e(go))
+            )
     body = (
-        '<section class="ab-hero">'
-        '<div class="container">'
-        '<p class="ab-crumb" aria-label="路径">'
-        '<span class="for-design"><a href="/">首页</a><span class="sep">/</span>关于</span>'
-        '<span class="for-dev mono">/about · ab-v6b</span>'
-        '</p>'
-        '<div class="ab-display">'
-        '<h1 class="for-design">从根往下</h1>'
-        '<h1 class="for-dev mono">origin tree</h1>'
-        '<p class="ab-lead for-design">wenfeng.org 下面挂四条路径：源文件、许可、缺字、证明。店面和造字在别的名字下。</p>'
-        '<p class="ab-lead for-dev mono">/source · /license · /gap · /attest<br />other hosts are not children</p>'
-        '</div>'
-        '<p class="ab6-root">'
-        '<span class="host">wenfeng.org</span>'
-        '<span class="for-design">这一名下面</span>'
-        '<span class="for-dev mono">children</span>'
-        '</p>'
-        '<ol class="ab6-tree">'
-        '<li class="ab6-branch">'
-        '<div class="ab6-line">'
-        '<a class="path" href="/source">/source</a>'
-        '<span class="name for-design">源文件</span>'
-        '<span class="name for-dev mono">offer</span>'
-        '<span class="act"><a class="is-pill" href="/source"><span class="for-design">看目录</span><span class="for-dev">GET</span></a></span>'
-        '</div>'
-        '<p class="gloss for-design">源文件本站下载。不允许再分发的，核验后领切片包。</p>'
-        '<p class="gloss for-dev mono">offer · slice · no file sale · not a CDN</p>'
-        '</li>'
-        '<li class="ab6-branch">'
-        '<div class="ab6-line">'
-        '<a class="path" href="/license">/license</a>'
-        '<span class="name for-design">许可</span>'
-        '<span class="name for-dev mono">text</span>'
-        '<span class="act"><a href="/license"><span class="for-design">查授权</span><span class="for-dev">GET</span></a></span>'
-        '</div>'
-        '<p class="gloss for-design">许可原文已收档。证明不替代原文，也不新设权利。</p>'
-        '<p class="gloss for-dev mono">text · attest ≠ new rights</p>'
-        '</li>'
-        '<li class="ab6-branch">'
-        '<div class="ab6-line">'
-        '<a class="path" href="/gap">/gap</a>'
-        '<span class="name for-design">缺字</span>'
-        '<span class="name for-dev mono">gap</span>'
-        '<span class="act"><a href="/gap"><span class="for-design">报缺字</span><span class="for-dev">GET</span></a></span>'
-        '</div>'
-        '<p class="gloss for-design">缺字形、缺收录、勘误在这里说。</p>'
-        '<p class="gloss for-dev mono">/gap · submit unwired · editor not a child</p>'
-        '</li>'
-        '<li class="ab6-branch">'
-        '<div class="ab6-line">'
-        '<a class="path" href="/attest">/attest</a>'
-        '<span class="name for-design">证明</span>'
-        '<span class="name for-dev mono">attest</span>'
-        '<span class="act"><a href="/attest"><span class="for-design">授权证明</span><span class="for-dev">GET</span></a></span>'
-        '</div>'
-        '<p class="gloss for-design">只给标准开源协议出证。厂商自拟、还没核实、未收录的，不出。</p>'
-        '<p class="gloss for-dev mono">SPDX only · else no attest</p>'
-        '</li>'
-        '</ol>'
-        '<p class="ab6-root is-other">'
-        '<span class="host for-design">别的名字</span>'
-        '<span class="host for-dev mono">not children</span>'
-        '<span class="for-design">不挂在 wenfeng.org 下面</span>'
-        '<span class="for-dev mono">other origins</span>'
-        '</p>'
-        '<ol class="ab6-tree is-other">'
-        '<li class="ab6-branch">'
-        '<div class="ab6-line">'
-        '<a class="path" href="https://app.windfonts.com/">app.windfonts.com</a>'
-        '<span class="name for-design">店面</span>'
-        '<span class="name for-dev mono">shop</span>'
-        '<span class="act"><a href="https://app.windfonts.com/"><span class="for-design">去店面</span><span class="for-dev">shop</span></a></span>'
-        '</div>'
-        '<p class="gloss for-design">样张、选字、店面用字、控制台和账号。</p>'
-        '<p class="gloss for-dev mono">specimens · account · console</p>'
-        '</li>'
-        '<li class="ab6-branch">'
-        '<div class="ab6-line">'
-        '<span class="path is-quiet">尚无域名</span>'
-        '<span class="name for-design">造字</span>'
-        '<span class="name for-dev mono">editor</span>'
-        '</div>'
-        '<p class="gloss for-design">编辑器放在独立新域，不挂在本站。本站以后只做入口和收录。</p>'
-        '<p class="gloss for-dev mono">other origin · no route · entry + catalog later</p>'
-        '</li>'
-        '</ol>'
-        '<section class="ab6-note" aria-label="说明">'
-        '<p class="label for-design">说明</p>'
-        '<p class="label for-dev mono">note · under the tree</p>'
-        '<p class="for-design">文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p>'
-        '<p class="for-design">对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。</p>'
-        '<p class="for-design">其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。</p>'
-        '<p class="for-design">wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how">我们怎么核</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。</p>'
-        '<p class="for-dev mono">oss · SPDX text · chain + hash + original?<br />attest ≠ new rights · custom terms → text only<br />no file sale · no license sale · no grant<br />SPDX only · custom / unverified / unlisted → no attest<br />/legal#legal-scope · /how · wordpress → static · split deploy</p>'
-        '</section>'
-        '<p class="ab-footnote for-design">wenfeng.org 之外的主机不在这页说明范围。</p>'
-        '<p class="ab-footnote for-dev mono">aboutPage · ab-v6b · /about</p>'
-        '</div>'
-        '</section>'
+        page_head("关于", lead, crumbs=[(None, "关于")], dev="/about")
+        + '<div class="gate-paths" aria-label="本站四条路径">%s</div>' % "".join(path_rows)
+        + '<section class="about-stance" aria-label="边界">'
+        '<p class="about-mark">边界</p>'
+        '<div class="about-stance-body">%s</div></section>' % _about_stance_html(stance)
+        + '<section class="about-else" aria-label="不在本站">'
+        '<p class="about-mark">这些不在本站</p>'
+        '<div class="gate-paths is-else">%s</div></section>' % "".join(else_rows)
+        + '<p class="gate-foot-note">%s</p>' % e(foot)
     )
-    body = page_head(
-        "关于",
-        "wenfeng.org 下面挂四条路径：源文件、许可、缺字、证明。店面和造字在别的名字下。",
-        crumbs=[(None, "关于")],
-        kicker="wenfeng.org",
-        dev="/about",
-    ) + _strip_hero(body)
-    return layout("about", "关于", body, "/about", body_class="ab ab-v6b", extra_head=pages_css("prose"))
+    return layout("about", "关于", body, "/about", extra_head=pages_css("gate"), body_class="page-gate page-about")
+
+
+def page_lab_about(variant):
+    """关于对照稿。甲乙丙已否；丁展签 / 戊书目 / 己题词。活页 /about/ 不动。"""
+    lead, paths, else_items, stance, foot = _about_copy()
+    path = "/lab/about-%s/" % variant
+    names = (("a", "甲"), ("b", "乙"), ("c", "丙"), ("d", "丁"), ("e", "戊"), ("f", "己"))
+    round_keys = ("d", "e", "f") if variant in ("d", "e", "f") else ("a", "b", "c")
+    self_name = dict(names)[variant]
+    others = "".join(
+        ' · <a href="/lab/about-%s/">看%s</a>' % (k, lab)
+        for k, lab in names if k != variant and k in round_keys
+    )
+    flag = (
+        '<p class="lab-flag">稿%s<span class="for-dev mono"> · %s</span>%s · '
+        '<a href="/about/">活页未改</a></p>'
+        % (self_name, path, others)
+    )
+    head = page_head("关于", lead, crumbs=[(None, "关于")], dev=path)
+    stance_body = _about_stance_html(stance)
+
+    if variant == "a":
+        # 甲：域名树——本名四枝 + 别名两枝，边界附在树下
+        branches = []
+        for n, name, line, href, go, dev in paths:
+            branches.append(
+                '<li class="ab-tree-branch">'
+                '<div class="ab-tree-line">'
+                '<a class="ab-tree-path mono" href="%s">%s</a>'
+                '<span class="ab-tree-name xxzt">%s</span>'
+                '<a class="ab-tree-act" href="%s">%s</a></div>'
+                '<p class="ab-tree-gloss">%s<span class="for-dev mono"> · %s</span></p></li>'
+                % (e(href), e(dev), e(name), e(href), e(go), e(line), e(dev))
+            )
+        else_branches = []
+        for name, host, line, href, go, dev, linked in else_items:
+            act = (
+                '<a class="ab-tree-act" href="%s" target="_blank" rel="noopener">%s</a>' % (e(href), e(go))
+                if linked else
+                '<span class="ab-tree-act is-quiet">%s</span>' % e(go)
+            )
+            path_el = (
+                '<a class="ab-tree-path mono" href="%s" target="_blank" rel="noopener">%s</a>' % (e(href), e(host))
+                if linked else
+                '<span class="ab-tree-path mono is-quiet">%s</span>' % e(host)
+            )
+            else_branches.append(
+                '<li class="ab-tree-branch">'
+                '<div class="ab-tree-line">%s'
+                '<span class="ab-tree-name xxzt">%s</span>%s</div>'
+                '<p class="ab-tree-gloss">%s<span class="for-dev mono"> · %s</span></p></li>'
+                % (path_el, e(name), act, e(line), e(dev))
+            )
+        inner = (
+            '<div class="ab-lab is-tree">'
+            '<p class="ab-tree-root"><span class="host mono">wenfeng.org</span>'
+            '<span class="for-design"> 这一名下面</span>'
+            '<span class="for-dev mono"> · children</span></p>'
+            '<ol class="ab-tree">%s</ol>'
+            '<p class="ab-tree-root is-other"><span class="for-design">别的名字</span>'
+            '<span class="for-dev mono">not children</span>'
+            '<span class="for-design"> · 不挂在 wenfeng.org 下面</span></p>'
+            '<ol class="ab-tree is-other">%s</ol>'
+            '<section class="ab-lab-stance" aria-label="边界">'
+            '<p class="about-mark">边界</p>'
+            '<div class="about-stance-body">%s</div></section>'
+            '<p class="gate-foot-note">%s</p></div>'
+            % ("".join(branches), "".join(else_branches), stance_body, e(foot))
+        )
+    elif variant == "b":
+        # 乙：左办事四条，右边界常显；站外压成底条
+        left = []
+        for n, name, line, href, go, dev in paths:
+            left.append(
+                '<a class="ab-rail-item" href="%s">'
+                '<span class="gate-n">%s</span>'
+                '<span class="ab-rail-name xxzt">%s</span>'
+                '<span class="ab-rail-line">%s'
+                '<span class="for-dev mono"> · %s</span></span>'
+                '<span class="gate-go">%s</span></a>'
+                % (e(href), e(n), e(name), e(line), e(dev), e(go))
+            )
+        else_bits = []
+        for name, host, line, href, go, dev, linked in else_items:
+            body = (
+                '<span class="ab-else-name xxzt">%s</span>'
+                '<span class="about-else-host">%s</span>'
+                '<span class="ab-else-line">%s</span>'
+                % (e(name), e(host), e(line))
+            )
+            if linked:
+                else_bits.append(
+                    '<a class="ab-else-chip" href="%s" target="_blank" rel="noopener">%s'
+                    '<span class="gate-go">%s</span></a>' % (e(href), body, e(go))
+                )
+            else:
+                else_bits.append(
+                    '<div class="ab-else-chip">%s<span class="gate-go is-quiet">%s</span></div>'
+                    % (body, e(go))
+                )
+        inner = (
+            '<div class="ab-lab is-split">'
+            '<div class="ab-split">'
+            '<nav class="ab-rail" aria-label="本站四条路径">%s</nav>'
+            '<aside class="ab-side" aria-label="边界">'
+            '<p class="about-mark">边界</p>'
+            '<div class="about-stance-body">%s</div></aside></div>'
+            '<section class="ab-else-bar" aria-label="不在本站">'
+            '<p class="about-mark">这些不在本站</p>'
+            '<div class="ab-else-row">%s</div></section>'
+            '<p class="gate-foot-note">%s</p></div>'
+            % ("".join(left), stance_body, "".join(else_bits), e(foot))
+        )
+    elif variant == "c":
+        # 丙：四格展厅，站外一行，边界阅读宽
+        tiles = []
+        for n, name, line, href, go, dev in paths:
+            tiles.append(
+                '<a class="ab-tile" href="%s">'
+                '<span class="gate-n">%s</span>'
+                '<span class="ab-tile-name xxzt">%s</span>'
+                '<span class="ab-tile-line">%s'
+                '<span class="for-dev mono"> · %s</span></span>'
+                '<span class="gate-go">%s</span></a>'
+                % (e(href), e(n), e(name), e(line), e(dev), e(go))
+            )
+        else_tiles = []
+        for name, host, line, href, go, dev, linked in else_items:
+            bit = (
+                '<span class="ab-tile-name xxzt">%s</span>'
+                '<span class="about-else-host">%s</span>'
+                '<span class="ab-tile-line">%s</span>'
+                % (e(name), e(host), e(line))
+            )
+            if linked:
+                else_tiles.append(
+                    '<a class="ab-tile is-else" href="%s" target="_blank" rel="noopener">%s'
+                    '<span class="gate-go">%s</span></a>' % (e(href), bit, e(go))
+                )
+            else:
+                else_tiles.append(
+                    '<div class="ab-tile is-else">%s<span class="gate-go is-quiet">%s</span></div>'
+                    % (bit, e(go))
+                )
+        inner = (
+            '<div class="ab-lab is-grid">'
+            '<div class="ab-grid" aria-label="本站四条路径">%s</div>'
+            '<section class="ab-else-grid" aria-label="不在本站">'
+            '<p class="about-mark">这些不在本站</p>'
+            '<div class="ab-grid is-else">%s</div></section>'
+            '<section class="ab-lab-stance" aria-label="边界">'
+            '<p class="about-mark">边界</p>'
+            '<div class="about-stance-body">%s</div></section>'
+            '<p class="gate-foot-note">%s</p></div>'
+            % ("".join(tiles), "".join(else_tiles), stance_body, e(foot))
+        )
+
+    elif variant == "d":
+        # 丁：展签。大字是展品，说明是签。无框无线。
+        signs = []
+        for n, name, line, href, go, dev in paths:
+            signs.append(
+                '<a class="ab-sign" href="%s">'
+                '<span class="ab-sign-n">%s</span>'
+                '<span class="ab-sign-name xxzt">%s</span>'
+                '<span class="ab-sign-line">%s<span class="for-dev mono"> · %s</span></span>'
+                '<span class="gate-go">%s</span></a>'
+                % (e(href), e(n), e(name), e(line), e(dev), e(go))
+            )
+        quiet = []
+        for name, host, line, href, go, dev, linked in else_items:
+            inner_q = (
+                '<span class="ab-quiet-name xxzt">%s</span>'
+                '<span class="about-else-host">%s</span>'
+                '<span class="ab-quiet-line">%s</span>'
+                % (e(name), e(host), e(line))
+            )
+            if linked:
+                quiet.append(
+                    '<a class="ab-quiet" href="%s" target="_blank" rel="noopener">%s'
+                    '<span class="gate-go">%s</span></a>' % (e(href), inner_q, e(go))
+                )
+            else:
+                quiet.append(
+                    '<div class="ab-quiet">%s<span class="gate-go is-quiet">%s</span></div>'
+                    % (inner_q, e(go))
+                )
+        inner = (
+            '<div class="ab-lab is-sign">'
+            '<div class="ab-signs" aria-label="本站四条路径">%s</div>'
+            '<section class="ab-quiet-row" aria-label="不在本站">'
+            '<p class="about-mark">这些不在本站</p>%s</section>'
+            '<section class="ab-lab-stance" aria-label="边界">'
+            '<p class="about-mark">边界</p>'
+            '<div class="about-stance-body">%s</div></section>'
+            '<p class="gate-foot-note">%s</p></div>'
+            % ("".join(signs), "".join(quiet), stance_body, e(foot))
+        )
+    elif variant == "e":
+        # 戊：书目。左书名右提要，一对一行。
+        rows = []
+        for n, name, line, href, go, dev in paths:
+            rows.append(
+                '<a class="ab-folio" href="%s">'
+                '<span class="ab-folio-n">%s</span>'
+                '<span class="ab-folio-name xxzt">%s</span>'
+                '<span class="ab-folio-copy">'
+                '<span class="ab-folio-line">%s<span class="for-dev mono"> · %s</span></span>'
+                '<span class="gate-go">%s</span></span></a>'
+                % (e(href), e(n), e(name), e(line), e(dev), e(go))
+            )
+        else_rows = []
+        for name, host, line, href, go, dev, linked in else_items:
+            copy = (
+                '<span class="ab-folio-name xxzt">%s</span>'
+                '<span class="ab-folio-copy">'
+                '<span class="about-else-host">%s</span>'
+                '<span class="ab-folio-line">%s</span></span>'
+                % (e(name), e(host), e(line))
+            )
+            if linked:
+                else_rows.append(
+                    '<a class="ab-folio is-else" href="%s" target="_blank" rel="noopener">%s'
+                    '<span class="gate-go">%s</span></a>' % (e(href), copy, e(go))
+                )
+            else:
+                else_rows.append(
+                    '<div class="ab-folio is-else">%s<span class="gate-go is-quiet">%s</span></div>'
+                    % (copy, e(go))
+                )
+        inner = (
+            '<div class="ab-lab is-folio">'
+            '<div class="ab-folios" aria-label="本站四条路径">%s</div>'
+            '<section class="ab-folios is-else" aria-label="不在本站">'
+            '<p class="about-mark">这些不在本站</p>%s</section>'
+            '<section class="ab-lab-stance" aria-label="边界">'
+            '<p class="about-mark">边界</p>'
+            '<div class="about-stance-body">%s</div></section>'
+            '<p class="gate-foot-note">%s</p></div>'
+            % ("".join(rows), "".join(else_rows), stance_body, e(foot))
+        )
+    else:
+        # 己：题词。四字横陈，说明垂下。像版权页。
+        phrase = "".join(
+            '<a class="ab-word xxzt" href="%s">%s</a>' % (e(href), e(name))
+            for _n, name, _line, href, _go, _dev in paths
+        )
+        notes = []
+        for n, name, line, href, go, dev in paths:
+            notes.append(
+                '<a class="ab-note" href="%s">'
+                '<span class="ab-note-k">%s · %s</span>'
+                '<span class="ab-note-line">%s<span class="for-dev mono"> · %s</span></span>'
+                '<span class="gate-go">%s</span></a>'
+                % (e(href), e(n), e(name), e(line), e(dev), e(go))
+            )
+        else_notes = []
+        for name, host, line, href, go, dev, linked in else_items:
+            bit = (
+                '<span class="ab-note-k">%s · %s</span>'
+                '<span class="ab-note-line">%s</span>'
+                % (e(name), e(host), e(line))
+            )
+            if linked:
+                else_notes.append(
+                    '<a class="ab-note" href="%s" target="_blank" rel="noopener">%s'
+                    '<span class="gate-go">%s</span></a>' % (e(href), bit, e(go))
+                )
+            else:
+                else_notes.append(
+                    '<div class="ab-note">%s<span class="gate-go is-quiet">%s</span></div>'
+                    % (bit, e(go))
+                )
+        inner = (
+            '<div class="ab-lab is-colo">'
+            '<p class="ab-phrase" aria-label="本站四条路径">%s</p>'
+            '<div class="ab-notes">%s</div>'
+            '<section class="ab-colo-else" aria-label="不在本站">'
+            '<p class="about-mark">这些不在本站</p>'
+            '<div class="ab-notes is-else">%s</div></section>'
+            '<section class="ab-lab-stance" aria-label="边界">'
+            '<p class="about-mark">边界</p>'
+            '<div class="about-stance-body">%s</div></section>'
+            '<p class="gate-foot-note">%s</p></div>'
+            % (phrase, "".join(notes), "".join(else_notes), stance_body, e(foot))
+        )
+
+    body = flag + head + inner
+    return layout(
+        "about", "关于稿%s" % self_name, body, path,
+        extra_head=pages_css("gate", "lab-about"),
+        body_class="page-gate page-about lab-about-page lab-about-%s" % variant,
+        nav_items=NAV_LAB, wordmark_href=path,
+    )
+
+
+def _gap_k(zh, field):
+    return '<span class="k">%s<span class="for-dev mono"> · %s</span></span>' % (e(zh), e(field))
 
 
 def page_gap():
-    body = (
-        '<section class="gp-hero">'
-        '<div class="container">'
-        '<p class="gp-crumb" aria-label="路径">'
-        '<span class="for-design"><a href="/">首页</a> / 报缺字 · 样例未提交</span>'
-        '<span class="for-dev mono">/gap · gp-v1b</span>'
-        '</p>'
-        '<div class="gp-display">'
-        '<h1 class="for-design">报缺字</h1>'
-        '<h1 class="for-dev mono">/gap</h1>'
-        '<p class="gp-lead for-design">一条短笺。<br class="gp-br" />缺字形、缺收录、写错了，三件事里报一件。</p>'
-        '<p class="gp-lead for-dev mono">kind=glyph|catalog|errata<br />POST 未接 · 无 coverage · 无账号 · sample glyph</p>'
-        '</div>'
+    form = (
         '<section class="gp1-stage" aria-label="写一条短笺">'
         '<div class="gp1-letter">'
-        '<p class="gp1-kicker for-design">短笺</p>'
-        '<p class="gp1-kicker for-dev mono">one record</p>'
+        '<p class="gp1-kicker">短笺</p>'
         '<div class="gp1-kinds" role="tablist" aria-label="这一条是哪一件事">'
         '<button type="button" role="tab" id="tab-glyph" data-kind="glyph" aria-controls="pane-glyph" aria-selected="true" class="is-on">缺字形</button>'
         '<button type="button" role="tab" id="tab-catalog" data-kind="catalog" aria-controls="pane-catalog" aria-selected="false">缺收录</button>'
@@ -3320,82 +3526,98 @@ def page_gap():
         '</div>'
         '<div class="gp1-fields" id="pane-glyph" role="tabpanel" aria-labelledby="tab-glyph" data-pane="glyph">'
         '<label class="gp-field">'
-        '<span class="k for-design">哪一款</span><span class="k for-dev mono">norm</span>'
-        '<input type="text" value="霞鹜文楷" />'
+        '%s'
+        '<input type="text" value="霞鹜文楷" data-gap-name>'
         '</label>'
         '<label class="gp-field is-char">'
-        '<span class="k for-design">缺的字</span><span class="k for-dev mono">codepoint</span>'
-        '<input type="text" value="龘" maxlength="8" />'
+        '%s'
+        '<input type="text" value="龘" maxlength="8" data-gap-char>'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">在哪看到</span><span class="k for-dev mono">note</span>'
+        '%s'
         '<textarea rows="2">版式样例。不是已提交的反馈，也不表示这一款真的缺这个字。</textarea>'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">怎么回</span><span class="k for-dev mono">contact?</span>'
-        '<input type="text" placeholder="可选。不建账号" />'
+        '%s'
+        '<input type="text" placeholder="可选。不建账号">'
         '</label>'
         '</div>'
         '<div class="gp1-fields" id="pane-catalog" role="tabpanel" aria-labelledby="tab-catalog" data-pane="catalog" hidden>'
         '<label class="gp-field">'
-        '<span class="k for-design">字体名</span><span class="k for-dev mono">name</span>'
-        '<input type="text" placeholder="目录里没有的名字" />'
+        '%s'
+        '<input type="text" placeholder="目录里没有的名字">'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">谁做的</span><span class="k for-dev mono">foundry</span>'
-        '<input type="text" placeholder="作者或厂商" />'
+        '%s'
+        '<input type="text" placeholder="作者或厂商">'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">出处</span><span class="k for-dev mono">upstream</span>'
-        '<input type="text" placeholder="仓库或发布页" />'
+        '%s'
+        '<input type="text" placeholder="仓库或发布页">'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">怎么回</span><span class="k for-dev mono">contact?</span>'
-        '<input type="text" placeholder="可选。不建账号" />'
+        '%s'
+        '<input type="text" placeholder="可选。不建账号">'
         '</label>'
         '</div>'
         '<div class="gp1-fields" id="pane-errata" role="tabpanel" aria-labelledby="tab-errata" data-pane="errata" hidden>'
         '<label class="gp-field">'
-        '<span class="k for-design">哪一款</span><span class="k for-dev mono">norm</span>'
-        '<input type="text" placeholder="短码或中文名" />'
+        '%s'
+        '<input type="text" placeholder="目录编号或中文名" data-gap-name>'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">错在哪</span><span class="k for-dev mono">field</span>'
-        '<input type="text" placeholder="名字、许可或状态" />'
+        '%s'
+        '<input type="text" placeholder="名字、许可或状态">'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">应是</span><span class="k for-dev mono">correction</span>'
+        '%s'
         '<textarea rows="2" placeholder="写出你看到的原文"></textarea>'
         '</label>'
         '<label class="gp-field">'
-        '<span class="k for-design">怎么回</span><span class="k for-dev mono">contact?</span>'
-        '<input type="text" placeholder="可选。不建账号" />'
+        '%s'
+        '<input type="text" placeholder="可选。不建账号">'
         '</label>'
         '</div>'
         '<p class="gp1-acts">'
         '<button type="button" data-hold>提交</button>'
-        '<a href="/source">先去目录核对</a>'
-        '<a href="/license">许可原文</a>'
+        '<a href="/source/">先去目录核对</a>'
+        '<a href="/license/">许可原文</a>'
         '</p>'
-        '<p class="gp1-quiet for-design" data-hold-note hidden>入口还没接上。这一下没有送出。</p>'
-        '<p class="gp1-quiet for-dev mono">click → no request · POST not wired</p>'
+        '<p class="gp1-quiet" data-hold-note hidden>入口还没接上。这一下没有送出。'
+        '<span class="for-dev mono"> · POST 未接</span></p>'
         '</div>'
         '<aside class="gp1-dossier" aria-label="边界">'
-        '<p class="label for-design">边界</p>'
-        '<p class="label for-dev mono">bounds</p>'
+        '<p class="label">边界</p>'
         '<div class="gp1-kv">'
-        '<div><span class="k for-design">覆盖率</span><span class="k for-dev">coverage</span><span class="v for-design">不统计。缺一个字就是缺一个字</span><span class="v for-dev mono">no rate</span></div>'
-        '<div><span class="k for-design">账号</span><span class="k for-dev">auth</span><span class="v for-design">不建账号。联系方式可留可不留</span><span class="v for-dev mono">no account</span></div>'
-        '<div><span class="k for-design">已收录</span><span class="k for-dev">/source</span><span class="v for-design">在目录里的，报缺字或勘误，不要再报缺收录</span><span class="v for-dev mono">in catalog → not this kind</span></div>'
-        '<div><span class="k for-design">许可</span><span class="k for-dev">/license</span><span class="v for-design">写错了去勘误。原文仍以许可页为准</span><span class="v for-dev mono">textState · 不改原文</span></div>'
-        '<div><span class="k for-design">入口</span><span class="k for-dev">POST</span><span class="v for-design">表单还没接上，这一下不会送出</span><span class="v for-dev mono">/gap · click → no request</span></div>'
+        '<div>%s<span class="v">不统计。缺一个字就是缺一个字</span></div>'
+        '<div>%s<span class="v">不建账号。联系方式可留可不留</span></div>'
+        '<div>%s<span class="v">在目录里的，报缺字或勘误，不要再报缺收录</span></div>'
+        '<div>%s<span class="v">写错了去勘误。原文仍以许可页为准</span></div>'
+        '<div>%s<span class="v">表单还没接上，这一下不会送出</span></div>'
         '</div>'
         '</aside>'
         '</section>'
-        '<p class="gp-footnote for-design">样例里的字只是版式，不代表霞鹜文楷真的缺这个字。提交不会送出。。</p>'
-        '<p class="gp-footnote for-dev mono">gapPage · gp-v1b · /gap · no POST</p>'
-        '</div>'
-        '</section>'
+        '<p class="gp-footnote">样例里的字只是版式，不代表霞鹜文楷真的缺这个字。提交不会送出。'
+        '<span class="for-dev mono"> · /gap · POST not wired</span></p>'
+        % (
+            _gap_k("哪一款", "norm"),
+            _gap_k("缺的字", "codepoint"),
+            _gap_k("在哪看到", "note"),
+            _gap_k("怎么回", "contact?"),
+            _gap_k("字体名", "name"),
+            _gap_k("谁做的", "foundry"),
+            _gap_k("出处", "upstream"),
+            _gap_k("怎么回", "contact?"),
+            _gap_k("哪一款", "norm"),
+            _gap_k("错在哪", "field"),
+            _gap_k("应是", "correction"),
+            _gap_k("怎么回", "contact?"),
+            _gap_k("覆盖率", "coverage"),
+            _gap_k("账号", "auth"),
+            _gap_k("已收录", "/source"),
+            _gap_k("许可", "/license"),
+            _gap_k("入口", "POST"),
+        )
     )
     body = page_head(
         "缺字勘误",
@@ -3403,10 +3625,8 @@ def page_gap():
         crumbs=[(None, "缺字")],
         kicker="侧门 03",
         dev="/gap · POST 未接",
-    ) + _strip_hero(body)
-    return layout("gap", "报缺字", body, "/gap", body_class="gp gp-v1b", extra_head=pages_css("prose"))
-
-
+    ) + form
+    return layout("gap", "报缺字", body, "/gap", body_class="page-gap")
 def page_404():
     body = page_head(
         "没有这一页",
@@ -3444,9 +3664,17 @@ def main():
     write("/lab/foot-a/", page_lab_foot(data, fonts, "a"))
     write("/lab/foot-b/", page_lab_foot(data, fonts, "b"))
     write("/lab/foot-c/", page_lab_foot(data, fonts, "c"))
+    write("/lab/foot-left-a/", page_lab_foot_left(data, fonts, "a"))
+    write("/lab/foot-left-b/", page_lab_foot_left(data, fonts, "b"))
     write("/lab/source-a/", page_lab_source(fonts, "a"))
     write("/lab/source-b/", page_lab_source(fonts, "b"))
     write("/lab/source-c/", page_lab_source(fonts, "c"))
+    write("/lab/about-a/", page_lab_about("a"))
+    write("/lab/about-b/", page_lab_about("b"))
+    write("/lab/about-c/", page_lab_about("c"))
+    write("/lab/about-d/", page_lab_about("d"))
+    write("/lab/about-e/", page_lab_about("e"))
+    write("/lab/about-f/", page_lab_about("f"))
     write("/source/", page_source(fonts))
     write("/license/", page_licenses(fonts))
     for f in fonts:
