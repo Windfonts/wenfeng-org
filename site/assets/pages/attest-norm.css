@@ -235,3 +235,8 @@
   }
   .page-attest-norm .atn-tools-links { grid-column: 1 / -1; display: flex; gap: var(--s-4); }
 }
+
+/* 相关链接：左栏两枚按钮，纵向堆叠 */
+.page-attest-norm .atn-links { display: grid; gap: var(--s-2); margin-bottom: var(--s-6); }
+.page-attest-norm .atn-links .label { margin-bottom: var(--s-1); }
+.page-attest-norm .atn-link-btn { justify-content: center; }

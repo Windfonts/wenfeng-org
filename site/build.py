@@ -1644,8 +1644,7 @@ def page_lab_font(fonts, variant, demo="xwwk"):
             '<section class="lf-panel">'
             '<div class="lf-panel-head"><h2>即用字库</h2></div>'
             '<div class="lf-panel-pad">'
-            '<p class="lf-panel-note">从上方领取。解压后引入 fonts.css，'
-            "注释里的 https://wenfeng.org/license 要留着。</p>"
+            '<p class="lf-panel-note">从上方领取。解压后引入 fonts.css，保留授权注释。</p>'
             "</div></section>"
         )
 
@@ -2842,6 +2841,11 @@ def page_attest(f):
         '<p class="atn-note-p">这份证明记录该字体的许可核验结果：授权来自谁、适用哪份开源协议、原文是否存档可查。证明不是著作权人的授权书，字体权利仍以许可原文为准。</p>'
         '<p class="atn-note-p">把下方的证明徽章嵌入你的网站，等于对外声明「本项目使用的字体已完成合规核验」，点击徽章可回到本页查看完整内容。采购归档请下载 PDF，编号可在核验页查验。</p>'
         '</section>'
+        '<section class="atn-links">'
+        '<p class="label">相关链接</p>'
+        '<a class="btn atn-link-btn" href="/license/%s/">许可原文</a>'
+        '<a class="btn atn-link-btn" href="/attest/ledger/">证明记录</a>'
+        '</section>'
         '<section class="atn-embed" data-share hidden>'
         '<p class="label">嵌入徽章</p>'
         '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
@@ -2861,7 +2865,7 @@ def page_attest(f):
         '<button class="btn" type="button" data-copy>%s<span data-copy-label>复制嵌入代码</span></button>'
         '<a class="btn" href="#" data-badge-dl download>%s下载 SVG</a>'
         "</p></section></aside>"
-    ) % (icon("copy"), icon("download"))
+    ) % (e(f["norm"]), icon("copy"), icon("download"))
     stage = (
         '<div class="atn-main">'
         '<div class="atn-panel">'
@@ -2870,10 +2874,7 @@ def page_attest(f):
         '<button class="btn btn-ink" type="button" data-pdf>%s下载 PDF（A4）</button>'
         '<button class="btn" type="button" data-print>打印</button>'
         '<button class="btn" type="button" data-json>%sJSON</button>'
-        '<p class="atn-tools-links">'
-        '<a href="/license/%s/">许可原文</a>'
-        '<a href="/attest/ledger/">证明记录</a>'
-        "</p></div>"
+        "</div>"
         '<div class="seg atn-switch" data-cert-switcher role="group" aria-label="证面样式">'
         '<button type="button" class="is-on" data-cert-style="classic">经典</button>'
         '<button type="button" data-cert-style="minimal">极简</button>'
@@ -2881,7 +2882,7 @@ def page_attest(f):
         '<div class="cert-stage atn-stage" data-cert data-norm="%s"%s>'
         '<p class="quiet">正在生成证明…</p></div></div></div>'
     ) % (
-        icon("download"), icon("code"), e(f["norm"]), e(f["norm"]),
+        icon("download"), icon("code"), e(f["norm"]),
         (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "",
     )
     extra = (
