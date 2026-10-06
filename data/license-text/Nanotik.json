@@ -1,0 +1,24 @@
+{
+  "norm": "Nanotik",
+  "title": "待核实",
+  "body": "字体授权\n\n该字体的原版字体——抖音美好体，其授权协议为SIL OFL 1.1\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "官方仓原文",
+    "url": "https://raw.githubusercontent.com/Hansha2011/NanoTikBazHei/main/readme.md",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "0e245a6e6f5feb05a837612ba6e058ab82abf98e5ea2843cd6d93a50de953875",
+    "method": "upstream-file",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://raw.githubusercontent.com/Hansha2011/NanoTikBazHei/main/readme.md",
+        "textSha256": "0e245a6e6f5feb05a837612ba6e058ab82abf98e5ea2843cd6d93a50de953875",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "norm": "Lyss",
+  "title": "待核实",
+  "body": "授权协议\n\n本字体基于 SIL Open Font License 1.1 发布，可免费用于个人及商业用途，允许二次修改和再发布，但须保留原授权声明，且不得单独出售字体文件本身。\n\nThis font is released under the SIL Open Font License 1.1. It is free for both personal and commercial use, modification, and redistribution, provided the original license notice is retained. The font files themselves may not be sold standalone.\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "官方仓原文",
+    "url": "https://raw.githubusercontent.com/InkPantherType/LiyuShoushu/main/README.md",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "32178932c867a7fb42c9fb6a1ab270ed3adfcfc59911919ba52b224b4c4dbe7f",
+    "method": "upstream-file",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://raw.githubusercontent.com/InkPantherType/LiyuShoushu/main/README.md",
+        "textSha256": "32178932c867a7fb42c9fb6a1ab270ed3adfcfc59911919ba52b224b4c4dbe7f",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

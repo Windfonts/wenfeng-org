@@ -1,47 +1,73 @@
 {
-  "$comment": "export-wenfeng.py 的手工考证层：自动导出覆盖不了的考证结论写这里，键为 norm，导出时合并（同名键以此为准）。演示样本退役时从 samples.json 收编，2026-09-30。",
-  "fonts": {
-    "Xwwk": {
-      "rfnNote": "附作者额外许可：未改源码的重编译版，以及仅用于网页字体交付的子集或格式转换版，可继续使用保留名；不得作为可安装桌面字体上架，其他网页字体平台需经作者确认",
-      "origin": {
-        "rootAuthor": "Fontworks（日本）",
-        "rootWork": "Klee One",
-        "note": "霞鹜文楷为 Klee One 的衍生字体，依 OFL 1.1 随衍生自动沿袭授权；现版本作者 LXGW（落霞孤鹜）"
-      },
-      "aliases": ["文楷", "LxgwWenKai", "LXGW"]
-    },
-    "Arkp": {
-      "aliases": ["ark-pixel", "TakWolf"],
-      "visitorNote": "店面目录曾写 MIT，收录记 OFL 1.1，条款以原文为准。"
-    },
-    "Qhddl": {
-      "aliases": ["权衡", "QuanHengDuLiang"]
-    },
-    "Xxzt": {
-      "aliases": ["玄宗", "XuanZongTi"]
-    },
-    "Mkkzh": {
-      "rfnNote": "继承自思源黑体的 Adobe 许可，衍生版不得使用",
-      "origin": {
-        "rootAuthor": "Adobe",
-        "rootWork": "思源黑体 Source Han Sans",
-        "note": "猫啃扛重族为思源黑体的衍生字体，授权沿袭上游"
-      },
-      "aliases": ["扛重族", "maoken-heavy-labourer"],
-      "visitorNote": "开源。体积过大，本站不收，请到上游取。"
-    },
-    "Albbpht": {
-      "aliases": ["普惠体", "PuHuiTi"],
-      "visitorNote": "免费商用，不允许单独再分发字体文件。"
-    },
-    "TsangerShuYuanTW01": {
-      "aliases": ["舒圆", "仓耳"],
-      "visitorNote": "完整包须在仓耳官网注册领取。不要把预览子集当源文件。"
-    },
-    "Syhtcjk": {
-      "rfnNote": "Source 为 Adobe 在美国的注册商标",
-      "aliases": ["Noto Sans CJK", "思源黑体", "adobe-fonts"],
-      "visitorNote": "思源系列上游在 adobe-fonts。"
-    }
+ "$comment": "export-wenfeng.py 的手工考证层：自动导出覆盖不了的考证结论写这里，键为 norm，导出时合并（同名键以此为准）。演示样本退役时从 samples.json 收编，2026-09-30。",
+ "fonts": {
+  "Xwwk": {
+   "rfnNote": "附作者额外许可：未改源码的重编译版，以及仅用于网页字体交付的子集或格式转换版，可继续使用保留名；不得作为可安装桌面字体上架，其他网页字体平台需经作者确认",
+   "origin": {
+    "rootAuthor": "Fontworks（日本）",
+    "rootWork": "Klee One",
+    "note": "霞鹜文楷为 Klee One 的衍生字体，依 OFL 1.1 随衍生自动沿袭授权；现版本作者 LXGW（落霞孤鹜）"
+   },
+   "aliases": [
+    "文楷",
+    "LxgwWenKai",
+    "LXGW"
+   ]
+  },
+  "Arkp": {
+   "aliases": [
+    "ark-pixel",
+    "TakWolf"
+   ],
+   "visitorNote": "店面目录曾写 MIT，收录记 OFL 1.1，条款以原文为准。"
+  },
+  "Qhddl": {
+   "aliases": [
+    "权衡",
+    "QuanHengDuLiang"
+   ]
+  },
+  "Xxzt": {
+   "aliases": [
+    "玄宗",
+    "XuanZongTi"
+   ]
+  },
+  "Mkkzh": {
+   "rfnNote": "继承自思源黑体的 Adobe 许可，衍生版不得使用",
+   "origin": {
+    "rootAuthor": "Adobe",
+    "rootWork": "思源黑体 Source Han Sans",
+    "note": "猫啃扛重族为思源黑体的衍生字体，授权沿袭上游许可（上游许可）"
+   },
+   "aliases": [
+    "扛重族",
+    "maoken-heavy-labourer"
+   ],
+   "visitorNote": "开源。体积过大，本站不收，请到官方渠道取。"
+  },
+  "Albbpht": {
+   "aliases": [
+    "普惠体",
+    "PuHuiTi"
+   ],
+   "visitorNote": "免费商用，不允许单独再分发字体文件。"
+  },
+  "TsangerShuYuanTW01": {
+   "aliases": [
+    "舒圆",
+    "仓耳"
+   ],
+   "visitorNote": "完整包须在仓耳官网注册领取。不要把预览子集当源文件。"
+  },
+  "Syhtcjk": {
+   "rfnNote": "Source 为 Adobe 在美国的注册商标",
+   "aliases": [
+    "Noto Sans CJK",
+    "思源黑体",
+    "adobe-fonts"
+   ],
+   "visitorNote": "思源系列的官方发布在 adobe-fonts。"
   }
+ }
 }

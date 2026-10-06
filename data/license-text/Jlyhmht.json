@@ -1,0 +1,24 @@
+{
+  "norm": "Jlyhmht",
+  "title": "方正×吉利 吉利银河美好体免费字授权（商业发布）",
+  "body": "吉利银河美好体\n\n字体属性：免费字\n仅商业发布范围使用，可下载直接使用无需获得书面授权\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "授权页摘录",
+    "url": "https://www.foundertype.com/index.php/FontInfo/index/id/12510.html",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "c785030084489f7606d8222f618820fca4a28d745f1b7f9980420f9ab5eb5afe",
+    "method": "official-page-excerpt",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://www.foundertype.com/index.php/FontInfo/index/id/12510.html",
+        "textSha256": "c785030084489f7606d8222f618820fca4a28d745f1b7f9980420f9ab5eb5afe",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

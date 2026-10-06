@@ -1,0 +1,24 @@
+{
+  "norm": "Alijkt",
+  "title": "免费商用",
+  "body": "阿里健康体\n\n字体属性：免费字\n仅商业发布范围使用，可下载直接使用无需获得书面授权\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "授权页摘录",
+    "url": "https://www.foundertype.com/index.php/FontInfo/index/id/6694.html",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "6e0d14e30cefbd7c72581997f106645038c7ddbfef4c1d2f5f88938c7c9332a3",
+    "method": "official-page-excerpt",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://www.foundertype.com/index.php/FontInfo/index/id/6694.html",
+        "textSha256": "6e0d14e30cefbd7c72581997f106645038c7ddbfef4c1d2f5f88938c7c9332a3",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

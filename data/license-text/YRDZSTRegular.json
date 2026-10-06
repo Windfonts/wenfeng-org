@@ -1,0 +1,24 @@
+{
+  "norm": "YRDZSTRegular",
+  "title": "杨任东竹石体授权协议",
+  "body": "杨任东竹石体于2017年4月26日世界知识产权日正式发布，本字体版本为1.23\n\n字体按照GB2312-80书写，并增补了少量常见汉字；\n整套字体有7个字重，共计50000余个字符\n\n本套字体授权全社会免费商用，意味着您可以将其无限制地捆入您的商业产品中，\n如海报、包装、logo、网页、APP等，不过严禁单独出售字体或修改字体盈利\n\n本套字体的部分文字还存在重心不一致、细节瑕疵等问题，\n不过作为手写体并不影响使用，作者将在后续版本中不断改进\n\n如果您有任何意见或者建议，请直接关注“杨任东字体”微信公众号与我联系，\n敬请您的持续关注，期待您的宝贵意见，谢谢！\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "授权页摘录",
+    "url": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E6%9D%A8%E4%BB%BB%E4%B8%9C%E7%AB%B9%E7%9F%B3%E4%BD%931.23_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "313840e03d6e763fd71547c97e23ab94dec30d111f8d15623fc12c7e8843ed3f",
+    "method": "official-page-excerpt",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E6%9D%A8%E4%BB%BB%E4%B8%9C%E7%AB%B9%E7%9F%B3%E4%BD%931.23_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+        "textSha256": "313840e03d6e763fd71547c97e23ab94dec30d111f8d15623fc12c7e8843ed3f",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

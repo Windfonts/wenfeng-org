@@ -1,0 +1,24 @@
+{
+  "norm": "PangZhenGuiPMZD",
+  "title": "庞门正道真贵楷体授权协议",
+  "body": "hi 下载了《庞门正道真贵楷》的你，首先恭喜你很有眼光。\n\n这款字体由《庞门正道》设计公众号号主阿门的父亲庞真贵老先生，于76岁高龄历时9个月书写制作而成，适用于中国风等商用画面设计配搭。\n如果正适合你的工作所需，可以到公众号原文支持一把，谢谢。\n\n\n重要的事情说三遍，\n\n完全免费商用！完全免费商用！完全免费商用！\n\n\n\n\n2020年12月24日\n\n阿门\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "授权页摘录",
+    "url": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E5%BA%9E%E9%97%A8%E6%AD%A3%E9%81%93%E7%9C%9F%E8%B4%B5%E6%A5%B7%E4%BD%93_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "55b7951dcc0d7254e9fad479781b667a78c48e472c805b06ad078a85aa4d43c2",
+    "method": "official-page-excerpt",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E5%BA%9E%E9%97%A8%E6%AD%A3%E9%81%93%E7%9C%9F%E8%B4%B5%E6%A5%B7%E4%BD%93_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+        "textSha256": "55b7951dcc0d7254e9fad479781b667a78c48e472c805b06ad078a85aa4d43c2",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

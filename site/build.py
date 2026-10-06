@@ -39,6 +39,26 @@ STATUS = OrderedDict([
     ("pending", ("待核实", "许可原文还没有核对记录")),
     ("missing", ("未收录", "目录里还没有这款，可以报缺收录")),
 ])
+CHIP_ICO = {
+    "all": "list",
+    "source": "download",
+    "jump": "external",
+    "ready": "time",
+    "pending": "question",
+    "missing": "plus",
+}
+VERB_ICO = {
+    "下载": "download",
+    "去出处": "external",
+    "报缺收录": "plus",
+    "读许可": "book",
+    "读许可原文": "book",
+    "授权证明": "certificate",
+    "出授权证明": "certificate",
+    "去厂商原文": "external",
+    "打开 PDF": "download",
+    "切片工具": "scissors",
+}
 
 NAV = [("/source/", "目录", ("source", "foundry")), ("/license/", "授权", ("license",)),
        ("/attest/", "核验", ("attest", "v", "attests")), ("/use/", "用法", ("use", "how")),
@@ -180,7 +200,7 @@ def plan(f):
     if st == "source" and arch:
         return "下载", "开源许可已核对原文，原件在本站。", ("下载原件", arch[0]["href"]), sec
     if st == "source" and up:
-        return "去上游", "归档包稍后提供，现在到上游仓库取原件。", ("去上游仓库", up), sec
+        return "去官方仓库", "归档包稍后提供，现在到官方仓库取原件。", ("去官方仓库", up), sec
     if st == "source":
         return "等上架", "许可允许再分发，源文件包还没上架。", None, sec
     if st == "jump":
@@ -189,11 +209,11 @@ def plan(f):
             say = "免费商用但不允许再分发，本站不留文件。从官方取得原包后，可以核验领取切片包。"
         return "去官方", say, ("去官方下载", up or f.get("shop")), sec
     if st == "ready":
-        return "等上架", "许可已核实，源文件包还没上架。", (("去上游仓库", up) if up else None), sec
+        return "等上架", "许可已核实，源文件包还没上架。", (("去官方仓库", up) if up else None), sec
     if st == "pending":
         return "待核实", "许可原文还没有核对记录，核对完成前不提供文件。", None, \
             [("报勘误", "/gap/?kind=errata&norm=" + f["norm"])] + sec
-    return "去上游", "镜像还没收到这款。", (("去上游仓库", up) if up else ("去店面看", f.get("shop"))), sec
+    return "去官方仓库", "镜像还没收到这款。", (("去官方仓库", up) if up else ("去店面看", f.get("shop"))), sec
 
 
 def rights(f):
@@ -210,6 +230,11 @@ def rights(f):
 
 def icon(name):
     return '<svg class="icon" aria-hidden="true"><use href="#i-%s"></use></svg>' % name
+
+
+def empty_html(inner, hidden=False, ico="search"):
+    hid = " data-empty hidden" if hidden else ""
+    return '<p class="empty"%s>%s<span>%s</span></p>' % (hid, icon(ico), inner)
 
 
 def link(label, href, cls="btn-text", ico=None):
@@ -342,8 +367,9 @@ def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
                 '<span class="lgo%s">%s</span></a></li>'
                 % (st, e(hay), e(letter_of(f)), cls, href, attrs, e(wf(f)), e(rel), e(info_d), info_v,
                    " is-ink" if inked else "", e(verb)))
-    return ('<ul class="lin-list" data-list%s>%s</ul><p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p><nav class="pager" data-pager hidden></nav>'
-            % ((" " + list_attrs if list_attrs else ""), "".join(row(f) for f in fonts)))
+    return ('<ul class="lin-list" data-list%s>%s</ul>%s<nav class="pager" data-pager hidden></nav>'
+            % ((" " + list_attrs if list_attrs else ""), "".join(row(f) for f in fonts),
+               empty_html('没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。', hidden=True)))
 
 
 def letter_of(f):
@@ -378,10 +404,10 @@ def lab_rows(fonts, page_size="12"):
             % (st, e(hay), e(letter_of(f)), cls, href, attrs, e(wf(f)), e(verb))
         )
     return (
-        '<ul class="ls-names" data-list data-page-size="%s">%s</ul>'
-        '<p class="empty" data-empty hidden>没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p>'
+        '<ul class="ls-names" data-list data-page-size="%s">%s</ul>%s'
         '<nav class="pager" data-pager hidden></nav>'
-        % (e(page_size), "".join(items))
+        % (e(page_size), "".join(items),
+           empty_html('没有匹配的字体。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。', hidden=True))
     )
 
 
@@ -390,11 +416,11 @@ def filter_chips(fonts, with_count=False):
     for f in fonts:
         counts[status(f)] += 1
     all_lab = "全部 · %d" % len(fonts) if with_count else "全部"
-    return '<div class="chips"><button class="chip is-on" data-filter="all">%s</button>%s</div>' % (
-        e(all_lab),
+    return '<div class="chips"><button class="chip is-on" data-filter="all">%s%s</button>%s</div>' % (
+        icon(CHIP_ICO["all"]), e(all_lab),
         "".join(
-            '<button class="chip" data-filter="%s">%s%s</button>' % (
-                k, e(STATUS[k][0]), (" · %d" % n) if with_count else ""
+            '<button class="chip" data-filter="%s">%s%s%s</button>' % (
+                k, icon(CHIP_ICO.get(k, "list")), e(STATUS[k][0]), (" · %d" % n) if with_count else ""
             ) for k, n in counts.items() if n
         ),
     )
@@ -678,7 +704,7 @@ def _frow(f):
 
 
 def _shelf_pane(key, rows):
-    inner = "".join(_frow(f) for f in rows) or '<p class="empty">这一段暂时没有字体。</p>'
+    inner = "".join(_frow(f) for f in rows) or empty_html("这一段暂时没有字体。")
     hidden = " hidden" if key != "source" else ""
     return '<div class="fshelf"%s data-shelf-pane="%s">%s</div>' % (hidden, e(key), inner)
 
@@ -1036,7 +1062,7 @@ def origin_jumps(f):
     if up and up not in seen:
         from urllib.parse import urlparse
         mh = urlparse(up).netloc or ""
-        extra.append({"label": "去 GitHub 取" if "github.com" in mh else "去上游取", "href": up})
+        extra.append({"label": "去 GitHub 取" if "github.com" in mh else "去官方取", "href": up})
     jumps = extra + (f.get("jump") or [])
     return [x for x in jumps if x and x.get("href") and not is_shop_jump(x, f)]
 
@@ -1106,7 +1132,7 @@ def font_text_cell(f):
     if ts == "summary":
         return {"d": "摘要 · 非全文", "v": "summary"}
     if ts == "pointer":
-        return {"d": "指引 · 全文在上游", "v": "pointer"}
+        return {"d": "指引 · 全文见出处", "v": "pointer"}
     return {"d": "空", "v": "∅"}
 
 
@@ -1254,7 +1280,7 @@ def oss_pack(f):
 
 
 def oss_webfont_css(f):
-    """网页分片入口。优先用 slice/index.json 里的 cssUrl，否则用已探测的 result.css。不编 zip。"""
+    """网页字体入口。优先用 slice/index.json 里的 cssUrl，否则用已探测的 result.css。不编 zip。"""
     if f.get("distribution") is False:
         return None
     norm_key = str(f.get("norm") or "").lower()
@@ -1307,7 +1333,7 @@ def font_more(f, verb):
     else:
         css = oss_webfont_css(f)
         if css:
-            add("网页分片", "样式表和 woff2 在对象存储，按字重引用。", css)
+            add("网页字体", "样式表和 woff2 按字重引用。", css)
     if f.get("shop"):
         add("店面", "样张和选字。", f["shop"])
     add("报缺字", "缺字形或勘误。", "/gap/?norm=%s" % norm)
@@ -1343,11 +1369,11 @@ def page_font(f):
     lic_href = "/license/%s/" % f["norm"]
     acts = []
     if verb.get("strongHref") and verb.get("strongLabel"):
-        acts.append(ink(verb["strongLabel"], verb["strongHref"]))
+        acts.append(ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"])))
     if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
-        acts.append(link("读许可原文", lic_href))
+        acts.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
     if can_attest(f):
-        acts.append(link("授权证明", "/attest/%s/" % f["norm"]))
+        acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
 
     dossier = kv_rows([
         ("目录编号", e(f["norm"])),
@@ -1356,7 +1382,7 @@ def page_font(f):
         ("原文", e(text_cell["d"])),
         ("归档", e(arch_cell["d"])),
         ("镜像", e(mirror_word(mirror_state) or "—")),
-        ("上游", e(upstream_dossier(up))),
+        ("出处", e(upstream_dossier(up))),
     ])
 
     file_html = ""
@@ -1437,7 +1463,7 @@ def text_state_word(f):
     if ts == "summary":
         return "摘要 · 非全文"
     if ts == "pointer":
-        return "指引 · 全文在上游"
+        return "指引 · 全文见出处"
     return "空"
 
 
@@ -1492,7 +1518,7 @@ def verdict_copy(f, kind):
             "state": "仅查询<br />不可下载",
             "stateDev": "distribution=false<br />no file here",
             "line": "仅查询 · 不可下载",
-            "note": "本站不代分发这款源文件。条款以厂商或上游发布件为准。",
+            "note": "本站不代分发这款源文件。条款以厂商或官方发布件为准。",
             "noteDev": "offer=" + offer_of(f) + " · textState=" + (ts or "∅")
         }
     if ts == "full":
@@ -1504,9 +1530,9 @@ def verdict_copy(f, kind):
             "noteDev": "license text on file · attest blocked"
         }
     return {
-        "state": "仅查询<br />全文在上游",
+        "state": "仅查询<br />全文见官方渠道",
         "stateDev": "textState=" + (ts or "∅") + "<br />not archived",
-        "line": "仅查询 · 全文在上游",
+        "line": "仅查询 · 全文见官方渠道",
         "note": "本站还没有归档全文。先看出处，不要把名称当成许可结论。",
         "noteDev": "pointer · upstream text"
     }
@@ -1705,7 +1731,7 @@ def license_tier(f):
     if t == "summary":
         return {"word": "许可要点", "note": "非全文，全文以厂商发布件为准。"}
     if t == "pointer":
-        return {"word": "许可指引", "note": "全文在上游仓库，本站尚未归档文本。"}
+        return {"word": "许可指引", "note": "全文见官方仓库，本站尚未归档文本。"}
     return None
 
 
@@ -2000,7 +2026,9 @@ def evidence_block(f, lic_obj):
     if fetched:
         bits.append(e(fetched))
     if source_lab or method:
-        bits.append(_how_dual(source_lab or method, method or source_lab))
+        # 数据文件里 evidence.source 存的是内部词「上游仓原文」，渲染层统一映射
+        lab = {"上游仓原文": "官方仓原文", "上游原文": "官方仓原文", "上游仓/官方原文": "官方仓/官方原文"}.get(source_lab, source_lab)
+        bits.append(_how_dual(lab or method, method or source_lab))
     line = '<p class="licn-ev-line">%s</p>' % " · ".join(bits) if bits else ""
 
     hash_html = ""
@@ -2025,7 +2053,8 @@ def evidence_block(f, lic_obj):
                 _how_dual(_EV_EVENT_ZH.get(ev, ev), ev),
             ]
             if h.get("note"):
-                bits_h.append(e(h["note"]))
+                note = {"上游仓原文": "官方仓原文"}.get(h["note"], h["note"])
+                bits_h.append(e(note))
             if h.get("textSha256"):
                 bits_h.append(
                     '<span class="for-dev mono">%s…</span>'
@@ -2084,14 +2113,14 @@ def page_license(f, licenses):
     src = lic_o.get("sourceUrl") or (lic_obj.get("evidence") or {}).get("url") or ""
     acts = []
     if kind == "open" and can_attest(f):
-        acts.append(ink("出授权证明", "/attest/%s/" % norm))
+        acts.append(ink("出授权证明", "/attest/%s/" % norm, VERB_ICO["出授权证明"]))
     if kind == "vendor" and src:
-        acts.append(ink("去厂商原文", src))
+        acts.append(ink("去厂商原文", src, VERB_ICO["去厂商原文"]))
     acts.append(link("返回条目", "/source/%s/" % norm))
     if kind != "open" and can_attest(f):
-        acts.append(link("授权证明", "/attest/%s/" % norm))
+        acts.append(link("授权证明", "/attest/%s/" % norm, ico=VERB_ICO["授权证明"]))
     if is_gated(f):
-        acts.append(link("切片工具", "/slice/%s/" % norm))
+        acts.append(link("切片工具", "/slice/%s/" % norm, ico=VERB_ICO["切片工具"]))
 
     meta_bits = [("<span>%s</span>" % e(w)) for w in words]
     meta_bits.append("<span>%s</span>" % e(spdx))
@@ -2152,7 +2181,7 @@ def page_license(f, licenses):
                     '<p class="licn-cell-h">%s</p>'
                     '<div class="licn-pre is-zh">%s</div></div>'
                     '<div data-lic-pane="en" hidden>'
-                    '<p class="licn-cell-h">原版（同左）· %s</p>'
+                    '<p class="licn-cell-h">原版（无独立译文，同原文）· %s</p>'
                     '<pre class="licn-pre is-en">%s</pre></div>'
                     '</div></div>'
                     % (
@@ -2245,7 +2274,7 @@ def page_license(f, licenses):
                     '<figcaption>%s</figcaption>'
                     '<iframe class="licn-pdf" src="%s" title="%s"></iframe>'
                     '<p>%s</p></figure>'
-                    % (e(lab), e(href), e(lab), ink("打开 PDF", href))
+                    % (e(lab), e(href), e(lab), ink("打开 PDF", href, VERB_ICO["打开 PDF"]))
                 )
             else:
                 art_bits.append(
@@ -2405,9 +2434,10 @@ def page_foundries(groups):
             len(groups),
             (
                 '<ul class="lin-list" data-list data-page-size="24" data-unit="家">%s</ul>'
-                '<p class="empty" data-empty hidden>没有匹配的厂商。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。</p>'
+                '%s'
                 '<nav class="pager" data-pager hidden></nav>'
-                % "".join(items)
+                % ("".join(items),
+                   empty_html('没有匹配的厂商。换个名字，或<a href="/gap/?kind=catalog">报缺收录</a>。', hidden=True))
             ) if items else
             '<p class="quiet">还没有按厂商归类的条目。</p>',
         )
@@ -2546,10 +2576,10 @@ def page_attest(f):
         '<p class="atn-embed-badge"><img class="share-badge" data-badge-img src="" alt="授权证明徽章预览"></p>'
         '<pre class="code" data-embed></pre>'
         '<p class="acts">'
-        '<button class="btn" type="button" data-copy>%s复制嵌入代码</button>'
-        '<a class="btn" href="#" data-badge-dl download>下载 SVG</a>'
+        '<button class="btn" type="button" data-copy>%s<span data-copy-label>复制嵌入代码</span></button>'
+        '<a class="btn" href="#" data-badge-dl download>%s下载 SVG</a>'
         "</p></section></aside>"
-    ) % icon("copy")
+    ) % (icon("copy"), icon("download"))
     stage = (
         '<div class="atn-main">'
         '<div class="atn-panel">'
@@ -2557,7 +2587,7 @@ def page_attest(f):
         '<div class="atn-tools-main">'
         '<button class="btn btn-ink" type="button" data-pdf>%s下载 PDF（A4）</button>'
         '<button class="btn" type="button" data-print>打印</button>'
-        '<button class="btn" type="button" data-json>JSON</button>'
+        '<button class="btn" type="button" data-json>%sJSON</button>'
         '<p class="atn-tools-links">'
         '<a href="/license/%s/">许可原文</a>'
         '<a href="/attest/ledger/">证明记录</a>'
@@ -2569,7 +2599,7 @@ def page_attest(f):
         '<div class="cert-stage atn-stage" data-cert data-norm="%s"%s>'
         '<p class="quiet">正在生成证明…</p></div></div></div>'
     ) % (
-        icon("download"), e(f["norm"]), e(f["norm"]),
+        icon("download"), icon("code"), e(f["norm"]), e(f["norm"]),
         (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "",
     )
     extra = (
@@ -2602,15 +2632,18 @@ def page_verify():
         '<label><span>证明 JSON</span>'
         '<textarea name="json" rows="12" '
         'placeholder=\'{ "type": "wenfeng.attestation.v1", … }\'></textarea></label>'
-        '<p class="acts"><button class="btn btn-ink">核对</button></p></form>'
+        '<p class="acts"><button class="btn btn-ink">%s核对</button></p></form>'
         '<div data-out></div></div>%s</div>'
-        % aside(
+        % (
+            icon("verified"),
+            aside(
             "说明",
             kv_rows([
                 ("核对方式", _how_dual("平台密钥校验 JSON 完整性", "platform key")),
                 ("效力", _how_dual("核对内容是否被改动；不构成司法意义上的电子签章", "not e-sign")),
                 ("另见", '<a href="/attest/ledger/">证明记录</a>'),
             ], words=True),
+            ),
         )
     )
     return layout(
@@ -2659,15 +2692,18 @@ def page_lookup():
         '<label><span>持证单位</span>'
         '<input name="holder" placeholder="与证明一致；通用记录填「通用核验记录」" required>'
         '</label></div>'
-        '<p class="acts"><button class="btn btn-ink">查验</button></p></form>'
+        '<p class="acts"><button class="btn btn-ink">%s查验</button></p></form>'
         '<div data-out></div></div>%s</div>'
-        % aside(
+        % (
+            icon("search"),
+            aside(
             "说明",
             kv_rows([
                 ("两要素", _how_dual("编号与持证单位须与证明完全一致", "serial + holder")),
                 ("通用记录", _how_dual("未填单位时，持证单位填「通用核验记录」", "holder = 通用核验记录")),
                 ("查不到", _how_dual("编号在证明记录里查不到，按伪造处理", "miss → forged")),
             ], words=True),
+            ),
         )
     )
     return layout(
@@ -2698,7 +2734,7 @@ def page_slices(fonts):
     planned_html = ""
     if planned:
         planned_html = (
-            '<p class="tool-note">开源可再分发的网页分片在 '
+            '<p class="tool-note">开源可再分发的网页字体在 '
             '<code>cn.windfonts.com/fonts-packages</code>。'
             "单独的切片 zip 还没有可切片的字体，这里不放直链。</p>"
         )
@@ -2859,7 +2895,7 @@ def page_slice(f, fonts=None):
             '<div class="tool-slot">'
             '<h2>切片包</h2>'
             '<p class="tool-pack-name">不必核验原包</p>'
-            '<p class="tool-note">网页分片在 cn.windfonts.com。单独的切片 zip 还没有，不放直链。</p>'
+            '<p class="tool-note">网页字体在 cn.windfonts.com。单独的切片包还没有可领取的字体，不放直链。</p>'
             '<p class="tool-actions"><a class="btn btn-ink btn-take" href="/source/%s/">回条目</a></p>'
             '</div>'
             '</section>'
@@ -2955,7 +2991,7 @@ def page_use():
         '<a class="gate-path" id="path-file" href="/source/">'
         '<span class="gate-n">01</span>'
         '<span class="gate-path-name xxzt">原件</span>'
-        '<span class="gate-path-line">TTF / OTF 或上游归档。给自建站、主题作者。许可允许时才再分发。'
+        '<span class="gate-path-line">TTF / OTF 或官方归档。给自建站、主题作者。许可允许时才再分发。'
         '<span class="for-dev mono"> · /source</span></span>'
         '<span class="gate-go">看目录 →</span>'
         '</a>'
@@ -3069,7 +3105,7 @@ def page_how():
         '<p class="read-idx">04</p>'
         '<h2>许可怎么取证</h2>'
         '<article class="read-art">'
-        '<p class="read-p">以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、上游仓库的 LICENSE，三者有其一才算拿到原文。</p>'
+        '<p class="read-p">以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、官方仓库的 LICENSE，三者有其一才算拿到原文。</p>'
         '<p class="read-p">取证时记录来源、日期和文本哈希。哈希的作用是：原文以后被改动或换版时，能对出变化。</p>'
         '<p class="read-p">每款字体的取证记录，在它的许可原文页里可以查到。</p>'
         '</article>'
@@ -3093,10 +3129,10 @@ def page_how():
         "五态",
         kv_rows([
             ("本站下载", _how_dual("文件在本站，可以直接下载。", "offer=source")),
-            ("官方下载", _how_dual("本站不存文件，请到厂商或上游官方渠道下载。", "official")),
+            ("官方下载", _how_dual("本站不存文件，请到厂商官方渠道下载。", "official")),
             ("暂无下载", _how_dual("许可已核实，源文件包还没上架。", "offer=pending · textState=full")),
             ("待核实", _how_dual("许可还没核对完，核对完成前不提供文件。", "unverified")),
-            ("未收录", _how_dual("这款字体还没收进镜像，先去上游取。", "unlisted")),
+            ("未收录", _how_dual("这款字体还没收进镜像，先去官方渠道取。", "unlisted")),
         ], words=True),
     ).replace('<aside class="aside">', '<aside class="aside" id="how-status">', 1)
     body = page_head(
@@ -3109,7 +3145,7 @@ def page_how():
 
 
 def page_legal():
-    seq = '<section class="read-moment" id="m-open"><p class="read-idx">01</p><h2>打开这页</h2><article class="read-art" id="legal-oss"><h3>这页是什么</h3><p>操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p></article><article class="read-art"><h3>谁在按原文办事</h3><p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p></article><article class="read-art" id="legal-what"><h3>证明是什么</h3><p>《文风字体授权证明》记录某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填档案里「要一份盖章件」的缺口。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p></article></section><section class="read-moment" id="m-text"><p class="read-idx">02</p><h2>对着原文</h2><article class="read-art" id="legal-scope"><h3>先看协议是不是标准开源</h3><ul class="read-pills"><li>SIL Open Font License 1.1</li><li>MIT</li><li>Apache License 2.0</li><li>IPA Font License</li><li>CC0</li><li>CC BY / CC BY-SA（不含 NC）</li><li>M+</li><li>带 Font Exception 的 GPL</li></ul><p>上面这些才出证。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC 系出证时，证明内保留作者署名。</p><p>厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p></article><article class="read-art" id="legal-ofl"><h3>OFL 在本站怎么读</h3><p>可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名未获作者书面允许，派生件不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 更宽。</p></article><article class="read-art" id="legal-cn"><h3>国内把字库当什么</h3><p>字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是给这份材料。侵权投诉仍走著作权人。</p></article><article class="read-art" id="legal-soft"><h3>文件是软件复制品</h3><p>TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p></article></section><section class="read-moment" id="m-lines"><p class="read-idx">03</p><h2>看证上三行</h2><article class="read-art" id="legal-issuer"><h3>谁签发，名字怎么写</h3><p>签发人是文派（广州）科技有限公司。证面品牌是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p><p>收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、name 表、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p></article><article class="read-art"><h3>三行结论</h3><p>网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p></article><article class="read-art" id="legal-sign"><h3>签名验的是改没改过</h3><p>平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是 CA 签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p></article></section><section class="read-moment" id="m-file"><p class="read-idx">04</p><h2>放进档案</h2><article class="read-art" id="legal-buy"><h3>采购留下这四样</h3><ol class="read-steps"><li>保存本核验 PDF / 打印件和 JSON。</li><li>保存许可原文（本站 <a href="/license">/license/{目录编号}</a>）。</li><li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li><li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li></ol></article><article class="read-art" id="legal-redist"><h3>要带走文件的时候</h3><p>许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{目录编号}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。本原型只模拟流程，不上传服务器，也不把原件再切一遍。</p><p>不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p></article></section><section class="read-moment" id="m-mail"><p class="read-idx">05</p><h2>有异议再写信</h2><article class="read-art" id="legal-phish"><h3>还没核对的</h3><p>许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p></article><article class="read-art" id="legal-takedown"><h3>写给 license@wenfeng.org</h3><p>收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p></article><article class="read-art" id="legal-name"><h3>另走的程序</h3><p>派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要拿这张证明去顶。</p></article></section>'
+    seq = '<section class="read-moment" id="m-open"><p class="read-idx">01</p><h2>打开这页</h2><article class="read-art" id="legal-oss"><h3>这页是什么</h3><p>操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p></article><article class="read-art"><h3>谁在按原文办事</h3><p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p></article><article class="read-art" id="legal-what"><h3>证明是什么</h3><p>《文风字体授权证明》记录某日从官方渠道取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填档案里「要一份盖章件」的缺口。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p></article></section><section class="read-moment" id="m-text"><p class="read-idx">02</p><h2>对着原文</h2><article class="read-art" id="legal-scope"><h3>先看协议是不是标准开源</h3><ul class="read-pills"><li>SIL Open Font License 1.1</li><li>MIT</li><li>Apache License 2.0</li><li>IPA Font License</li><li>CC0</li><li>CC BY / CC BY-SA（不含 NC）</li><li>M+</li><li>带 Font Exception 的 GPL</li></ul><p>上面这些才出证。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC 系出证时，证明内保留作者署名。</p><p>厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p></article><article class="read-art" id="legal-ofl"><h3>OFL 在本站怎么读</h3><p>可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名未获作者书面允许，派生件不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 更宽。</p></article><article class="read-art" id="legal-cn"><h3>国内把字库当什么</h3><p>字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是给这份材料。侵权投诉仍走著作权人。</p></article><article class="read-art" id="legal-soft"><h3>文件是软件复制品</h3><p>TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p></article></section><section class="read-moment" id="m-lines"><p class="read-idx">03</p><h2>看证上三行</h2><article class="read-art" id="legal-issuer"><h3>谁签发，名字怎么写</h3><p>签发人是文派（广州）科技有限公司。证面品牌是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p><p>收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、字体名称信息（name 表）、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p></article><article class="read-art"><h3>三行结论</h3><p>网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p></article><article class="read-art" id="legal-sign"><h3>签名验的是改没改过</h3><p>平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是证书机构（CA）签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p></article></section><section class="read-moment" id="m-file"><p class="read-idx">04</p><h2>放进档案</h2><article class="read-art" id="legal-buy"><h3>采购留下这四样</h3><ol class="read-steps"><li>保存本核验 PDF / 打印件和 JSON。</li><li>保存许可原文（本站 <a href="/license">/license/{目录编号}</a>）。</li><li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li><li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li></ol></article><article class="read-art" id="legal-redist"><h3>要带走文件的时候</h3><p>许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{目录编号}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。本原型只模拟流程，不上传服务器，也不把原件再切一遍。</p><p>不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p></article></section><section class="read-moment" id="m-mail"><p class="read-idx">05</p><h2>有异议再写信</h2><article class="read-art" id="legal-phish"><h3>还没核对的</h3><p>许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p></article><article class="read-art" id="legal-takedown"><h3>写给 license@wenfeng.org</h3><p>收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p></article><article class="read-art" id="legal-name"><h3>另走的程序</h3><p>派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要拿这张证明去顶。</p></article></section>'
     acts = '<p class="read-acts"><a href="/attest">授权证明</a><a href="/license">许可原文</a><a href="/how">我们怎么核验</a></p>'
     side = aside(
         "出证边界",
