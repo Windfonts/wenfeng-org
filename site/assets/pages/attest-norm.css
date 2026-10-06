@@ -267,7 +267,17 @@
 }
 .page-attest-norm .atn-embed-toggle::-webkit-details-marker { display: none; }
 .page-attest-norm .atn-embed-toggle:hover { border-color: var(--ink-2); }
-.page-attest-norm .atn-embed-arrow { color: var(--gray-2); }
+.page-attest-norm .atn-embed-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--fill);
+  color: var(--ink);
+  font-size: 0.7rem;
+  flex: none;
+}
 /* 展开态：内容包进摘要钮的容器，成一个完整抽屉 */
 .page-attest-norm .atn-embed[open] {
   border: 1px solid var(--rule);
@@ -286,6 +296,8 @@
   position: static;
   margin-left: auto;
   transform: rotate(180deg);
+  background: var(--ink);
+  color: var(--on-ink);
 }
 .page-attest-norm .atn-embed[open] .atn-embed-lead,
 .page-attest-norm .atn-embed[open] .label { margin-top: 0; }
