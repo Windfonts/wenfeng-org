@@ -1462,6 +1462,238 @@ def page_font(f):
     )
 
 
+def _font_by_norm(fonts, norm):
+    want = str(norm or "").lower()
+    for f in fonts:
+        if f["norm"] == want:
+            return f
+    return fonts[0]
+
+
+def _lab_font_bits(f):
+    """对照稿共用件。句子与按钮词跟活页同一套。"""
+    verb = font_verb(f)
+    st = status(f)
+    st_label = STATUS[st][0]
+    note = (f.get("visitorNote") or "").strip() or verb["note"]
+    archive = file_of(f, "archive")
+    up = upstream_href(f)
+    if archive and archive.get("staged") and "稍后" not in note and not github_archive_zip(up):
+        note = "归档包稍后提供。" + note
+    spdx = spdx_of(f) or ""
+    proto = spdx or f.get("licenseName") or "—"
+    foundry = f.get("foundry") or "未标注"
+    foundry_slug = f.get("foundrySlug")
+    foundry_html = (
+        ('<a href="/foundry/%s/">%s</a>' % (e(foundry_slug), e(foundry)))
+        if foundry_slug else e(foundry)
+    )
+    text_cell = font_text_cell(f)
+    arch_cell = font_archive_cell(f)
+    mirror_state = (f.get("mirror") or {}).get("state") or ""
+    face_attrs = face_attrs_of(f, require_pack=False)
+    lic_href = "/license/%s/" % f["norm"]
+    acts = []
+    if verb.get("strongHref") and verb.get("strongLabel"):
+        acts.append(ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"])))
+    if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
+        acts.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
+    if can_attest(f):
+        acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
+    sec = []
+    if license_readable(f, None):
+        sec.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
+    if can_attest(f):
+        sec.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
+    dossier = kv_rows([
+        ("目录编号", e(f["norm"])),
+        ("协议", e(proto)),
+        ("厂商", foundry_html),
+        ("原文", e(text_cell["d"])),
+        ("归档", e(arch_cell["d"])),
+        ("镜像", e(mirror_word(mirror_state) or "—")),
+        ("出处", e(upstream_dossier(up))),
+    ])
+    file_html = ""
+    real = primary_file(f)
+    if real and real.get("href") and real.get("kind") != "upstream" and not real.get("staged"):
+        fname = file_name_from_href(real["href"]) or real.get("label") or "源文件"
+        size_s = fmt_bytes(real.get("bytes") or real.get("size"))
+        file_html = (
+            '<a class="fn-file-row" href="%s"%s>'
+            '<span class="fn-file-name">%s</span>%s</a>'
+            % (
+                e(real["href"]),
+                ' target="_blank" rel="noopener"' if str(real["href"]).startswith("http") else "",
+                e(fname),
+                ('<span class="fn-file-size">%s</span>' % e(size_s)) if size_s else "",
+            )
+        )
+    proof = '<p class="lf-proof t-%s"%s data-face-full="1">%s</p>' % (
+        e(f["norm"]), face_attrs, e(PROOF),
+    )
+    orig_btn = ""
+    if verb.get("strongHref") and verb.get("strongLabel"):
+        orig_btn = ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"]))
+    slice_mode = "gate" if is_gated(f) else "open"
+    slice_word = "交原包后领取" if slice_mode == "gate" else "可直接领取"
+    return {
+        "verb": verb,
+        "st": st,
+        "st_label": st_label,
+        "note": note,
+        "acts": "".join(acts),
+        "sec": "".join(sec),
+        "orig_btn": orig_btn,
+        "dossier": dossier,
+        "file_html": file_html,
+        "proof": proof,
+        "face_attrs": face_attrs,
+        "more": font_more(f, verb),
+        "slice": slice_desk_html(f),
+        "slice_bare": slice_desk_html(f, bare=True),
+        "slice_mode": slice_mode,
+        "slice_word": slice_word,
+        "name": wf(f),
+        "en": f.get("en") or "",
+        "norm": f["norm"],
+    }
+
+
+def page_lab_font(fonts, variant, demo="xwwk"):
+    """条目对照稿。甲两窗 / 乙台面 / 丙通栏 / 丁票根。活页 /source/{norm}/ 不动。"""
+    f = _font_by_norm(fonts, demo)
+    b = _lab_font_bits(f)
+    names = (("a", "甲"), ("b", "乙"), ("c", "丙"), ("d", "丁"))
+    self_name = dict(names)[variant]
+    others = "".join(
+        ' · <a href="/lab/font-%s/%s">看%s</a>' % (k, "" if demo == "xwwk" else "albbpht/", lab)
+        for k, lab in names if k != variant
+    )
+    if demo == "xwwk":
+        path = "/lab/font-%s/" % variant
+        demos = (
+            '<span class="lf-demo is-on">开源款</span>'
+            ' · <a href="/lab/font-%s/albbpht/">禁再分发</a>' % variant
+        )
+    else:
+        path = "/lab/font-%s/albbpht/" % variant
+        demos = (
+            '<a href="/lab/font-%s/">开源款</a>'
+            ' · <span class="lf-demo is-on">禁再分发</span>' % variant
+        )
+    flag = (
+        '<p class="lab-flag">稿%s<span class="for-dev mono"> · %s</span>%s · '
+        '<a href="/source/%s/">活页未改</a> · %s</p>'
+        % (self_name, path, others, e(f["norm"]), demos)
+    )
+    errata = (
+        '<p class="lf-errata">'
+        '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
+        % (e(f["norm"]), e(b["name"]))
+    )
+    mast = (
+        '<header class="lf-mast">'
+        '<h1 class="is-face t-%s"%s>%s</h1>'
+        '%s'
+        '<p class="lf-lead"><span class="lf-st">%s</span>%s</p>'
+        '</header>'
+        % (
+            e(f["norm"]), b["face_attrs"], e(b["name"]),
+            ('<p class="lf-en mono">%s</p>' % e(b["en"])) if b["en"] else "",
+            e(b["st_label"]), e(b["note"]),
+        )
+    )
+
+    if variant == "a":
+        orig_body = (
+            '<p class="lf-pane-note">TTF / OTF 原件。许可允许再分发才从本站拿。</p>'
+            '<p class="lf-pane-acts">%s</p>%s'
+            % (b["orig_btn"], b["file_html"] or '<p class="lf-none">本站不留原件。</p>')
+        )
+        inner = (
+            '%s%s'
+            '<div class="lf-panes">'
+            '<section class="lf-pane">'
+            '<p class="lf-idx">01</p><h2>原件</h2>%s</section>'
+            '<section class="lf-pane">'
+            '<p class="lf-idx">02</p><h2>即用字库</h2>'
+            '<p class="lf-pane-note">%s。工具给出状态，不必先记哪一款要核验。</p>'
+            '%s</section></div>'
+            '<p class="lf-sec">%s</p>%s%s'
+            % (mast, b["proof"], orig_body, e(b["slice_word"]), b["slice_bare"], b["sec"], b["more"], errata)
+        )
+    elif variant == "b":
+        inner = (
+            '<div class="lf-desk">'
+            '<div class="lf-desk-main">%s%s'
+            '<p class="lf-sec">%s</p></div>'
+            '<aside class="lf-sheet" aria-label="领取">'
+            '<p class="lf-sheet-k">办事</p>'
+            '<div class="lf-sheet-row">'
+            '<p class="lf-idx">01</p><div><h2>原件</h2>'
+            '<p class="lf-pane-acts">%s</p>%s</div></div>'
+            '<div class="lf-sheet-row is-slice">'
+            '<p class="lf-idx">02</p><div><h2>即用字库</h2>'
+            '<p class="lf-pane-note">%s</p>%s</div></div>'
+            '</aside></div>%s%s'
+            % (
+                mast, b["proof"], b["sec"], b["orig_btn"],
+                b["file_html"] or "", e(b["slice_word"]), b["slice_bare"],
+                b["more"], errata,
+            )
+        )
+    elif variant == "c":
+        inner = (
+            '%s'
+            '<p class="lf-sec">%s</p>'
+            '%s'
+            '<section class="lf-orig">'
+            '<p class="fn-label">原件</p>'
+            '<div class="lf-orig-row">%s%s</div></section>'
+            '%s'
+            '%s%s'
+            % (
+                mast, b["sec"], b["proof"],
+                b["orig_btn"], b["file_html"] or '<p class="lf-none">本站不留原件。</p>',
+                b["slice"], b["more"], errata,
+            )
+        )
+    else:
+        inner = (
+            '<div class="lf-stub">'
+            '<aside class="lf-stub-side" aria-label="状态">'
+            '<p class="lf-stub-st xxzt">%s</p>'
+            '<p class="lf-stub-note">%s</p>'
+            '<p class="lf-pane-acts">%s</p>'
+            '<p class="lf-sec is-col">%s</p>'
+            '</aside>'
+            '<div class="lf-stub-main">'
+            '<header class="lf-mast">'
+            '<h1 class="is-face t-%s"%s>%s</h1>%s</header>'
+            '%s%s%s%s</div></div>'
+            % (
+                e(b["st_label"]), e(b["note"]), b["orig_btn"], b["sec"],
+                e(f["norm"]), b["face_attrs"], e(b["name"]),
+                ('<p class="lf-en mono">%s</p>' % e(b["en"])) if b["en"] else "",
+                b["proof"], b["slice"], b["more"], errata,
+            )
+        )
+
+    body = (
+        '<p class="crumb"><a href="/">wenfeng.org</a><span class="sep">/</span>'
+        '<a href="/source/">目录</a><span class="sep">/</span>%s'
+        '<span class="for-dev"> · %s</span></p>'
+        '%s<div class="lf-lab is-%s">%s</div>'
+        % (e(b["name"]), e(path), flag, variant, inner)
+    )
+    return layout(
+        "source", "%s · 稿%s" % (b["name"], self_name), body, path,
+        extra_head=pages_css("lab-font", "slice") + "\n" + pages_js("slice"),
+        body_class="lab-font-page lab-font-%s" % variant,
+    )
+
+
 def offer_of(f):
     return f.get("offer") or "jump"
 
@@ -2803,7 +3035,7 @@ def slice_gate_of(f):
     return None
 
 
-def slice_desk_html(f):
+def slice_desk_html(f, bare=False):
     """条目页上的领取台。开源直下；其余交原包后装配 OSS 即用字库。"""
     gated = is_gated(f)
     mode = "gate" if gated else "open"
@@ -2857,6 +3089,14 @@ def slice_desk_html(f):
     if origin.get("href"):
         attrs += ' data-origin="%s" data-origin-label="%s"' % (
             e(origin.get("href") or ""), e(origin.get("label") or ""),
+        )
+    if bare:
+        return (
+            '<section class="fn-slice is-bare"%s>'
+            '<div data-slice-body></div>'
+            '<p class="tool-legal">%s</p>'
+            '</section>'
+            % (attrs, e(legal))
         )
     return (
         '<section class="fn-slice"%s>'
@@ -3088,7 +3328,7 @@ def page_legal():
 
 def _about_copy():
     """关于页已拍板文案（路径/站外/边界）。结构变，句子不动。"""
-    lead = "wenfeng.org 下面挂四条路径：源文件、许可、缺字、证明。在线选字和造字在别的名字下。"
+    lead = "wenfeng.org 提供四项服务：字体源文件下载、许可查询、缺字反馈、商用证明。在线选字与造字平台见相关站点。"
     paths = [
         ("01", "源文件", "源文件本站下载。不允许再分发的，核验后领取即用字库。",
          "/source/", "看目录 →", "/source"),
@@ -3172,7 +3412,7 @@ def page_about():
         '<div class="gate-paths is-else">%s</div></section>' % "".join(else_rows)
         + '<p class="gate-foot-note">%s</p>' % e(foot)
     )
-    return layout("about", "关于", body, "/about", extra_head=pages_css("gate"), body_class="page-gate page-about", desc='文风开源是谁：收录、许可、缺字、证明四件事，与文风体系的相关站点。' )
+    return layout("about", "关于", body, "/about", extra_head=pages_css("gate"), body_class="page-gate page-about", desc='wenfeng.org 提供四项服务：字体源文件下载、许可查询、缺字反馈、商用证明。' )
 
 
 def page_lab_about(variant):
@@ -3634,6 +3874,9 @@ def main():
     write("/lab/about-d/", page_lab_about("d"))
     write("/lab/about-e/", page_lab_about("e"))
     write("/lab/about-f/", page_lab_about("f"))
+    for v in ("a", "b", "c", "d"):
+        write("/lab/font-%s/" % v, page_lab_font(fonts, v, "xwwk"))
+        write("/lab/font-%s/albbpht/" % v, page_lab_font(fonts, v, "albbpht"))
     write("/source/", page_source(fonts))
     write("/license/", page_licenses(fonts))
     for f in fonts:
