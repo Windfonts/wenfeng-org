@@ -333,22 +333,15 @@ body.page-about .about-stance .about-mark {
   margin-bottom: var(--s-5);
 }
 body.page-about .about-stance-body {
-  /* 边界长文：阅读列居中偏左（与全宽路径行的节奏衔接），字号一档 */
-  max-width: 56em;
-  margin-left: calc((100% - 56em) / 4);
-}
-@media (max-width: 1104px) {
-  body.page-about .about-stance-body {
-    max-width: none;
-    margin-left: 0;
-  }
+  max-width: 42em;
 }
 body.page-about .about-stance-body p {
   font-size: var(--fs-17, 1.0625rem);
 }
 body.page-about .about-stance-body p {
   margin: 0 0 var(--s-5);
-  line-height: 1.85;
+  font-size: var(--fs-16);
+  line-height: 1.75;
   color: var(--ink-2);
 }
 body.page-about .about-stance-body p:last-child { margin-bottom: 0; }
