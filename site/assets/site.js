@@ -771,7 +771,7 @@
         return download ? src + '&download=1' : src;
       }
       function embedCode(serial, v) {
-        return '<a href="https://wenfeng.org/v/?s=' + serial + '"><img src="' + publicBadgeSrc(serial, v) + '" alt="文风字体授权证明"></a>';
+        return '<a href="https://wenfeng.org/v/?s=' + serial + '">\n  <img src="' + publicBadgeSrc(serial, v) + '"\n      alt="文风字体授权证明">\n</a>';
       }
       function refreshBadge() {
         var v = badgeVariant();

@@ -313,3 +313,9 @@
   background: linear-gradient(transparent, var(--fill));
   pointer-events: none;
 }
+
+/* 嵌入代码：真实换行 + 容器内优雅折行 */
+.page-attest-norm .atn-embed .code { white-space: pre-wrap; word-break: break-all; line-height: 1.7; }
+/* 徽章样式切换钮调小 */
+.page-attest-norm .atn-badge-pick { padding: 0.15rem; gap: 0.1rem; font-size: var(--fs-12); }
+.page-attest-norm .atn-badge-pick button { padding: 0.28rem 0.7rem; line-height: 1.35; }

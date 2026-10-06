@@ -34,10 +34,10 @@ ATTEST_SPDX = {"OFL-1.1", "MIT", "Apache-2.0", "IPA-1.0", "IPA", "CC0-1.0", "CC-
 # 状态词：定稿词表（COPY-AUDIT 第三/四轮 + /how 甲′），说明取首页丁「目录状态」原句。
 STATUS = OrderedDict([
     ("source", ("本站下载", "源文件在本站，进条目直接下载")),
-    ("jump", ("官方下载", "本站不留文件，去作者或厂商的发布处")),
+    ("jump", ("官方下载", "原件请到作者或厂商的发布处；切片包在本页领取。")),
     ("ready", ("暂无下载", "许可已核实，源文件包还没上架")),
     ("pending", ("待核实", "许可原文还没有核对记录")),
-    ("missing", ("未收录", "还没收进目录。许可已核对的，原文可直接查阅；想让它上架，报缺收录")),
+    ("missing", ("未收录", "还没收进目录。许可已核对的，原文可直接查阅；想让它上架，报缺收录。")),
 ])
 CHIP_ICO = {
     "all": "list",
@@ -211,9 +211,9 @@ def plan(f):
     if st == "source":
         return "等上架", "许可允许再分发，源文件包还没上架。", None, sec
     if st == "jump":
-        say = "本站不留文件，去作者或厂商的发布处下载。"
+        say = "原件请到作者或厂商的发布处；切片包在本页领取。"
         if is_gated(f):
-            say = "免费商用但不允许再分发，本站不留文件。从官方取得原包后，可以核验领取切片包。"
+            say = "免费商用但不允许再分发字体文件。从官方取得原包后，可核验领取切片包。"
         return "去官方", say, ("去官方下载", up or f.get("shop")), sec
     if st == "ready":
         return "等上架", "许可已核实，源文件包还没上架。", (("去官方仓库", up) if up else None), sec
@@ -284,7 +284,7 @@ def display(title, lead, crumbs=(), kicker="", mid=False):
 def font_dossier_html(f, up_cell, text_cell, arch_cell, mirror_state):
     """侧栏「这一款」：编号作档案号，字段上标签下值。"""
     rows = [
-        ("原文", e(text_cell["d"])),
+        ("许可原文", e(text_cell["d"])),
         ("归档", e(arch_cell["d"])),
         ("镜像", e(mirror_word(mirror_state) or "—")),
         ("出处", up_cell),
@@ -1474,7 +1474,25 @@ def font_more(f, verb):
 
 
 
-def font_take_howto_html(f):
+def font_page_note(f, verb):
+    """档案页导语第二句：优先 visitorNote，再按五态补全。"""
+    custom = (f.get("visitorNote") or "").strip()
+    if custom:
+        return custom
+    st = status(f)
+    if st == "source":
+        return "原件与切片包可直接领取。"
+    if st == "jump":
+        if is_gated(f):
+            return (
+                "免费商用但不允许再分发字体文件。"
+                "从官方取得原包后，可核验领取切片包。"
+            )
+        return "原件请到作者或厂商的发布处；切片包在本页领取。"
+    return verb["note"]
+
+
+def font_take_howto_html(f, *, gate_pending=False):
     """怎么用：授权标注常显；引入示例用标签页，每页完整可复制代码。"""
     norm = f["norm"]
     pack = "wenfeng-%s" % norm
@@ -1488,9 +1506,7 @@ def font_take_howto_html(f):
     samples = [
         (
             "HTML",
-            "%s\n"
-            '<link rel="stylesheet" href="%s">'
-            % (COMMENT, path),
+            '<link rel="stylesheet" href="%s">' % path,
         ),
         (
             "CSS",
@@ -1503,7 +1519,7 @@ def font_take_howto_html(f):
         ),
         (
             "WordPress",
-            "// functions.php：整夹放进主题 fonts/ 后排队引入\n"
+            "// functions.php：整夹放进主题 fonts/%s/ 后排队引入\n"
             "// 授权标注已写在 fonts.css，勿删\n"
             "wp_enqueue_style(\n"
             "  '%s',\n"
@@ -1511,7 +1527,7 @@ def font_take_howto_html(f):
             "  array(),\n"
             "  null\n"
             ");"
-            % (pack, wp_path),
+            % (pack, pack, wp_path),
         ),
     ]
 
@@ -1544,9 +1560,15 @@ def font_take_howto_html(f):
             % (e(label), hid, code_block(body))
         )
 
+    gate_lead = (
+        '<p class="fn-take-note is-gate-lead">核验通过后，包内用法如下。</p>'
+        if gate_pending
+        else ""
+    )
     return (
         '<div class="fn-take-howto" id="howto">'
         '<p class="fn-label">怎么用</p>'
+        '%s'
         '<p class="fn-take-note">解压后<strong>整夹保留</strong>，引入包内 <code>fonts.css</code>。'
         '目录名带 <code>wenfeng-</code> 前缀，勿改。静态站、任意前端都能用；'
         '不要拆文件，也不要删注释。</p>'
@@ -1558,6 +1580,7 @@ def font_take_howto_html(f):
         '<p class="fn-take-more"><a href="/use/">用法全文</a></p>'
         '</div>'
         % (
+            gate_lead,
             code_block(COMMENT),
             "".join(tabs),
             "".join(panels),
@@ -1565,8 +1588,24 @@ def font_take_howto_html(f):
     )
 
 
+def font_take_missing_html(f):
+    """未收录：不展示切片与怎么用，只说明去向。"""
+    norm = e(f["norm"])
+    return (
+        '<div class="fn-take is-empty" id="take">'
+        '<p class="fn-label">领取</p>'
+        '<p class="fn-take-note">这款还没收进目录，暂无原件与切片包。'
+        '许可已核对的，可在顶栏读许可原文；'
+        '<a href="/gap/?norm=%s">报缺收录</a>。</p>'
+        '</div>'
+        % norm
+    )
+
+
 def font_take_html(f):
     """原件 + 切片包：两行同构；切片墨钮、原件次级钮。"""
+    if status(f) == "missing":
+        return font_take_missing_html(f)
     gated = is_gated(f)
     archive = file_of(f, "archive")
     up = upstream_href(f)
@@ -1620,7 +1659,7 @@ def font_take_html(f):
             '<p class="fn-label">领取切片包</p>'
             '<p class="fn-take-hint">交官方尚未解压的 zip，核验后领取。原件不离开本机。</p>'
             '<div class="fn-slice-block">%s</div>%s</div>'
-            % (slice_bare, font_take_howto_html(f))
+            % (slice_bare, font_take_howto_html(f, gate_pending=True))
         )
 
     rows.append(
@@ -1656,7 +1695,7 @@ def page_font(f):
     verb = font_verb(f)
     st = status(f)
     st_label = STATUS[st][0]
-    note = (f.get("visitorNote") or "").strip() or verb["note"]
+    note = font_page_note(f, verb)
     archive = file_of(f, "archive")
     up = upstream_href(f)
     if (
@@ -1664,10 +1703,9 @@ def page_font(f):
         and "稍后" not in note
         and not github_archive_zip(up)
         and not (primary_file(f) or {}).get("href")
+        and not (f.get("visitorNote") or "").strip()
     ):
         note = "原件正在上架到本站 OSS。" + note
-    if not (f.get("visitorNote") or "").strip() and st == "source":
-        note = "原件与切片包可直接领取。"
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
     foundry = f.get("foundry") or "未标注"
@@ -1748,7 +1786,7 @@ def _lab_font_bits(f):
     verb = font_verb(f)
     st = status(f)
     st_label = STATUS[st][0]
-    note = (f.get("visitorNote") or "").strip() or verb["note"]
+    note = font_page_note(f, verb)
     archive = file_of(f, "archive")
     up = upstream_href(f)
     if (
@@ -1756,10 +1794,9 @@ def _lab_font_bits(f):
         and "稍后" not in note
         and not github_archive_zip(up)
         and not (primary_file(f) or {}).get("href")
+        and not (f.get("visitorNote") or "").strip()
     ):
         note = "原件正在上架到本站 OSS。" + note
-    if not (f.get("visitorNote") or "").strip() and st == "source":
-        note = "原件与切片包可直接领取。"
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
     foundry = f.get("foundry") or "未标注"
@@ -1815,7 +1852,7 @@ def _lab_font_bits(f):
 
 
 def page_lab_font(fonts, variant, demo="xwwk"):
-    """条目对照：甲=活页同构；乙先领后赏；丙通栏。"""
+    """条目对照：甲=活页同构；乙样字在下；丙通栏。"""
     f = _font_by_norm(fonts, demo)
     b = _lab_font_bits(f)
     names = (("a", "甲"), ("b", "乙"), ("c", "丙"))
@@ -1838,7 +1875,7 @@ def page_lab_font(fonts, variant, demo="xwwk"):
         )
     blurb = {
         "a": "并路 · 领取同构双行（与活页一致）",
-        "b": "先领后赏 · 领取紧贴顶栏",
+        "b": "样字在上 · 领取在下（旧序对照）",
         "c": "疏朗通栏 · 无侧栏",
     }[variant]
     flag = (
@@ -2073,13 +2110,13 @@ def license_stage(f):
     ts_word = text_state_word(f)
     ts_dev = "∅" if ts_word == "空" else str(lic(f).get("textState") or "∅")
     dossier = (
-        '<aside class="lq5b-dossier" aria-label="卷宗字段">'
-        '<p class="label">卷宗</p>'
+        '<aside class="lq5b-dossier" aria-label="侧栏字段">'
+        '<p class="label">这一款</p>'
         '<div class="lq5b-kv">'
         + lq_kv_pair("目录编号", "norm", f["norm"], f["norm"])
         + lq_kv_pair("协议", "spdx", proto, spdx or "∅")
         + lq_kv_pair("厂商", "foundry", foundry, foundry_slug)
-        + lq_kv_pair("原文", "textState", ts_word, ts_dev)
+        + lq_kv_pair("许可原文", "textState", ts_word, ts_dev)
         + lq_kv_pair("源文件", "offer", status_word(f), offer_of(f))
         + rights_html
         + '</div>'
@@ -3376,20 +3413,24 @@ def _read_layout(section, title, body, path):
 def page_use():
     paths = (
         '<div class="gate-paths" aria-label="三条去向">'
-        '<a class="gate-path" id="path-file" href="/source/">'
+        '<div class="gate-path" id="path-file">'
         '<span class="gate-n">01</span>'
         '<span class="gate-path-name xxzt">原件</span>'
         '<span class="gate-path-line">TTF / OTF 或官方归档。给自建站、主题作者。许可允许时才再分发。'
+        '字段可查<a href="#api">目录 API</a>。'
         '<span class="for-dev mono"> · /source</span></span>'
-        '<span class="gate-go">看目录 →</span>'
-        '</a>'
-        '<a class="gate-path" id="path-slice" href="/source/">'
+        '<a class="gate-go" href="/source/">看目录 →</a>'
+        '</div>'
+        '<div class="gate-path" id="path-slice">'
         '<span class="gate-n">02</span>'
         '<span class="gate-path-name xxzt">切片</span>'
-        '<span class="gate-path-line">给 WordPress 与静态站本地 @font-face。从目录进条目领取。开源直接下，其余先交官方原包。'
+        '<span class="gate-path-line">给 WordPress 与静态站本地引入。解压目录 '
+        '<code>wenfeng-&#123;norm&#125;/</code>，入口 <code>fonts.css</code>。'
+        '开源直下；禁再分发须交官方原包；官方下载款原件去出处，切片包仍在本站条目领。'
+        '标注见<a href="#comment">注释</a>，装入见<a href="#enqueue">进主题</a>。'
         '<span class="for-dev mono"> · /source/{norm}#slice</span></span>'
-        '<span class="gate-go">看目录 →</span>'
-        '</a>'
+        '<a class="gate-go" href="/source/">进目录领取 →</a>'
+        '</div>'
         '<div class="gate-path" id="path-web">'
         '<span class="gate-n">03</span>'
         '<span class="gate-path-name xxzt">网页</span>'
@@ -3403,15 +3444,19 @@ def page_use():
         '<section class="gate-band" id="comment">'
         '<h2>注释不能删</h2>'
         '<div class="gate-band-body">'
-        '<p>不能。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体，进目录对应条目交原包领取。</p>'
+        '<p>不能删。页面或样式里须保留指向 '
+        '<code>https://wenfeng.org/license</code> 的授权标注。'
+        '不允许再分发的字体，到目录对应条目交官方原包后领取切片包。</p>'
         '<p class="gate-label">嵌入代码里这一行不能改</p>'
         '<pre class="gate-code">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>'
         '</div></section>'
         '<section class="gate-band" id="enqueue">'
         '<h2>进主题</h2>'
         '<div class="gate-band-body">'
-        '<p>解压后整个文件夹放进主题（或 <code>wp-content/fonts</code>）。包内 <code>fonts.css</code> 已写好 <code>@font-face</code> 和必须保留的注释，整只引入，不要拆。</p>'
-        '<pre class="gate-code">// functions.php 里排队引入\n'
+        '<p>解压后<strong>整夹保留</strong>，放进主题 <code>fonts/</code>（或 '
+        '<code>wp-content/fonts</code>）。目录名带 <code>wenfeng-</code> 前缀，勿改。'
+        '包内 <code>fonts.css</code> 已含 <code>@font-face</code> 与须保留的注释，整只引入，不要拆。</p>'
+        '<pre class="gate-code">// functions.php：整夹放进主题 fonts/wenfeng-xwwk/ 后排队引入\n'
         'wp_enqueue_style(\n'
         "  'wenfeng-xwwk',\n"
         "  get_theme_file_uri( '/fonts/wenfeng-xwwk/fonts.css' ),\n"
@@ -3424,7 +3469,9 @@ def page_use():
         '<section class="gate-band" id="api">'
         '<h2>目录 API</h2>'
         '<div class="gate-band-body">'
-        '<p>查目录 API。免费和商业都可以查。商业字只出字段，<code>files</code> 为空。不是在线选字的 <code>/api/css</code>。<code>lineage</code> 字段为造字平台预留，现在恒为 <code>null</code>。</p>'
+        '<p>目录 API 开放查询。免费与商业条目都能查；商业字只出字段，<code>files</code> 为空。'
+        '不是在线选字的 <code>/api/css</code>。<code>lineage</code> 为造字平台预留，现恒为 '
+        '<code>null</code>。</p>'
         '<ul class="gate-api">'
         '<li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>'
         '<li><a href="/api/v1/fonts?offer=source"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>'
@@ -3447,8 +3494,9 @@ def page_use():
         '  "lineage": null\n'
         '}</pre>'
         '<p class="gate-acts">'
-        '<a href="/source/">下源文件</a>'
-        '<a href="/source/">看目录</a>'
+        '<a href="/source/">进目录领取</a>'
+        '<a href="#comment">授权标注</a>'
+        '<a href="#enqueue">装入说明</a>'
         '<a href="/license/">查授权</a>'
         '</p>'
         '</div></section>'
@@ -3456,11 +3504,16 @@ def page_use():
     )
     body = page_head(
         "用法",
-        "下载字体原件，领取切片包，或将字体嵌入网站界面。",
+        "三条路：下载原件、领取切片包、或用托管网页字体嵌入界面。",
         crumbs=[(None, "用法")],
         dev="/use",
     ) + paths + bands
-    return layout("use", "用法", body, "/use", extra_head=pages_css("gate"), body_class="page-gate page-use", desc='字体用在软件界面与网站界面：下载原件、领取切片包、嵌入接入。' )
+    return layout(
+        "use", "用法", body, "/use",
+        extra_head=pages_css("gate"),
+        body_class="page-gate page-use",
+        desc="下载原件、领取 wenfeng-{norm} 切片包，或用 cn.windfonts.com 托管 CSS 嵌入界面。",
+    )
 
 
 def page_how():
