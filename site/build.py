@@ -1550,18 +1550,20 @@ def _lab_font_bits(f):
         "proof": proof,
         "face_attrs": face_attrs,
         "more": font_more(f, verb),
-        "slice": slice_desk_html(f),
-        "slice_bare": slice_desk_html(f, bare=True),
+        "slice": slice_desk_html(f, chrome="quiet"),
+        "slice_bare": slice_desk_html(f, bare=True, chrome="quiet"),
         "slice_mode": slice_mode,
         "slice_word": slice_word,
         "name": wf(f),
         "en": f.get("en") or "",
         "norm": f["norm"],
+        "proto": proto,
+        "foundry_html": foundry_html,
     }
 
 
 def page_lab_font(fonts, variant, demo="xwwk"):
-    """条目对照稿。甲两窗 / 乙台面 / 丙通栏 / 丁票根。活页 /source/{norm}/ 不动。"""
+    """条目对照稿（对齐店面详情气质）。甲贴近店面 / 乙卡组 / 丙通栏 / 丁侧栏优先。活页不动。"""
     f = _font_by_norm(fonts, demo)
     b = _lab_font_bits(f)
     names = (("a", "甲"), ("b", "乙"), ("c", "丙"), ("d", "丁"))
@@ -1587,97 +1589,108 @@ def page_lab_font(fonts, variant, demo="xwwk"):
         '<a href="/source/%s/">活页未改</a> · %s</p>'
         % (self_name, path, others, e(f["norm"]), demos)
     )
-    errata = (
-        '<p class="lf-errata">'
-        '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
-        % (e(f["norm"]), e(b["name"]))
+
+    dots = []
+    if f.get("foundrySlug"):
+        dots.append(
+            '<a class="lf-dot-f" href="/foundry/%s/">%s</a>'
+            % (e(f["foundrySlug"]), e(f.get("foundry") or ""))
+        )
+    elif f.get("foundry"):
+        dots.append("<span>%s</span>" % e(f["foundry"]))
+    if b.get("proto"):
+        dots.append("<span>%s</span>" % e(b["proto"]))
+    dots.append('<span class="lf-chip">%s</span>' % e(b["st_label"]))
+    dotlist = '<p class="lf-dotlist">%s</p>' % "".join(dots)
+
+    # 开源：标题右侧并排「下载」与领取台（安静一钮）；禁再分发领取进主栏
+    acts_bits = []
+    if b["orig_btn"]:
+        acts_bits.append(b["orig_btn"])
+    if b["slice_mode"] == "open":
+        acts_bits.append(b["slice_bare"])
+    title_actions = (
+        ('<div class="lf-actions">%s</div>' % "".join(acts_bits)) if acts_bits else ""
     )
-    mast = (
-        '<header class="lf-mast">'
-        '<h1 class="is-face t-%s"%s>%s</h1>'
-        '%s'
-        '<p class="lf-lead"><span class="lf-st">%s</span>%s</p>'
-        '</header>'
+
+    title_block = (
+        '<div class="lf-title">'
+        '<div class="lf-title-main">'
+        '<h1 class="is-face t-%s"%s>%s%s</h1>'
+        '%s</div>%s</div>'
         % (
             e(f["norm"]), b["face_attrs"], e(b["name"]),
-            ('<p class="lf-en mono">%s</p>' % e(b["en"])) if b["en"] else "",
-            e(b["st_label"]), e(b["note"]),
+            ('<small class="mono">%s</small>' % e(b["en"])) if b["en"] else "",
+            dotlist, title_actions,
         )
+    )
+    wall = (
+        '<div class="lf-wall">'
+        '<p class="lf-wall-sample t-%s"%s data-face-full="1">%s</p>'
+        '</div>'
+        % (e(f["norm"]), b["face_attrs"], e(PROOF))
+    )
+
+    if b["slice_mode"] == "gate":
+        take_panel = (
+            '<section class="lf-panel" id="slice-wrap">'
+            '<div class="lf-panel-head"><h2>即用字库</h2>'
+            '<p class="lf-panel-note">交官方 zip 核验后领取。原件不离开本机。</p></div>'
+            '<div class="lf-panel-pad">%s</div></section>'
+            % b["slice_bare"]
+        )
+    else:
+        take_panel = (
+            '<section class="lf-panel">'
+            '<div class="lf-panel-head"><h2>即用字库</h2></div>'
+            '<div class="lf-panel-pad">'
+            '<p class="lf-panel-note">从上方领取。解压后引入 fonts.css，'
+            "注释里的 https://wenfeng.org/license 要留着。</p>"
+            "</div></section>"
+        )
+
+    more_panel = ""
+    if b["sec"]:
+        more_panel = (
+            '<section class="lf-panel">'
+            '<div class="lf-panel-head"><h2>许可与证明</h2></div>'
+            '<div class="lf-panel-pad"><p class="lf-quiet-links">%s</p></div></section>'
+            % b["sec"]
+        )
+    side = aside("资料", b["dossier"])
+    gap = (
+        '<p class="lf-quiet-links">'
+        '<a href="/gap/?norm=%s">报缺字</a>'
+        '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
+        % (e(f["norm"]), e(f["norm"]), e(b["name"]))
     )
 
     if variant == "a":
-        orig_body = (
-            '<p class="lf-pane-note">TTF / OTF 原件。许可允许再分发才从本站拿。</p>'
-            '<p class="lf-pane-acts">%s</p>%s'
-            % (b["orig_btn"], b["file_html"] or '<p class="lf-none">本站不留原件。</p>')
-        )
         inner = (
-            '%s%s'
-            '<div class="lf-panes">'
-            '<section class="lf-pane">'
-            '<p class="lf-idx">01</p><h2>原件</h2>%s</section>'
-            '<section class="lf-pane">'
-            '<p class="lf-idx">02</p><h2>即用字库</h2>'
-            '<p class="lf-pane-note">%s。工具给出状态，不必先记哪一款要核验。</p>'
-            '%s</section></div>'
-            '<p class="lf-sec">%s</p>%s%s'
-            % (mast, b["proof"], orig_body, e(b["slice_word"]), b["slice_bare"], b["sec"], b["more"], errata)
+            "%s%s"
+            '<div class="lf-body"><div class="lf-main">%s%s%s</div>%s</div>'
+            % (wall, title_block, take_panel, more_panel, gap, side)
         )
     elif variant == "b":
         inner = (
-            '<div class="lf-desk">'
-            '<div class="lf-desk-main">%s%s'
-            '<p class="lf-sec">%s</p></div>'
-            '<aside class="lf-sheet" aria-label="领取">'
-            '<p class="lf-sheet-k">办事</p>'
-            '<div class="lf-sheet-row">'
-            '<p class="lf-idx">01</p><div><h2>原件</h2>'
-            '<p class="lf-pane-acts">%s</p>%s</div></div>'
-            '<div class="lf-sheet-row is-slice">'
-            '<p class="lf-idx">02</p><div><h2>即用字库</h2>'
-            '<p class="lf-pane-note">%s</p>%s</div></div>'
-            '</aside></div>%s%s'
-            % (
-                mast, b["proof"], b["sec"], b["orig_btn"],
-                b["file_html"] or "", e(b["slice_word"]), b["slice_bare"],
-                b["more"], errata,
-            )
+            '<div class="lf-pair">%s%s</div>'
+            '<div class="lf-body"><div class="lf-main">%s%s%s</div>%s</div>'
+            % (wall, title_block, take_panel, more_panel, gap, side)
         )
     elif variant == "c":
         inner = (
-            '%s'
-            '<p class="lf-sec">%s</p>'
-            '%s'
-            '<section class="lf-orig">'
-            '<p class="fn-label">原件</p>'
-            '<div class="lf-orig-row">%s%s</div></section>'
-            '%s'
-            '%s%s'
-            % (
-                mast, b["sec"], b["proof"],
-                b["orig_btn"], b["file_html"] or '<p class="lf-none">本站不留原件。</p>',
-                b["slice"], b["more"], errata,
-            )
+            "%s%s"
+            '<div class="lf-main is-solo">%s%s'
+            '<section class="lf-panel"><div class="lf-panel-head"><h2>资料</h2></div>'
+            '<div class="lf-panel-pad">%s</div></section>%s</div>'
+            % (wall, title_block, take_panel, more_panel, b["dossier"], gap)
         )
     else:
         inner = (
-            '<div class="lf-stub">'
-            '<aside class="lf-stub-side" aria-label="状态">'
-            '<p class="lf-stub-st xxzt">%s</p>'
-            '<p class="lf-stub-note">%s</p>'
-            '<p class="lf-pane-acts">%s</p>'
-            '<p class="lf-sec is-col">%s</p>'
-            '</aside>'
-            '<div class="lf-stub-main">'
-            '<header class="lf-mast">'
-            '<h1 class="is-face t-%s"%s>%s</h1>%s</header>'
-            '%s%s%s%s</div></div>'
-            % (
-                e(b["st_label"]), e(b["note"]), b["orig_btn"], b["sec"],
-                e(f["norm"]), b["face_attrs"], e(b["name"]),
-                ('<p class="lf-en mono">%s</p>' % e(b["en"])) if b["en"] else "",
-                b["proof"], b["slice"], b["more"], errata,
-            )
+            '<div class="lf-top">'
+            '<div class="lf-top-main">%s%s</div>%s</div>'
+            '<div class="lf-main is-solo">%s%s%s</div>'
+            % (wall, title_block, side, take_panel, more_panel, gap)
         )
 
     body = (
@@ -2825,20 +2838,20 @@ def page_attest(f):
     side = (
         '<aside class="atn-side no-print">'
         '<section class="atn-note">'
-        '<p class="label">授权说明</p>'
+        '<p class="label">证书文书类型</p>'
         '<p class="atn-note-p">这份证明记录该字体的许可核验结果：授权来自谁、适用哪份开源协议、原文是否存档可查。证明不是著作权人的授权书，字体权利仍以许可原文为准。</p>'
         '<p class="atn-note-p">把下方的证明徽章嵌入你的网站，等于对外声明「本项目使用的字体已完成合规核验」，点击徽章可回到本页查看完整内容。采购归档请下载 PDF，编号可在核验页查验。</p>'
         '</section>'
         '<section class="atn-embed" data-share hidden>'
         '<p class="label">嵌入徽章</p>'
-        '<p class="atn-embed-lead">三种样式；细条可选黑白。下载或复制嵌入代码。</p>'
+        '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
         '<div class="atn-embed-controls">'
         '<div class="seg atn-badge-pick" data-badge-variants role="group" aria-label="徽章样式">'
-        '<button type="button" class="is-on" data-badge-kind="plaque">牌匾</button>'
-        '<button type="button" data-badge-kind="dark">深底</button>'
-        '<button type="button" data-badge-kind="slim">细条</button>'
+        '<button type="button" class="is-on" data-badge-kind="plaque">卡片式</button>'
+        '<button type="button" data-badge-kind="dark">深色底</button>'
+        '<button type="button" data-badge-kind="slim">横条</button>'
         "</div>"
-        '<div class="seg atn-badge-tone" data-badge-tone hidden role="group" aria-label="细条黑白">'
+        '<div class="seg atn-badge-tone" data-badge-tone hidden role="group" aria-label="横条黑白">'
         '<button type="button" class="is-on" data-badge-tone-v="slim-ink">黑</button>'
         '<button type="button" data-badge-tone-v="slim-paper">白</button>'
         "</div></div>"
@@ -3040,8 +3053,8 @@ def slice_gate_of(f):
     return None
 
 
-def slice_desk_html(f, bare=False):
-    """条目页上的领取台。开源直下；其余交原包后装配 OSS 即用字库。"""
+def slice_desk_html(f, bare=False, chrome="quiet"):
+    """条目页领取。quiet=一颗按钮或交包后领；board=旧三步台（仅对照/旧链）。"""
     gated = is_gated(f)
     mode = "gate" if gated else "open"
     gate = slice_gate_of(f) or {
@@ -3055,17 +3068,18 @@ def slice_desk_html(f, bare=False):
     if gated:
         lead = "交官方尚未解压的 zip，核验后领取。原件不离开本机。"
         legal = (
-            "交原包是免责核验：确认你持有官方发行件。随后领取已上架的即用字库，"
+            "交原包是免责核验。随后领取已上架的即用字库，"
             "不把原件再切一遍，也不构成再分发授权。"
         )
     else:
-        lead = "开源切片，可直接领取。woff2 与 CSS，供自托管。"
+        lead = "woff2 与 CSS，供自托管。"
         legal = (
-            "开源切片按许可原文领取。解压后引入 fonts.css，"
-            "注释里的 https://wenfeng.org/license 要留着。"
+            "解压后引入 fonts.css，注释里的 "
+            "https://wenfeng.org/license 要留着。"
         )
     attrs = (
         ' id="slice"'
+        ' data-chrome="%s"'
         ' data-mode="%s"'
         ' data-norm="%s"'
         ' data-name="%s"'
@@ -3079,6 +3093,7 @@ def slice_desk_html(f, bare=False):
         ' data-pack-css="%s"'
         ' data-comment="%s"'
         % (
+            chrome,
             mode,
             e(f["norm"]), e(f["name"]), e(f.get("en") or ""),
             e(wf(f)), e(f.get("foundry") or ""),
@@ -3099,9 +3114,18 @@ def slice_desk_html(f, bare=False):
         return (
             '<section class="fn-slice is-bare"%s>'
             '<div data-slice-body></div>'
+            '</section>'
+            % attrs
+        )
+    if chrome == "quiet":
+        return (
+            '<section class="fn-slice is-quiet"%s>'
+            '<p class="fn-label">即用字库</p>'
+            '<p class="fn-slice-lead">%s</p>'
+            '<div data-slice-body></div>'
             '<p class="tool-legal">%s</p>'
             '</section>'
-            % (attrs, e(legal))
+            % (attrs, e(lead), e(legal))
         )
     return (
         '<section class="fn-slice"%s>'
