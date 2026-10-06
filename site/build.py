@@ -1336,7 +1336,7 @@ def font_more(f, verb):
             add("网页字体", "样式表和 woff2 按字重引用。", css)
     if f.get("shop"):
         add("店面", "样张和选字。", f["shop"])
-    add("报缺字", "缺字形或勘误。", "/gap/?norm=%s" % norm)
+    add("报缺字", "缺字形、缺收录或勘误，都从一个入口报。", "/gap/?norm=%s" % norm)
     if not items:
         return ""
     return (
@@ -2527,18 +2527,23 @@ def page_attest_index(fonts):
         '<a href="/legal/#legal-scope">出证范围</a><p class="aside-note">出证服务完全免费。企业如有严苛的字体备案要求，文派科技可另行提供专项《服务合约》商业合同。</p>',
     ).replace('<aside class="aside">', '<aside class="aside" id="attest-bound">', 1)
     more = (
-        '<section class="at-more" aria-label="核验还能办的事">'
-        '<p class="label">核验还能办的事</p>%s</section>'
-        % tasks([
-            ("核对一份 JSON", "贴进证明文件，看内容有没有被改过", "/attest/verify/", "verified"),
-            ("证明记录", "每份证明签发即登记", "/attest/ledger/", "history"),
-            ("证书查验", "编号 + 持证单位两要素", "/v/", "search"),
-            ("切片包", "不可再分发的字体，核验原包后领取", "/slice/", "scissors"),
-        ])
+        '<nav class="at-more" aria-label="核验还能办的事">'
+        '<p class="label">核验还能办的事</p>'
+        '<div class="at-more-grid">%s</div></nav>'
+        % "".join(
+            '<a href="%s"><span class="t">%s%s</span><span class="d">%s</span></a>'
+            % (h, icon(ico), e(t), e(g))
+            for h, ico, t, g in (
+                ("/attest/verify/", "verified", "核对一份 JSON", "粘贴到核验页，比对内容是否被改动"),
+                ("/attest/ledger/", "history", "证明记录", "每份证明签发即登记"),
+                ("/v/", "search", "证书查验", "编号与持证单位两项信息"),
+                ("/slice/", "scissors", "切片包", "不可再分发的字体，核验原包后领取"),
+            )
+        )
     )
     body = (
-        '%s<div class="at-desk"><div class="at-desk-main">%s</div>%s</div>%s'
-        % (mast, form, bound, more)
+        '%s<div class="at-desk"><div class="at-desk-main">%s%s</div>%s</div>'
+        % (mast, form, more, bound)
     )
     return layout(
         "attest", "授权证明", body, "/attest",
@@ -2699,7 +2704,7 @@ def page_lookup():
             aside(
             "说明",
             kv_rows([
-                ("两要素", _how_dual("编号与持证单位须与证明完全一致", "serial + holder")),
+                ("两项信息", _how_dual("编号与持证单位须与证明完全一致", "serial + holder")),
                 ("通用记录", _how_dual("未填单位时，持证单位填「通用核验记录」", "holder = 通用核验记录")),
                 ("查不到", _how_dual("编号在证明记录里查不到，按伪造处理", "miss → forged")),
             ], words=True),
@@ -2779,7 +2784,7 @@ def page_slices(fonts):
         '<p>尚未解压的官方 zip</p></div></li>'
         '<li><span>02</span><div>'
         '<strong>核验</strong>'
-        '<p>浏览器里计算整包摘要<span class="for-dev mono"> · SHA-256</span></p></div></li>'
+        '<p>在浏览器里计算整包文件指纹<span class="for-dev mono"> · SHA-256</span></p></div></li>'
         '<li><span>03</span><div>'
         '<strong>切片包</strong>'
         '<p>woff2 与 CSS，供自托管</p></div></li>'
@@ -2835,7 +2840,7 @@ def page_slice(f, fonts=None):
             '<p class="tool-idx">02</p>'
             '<div class="tool-slot">'
             '<h2>核验</h2>'
-            '<p class="tool-note">放入原包后计算整包摘要。体积只作预检。'
+            '<p class="tool-note">放入原包后计算整包文件指纹（SHA-256）。体积只作预检。'
             '<span class="for-dev mono"> · SHA-256</span></p></div>'
             '</section>'
             '<section class="tool-stage is-lock">'
@@ -3145,7 +3150,7 @@ def page_how():
 
 
 def page_legal():
-    seq = '<section class="read-moment" id="m-open"><p class="read-idx">01</p><h2>打开这页</h2><article class="read-art" id="legal-oss"><h3>这页是什么</h3><p>操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p></article><article class="read-art"><h3>谁在按原文办事</h3><p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p></article><article class="read-art" id="legal-what"><h3>证明是什么</h3><p>《文风字体授权证明》记录某日从官方渠道取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它用于满足档案里「要一份盖章件」的要求，是许可原文之外的合规使用凭证，不是著作权人的授权书，也不替代软著登记或公证。</p></article></section><section class="read-moment" id="m-text"><p class="read-idx">02</p><h2>对着原文</h2><article class="read-art" id="legal-scope"><h3>先看协议是不是标准开源</h3><ul class="read-pills"><li>SIL Open Font License 1.1</li><li>MIT</li><li>Apache License 2.0</li><li>IPA Font License</li><li>CC0</li><li>CC BY / CC BY-SA（不含 NC）</li><li>M+</li><li>带 Font Exception 的 GPL</li></ul><p>上面这些才出证。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC 系出证时，证明内保留作者署名。</p><p>厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p></article><article class="read-art" id="legal-ofl"><h3>OFL 在本站怎么读</h3><p>可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名未获作者书面允许，派生件不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 更宽。</p></article><article class="read-art" id="legal-cn"><h3>国内把字库当什么</h3><p>字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是给这份材料。侵权投诉仍走著作权人。</p></article><article class="read-art" id="legal-soft"><h3>文件是软件复制品</h3><p>TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p></article></section><section class="read-moment" id="m-lines"><p class="read-idx">03</p><h2>看证上三行</h2><article class="read-art" id="legal-issuer"><h3>谁签发，名字怎么写</h3><p>签发人是文派（广州）科技有限公司。证面品牌是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p><p>收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、字体名称信息（name 表）、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p></article><article class="read-art"><h3>三行结论</h3><p>网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p></article><article class="read-art" id="legal-sign"><h3>签名验的是改没改过</h3><p>平台密钥签名，贴到核对页即可验证内容是否被改过。它不是可靠电子签名或证书机构（CA）签发的数字证书，不能当「已公证」提交。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p></article></section><section class="read-moment" id="m-file"><p class="read-idx">04</p><h2>放进档案</h2><article class="read-art" id="legal-buy"><h3>采购留下这四样</h3><ol class="read-steps"><li>保存本核验 PDF / 打印件和 JSON。</li><li>保存许可原文（本站 <a href="/license">/license/{目录编号}</a>）。</li><li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li><li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li></ol></article><article class="read-art" id="legal-redist"><h3>要带走文件的时候</h3><p>许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{目录编号}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包摘要为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。切片核验在你的浏览器内完成：文件不上传服务器。</p><p>不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p></article></section><section class="read-moment" id="m-mail"><p class="read-idx">05</p><h2>有异议再写信</h2><article class="read-art" id="legal-phish"><h3>还没核对的</h3><p>许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。钓鱼条款、个人免费、登录墙领取，一律按原文。拿不准就当不能带走。</p></article><article class="read-art" id="legal-takedown"><h3>写给 license@wenfeng.org</h3><p>收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；文风下架以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p></article><article class="read-art" id="legal-name"><h3>另走的程序</h3><p>派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要拿这张证明去顶。</p></article></section>'
+    seq = '<section class="read-moment" id="m-open"><p class="read-idx">01</p><h2>打开这页</h2><article class="read-art" id="legal-oss"><h3>这页是什么</h3><p>操作说明，不是法律意见。权利以各字体许可原文为准。不能替代律师审查具体项目。</p></article><article class="read-art"><h3>谁在按原文办事</h3><p>文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。</p></article><article class="read-art" id="legal-what"><h3>证明是什么</h3><p>《文风字体授权证明》记录某日从官方渠道取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它用于满足档案里「要一份盖章件」的要求，是许可原文之外的合规使用凭证，不是著作权人的授权书，也不替代软著登记或公证。</p></article></section><section class="read-moment" id="m-text"><p class="read-idx">02</p><h2>对着原文</h2><article class="read-art" id="legal-scope"><h3>先看协议是不是标准开源</h3><ul class="read-pills"><li>SIL Open Font License 1.1</li><li>MIT</li><li>Apache License 2.0</li><li>IPA Font License</li><li>CC0</li><li>CC BY / CC BY-SA（不含 NC）</li><li>M+</li><li>带 Font Exception 的 GPL</li></ul><p>只有上面这些协议才出具证明。文派科技作为责任主体，可为合法合规使用的个人及企业出具证明。CC BY / CC BY-SA 出证时，证明内保留作者署名。</p><p>厂商自拟协议（如阿里巴巴普惠体授权协议）、仓耳字库免费开源字体授权声明、HarmonyOS / MiSans / OPPO 等厂商条款、只标「免费商用」而无正式协议文本的、许可还没核实的、未收录的：如有授权原文，只提供下载。不出具证明，也不代著作权人签署授权书。是否可商用，以厂商原文为准。常见条款是免费商用、禁止再分发字体文件。</p></article><article class="read-art" id="legal-ofl"><h3>OFL 在本站怎么读</h3><p>可以用于网站、印刷、软件内嵌（看原文）。可以修改、再分发，不得单独出售字体本身。保留名（Reserved Font Name）未获作者书面允许，派生版本不能用原名。切片包若只做技术子集、不改设计，仍标原名，包装可以写「文风切片包」。MIT 协议更宽松。</p></article><article class="read-art" id="legal-cn"><h3>国内把字库当什么</h3><p>字体作为计算机软件，一般按软件作品保护。单字图形是不是美术作品，法院判决并不统一，不要把「开源」理解成「字形不受保护」。开源许可是著作权人允许使用的书面条款。企业用 OFL / MIT，通常不必再向作者另签授权证明，但采购和验收仍常要归档材料。核验就是出具这份归档材料。侵权投诉仍应联系著作权人处理。</p></article><article class="read-art" id="legal-soft"><h3>文件是软件复制品</h3><p>TTF / OTF / 源工程在国内常被当作软件复制品。许可允许复制、修改、再分发时，按原文做；禁止再分发时，把文件拷进客户交付包就可能越权。本核验不代替对交付包、安装包、App 内嵌的逐项审查。</p></article></section><section class="read-moment" id="m-lines"><p class="read-idx">03</p><h2>看证上三行</h2><article class="read-art" id="legal-issuer"><h3>谁签发，名字怎么写</h3><p>签发人是文派（广州）科技有限公司。证明上的品牌名是文风，产品是 wenfeng.org。文派不是霞鹜、阿里巴巴、Adobe 等字体的著作权人。证明不是「文派授权你商用这款字」。</p><p>收录名写成「文风·」加原名，例如文风·霞鹜文楷。这是平台命名，不是派生作品，也不转移商标。文件内的版权声明、字体名称信息（name 表）、OFL 保留名仍用原名。本核验只针对未改名的收录原件或切片包。本证不写软著号。</p></article><article class="read-art"><h3>三行结论</h3><p>网页嵌入、安装到操作系统、把字体文件再分发给客户，边界不同。证上分开写三行：网页嵌入、再分发原件、本平台是否提供原件。嵌入网页 CSS 与把原件放进安装程序，不是同一件事。</p></article><article class="read-art" id="legal-sign"><h3>签名验的是改没改过</h3><p>平台密钥签名，贴到核对页即可验证内容是否被改过。它不是可靠电子签名或证书机构（CA）签发的数字证书，不能当「已公证」提交。随证明附带的 JSON 核验文件可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p></article></section><section class="read-moment" id="m-file"><p class="read-idx">04</p><h2>放进档案</h2><article class="read-art" id="legal-buy"><h3>采购留下这四样</h3><ol class="read-steps"><li>保存本核验 PDF / 打印件和 JSON。</li><li>保存许可原文（本站 <a href="/license">/license/{目录编号}</a>）。</li><li>若拿走了原件，保存当时的归档包和哈希，复核时要用。</li><li>持证单位栏只表示这一份副本放在哪家单位的档案里，不等于被授权人。</li></ol></article><article class="read-art" id="legal-redist"><h3>要带走文件的时候</h3><p>许可允许再分发、本站也提供原件的（目录里标「本站下载」）：可以按原文带走原件。厂商不允许再分发的字体：本站不提供文件，也不出证。若你已从厂商取得原件，可在 <a href="/slice">/slice/{目录编号}/</a> 上传核验后领取自托管切片包。核验在浏览器内完成：体积只作预检，识别以整包文件的哈希值（SHA-256）为准（生产对照本站收录的 SHA-256，厂商若公布 MD5 则并列）。切片核验在你的浏览器内完成：文件不上传服务器。</p><p>不要把 <code>cn.windfonts.com</code> 的 woff2 拷走当源文件。嵌入代码里的 <code>https://wenfeng.org/license</code> 不能改。OFL 禁止单独出售字体本身。厂商不允许再分发的字体，更不能卖文件。</p></article></section><section class="read-moment" id="m-mail"><p class="read-idx">05</p><h2>有异议再写信</h2><article class="read-art" id="legal-phish"><h3>还没核对的</h3><p>许可尚未核对、或源文件还没进镜像的款，不出核验。不要把店面能预览当成可以安装、可以再分发。仅限个人免费使用、需登录领取或含诱导性条款的许可，一律按原文判断。拿不准就当不能带走。</p></article><article class="read-art" id="legal-takedown"><h3>写给 license@wenfeng.org</h3><p>收录信息有误，或对某条目有权利主张，写信到 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>，说明是哪一条、问题在哪（权利人请附权利证明）。核实期间，该条目标为「待核实」，暂停出证，也不提供文件。确认有误就下架，变更记录留在目录状态里；在文风侧是否已下架，以核验页和目录状态为准。被下架的一方有异议，同样来信说明；是否恢复，按最新核对结果处理。</p></article><article class="read-art" id="legal-name"><h3>另走的程序</h3><p>派生件若以后出现，必须另起新名，不能带保留名。需要公证或电子认证时，另走法定程序，不要以这张证明替代。</p></article></section>'
     acts = '<p class="read-acts"><a href="/attest">授权证明</a><a href="/license">许可原文</a><a href="/how">我们怎么核验</a></p>'
     side = aside(
         "出证边界",
@@ -3171,7 +3176,7 @@ def _about_copy():
     """关于页已拍板文案（路径/站外/边界）。结构变，句子不动。"""
     lead = "wenfeng.org 下面挂四条路径：源文件、许可、缺字、证明。店面和造字在别的名字下。"
     paths = [
-        ("01", "源文件", "源文件本站下载。不允许再分发的，核验后领即用字库。",
+        ("01", "源文件", "源文件本站下载。不允许再分发的，核验后领取即用字库。",
          "/source/", "看目录 →", "/source"),
         ("02", "许可", "许可原文已收档。证明不替代原文，也不新设权利。",
          "/license/", "查授权 →", "/license"),
@@ -3192,9 +3197,9 @@ def _about_copy():
         "文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。",
         "对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明不替代许可原文，也不为使用者创设新的权利。",
         "其他品牌厂商自行发布的授权协议，本站只提供授权原文下载，文派科技不出具《文风字体授权证明》，也不代著作权人签署授权书。",
-        'wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal/#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how/">我们怎么核验</a>。本站以前用 WordPress 做过，现已改为独立静态站点，与店面分开部署。',
+        'wenfeng.org 只做授权核对与源文件分发。本站不出售字体文件，不出售授权，不代理厂商收费或维权，也不代表任何著作权人授权。只给采用标准开源协议的字体出证；厂商自拟条款、许可还没核实的、未收录的不出证。完整清单见<a href="/legal/#legal-scope">法务说明</a>。收录与核验的方法写在<a href="/how/">我们怎么核验</a>。本站曾基于 WordPress，现为独立静态站点，与店面分开部署。',
     ]
-    foot = "wenfeng.org 之外的主机不在这页说明范围。"
+    foot = "wenfeng.org 之外的主机不在本页说明范围内。"
     return lead, paths, else_items, stance, foot
 
 
