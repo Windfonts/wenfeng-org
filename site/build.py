@@ -3126,7 +3126,7 @@ def page_how():
         '<p class="read-acts">'
         '<a href="/source/">看目录</a>'
         '<a href="/attest/">授权证明</a>'
-        '<a href="/legal/">法务说明</a>'
+        '<a href="/legal/">法律声明</a>'
         '</p>'
         '<p class="read-foot">状态词以这页为准，目录、条目、许可页同用这五个词。</p>'
     )
@@ -3163,12 +3163,12 @@ def page_legal():
         ], words=True),
     ).replace('<aside class="aside">', '<aside class="aside" id="legal-bound">', 1)
     body = page_head(
-        "法务",
+        "法律声明",
         "操作说明，不是法律意见。权利以各字体许可原文为准。",
-        crumbs=[(None, "法务")],
+        crumbs=[(None, "法律声明")],
         dev="/legal",
     ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (seq + acts, side)
-    return _read_layout("legal", "法务", body, "/legal")
+    return _read_layout("legal", "法律声明", body, "/legal")
 
 
 
@@ -3198,7 +3198,7 @@ def _about_copy():
         "对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明与许可原文并行使用：原文定权利，证明作凭证。",
         "其他品牌厂商自行发布的授权协议，本站提供授权原文下载；该类字体的商用授权由各厂商决定，证明业务不涉及。",
         'wenfeng.org 专注授权核对与源文件分发。出证只面向采用标准开源协议的字体；厂商自拟条款、尚未核实或未收录的，不在出证范围内。'
-        '完整清单见<a href="/legal/#legal-scope">法务说明</a>，收录与核验的方法见<a href="/how/">我们怎么核验</a>。本站为独立静态站点，与店面分开部署。',
+        '完整清单见<a href="/legal/#legal-scope">法律声明</a>，收录与核验的方法见<a href="/how/">我们怎么核验</a>。本站为非盈利项目站点，作为文风网页字体服务的公开资源仓库面向社会提供服务，基础设施与网络资源由文风云<span class="reg">®</span>提供。',
     ]
     foot = "wenfeng.org 之外的主机不在本页说明范围内。"
     return lead, paths, else_items, stance, foot
