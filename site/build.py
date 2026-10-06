@@ -2358,8 +2358,8 @@ def page_attest_index(fonts):
         '<header class="page-mast">'
         '<p class="ph-kicker">核验</p>'
         '<h1 class="xxzt">授权证明</h1>'
-        '<p class="ph-lead for-design">标准开源协议的字体，由文派（广州）科技有限公司出具证明，'
-        "记录授权链、协议和原文哈希。证明不是著作权人另行授权。</p>"
+        '<p class="ph-lead for-design">采用标准开源协议的字体，由文派（广州）科技有限公司出具商用证明，'
+        "并完整记录授权链、协议和原文哈希。</p>"
         '<p class="ph-lead for-dev mono">/attest · SPDX · ledger</p>'
         "</header>"
     )
