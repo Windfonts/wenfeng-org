@@ -548,7 +548,7 @@
     var issuer = (cert.issuer && cert.issuer.legalName) || '文派（广州）科技有限公司';
     var licName = (cert.license && cert.license.name) || '';
     var origin = (cert.license && cert.license.origin) || null;
-    var holderCell = cert.holder ? esc(cert.holder) : '（未填写持证单位）';
+    var holderCell = cert.holder ? esc(cert.holder) : '未填写（通用核验记录）';
     var infoCells = [
       ['收录名称（分发版）', esc(cert.catalogName)],
       ['持证单位', holderCell]
@@ -565,7 +565,7 @@
         : { icon: 'user', role: '原始授权方', name: cert.foundry || cert.originalName || '', sub: cert.originalEn || '原创设计' },
       { icon: 'book', role: '开源协议', name: licName, sub: '' },
       { icon: 'shield', role: '平台收录分发', name: '文风字体', sub: '出证责任主体', solid: true },
-      { icon: 'idcard', role: '持证单位', name: cert.holder || '（未填写持证单位）', sub: '证明持有' }
+      { icon: 'idcard', role: '持证单位', name: cert.holder || '未填写（通用核验记录）', sub: '证明持有' }
     ];
     var chainFlow = chainNodes.map(function (n, i) {
       var node = '<div class="chain-node">' +

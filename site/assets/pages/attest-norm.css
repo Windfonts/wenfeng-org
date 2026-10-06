@@ -111,12 +111,13 @@
 
 /* 授权说明：与证面纸张同语系——浅底圆角块，正文 13px 行高舒展 */
 .page-attest-norm .atn-note {
-  padding: var(--s-4);
+  padding: var(--s-5);
   border-radius: var(--radius);
   background: var(--paper);
   border: 1px solid var(--rule);
+  margin-bottom: var(--s-6);
 }
-.page-attest-norm .atn-note .label { margin-bottom: var(--s-2); }
+.page-attest-norm .atn-note .label { margin-bottom: var(--s-3); }
 .page-attest-norm .atn-note-p {
   margin: 0 0 var(--s-2);
   font-size: var(--fs-13);
