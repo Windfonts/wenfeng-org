@@ -131,12 +131,14 @@
 }
 .page-attest-norm .atn-embed .label {
   margin: 0 0 var(--s-2);
+  font-size: var(--fs-11);
+  letter-spacing: 0.08em;
 }
 .page-attest-norm .atn-embed-lead {
   margin: 0 0 var(--s-3);
-  font-size: var(--fs-13);
-  line-height: 1.55;
-  color: var(--ink-2);
+  font-size: var(--fs-12);
+  line-height: 1.5;
+  color: var(--gray);
 }
 .page-attest-norm .atn-embed-controls {
   display: flex;
@@ -164,7 +166,7 @@
 }
 .page-attest-norm .atn-embed .code {
   margin: 0 0 var(--s-3);
-  font-size: var(--fs-12);
+  font-size: var(--fs-11);
   max-height: 7.5rem;
   overflow: auto;
 }
