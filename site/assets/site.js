@@ -796,6 +796,13 @@
       }
       var shareSec = $('[data-share]'); if (shareSec) shareSec.hidden = false;
       refreshBadge();
+      var embToggle = document.querySelector('.atn-embed-toggle');
+      if (embToggle) embToggle.addEventListener('click', function () {
+        setTimeout(function () {
+          var d = document.querySelector('[data-share]');
+          if (d && d.open) d.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }, 60);
+      });
       $$('[data-badge-kind]').forEach(function (b) {
         b.onclick = function () { badgeKind = b.dataset.badgeKind; refreshBadge(); };
       });
