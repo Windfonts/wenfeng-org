@@ -66,7 +66,6 @@ NAV = [("/source/", "目录", ("source", "foundry")), ("/license/", "授权", ("
 # D-05：lab 与活页现稿同这一套，给人对比。
 NAV_LAB = NAV
 FOOT_REST = [
-    ("/slice/", "字体切片", "即用字库", ""),
     ("/source/", "存档目录", "源文件索引", ""),
     ("/v/", "如何查询", "证书编号", ""),
     ("/legal/", "法律声明", "操作说明", ""),
@@ -196,7 +195,7 @@ def plan(f):
     if can_attest(f):
         sec.append(("授权证明", "/attest/%s/" % f["norm"]))
     if is_gated(f):
-        sec.append(("领取切片包", "/slice/%s/" % f["norm"]))
+        sec.append(("领取切片包", "/source/%s/#slice" % f["norm"]))
     if st == "source" and arch:
         return "下载", "开源许可已核对原文，原件在本站。", ("下载原件", arch[0]["href"]), sec
     if st == "source" and up:
@@ -568,7 +567,7 @@ def page_head(title, lead, crumbs=(), kicker="", dev="", face_attrs="", sub=""):
     return '%s<header class="page-mast">%s%s%s%s%s</header>' % (cr, kick, h1, sub_h, lead_d, lead_v)
 
 
-def layout(section, title, body, dev="", extra_head="", body_class="", nav_items=None, wordmark_href="/", footer=None):
+def layout(section, title, body, dev="", extra_head="", body_class="", nav_items=None, wordmark_href="/", footer=None, desc=""):
     items = NAV if nav_items is None else nav_items
     nav = "".join('<a href="%s"%s>%s</a>' % (h, ' class="is-active"' if section in keys else "", t)
                   for h, t, keys in items)
@@ -582,7 +581,7 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>%s</title>
-<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
+%s<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
 <link rel="stylesheet" href="/assets/tokens.css"><link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/pages/chrome.css">%s
 </head><body data-page="%s"%s>
@@ -605,7 +604,7 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <main class="container page">%s</main>
 %s
 <script src="/assets/site.js" defer></script>
-</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, nav, body, footer)
+</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, nav, body, footer)
 
 
 
@@ -670,7 +669,7 @@ def page_home(data, fonts):
     """首页活页：丙′（开源商用字体主门 + 三侧门）。"""
     body = '<article class="lab-home">%s</article>' % home_prime(fonts, "q")
     extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
-    return layout("home", "", body, "/", extra_head=extra, body_class="lab-home-page")
+    return layout("home", "", body, "/", extra_head=extra, body_class="lab-home-page", desc='开源字体源文件目录：许可逐款核对，本站可下载，商用证明在线申领。' )
 
 
 def _recent(fonts, st=None, n=8):
@@ -876,7 +875,7 @@ def page_source(fonts):
             aside("状态", status_words(), "五个词全站同形。侧栏不是某一款的结论。"),
         )
     )
-    return layout("source", "字型目录", body, "/source", extra_head=pages_css("source"), body_class="page-source")
+    return layout("source", "字型目录", body, "/source", extra_head=pages_css("source"), body_class="page-source", desc='全部开源字体名称索引，按状态筛选。能下载的进条目拿文件，不能的去出处或报缺收录。' )
 
 
 def page_lab_source(fonts, variant):
@@ -1310,7 +1309,7 @@ def oss_pack(f):
 
 
 def oss_webfont_css(f):
-    """条目页不公开禁再分发款的 CSS 直链。领取走 /slice/{norm}/。"""
+    """条目页不公开禁再分发款的 CSS 直链。领取走本页即用字库。"""
     if f.get("distribution") is False:
         return None
     return webfont_css_url(f)
@@ -1357,7 +1356,6 @@ def font_more(f, verb):
             return
         items.append((title, desc, href))
 
-    add("即用字库", "woff2 与 CSS，点进领取。", "/slice/%s/" % norm)
     if f.get("shop"):
         add("在线选字", "样张和选字。", f["shop"])
     add("报缺字", "缺字形、缺收录或勘误，都从一个入口报。", "/gap/?norm=%s" % norm)
@@ -1449,6 +1447,7 @@ def page_font(f):
             e(f["norm"]), e(f["norm"]), e(PROOF)
         )
     body += file_html
+    body += slice_desk_html(f)
     body += font_more(f, verb) + '</div>'
     body += aside("这一款", dossier) + '</div>'
     body += (
@@ -1458,7 +1457,8 @@ def page_font(f):
     )
     return layout(
         "source", wf(f), body, "/source/%s" % f["norm"],
-        extra_head=pages_css("source-norm"), body_class="page-font",
+        extra_head=pages_css("source-norm", "slice") + "\n" + pages_js("slice"),
+        body_class="page-font",
     )
 
 
@@ -1745,6 +1745,7 @@ def page_licenses(fonts):
         "license", "授权查询", body, "/license",
         extra_head=pages_css("license"),
         body_class="page-license",
+        desc='查一款字体有没有许可全文。有全文的进原文，没有的只标状态，不是法律意见。',
     )
 
 
@@ -2144,7 +2145,7 @@ def page_license(f, licenses):
     if kind != "open" and can_attest(f):
         acts.append(link("授权证明", "/attest/%s/" % norm, ico=VERB_ICO["授权证明"]))
     if is_gated(f):
-        acts.append(link("切片工具", "/slice/%s/" % norm, ico=VERB_ICO["切片工具"]))
+        acts.append(link("即用字库", "/source/%s/#slice" % norm, ico=VERB_ICO["切片工具"]))
 
     meta_bits = [("<span>%s</span>" % e(w)) for w in words]
     meta_bits.append("<span>%s</span>" % e(spdx))
@@ -2384,7 +2385,7 @@ def foundry_card(g):
 def font_specimen_card(f, offer=None):
     take_cls = " act is-take" if can_take(f) else " act"
     if offer == "slice" and slice_gate_of(f):
-        href = "/slice/%s/" % f["norm"]
+        href = "/source/%s/#slice" % f["norm"]
         action_text = "领取切片包"
     elif can_take(f):
         href = "/source/%s/" % f["norm"]
@@ -2470,6 +2471,7 @@ def page_foundries(groups):
         "foundry", "厂商", body, "/foundry",
         extra_head=pages_css("source", "foundry"),
         body_class="page-source page-foundry page-foundries",
+        desc='按厂商浏览开源字体目录。',
     )
 
 
@@ -2561,7 +2563,7 @@ def page_attest_index(fonts):
                 ("/attest/verify/", "verified", "核对一份 JSON", "粘贴到核验页，比对内容是否被改动"),
                 ("/attest/ledger/", "history", "证明记录", "每份证明签发即登记"),
                 ("/v/", "search", "证书查验", "编号与持证单位两项信息"),
-                ("/slice/", "scissors", "切片包", "不可再分发的字体，核验原包后领取"),
+                ("/source/", "scissors", "即用字库", "进目录对应条目领取"),
             )
         )
     )
@@ -2573,6 +2575,7 @@ def page_attest_index(fonts):
         "attest", "授权证明", body, "/attest",
         extra_head=pages_css("attest"),
         body_class="page-attest",
+        desc='标准开源协议字体的商用证明在线申领，完整记录授权链、协议和原文哈希。',
     )
 
 
@@ -2739,6 +2742,7 @@ def page_lookup():
         "v", "查证", body, "/v",
         extra_head=extra + "\n" + pages_css("attest"),
         body_class="page-attest page-attest-tool",
+        desc='输入证书编号，核对授权证明的内容与签名。',
     )
 
 
@@ -2799,47 +2803,8 @@ def slice_gate_of(f):
     return None
 
 
-def page_slices(fonts):
-    n = len(fonts)
-    rows = index_rows(
-        fonts,
-        go=lambda _f: ("", False),
-        href_of=lambda f: "/slice/%s/" % f["norm"],
-        rel_of=lambda _f: "",
-    )
-    body = page_head(
-        "切片",
-        "即用字库，点进一款领取。解压后引入 fonts.css。",
-        crumbs=[(None, "切片")],
-        kicker="领取",
-        dev="/slice · fonts[]=%d" % n,
-    )
-    body += (
-        '<div class="src-layout">'
-        '<div class="src-main">'
-        '<div class="src-band">%s<p class="count" data-count></p></div>'
-        '%s</div>'
-        '%s</div>'
-        % (
-            search(action="/slice/", live=True),
-            rows,
-            aside(
-                "说明",
-                '<p class="read-p">目录不区分能不能下。进一款以后，工具会给出领取方式。</p>'
-                '<p class="read-p">开源切片直接下载。其余先交官方原包，这是免责核验，随后领取即用字库。</p>'
-                '<p class="read-p">原件不离开本机。包内注释里的 '
-                '<code>https://wenfeng.org/license</code> 要留着。</p>',
-            ),
-        )
-    )
-    return layout(
-        "slice", "切片", body, "/slice",
-        extra_head=pages_css("slice") + "\n" + pages_css("source"),
-        body_class="page-slices",
-    )
-
-
-def page_slice(f, fonts=None):
+def slice_desk_html(f):
+    """条目页上的领取台。开源直下；其余交原包后装配 OSS 即用字库。"""
     gated = is_gated(f)
     mode = "gate" if gated else "open"
     gate = slice_gate_of(f) or {
@@ -2851,7 +2816,7 @@ def page_slice(f, fonts=None):
     }
     pack_css = webfont_css_url(f)
     if gated:
-        lead = "交官方尚未解压的 zip，核验后领取即用字库。原件不离开本机。"
+        lead = "交官方尚未解压的 zip，核验后领取。原件不离开本机。"
         legal = (
             "交原包是免责核验：确认你持有官方发行件。随后领取已上架的即用字库，"
             "不把原件再切一遍，也不构成再分发授权。"
@@ -2862,9 +2827,8 @@ def page_slice(f, fonts=None):
             "开源切片按许可原文领取。解压后引入 fonts.css，"
             "注释里的 https://wenfeng.org/license 要留着。"
         )
-
-    gate_attrs = (
-        ' id="slice-gate"'
+    attrs = (
+        ' id="slice"'
         ' data-mode="%s"'
         ' data-norm="%s"'
         ' data-name="%s"'
@@ -2891,64 +2855,52 @@ def page_slice(f, fonts=None):
     )
     origin = gate.get("origin") or {}
     if origin.get("href"):
-        gate_attrs += ' data-origin="%s" data-origin-label="%s"' % (
+        attrs += ' data-origin="%s" data-origin-label="%s"' % (
             e(origin.get("href") or ""), e(origin.get("label") or ""),
         )
-
-    meta_parts = [e(f["name"])]
-    if f.get("en"):
-        meta_parts.append(e(f["en"]))
-    if f.get("foundry"):
-        meta_parts.append(e(f["foundry"]))
-    face_html = (
-        '<div class="tool-face">'
-        '<div>'
-        '<p class="tool-face-name">%s</p>'
-        '<p class="tool-face-meta">%s</p>'
-        '</div></div>'
-        % (e(wf(f)), " · ".join(meta_parts))
-    )
-    if f.get("shop"):
-        is_http = f["shop"].startswith("http://") or f["shop"].startswith("https://")
-        attrs = ' target="_blank" rel="noopener noreferrer"' if is_http else ""
-        shop_link = '<a href="%s"%s>去店面用 ↗</a>' % (e(f["shop"]), attrs)
-    else:
-        shop_link = ""
-    foot_html = (
+    return (
+        '<section class="fn-slice"%s>'
+        '<p class="fn-label">即用字库</p>'
+        '<p class="fn-slice-lead">%s</p>'
+        '<div data-slice-body></div>'
         '<p class="tool-legal">%s</p>'
-        '<p class="tool-links">'
-        '<a href="/source/%s/">条目</a>'
-        '<a href="/license/%s/">许可原文</a>'
-        '%s'
-        '<a href="/slice/">全部字体</a>'
-        '</p>'
-        % (e(legal), e(f["norm"]), e(f["norm"]), shop_link)
+        '</section>'
+        % (attrs, e(lead), e(legal))
     )
-    body = page_head(
-        wf(f),
-        lead,
-        crumbs=[("/slice/", "切片"), (None, wf(f))],
-        kicker="领取",
-        dev="/slice/%s · mode=%s" % (f["norm"], mode),
-        face_attrs=face_attrs_of(f, require_pack=False),
+
+
+def page_redirect(to):
+    href = e(to)
+    return (
+        "<!doctype html><html lang=\"zh-Hans\"><head>"
+        "<meta charset=\"utf-8\">"
+        "<meta http-equiv=\"refresh\" content=\"0;url=%s\">"
+        "<link rel=\"canonical\" href=\"%s\">"
+        "<title>转到</title>"
+        "<script>location.replace(%s)</script>"
+        "</head><body><p><a href=\"%s\">转到目录</a></p></body></html>"
+        % (href, href, json.dumps(to), href)
     )
-    body += (
-        '<div class="sl-desk"%s>'
-        '<div class="sl-main">%s<div data-slice-body></div></div>'
-        '%s</div>'
-        % (gate_attrs, face_html, aside("说明", foot_html))
-    )
-    return layout(
-        "slice", wf(f), body, "/slice/%s/" % f["norm"],
-        extra_head=pages_css("slice") + "\n" + pages_js("slice"),
-        body_class="page-slice",
-    )
+
+
+def page_slices(fonts=None):
+    return page_redirect("/source/")
+
+
+def page_slice(f, fonts=None):
+    return page_redirect("/source/%s/#slice" % f["norm"])
+
+_READ_DESC = {
+    "how": "文风的收录与核验方法：许可怎么取证、证明怎么签、五个状态词的含义。",
+    "legal": "文风开源的法律声明：出证范围、许可解读、异议与下架流程。",
+}
 
 def _read_layout(section, title, body, path):
     return layout(
         section, title, body, path,
         body_class="page-read page-%s" % section,
         extra_head=pages_css("read"),
+        desc=_READ_DESC.get(section, ""),
     )
 
 
@@ -2962,12 +2914,12 @@ def page_use():
         '<span class="for-dev mono"> · /source</span></span>'
         '<span class="gate-go">看目录 →</span>'
         '</a>'
-        '<a class="gate-path" id="path-slice" href="/slice/">'
+        '<a class="gate-path" id="path-slice" href="/source/">'
         '<span class="gate-n">02</span>'
         '<span class="gate-path-name xxzt">切片</span>'
-        '<span class="gate-path-line">给 WordPress 与静态站本地 @font-face。点进一款领取；开源直接下，其余先交官方原包。'
-        '<span class="for-dev mono"> · /slice</span></span>'
-        '<span class="gate-go">领取 →</span>'
+        '<span class="gate-path-line">给 WordPress 与静态站本地 @font-face。从目录进条目领取。开源直接下，其余先交官方原包。'
+        '<span class="for-dev mono"> · /source/{norm}#slice</span></span>'
+        '<span class="gate-go">看目录 →</span>'
         '</a>'
         '<div class="gate-path" id="path-web">'
         '<span class="gate-n">03</span>'
@@ -2982,7 +2934,7 @@ def page_use():
         '<section class="gate-band" id="comment">'
         '<h2>注释不能删</h2>'
         '<div class="gate-band-body">'
-        '<p>不能。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体走<a href="/slice/">切片工具</a>。</p>'
+        '<p>不能。注释里的 <code>https://wenfeng.org/license</code> 要留着。不允许再分发的字体，进目录对应条目交原包领取。</p>'
         '<p class="gate-label">嵌入代码里这一行不能改</p>'
         '<pre class="gate-code">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>'
         '</div></section>'
@@ -3027,7 +2979,7 @@ def page_use():
         '}</pre>'
         '<p class="gate-acts">'
         '<a href="/source/">下源文件</a>'
-        '<a href="/slice/">切片工具</a>'
+        '<a href="/source/">看目录</a>'
         '<a href="/license/">查授权</a>'
         '</p>'
         '</div></section>'
@@ -3039,7 +2991,7 @@ def page_use():
         crumbs=[(None, "用法")],
         dev="/use",
     ) + paths + bands
-    return layout("use", "用法", body, "/use", extra_head=pages_css("gate"), body_class="page-gate page-use")
+    return layout("use", "用法", body, "/use", extra_head=pages_css("gate"), body_class="page-gate page-use", desc='字体拿去怎么用：原件下载、切片自托管、网页字体接入的用法说明。' )
 
 
 def page_how():
@@ -3165,7 +3117,7 @@ def _about_copy():
         'wenfeng.org 专注授权核对与源文件分发。出证只面向采用标准开源协议的字体；厂商自拟条款、尚未核实或未收录的，不在出证范围内。'
         '完整清单见<a href="/legal/#legal-scope">法律声明</a>，收录与核验的方法见<a href="/how/">我们怎么核验</a>。本站为非盈利项目站点，作为文风网页字体服务的公开资源仓库面向社会提供服务，基础设施与网络资源由文风云<span class="reg">®</span>提供。',
     ]
-    foot = "wenfeng.org 之外的主机不在本页说明范围内。"
+    foot = "以上相关站点由文风体系独立运营。"
     return lead, paths, else_items, stance, foot
 
 
@@ -3216,11 +3168,11 @@ def page_about():
         '<p class="about-mark">边界</p>'
         '<div class="about-stance-body">%s</div></section>' % _about_stance_html(stance)
         + '<section class="about-else" aria-label="不在本站">'
-        '<p class="about-mark">这些不在本站</p>'
+        '<p class="about-mark">相关站点</p>'
         '<div class="gate-paths is-else">%s</div></section>' % "".join(else_rows)
         + '<p class="gate-foot-note">%s</p>' % e(foot)
     )
-    return layout("about", "关于", body, "/about", extra_head=pages_css("gate"), body_class="page-gate page-about")
+    return layout("about", "关于", body, "/about", extra_head=pages_css("gate"), body_class="page-gate page-about", desc='文风开源是谁：收录、许可、缺字、证明四件事，与文风体系的相关站点。' )
 
 
 def page_lab_about(variant):
@@ -3329,7 +3281,7 @@ def page_lab_about(variant):
             '<p class="about-mark">边界</p>'
             '<div class="about-stance-body">%s</div></aside></div>'
             '<section class="ab-else-bar" aria-label="不在本站">'
-            '<p class="about-mark">这些不在本站</p>'
+            '<p class="about-mark">相关站点</p>'
             '<div class="ab-else-row">%s</div></section>'
             '<p class="gate-foot-note">%s</p></div>'
             % ("".join(left), stance_body, "".join(else_bits), e(foot))
@@ -3369,7 +3321,7 @@ def page_lab_about(variant):
             '<div class="ab-lab is-grid">'
             '<div class="ab-grid" aria-label="本站四条路径">%s</div>'
             '<section class="ab-else-grid" aria-label="不在本站">'
-            '<p class="about-mark">这些不在本站</p>'
+            '<p class="about-mark">相关站点</p>'
             '<div class="ab-grid is-else">%s</div></section>'
             '<section class="ab-lab-stance" aria-label="边界">'
             '<p class="about-mark">边界</p>'
@@ -3499,7 +3451,7 @@ def page_lab_about(variant):
             '<p class="ab-phrase" aria-label="本站四条路径">%s</p>'
             '<div class="ab-notes">%s</div>'
             '<section class="ab-colo-else" aria-label="不在本站">'
-            '<p class="about-mark">这些不在本站</p>'
+            '<p class="about-mark">相关站点</p>'
             '<div class="ab-notes is-else">%s</div></section>'
             '<section class="ab-lab-stance" aria-label="边界">'
             '<p class="about-mark">边界</p>'
@@ -3633,7 +3585,7 @@ def page_gap():
         kicker="03",
         dev="/gap · POST 未接",
     ) + form
-    return layout("gap", "报缺字", body, "/gap", body_class="page-gap")
+    return layout("gap", "报缺字", body, "/gap", body_class="page-gap", desc='缺字形、缺收录或勘误，都从一个入口报。' )
 def page_404():
     body = page_head(
         "没有这一页",
