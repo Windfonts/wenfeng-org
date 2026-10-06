@@ -1720,7 +1720,7 @@ def page_licenses(fonts):
     stage = (
         '<div class="lic-stage">'
         '<h1 class="lic-giant xxzt">授权查询</h1>'
-        '<p class="lic-lead">免费及商用字体许可参数与许可原文数据集，现已开放公众查询。'
+        '<p class="lic-lead">字体许可数据集，现已开放公众查询。'
         '<span class="for-dev mono"> · /license · textState · full=%d</span></p>'
         '%s'
         '<p class="lic-foot">全文 %d 份'
@@ -1745,7 +1745,7 @@ def page_licenses(fonts):
         "license", "授权查询", body, "/license",
         extra_head=pages_css("license"),
         body_class="page-license",
-        desc='免费及商用字体许可参数与许可原文数据集，现已开放公众查询。',
+        desc='字体许可数据集，现已开放公众查询。',
     )
 
 
