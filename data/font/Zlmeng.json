@@ -1,45 +1,45 @@
 {
- "norm": "Zlmeng",
- "name": "逐浪萌芽字",
- "en": "Zoomla Mengyas",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "逐浪字库",
- "foundrySlug": "zoomla",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zlmeng",
- "weights": [
-  "Regular"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-zlmeng"
+  "norm": "Zlmeng",
+  "name": "逐浪萌芽字",
+  "en": "Zoomla Mengyas",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/z01font/ZoomlaMengyas/main/OFL.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "89e76a6e2d0074368c6b978540e667bb8f8750707c204e9792c616bb42b649a8",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "逐浪字库",
+  "foundrySlug": "zoomla",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Zlmeng",
+  "weights": [
+    "Regular"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-zlmeng"
 }

@@ -2,9 +2,11 @@
 >
 > 10-06 包名缩短：[Cursor]。装机目录与 zip 用 `wenfeng-{norm}/`（去中间 `slice`）；`wenfeng-` 品牌前缀仍不可丢。「切片」只在领取文案。未提交。
 >
-> 10-06 全小写：[Cursor]。对外 norm / `wenfeng-*` / 切片路径 / API / 店面链接路径一律小写。仅 OSS CDN `fonts-packages/{Canon}/` 保留原样（`xwwk`→404）。未提交。
+> 10-06 OSS 包目录小写：[Cursor]。根因=拆包上传用 Normalized 原样建 `fonts-packages/{Norm}/`，后有小写补传→双份（约 128 对 / 898 混写树）。已：① `upload.js` 强制小写；② `normalize-pack-case.js` 合并到小写（898 包）；③ devops `aliyun --profile wenpai` 删混写 898 树（fail=0），源站只留小写；CDN 或仍短暂缓存旧路径。wenfeng 侧 webfonts/oss-packs/build/site.js 小写 + pack-alt 回退。未提交。
 >
-> 10-06 品牌前缀：[Cursor]。`wenfeng-` 是访客识别文风的唯一方式，切片包/目录/示例路径不可丢此前缀。冻结 `wenfeng-slice-{norm}/fonts.css`，`{norm}` 小写。代码块对齐 APP `.code`（`--well` + 右上角复制）。未提交。
+> 10-06 全小写：[Cursor]。对外 norm / `wenfeng-*` / 切片路径 / API / 店面链接路径一律小写。OSS CDN 已改走小写（过渡期 JS 仍会试原样 pack）。未提交。
+>
+> 10-06 品牌前缀：[Cursor]。`wenfeng-` 是访客识别文风的唯一方式，切片包/目录/示例路径不可丢此前缀。冻结 `wenfeng-{norm}/fonts.css`，`{norm}` 小写。代码块对齐 APP `.code`（`--well` + 右上角复制）。未提交。
 >
 > 10-06 D-16 双视图纠正：[Cursor]。作废「中文 for-design + 英文/路径 for-dev 整段替换」。人话常显，开发只追加字段/哈希/API。清 `build.py` / `slice.js` / 页脚 / 首页侧门；页头导语与目录 lmeta 仍按 DESIGN §6.3。厂商索引可搜可分页；缺字从条目带 `name` 预填并切勘误。2217 页。未提交。
 >

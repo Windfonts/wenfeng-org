@@ -1,46 +1,46 @@
 {
- "norm": "Alijkt",
- "name": "阿里健康体 2.0",
- "en": "Alibaba Health",
- "aliases": [],
- "licenseName": "免费商用",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Alijkt",
- "weights": [
-  "Regular",
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-alijkt"
+  "norm": "Alijkt",
+  "name": "阿里健康体 2.0",
+  "en": "Alibaba Health",
+  "aliases": [],
+  "licenseName": "免费商用",
+  "license": {
+    "spdx": null,
+    "textState": "full",
+    "sourceUrl": "https://www.foundertype.com/index.php/FontInfo/index/id/6694.html",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "6e0d14e30cefbd7c72581997f106645038c7ddbfef4c1d2f5f88938c7c9332a3",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Alijkt",
+  "weights": [
+    "Regular",
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-alijkt"
 }

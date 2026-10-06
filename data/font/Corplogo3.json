@@ -1,53 +1,53 @@
 {
- "norm": "Corplogo3",
- "name": "Corporate Logo Ver3",
- "en": "Corporate Logo Ver3",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://logotype.jp/corporate-logo-font-dl.html",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Corplogo3",
- "weights": [
-  "Medium",
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": "https://logotype.jp/corporate-logo-font-dl.html",
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "upstream",
-   "label": "上游 logotype.jp",
-   "format": "git",
-   "href": "https://logotype.jp/corporate-logo-font-dl.html",
-   "sha256": null
+  "norm": "Corplogo3",
+  "name": "Corporate Logo Ver3",
+  "en": "Corporate Logo Ver3",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://logotype.jp/wp-content/uploads/2022/10/Corporate-Logo-Bold-ver3.zip",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "e564f06d018e7b95bc3594c96a17f1d41865af4038c375e7aa974dd69df38602",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
   },
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-corplogo3"
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Corplogo3",
+  "weights": [
+    "Medium",
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": "https://logotype.jp/corporate-logo-font-dl.html",
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "upstream",
+      "label": "上游 logotype.jp",
+      "format": "git",
+      "href": "https://logotype.jp/corporate-logo-font-dl.html",
+      "sha256": null
+    },
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-corplogo3"
 }

@@ -1,50 +1,50 @@
 {
- "norm": "Harmony",
- "name": "HarmonyOS Sans",
- "en": "HarmonyOS Sans SC",
- "aliases": [],
- "licenseName": "HarmonyOS Sans Fonts License Agreement",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": "https://gitee.com/openharmony/utils_system_resources/blob/master/LICENSE_Fonts",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "华为",
- "foundrySlug": "华为",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Harmony",
- "weights": [
-  "Thin",
-  "Light",
-  "Regular",
-  "Medium",
-  "Bold",
-  "Black"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-harmony"
+  "norm": "Harmony",
+  "name": "HarmonyOS Sans",
+  "en": "HarmonyOS Sans SC",
+  "aliases": [],
+  "licenseName": "HarmonyOS Sans Fonts License Agreement",
+  "license": {
+    "spdx": null,
+    "textState": "full",
+    "sourceUrl": "https://raw.giteeusercontent.com/openharmony/utils_system_resources/raw/master/LICENSE_Fonts?metadata=eyJyIjoibWFzdGVyIiwiZnAiOiJMSUNFTlNFX0ZvbnRzIiwicGlkIjozMjcwNTkzNywic3RvIjoiZ2l0LXNoYXJkaW5nLXN0by00MnQtMDA2IiwicnAiOiJyZXBvcy8yOS8wZS8yOTBlYmFjYTczZGE2ZmYyYjEwNDRhN2ZjZjBlOTE5NjJkZTFlZDAzY2FmZjFiZTI1M2EwYjM0MmVmMjhhNmVjLmdpdCIsImlzcCI6dHJ1ZSwiZXhwaXJlX2F0IjoxNzkxMTIwMDAwfQ&signature=q9B-76aB9bl8CnBwamEDz6FsugUbw6Ss2c3LhhDtYM4",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "327e0147d4a3ca2d89e81abce45b210576b0f9fe2b29d900f64b58039f12a102",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "华为",
+  "foundrySlug": "华为",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Harmony",
+  "weights": [
+    "Thin",
+    "Light",
+    "Regular",
+    "Medium",
+    "Bold",
+    "Black"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-harmony"
 }

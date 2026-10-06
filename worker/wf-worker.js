@@ -4,6 +4,7 @@
 // 2) OSS 静态托管只解析根路径 index，子目录不解析——这里补目录→/index.html 重写。
 const UPSTREAM = 'https://wenfeng-org.oss-cn-guangzhou.aliyuncs.com';
 const HOP = new Set(['host', 'connection', 'keep-alive', 'transfer-encoding', 'upgrade', 'proxy-authorization', 'te', 'trailers', 'accept-encoding', 'cdn-loop']);
+
 export default {
   async fetch(request) {
     const u = new URL(request.url);

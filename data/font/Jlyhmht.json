@@ -1,54 +1,54 @@
 {
- "norm": "Jlyhmht",
- "name": "吉利银河美好体",
- "en": "Geely Galaxy Beautiful",
- "aliases": [],
- "licenseName": "方正×吉利 吉利银河美好体免费字授权（商业发布）",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": "https://www.foundertype.com/index.php/FontInfo/index/id/12510",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "FounderType",
- "foundrySlug": "geely",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Jlyhmht",
- "weights": [
-  "Light",
-  "Regular",
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": "https://www.foundertype.com/index.php/FontInfo/index/id/12510",
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "upstream",
-   "label": "上游 www.foundertype.com",
-   "format": "git",
-   "href": "https://www.foundertype.com/index.php/FontInfo/index/id/12510",
-   "sha256": null
+  "norm": "Jlyhmht",
+  "name": "吉利银河美好体",
+  "en": "Geely Galaxy Beautiful",
+  "aliases": [],
+  "licenseName": "方正×吉利 吉利银河美好体免费字授权（商业发布）",
+  "license": {
+    "spdx": null,
+    "textState": "full",
+    "sourceUrl": "https://www.foundertype.com/index.php/FontInfo/index/id/12510.html",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "c785030084489f7606d8222f618820fca4a28d745f1b7f9980420f9ab5eb5afe",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
   },
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-jlyhmht"
+  "foundry": "FounderType",
+  "foundrySlug": "geely",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Jlyhmht",
+  "weights": [
+    "Light",
+    "Regular",
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": "https://www.foundertype.com/index.php/FontInfo/index/id/12510",
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "upstream",
+      "label": "上游 www.foundertype.com",
+      "format": "git",
+      "href": "https://www.foundertype.com/index.php/FontInfo/index/id/12510",
+      "sha256": null
+    },
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-jlyhmht"
 }

@@ -1,47 +1,47 @@
 {
- "norm": "Kazukirw",
- "name": "KazukiReiwa",
- "en": "Kazuki Reiwa",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Kazukirw",
- "weights": [
-  "Light",
-  "Regular",
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-kazukirw"
+  "norm": "Kazukirw",
+  "name": "KazukiReiwa",
+  "en": "Kazuki Reiwa",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/KazukiKimuraJP/KazukiReiwa/main/OFL.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "2459cb885d9fa31c541f800681158517e9bbb7fef752758f90f0453cc1fdb62a",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Kazukirw",
+  "weights": [
+    "Light",
+    "Regular",
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-kazukirw"
 }

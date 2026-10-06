@@ -1,52 +1,52 @@
 {
- "norm": "Ibmpsjp",
- "name": "IBM Plex Sans JP",
- "en": "IBM Plex Sans JP",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ibmpsjp",
- "weights": [
-  "Thin",
-  "ExtraLight",
-  "Light",
-  "Regular",
-  "Text",
-  "Medium",
-  "SemiBold",
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-ibmpsjp"
+  "norm": "Ibmpsjp",
+  "name": "IBM Plex Sans JP",
+  "en": "IBM Plex Sans JP",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsansjp/OFL.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Ibmpsjp",
+  "weights": [
+    "Thin",
+    "ExtraLight",
+    "Light",
+    "Regular",
+    "Text",
+    "Medium",
+    "SemiBold",
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-ibmpsjp"
 }

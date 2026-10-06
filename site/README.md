@@ -36,7 +36,7 @@ python3 site/serve.py --port 16031    # 预览：静态页 + preview.py 的原�
 | `/attest/verify/` `/attest/ledger/` `/v/` | 核对 JSON / 台账 / 两要素查验（需 API） |
 | `/slice/` `/slice/{norm}/` | 说明 + 不可再分发款列表；浏览器本地 SHA-256 核验 |
 | `/foundry/` `/foundry/{slug}/` | 厂商列表 / 厂商下的字体 |
-| `/use/` `/how/` `/legal/` `/about/` `/gap/` | 说明页，文案取自旧稿已拍板的版本 |
+| `/use/` `/how/` `/legal/` `/about/` `/gap/` | 用法、关于是三列 / 四字大字（`gate.css`，设计视图大字为玄宗）。怎么核、法务仍是阅读栏。缺字仍是短笺。文案沿用已拍板的句子。页眉的 wenfeng.org 只写在面包屑 |
 
 `/font/{norm}` → 301 `/source/{norm}/`。
 

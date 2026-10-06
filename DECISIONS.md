@@ -121,7 +121,7 @@
 | `https://wenfeng-org.oss-cn-guangzhou.aliyuncs.com/pack/slice/Alhyznht.zip` | 上一会话所写，对象不存在 |
 
 - 113 条 `wenfeng-original/{norm}.tar.gz` 全是 `staged`，**本站 tar.gz 仍不放直链**（404）。`export-wenfeng.py` 的 `ARCHIVE_HREF_PREFIX` 仍是占位。2026-10-06：人「依次做，已经有很多了」——113 款上游全是 GitHub `owner/repo`，`archive/HEAD.zip` 公网 200，条目主按钮「下载」指向该 zip，不当 404 tar.gz。
-- 已上架的网页分片：`fonts-packages/{Norm}/{Weight}/{subset}/result.css`，名单 `data/webfonts.json`（354）。无 Referer 也是 200，不要写成已经做了防盗链。
+- 已上架的网页分片：`fonts-packages/{norm小写}/{Weight}/{subset}/result.css`（2026-10-06 起统一小写；历史混写树合并中，删混写需 wenpai delete ACL）。名单 `data/webfonts.json`（354）。无 Referer 也是 200，不要写成已经做了防盗链。
 - 同日又对这 556 款探了三份索引（`data/oss-packs.json`）：`license/index.json` 200 的 270 款；`slice/index.json` 200 的 10 款（Btot、Dlzht、Dyh、Hclck2、Ibmps、Ljmc、Opsa、Xwmh、Yzklct、Zkklt）；`source/index.json` 在这 556 款里是 0。桶上另有不在这批目录里的源文件索引（例如 TaigiHuninn 的 `schemes/*.ttf` 200），本站页面不编造它们的地址。
 - 条目页「还能办的事」用紧凑任务行，不重复主按钮。有真实 `files[slice].href` 才叫切片包；否则可再分发的，链 slice 索引里的 `cssUrl`，没有索引就链上面的 result.css，标题写「网页字体」。`distribution=false` 不给网页分片（Dlzht 有切片索引也不给）。有 `sliceGate` 的才进 `/slice/{norm}/` 核验台；禁再分发且 `webfonts.json` 已有包的，核验通过后打包管线 CSS/woff2，不放 404 zip，也不给未切片的 39 款空闸。
 - `/slice/` 不再把开源款铺成「看下载页 / 稍后提供」。

@@ -1,45 +1,45 @@
 {
- "norm": "Hymb",
- "name": "花园明朝 B",
- "en": "HanaMin B",
- "aliases": [],
- "licenseName": "花园明朝 B授权协议",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "GlyphWiki",
- "foundrySlug": "hanamin",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hymb",
- "weights": [
-  "Regular"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-hymb"
+  "norm": "Hymb",
+  "name": "花园明朝 B",
+  "en": "HanaMin B",
+  "aliases": [],
+  "licenseName": "花园明朝 B授权协议",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/laqieer/gba-free-fonts/main/licenses/HanaMin.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "3983a1b74d18bc5e9fe733224838af1045df28a68d677432462a5a85da1b689e",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "GlyphWiki",
+  "foundrySlug": "hanamin",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Hymb",
+  "weights": [
+    "Regular"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-hymb"
 }

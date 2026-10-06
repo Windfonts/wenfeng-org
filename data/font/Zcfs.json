@@ -1,52 +1,52 @@
 {
- "norm": "Zcfs",
- "name": "仲春仿宋",
- "en": "Sotyr Fangsong",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://github.com/Hulenkius/sotyr",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "Hulenkius",
- "foundrySlug": "hulenkius",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zcfs",
- "weights": [
-  "Regular"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": "https://github.com/Hulenkius/sotyr",
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "upstream",
-   "label": "上游 github.com",
-   "format": "git",
-   "href": "https://github.com/Hulenkius/sotyr",
-   "sha256": null
+  "norm": "Zcfs",
+  "name": "仲春仿宋",
+  "en": "Sotyr Fangsong",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/Hulenkius/sotyr/main/OFL.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "2fc42cba486b8ae20f7ddae72547f261887da8175b25b91f41fbefd20c0852cc",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
   },
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-zcfs"
+  "foundry": "Hulenkius",
+  "foundrySlug": "hulenkius",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Zcfs",
+  "weights": [
+    "Regular"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": "https://github.com/Hulenkius/sotyr",
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "upstream",
+      "label": "上游 github.com",
+      "format": "git",
+      "href": "https://github.com/Hulenkius/sotyr",
+      "sha256": null
+    },
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-zcfs"
 }

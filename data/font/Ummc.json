@@ -1,45 +1,45 @@
 {
- "norm": "Ummc",
- "name": "梅明朝",
- "en": "Ume Mincho",
- "aliases": [],
- "licenseName": "梅字体许可",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "梅字体",
- "foundrySlug": "ume",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ummc",
- "weights": [
-  "Regular"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-ummc"
+  "norm": "Ummc",
+  "name": "梅明朝",
+  "en": "Ume Mincho",
+  "aliases": [],
+  "licenseName": "梅字体许可",
+  "license": {
+    "spdx": null,
+    "textState": "full",
+    "sourceUrl": "https://metadata.ftp-master.debian.org/changelogs/main/f/fonts-horai-umefont/fonts-horai-umefont_670-5_copyright",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "8487a3c5bfe66858f269d377c4f5473fa96cab99d08bea501e9a95e48caf30c3",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "梅字体",
+  "foundrySlug": "ume",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Ummc",
+  "weights": [
+    "Regular"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-ummc"
 }

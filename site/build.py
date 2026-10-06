@@ -79,9 +79,13 @@ e = lambda s: html.escape("" if s is None else str(s), quote=True)
 SPRITE = re.sub(r"<\?xml[^>]*>\s*", "", (ROOT / "assets/icons.svg").read_text("utf-8"))
 # cn.windfonts.com 有 web 包的字体名单（api/css 探测产物 data/webfonts.json；包上架后重跑探测刷新）
 try:
-    _wf_map = json.loads((ROOT / "data/webfonts.json").read_text("utf-8"))["fonts"]
+    _wf_doc = json.loads((ROOT / "data/webfonts.json").read_text("utf-8"))
+    _wf_map = _wf_doc.get("fonts") or {}
     WEBFONT_SUBSET = {k.lower(): v for k, v in _wf_map.items()}
+    # Preferred pack path is lowercase; CANON = historical mixed-case for JS fallback until OSS delete.
     WEBFONT_CANON = {k.lower(): k for k in _wf_map}
+    for k, v in (_wf_doc.get("canon") or {}).items():
+        WEBFONT_CANON[str(k).lower()] = v
     WEBFONTS = set(WEBFONT_SUBSET)
 except Exception:
     WEBFONT_SUBSET = {}
@@ -341,14 +345,15 @@ def search(action="/source/", ph="中文名、英文名、厂商…", live=False
 
 
 def face_attrs_of(f, weight=True, require_pack=True):
-    """目录/条目用的网页包属性。pack 用 OSS 原样大小写，subset 用探测结果。"""
+    """目录/条目用的网页包属性。pack 用小写 slug；subset 用探测结果。"""
     face = f.get("family") or ""
     norm_key = str(f.get("norm") or "").lower()
     if require_pack and norm_key not in WEBFONTS:
         face = ""
     if not face:
         return ""
-    pack = WEBFONT_CANON.get(norm_key) or f["norm"]
+    pack = norm_key
+    canon = WEBFONT_CANON.get(norm_key) or ""
     subset = WEBFONT_SUBSET.get(norm_key) or ""
     weights = f.get("weights") or ["Regular"]
     wname = "Regular" if "Regular" in weights else weights[0]
@@ -357,6 +362,8 @@ def face_attrs_of(f, weight=True, require_pack=True):
         ' data-face-family="%s"' % e(face),
         ' data-face-pack="%s"' % e(pack),
     ]
+    if canon and canon != pack:
+        parts.append(' data-face-pack-alt="%s"' % e(canon))
     if weight:
         parts.append(' data-face-weight="%s"' % e(wname))
     if subset:
@@ -1421,7 +1428,7 @@ def oss_webfont_css(f):
 
 
 def webfont_css_url(f):
-    """OSS 即用字库 result.css。店面上架款按 fonts-packages/{Norm}/ 取。"""
+    """OSS 即用字库 result.css。路径 fonts-packages/{norm小写}/{Weight}/{subset}/。"""
     norm_key = str(f.get("norm") or "").lower()
     subset = WEBFONT_SUBSET.get(norm_key) or "zh-common"
     weights = f.get("weights") or ["Regular"]
@@ -1437,17 +1444,28 @@ def webfont_css_url(f):
             return False
         return bool(it.get("url"))
 
+    def lower_css_url(url):
+        """Rewrite fonts-packages/{AnyCase}/… → lowercase pack segment."""
+        if not url or "/fonts-packages/" not in url:
+            return url
+        pre, rest = url.split("/fonts-packages/", 1)
+        parts = rest.split("/", 1)
+        if not parts[0]:
+            return url
+        pack = parts[0].lower()
+        tail = parts[1] if len(parts) > 1 else ""
+        return "%s/fonts-packages/%s%s" % (pre, pack, ("/" + tail) if tail else "")
+
     for it in css_items:
         if match(it, weight, want):
-            return it["url"]
+            return lower_css_url(it["url"])
     for it in css_items:
         if match(it, weight, ""):
-            return it["url"]
+            return lower_css_url(it["url"])
     if css_items and css_items[0].get("url"):
-        return css_items[0]["url"]
-    canon = WEBFONT_CANON.get(norm_key) or f["norm"]
+        return lower_css_url(css_items[0]["url"])
     return "https://cn.windfonts.com/fonts-packages/%s/%s/%s/result.css" % (
-        canon, weight, subset)
+        norm_key, weight, subset)
 
 
 def font_more(f, verb):
@@ -3397,9 +3415,28 @@ def page_slice(f, fonts=None):
     return page_redirect("/source/%s/#slice" % f["norm"])
 
 _READ_DESC = {
-    "how": "文风的收录与核验方法：许可怎么取证、证明怎么签、五个状态词的含义。",
+    "how": "收录门槛、许可留证、原件与切片规则、授权证明签发，以及目录五态含义。",
     "legal": "文风开源的法律声明：出证范围、许可解读、异议与下架流程。",
 }
+
+
+def _how_status_sidebar():
+    """怎么核侧栏：五态人话与 STATUS / offer 字段一致。"""
+    missing = (
+        "还没收进目录。许可已核对的，原文可直接查阅；"
+        '想让它上架，可到<a href="/gap/">报缺</a>。'
+    )
+    pending = "许可原文还没有核对记录，核对完成前不提供文件、不出证明。"
+    return aside(
+        "五态",
+        kv_rows([
+            ("本站下载", _how_dual(STATUS["source"][1], "status=source · offer=source")),
+            ("官方下载", _how_dual(STATUS["jump"][1], "status=jump · offer=jump")),
+            ("暂无下载", _how_dual(STATUS["ready"][1], "status=ready · offer=pending · textState=full")),
+            ("待核实", _how_dual(pending, "status=pending · offer=pending · textState≠full")),
+            ("未收录", _how_dual(missing, "status=missing · offer=missing")),
+        ], words=True),
+    ).replace('<aside class="aside">', '<aside class="aside" id="how-status">', 1)
 
 def _read_layout(section, title, body, path):
     return layout(
@@ -3416,61 +3453,55 @@ def page_use():
         '<div class="gate-path" id="path-file">'
         '<span class="gate-n">01</span>'
         '<span class="gate-path-name xxzt">原件</span>'
-        '<span class="gate-path-line">TTF / OTF 或官方归档。给自建站、主题作者。许可允许时才再分发。'
-        '字段可查<a href="#api">目录 API</a>。'
+        '<span class="gate-path-line">字体、字型原始的 TTF / OTF 或官方归档。'
         '<span class="for-dev mono"> · /source</span></span>'
-        '<a class="gate-go" href="/source/">看目录 →</a>'
+        '<a class="gate-go" href="/source/">目录 →</a>'
         '</div>'
         '<div class="gate-path" id="path-slice">'
         '<span class="gate-n">02</span>'
         '<span class="gate-path-name xxzt">切片</span>'
-        '<span class="gate-path-line">给 WordPress 与静态站本地引入。解压目录 '
-        '<code>wenfeng-&#123;norm&#125;/</code>，入口 <code>fonts.css</code>。'
-        '开源直下；禁再分发须交官方原包；官方下载款原件去出处，切片包仍在本站条目领。'
-        '标注见<a href="#comment">注释</a>，装入见<a href="#enqueue">进主题</a>。'
-        '<span class="for-dev mono"> · /source/{norm}#slice</span></span>'
-        '<a class="gate-go" href="/source/">进目录领取 →</a>'
+        '<span class="gate-path-line">woff2 与 CSS 格式，给 WordPress、CMS、静态站自托管。'
+        '<span class="for-dev mono"> · /source/{norm}</span></span>'
+        '<a class="gate-go" href="/source/">目录 →</a>'
         '</div>'
         '<div class="gate-path" id="path-web">'
         '<span class="gate-n">03</span>'
         '<span class="gate-path-name xxzt">网页</span>'
-        '<span class="gate-path-line">用 cn.windfonts.com 托管的 CSS 与分片。不是本站下载，不要二次托管，也不当源文件。'
+        '<span class="gate-path-line">直接引用 '
+        '<code>cn.windfonts.com</code> 托管的 CSS 与子集化分片。'
         '<span class="for-dev mono"> · hosted CSS</span></span>'
-        '<span class="gate-go is-quiet">不提供下载</span>'
+        '<a class="gate-go" href="https://app.windfonts.com/" target="_blank" '
+        'rel="noopener">在线选字 ↗</a>'
         '</div>'
         '</div>'
     )
     bands = (
         '<section class="gate-band" id="comment">'
-        '<h2>注释不能删</h2>'
+        '<h2>须保留的注释</h2>'
         '<div class="gate-band-body">'
-        '<p>不能删。页面或样式里须保留指向 '
-        '<code>https://wenfeng.org/license</code> 的授权标注。'
-        '不允许再分发的字体，到目录对应条目交官方原包后领取切片包。</p>'
-        '<p class="gate-label">嵌入代码里这一行不能改</p>'
-        '<pre class="gate-code">&lt;!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；请保留本授权标注 https://wenfeng.org/license --&gt;</pre>'
+        '<p>嵌入代码里 <code>https://wenfeng.org/license</code> 这一行要留着。</p>'
+        '<pre class="gate-code">__COMMENT__</pre>'
         '</div></section>'
         '<section class="gate-band" id="enqueue">'
-        '<h2>进主题</h2>'
+        '<h2>切片进主题</h2>'
         '<div class="gate-band-body">'
-        '<p>解压后<strong>整夹保留</strong>，放进主题 <code>fonts/</code>（或 '
-        '<code>wp-content/fonts</code>）。目录名带 <code>wenfeng-</code> 前缀，勿改。'
-        '包内 <code>fonts.css</code> 已含 <code>@font-face</code> 与须保留的注释，整只引入，不要拆。</p>'
-        '<pre class="gate-code">// functions.php：整夹放进主题 fonts/wenfeng-xwwk/ 后排队引入\n'
+        '<p>解压后整夹引进 <code>fonts.css</code>，不要拆。'
+        '目录名保留 <code>wenfeng-</code> 前缀。</p>'
+        '<pre class="gate-code">// functions.php\n'
         'wp_enqueue_style(\n'
         "  'wenfeng-xwwk',\n"
         "  get_theme_file_uri( '/fonts/wenfeng-xwwk/fonts.css' ),\n"
         '  array(),\n'
         '  null\n'
         ');\n\n'
-        '/* 或在主题 style.css 顶部 */\n'
         '@import url( "./fonts/wenfeng-xwwk/fonts.css" );</pre>'
+        '<p class="quiet">按款示例见目录条目页「怎么用」。</p>'
         '</div></section>'
         '<section class="gate-band" id="api">'
         '<h2>目录 API</h2>'
         '<div class="gate-band-body">'
-        '<p>目录 API 开放查询。免费与商业条目都能查；商业字只出字段，<code>files</code> 为空。'
-        '不是在线选字的 <code>/api/css</code>。<code>lineage</code> 为造字平台预留，现恒为 '
+        '<p>查目录用下列接口。不是在线选字的 <code>/api/css</code>。'
+        '商业字只出字段，<code>files</code> 为空。<code>lineage</code> 恒为 '
         '<code>null</code>。</p>'
         '<ul class="gate-api">'
         '<li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>'
@@ -3494,25 +3525,23 @@ def page_use():
         '  "lineage": null\n'
         '}</pre>'
         '<p class="gate-acts">'
-        '<a href="/source/">进目录领取</a>'
-        '<a href="#comment">授权标注</a>'
-        '<a href="#enqueue">装入说明</a>'
-        '<a href="/license/">查授权</a>'
+        '<a href="/source/">目录</a>'
+        '<a href="/license/">许可</a>'
         '</p>'
         '</div></section>'
         '<p class="gate-foot-note">核验方法见<a href="/how/">我们怎么核验</a>。</p>'
     )
     body = page_head(
         "用法",
-        "三条路：下载原件、领取切片包、或用托管网页字体嵌入界面。",
+        "文风字体提供多种用法和在线资源工具。",
         crumbs=[(None, "用法")],
         dev="/use",
-    ) + paths + bands
+    ) + paths + bands.replace("__COMMENT__", e(COMMENT))
     return layout(
         "use", "用法", body, "/use",
         extra_head=pages_css("gate"),
         body_class="page-gate page-use",
-        desc="下载原件、领取 wenfeng-{norm} 切片包，或用 cn.windfonts.com 托管 CSS 嵌入界面。",
+        desc="目录下载原件或切片包；网页引用 cn.windfonts.com 托管 CSS。",
     )
 
 
@@ -3522,66 +3551,72 @@ def page_how():
         '<li>'
         '<p class="read-idx">01</p>'
         '<div>'
-        '<h2>许可文本</h2>'
-        '<p class="read-p">许可文本拿得到。</p>'
+        '<h2>许可原文</h2>'
+        '<p class="read-p">能取得完整许可文本：发布包内的许可文件、官网许可页、官方仓库的 LICENSE，至少其一。仅有厂商指引、尚无全文的，先不给出下载结论。</p>'
         '</div>'
         '</li>'
         '<li>'
         '<p class="read-idx">02</p>'
         '<div>'
-        '<h2>来源可查</h2>'
-        '<p class="read-p">来源能查到作者或厂商。</p>'
+        '<h2>著作权人可对应</h2>'
+        '<p class="read-p">条目能对应到著作权人或发布厂商，不是出处不明的转载包。</p>'
         '</div>'
         '</li>'
         '<li>'
         '<p class="read-idx">03</p>'
         '<div>'
-        '<h2>官方渠道</h2>'
-        '<p class="read-p">文件取自官方渠道。</p>'
+        '<h2>官方渠道取件</h2>'
+        '<p class="read-p">字体文件从作者或厂商公布的渠道取得；来路不明的打包文件不收。</p>'
         '</div>'
         '</li>'
         '</ol>'
-        '<p class="read-p">来路不明的打包文件不收。许可写不清楚的，先标「待核实」，不提供文件，核对完成再更新状态。</p>'
+        '<p class="read-p">三道门槛有一项过不去，就不收录。许可还在核对中的，目录标「待核实」，核对完成前不提供文件、不出证明。'
+        '收录信息有误或权利异议，致信 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a>；缺收录、勘误走<a href="/gap/">报缺</a>。</p>'
         '<section class="read-moment" id="how-evidence">'
         '<p class="read-idx">04</p>'
-        '<h2>许可怎么取证</h2>'
+        '<h2>许可怎么留证</h2>'
         '<article class="read-art">'
-        '<p class="read-p">以字体发布件内嵌的声明为准：安装包里的许可文件、官网许可页、官方仓库的 LICENSE，三者有其一才算拿到原文。</p>'
-        '<p class="read-p">取证时记录来源、日期和文本哈希。哈希的作用是：原文以后被改动或换版时，能对出变化。</p>'
-        '<p class="read-p">每款字体的取证记录，在它的许可原文页里可以查到。</p>'
+        '<p class="read-p">以发布件里的声明为准，来源类型与收录门槛相同：包内许可、官网页、仓库 LICENSE。</p>'
+        '<p class="read-p">存档时记下来源链接、存档日期和许可原文哈希（SHA-256）。原文换版或改字时，可与目录条目、授权证明对照。</p>'
+        '<p class="read-p">每款字的许可原文与哈希，在对应的<a href="/license/">许可原文页</a>可查（路径形如 <code>/license/{目录编号}/</code>）。</p>'
+        '</article>'
+        '</section>'
+        '<section class="read-moment" id="how-file">'
+        '<p class="read-idx">05</p>'
+        '<h2>原件与切片</h2>'
+        '<article class="read-art">'
+        '<p class="read-p">档案页第一屏写清这一款现在能不能拿、怎么拿：状态词与侧栏「五态」同义，并给出处或本站领取入口。</p>'
+        '<p class="read-p">许可允许再分发、且本站托管归档包的，记录 SHA-256 供对照。不能再分发的字体，本站不存原件、不出证明；'
+        '你已从官方取得原包时，在档案页用浏览器内核验（以 SHA-256 为准，文件不上传服务器）后可领取自托管切片包。'
+        '边界细则见<a href="/legal/#legal-redist">法律声明</a>。</p>'
         '</article>'
         '</section>'
         '<section class="read-moment" id="how-cert">'
-        '<p class="read-idx">05</p>'
+        '<p class="read-idx">06</p>'
         '<h2>证明怎么签</h2>'
         '<article class="read-art">'
-        '<p class="read-p">只给采用标准开源协议的字体出证，文派（广州）科技有限公司是出证责任主体。出证时申报用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明和证明记录，作为授权范围的确认记录。每份证明有唯一编号，签发即登记。<a href="/attest/ledger/">查看证明记录</a>。</p>'
-        '<p class="read-p">核对收到的证明：编号在证明记录里查得到、内容与证明记录一致，才是文风签发的。编号对不上，按伪造处理。</p>'
+        '<p class="read-p">仅对采用标准开源协议的字体出证，协议范围见<a href="/legal/#legal-scope">法律声明</a>。'
+        '文派（广州）科技有限公司为出证责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》。'
+        '证明是许可原文之外的合规使用凭证，不是著作权人的授权书（见<a href="/legal/#legal-what">法律声明</a>）。'
+        '申领时填写用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明与<a href="/attest/ledger/">证明记录</a>；'
+        '每份有唯一编号，签发即登记。</p>'
+        '<p class="read-p">验收：到<a href="/v/">证书查验</a>或证明记录核对编号，内容须与记录一致，方为文风签发；对不上，按伪造处理。</p>'
         '</article>'
         '</section>'
         '<p class="read-acts">'
-        '<a href="/source/">看目录</a>'
+        '<a href="/source/">目录</a>'
+        '<a href="/license/">许可原文</a>'
         '<a href="/attest/">授权证明</a>'
         '<a href="/legal/">法律声明</a>'
         '</p>'
-        '<p class="read-foot">状态词以这页为准，目录、条目、许可页同用这五个词。</p>'
+        '<p class="read-foot">五态：本站下载、官方下载、暂无下载、待核实、未收录。与目录筛选、档案页状态词一致；开发视图追加 offer、textState 等字段。</p>'
     )
-    side = aside(
-        "五态",
-        kv_rows([
-            ("本站下载", _how_dual("文件在本站，可以直接下载。", "offer=source")),
-            ("官方下载", _how_dual("本站不存文件，请到厂商官方渠道下载。", "official")),
-            ("暂无下载", _how_dual("许可已核实，源文件包还没上架。", "offer=pending · textState=full")),
-            ("待核实", _how_dual("许可还没核对完，核对完成前不提供文件。", "unverified")),
-            ("未收录", _how_dual("这款字体还没收进镜像，先去官方渠道取。", "unlisted")),
-        ], words=True),
-    ).replace('<aside class="aside">', '<aside class="aside" id="how-status">', 1)
     body = page_head(
         "我们怎么核验",
-        "文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。",
+        "这页说明收录门槛、许可留证、原件与切片、授权证明怎么签。目录与档案页的状态词，以本页为准。",
         crumbs=[(None, "我们怎么核验")],
         dev="/how",
-    ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (main, side)
+    ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (main, _how_status_sidebar())
     return _read_layout("how", "我们怎么核验", body, "/how")
 
 
@@ -3610,36 +3645,46 @@ def page_legal():
 
 def _about_copy():
     """关于页已拍板文案（路径/站外/边界）。结构变，句子不动。"""
-    lead = "wenfeng.org 提供四项服务：字体源文件下载、许可查询、缺字反馈、商用证明。在线选字与造字平台见相关站点。"
+    lead = "文派旗下开源商用字体服务平台"
     paths = [
-        ("01", "源文件", "源文件本站下载。不允许再分发的，核验后领取即用字库。",
-         "/source/", "看目录 →", "/source"),
-        ("02", "许可", "许可原文已收档。证明不替代原文，也不新设权利。",
-         "/license/", "查授权 →", "/license"),
-        ("03", "缺字", "缺字形、缺收录或勘误，都从一个入口报。",
-         "/gap/", "报缺字 →", "/gap"),
-        ("04", "证明", "只给标准开源协议出证。厂商自拟协议、尚未核实、未收录的，不出证。",
-         "/attest/", "授权证明 →", "/attest"),
+        ("01", "源文件", "原件与切片包，在目录按条目领取。",
+         "/source/", "目录 →", "/source"),
+        ("02", "许可", "许可原文存档，逐款可查。",
+         "/license/", "许可 →", "/license"),
+        ("03", "缺字", "缺字形、缺收录或勘误，从此处报。",
+         "/gap/", "报缺 →", "/gap"),
+        ("04", "证明", "标准开源协议字体，可申领授权证明。",
+         "/attest/", "证明 →", "/attest"),
     ]
     else_items = [
-        ("在线选字", "app.windfonts.com",
-         "样张预览、在线选字、控制台和账号。",
-         "https://app.windfonts.com/", "去选字 ↗", "shop", True),
+        ("应用", "app.windfonts.com",
+         "样张与网页字体。",
+         "https://app.windfonts.com/", "↗", "shop", True),
         ("造字", "zaozi.wenfeng.org",
-         "造字平台，独立域名，上线后从本站进入。",
-         "https://zaozi.wenfeng.org/", "去造字 ↗", "zaozi", True),
-        ("字体图标", "icons.motucloud.com",
-         "墨图爱可图标库。",
-         "https://icons.motucloud.com/", "去图标库 ↗", "icons", True),
+         "在线造字平台。",
+         "https://zaozi.wenfeng.org/", "↗", "zaozi", True),
+        ("图标", "icons.motucloud.com",
+         '墨图<span class="reg">®</span>字体图标库。',
+         "https://icons.motucloud.com/", "↗", "icons", True),
+        ("头像", "cravatar.com",
+         "互联网公认头像。",
+         "https://cravatar.com/", "↗", "cravatar", True),
     ]
     stance = [
-        "文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。",
-        "对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明与许可原文并行使用：原文定权利，证明作凭证。",
-        "其他品牌厂商自行发布的授权协议，本站提供授权原文下载；该类字体的商用授权由各厂商决定，证明业务不涉及。",
-        'wenfeng.org 专注授权核对与源文件分发。出证只面向采用标准开源协议的字体；厂商自拟条款、尚未核实或未收录的，不在出证范围内。'
-        '完整清单见<a href="/legal/#legal-scope">法律声明</a>，收录与核验的方法见<a href="/how/">我们怎么核验</a>。本站为非盈利项目站点，作为文风网页字体服务的公开资源仓库面向社会提供服务，基础设施与网络资源由文风云<span class="reg">®</span>提供。',
+        "文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。"
+        "文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。",
+        "从业十余载，我们经历中国互联网与各行业规则的变化，依许可与合规要求做字体收录与交付。"
+        "文派生态由此展开：源站在 wenfeng.org，在线服务在 Windfonts.com。",
+        "对于采用标准开源协议的字体，文派科技作为责任主体，可为合法合规使用的个人及企业出具《文风字体授权证明》，作为开源授权的证明材料。"
+        "证明记录该字体在收录时的完整授权链、适用的开源协议、许可原文哈希，以及本站是否提供原件。证明与许可原文并行使用：原文定权利，证明作凭证。",
+        "其他品牌厂商自行发布的授权协议，本站提供授权原文下载；该类字体的商用授权由各厂商决定，证明业务不涉及。"
+        '本站服务范围、免责与责任边界，以<a href="/legal/#legal-scope">法律声明</a>为准；'
+        "涉及出证范围、第三方内容与链接关系，请查阅该页完整条文。"
+        "字体收录、许可核对与条目结论，按固定流程执行；依据与说明见"
+        '<a href="/how/">我们怎么核验</a>。',
+        '本站为非盈利公开资源站，基础设施由文风云<span class="reg">®</span>提供。',
     ]
-    foot = "以上相关站点由文风体系独立运营。"
+    foot = "以上相关站点由文派生态体系独立运营。"
     return lead, paths, else_items, stance, foot
 
 
@@ -3648,24 +3693,14 @@ def _about_stance_html(stance):
 
 
 def page_about():
-    """本站地图：四条路径横排 + 站外两项 + 边界说明。骨架对齐用法。"""
-    lead, paths, else_items, stance, foot = _about_copy()
-    path_rows = []
-    for n, name, line, href, go, dev in paths:
-        path_rows.append(
-            '<a class="gate-path" href="%s">'
-            '<span class="gate-n">%s</span>'
-            '<span class="gate-path-name xxzt">%s</span>'
-            '<span class="gate-path-line">%s<span class="for-dev mono"> · %s</span></span>'
-            '<span class="gate-go">%s</span></a>'
-            % (e(href), e(n), e(name), e(line), e(dev), e(go))
-        )
+    """关于：导语 + 项目说明 + 相关链接。"""
+    lead, _paths, else_items, stance, foot = _about_copy()
     else_rows = []
     for name, host, line, href, go, dev, linked in else_items:
+        line_vis = line if "<" in line else e(line)
         line_html = (
-            '<span class="about-else-host">%s</span> · %s'
-            '<span class="for-dev mono"> · %s</span>'
-            % (e(host), e(line), e(dev))
+            '%s<span class="for-dev mono"> · %s · %s</span>'
+            % (line_vis, e(host), e(dev))
         )
         if linked:
             else_rows.append(
@@ -3685,16 +3720,20 @@ def page_about():
             )
     body = (
         page_head("关于", lead, crumbs=[(None, "关于")], dev="/about")
-        + '<div class="gate-paths" aria-label="本站四条路径">%s</div>' % "".join(path_rows)
-        + '<section class="about-stance" aria-label="边界">'
-        '<p class="about-mark">边界</p>'
+        + '<section class="about-stance" aria-label="项目说明">'
+        '<p class="about-mark">项目说明</p>'
         '<div class="about-stance-body">%s</div></section>' % _about_stance_html(stance)
-        + '<section class="about-else" aria-label="不在本站">'
+        + '<section class="about-else" aria-label="相关站点">'
         '<p class="about-mark">相关站点</p>'
         '<div class="gate-paths is-else">%s</div></section>' % "".join(else_rows)
         + '<p class="gate-foot-note">%s</p>' % e(foot)
     )
-    return layout("about", "关于", body, "/about", extra_head=pages_css("gate"), body_class="page-gate page-about", desc='wenfeng.org 提供四项服务：字体源文件下载、许可查询、缺字反馈、商用证明。' )
+    return layout(
+        "about", "关于", body, "/about",
+        extra_head=pages_css("gate"),
+        body_class="page-gate page-about",
+        desc="文派旗下开源商用字体服务平台",
+    )
 
 
 def page_lab_about(variant):

@@ -1,45 +1,45 @@
 {
- "norm": "Eqhi",
- "name": "嗷呜等高体",
- "en": "Howling EqHi Sans",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Eqhi",
- "weights": [
-  "Regular"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-eqhi"
+  "norm": "Eqhi",
+  "name": "嗷呜等高体",
+  "en": "Howling EqHi Sans",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/howlingFounts/EqHiSans/main/OFL.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "9e8ca677147dc71478a15095d63bfbc71f8869398938cea3e34791e731cc246e",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Eqhi",
+  "weights": [
+    "Regular"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-eqhi"
 }

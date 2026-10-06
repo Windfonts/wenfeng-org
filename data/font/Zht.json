@@ -1,53 +1,53 @@
 {
- "norm": "Zht",
- "name": "宙黑体",
- "en": "Zev Hei",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://github.com/chiron-fonts/zev-hei-tc",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "chiron-fonts",
- "foundrySlug": "chiron-fonts",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zht",
- "weights": [
-  "Regular",
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": "https://github.com/chiron-fonts/zev-hei-tc",
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "upstream",
-   "label": "上游 github.com",
-   "format": "git",
-   "href": "https://github.com/chiron-fonts/zev-hei-tc",
-   "sha256": null
+  "norm": "Zht",
+  "name": "宙黑体",
+  "en": "Zev Hei",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/chiron-fonts/zev-hei-tc/master/LICENSE.md",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "9159835517d023b142c9c7cac335447489577c9144c802bcfdae30d637393aa8",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
   },
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-zht"
+  "foundry": "chiron-fonts",
+  "foundrySlug": "chiron-fonts",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Zht",
+  "weights": [
+    "Regular",
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": "https://github.com/chiron-fonts/zev-hei-tc",
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "upstream",
+      "label": "上游 github.com",
+      "format": "git",
+      "href": "https://github.com/chiron-fonts/zev-hei-tc",
+      "sha256": null
+    },
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-zht"
 }

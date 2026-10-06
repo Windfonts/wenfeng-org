@@ -1,54 +1,54 @@
 {
- "norm": "Dqhk",
- "name": "大桥和楷书体",
- "en": "BR Wakaishotai",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
- "license": {
-  "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://github.com/BridgeRiver/BRWakaishotai",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "BridgeRiver",
- "foundrySlug": "bridgeriver",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Dqhk",
- "weights": [
-  "Light",
-  "Regular",
-  "Medium"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": "https://github.com/BridgeRiver/BRWakaishotai",
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "upstream",
-   "label": "上游 github.com",
-   "format": "git",
-   "href": "https://github.com/BridgeRiver/BRWakaishotai",
-   "sha256": null
+  "norm": "Dqhk",
+  "name": "大桥和楷书体",
+  "en": "BR Wakaishotai",
+  "aliases": [],
+  "licenseName": "SIL Open Font License 1.1",
+  "license": {
+    "spdx": "OFL-1.1",
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/BridgeRiver/BRWakaishotai/main/OFL.txt",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "1cb98ec70e2d2dc9bc4aa1790cde0cade008d7539ae052497085f148e0617dd6",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
   },
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-dqhk"
+  "foundry": "BridgeRiver",
+  "foundrySlug": "bridgeriver",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Dqhk",
+  "weights": [
+    "Light",
+    "Regular",
+    "Medium"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": "https://github.com/BridgeRiver/BRWakaishotai",
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "upstream",
+      "label": "上游 github.com",
+      "format": "git",
+      "href": "https://github.com/BridgeRiver/BRWakaishotai",
+      "sha256": null
+    },
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-dqhk"
 }

@@ -148,8 +148,27 @@ body.page-use .gate-path {
   border-bottom: 0;
   padding: var(--s-5) 0;
 }
+body.page-use .gate-path-line a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+body.page-use a.gate-go {
+  color: var(--ink);
+  text-decoration: none;
+}
+body.page-use a.gate-go:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+body.page-use .gate-band-body .quiet {
+  margin-top: var(--s-4);
+  font-size: var(--fs-13);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
 body.page-use .gate-paths + .gate-band {
-  margin-top: var(--s-10);
+  margin-top: var(--s-8);
   padding-top: var(--s-10);
   border-top: 0;
 }

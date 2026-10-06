@@ -1,45 +1,45 @@
 {
- "norm": "Nanotik",
- "name": "纳挼崩音黑",
- "en": "NanoTikBazHei",
- "aliases": [],
- "licenseName": "待核实",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Nanotik",
- "weights": [
-  "Bold"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-nanotik"
+  "norm": "Nanotik",
+  "name": "纳挼崩音黑",
+  "en": "NanoTikBazHei",
+  "aliases": [],
+  "licenseName": "待核实",
+  "license": {
+    "spdx": null,
+    "textState": "full",
+    "sourceUrl": "https://raw.githubusercontent.com/Hansha2011/NanoTikBazHei/main/readme.md",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "0e245a6e6f5feb05a837612ba6e058ab82abf98e5ea2843cd6d93a50de953875",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": false,
+  "shop": "https://app.windfonts.com/fonts/Nanotik",
+  "weights": [
+    "Bold"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-nanotik"
 }

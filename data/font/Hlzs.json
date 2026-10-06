@@ -1,45 +1,45 @@
 {
- "norm": "Hlzs",
- "name": "鸿雷拙书简体",
- "en": "Honglei Zhuoshu",
- "aliases": [],
- "licenseName": "免费商用",
- "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
-  "rfn": null
- },
- "foundry": "",
- "foundrySlug": "unknown",
- "offer": "missing",
- "slice": "planned",
- "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hlzs",
- "weights": [
-  "Regular"
- ],
- "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
-  "syncedAt": null,
-  "headSha": null
- },
- "lineage": null,
- "files": [
-  {
-   "kind": "slice",
-   "label": "网页切片包（自托管）",
-   "format": "zip",
-   "href": null,
-   "status": "planned",
-   "sha256": null
-  }
- ],
- "visitorNote": "",
- "family": "wenfeng-hlzs"
+  "norm": "Hlzs",
+  "name": "鸿雷拙书简体",
+  "en": "Honglei Zhuoshu",
+  "aliases": [],
+  "licenseName": "免费商用",
+  "license": {
+    "spdx": null,
+    "textState": "full",
+    "sourceUrl": "https://www.maoken.com/freefonts/17746.html",
+    "fetchedAt": "2026-10-04",
+    "textSha256": "5ec71b553de80b573a9365ff4cf95072799c83cbacbf2778e1066222200ffa48",
+    "verifiedAt": "2026-10-04",
+    "rfn": null
+  },
+  "foundry": "",
+  "foundrySlug": "unknown",
+  "offer": "missing",
+  "slice": "planned",
+  "distribution": true,
+  "shop": "https://app.windfonts.com/fonts/Hlzs",
+  "weights": [
+    "Regular"
+  ],
+  "mirror": {
+    "state": "absent",
+    "feicode": null,
+    "upstream": null,
+    "syncedAt": null,
+    "headSha": null
+  },
+  "lineage": null,
+  "files": [
+    {
+      "kind": "slice",
+      "label": "网页切片包（自托管）",
+      "format": "zip",
+      "href": null,
+      "status": "planned",
+      "sha256": null
+    }
+  ],
+  "visitorNote": "",
+  "family": "wenfeng-hlzs"
 }

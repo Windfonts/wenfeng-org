@@ -31,8 +31,8 @@
   }
 
   /* 字体 WebFont：目录名字照 APP 谱系列表。
-     包目录用 data-face-pack（OSS 原样大小写），子集用 data-face-subset，
-     族名改写成店面 data-face-family，样式只作用在名字（.lnm），状态/去向仍是界面字。 */
+     包目录 fonts-packages/{norm}/ 一律小写；过渡期仍会试 data-face-pack 原样。
+     子集用 data-face-subset；族名改写成店面 data-face-family；样式只作用在名字（.lnm）。 */
   var FACE_CSS_TPL = 'https://cn.windfonts.com/api/css?family={F}&weight=400&subset=zh-common&version=zh-common';
   var MISS_KEY = 'wf-webfont-miss-v2';
   var FACE_PACK_BASE = 'https://cn.windfonts.com/fonts-packages/';
@@ -50,9 +50,23 @@
     return parts.join(', ');
   }
   function packFolder(pack, norm) {
-    if (pack) return pack;
-    var n = String(norm || '');
-    return n ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+    var n = String(pack || norm || '').toLowerCase();
+    return n;
+  }
+  function packFolderTries(pack, norm, packAlt) {
+    var low = packFolder(pack, norm);
+    var tries = [];
+    var seen = {};
+    function add(x) {
+      x = String(x || '').trim();
+      if (!x || seen[x]) return;
+      seen[x] = 1;
+      tries.push(x);
+    }
+    add(low);
+    add(packAlt);
+    add(pack);
+    return tries;
   }
   function faceSelector(norm) {
     var n = String(norm).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
@@ -62,7 +76,7 @@
       '[data-face-norm="' + n + '"].fn-proof,' +
       '[data-face-norm="' + n + '"][data-face-slide]';
   }
-  function applyFontFace(norm, family, useFull, wname, pack, subset) {
+  function applyFontFace(norm, family, useFull, wname, pack, subset, packAlt) {
     if (!norm) return;
     if (useFull && facesLoaded[norm] === 'full') return;
     if (!useFull && facesLoaded[norm]) return;
@@ -83,15 +97,21 @@
       return '';
     }
     function loadPack(done) {
-      var folder = packFolder(pack, norm);
+      var folders = packFolderTries(pack, norm, packAlt);
       var seq = [];
       var seen = {};
       [wname || 'Regular', 'Regular', 'Normal', 'Light', 'Medium', 'Bold'].forEach(function (w) {
         if (w && !seen[w]) { seen[w] = 1; seq.push(w); }
       });
+      var urls = [];
+      folders.forEach(function (folder) {
+        seq.forEach(function (w) {
+          urls.push(FACE_PACK_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(w) + '/full/result.css');
+        });
+      });
       (function next(i) {
-        if (i >= seq.length) { if (done) done(); return; }
-        var url = FACE_PACK_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(seq[i]) + '/full/result.css';
+        if (i >= urls.length) { if (done) done(); return; }
+        var url = urls[i];
         fetch(url).then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
           return r.text();
@@ -145,24 +165,26 @@
         document.fonts.load('400 22px "' + famCss + '"', text).catch(function () {});
       } catch (e) {}
     }
-    var folder = packFolder(pack, norm);
+    var folders = packFolderTries(pack, norm, packAlt);
     var wn = wname || 'Regular';
     var sib = siblingWeight(wn);
     var tries = [];
-    function addTry(sub, w) {
+    function addTry(folder, sub, w) {
       tries.push(FACE_PACK_BASE + encodeURIComponent(folder) + '/' + encodeURIComponent(w) + '/' + sub + '/result.css');
     }
-    if (subset === 'full') {
-      addTry('full', wn);
-      if (sib) addTry('full', sib);
-      if (wn !== 'Regular') addTry('full', 'Regular');
-    } else {
-      addTry('zh-common', wn);
-      if (sib) addTry('zh-common', sib);
-      addTry('full', wn);
-      if (sib) addTry('full', sib);
-      if (wn !== 'Regular') addTry('full', 'Regular');
-    }
+    folders.forEach(function (folder) {
+      if (subset === 'full') {
+        addTry(folder, 'full', wn);
+        if (sib) addTry(folder, 'full', sib);
+        if (wn !== 'Regular') addTry(folder, 'full', 'Regular');
+      } else {
+        addTry(folder, 'zh-common', wn);
+        if (sib) addTry(folder, 'zh-common', sib);
+        addTry(folder, 'full', wn);
+        if (sib) addTry(folder, 'full', sib);
+        if (wn !== 'Regular') addTry(folder, 'full', 'Regular');
+      }
+    });
     if (family) tries.push(FACE_CSS_TPL.replace('{F}', encodeURIComponent(family)));
     (function next(i) {
       if (i >= tries.length) { markMiss(); return; }
@@ -189,7 +211,8 @@
       el.getAttribute('data-face-full') === '1',
       el.getAttribute('data-face-weight'),
       el.getAttribute('data-face-pack'),
-      el.getAttribute('data-face-subset')
+      el.getAttribute('data-face-subset'),
+      el.getAttribute('data-face-pack-alt')
     );
   }
   function loadVisibleFaces() {
@@ -940,29 +963,35 @@
 
   lazyPreviews();
 
-  /* 玄宗体包：首页主门 + 全站 .xxzt 标题 */
+  /* 玄宗体包：首页主门 + 全站 .xxzt 标题（优先小写包名，未合并时回退 Xxzt） */
   (function loadXxzt() {
     if (!document.querySelector('.lab-doors.is-prime, h1.xxzt, .xxzt')) return;
-    var fullCss = 'https://cn.windfonts.com/fonts-packages/Xxzt/Regular/full/result.css';
-    var started = false;
-    function loadPack() {
-      if (started) return;
-      started = true;
-      fetch(fullCss).then(function (r) {
+    var cssTries = [
+      'https://cn.windfonts.com/fonts-packages/xxzt/Regular/full/result.css',
+      'https://cn.windfonts.com/fonts-packages/Xxzt/Regular/full/result.css'
+    ];
+    function inject(css, url) {
+      var base = url.replace(/result\.css$/, '');
+      var st = document.createElement('style');
+      st.textContent = css
+        .replace(/url\("\.\//g, 'url("' + base)
+        .replace(/url\('\.\//g, "url('" + base);
+      document.head.appendChild(st);
+    }
+    (function next(i) {
+      if (i >= cssTries.length) {
+        applyFontFace('xxzt', 'wenfeng-xxzt', true, 'Regular', 'xxzt', 'full', 'Xxzt');
+        return;
+      }
+      var url = cssTries[i];
+      fetch(url).then(function (r) {
         if (!r.ok) throw new Error(String(r.status));
         return r.text();
       }).then(function (css) {
-        var base = fullCss.replace(/result\.css$/, '');
-        var st = document.createElement('style');
-        st.textContent = css
-          .replace(/url\("\.\//g, 'url("' + base)
-          .replace(/url\('\.\//g, "url('" + base);
-        document.head.appendChild(st);
-      }).catch(function () {
-        applyFontFace('xxzt', 'wenfeng-xxzt');
-      });
-    }
-    loadPack();
+        if (css.indexOf('@font-face') === -1) throw new Error('not css');
+        inject(css, url);
+      }).catch(function () { next(i + 1); });
+    })(0);
     var el = document.querySelector('.lab-find-live');
     if (!el) return;
     el.addEventListener('paste', function (ev) {

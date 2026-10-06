@@ -67,7 +67,8 @@
 }
 .page-source .lrow .lnm {
   grid-area: nm;
-  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-size: var(--fs-22);
+  font-weight: 400;
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -86,15 +87,14 @@
 .page-source .lrow .lmeta {
   grid-area: meta;
   margin: 0;
-  visibility: hidden;
   text-align: left;
   white-space: normal;
+  font-size: var(--fs-12);
+  color: var(--gray);
+  line-height: 1.35;
 }
+.page-source .lrow .lmeta.for-design { visibility: visible; }
 .page-source .lrow .lmeta.for-dev { display: none; }
-.page-source .lrow:hover .lmeta.for-design,
-[data-view="dev"] .page-source .lrow .lmeta.for-design {
-  visibility: visible;
-}
 [data-view="dev"] .page-source .lrow .lmeta.for-design { display: none; }
 [data-view="dev"] .page-source .lrow .lmeta.for-dev {
   display: block;
@@ -183,7 +183,10 @@
   }
   .page-source .lrow {
     grid-template-columns: minmax(0, 1fr) 3.25em;
-    grid-template-areas: "nm go" "st go";
+    grid-template-areas:
+      "nm go"
+      "meta go"
+      "st go";
   }
   .page-source .lrow .lnm { grid-area: nm; white-space: normal; }
   .page-source .lrow .lrel {
@@ -193,5 +196,6 @@
     width: auto;
   }
   .page-source .lrow .lgo { grid-area: go; }
-  .page-source .lrow .lmeta { display: none; }
+  .page-source .lrow .lmeta.for-design { display: block; visibility: visible; }
+  .page-source .lrow .lmeta.for-dev { display: none; }
 }

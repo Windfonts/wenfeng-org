@@ -5,12 +5,12 @@
 }
 
 .page-license-norm .page-mast {
-  margin-bottom: var(--s-5);
-  padding-bottom: var(--s-5);
+  margin-bottom: var(--s-8);
+  padding-bottom: var(--s-6);
 }
 
 .page-license-norm .page-mast .ph-lead {
-  margin-top: var(--s-3);
+  margin-top: var(--s-4);
   max-width: 34em;
 }
 
@@ -59,7 +59,7 @@
   margin: 0 0 var(--s-2);
   font-family: var(--font-mono);
   font-size: var(--fs-11);
-  font-weight: var(--fw-title);
+  font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--gray);
 }
@@ -121,7 +121,7 @@
   padding-right: var(--licn-gutter);
   font-family: var(--font-mono);
   font-size: var(--fs-12);
-  font-weight: var(--fw-title);
+  font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--gray);
 }
@@ -164,7 +164,7 @@
   min-height: 1.15em;
   font-family: var(--font-mono);
   font-size: var(--fs-11);
-  font-weight: var(--fw-title);
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--gray);
 }
@@ -214,6 +214,7 @@
   margin: 0 0 var(--s-2);
   font-family: var(--font-mono);
   font-size: var(--fs-11);
+  font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--gray);
 }
@@ -332,8 +333,21 @@
   font-size: var(--fs-12);
   color: var(--gray);
 }
-.page-license-norm .licn-how a { color: inherit; }
-.page-license-norm .licn-how a:hover { color: var(--ink); }
+.page-license-norm .licn-how a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-license-norm .licn-how a:hover { text-decoration: underline; }
+
+.page-license-norm .licn-acts .btn-text {
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-license-norm .licn-acts .btn-text:hover {
+  text-decoration: underline;
+  background: transparent;
+}
 
 @media (max-width: 900px) {
   .page-license-norm { --licn-gutter: var(--s-4); }
