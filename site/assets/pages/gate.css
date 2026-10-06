@@ -205,20 +205,21 @@ body.page-use .gate-api {
   letter-spacing: 0.06em;
   color: var(--gray);
 }
+/* 与全站 .code / APP 同底：--well，非 --fill */
 .gate-code {
   margin: var(--s-4) 0 0;
-  padding: var(--s-5);
+  padding: var(--s-4) var(--s-5);
   max-width: 100%;
   min-width: 0;
   overflow-x: auto;
   overflow-wrap: anywhere;
   white-space: pre-wrap;
-  background: var(--fill);
+  background: var(--well);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: var(--fs-13);
-  line-height: 1.55;
-  color: var(--ink);
+  line-height: 1.6;
+  color: var(--ink-2);
 }
 .gate-api {
   margin: 0;

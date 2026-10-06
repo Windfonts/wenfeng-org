@@ -1,4 +1,4 @@
-/* 字型档案 /source/{norm}/：经典档案馆版式 */
+/* 字型条目 /source/{norm}/：克制 · 准确 · 有证据；访客不用「卷宗」 */
 
 .page-font .page-mast {
   margin-bottom: var(--s-5);
@@ -38,8 +38,8 @@
 
 .page-font .fn-proof {
   margin: 0 0 var(--s-8);
-  padding: var(--s-6) 0;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  padding: var(--s-5) 0;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
   line-height: 1.5;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -110,6 +110,214 @@
   text-decoration: underline;
 }
 
+/* 领取：两行同构，右端墨钮 */
+.page-font .fn-take {
+  margin: 0 0 var(--s-8);
+}
+.page-font .fn-take-list {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.page-font .fn-take-row {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--s-5);
+  min-height: 3.5rem;
+  padding: var(--s-3) 0;
+}
+.page-font .fn-take-row + .fn-take-row,
+.page-font .fn-take-orig-note + .fn-take-row {
+  border-top: 1px solid var(--rule);
+}
+.page-font .fn-take-kind {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+.page-font .fn-take-info {
+  min-width: 0;
+  font-size: var(--fs-14);
+  color: var(--ink);
+  line-height: 1.4;
+}
+.page-font .fn-take-info.mono {
+  font-family: var(--font-mono);
+}
+.page-font .fn-take-info.is-mute {
+  font-family: inherit;
+  color: var(--ink-2);
+}
+.page-font .fn-take-row > .btn {
+  flex: 0 0 auto;
+  justify-self: end;
+}
+.page-font .fn-slice-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+}
+.page-font .fn-slice-inline .fn-slice {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.page-font .fn-slice-inline .tool-quiet {
+  margin: 0;
+}
+.page-font .fn-slice-inline .tool-actions {
+  margin: 0;
+}
+.page-font .fn-slice-inline .tool-quiet .tool-note,
+.page-font .fn-slice-inline .tool-legal {
+  display: none;
+}
+.page-font .fn-take-body {
+  grid-column: 2 / -1;
+  min-width: 0;
+}
+.page-font .fn-take-hint {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-13);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.page-font .fn-take-note {
+  margin: var(--s-4) 0 0;
+  font-size: var(--fs-13);
+  line-height: 1.55;
+  color: var(--gray);
+}
+.page-font .fn-take-row.is-gate {
+  align-items: start;
+  padding-top: var(--s-4);
+  padding-bottom: var(--s-4);
+}
+.page-font .fn-take-row.is-gate .fn-take-kind {
+  padding-top: 0.35rem;
+}
+
+
+/* 闸控：交包台吃满主栏 */
+.page-font .fn-take.is-gate {
+  padding-top: var(--s-2);
+}
+.page-font .fn-take.is-gate .fn-take-hint {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-14);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.page-font .fn-slice-block {
+  display: block;
+  width: 100%;
+}
+.page-font .fn-slice-block .fn-slice {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.page-font .fn-slice-block .tool-quiet {
+  margin: 0;
+}
+.page-font .fn-slice-block .tool-intake {
+  min-height: 6.5rem;
+  margin-bottom: var(--s-4);
+}
+.page-font .fn-take.is-gate .fn-take-note {
+  margin-top: var(--s-5);
+}
+
+
+
+
+.page-font .fn-take-orig-note {
+  margin: calc(-1 * var(--s-1)) 0 var(--s-2);
+  padding: 0 0 0 calc(3.75rem + var(--s-5));
+  border: 0;
+  font-size: var(--fs-12);
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.page-font .fn-take-howto {
+  margin-top: var(--s-7);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.page-font .fn-take-howto > .fn-label {
+  margin-bottom: var(--s-3);
+}
+.page-font .fn-take-howto .fn-take-note {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-14);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.page-font .fn-take-label {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  font-weight: var(--fw-title);
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+.page-font .fn-take-howto > .fn-take-label {
+  margin-top: var(--s-6);
+}
+.page-font .fn-take-howto > .fn-take-label:first-of-type {
+  margin-top: 0;
+}
+.page-font .fn-take-tabs {
+  margin: 0 0 var(--s-3);
+}
+.page-font .fn-take-tabs button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+/* 领取区代码块用全站 .code（APP 对齐）；此处只收紧间距 */
+.page-font .fn-take-howto .code {
+  margin: 0 0 var(--s-4);
+}
+.page-font .fn-take-panel[hidden] {
+  display: none;
+}
+.page-font .fn-take-panel .code {
+  margin-bottom: 0;
+}
+.page-font .fn-take-more {
+  margin: var(--s-4) 0 0;
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.page-font .fn-take-more a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .fn-take-more a:hover {
+  text-decoration: underline;
+}
+
+.page-font .fn-quiet-more {
+  margin: var(--s-7) 0 0;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-13);
+  color: var(--gray);
+}
+.page-font .fn-quiet-more a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .fn-quiet-more a:hover {
+  text-decoration: underline;
+}
+
 .page-font .fn-slice {
   margin: 0 0 var(--s-8);
   padding-top: var(--s-6);
@@ -168,26 +376,88 @@
   letter-spacing: 0.06em;
 }
 
-/* 侧栏：压过全站 kv 默认下划线与顶线 */
-.page-font .aside .kv-rows > div {
-  border-top: 0;
+
+/* 侧栏档案号 + 上标签下值，避免五条横排发扁 */
+.page-font .fn-dossier-id {
+  margin: 0 0 var(--s-4);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-22);
+  font-weight: var(--fw-title);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  overflow-wrap: anywhere;
 }
-.page-font .aside .kv-rows > div + div { border-top: 0; }
+.page-font .fn-dossier {
+  margin: 0;
+}
+.page-font .fn-dossier > div {
+  display: block;
+  padding: var(--s-3) 0;
+  border-top: 1px solid var(--rule);
+}
+.page-font .fn-dossier > div:first-child {
+  border-top: 0;
+  padding-top: var(--s-1);
+}
+.page-font .fn-dossier dt {
+  margin: 0 0 0.2em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  font-weight: var(--fw-body);
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+.page-font .fn-dossier dd {
+  margin: 0;
+  font-size: var(--fs-14);
+  line-height: 1.45;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.page-font .aside .fn-dossier a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .aside .fn-dossier a:hover {
+  text-decoration: underline;
+}
+.page-font .aside .fn-dossier a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--gray);
+}
+
 .page-font .aside a,
-.page-font .aside .kv-rows dd a:not(.btn),
 .page-font .fn-errata a {
   color: var(--ink);
   text-decoration: none;
   text-underline-offset: 0.18em;
 }
 .page-font .aside a:hover,
-.page-font .aside .kv-rows dd a:not(.btn):hover,
 .page-font .fn-errata a:hover {
   text-decoration: underline;
 }
 
+
 .page-font .fn-errata {
   margin-top: var(--s-8);
+}
+
+@media (max-width: 640px) {
+  .page-font .fn-take-row {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    row-gap: var(--s-2);
+    min-height: 0;
+    padding: var(--s-4) 0;
+  }
+  .page-font .fn-take-row > .btn,
+  .page-font .fn-slice-inline {
+    grid-column: 2;
+    justify-self: start;
+  }
 }
 
 @media (max-width: 900px) {

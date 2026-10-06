@@ -2162,14 +2162,14 @@
       "              <p class=\"us-prose for-dev mono\">whole folder · fonts.css intact · do not split</p>\n" +
       "              <pre class=\"us-code\">// functions.php 里排队引入\n" +
       "wp_enqueue_style(\n" +
-      "  'wenfeng-slice-xwwk',\n" +
-      "  get_theme_file_uri( '/fonts/wenfeng-slice-Xwwk/fonts.css' ),\n" +
+      "  'wenfeng-xwwk',\n" +
+      "  get_theme_file_uri( '/fonts/wenfeng-xwwk/fonts.css' ),\n" +
       "  array(),\n" +
       "  null\n" +
       ");\n" +
       "\n" +
       "/* 或在主题 style.css 顶部 */\n" +
-      "@import url( \"./fonts/wenfeng-slice-Xwwk/fonts.css\" );</pre>\n" +
+      "@import url( \"./fonts/wenfeng-xwwk/fonts.css\" );</pre>\n" +
       "            </div>\n" +
       "          </li>\n" +
       "          <li>\n" +
@@ -2203,12 +2203,12 @@
       "            <li><a href=\"/api/v1/fonts\"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>\n" +
       "            <li><a href=\"/api/v1/fonts?offer=source\"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>\n" +
       "            <li><a href=\"/api/v1/fonts?q=%E9%9C%9E%E9%B9%AD\"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>\n" +
-      "            <li><a href=\"/api/v1/fonts/Xwwk\"><code>GET /api/v1/fonts/Xwwk</code><span>一款 · 有 files</span></a></li>\n" +
-      "            <li><a href=\"/api/v1/fonts/Albbpht\"><code>GET /api/v1/fonts/Albbpht</code><span>files 为空</span></a></li>\n" +
-      "            <li><a href=\"/api/v1/licenses/Xwwk\"><code>GET /api/v1/licenses/Xwwk</code><span>许可原文</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/fonts/xwwk\"><code>GET /api/v1/fonts/xwwk</code><span>一款 · 有 files</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/fonts/albbpht\"><code>GET /api/v1/fonts/albbpht</code><span>files 为空</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/licenses/xwwk\"><code>GET /api/v1/licenses/xwwk</code><span>许可原文</span></a></li>\n" +
       "            <li><a href=\"/api/v1/foundries\"><code>GET /api/v1/foundries</code><span>厂商</span></a></li>\n" +
       "            <li><a href=\"/api/v1/certs\"><code>GET /api/v1/certs</code><span>可核验目录</span></a></li>\n" +
-      "            <li><a href=\"/api/v1/certs/Xwwk\"><code>GET /api/v1/certs/Xwwk</code><span>一款核验 JSON</span></a></li>\n" +
+      "            <li><a href=\"/api/v1/certs/xwwk\"><code>GET /api/v1/certs/xwwk</code><span>一款核验 JSON</span></a></li>\n" +
       "            <li><span class=\"api-row\"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>\n" +
       "          </ul>\n" +
       "          <pre class=\"us-code\">GET /api/v1/fonts/{norm}\n" +
@@ -3329,7 +3329,7 @@
     if (!ctx || !el._sliceOk) return;
     var st = el._sliceState || {};
     var name = ctx.f.name || ctx.f.norm;
-    var zipName = 'wenfeng-slice-' + ctx.f.norm + '-proto.zip';
+    var zipName = 'wenfeng-' + ctx.f.norm + '-proto.zip';
     var readme =
       '文风切片包 · ' + name + '\n' +
       '样张包，非正式切片。没有把原件再切一遍。\n\n' +

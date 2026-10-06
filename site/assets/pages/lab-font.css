@@ -1,0 +1,62 @@
+/* 条目对照旗标与丙通栏；领取样式在 source-norm。 */
+
+.lab-font-page .lab-flag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-12);
+  color: var(--gray);
+}
+.lab-font-page .lab-flag a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.lab-font-page .lab-flag a:hover { text-decoration: underline; }
+.lab-font-page .lf-demo.is-on {
+  color: var(--ink);
+  font-weight: var(--fw-title);
+}
+
+.lab-font-page .fn-main.is-solo {
+  max-width: 42rem;
+}
+.lab-font-page .lf-meta {
+  margin: 0 0 var(--s-8);
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.lab-font-page .lf-meta .kv-rows {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: var(--s-3) var(--s-6);
+}
+.lab-font-page .lf-meta .kv-rows > div {
+  display: block;
+  border: 0;
+  padding: 0;
+}
+.lab-font-page .lf-meta .kv-rows dt {
+  margin: 0 0 0.15em;
+  font-size: var(--fs-11);
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+.lab-font-page .lf-meta .kv-rows dd {
+  margin: 0;
+  font-size: var(--fs-13);
+}
+
+.lab-font-page.lab-font-b .fn-proof {
+  font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+  padding: var(--s-5) 0;
+}
+
+@media (max-width: 900px) {
+  .lab-font-page .lf-meta .kv-rows {
+    grid-template-columns: 1fr 1fr;
+  }
+}

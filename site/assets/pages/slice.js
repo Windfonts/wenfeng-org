@@ -1,6 +1,39 @@
-/* 切片工具：本机核验官方 zip，通过后领取样张包。 */
+/* 切片工具：本机核验官方 zip，通过后领取样张包。兼管条目页代码复制与示例标签。 */
 (function () {
   'use strict';
+
+  document.addEventListener('click', function (ev) {
+    var tab = ev.target.closest('[data-fn-tab]');
+    if (tab) {
+      var root = tab.closest('[data-fn-tabs]');
+      var howto = tab.closest('.fn-take-howto') || (root && root.parentElement);
+      if (!howto) return;
+      ev.preventDefault();
+      var id = tab.getAttribute('data-fn-tab');
+      howto.querySelectorAll('[data-fn-tab]').forEach(function (b) {
+        var on = b === tab;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      howto.querySelectorAll('[data-fn-panel]').forEach(function (p) {
+        if (p.getAttribute('data-fn-panel') === id) p.removeAttribute('hidden');
+        else p.setAttribute('hidden', '');
+      });
+      return;
+    }
+    var btn = ev.target.closest('[data-fn-copy]');
+    if (!btn) return;
+    var wrap = btn.closest('.code');
+    var pre = wrap && wrap.querySelector('pre');
+    if (!pre || !navigator.clipboard) return;
+    ev.preventDefault();
+    navigator.clipboard.writeText(pre.textContent || '').then(function () {
+      var old = btn.textContent;
+      btn.textContent = '已复制';
+      setTimeout(function () { btn.textContent = old; }, 1500);
+    });
+  });
+
   var el = document.getElementById('slice');
   if (!el) return;
 
@@ -231,7 +264,7 @@
   function packSlot(f, phase) {
     var packName = '文风切片包 · ' + esc(f.name);
     if (phase === 'ok' || phase === 'ready') {
-      return '<p class="tool-pack-name">' + packName + appendDev('wenfeng-slice') + '</p>' +
+      return '<p class="tool-pack-name">' + packName + appendDev('wenfeng') + '</p>' +
         '<p class="tool-note">woff2 与 CSS，供自托管。</p>' +
         '<p class="tool-actions">' +
         '<button type="button" class="btn btn-ink btn-take" data-slice-download>' +
@@ -242,7 +275,7 @@
         '<p class="tool-note">正在装配即用字库。</p>' +
         '<div class="tool-slice-bar" aria-hidden="true"></div>';
     }
-    return '<p class="tool-pack-name">' + packName + appendDev('wenfeng-slice') + '</p>' +
+    return '<p class="tool-pack-name">' + packName + appendDev('wenfeng') + '</p>' +
       '<p class="tool-note">通过后在此领取。</p>';
   }
 
@@ -343,6 +376,17 @@
       '</div>';
   }
 
+
+  function revealHowto() {
+    var d = document.getElementById('howto');
+    if (!d) return;
+    try {
+      d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } catch (e) {
+      d.scrollIntoView(true);
+    }
+  }
+
   function paint(html) {
     var body = document.querySelector('[data-slice-body]');
     if (body) body.innerHTML = html;
@@ -375,6 +419,7 @@
       setTimeout(function () {
         el._sliceOk = true;
         paint(board(ctx.f, 'ok', judged.st, ctx.gate, ctx.mode));
+        revealHowto();
       }, 1600);
     }).catch(function (err) {
       paint(board(ctxOf().f, 'bad', { reason: '文件读不出来：' + err.message, name: file.name }, ctxOf().gate, ctxOf().mode));
@@ -383,7 +428,7 @@
 
   function downloadProto(ctx, st, note) {
     var name = ctx.f.name || ctx.f.norm;
-    var zipName = 'wenfeng-slice-' + ctx.f.norm + '-proto.zip';
+    var zipName = 'wenfeng-' + ctx.f.norm + '-proto.zip';
     var readme =
       '文风切片包 · ' + name + '\n' +
       '样张包。核验通过后领取，生产环境换成真实 woff2。\n\n' +
@@ -471,7 +516,7 @@
           return { name: 'woff2/' + rel.replace(/^\.\//, ''), body: new Uint8Array(buf) };
         });
       })).then(function (bins) {
-        saveZip('wenfeng-slice-' + ctx.f.norm + '.zip', [
+        saveZip('wenfeng-' + ctx.f.norm + '.zip', [
           { name: 'README.txt', body: readme },
           { name: 'fonts.css', body: fontsCss }
         ].concat(bins));
@@ -515,6 +560,7 @@
     var file = ev.dataTransfer && ev.dataTransfer.files && ev.dataTransfer.files[0];
     if (file) runFile(file);
   });
+
   var boot = ctxOf();
   if (boot.mode === 'open') el._sliceOk = true;
   paint(board(boot.f, boot.mode === 'open' ? 'ready' : 'idle', null, boot.gate, boot.mode));

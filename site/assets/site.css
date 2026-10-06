@@ -348,7 +348,55 @@ a.task.is-ink:hover { background: var(--ink-hover); }
 .sec-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr); gap: var(--s-6) var(--s-12); }
 .sec-grid h2 { font-size: var(--fs-28); font-weight: var(--fw-title); letter-spacing: -0.02em; line-height: var(--lh-snug); }
 .sec-grid .idx { display: block; font-family: var(--font-mono); font-size: var(--fs-12); color: var(--gray-2); margin-bottom: var(--s-2); }
-.code { margin: var(--s-4) 0; padding: var(--s-4) var(--s-5); border-radius: var(--radius-sm); background: var(--well); font-size: var(--fs-13); line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); }
+/* 代码块：对齐 APP components.css .code（--well 底、右上角复制） */
+.code {
+  --code-c: #6e7781;
+  --code-k: #0969da;
+  --code-a: #cf222e;
+  --code-s: #1a7f37;
+  position: relative;
+  margin: var(--s-4) 0;
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--radius-sm);
+  background: var(--well);
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  line-height: 1.6;
+  overflow: auto;
+  color: var(--ink);
+}
+.code:has(.copy),
+.code:has(.copy) pre { padding-right: 6rem; }
+.code pre {
+  margin: 0;
+  color: var(--ink-2);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font: inherit;
+}
+.code .k { color: var(--code-k); font-weight: var(--fw-title); }
+.code .k-a { color: var(--code-a); }
+.code .k-s { color: var(--code-s); }
+.code .k-c { color: var(--code-c); font-weight: var(--fw-body); }
+.code .copy {
+  position: absolute;
+  top: var(--s-2);
+  right: var(--s-3);
+  z-index: 1;
+  margin: 0;
+  border: 0;
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  background: var(--paper);
+  color: var(--gray);
+  font-size: var(--fs-12);
+  cursor: pointer;
+}
+.code .copy:hover { color: var(--ink); background: var(--surface); }
+.code-inline { background: var(--well); padding: 0.05em 0.4em; border-radius: 6px; font-size: 0.9em; }
 .license-text { padding: var(--s-6); border-radius: var(--radius); background: var(--surface); font-size: var(--fs-13); line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
 .form { display: grid; gap: var(--s-4); max-width: 40rem; }
 .form label { display: grid; gap: var(--s-2); font-size: var(--fs-13); color: var(--gray); }

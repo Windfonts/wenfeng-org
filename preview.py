@@ -307,6 +307,12 @@ def _hay(font):
 
 def _public_font(font):
     out = dict(font)
+    # 对外 norm 一律小写（与站内路由 / wenfeng-* 品牌名一致）
+    out["norm"] = str(out.get("norm") or "").lower()
+    shop = out.get("shop") or ""
+    if "/fonts/" in shop:
+        # 店面 URL 路径段也用小写（两侧都通；与对外 norm 一致）
+        out["shop"] = re.sub(r"(/fonts/)([^/?#]+)", lambda m: m.group(1) + m.group(2).lower(), shop, count=1)
     out["catalogName"] = _catalog_name(font)
     out["originalName"] = font.get("name")
     out["canAttest"] = _can_attest(font)
@@ -698,7 +704,7 @@ class Handler(SimpleHTTPRequestHandler):
             if norm:
                 hit = next((f for f in fonts if str(f.get("norm") or "").lower() == norm.lower()), None)
                 if not hit:
-                    self._send_json({"error": "not_found", "norm": norm}, 404)
+                    self._send_json({"error": "not_found", "norm": str(norm).lower()}, 404)
                     return True
                 self._send_json(_public_font(hit))
                 return True
@@ -717,13 +723,14 @@ class Handler(SimpleHTTPRequestHandler):
             licenses = _load_licenses()
             norm = m.group(1)
             if not norm:
-                self._send_json({"fonts": sorted(licenses.keys())})
+                self._send_json({"fonts": sorted(str(k).lower() for k in licenses.keys())})
                 return True
-            if norm not in licenses:
-                self._send_json({"error": "not_found", "norm": norm}, 404)
+            lic_key = next((k for k in licenses if str(k).lower() == norm.lower()), None)
+            if not lic_key:
+                self._send_json({"error": "not_found", "norm": norm.lower()}, 404)
                 return True
-            payload = dict(licenses[norm])
-            payload["norm"] = norm
+            payload = dict(licenses[lic_key])
+            payload["norm"] = norm.lower()
             payload["comment"] = _load_samples().get("comment")
             self._send_json(payload)
             return True
@@ -741,7 +748,7 @@ class Handler(SimpleHTTPRequestHandler):
                         "fonts": [],
                     },
                 )
-                groups[slug]["fonts"].append(font.get("norm"))
+                groups[slug]["fonts"].append(str(font.get("norm") or "").lower())
             slug = m.group(1)
             if slug:
                 if slug not in groups:
@@ -922,7 +929,7 @@ class Handler(SimpleHTTPRequestHandler):
                 return True
             hit = next((f for f in fonts if str(f.get("norm") or "").lower() == str(norm).lower()), None)
             if not hit:
-                self._send_json({"error": "not_found", "norm": norm}, 404)
+                self._send_json({"error": "not_found", "norm": str(norm).lower()}, 404)
                 return True
             cert = _build_attestation(hit, licenses, holder=holder, usage=usage, uscc=uscc)
             if not cert:

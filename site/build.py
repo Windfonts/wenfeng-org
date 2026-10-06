@@ -1876,7 +1876,7 @@ def page_lab_font(fonts, variant, demo="xwwk"):
             '%s%s%s</div>%s</div>'
             % (
                 head, b["acts_doc"],
-                b["take"], b["proof"], b["more_quiet"],
+                b["proof"], b["take"], b["more_quiet"],
                 aside("这一款", b["dossier"]),
             )
         )
@@ -1889,7 +1889,7 @@ def page_lab_font(fonts, variant, demo="xwwk"):
             '%s%s%s%s</div>'
             % (
                 head, b["acts_doc"],
-                meta, b["take"], b["proof"], b["more_quiet"],
+                meta, b["proof"], b["take"], b["more_quiet"],
             )
         )
 
