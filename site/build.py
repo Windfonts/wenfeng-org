@@ -3141,12 +3141,12 @@ def page_how():
         ], words=True),
     ).replace('<aside class="aside">', '<aside class="aside" id="how-status">', 1)
     body = page_head(
-        "怎么核",
+        "我们怎么核验",
         "文风只做两件事：把源文件交给你，把许可说清楚。收进目录要先过这三条。",
-        crumbs=[(None, "怎么核")],
+        crumbs=[(None, "我们怎么核验")],
         dev="/how",
     ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (main, side)
-    return _read_layout("how", "怎么核", body, "/how")
+    return _read_layout("how", "我们怎么核验", body, "/how")
 
 
 def page_legal():
