@@ -66,11 +66,11 @@ NAV = [("/source/", "目录", ("source", "foundry")), ("/license/", "授权", ("
 # D-05：lab 与活页现稿同这一套，给人对比。
 NAV_LAB = NAV
 FOOT_REST = [
-    ("/slice/", "字体切片", "核验后领取", ""),
+    ("/slice/", "字体切片", "即用字库", ""),
     ("/source/", "存档目录", "源文件索引", ""),
     ("/v/", "如何查询", "证书编号", ""),
     ("/legal/", "法律声明", "操作说明", ""),
-    ("https://icons.motucloud.com/", "icons.motucloud.com", "墨图爱可", ""),
+    ("https://icons.motucloud.com/", "字体图标", "墨图爱可", ""),
     ("https://app.windfonts.com/", "网页字体", "样张与选字", ""),
     ("/api/v1/certs", "证明 API", "GET certs", "for-dev"),
     ("/api/v1/fonts", "目录 API", "GET fonts", "for-dev"),
@@ -1001,11 +1001,41 @@ def first_file_href(f):
     return None
 
 
+def github_archive_zip(href):
+    if not href:
+        return None
+    from urllib.parse import urlparse
+    try:
+        u = urlparse(href)
+    except Exception:
+        return None
+    host = re.sub(r"^www\.", "", u.netloc or "")
+    parts = [p for p in (u.path or "").split("/") if p]
+    if host != "github.com" or len(parts) < 2:
+        return None
+    owner, repo = parts[0], parts[1]
+    if repo.endswith(".git"):
+        repo = repo[:-4]
+    return "https://github.com/%s/%s/archive/HEAD.zip" % (owner, repo)
+
+
 def primary_file(f):
     arch = file_of(f, "archive")
     if arch and arch.get("href") and not arch.get("staged"):
         return arch
-    return first_file_href(f)
+    first = first_file_href(f)
+    if first and first.get("kind") not in ("upstream", "git"):
+        return first
+    if can_take(f):
+        z = github_archive_zip(upstream_href(f))
+        if z:
+            return {
+                "kind": "archive",
+                "label": (f.get("name") or f.get("norm") or "源文件") + " 源文件",
+                "format": "zip",
+                "href": z,
+            }
+    return None
 
 
 def primary_label(file):
@@ -1280,11 +1310,16 @@ def oss_pack(f):
 
 
 def oss_webfont_css(f):
-    """网页字体入口。优先用 slice/index.json 里的 cssUrl，否则用已探测的 result.css。不编 zip。"""
+    """条目页不公开禁再分发款的 CSS 直链。领取走 /slice/{norm}/。"""
     if f.get("distribution") is False:
         return None
+    return webfont_css_url(f)
+
+
+def webfont_css_url(f):
+    """OSS 即用字库 result.css。店面上架款按 fonts-packages/{Norm}/ 取。"""
     norm_key = str(f.get("norm") or "").lower()
-    subset = WEBFONT_SUBSET.get(norm_key)
+    subset = WEBFONT_SUBSET.get(norm_key) or "zh-common"
     weights = f.get("weights") or ["Regular"]
     weight = "Regular" if "Regular" in weights else (weights[0] if weights else "Regular")
     css_items = oss_pack(f).get("sliceCss") or []
@@ -1306,8 +1341,6 @@ def oss_webfont_css(f):
             return it["url"]
     if css_items and css_items[0].get("url"):
         return css_items[0]["url"]
-    if not subset:
-        return None
     canon = WEBFONT_CANON.get(norm_key) or f["norm"]
     return "https://cn.windfonts.com/fonts-packages/%s/%s/%s/result.css" % (
         canon, weight, subset)
@@ -1324,16 +1357,7 @@ def font_more(f, verb):
             return
         items.append((title, desc, href))
 
-    slice_fl = file_of(f, "slice")
-    slice_href = slice_fl.get("href") if slice_fl else None
-    if slice_href:
-        add("切片包", "对象存储上的包。从本页打开再领取。", slice_href)
-    elif slice_gate_of(f):
-        add("领取切片", "放入官方未解压 zip，核验后领取。", "/slice/%s/" % norm)
-    else:
-        css = oss_webfont_css(f)
-        if css:
-            add("网页字体", "样式表和 woff2 按字重引用。", css)
+    add("即用字库", "woff2 与 CSS，点进领取。", "/slice/%s/" % norm)
     if f.get("shop"):
         add("在线选字", "样张和选字。", f["shop"])
     add("报缺字", "缺字形、缺收录或勘误，都从一个入口报。", "/gap/?norm=%s" % norm)
@@ -1352,7 +1376,8 @@ def page_font(f):
     st_label = STATUS[st][0]
     note = (f.get("visitorNote") or "").strip() or verb["note"]
     archive = file_of(f, "archive")
-    if archive and archive.get("staged") and "稍后" not in note:
+    up = upstream_href(f)
+    if archive and archive.get("staged") and "稍后" not in note and not github_archive_zip(up):
         note = "归档包稍后提供。" + note
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
@@ -1362,7 +1387,6 @@ def page_font(f):
     text_cell = font_text_cell(f)
     arch_cell = font_archive_cell(f)
     mirror_state = (f.get("mirror") or {}).get("state") or ""
-    up = upstream_href(f)
     face = f.get("family") or ""
     face_attrs = face_attrs_of(f, require_pack=False)
 
@@ -2718,194 +2742,157 @@ def page_lookup():
     )
 
 
-def slice_gate_of(f):
-    if not f or not f.get("sliceGate") or not f.get("sliceGate", {}).get("enabled"):
+def origin_for_gate(f):
+    cands = []
+    for u in (upstream(f), lic(f).get("sourceUrl")):
+        if not u or not str(u).startswith("http"):
+            continue
+        u = str(u)
+        if "openfontlicense.org" in u:
+            continue
+        m = re.match(r"https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/", u)
+        if m:
+            u = "https://github.com/%s/%s" % (m.group(1), m.group(2))
+        if u not in cands:
+            cands.append(u)
+    if not cands:
         return None
-    g = f["sliceGate"]
-    return {
-        "enabled": True,
-        "accept": g.get("accept") or ["zip"],
-        "minBytes": g.get("minBytes", 20480),
-        "nameHints": g.get("nameHints") or [],
-        "sha256": g.get("sha256"),
-        "origin": g.get("origin")
-    }
+    return {"href": cands[0], "label": f.get("foundry") or "出处"}
+
+
+def slice_hints(f):
+    hints = []
+    extra = tuple(f.get("aliases") or ())
+    for x in (f.get("name"), f.get("en"), f.get("norm")) + extra:
+        if x and x not in hints:
+            hints.append(x)
+    blob = " ".join([f.get("name") or "", f.get("en") or "", f.get("foundry") or ""])
+    if re.search(r"阿里|Alibaba|PuHui|普惠", blob, re.I):
+        for x in ("Alibaba", "PuHui", "普惠"):
+            if x not in hints:
+                hints.append(x)
+    return hints
+
+
+def slice_gate_of(f):
+    if not f:
+        return None
+    g = f.get("sliceGate")
+    if g and g.get("enabled"):
+        return {
+            "enabled": True,
+            "accept": g.get("accept") or ["zip"],
+            "minBytes": g.get("minBytes", 20480),
+            "nameHints": g.get("nameHints") or slice_hints(f),
+            "sha256": g.get("sha256"),
+            "origin": g.get("origin") or origin_for_gate(f),
+        }
+    if is_gated(f):
+        return {
+            "enabled": True,
+            "accept": ["zip"],
+            "minBytes": 20480,
+            "nameHints": slice_hints(f),
+            "sha256": None,
+            "origin": origin_for_gate(f),
+        }
+    return None
 
 
 def page_slices(fonts):
-    gated = [f for f in fonts if slice_gate_of(f)]
-    planned = [f for f in fonts if f.get("slice") in ("planned", "ready")]
-
-    planned_html = ""
-    if planned:
-        planned_html = (
-            '<p class="tool-note">开源可再分发的网页字体在 '
-            '<code>cn.windfonts.com/fonts-packages</code>。'
-            "单独的切片 zip 还没有可切片的字体，这里不放直链。</p>"
-        )
-
-    gated_html = ""
-    if gated:
-        items = []
-        for f in gated:
-            attrs = face_attrs_of(f)
-            nm_cls = "tool-index-name lnm" if attrs else "tool-index-name"
-            items.append(
-                '<li><a class="tool-index-row"%s href="/slice/%s/">'
-                '<span class="%s">%s</span>'
-                '<span class="tool-index-meta">%s</span>'
-                '<span class="tool-index-go">领取</span>'
-                '</a></li>'
-                % (
-                    attrs, e(f["norm"]),
-                    nm_cls, e(wf(f)),
-                    e(f.get("foundry") or "未标注"),
-                )
-            )
-        gated_html = '<ul class="tool-index">%s</ul>' % "".join(items)
-    else:
-        gated_html = (
-            '<p class="tool-note">目录里还没有需要核验原包的款。</p>'
-            '<span class="for-dev mono"> · sliceGate = 0</span>'
-        )
-
+    n = len(fonts)
+    rows = index_rows(
+        fonts,
+        go=lambda _f: ("", False),
+        href_of=lambda f: "/slice/%s/" % f["norm"],
+        rel_of=lambda _f: "",
+    )
     body = page_head(
         "切片",
-        "不允许再分发的免费商用字体，本站不提供文件。放入官方 zip，核验通过后领取切片包。文件不离开本机。",
+        "即用字库，点进一款领取。解压后引入 fonts.css。",
         crumbs=[(None, "切片")],
-        kicker="工具",
-        dev="/slice · local hash · no upload",
+        kicker="领取",
+        dev="/slice · fonts[]=%d" % n,
     )
     body += (
-        '<div class="src-layout"><div class="src-main">'
-        '<ol class="read-steps-inline">'
-        '<li><span>01</span><div>'
-        '<strong>原包</strong>'
-        '<p>尚未解压的官方 zip</p></div></li>'
-        '<li><span>02</span><div>'
-        '<strong>核验</strong>'
-        '<p>在浏览器里计算整包文件指纹<span class="for-dev mono"> · SHA-256</span></p></div></li>'
-        '<li><span>03</span><div>'
-        '<strong>切片包</strong>'
-        '<p>woff2 与 CSS，供自托管</p></div></li>'
-        '</ol>'
-        '<p class="count-line">'
-        '<strong>%d</strong> 款上传原包核验后领取</p>'
-        '%s%s</div>%s</div>'
+        '<div class="src-layout">'
+        '<div class="src-main">'
+        '<div class="src-band">%s<p class="count" data-count></p></div>'
+        '%s</div>'
+        '%s</div>'
         % (
-            len(gated), gated_html, planned_html,
+            search(action="/slice/", live=True),
+            rows,
             aside(
-                "开源",
-                '<p class="read-p">开源字体不必走核验，到'
-                '<a href="/source/">目录</a>直接拿原件。</p>',
+                "说明",
+                '<p class="read-p">目录不区分能不能下。进一款以后，工具会给出领取方式。</p>'
+                '<p class="read-p">开源切片直接下载。其余先交官方原包，这是免责核验，随后领取即用字库。</p>'
+                '<p class="read-p">原件不离开本机。包内注释里的 '
+                '<code>https://wenfeng.org/license</code> 要留着。</p>',
             ),
         )
     )
-    return layout("slice", "切片", body, "/slice", extra_head=pages_css("slice"), body_class="page-slices")
+    return layout(
+        "slice", "切片", body, "/slice",
+        extra_head=pages_css("slice") + "\n" + pages_css("source"),
+        body_class="page-slices",
+    )
 
 
 def page_slice(f, fonts=None):
-    gate = slice_gate_of(f)
-
-    if gate:
-        lead = "从%s取得的官方 zip，尚未解压。核验通过后领取切片包。" % e(f.get("foundry") or "厂商")
-        origin_html = ""
-        if gate.get("origin") and gate["origin"].get("href"):
-            orig_href = gate["origin"]["href"]
-            is_http = orig_href.startswith("http://") or orig_href.startswith("https://")
-            attrs = " target=\"_blank\" rel=\"noopener noreferrer\"" if is_http else ""
-            origin_html = (
-                '<p class="tool-origin">原包在<a href="%s"%s>%s</a>取。</p>'
-                % (
-                    e(orig_href), attrs, e(gate["origin"].get("label") or "出处"),
-                )
-            )
-        inner = (
-            '<div data-slice-body>'
-            '<div class="tool-board" aria-live="polite">'
-            '<section class="tool-stage">'
-            '<p class="tool-idx">01</p>'
-            '<div class="tool-slot">'
-            '<h2>原包</h2>'
-            '<label class="tool-intake" data-slice-drop>'
-            '<input class="sr-only" type="file" data-slice-input accept=".zip,application/zip">'
-            '<span class="tool-intake-kicker">官方 zip</span>'
-            '<span class="tool-intake-title">放入尚未解压的原包</span>'
-            '<span class="tool-intake-meta">拖入此栏，或点这里选择</span>'
-            '</label>'
-            '%s'
-            '</div>'
-            '</section>'
-            '<section class="tool-stage is-wait">'
-            '<p class="tool-idx">02</p>'
-            '<div class="tool-slot">'
-            '<h2>核验</h2>'
-            '<p class="tool-note">放入原包后计算整包文件指纹（SHA-256）。体积只作预检。'
-            '<span class="for-dev mono"> · SHA-256</span></p></div>'
-            '</section>'
-            '<section class="tool-stage is-lock">'
-            '<p class="tool-idx">03</p>'
-            '<div class="tool-slot">'
-            '<h2>切片包</h2>'
-            '<p class="tool-pack-name">文风切片包 · %s</p>'
-            '<p class="tool-note">核验通过后在此领取。</p></div>'
-            '</section>'
-            '</div>'
-            '</div>'
-            % (origin_html, e(f["name"]))
+    gated = is_gated(f)
+    mode = "gate" if gated else "open"
+    gate = slice_gate_of(f) or {
+        "accept": ["zip"],
+        "minBytes": 20480,
+        "nameHints": slice_hints(f),
+        "sha256": None,
+        "origin": origin_for_gate(f),
+    }
+    pack_css = webfont_css_url(f)
+    if gated:
+        lead = "交官方尚未解压的 zip，核验后领取即用字库。原件不离开本机。"
+        legal = (
+            "交原包是免责核验：确认你持有官方发行件。随后领取已上架的即用字库，"
+            "不把原件再切一遍，也不构成再分发授权。"
         )
-        gate_attrs = (
-            ' id="slice-gate"'
-            ' data-norm="%s"'
-            ' data-name="%s"'
-            ' data-en="%s"'
-            ' data-wf="%s"'
-            ' data-foundry="%s"'
-            ' data-min="%d"'
-            ' data-accept="%s"'
-            ' data-hints="%s"'
-            ' data-sha256="%s"'
-            % (
-                e(f["norm"]), e(f["name"]), e(f.get("en") or ""),
-                e(wf(f)), e(f.get("foundry") or ""),
-                gate.get("minBytes", 20480),
-                e(",".join(gate.get("accept", ["zip"]))),
-                e(",".join(gate.get("nameHints", []))),
-                e(gate.get("sha256") or "")
-            )
-        )
-        if gate.get("origin"):
-            gate_attrs += ' data-origin="%s" data-origin-label="%s"' % (
-                e(gate["origin"].get("href") or ""), e(gate["origin"].get("label") or "")
-            )
     else:
-        lead = "这一款开源可再分发，不必核验。"
-        gate_attrs = ""
-        inner = (
-            '<div class="tool-board">'
-            '<section class="tool-stage is-lock">'
-            '<p class="tool-idx">01</p>'
-            '<div class="tool-slot">'
-            '<h2>原包</h2>'
-            '<p class="tool-note">开源可再分发，不必放入原包。</p></div>'
-            '</section>'
-            '<section class="tool-stage is-lock">'
-            '<p class="tool-idx">02</p>'
-            '<div class="tool-slot">'
-            '<h2>核验</h2>'
-            '<p class="tool-note">本站不核对此款原包。</p></div>'
-            '</section>'
-            '<section class="tool-stage">'
-            '<p class="tool-idx">03</p>'
-            '<div class="tool-slot">'
-            '<h2>切片包</h2>'
-            '<p class="tool-pack-name">不必核验原包</p>'
-            '<p class="tool-note">网页字体在 cn.windfonts.com。单独的切片包还没有可领取的字体，不放直链。</p>'
-            '<p class="tool-actions"><a class="btn btn-ink btn-take" href="/source/%s/">回条目</a></p>'
-            '</div>'
-            '</section>'
-            '</div>'
-            % e(f["norm"])
+        lead = "开源切片，可直接领取。woff2 与 CSS，供自托管。"
+        legal = (
+            "开源切片按许可原文领取。解压后引入 fonts.css，"
+            "注释里的 https://wenfeng.org/license 要留着。"
+        )
+
+    gate_attrs = (
+        ' id="slice-gate"'
+        ' data-mode="%s"'
+        ' data-norm="%s"'
+        ' data-name="%s"'
+        ' data-en="%s"'
+        ' data-wf="%s"'
+        ' data-foundry="%s"'
+        ' data-min="%d"'
+        ' data-accept="%s"'
+        ' data-hints="%s"'
+        ' data-sha256="%s"'
+        ' data-pack-css="%s"'
+        ' data-comment="%s"'
+        % (
+            mode,
+            e(f["norm"]), e(f["name"]), e(f.get("en") or ""),
+            e(wf(f)), e(f.get("foundry") or ""),
+            gate.get("minBytes", 20480),
+            e(",".join(gate.get("accept") or ["zip"])),
+            e(",".join(gate.get("nameHints") or [])),
+            e(gate.get("sha256") or ""),
+            e(pack_css or ""),
+            e(COMMENT),
+        )
+    )
+    origin = gate.get("origin") or {}
+    if origin.get("href"):
+        gate_attrs += ' data-origin="%s" data-origin-label="%s"' % (
+            e(origin.get("href") or ""), e(origin.get("label") or ""),
         )
 
     meta_parts = [e(f["name"])]
@@ -2913,74 +2900,49 @@ def page_slice(f, fonts=None):
         meta_parts.append(e(f["en"]))
     if f.get("foundry"):
         meta_parts.append(e(f["foundry"]))
-    face_meta = " · ".join(meta_parts)
-
-    gated_fonts = [x for x in (fonts or []) if slice_gate_of(x)]
-    pick_html = ""
-    if len(gated_fonts) >= 2:
-        opts = "".join(
-            '<option value="%s"%s>%s</option>' % (
-                e(x["norm"]), " selected" if x["norm"] == f["norm"] else "", e(wf(x))
-            ) for x in gated_fonts
-        )
-        pick_html = (
-            '<label class="tool-pick">'
-            '<span>核验对象</span>'
-            '<select data-slice-pick>%s</select></label>' % opts
-        )
-
     face_html = (
         '<div class="tool-face">'
         '<div>'
         '<p class="tool-face-name">%s</p>'
         '<p class="tool-face-meta">%s</p>'
-        '</div>'
-        '%s'
-        '</div>'
-        % (e(wf(f)), face_meta, pick_html)
+        '</div></div>'
+        % (e(wf(f)), " · ".join(meta_parts))
     )
-
     if f.get("shop"):
         is_http = f["shop"].startswith("http://") or f["shop"].startswith("https://")
-        attrs = " target=\"_blank\" rel=\"noopener noreferrer\"" if is_http else ""
-        shop_link = (
-            '<a href="%s"%s>去在线选字 ↗</a>'
-            % (e(f["shop"]), attrs)
-        )
+        attrs = ' target="_blank" rel="noopener noreferrer"' if is_http else ""
+        shop_link = '<a href="%s"%s>去店面用 ↗</a>' % (e(f["shop"]), attrs)
     else:
         shop_link = ""
-
     foot_html = (
-        '<p class="tool-legal">授权证明只记录收录与核验结果，不构成再分发授权，也不代表著作权人另行授权。</p>'
+        '<p class="tool-legal">%s</p>'
         '<p class="tool-links">'
-        '<a href="/source/%s/">下载页</a>'
+        '<a href="/source/%s/">条目</a>'
         '<a href="/license/%s/">许可原文</a>'
         '%s'
-        '<a href="/slice/">工具首页</a>'
+        '<a href="/slice/">全部字体</a>'
         '</p>'
-        % (e(f["norm"]), e(f["norm"]), shop_link)
+        % (e(legal), e(f["norm"]), e(f["norm"]), shop_link)
     )
-
     body = page_head(
         wf(f),
         lead,
         crumbs=[("/slice/", "切片"), (None, wf(f))],
-        kicker="本地处理 · 文件不离开本机",
-        dev="/slice/%s" % f["norm"],
+        kicker="领取",
+        dev="/slice/%s · mode=%s" % (f["norm"], mode),
         face_attrs=face_attrs_of(f, require_pack=False),
     )
     body += (
         '<div class="sl-desk"%s>'
-        '<div class="sl-main">%s%s</div>'
+        '<div class="sl-main">%s<div data-slice-body></div></div>'
         '%s</div>'
-        % (gate_attrs, face_html, inner, aside("说明", foot_html))
+        % (gate_attrs, face_html, aside("说明", foot_html))
     )
     return layout(
         "slice", wf(f), body, "/slice/%s/" % f["norm"],
         extra_head=pages_css("slice") + "\n" + pages_js("slice"),
         body_class="page-slice",
     )
-
 
 def _read_layout(section, title, body, path):
     return layout(
@@ -3003,9 +2965,9 @@ def page_use():
         '<a class="gate-path" id="path-slice" href="/slice/">'
         '<span class="gate-n">02</span>'
         '<span class="gate-path-name xxzt">切片</span>'
-        '<span class="gate-path-line">给 WordPress 与静态站本地 @font-face。开源款稍后提供；不允许再分发的字体上传厂商原包 zip，核验后领取。'
+        '<span class="gate-path-line">给 WordPress 与静态站本地 @font-face。点进一款领取；开源直接下，其余先交官方原包。'
         '<span class="for-dev mono"> · /slice</span></span>'
-        '<span class="gate-go">切片工具 →</span>'
+        '<span class="gate-go">领取 →</span>'
         '</a>'
         '<div class="gate-path" id="path-web">'
         '<span class="gate-n">03</span>'
@@ -3192,6 +3154,9 @@ def _about_copy():
         ("造字", "zaozi.wenfeng.org",
          "造字平台，独立域名，上线后从本站进入。",
          "https://zaozi.wenfeng.org/", "去造字 ↗", "zaozi", True),
+        ("字体图标", "icons.motucloud.com",
+         "墨图爱可图标库。",
+         "https://icons.motucloud.com/", "去图标库 ↗", "icons", True),
     ]
     stance = [
         "文派（广州）科技有限公司建立在开源技术之上。我们认可开源协议，并按协议原文履行义务。文风字体提供的源文件下载、网页字体服务与授权证明服务，同样建立在开源协议之上。",
