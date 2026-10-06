@@ -253,15 +253,15 @@
 .page-attest-norm .atn-link-btn:hover { border-color: var(--ink-2); background: transparent; }
 .page-attest-norm .atn-embed { margin-bottom: 0; }
 .page-attest-norm .atn-embed-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  display: block;
   width: 100%;
-  padding: var(--s-3) var(--s-4);
+  padding: var(--s-3) calc(var(--s-4) + 1.25em) var(--s-3) var(--s-4);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: transparent;
   font-size: var(--fs-14);
+  line-height: 1.4;
   color: var(--ink);
   cursor: pointer;
   list-style: none;
@@ -270,10 +270,17 @@
 .page-attest-norm .atn-embed-toggle::-webkit-details-marker { display: none; }
 .page-attest-norm .atn-embed-toggle:hover { border-color: var(--ink-2); }
 .page-attest-norm .atn-embed-arrow {
+  position: absolute;
+  top: 50%;
+  right: var(--s-4);
   width: 1em;
   height: 1em;
+  margin: 0;
   color: var(--gray);
-  flex: none;
+  display: block;
+  vertical-align: 0;
+  transform: translateY(-50%);
+  transform-origin: center;
 }
 /* 展开态：内容包进摘要钮的容器，成一个完整抽屉 */
 .page-attest-norm .atn-embed[open] {
@@ -285,12 +292,12 @@
 /* 展开态：摘要钮负 margin 拉满容器，文字与箭头槽位对齐 */
 .page-attest-norm .atn-embed[open] .atn-embed-toggle {
   border: 0; border-radius: 0;
-  padding: var(--s-3) 0;
   margin: 0 calc(-1 * var(--s-4));
-  padding-inline: var(--s-4);
+  padding: var(--s-3) calc(var(--s-4) + 1.25em) var(--s-3) var(--s-4);
 }
 .page-attest-norm .atn-embed[open] .atn-embed-arrow {
-  transform: rotate(180deg);
+  right: var(--s-4);
+  transform: translateY(-50%) rotate(180deg);
 }
 .page-attest-norm .atn-embed[open] .atn-embed-lead,
 .page-attest-norm .atn-embed[open] .label { margin-top: 0; }

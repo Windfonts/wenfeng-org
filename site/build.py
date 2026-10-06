@@ -3099,7 +3099,7 @@ def page_attest(f):
         '<a class="btn atn-link-btn" href="/license/%s/">许可原文</a>'
         '<a class="btn atn-link-btn" href="/attest/ledger/">证明记录</a>'
         '</section>'
-        '<details class="atn-embed" data-share>'
+        '<details class="atn-embed" data-share open>'
         '<summary class="atn-embed-toggle">获取嵌入徽章<svg class="icon atn-embed-arrow" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>'
         '<p class="label">嵌入徽章</p>'
         '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
