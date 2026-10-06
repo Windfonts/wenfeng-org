@@ -1346,114 +1346,131 @@ def webfont_css_url(f):
 
 
 def font_more(f, verb):
-    """还能办的事：不重复主按钮。只放探测到的地址。"""
+    """还能办的事：安静文字链，不重复主按钮。"""
     items = []
     norm = f["norm"]
     primary = (verb.get("strongHref") or "").rstrip("/")
 
-    def add(title, desc, href):
+    def add(label, href):
         if not href or href.rstrip("/") == primary:
             return
-        items.append((title, desc, href))
+        items.append((label, href))
 
     if f.get("shop"):
-        add("在线选字", "样张和选字。", f["shop"])
-    add("报缺字", "缺字形、缺收录或勘误，都从一个入口报。", "/gap/?norm=%s" % norm)
+        add("在线选字", f["shop"])
+    add("报缺字", "/gap/?norm=%s" % norm)
     if not items:
         return ""
-    return (
-        '<div class="fn-more">'
-        '<p class="fn-label">还能办的事</p>%s</div>'
-        % tasks(items, compact=True)
+    links = "".join(
+        '<a href="%s"%s>%s</a>' % (
+            e(href),
+            ' target="_blank" rel="noopener"' if str(href).startswith("http") else "",
+            e(label),
+        )
+        for label, href in items
     )
+    return '<p class="fn-quiet-links">%s</p>' % links
 
 
 def page_font(f):
-    verb = font_verb(f)
-    st = status(f)
-    st_label = STATUS[st][0]
-    note = (f.get("visitorNote") or "").strip() or verb["note"]
-    archive = file_of(f, "archive")
-    up = upstream_href(f)
-    if archive and archive.get("staged") and "稍后" not in note and not github_archive_zip(up):
-        note = "归档包稍后提供。" + note
-    spdx = spdx_of(f) or ""
-    proto = spdx or f.get("licenseName") or "—"
-    foundry = f.get("foundry") or "未标注"
-    foundry_slug = f.get("foundrySlug")
-    foundry_html = ('<a href="/foundry/%s/">%s</a>' % (e(foundry_slug), e(foundry))) if foundry_slug else e(foundry)
-    text_cell = font_text_cell(f)
-    arch_cell = font_archive_cell(f)
-    mirror_state = (f.get("mirror") or {}).get("state") or ""
-    face = f.get("family") or ""
-    face_attrs = face_attrs_of(f, require_pack=False)
-
-    lic_href = "/license/%s/" % f["norm"]
-    acts = []
-    if verb.get("strongHref") and verb.get("strongLabel"):
-        acts.append(ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"])))
-    if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
-        acts.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
-    if can_attest(f):
-        acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
-
-    dossier = kv_rows([
-        ("目录编号", e(f["norm"])),
-        ("协议", e(proto)),
-        ("厂商", foundry_html),
-        ("原文", e(text_cell["d"])),
-        ("归档", e(arch_cell["d"])),
-        ("镜像", e(mirror_word(mirror_state) or "—")),
-        ("出处", e(upstream_dossier(up))),
-    ])
-
-    file_html = ""
-    real = primary_file(f)
-    if real and real.get("href") and real.get("kind") != "upstream" and not real.get("staged"):
-        fname = file_name_from_href(real["href"]) or real.get("label") or "源文件"
-        size_s = fmt_bytes(real.get("bytes") or real.get("size"))
-        sha = real.get("sha256") or ""
-        meta_dev = sha or real.get("format") or real.get("kind") or ""
-        file_html = (
-            '<div class="fn-file">'
-            '<p class="fn-label">文件</p>'
-            '<a class="fn-file-row" href="%s"%s>'
-            '<span class="fn-file-name">%s</span>'
-            '%s%s</a></div>'
-            % (
-                e(real["href"]),
-                ' target="_blank" rel="noopener"' if str(real["href"]).startswith("http") else "",
-                e(fname),
-                ('<span class="fn-file-size">%s</span>' % e(size_s)) if size_s else "",
-                ('<span class="fn-file-sha for-dev mono">%s</span>' % e(meta_dev)) if meta_dev else "",
-            )
+    """档案页：对齐店面详情节奏——样字 → 标题+动作 → 主栏/侧栏。无默认下划线、无 kv 顶线。"""
+    b = _lab_font_bits(f)
+    face_attrs = b["face_attrs"]
+    dots = []
+    if f.get("foundrySlug"):
+        dots.append(
+            '<a href="/foundry/%s/">%s</a>'
+            % (e(f["foundrySlug"]), e(f.get("foundry") or ""))
         )
+    elif f.get("foundry"):
+        dots.append("<span>%s</span>" % e(f["foundry"]))
+    if b.get("proto"):
+        dots.append("<span>%s</span>" % e(b["proto"]))
+    dots.append('<span class="fn-chip">%s</span>' % e(b["st_label"]))
+    dotlist = '<p class="fn-dotlist">%s</p>' % "".join(dots)
 
-    lead = "%s。%s" % (e(st_label), e(note))
-    body = page_head(
-        wf(f),
-        lead,
-        crumbs=[("/source/", "目录"), (None, wf(f))],
-        dev="/source/%s · offer=%s" % (f["norm"], f.get("offer") or "jump"),
-        face_attrs=face_attrs,
-        sub=f.get("en") or "",
+    acts_bits = []
+    if b["orig_btn"]:
+        acts_bits.append(b["orig_btn"])
+    if b["slice_mode"] == "open":
+        acts_bits.append(b["slice_bare"])
+    title_actions = (
+        ('<div class="fn-actions">%s</div>' % "".join(acts_bits)) if acts_bits else ""
     )
-    body += '<p class="acts fn-acts">%s</p>' % "".join(acts)
-    body += '<div class="fn-layout"><div class="fn-main">'
-    if face:
-        body += '<p class="fn-proof t-%s"%s data-face-full="1">%s</p>' % (e(f["norm"]), face_attrs, e(PROOF))
-    else:
-        body += '<p class="fn-proof t-%s" data-face-norm="%s" data-face-full="1">%s</p>' % (
-            e(f["norm"]), e(f["norm"]), e(PROOF)
+    title_block = (
+        '<div class="fn-title">'
+        '<div class="fn-title-main">'
+        '<h1 class="is-face t-%s"%s>%s%s</h1>'
+        '%s</div>%s</div>'
+        % (
+            e(f["norm"]), face_attrs, e(b["name"]),
+            ('<small class="mono">%s</small>' % e(b["en"])) if b["en"] else "",
+            dotlist, title_actions,
         )
-    body += file_html
-    body += slice_desk_html(f)
-    body += font_more(f, verb) + '</div>'
-    body += aside("这一款", dossier) + '</div>'
-    body += (
-        '<p class="fn-errata quiet">'
+    )
+    wall = (
+        '<div class="fn-wall">'
+        '<p class="fn-wall-sample t-%s"%s data-face-full="1">%s</p>'
+        '</div>'
+        % (e(f["norm"]), face_attrs, e(PROOF))
+    )
+
+    main_bits = []
+    if b["file_html"]:
+        main_bits.append(
+            '<section class="fn-panel">'
+            '<div class="fn-panel-head"><h2>文件</h2></div>'
+            '<div class="fn-panel-pad">%s</div></section>'
+            % b["file_html"]
+        )
+    if b["slice_mode"] == "gate":
+        main_bits.append(
+            '<section class="fn-panel" id="slice-wrap">'
+            '<div class="fn-panel-head"><h2>即用字库</h2>'
+            '<p class="fn-panel-note">交官方 zip 核验后领取。原件不离开本机。</p></div>'
+            '<div class="fn-panel-pad">%s</div></section>'
+            % b["slice_bare"]
+        )
+    else:
+        main_bits.append(
+            '<section class="fn-panel">'
+            '<div class="fn-panel-head"><h2>即用字库</h2></div>'
+            '<div class="fn-panel-pad">'
+            '<p class="fn-panel-note">从上方领取。解压后引入 fonts.css，保留授权注释。</p>'
+            "</div></section>"
+        )
+    if b["sec"]:
+        main_bits.append(
+            '<section class="fn-panel">'
+            '<div class="fn-panel-head"><h2>许可与证明</h2></div>'
+            '<div class="fn-panel-pad"><p class="fn-quiet-links">%s</p></div></section>'
+            % b["sec"]
+        )
+    more = font_more(f, b["verb"])
+    if more:
+        main_bits.append(
+            '<section class="fn-panel">'
+            '<div class="fn-panel-head"><h2>还能办的事</h2></div>'
+            '<div class="fn-panel-pad">%s</div></section>'
+            % more
+        )
+    main_bits.append(
+        '<p class="fn-quiet-links fn-errata">'
         '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
-        % (e(f["norm"]), e(wf(f)))
+        % (e(f["norm"]), e(b["name"]))
+    )
+
+    body = (
+        '%s%s%s'
+        '<div class="fn-body"><div class="fn-main">%s</div>%s</div>'
+        % (
+            crumb(("/source/", "目录"), (None, b["name"]),
+                  dev="/source/%s · offer=%s" % (f["norm"], f.get("offer") or "jump")),
+            wall,
+            title_block,
+            "".join(main_bits),
+            aside("资料", b["dossier"]),
+        )
     )
     return layout(
         "source", wf(f), body, "/source/%s" % f["norm"],
@@ -1501,9 +1518,10 @@ def _lab_font_bits(f):
     if can_attest(f):
         acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
     sec = []
-    if license_readable(f, None):
+    strong = (verb.get("strongHref") or "").rstrip("/")
+    if license_readable(f, None) and strong != lic_href.rstrip("/"):
         sec.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
-    if can_attest(f):
+    if can_attest(f) and strong != ("/attest/%s/" % f["norm"]).rstrip("/"):
         sec.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
     dossier = kv_rows([
         ("目录编号", e(f["norm"])),
@@ -2846,7 +2864,8 @@ def page_attest(f):
         '<a class="btn atn-link-btn" href="/license/%s/">许可原文</a>'
         '<a class="btn atn-link-btn" href="/attest/ledger/">证明记录</a>'
         '</section>'
-        '<section class="atn-embed" data-share hidden>'
+        '<details class="atn-embed" data-share>'
+        '<summary class="atn-embed-toggle">获取嵌入徽章<span class="atn-embed-arrow" aria-hidden="true">▾</span></summary>'
         '<p class="label">嵌入徽章</p>'
         '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
         '<div class="atn-embed-controls">'
@@ -2864,7 +2883,7 @@ def page_attest(f):
         '<p class="acts">'
         '<button class="btn" type="button" data-copy>%s<span data-copy-label>复制嵌入代码</span></button>'
         '<a class="btn" href="#" data-badge-dl download>%s下载 SVG</a>'
-        "</p></section></aside>"
+        "</p></details></aside>"
     ) % (e(f["norm"]), icon("copy"), icon("download"))
     stage = (
         '<div class="atn-main">'

@@ -240,3 +240,52 @@
 .page-attest-norm .atn-links { display: grid; gap: var(--s-2); margin-bottom: var(--s-6); }
 .page-attest-norm .atn-links .label { margin-bottom: var(--s-1); }
 .page-attest-norm .atn-link-btn { justify-content: center; }
+
+/* 左栏模块体系：说明=卡片 / 动作=描边按钮 / 嵌入=默认折叠 */
+.page-attest-norm .atn-links { margin-bottom: var(--s-6); }
+.page-attest-norm .atn-link-btn {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+.page-attest-norm .atn-link-btn:hover { border-color: var(--ink-2); background: transparent; }
+.page-attest-norm .atn-embed { margin-bottom: 0; }
+.page-attest-norm .atn-embed-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: transparent;
+  font-size: var(--fs-14);
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  transition: border-color var(--dur) var(--ease);
+}
+.page-attest-norm .atn-embed-toggle::-webkit-details-marker { display: none; }
+.page-attest-norm .atn-embed-toggle:hover { border-color: var(--ink-2); }
+.page-attest-norm .atn-embed-arrow { color: var(--gray-2); }
+.page-attest-norm .atn-embed[open] .atn-embed-toggle { border-bottom: 0; border-radius: var(--radius) var(--radius) 0 0; }
+.page-attest-norm .atn-embed[open] .atn-embed-arrow { transform: rotate(180deg); }
+.page-attest-norm .atn-embed .label,
+.page-attest-norm .atn-embed .atn-embed-lead,
+.page-attest-norm .atn-embed .atn-embed-controls,
+.page-attest-norm .atn-embed .atn-embed-badge,
+.page-attest-norm .atn-embed .code,
+.page-attest-norm .atn-embed .acts { margin-top: var(--s-3); }
+.page-attest-norm .atn-embed .code {
+  max-height: 4.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.page-attest-norm .atn-embed .code::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1.6rem;
+  background: linear-gradient(transparent, var(--fill));
+  pointer-events: none;
+}
