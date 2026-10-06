@@ -1,3 +1,5 @@
+> 10-07 证明 API 边缘上线：[Cursor]。`wenfeng-org-proxy` 分流 `/api/v1/certs*` + `/badge/`；KV `wenfeng-attest` 存证明记录（已灌 40 条）；HMAC Secret 绑 Worker。PDF 暂 501（用页内打印）。同 CF 账号于 wpcy.net Paid。正式 Ed25519 仍属 M2。
+>
 > 10-06 CyberCDN 清混写缓存：[Cursor]。10 边 `/var/cache/openresty/windfonts` 按 `fonts-packages/{含大写}/` 删缓存（合计约 11.9 万条）。抽样：`xxzt/xwwk/hcszt` 小写 200，混写 `Xxzt/Xwwk/Hcszt` 404。日志 devops `~/bin/mixed-pack-cdn-purge.log`。
 >
 > 10-06 档案版式冻结：[Cursor]。`/source/{norm}/` 版式已冻（样字→领取→怎么用标签页；`wenfeng-{norm}/fonts.css`；侧栏档案号）。真源 `docs/pages/source-norm.md` + DESIGN §8.3。已提交并推 FeiCode `5812918`。生产 OSS 待 modiqi 可连后再 `deploy.sh --bucket wenfeng-org --go`。

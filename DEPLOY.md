@@ -60,7 +60,8 @@ Mac 侧 `deploy.sh` 保留为 ossutil 版等价物（需文派账号独立 ossut
 - [x] 首页 556 款渲染、`text/html`、无 attachment
 - [x] /source/Xwwk/ /license/Xwwk/（目录重写）
 - [x] /v 查验页渲染
-- [x] /attest/Xwwk/ → 「证明服务未随本部署开放」（M2 前预期）
+- [x] /api/v1/certs → JSON（Worker 边缘签发过渡版，2026-10-07）
+- [x] /attest/ledger/ → 证明记录可读（KV）
 - [x] 未知路径 → 404 状态 + SPA「没有这一页」视图
 - [x] build-manifest.json 与本地一致
 - [x] woff2 immutable 缓存头

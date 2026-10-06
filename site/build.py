@@ -649,8 +649,8 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 </div></header>
 <main class="container page">%s</main>
 %s
-<script src="/assets/site.js" defer></script>
-</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, nav, body, footer)
+<script src="/assets/site.js?v=%d" defer></script>
+</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, nav, body, footer, int((HERE / "assets" / "site.js").stat().st_mtime))
 
 
 

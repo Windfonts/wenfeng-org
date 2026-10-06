@@ -10,6 +10,8 @@
   };
   var qs = new URLSearchParams(location.search);
   function api(url, opt) {
+    opt = opt || {};
+    if (!opt.cache) opt.cache = 'no-store';
     return fetch(url, opt).then(function (r) {
       var ct = r.headers.get('content-type') || '';
       if (ct.indexOf('json') === -1) throw new Error('证明服务没有随这个部署开放。');
