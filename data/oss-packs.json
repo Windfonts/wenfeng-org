@@ -1,0 +1,2886 @@
+{
+ "fetched": "2026-10-04",
+ "fonts": {
+  "Arkp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Arkp/license/original.txt",
+     "bytes": 4412,
+     "primary": true
+    }
+   ]
+  },
+  "AcyBold": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/AcyBold/license/original.txt",
+     "bytes": 4395,
+     "primary": true
+    }
+   ]
+  },
+  "Bb7": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bb7/license/original.txt",
+     "bytes": 5572,
+     "primary": true
+    }
+   ]
+  },
+  "Bb9": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bb9/license/original.txt",
+     "bytes": 6472,
+     "primary": true
+    }
+   ]
+  },
+  "975MaruSCRegular": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/975MaruSCRegular/license/original.txt",
+     "bytes": 5560,
+     "primary": true
+    }
+   ]
+  },
+  "AbbrFes": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/AbbrFes/license/original.txt",
+     "bytes": 4529,
+     "primary": true
+    }
+   ]
+  },
+  "Azbzzwzt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Azbzzwzt/license/original.txt",
+     "bytes": 11358,
+     "primary": true
+    }
+   ]
+  },
+  "AllPun": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/AllPun/license/original.txt",
+     "bytes": 4377,
+     "primary": true
+    }
+   ]
+  },
+  "Bizudg": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bizudg/license/original.txt",
+     "bytes": 4408,
+     "primary": true
+    }
+   ]
+  },
+  "Bizudm": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bizudm/license/original.txt",
+     "bytes": 4408,
+     "primary": true
+    }
+   ]
+  },
+  "Bizudpg": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bizudpg/license/original.txt",
+     "bytes": 4408,
+     "primary": true
+    }
+   ]
+  },
+  "Bmfs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bmfs/license/original.txt",
+     "bytes": 10864,
+     "primary": true
+    }
+   ]
+  },
+  "Bizudpm": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bizudpm/license/original.txt",
+     "bytes": 4408,
+     "primary": true
+    }
+   ]
+  },
+  "Bspsc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Bspsc/license/original.txt",
+     "bytes": 4610,
+     "primary": true
+    }
+   ]
+  },
+  "Cexwz": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/Cexwz/license/original.pdf",
+     "bytes": 331033,
+     "primary": true
+    }
+   ]
+  },
+  "CEFFontsCJK": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/CEFFontsCJK/license/original.txt",
+     "bytes": 4358,
+     "primary": true
+    }
+   ]
+  },
+  "Cbds": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Cbds/license/original.txt",
+     "bytes": 4637,
+     "primary": true
+    }
+   ]
+  },
+  "Btot": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Btot/Regular/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Regular/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Btot/Regular/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Btot/license/original.txt",
+     "bytes": 4472,
+     "primary": true
+    }
+   ]
+  },
+  "Cjkfqlt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Cjkfqlt/license/original.txt",
+     "bytes": 175,
+     "primary": true
+    }
+   ]
+  },
+  "Ckbf": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ckbf/license/original.txt",
+     "bytes": 4571,
+     "primary": true
+    }
+   ]
+  },
+  "Cldin": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Cldin/license/original.txt",
+     "bytes": 4451,
+     "primary": true
+    }
+   ]
+  },
+  "Clduan": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Clduan/license/original.txt",
+     "bytes": 4509,
+     "primary": true
+    }
+   ]
+  },
+  "Clhfs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Clhfs/license/original.txt",
+     "bytes": 4366,
+     "primary": true
+    }
+   ]
+  },
+  "Clg": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Clg/license/original.txt",
+     "bytes": 4444,
+     "primary": true
+    }
+   ]
+  },
+  "Cltan": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Cltan/license/original.txt",
+     "bytes": 4321,
+     "primary": true
+    }
+   ]
+  },
+  "Cylyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Cylyt/license/original.txt",
+     "bytes": 4506,
+     "primary": true
+    }
+   ]
+  },
+  "Ddxstfx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ddxstfx/license/original.txt",
+     "bytes": 18092,
+     "primary": true
+    }
+   ]
+  },
+  "Ddxstlx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ddxstlx/license/original.txt",
+     "bytes": 18092,
+     "primary": true
+    }
+   ]
+  },
+  "Ddxstyx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ddxstyx/license/original.txt",
+     "bytes": 18092,
+     "primary": true
+    }
+   ]
+  },
+  "Dela": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Dela/license/original.txt",
+     "bytes": 4392,
+     "primary": true
+    }
+   ]
+  },
+  "Dlzht": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Normal/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Dlzht/Normal/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Normal/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Dlzht/Normal/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Dlzht/license/original.txt",
+     "bytes": 2479,
+     "primary": true
+    },
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/Dlzht/license/original.pdf",
+     "bytes": 204558,
+     "primary": false
+    }
+   ]
+  },
+  "Dqhk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Dqhk/license/original.txt",
+     "bytes": 4557,
+     "primary": true
+    }
+   ]
+  },
+  "Dotgothic": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Dotgothic/license/original.txt",
+     "bytes": 4492,
+     "primary": true
+    }
+   ]
+  },
+  "Eqhi": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Eqhi/license/original.txt",
+     "bytes": 4589,
+     "primary": true
+    }
+   ]
+  },
+  "Fb16": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Fb16/license/original.txt",
+     "bytes": 4694,
+     "primary": true
+    }
+   ]
+  },
+  "Fmthei": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Fmthei/license/original.txt",
+     "bytes": 694,
+     "primary": true
+    }
+   ]
+  },
+  "Dyh": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Oblique/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Dyh/Oblique/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Oblique/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Dyh/Oblique/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Dyh/license/original.txt",
+     "bytes": 4422,
+     "primary": true
+    }
+   ]
+  },
+  "Fmtming": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Fmtming/license/original.txt",
+     "bytes": 694,
+     "primary": true
+    }
+   ]
+  },
+  "Frexsans": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Frexsans/license/original.txt",
+     "bytes": 4458,
+     "primary": true
+    }
+   ]
+  },
+  "Fupx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Fupx/license/original.txt",
+     "bytes": 1064,
+     "primary": true
+    }
+   ]
+  },
+  "GNUUnifontFull": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/GNUUnifontFull/license/original.txt",
+     "bytes": 48441,
+     "primary": true
+    }
+   ]
+  },
+  "Geneant": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Geneant/license/original.txt",
+     "bytes": 4753,
+     "primary": true
+    }
+   ]
+  },
+  "Genekoburi": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Genekoburi/license/original.txt",
+     "bytes": 4622,
+     "primary": true
+    }
+   ]
+  },
+  "Genifjp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Genifjp/license/original.txt",
+     "bytes": 4380,
+     "primary": true
+    }
+   ]
+  },
+  "Genenu": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Genenu/license/original.txt",
+     "bytes": 4778,
+     "primary": true
+    }
+   ]
+  },
+  "Gsht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Gsht/license/original.txt",
+     "bytes": 4702,
+     "primary": true
+    }
+   ]
+  },
+  "Gskd": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Gskd/license/original.txt",
+     "bytes": 4702,
+     "primary": true
+    }
+   ]
+  },
+  "Hachimarupop": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hachimarupop/license/original.txt",
+     "bytes": 4494,
+     "primary": true
+    }
+   ]
+  },
+  "Gwmsans": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Gwmsans/license/original.txt",
+     "bytes": 5296,
+     "primary": true
+    }
+   ]
+  },
+  "Hcdht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcdht/license/original.txt",
+     "bytes": 4509,
+     "primary": true
+    }
+   ]
+  },
+  "Hcdin": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcdin/license/original.txt",
+     "bytes": 4451,
+     "primary": true
+    }
+   ]
+  },
+  "Harmony": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Harmony/license/original.txt",
+     "bytes": 3352,
+     "primary": true
+    }
+   ]
+  },
+  "Hcjss": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcjss/license/original.txt",
+     "bytes": 4325,
+     "primary": true
+    }
+   ]
+  },
+  "Hcdhs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcdhs/license/original.txt",
+     "bytes": 4326,
+     "primary": true
+    }
+   ]
+  },
+  "Hcdzt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcdzt/license/original.txt",
+     "bytes": 25792,
+     "primary": true
+    }
+   ]
+  },
+  "Hchfs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hchfs/license/original.txt",
+     "bytes": 4366,
+     "primary": true
+    }
+   ]
+  },
+  "Hckht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hckht/license/original.txt",
+     "bytes": 4352,
+     "primary": true
+    }
+   ]
+  },
+  "Hckt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hckt/license/original.txt",
+     "bytes": 4347,
+     "primary": true
+    }
+   ]
+  },
+  "Hclck2": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Bold/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Hclck2/Bold/full/result.css"
+    },
+    {
+     "use": "full",
+     "css": "ExtraBold/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Hclck2/ExtraBold/full/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Medium/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Hclck2/Medium/full/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Hclck2/Regular/full/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hclck2/license/original.txt",
+     "bytes": 4390,
+     "primary": true
+    }
+   ]
+  },
+  "Hcqy": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcqy/license/original.txt",
+     "bytes": 4375,
+     "primary": true
+    }
+   ]
+  },
+  "Hctyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hctyt/license/original.txt",
+     "bytes": 4343,
+     "primary": true
+    }
+   ]
+  },
+  "Hcrym": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcrym/license/original.txt",
+     "bytes": 4375,
+     "primary": true
+    }
+   ]
+  },
+  "Hcth": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcth/license/original.txt",
+     "bytes": 4321,
+     "primary": true
+    }
+   ]
+  },
+  "Hcszt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcszt/license/original.txt",
+     "bytes": 101,
+     "primary": true
+    }
+   ]
+  },
+  "Hcymh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcymh/license/original.txt",
+     "bytes": 4326,
+     "primary": true
+    }
+   ]
+  },
+  "Hcwjt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcwjt/license/original.txt",
+     "bytes": 4321,
+     "primary": true
+    }
+   ]
+  },
+  "Hcyht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hcyht/license/original.txt",
+     "bytes": 4355,
+     "primary": true
+    }
+   ]
+  },
+  "Hjht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hjht/license/original.txt",
+     "bytes": 4302,
+     "primary": true
+    }
+   ]
+  },
+  "Hinam": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hinam/license/original.txt",
+     "bytes": 4393,
+     "primary": true
+    }
+   ]
+  },
+  "Hei975": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hei975/license/original.txt",
+     "bytes": 5485,
+     "primary": true
+    }
+   ]
+  },
+  "Hczk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hczk/license/original.txt",
+     "bytes": 4408,
+     "primary": true
+    }
+   ]
+  },
+  "Hlxzt": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/Hlxzt/license/original.pdf",
+     "bytes": 97655,
+     "primary": true
+    }
+   ]
+  },
+  "Hyma": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hyma/license/original.txt",
+     "bytes": 6220,
+     "primary": true
+    }
+   ]
+  },
+  "Hxwk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hxwk/license/original.txt",
+     "bytes": 4695,
+     "primary": true
+    }
+   ]
+  },
+  "Hymb": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hymb/license/original.txt",
+     "bytes": 6220,
+     "primary": true
+    }
+   ]
+  },
+  "Hyzi": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Hyzi/license/original.txt",
+     "bytes": 4521,
+     "primary": true
+    }
+   ]
+  },
+  "Ibmpsjp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmpsjp/license/original.txt",
+     "bytes": 4456,
+     "primary": true
+    }
+   ]
+  },
+  "JfOpenHuninn": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/JfOpenHuninn/license/original.txt",
+     "bytes": 4860,
+     "primary": true
+    }
+   ]
+  },
+  "Jhk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jhk/license/original.txt",
+     "bytes": 4546,
+     "primary": true
+    }
+   ]
+  },
+  "Jnbbh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jnbbh/license/original.txt",
+     "bytes": 4393,
+     "primary": true
+    }
+   ]
+  },
+  "Jlpx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jlpx/license/original.txt",
+     "bytes": 1064,
+     "primary": true
+    }
+   ]
+  },
+  "Jnmy": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jnmy/license/original.txt",
+     "bytes": 4491,
+     "primary": true
+    }
+   ]
+  },
+  "Ibmps": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Bold/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Bold/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Bold/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Bold/zh-common/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Extralight/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Extralight/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Extralight/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Extralight/zh-common/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Light/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Light/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Light/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Light/zh-common/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Regular/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Regular/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Regular/zh-common/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Text/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Text/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Text/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Text/zh-common/result.css"
+    },
+    {
+     "use": "full",
+     "css": "Thin/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Thin/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Thin/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/Thin/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ibmps/license/original.txt",
+     "bytes": 4456,
+     "primary": true
+    }
+   ]
+  },
+  "Jnymt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jnymt/license/original.txt",
+     "bytes": 4489,
+     "primary": true
+    }
+   ]
+  },
+  "Kaiseidecol": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kaiseidecol/license/original.txt",
+     "bytes": 4383,
+     "primary": true
+    }
+   ]
+  },
+  "Jzkgeht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jzkgeht/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Jzkgemc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Jzkgemc/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Kaiseiharuno": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kaiseiharuno/license/original.txt",
+     "bytes": 4383,
+     "primary": true
+    }
+   ]
+  },
+  "Kaiseitoku": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kaiseitoku/license/original.txt",
+     "bytes": 4383,
+     "primary": true
+    }
+   ]
+  },
+  "Kaiseiopti": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kaiseiopti/license/original.txt",
+     "bytes": 4383,
+     "primary": true
+    }
+   ]
+  },
+  "Kazukirw": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kazukirw/license/original.txt",
+     "bytes": 4518,
+     "primary": true
+    }
+   ]
+  },
+  "Kiwimaru": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kiwimaru/license/original.txt",
+     "bytes": 4399,
+     "primary": true
+    }
+   ]
+  },
+  "Klee": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Klee/license/original.txt",
+     "bytes": 4479,
+     "primary": true
+    }
+   ]
+  },
+  "Kosugimaru": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Kosugimaru/license/original.txt",
+     "bytes": 11358,
+     "primary": true
+    }
+   ]
+  },
+  "Lineseedjp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Lineseedjp/license/original.txt",
+     "bytes": 4321,
+     "primary": true
+    }
+   ]
+  },
+  "Lhzt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Lhzt/license/original.txt",
+     "bytes": 4327,
+     "primary": true
+    }
+   ]
+  },
+  "Ljmc": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ljmc/Regular/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Regular/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Ljmc/Regular/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ljmc/license/original.txt",
+     "bytes": 4406,
+     "primary": true
+    }
+   ]
+  },
+  "Lnsw": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Lnsw/license/original.txt",
+     "bytes": 4321,
+     "primary": true
+    }
+   ]
+  },
+  "Lzti": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Lzti/license/original.txt",
+     "bytes": 4441,
+     "primary": true
+    }
+   ]
+  },
+  "Matc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Matc/license/original.txt",
+     "bytes": 4580,
+     "primary": true
+    }
+   ]
+  },
+  "Mjdm": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mjdm/license/original.txt",
+     "bytes": 4358,
+     "primary": true
+    }
+   ]
+  },
+  "Mjdz": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mjdz/license/original.txt",
+     "bytes": 4358,
+     "primary": true
+    }
+   ]
+  },
+  "Mkkzh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mkkzh/license/original.txt",
+     "bytes": 4573,
+     "primary": true
+    }
+   ]
+  },
+  "Mkkzs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mkkzs/license/original.txt",
+     "bytes": 4573,
+     "primary": true
+    }
+   ]
+  },
+  "Mksjh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mksjh/license/original.txt",
+     "bytes": 4580,
+     "primary": true
+    }
+   ]
+  },
+  "Mkwfys": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mkwfys/license/original.txt",
+     "bytes": 4394,
+     "primary": true
+    }
+   ]
+  },
+  "Mkybkjs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mkybkjs/license/original.txt",
+     "bytes": 4532,
+     "primary": true
+    }
+   ]
+  },
+  "Mp12": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mp12/license/original.txt",
+     "bytes": 375,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus1": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus1/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus1Code": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus1Code/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus1c": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus1c/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus1mn": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus1mn/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus1m": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus1m/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus1p": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus1p/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus2": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus2/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus2c": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus2c/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "MplusU": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/MplusU/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus2m": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus2m/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Mplus2p": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mplus2p/license/original.txt",
+     "bytes": 4387,
+     "primary": true
+    }
+   ]
+  },
+  "Msz": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Msz/license/original.txt",
+     "bytes": 4397,
+     "primary": true
+    }
+   ]
+  },
+  "Mspyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Mspyt/license/original.txt",
+     "bytes": 4625,
+     "primary": true
+    }
+   ]
+  },
+  "Murecho": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Murecho/license/original.txt",
+     "bytes": 4393,
+     "primary": true
+    }
+   ]
+  },
+  "Newteg": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Newteg/license/original.txt",
+     "bytes": 4394,
+     "primary": true
+    }
+   ]
+  },
+  "Nswt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Nswt/license/original.txt",
+     "bytes": 4327,
+     "primary": true
+    }
+   ]
+  },
+  "Nsfx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Nsfx/license/original.txt",
+     "bytes": 4327,
+     "primary": true
+    }
+   ]
+  },
+  "PangZhenGuiPMZD": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/PangZhenGuiPMZD/license/original.txt",
+     "bytes": 477,
+     "primary": true
+    }
+   ]
+  },
+  "Plwk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Plwk/license/original.txt",
+     "bytes": 5231,
+     "primary": true
+    }
+   ]
+  },
+  "Opsa": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Opsa/Regular/full/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Opsa/license/original.txt",
+     "bytes": 3304,
+     "primary": true
+    }
+   ]
+  },
+  "Qiji": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Qiji/license/original.txt",
+     "bytes": 4386,
+     "primary": true
+    }
+   ]
+  },
+  "Pywk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Pywk/license/original.txt",
+     "bytes": 4347,
+     "primary": true
+    }
+   ]
+  },
+  "QRpx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/QRpx/license/original.txt",
+     "bytes": 1064,
+     "primary": true
+    }
+   ]
+  },
+  "Pxzs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Pxzs/license/original.txt",
+     "bytes": 4393,
+     "primary": true
+    }
+   ]
+  },
+  "Qssxt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Qssxt/license/original.txt",
+     "bytes": 186,
+     "primary": true
+    }
+   ]
+  },
+  "Rampart": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Rampart/license/original.txt",
+     "bytes": 4484,
+     "primary": true
+    }
+   ]
+  },
+  "Reggae": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Reggae/license/original.txt",
+     "bytes": 4483,
+     "primary": true
+    }
+   ]
+  },
+  "RocknRoll": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/RocknRoll/license/original.txt",
+     "bytes": 4488,
+     "primary": true
+    }
+   ]
+  },
+  "Sawag": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sawag/license/original.txt",
+     "bytes": 4355,
+     "primary": true
+    }
+   ]
+  },
+  "Sawam": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sawam/license/original.txt",
+     "bytes": 4405,
+     "primary": true
+    }
+   ]
+  },
+  "Sgdk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sgdk/license/original.txt",
+     "bytes": 4302,
+     "primary": true
+    }
+   ]
+  },
+  "Sght": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sght/license/original.txt",
+     "bytes": 4302,
+     "primary": true
+    }
+   ]
+  },
+  "Sft": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sft/license/original.txt",
+     "bytes": 294,
+     "primary": true
+    }
+   ]
+  },
+  "Sgyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sgyt/license/original.txt",
+     "bytes": 4302,
+     "primary": true
+    }
+   ]
+  },
+  "Shcodejp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shcodejp/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Shipporiantique": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shipporiantique/license/original.txt",
+     "bytes": 4400,
+     "primary": true
+    }
+   ]
+  },
+  "Shipporiminchob1": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shipporiminchob1/license/original.txt",
+     "bytes": 4399,
+     "primary": true
+    }
+   ]
+  },
+  "Shipporimincho": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shipporimincho/license/original.txt",
+     "bytes": 4399,
+     "primary": true
+    }
+   ]
+  },
+  "Shipporiantiqueb1": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shipporiantiqueb1/license/original.txt",
+     "bytes": 4400,
+     "primary": true
+    }
+   ]
+  },
+  "Shserifjp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shserifjp/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Shmonojp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shmonojp/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Shmonotc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shmonotc/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Shserifhk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shserifhk/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Shsanshk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shsanshk/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Shsansjp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Shsansjp/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Slfu": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Slfu/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "Slcf": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Slcf/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "Slxx": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Slxx/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "Slqh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Slqh/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "Sly1": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sly1/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "Slyr": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Slyr/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "SourceHanSansCNRegular": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/SourceHanSansCNRegular/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "SourceHanSansTWRegular": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/SourceHanSansTWRegular/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "SourceHanSerifCNforDisplay": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/SourceHanSerifCNforDisplay/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Stick": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Stick/license/original.txt",
+     "bytes": 4480,
+     "primary": true
+    }
+   ]
+  },
+  "Swzh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Swzh/license/original.txt",
+     "bytes": 4637,
+     "primary": true
+    }
+   ]
+  },
+  "Syhtcjk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Syhtcjk/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Syhtsc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Syhtsc/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Sykd": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Sykd/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Systtc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Systtc/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Systsc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Systsc/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Systcnl": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Systcnl/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Systcn": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Systcn/license/original.txt",
+     "bytes": 4350,
+     "primary": true
+    }
+   ]
+  },
+  "Train": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Train/license/original.txt",
+     "bytes": 4481,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerFeiBaiW01": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerFeiBaiW01/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerFeiBaiW03": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerFeiBaiW03/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerFeiBaiW02": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerFeiBaiW02/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerFeiBaiW04": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerFeiBaiW04/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerShuYuanTW01": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerShuYuanTW01/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerFeiBaiW05": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerFeiBaiW05/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerShuYuanTW04": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerShuYuanTW04/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerShuYuanTW03": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerShuYuanTW03/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerShuYuanTW02": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerShuYuanTW02/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuMoW02": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuMoW02/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerShuYuanTW05": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerShuYuanTW05/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuMoW01": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuMoW01/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuMoW05": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuMoW05/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuMoW03": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuMoW03/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuMoW04": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuMoW04/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuYangTW01": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuYangTW01/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuYangTW03": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuYangTW03/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuYangTW04": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuYangTW04/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuYangTW02": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuYangTW02/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "TsangerYuYangTW05": {
+   "license": [
+    {
+     "file": "original.pdf",
+     "url": "https://cn.windfonts.com/fonts-packages/TsangerYuYangTW05/license/original.pdf",
+     "bytes": 2583872,
+     "primary": true
+    }
+   ]
+  },
+  "Ubss": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ubss/license/original.txt",
+     "bytes": 4572,
+     "primary": true
+    }
+   ]
+  },
+  "Umgh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Umgh/license/original.txt",
+     "bytes": 1756,
+     "primary": true
+    }
+   ]
+  },
+  "Unfdzh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Unfdzh/license/original.txt",
+     "bytes": 24142,
+     "primary": true
+    }
+   ]
+  },
+  "Ummc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ummc/license/original.txt",
+     "bytes": 1756,
+     "primary": true
+    }
+   ]
+  },
+  "Vivosans": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Vivosans/license/original.txt",
+     "bytes": 4390,
+     "primary": true
+    }
+   ]
+  },
+  "Wdxl": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wdxl/license/original.txt",
+     "bytes": 4534,
+     "primary": true
+    }
+   ]
+  },
+  "Wjm2": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wjm2/license/original.txt",
+     "bytes": 5356,
+     "primary": true
+    }
+   ]
+  },
+  "Wjmp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wjmp/license/original.txt",
+     "bytes": 5356,
+     "primary": true
+    }
+   ]
+  },
+  "Wqydkzh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wqydkzh/license/original.txt",
+     "bytes": 18720,
+     "primary": true
+    }
+   ]
+  },
+  "Wlhxh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wlhxh/license/original.txt",
+     "bytes": 1093,
+     "primary": true
+    }
+   ]
+  },
+  "WriteRight": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/WriteRight/license/original.txt",
+     "bytes": 4434,
+     "primary": true
+    }
+   ]
+  },
+  "Wqys": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wqys/license/original.txt",
+     "bytes": 19052,
+     "primary": true
+    }
+   ]
+  },
+  "Wqyzh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wqyzh/license/original.txt",
+     "bytes": 18720,
+     "primary": true
+    }
+   ]
+  },
+  "Wyhk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wyhk/license/original.txt",
+     "bytes": 5399,
+     "primary": true
+    }
+   ]
+  },
+  "Wysf": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wysf/license/original.txt",
+     "bytes": 5399,
+     "primary": true
+    }
+   ]
+  },
+  "Wyyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Wyyt/license/original.txt",
+     "bytes": 5399,
+     "primary": true
+    }
+   ]
+  },
+  "XiaolaiMonoSC": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/XiaolaiMonoSC/license/original.txt",
+     "bytes": 4432,
+     "primary": true
+    }
+   ]
+  },
+  "Xcmdk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xcmdk/license/original.txt",
+     "bytes": 4700,
+     "primary": true
+    }
+   ]
+  },
+  "XiaolaiSC": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/XiaolaiSC/license/original.txt",
+     "bytes": 4432,
+     "primary": true
+    }
+   ]
+  },
+  "Xstq": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xstq/license/original.txt",
+     "bytes": 4519,
+     "primary": true
+    }
+   ]
+  },
+  "Xwbrightcode": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwbrightcode/license/original.txt",
+     "bytes": 6294,
+     "primary": true
+    }
+   ]
+  },
+  "Xwbright": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwbright/license/original.txt",
+     "bytes": 6208,
+     "primary": true
+    }
+   ]
+  },
+  "Xwwk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwwk/license/original.txt",
+     "bytes": 5171,
+     "primary": true
+    }
+   ]
+  },
+  "Xwszh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwszh/license/original.txt",
+     "bytes": 4406,
+     "primary": true
+    }
+   ]
+  },
+  "Xwszhmn": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwszhmn/license/original.txt",
+     "bytes": 4406,
+     "primary": true
+    }
+   ]
+  },
+  "Xwwktc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwwktc/license/original.txt",
+     "bytes": 4390,
+     "primary": true
+    }
+   ]
+  },
+  "Xwwkgb": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwwkgb/license/original.txt",
+     "bytes": 5173,
+     "primary": true
+    }
+   ]
+  },
+  "Xwmh": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwmh/Regular/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Regular/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwmh/Regular/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwmh/license/original.txt",
+     "bytes": 4406,
+     "primary": true
+    }
+   ]
+  },
+  "Xwszhcl": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwszhcl/license/original.txt",
+     "bytes": 4406,
+     "primary": true
+    }
+   ]
+  },
+  "Xwzt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwzt/license/original.txt",
+     "bytes": 5334,
+     "primary": true
+    }
+   ]
+  },
+  "Xwzksgb": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwzksgb/license/original.txt",
+     "bytes": 5361,
+     "primary": true
+    }
+   ]
+  },
+  "Xwzkgb": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xwzkgb/license/original.txt",
+     "bytes": 5361,
+     "primary": true
+    }
+   ]
+  },
+  "Xxzt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Xxzt/license/original.txt",
+     "bytes": 4369,
+     "primary": true
+    }
+   ]
+  },
+  "YRDZSTRegular": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/YRDZSTRegular/license/original.txt",
+     "bytes": 754,
+     "primary": true
+    }
+   ]
+  },
+  "Yjsu": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yjsu/license/original.txt",
+     "bytes": 4386,
+     "primary": true
+    }
+   ]
+  },
+  "Yjmct": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yjmct/license/original.txt",
+     "bytes": 4463,
+     "primary": true
+    }
+   ]
+  },
+  "Yomogi": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yomogi/license/original.txt",
+     "bytes": 4409,
+     "primary": true
+    }
+   ]
+  },
+  "Yozai": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yozai/license/original.txt",
+     "bytes": 4497,
+     "primary": true
+    }
+   ]
+  },
+  "Yozf": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yozf/license/original.txt",
+     "bytes": 4454,
+     "primary": true
+    }
+   ]
+  },
+  "Yqttc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yqttc/license/original.txt",
+     "bytes": 4743,
+     "primary": true
+    }
+   ]
+  },
+  "Yqt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yqt/license/original.txt",
+     "bytes": 4745,
+     "primary": true
+    }
+   ]
+  },
+  "Ysbs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ysbs/license/original.txt",
+     "bytes": 4555,
+     "primary": true
+    }
+   ]
+  },
+  "Ysui": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ysui/license/original.txt",
+     "bytes": 4385,
+     "primary": true
+    }
+   ]
+  },
+  "Ysxh": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ysxh/license/original.txt",
+     "bytes": 4426,
+     "primary": true
+    }
+   ]
+  },
+  "Yujimai": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yujimai/license/original.txt",
+     "bytes": 4386,
+     "primary": true
+    }
+   ]
+  },
+  "Yujiboku": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yujiboku/license/original.txt",
+     "bytes": 4386,
+     "primary": true
+    }
+   ]
+  },
+  "Yuseimagic": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yuseimagic/license/original.txt",
+     "bytes": 4393,
+     "primary": true
+    }
+   ]
+  },
+  "Yyuan": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yyuan/license/original.txt",
+     "bytes": 5062,
+     "primary": true
+    }
+   ]
+  },
+  "Yyxy": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yyxy/license/original.txt",
+     "bytes": 1065,
+     "primary": true
+    }
+   ]
+  },
+  "Zcfs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zcfs/license/original.txt",
+     "bytes": 4357,
+     "primary": true
+    }
+   ]
+  },
+  "Zdht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zdht/license/original.txt",
+     "bytes": 4542,
+     "primary": true
+    }
+   ]
+  },
+  "Zenantique": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenantique/license/original.txt",
+     "bytes": 4394,
+     "primary": true
+    }
+   ]
+  },
+  "Zenantiquesoft": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenantiquesoft/license/original.txt",
+     "bytes": 4394,
+     "primary": true
+    }
+   ]
+  },
+  "Zenkakuantique": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenkakuantique/license/original.txt",
+     "bytes": 4401,
+     "primary": true
+    }
+   ]
+  },
+  "Yzklct": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Yzklct/Regular/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Regular/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Yzklct/Regular/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Yzklct/license/original.txt",
+     "bytes": 4390,
+     "primary": true
+    }
+   ]
+  },
+  "Zenkakunew": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenkakunew/license/original.txt",
+     "bytes": 4401,
+     "primary": true
+    }
+   ]
+  },
+  "Zenmaru": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenmaru/license/original.txt",
+     "bytes": 4402,
+     "primary": true
+    }
+   ]
+  },
+  "Zenkurenaido": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenkurenaido/license/original.txt",
+     "bytes": 4398,
+     "primary": true
+    }
+   ]
+  },
+  "Zht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zht/license/original.txt",
+     "bytes": 4678,
+     "primary": true
+    }
+   ]
+  },
+  "Zenoldmincho": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zenoldmincho/license/original.txt",
+     "bytes": 4399,
+     "primary": true
+    }
+   ]
+  },
+  "Ziyyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Ziyyt/license/original.txt",
+     "bytes": 5780,
+     "primary": true
+    }
+   ]
+  },
+  "Zkxwt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zkxwt/license/original.txt",
+     "bytes": 4400,
+     "primary": true
+    }
+   ]
+  },
+  "Zkklt": {
+   "sliceCss": [
+    {
+     "use": "full",
+     "css": "Regular/full/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Zkklt/Regular/full/result.css"
+    },
+    {
+     "use": "常用字",
+     "css": "Regular/zh-common/result.css",
+     "url": "https://cn.windfonts.com/fonts-packages/Zkklt/Regular/zh-common/result.css"
+    }
+   ],
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zkklt/license/original.txt",
+     "bytes": 4398,
+     "primary": true
+    }
+   ]
+  },
+  "Zlcs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zlcs/license/original.txt",
+     "bytes": 11357,
+     "primary": true
+    }
+   ]
+  },
+  "Zlhc": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zlhc/license/original.txt",
+     "bytes": 4509,
+     "primary": true
+    }
+   ]
+  },
+  "Zlmeng": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zlmeng/license/original.txt",
+     "bytes": 4391,
+     "primary": true
+    }
+   ]
+  },
+  "Zljp": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zljp/license/original.txt",
+     "bytes": 4415,
+     "primary": true
+    }
+   ]
+  },
+  "Zlrp12": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zlrp12/license/original.txt",
+     "bytes": 1087,
+     "primary": true
+    }
+   ]
+  },
+  "Zlx12": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zlx12/license/original.txt",
+     "bytes": 1082,
+     "primary": true
+    }
+   ]
+  },
+  "Zlrp16": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zlrp16/license/original.txt",
+     "bytes": 1087,
+     "primary": true
+    }
+   ]
+  },
+  "Zqfs": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zqfs/license/original.txt",
+     "bytes": 4389,
+     "primary": true
+    }
+   ]
+  },
+  "Zwxszt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zwxszt/license/original.txt",
+     "bytes": 4327,
+     "primary": true
+    }
+   ]
+  },
+  "Zyht": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zyht/license/original.txt",
+     "bytes": 4443,
+     "primary": true
+    }
+   ]
+  },
+  "Zyst": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zyst/license/original.txt",
+     "bytes": 4445,
+     "primary": true
+    }
+   ]
+  },
+  "Zzmk": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zzmk/license/original.txt",
+     "bytes": 4574,
+     "primary": true
+    }
+   ]
+  },
+  "Zyyt": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zyyt/license/original.txt",
+     "bytes": 4451,
+     "primary": true
+    }
+   ]
+  },
+  "Zzzd": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zzzd/license/original.txt",
+     "bytes": 4574,
+     "primary": true
+    }
+   ]
+  },
+  "Zzft": {
+   "license": [
+    {
+     "file": "original.txt",
+     "url": "https://cn.windfonts.com/fonts-packages/Zzft/license/original.txt",
+     "bytes": 4574,
+     "primary": true
+    }
+   ]
+  }
+ }
+}

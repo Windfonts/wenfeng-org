@@ -668,7 +668,7 @@ class Handler(SimpleHTTPRequestHandler):
             return True
         m = SLICE_NOSLASH.match(path)
         if m:
-            self._redirect("/slice/%s/" % m.group(1))
+            self._redirect("/source/%s/" % m.group(1))
             return True
         if path in ("/lab", "/lab/"):
             return False

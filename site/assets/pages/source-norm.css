@@ -1,4 +1,4 @@
-/* 字型档案 /source/{norm}/：在现有骨架上收紧第一屏 */
+/* 字型档案 /source/{norm}/：经典档案馆版式 */
 
 .page-font .page-mast {
   margin-bottom: var(--s-5);
@@ -17,6 +17,14 @@
 
 .page-font .fn-acts {
   margin: 0 0 var(--s-8);
+}
+.page-font .fn-acts .btn-text {
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .fn-acts .btn-text:hover {
+  text-decoration: underline;
+  background: transparent;
 }
 
 .page-font .fn-layout {
@@ -84,12 +92,69 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.page-font .fn-file-wait {
+  margin: 0;
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-14);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.page-font .fn-file-go {
+  margin-left: var(--s-3);
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .fn-file-go:hover {
+  text-decoration: underline;
+}
+
+.page-font .fn-slice {
+  margin: 0 0 var(--s-8);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: calc(var(--topbar-h, 3.5rem) + var(--s-6));
+}
+.page-font .fn-slice-lead {
+  margin: 0 0 var(--s-5);
+  font-size: var(--fs-14);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.page-font .fn-slice .tool-legal {
+  margin-top: var(--s-6);
+  font-size: var(--fs-13);
+  line-height: 1.55;
+  color: var(--gray);
+}
+.page-font .fn-slice .tool-origin a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .fn-slice .tool-origin a:hover {
+  text-decoration: underline;
+}
+.page-font .fn-slice.is-quiet .tool-quiet .tool-actions { margin: 0; }
+.page-font .fn-slice.is-quiet .tool-quiet .tool-note {
+  margin: var(--s-3) 0 0;
+  font-size: var(--fs-13);
+}
+.page-font .fn-slice.is-quiet .tool-intake {
+  min-height: 4.5rem;
+  margin-bottom: 0;
+}
 
 .page-font .fn-more {
   margin-top: var(--s-2);
 }
-.page-font .fn-more .row-go:first-child {
+.page-font .fn-more .tasks {
   border-top: 1px solid var(--rule);
+}
+.page-font .fn-more .task {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .page-font .aside {
@@ -101,6 +166,24 @@
 .page-font .aside-label {
   margin-bottom: var(--s-4);
   letter-spacing: 0.06em;
+}
+
+/* 侧栏：压过全站 kv 默认下划线与顶线 */
+.page-font .aside .kv-rows > div {
+  border-top: 0;
+}
+.page-font .aside .kv-rows > div + div { border-top: 0; }
+.page-font .aside a,
+.page-font .aside .kv-rows dd a:not(.btn),
+.page-font .fn-errata a {
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+.page-font .aside a:hover,
+.page-font .aside .kv-rows dd a:not(.btn):hover,
+.page-font .fn-errata a:hover {
+  text-decoration: underline;
 }
 
 .page-font .fn-errata {

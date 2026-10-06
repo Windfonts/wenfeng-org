@@ -1263,6 +1263,19 @@ def font_verb(f, lic_text=None):
             "strongHref": up,
             "strongLabel": "去出处",
         }
+    if is_gated(f):
+        og = origin_for_gate(f)
+        href = up or ((og or {}).get("href") or "")
+        if href:
+            return {
+                "verb": "去出处",
+                "verbDev": upstream_dev(href),
+                "kickerDev": "primary · gated-origin",
+                "note": base,
+                "noteDev": "distribution=false · origin",
+                "strongHref": href,
+                "strongLabel": "去出处",
+            }
     if st in ("ready", "pending") or offer == "pending":
         if readable:
             return {
@@ -1346,137 +1359,156 @@ def webfont_css_url(f):
 
 
 def font_more(f, verb):
-    """还能办的事：安静文字链，不重复主按钮。"""
+    """还能办的事：不重复主按钮。只放探测到的地址。"""
     items = []
     norm = f["norm"]
     primary = (verb.get("strongHref") or "").rstrip("/")
 
-    def add(label, href):
+    def add(title, desc, href):
         if not href or href.rstrip("/") == primary:
             return
-        items.append((label, href))
+        items.append((title, desc, href))
 
     if f.get("shop"):
-        add("在线选字", f["shop"])
-    add("报缺字", "/gap/?norm=%s" % norm)
+        add("在线选字", "店面样张和选字。", f["shop"])
+    add("报缺字", "缺字形、缺收录或勘误，都从一个入口报。", "/gap/?norm=%s" % norm)
     if not items:
         return ""
-    links = "".join(
-        '<a href="%s"%s>%s</a>' % (
-            e(href),
-            ' target="_blank" rel="noopener"' if str(href).startswith("http") else "",
-            e(label),
-        )
-        for label, href in items
+    return (
+        '<div class="fn-more">'
+        '<p class="fn-label">还能办的事</p>%s</div>'
+        % tasks(items, compact=True)
     )
-    return '<p class="fn-quiet-links">%s</p>' % links
 
 
 def page_font(f):
-    """档案页：对齐店面详情节奏——样字 → 标题+动作 → 主栏/侧栏。无默认下划线、无 kv 顶线。"""
-    b = _lab_font_bits(f)
-    face_attrs = b["face_attrs"]
-    dots = []
-    if f.get("foundrySlug"):
-        dots.append(
-            '<a href="/foundry/%s/">%s</a>'
-            % (e(f["foundrySlug"]), e(f.get("foundry") or ""))
-        )
-    elif f.get("foundry"):
-        dots.append("<span>%s</span>" % e(f["foundry"]))
-    if b.get("proto"):
-        dots.append("<span>%s</span>" % e(b["proto"]))
-    dots.append('<span class="fn-chip">%s</span>' % e(b["st_label"]))
-    dotlist = '<p class="fn-dotlist">%s</p>' % "".join(dots)
+    """档案页：经典档案馆版式。顶栏主动作；样字；文件；切片包。"""
+    verb = font_verb(f)
+    st = status(f)
+    st_label = STATUS[st][0]
+    note = (f.get("visitorNote") or "").strip() or verb["note"]
+    archive = file_of(f, "archive")
+    up = upstream_href(f)
+    if archive and archive.get("staged") and "稍后" not in note and not github_archive_zip(up):
+        note = "原件正在上架到本站 OSS。" + note
+    spdx = spdx_of(f) or ""
+    proto = spdx or f.get("licenseName") or "—"
+    foundry = f.get("foundry") or "未标注"
+    foundry_slug = f.get("foundrySlug")
+    foundry_html = (
+        ('<a href="/foundry/%s/">%s</a>' % (e(foundry_slug), e(foundry)))
+        if foundry_slug else e(foundry)
+    )
+    text_cell = font_text_cell(f)
+    arch_cell = font_archive_cell(f)
+    mirror_state = (f.get("mirror") or {}).get("state") or ""
+    face = f.get("family") or ""
+    face_attrs = face_attrs_of(f, require_pack=False)
+    gated = is_gated(f)
+    staged = bool(archive and archive.get("staged"))
 
-    acts_bits = []
-    if b["orig_btn"]:
-        acts_bits.append(b["orig_btn"])
-    if b["slice_mode"] == "open":
-        acts_bits.append(b["slice_bare"])
-    title_actions = (
-        ('<div class="fn-actions">%s</div>' % "".join(acts_bits)) if acts_bits else ""
-    )
-    title_block = (
-        '<div class="fn-title">'
-        '<div class="fn-title-main">'
-        '<h1 class="is-face t-%s"%s>%s%s</h1>'
-        '%s</div>%s</div>'
-        % (
-            e(f["norm"]), face_attrs, e(b["name"]),
-            ('<small class="mono">%s</small>' % e(b["en"])) if b["en"] else "",
-            dotlist, title_actions,
-        )
-    )
-    wall = (
-        '<div class="fn-wall">'
-        '<p class="fn-wall-sample t-%s"%s data-face-full="1">%s</p>'
-        '</div>'
-        % (e(f["norm"]), face_attrs, e(PROOF))
-    )
+    lic_href = "/license/%s/" % f["norm"]
+    acts = []
+    if verb.get("strongHref") and verb.get("strongLabel"):
+        acts.append(ink(verb["strongLabel"], verb["strongHref"], VERB_ICO.get(verb["strongLabel"])))
+    if license_readable(f, None) and verb.get("strongHref", "").rstrip("/") != lic_href.rstrip("/"):
+        acts.append(link("读许可原文", lic_href, ico=VERB_ICO["读许可原文"]))
+    if can_attest(f):
+        acts.append(link("授权证明", "/attest/%s/" % f["norm"], ico=VERB_ICO["授权证明"]))
 
-    main_bits = []
-    if b["file_html"]:
-        main_bits.append(
-            '<section class="fn-panel">'
-            '<div class="fn-panel-head"><h2>文件</h2></div>'
-            '<div class="fn-panel-pad">%s</div></section>'
-            % b["file_html"]
+    up_label = upstream_dossier(up) if up else "—"
+    up_cell = (
+        ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (e(up), e(up_label)))
+        if up else e(up_label)
+    )
+    dossier = kv_rows([
+        ("目录编号", e(f["norm"])),
+        ("协议", e(proto)),
+        ("厂商", foundry_html),
+        ("原文", e(text_cell["d"])),
+        ("归档", e(arch_cell["d"])),
+        ("镜像", e(mirror_word(mirror_state) or "—")),
+        ("出处", up_cell),
+    ])
+
+    file_html = ""
+    real = primary_file(f)
+    if real and real.get("href") and real.get("kind") != "upstream" and not real.get("staged"):
+        fname = file_name_from_href(real["href"]) or real.get("label") or "源文件"
+        size_s = fmt_bytes(real.get("bytes") or real.get("size"))
+        sha = real.get("sha256") or ""
+        meta_dev = sha or real.get("format") or real.get("kind") or ""
+        file_html = (
+            '<div class="fn-file">'
+            '<p class="fn-label">原件</p>'
+            '<a class="fn-file-row" href="%s"%s>'
+            '<span class="fn-file-name">%s</span>'
+            '%s%s</a></div>'
+            % (
+                e(real["href"]),
+                ' target="_blank" rel="noopener"' if str(real["href"]).startswith("http") else "",
+                e(fname),
+                ('<span class="fn-file-size">%s</span>' % e(size_s)) if size_s else "",
+                ('<span class="fn-file-sha for-dev mono">%s</span>' % e(meta_dev)) if meta_dev else "",
+            )
         )
-    if b["slice_mode"] == "gate":
-        main_bits.append(
-            '<section class="fn-panel" id="slice-wrap">'
-            '<div class="fn-panel-head"><h2>即用字库</h2>'
-            '<p class="fn-panel-note">交官方 zip 核验后领取。原件不离开本机。</p></div>'
-            '<div class="fn-panel-pad">%s</div></section>'
-            % b["slice_bare"]
+    elif not gated:
+        # 可分发：原件都会进 OSS
+        tip = "正在上架到本站 OSS，就绪后本页直下。"
+        if staged:
+            tip = "OSS 原件包整理中，就绪后本页直下。"
+        extra = ""
+        if up:
+            extra = ' <a class="fn-file-go" href="%s" target="_blank" rel="noopener">看出处</a>' % e(up)
+        file_html = (
+            '<div class="fn-file is-wait">'
+            '<p class="fn-label">原件</p>'
+            '<p class="fn-file-wait">%s%s</p></div>'
+            % (e(tip), extra)
+        )
+
+    evidence = " · ".join(
+        x for x in (
+            (f.get("en") or "").strip(),
+            proto if proto != "—" else "",
+            foundry if foundry != "未标注" else "",
+        ) if x
+    ) or (f.get("en") or "")
+
+    lead = "%s。%s" % (e(st_label), e(note))
+    body = page_head(
+        wf(f),
+        lead,
+        crumbs=[("/source/", "目录"), (None, wf(f))],
+        dev="/source/%s · offer=%s" % (f["norm"], f.get("offer") or "jump"),
+        face_attrs=face_attrs,
+        sub=evidence,
+    )
+    body += '<p class="acts fn-acts">%s</p>' % "".join(acts)
+    body += '<div class="fn-layout"><div class="fn-main">'
+    if face:
+        body += '<p class="fn-proof t-%s"%s data-face-full="1">%s</p>' % (
+            e(f["norm"]), face_attrs, e(PROOF),
         )
     else:
-        main_bits.append(
-            '<section class="fn-panel">'
-            '<div class="fn-panel-head"><h2>即用字库</h2></div>'
-            '<div class="fn-panel-pad">'
-            '<p class="fn-panel-note">从上方领取。解压后引入 fonts.css，保留授权注释。</p>'
-            "</div></section>"
+        body += '<p class="fn-proof t-%s" data-face-norm="%s" data-face-full="1">%s</p>' % (
+            e(f["norm"]), e(f["norm"]), e(PROOF),
         )
-    if b["sec"]:
-        main_bits.append(
-            '<section class="fn-panel">'
-            '<div class="fn-panel-head"><h2>许可与证明</h2></div>'
-            '<div class="fn-panel-pad"><p class="fn-quiet-links">%s</p></div></section>'
-            % b["sec"]
-        )
-    more = font_more(f, b["verb"])
-    if more:
-        main_bits.append(
-            '<section class="fn-panel">'
-            '<div class="fn-panel-head"><h2>还能办的事</h2></div>'
-            '<div class="fn-panel-pad">%s</div></section>'
-            % more
-        )
-    main_bits.append(
-        '<p class="fn-quiet-links fn-errata">'
+    body += file_html
+    body += slice_desk_html(f, chrome="quiet")
+    body += font_more(f, verb) + '</div>'
+    body += aside("这一款", dossier) + '</div>'
+    body += (
+        '<p class="fn-errata quiet">'
         '<a href="/gap/?norm=%s&name=%s">信息有误？</a></p>'
-        % (e(f["norm"]), e(b["name"]))
-    )
-
-    body = (
-        '%s%s%s'
-        '<div class="fn-body"><div class="fn-main">%s</div>%s</div>'
-        % (
-            crumb(("/source/", "目录"), (None, b["name"]),
-                  dev="/source/%s · offer=%s" % (f["norm"], f.get("offer") or "jump")),
-            wall,
-            title_block,
-            "".join(main_bits),
-            aside("资料", b["dossier"]),
-        )
+        % (e(f["norm"]), e(wf(f)))
     )
     return layout(
         "source", wf(f), body, "/source/%s" % f["norm"],
         extra_head=pages_css("source-norm", "slice") + "\n" + pages_js("slice"),
         body_class="page-font",
     )
+
 
 
 def _font_by_norm(fonts, norm):
