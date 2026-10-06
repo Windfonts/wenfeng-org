@@ -337,6 +337,12 @@ body.page-about .about-stance-body {
   max-width: 56em;
   margin-left: calc((100% - 56em) / 4);
 }
+@media (max-width: 1104px) {
+  body.page-about .about-stance-body {
+    max-width: none;
+    margin-left: 0;
+  }
+}
 body.page-about .about-stance-body p {
   font-size: var(--fs-17, 1.0625rem);
 }
