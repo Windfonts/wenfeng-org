@@ -160,7 +160,7 @@ async function signPayload(payload, env) {
     alg,
     kid,
     value: digest,
-    note: '原型密钥过渡签发；生产将换 Ed25519。',
+    note: 'HMAC-SHA256 过渡签发；后续换 Ed25519。',
   };
   return payload;
 }
@@ -221,7 +221,7 @@ async function buildAttestation(font, holder, usage, uscc, env, issuedAt) {
     files: {
       archiveHref: href || null,
       hrefSha256: hrefDigest,
-      note: '原型用下载地址摘要，生产换成原件 sha256',
+      note: '现用下载地址摘要；原件文件 sha256 就绪后替换',
     },
     not: [
       '本证明是开源许可的核验记录，授权以著作权人发布的许可原文为准。',
@@ -230,7 +230,7 @@ async function buildAttestation(font, holder, usage, uscc, env, issuedAt) {
       '使用范围以许可原文为准。核验按原文条款记录。',
     ],
     issuedAt: now,
-    prototype: true,
+    prototype: false,
   };
   const seed = canonicalDeep(unsigned);
   const serial = 'WF-' + now.replace(/-/g, '') + '-' + (await sha256Hex(seed)).slice(0, 10).toUpperCase();
@@ -587,6 +587,18 @@ async function handleApi(request, env, url) {
 
 async function proxyOss(request, url) {
   let p = url.pathname;
+  /* 旧混写路径（/attest/Xwwk/ 等）→ 规范小写，避免命中 OSS 残留的 lab 壳 */
+  const canon = p.replace(
+    /^\/(attest|source|license|foundry)\/([^/]*[A-Z][^/]*)(\/.*)?$/i,
+    (_, kind, norm, rest) => '/' + kind.toLowerCase() + '/' + norm.toLowerCase() + (rest || '/'),
+  );
+  if (canon !== p) {
+    const loc = canon + url.search;
+    return new Response(null, {
+      status: 301,
+      headers: { Location: loc, 'cache-control': 'public, max-age=3600' },
+    });
+  }
   if (p === '/') {
     p = '/index.html';
   } else if (!/\.[a-z0-9]+$/i.test(p)) {
@@ -602,6 +614,14 @@ async function proxyOss(request, url) {
   const rh = new Headers(r.headers);
   rh.delete('content-disposition');
   rh.delete('x-oss-force-download');
+  /* HTML / JSON：短缓存可再验证，避免目录文案与 CSS ?v= 更新被边缘旧副本拖住 */
+  const ct = (rh.get('content-type') || '').toLowerCase();
+  const isDoc = ct.includes('text/html') || ct.includes('application/json') || /\.(html?|json)$/i.test(p);
+  const isAsset = p.startsWith('/assets/') && /\.(css|js)$/i.test(p);
+  if (isDoc || isAsset) {
+    rh.set('cache-control', 'public, max-age=60, must-revalidate');
+    rh.set('cdn-cache-control', 'max-age=60, must-revalidate');
+  }
   return new Response(r.body, { status: r.status, headers: rh });
 }
 

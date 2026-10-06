@@ -39,7 +39,7 @@
   min-height: 1.4em;
 }
 
-/* 真字行：固定状态/动作列，分割线走 li，左右齐 */
+/* 真字行：右列定宽右齐；meta 常占一行高度、仅透明度切换，悬停不跳高 */
 .page-source .lin-list {
   gap: 0;
 }
@@ -48,14 +48,14 @@
 }
 .page-source .lrow {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 4.75em 3.25em;
+  grid-template-columns: minmax(0, 1fr) 5em 5.75em;
   grid-template-areas:
     "nm st go"
-    "meta meta meta";
-  align-items: baseline;
+    "meta st go";
+  align-items: center;
   column-gap: var(--s-5);
-  row-gap: 0.15rem;
-  padding: var(--s-5) var(--s-3);
+  row-gap: 0.2rem;
+  padding: var(--s-4) var(--s-3);
   margin: 0 calc(-1 * var(--s-3));
   border-radius: var(--radius-sm);
   border-bottom: 0;
@@ -69,15 +69,19 @@
   grid-area: nm;
   font-size: var(--fs-22);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.25;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  white-space: normal;
+  word-break: break-word;
 }
 .page-source .lrow .lrel {
   grid-area: st;
-  justify-self: end;
-  width: 100%;
+  justify-self: stretch;
+  align-self: center;
   text-align: right;
   font-size: var(--fs-12);
   color: var(--gray);
@@ -87,25 +91,41 @@
 .page-source .lrow .lmeta {
   grid-area: meta;
   margin: 0;
+  min-height: 1.35em;
   text-align: left;
-  white-space: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: var(--fs-12);
   color: var(--gray);
   line-height: 1.35;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur, 0.15s) var(--ease, ease);
 }
-.page-source .lrow .lmeta.for-design { visibility: visible; }
+.page-source .lrow:hover .lmeta,
+.page-source .lrow:focus-within .lmeta {
+  visibility: visible;
+  opacity: 1;
+}
+.page-source .lrow .lmeta.for-design { display: block; }
 .page-source .lrow .lmeta.for-dev { display: none; }
 [data-view="dev"] .page-source .lrow .lmeta.for-design { display: none; }
 [data-view="dev"] .page-source .lrow .lmeta.for-dev {
   display: block;
+}
+[data-view="dev"] .page-source .lrow .lmeta {
   visibility: visible;
+  opacity: 1;
 }
 .page-source .lrow .lgo {
   grid-area: go;
   position: relative;
-  justify-self: end;
-  width: 100%;
-  padding-right: 0.9em;
+  justify-self: stretch;
+  align-self: center;
+  box-sizing: border-box;
+  padding-right: 1em;
   text-align: right;
   font-family: var(--font-mono);
   font-size: var(--fs-12);
@@ -182,20 +202,20 @@
     border-top: 1px solid var(--rule);
   }
   .page-source .lrow {
-    grid-template-columns: minmax(0, 1fr) 3.25em;
+    grid-template-columns: minmax(0, 1fr) 5.75em;
     grid-template-areas:
       "nm go"
       "meta go"
       "st go";
+    align-items: start;
   }
-  .page-source .lrow .lnm { grid-area: nm; white-space: normal; }
+  .page-source .lrow .lnm { grid-area: nm; }
   .page-source .lrow .lrel {
     grid-area: st;
     justify-self: start;
     text-align: left;
-    width: auto;
   }
-  .page-source .lrow .lgo { grid-area: go; }
-  .page-source .lrow .lmeta.for-design { display: block; visibility: visible; }
+  .page-source .lrow .lgo { grid-area: go; justify-self: stretch; }
+  .page-source .lrow .lmeta.for-design { display: block; }
   .page-source .lrow .lmeta.for-dev { display: none; }
 }

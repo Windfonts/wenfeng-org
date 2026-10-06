@@ -74,6 +74,13 @@
   align-items: center;
   gap: var(--s-2);
 }
+.page-attest-norm .atn-tools-end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  margin-left: auto;
+}
 .page-attest-norm .atn-tools-links {
   display: flex;
   flex-wrap: wrap;
@@ -100,6 +107,28 @@
 .page-attest-norm .atn-stage > .quiet {
   text-align: center;
   padding: var(--s-10) 0;
+}
+.page-attest-norm .atn-stage-wait {
+  display: grid;
+  gap: var(--s-4);
+  justify-items: center;
+  padding: var(--s-8) var(--s-4);
+}
+.page-attest-norm .atn-stage-wait .quiet {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.page-attest-norm .atn-stage-skel {
+  width: min(100%, 28rem);
+  aspect-ratio: 210 / 297;
+  max-height: 36rem;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent) 0 0 / 45% 100% no-repeat,
+    var(--paper);
+  border: 1px solid var(--rule);
+  animation: atn-shimmer 1.2s ease-in-out infinite;
 }
 .page-attest-norm .atn-stage .cert-sheet,
 .page-attest-norm .atn-stage .cert-minimal {
@@ -128,6 +157,11 @@
 
 .page-attest-norm .atn-embed {
   max-width: none;
+  margin-bottom: 0;
+  padding: var(--s-5);
+  border-radius: var(--radius);
+  background: var(--paper);
+  border: 1px solid var(--rule);
 }
 .page-attest-norm .atn-embed .label {
   margin: 0 0 var(--s-2);
@@ -156,6 +190,7 @@
   padding: var(--s-3);
   border-radius: var(--radius);
   background: var(--fill);
+  position: relative;
 }
 .page-attest-norm .atn-embed-badge .share-badge {
   display: block;
@@ -164,11 +199,53 @@
   width: auto;
   height: auto;
 }
+.page-attest-norm .atn-embed-badge .share-badge[hidden] { display: none; }
+.page-attest-norm .atn-embed-ph {
+  font-size: var(--fs-12);
+  color: var(--gray);
+  letter-spacing: 0.06em;
+}
+.page-attest-norm .atn-embed-badge.is-wait {
+  background:
+    linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent) 0 0 / 40% 100% no-repeat,
+    var(--fill);
+  animation: atn-shimmer 1.2s ease-in-out infinite;
+}
+.page-attest-norm .atn-embed-badge:not(.is-wait):not(.is-fail) .atn-embed-ph { display: none; }
+.page-attest-norm .atn-embed-badge.is-fail .atn-embed-ph::after { content: "加载失败"; }
+.page-attest-norm .atn-embed-badge.is-fail .atn-embed-ph { color: var(--gray); }
+.page-attest-norm .atn-embed .code.is-wait {
+  color: var(--gray);
+  min-height: 3.5rem;
+}
+.page-attest-norm .atn-embed .acts .btn[disabled],
+.page-attest-norm .atn-embed .acts .btn.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+@keyframes atn-shimmer {
+  0% { background-position: -40% 0; }
+  100% { background-position: 140% 0; }
+}
 .page-attest-norm .atn-embed .code {
   margin: 0 0 var(--s-3);
+  padding: var(--s-3) var(--s-4);
   font-size: var(--fs-11);
-  max-height: 7.5rem;
-  overflow: auto;
+  max-height: 6.5rem;
+  overflow: hidden;
+  position: relative;
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.7;
+}
+.page-attest-norm .atn-embed .code::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1.6rem;
+  background: linear-gradient(transparent, var(--fill));
+  pointer-events: none;
 }
 .page-attest-norm .atn-embed .acts {
   display: flex;
@@ -243,7 +320,7 @@
 .page-attest-norm .atn-links .label { margin-bottom: var(--s-1); }
 .page-attest-norm .atn-link-btn { justify-content: center; }
 
-/* 左栏模块体系：说明=卡片 / 动作=描边按钮 / 嵌入=默认折叠 */
+/* 左栏模块体系：说明=卡片 / 动作=描边按钮 / 嵌入=常显卡片 */
 .page-attest-norm .atn-links { margin-bottom: var(--s-6); }
 .page-attest-norm .atn-link-btn {
   background: transparent;
@@ -251,78 +328,7 @@
   color: var(--ink);
 }
 .page-attest-norm .atn-link-btn:hover { border-color: var(--ink-2); background: transparent; }
-.page-attest-norm .atn-embed { margin-bottom: 0; }
-.page-attest-norm .atn-embed-toggle {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: var(--s-3) calc(var(--s-4) + 1.25em) var(--s-3) var(--s-4);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: transparent;
-  font-size: var(--fs-14);
-  line-height: 1.4;
-  color: var(--ink);
-  cursor: pointer;
-  list-style: none;
-  transition: border-color var(--dur) var(--ease);
-}
-.page-attest-norm .atn-embed-toggle::-webkit-details-marker { display: none; }
-.page-attest-norm .atn-embed-toggle:hover { border-color: var(--ink-2); }
-.page-attest-norm .atn-embed-arrow {
-  position: absolute;
-  top: 50%;
-  right: var(--s-4);
-  width: 1em;
-  height: 1em;
-  margin: 0;
-  color: var(--gray);
-  display: block;
-  vertical-align: 0;
-  transform: translateY(-50%);
-  transform-origin: center;
-}
-/* 展开态：内容包进摘要钮的容器，成一个完整抽屉 */
-.page-attest-norm .atn-embed[open] {
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 0 var(--s-4) var(--s-4);
-  background: var(--page);
-}
-/* 展开态：摘要钮负 margin 拉满容器，文字与箭头槽位对齐 */
-.page-attest-norm .atn-embed[open] .atn-embed-toggle {
-  border: 0; border-radius: 0;
-  margin: 0 calc(-1 * var(--s-4));
-  padding: var(--s-3) calc(var(--s-4) + 1.25em) var(--s-3) var(--s-4);
-}
-.page-attest-norm .atn-embed[open] .atn-embed-arrow {
-  right: var(--s-4);
-  transform: translateY(-50%) rotate(180deg);
-}
-.page-attest-norm .atn-embed[open] .atn-embed-lead,
-.page-attest-norm .atn-embed[open] .label { margin-top: 0; }
-.page-attest-norm .atn-embed .label,
-.page-attest-norm .atn-embed .atn-embed-lead,
-.page-attest-norm .atn-embed .atn-embed-controls,
-.page-attest-norm .atn-embed .atn-embed-badge,
-.page-attest-norm .atn-embed .code,
-.page-attest-norm .atn-embed .acts { margin-top: var(--s-3); }
-.page-attest-norm .atn-embed .code {
-  max-height: 6.5rem;
-  overflow: hidden;
-  position: relative;
-}
-.page-attest-norm .atn-embed .code::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 1.6rem;
-  background: linear-gradient(transparent, var(--fill));
-  pointer-events: none;
-}
 
-/* 嵌入代码：真实换行 + 容器内优雅折行 */
-.page-attest-norm .atn-embed .code { white-space: pre-wrap; word-break: break-all; line-height: 1.7; }
 /* 徽章样式切换钮调小 */
 .page-attest-norm .atn-badge-pick { padding: 0.15rem; gap: 0.1rem; font-size: var(--fs-12); }
 .page-attest-norm .atn-badge-pick button { padding: 0.28rem 0.7rem; line-height: 1.35; }

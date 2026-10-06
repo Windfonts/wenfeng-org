@@ -25,7 +25,7 @@
 ## 证面
 
 - 经典与极简均为 A4 画幅（屏上 794×1123，打印 210×297mm），所见即所得
-- PDF 跟随当前样式（`?style=minimal`）
+- **PDF（边缘一期）**：`GET /api/v1/certs/{norm}/pdf` 仍 `501 pdf_not_available`。页内「下载 PDF」先请求该接口；501 或非 PDF 时回落系统打印（浏览器可另存为 PDF）。本地 `preview.py` 仍可用 headless Chrome 真出 PDF。矢量导出后续开放；PDF 跟随当前样式（`?style=minimal`）
 
 ## 禁止
 

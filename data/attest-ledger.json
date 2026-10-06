@@ -1,6 +1,41 @@
 {
-  "generated": "2026-10-06",
+  "generated": "2026-10-07",
   "records": [
+    {
+      "serial": "WF-20261007-DDEF9A5628",
+      "norm": "Arkp",
+      "catalogName": "文风·方舟像素",
+      "issuedAt": "2026-10-07",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "41C98B62"
+    },
+    {
+      "serial": "WF-20261007-83E99C2276",
+      "norm": "Dyh",
+      "catalogName": "文风·得意黑",
+      "issuedAt": "2026-10-07",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": [
+        "网页嵌入"
+      ],
+      "uscc": null,
+      "licenseHash": "9401F405"
+    },
+    {
+      "serial": "WF-20261007-C7AF4424C1",
+      "norm": "Xwwk",
+      "catalogName": "文风·霞鹜文楷",
+      "issuedAt": "2026-10-07",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "1A25E35D"
+    },
     {
       "serial": "WF-20261006-60397CBC4A",
       "norm": "Swzh",

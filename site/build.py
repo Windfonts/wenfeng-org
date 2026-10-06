@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 COMMENT = ('<!-- 本页嵌入的字体由文风字体（Windfonts）提供，可自由使用；'
            '请保留本授权标注 https://wenfeng.org/license -->')
-PROOF = "风急天高猿啸哀 渚清沙白鸟飞回"
+PROOF = "行到水穷处，坐看云起时"
 
 ATTEST_SPDX = {"OFL-1.1", "MIT", "Apache-2.0", "IPA-1.0", "IPA", "CC0-1.0", "CC-BY-4.0",
                "CC-BY-SA-4.0", "GPL-2.0-with-font-exception",
@@ -49,7 +49,7 @@ CHIP_ICO = {
 }
 VERB_ICO = {
     "下载": "download",
-    "去出处": "external",
+    "获取字型": "external",
     "报缺收录": "plus",
     "读许可": "book",
     "读许可原文": "book",
@@ -382,7 +382,7 @@ def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
                                      f.get("licenseName")] + (f.get("aliases") or []))).lower()
         rel = rel_of(f) if rel_of else STATUS[st][0]
         info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空",
-                                          f.get("foundry") or "未标注", rel]))
+                                          f.get("foundry") or "未标注"]))
         info_v = "%s · offer=%s · textState=%s" % (e(f["norm"]), e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
         if go:
             got = go(f)
@@ -395,11 +395,11 @@ def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
             if st == "source":
                 verb, inked, href = "下载", True, "/source/%s/" % e(f["norm"])
             elif st == "jump":
-                verb, inked, href = "去出处", False, "/source/%s/" % e(f["norm"])
+                verb, inked, href = "获取字型", False, "/source/%s/" % e(f["norm"])
             elif st == "missing":
                 verb, inked, href = "报缺收录", False, "/gap/?norm=%s" % e(f["norm"])
             else:
-                verb, inked, href = "看条目", False, "/source/%s/" % e(f["norm"])
+                verb, inked, href = "查看字型", False, "/source/%s/" % e(f["norm"])
         if href_of:
             href = href_of(f)
         attrs = face_attrs_of(f)
@@ -435,11 +435,11 @@ def lab_rows(fonts, page_size="12"):
         if st == "source":
             verb, href = "下载", "/source/%s/" % e(f["norm"])
         elif st == "jump":
-            verb, href = "去出处", "/source/%s/" % e(f["norm"])
+            verb, href = "获取字型", "/source/%s/" % e(f["norm"])
         elif st == "missing":
             verb, href = "报缺收录", "/gap/?norm=%s" % e(f["norm"])
         else:
-            verb, href = "看条目", "/source/%s/" % e(f["norm"])
+            verb, href = "查看字型", "/source/%s/" % e(f["norm"])
         face = f.get("family") or ""
         cls = "ls-name t-%s" % e(f["norm"]) if face else "ls-name"
         attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
@@ -628,8 +628,8 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <meta name="robots" content="noindex,nofollow">
 <title>%s</title>
 %s<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
-<link rel="stylesheet" href="/assets/tokens.css"><link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/pages/chrome.css">%s
+<link rel="stylesheet" href="/assets/tokens.css?v=%d"><link rel="stylesheet" href="/assets/site.css?v=%d">
+<link rel="stylesheet" href="/assets/pages/chrome.css?v=%d">%s
 </head><body data-page="%s"%s>
 %s
 <header class="topbar"><div class="container topbar-inner">%s
@@ -650,7 +650,16 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <main class="container page">%s</main>
 %s
 <script src="/assets/site.js?v=%d" defer></script>
-</body></html>""" % (e(("%s · 文风开源" % title) if title else "文风开源"), (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""), (("\n" + extra_head) if extra_head else ""), section, b_cls, SPRITE, wm, nav, nav, body, footer, int((HERE / "assets" / "site.js").stat().st_mtime))
+</body></html>""" % (
+        e(("%s · 文风开源" % title) if title else "文风开源"),
+        (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""),
+        int((HERE / "assets" / "tokens.css").stat().st_mtime),
+        int((HERE / "assets" / "site.css").stat().st_mtime),
+        int((HERE / "assets" / "pages" / "chrome.css").stat().st_mtime),
+        (("\n" + extra_head) if extra_head else ""),
+        section, b_cls, SPRITE, wm, nav, nav, body, footer,
+        int((HERE / "assets" / "site.js").stat().st_mtime),
+    )
 
 
 
@@ -729,11 +738,11 @@ def _frow(f):
     if st == "source":
         verb, inked, href = "下载", True, "/source/%s/" % f["norm"]
     elif st == "jump":
-        verb, inked, href = "去出处", False, "/source/%s/" % f["norm"]
+        verb, inked, href = "获取字型", False, "/source/%s/" % f["norm"]
     elif st == "missing":
         verb, inked, href = "报缺收录", False, "/gap/?norm=%s" % f["norm"]
     else:
-        verb, inked, href = "看条目", False, "/source/%s/" % f["norm"]
+        verb, inked, href = "查看字型", False, "/source/%s/" % f["norm"]
     face = f.get("family") or ""
     cls = "frow t-%s" % e(f["norm"]) if face else "frow"
     attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
@@ -801,7 +810,7 @@ def page_lab_home(data, fonts, variant):
         slides = []
         for i, f in enumerate(_face_fonts(fonts)):
             st = status(f)
-            verb = "下载" if st == "source" else "看条目"
+            verb = "下载" if st == "source" else "查看字型"
             hidden = "" if i == 0 else " hidden"
             slides.append(
                 '<div class="lab-face-slide"%s data-face-slide data-face-norm="%s" data-face-family="%s">'
@@ -917,7 +926,7 @@ def page_source(fonts):
         % (
             search(live=True),
             filter_chips(fonts, with_count=True),
-            index_rows(fonts),
+            index_rows(fonts, list_attrs='data-page-size="20"'),
             aside("状态", status_words(), "五个词全站同形。侧栏不是某一款的结论。"),
         )
     )
@@ -1002,7 +1011,7 @@ def page_lab_source(fonts, variant):
             pool = [f for f in fonts if f.get("family") and status(f) == "source"][:8]
         for i, f in enumerate(pool[:8]):
             st = status(f)
-            verb = "下载" if st == "source" else "看条目"
+            verb = "下载" if st == "source" else "查看字型"
             hidden = "" if i == 0 else " hidden"
             slides.append(
                 '<div class="ls-slide"%s data-face-slide data-face-norm="%s" data-face-family="%s">'
@@ -1139,9 +1148,9 @@ def primary_label(file):
     if k == "archive":
         return "下载"
     if k == "git":
-        return "去出处"
+        return "获取字型"
     if k == "upstream":
-        return "去出处"
+        return "获取字型"
     return file.get("label") or "下载"
 
 
@@ -1313,7 +1322,7 @@ def can_take(f):
 
 
 def font_verb(f, lic_text=None):
-    """主动作：标签与目录五态同词（下载 / 去出处 / 报缺收录）；许可全文作次按钮。"""
+    """主动作：标签与目录五态同词（下载 / 获取字型 / 报缺收录）；许可全文作次按钮。"""
     archive = file_of(f, "archive")
     staged = bool(archive and archive.get("staged"))
     real = primary_file(f)
@@ -1334,46 +1343,46 @@ def font_verb(f, lic_text=None):
         }
     if up and (staged or offer == "source"):
         return {
-            "verb": "去出处",
+            "verb": "获取字型",
             "verbDev": upstream_dev(up),
             "kickerDev": "primary · upstream",
             "note": "归档包稍后提供，现在到出处取原件。" if staged else base,
             "noteDev": ("files[archive].staged · upstream" if staged else "offer=source · upstream"),
             "strongHref": up,
-            "strongLabel": "去出处",
+            "strongLabel": "获取字型",
         }
     if up and offer == "jump":
         return {
-            "verb": "去出处",
+            "verb": "获取字型",
             "verbDev": upstream_dev(up),
             "kickerDev": "primary · jump",
             "note": base,
             "noteDev": "offer=jump · upstream · not woff2",
             "strongHref": up,
-            "strongLabel": "去出处",
+            "strongLabel": "获取字型",
         }
     if up:
         return {
-            "verb": "去出处",
+            "verb": "获取字型",
             "verbDev": upstream_dev(up),
             "kickerDev": "primary · upstream",
             "note": base,
             "noteDev": "offer=%s · upstream · textState=%s" % (offer, lic(f).get("textState") or "∅"),
             "strongHref": up,
-            "strongLabel": "去出处",
+            "strongLabel": "获取字型",
         }
     if is_gated(f):
         og = origin_for_gate(f)
         href = up or ((og or {}).get("href") or "")
         if href:
             return {
-                "verb": "去出处",
+                "verb": "获取字型",
                 "verbDev": upstream_dev(href),
                 "kickerDev": "primary · gated-origin",
                 "note": base,
                 "noteDev": "distribution=false · origin",
                 "strongHref": href,
-                "strongLabel": "去出处",
+                "strongLabel": "获取字型",
             }
     if st in ("ready", "pending") or offer == "pending":
         if readable:
@@ -1661,7 +1670,7 @@ def font_take_html(f):
             tip = "OSS 原件包整理中，就绪后本页直下。"
         go = ""
         if up:
-            go = ' <a class="fn-file-go" href="%s" target="_blank" rel="noopener">看出处</a>' % e(up)
+            go = ' <a class="fn-file-go" href="%s" target="_blank" rel="noopener">获取字型</a>' % e(up)
         rows.append(
             '<div class="fn-take-row is-wait">'
             '<span class="fn-take-kind">原件</span>'
@@ -2054,7 +2063,7 @@ def verdict_copy(f, kind):
         "state": "仅查询<br />全文见官方渠道",
         "stateDev": "textState=" + (ts or "∅") + "<br />not archived",
         "line": "仅查询 · 全文见官方渠道",
-        "note": "本站还没有归档全文。先看出处，不要把名称当成许可结论。",
+        "note": "本站还没有归档全文。先获取字型，不要把名称当成许可结论。",
         "noteDev": "pointer · upstream text"
     }
 
@@ -2148,7 +2157,7 @@ def license_foil(f, n):
     copy = verdict_copy(f, kind)
     spdx = spdx_of(f) or ""
     href = "/source/%s/" % f["norm"]
-    go = "看条目 →"
+    go = "查看字型 →"
     if kind == "mute":
         href = "/gap/"
         go = "报缺字 →"
@@ -2201,7 +2210,7 @@ def page_licenses(fonts):
         if ts == "full":
             return "有全文"
         if ts == "pointer":
-            return "去出处"
+            return "获取字型"
         if ts == "summary":
             return "有要点"
         return "待核实"
@@ -2211,8 +2220,8 @@ def page_licenses(fonts):
         if ts == "full":
             return "读原文", True
         if ts == "pointer":
-            return "去出处", False
-        return "看条目", False
+            return "获取字型", False
+        return "查看字型", False
 
     stage = (
         '<div class="lic-stage">'
@@ -2768,7 +2777,7 @@ def page_license(f, licenses):
         else:
             reader.append(
                 '<p class="licn-vendor-note">'
-                "本站还没有可展示的授权原文归档。请先去出处查阅。"
+                "本站还没有可展示的授权原文归档。请先获取字型查阅。"
                 "</p>"
             )
             if note:
@@ -2821,7 +2830,7 @@ def page_license(f, licenses):
             "%s或<a href=\"/gap/?norm=%s\">报缺收录</a>。"
             '<span class="for-dev mono"> · textState=%s</span></p>'
             % (
-                ('可先<a href="%s" target="_blank" rel="noopener">去出处</a>，' % e(src)) if src else "",
+                ('可先<a href="%s" target="_blank" rel="noopener">获取字型</a>，' % e(src)) if src else "",
                 e(norm),
                 e(ts_empty),
             )
@@ -2889,7 +2898,7 @@ def font_specimen_card(f, offer=None):
         action_text = "下载原件"
     else:
         href = "/source/%s/" % f["norm"]
-        action_text = "查看条目"
+        action_text = "查看字型"
 
     st_word = status_word(f)
     st_cls = status_class(f)
@@ -3083,7 +3092,7 @@ def page_attest(f):
         '<header class="page-mast atn-mast">'
         '<p class="atn-back"><a href="/attest/">← 出证入口</a></p>'
         '<h1 class="xxzt">%s 授权证明</h1>'
-        '<p class="ph-lead">这款字体的商用合规凭证：许可授权链、开源协议与原文哈希，一页看全。可下载 PDF 存档或打印，证面可切极简。</p>'
+        '<p class="ph-lead">这款字体的商用合规凭证：许可授权链、开源协议与原文哈希，一页看全。可打印存档（浏览器另存为 PDF），证面可切极简。</p>'
         '<p class="ph-lead for-dev mono">/attest/%s · classic|minimal</p>'
         "</header>"
     ) % (e(name), e(f["norm"]))
@@ -3092,15 +3101,14 @@ def page_attest(f):
         '<section class="atn-note">'
         '<p class="label">证书文书类型</p>'
         '<p class="atn-note-p">这份证明记录该字体的许可核验结果：授权来自谁、适用哪份开源协议、原文是否存档可查。证明不是著作权人的授权书，字体权利仍以许可原文为准。</p>'
-        '<p class="atn-note-p">把下方的证明徽章嵌入你的网站，等于对外声明「本项目使用的字体已完成合规核验」，点击徽章可回到本页查看完整内容。采购归档请下载 PDF，编号可在核验页查验。</p>'
+        '<p class="atn-note-p">把下方的证明徽章嵌入你的网站，等于对外声明「本项目使用的字体已完成合规核验」，点击徽章可回到本页查看完整内容。采购归档请用「下载 PDF」打开系统打印并另存，编号可在核验页查验。</p>'
         '</section>'
         '<section class="atn-links">'
         '<p class="label">相关链接</p>'
         '<a class="btn atn-link-btn" href="/license/%s/">许可原文</a>'
         '<a class="btn atn-link-btn" href="/attest/ledger/">证明记录</a>'
         '</section>'
-        '<details class="atn-embed" data-share open>'
-        '<summary class="atn-embed-toggle">获取嵌入徽章<svg class="icon atn-embed-arrow" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>'
+        '<section class="atn-embed" data-share>'
         '<p class="label">嵌入徽章</p>'
         '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
         '<div class="atn-embed-controls">'
@@ -3113,12 +3121,15 @@ def page_attest(f):
         '<button type="button" class="is-on" data-badge-tone-v="slim-ink">黑</button>'
         '<button type="button" data-badge-tone-v="slim-paper">白</button>'
         "</div></div>"
-        '<p class="atn-embed-badge"><img class="share-badge" data-badge-img src="" alt="授权证明徽章预览"></p>'
-        '<pre class="code" data-embed></pre>'
+        '<p class="atn-embed-badge is-wait" data-badge-slot>'
+        '<span class="atn-embed-ph" aria-hidden="true">徽章预览</span>'
+        '<img class="share-badge" data-badge-img alt="授权证明徽章预览" hidden>'
+        '</p>'
+        '<pre class="code is-wait" data-embed>正在生成嵌入代码…</pre>'
         '<p class="acts">'
-        '<button class="btn" type="button" data-copy>%s<span data-copy-label>复制嵌入代码</span></button>'
-        '<a class="btn" href="#" data-badge-dl download>%s下载 SVG</a>'
-        "</p></details></aside>"
+        '<button class="btn" type="button" data-copy disabled>%s<span data-copy-label>复制嵌入代码</span></button>'
+        '<a class="btn is-disabled" href="#" data-badge-dl aria-disabled="true">%s下载 SVG</a>'
+        "</p></section></aside>"
     ) % (e(f["norm"]), icon("copy"), icon("download"))
     stage = (
         '<div class="atn-main">'
@@ -3129,22 +3140,25 @@ def page_attest(f):
         '<button class="btn" type="button" data-print>打印</button>'
         '<button class="btn" type="button" data-json>%sJSON</button>'
         "</div>"
+        '<div class="atn-tools-end">'
         '<div class="seg atn-switch" data-cert-switcher role="group" aria-label="证面样式">'
         '<button type="button" class="is-on" data-cert-style="classic">经典</button>'
         '<button type="button" data-cert-style="minimal">极简</button>'
-        "</div></div>"
+        "</div>"
+        '<div class="seg atn-script" data-cert-script role="group" aria-label="简繁">'
+        '<button type="button" class="is-on" data-cert-script-v="hans">简</button>'
+        '<button type="button" data-cert-script-v="hant">繁</button>'
+        "</div></div></div>"
         '<div class="cert-stage atn-stage" data-cert data-norm="%s"%s>'
-        '<p class="quiet">正在生成证明…</p></div></div></div>'
+        '<div class="atn-stage-wait" role="status">'
+        '<p class="quiet">正在生成证明…</p>'
+        '<div class="atn-stage-skel" aria-hidden="true"></div>'
+        '</div></div></div></div>'
     ) % (
         icon("download"), icon("code"), e(f["norm"]),
         (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "",
     )
-    extra = (
-        pages_css("attest-norm") + "\n"
-        '<link rel="stylesheet" href="/assets/shs/regular.css">\n'
-        '<link rel="stylesheet" href="/assets/shs/bold.css">\n'
-        '<link rel="stylesheet" href="/assets/shsans/bold.css">'
-    )
+    extra = pages_css("attest-norm")
     body = '%s<div class="atn-layout">%s%s</div>' % (mast, side, stage)
     return layout(
         "attest", "%s 授权证明" % f["name"], body, "attest",
@@ -3200,7 +3214,11 @@ def page_ledger():
     )
     body += (
         '<div class="at-tool" data-ledger>'
+        '<div class="atn-stage-wait" data-ledger-wait role="status">'
         '<p class="quiet">正在读取证明记录…</p>'
+        '<div class="ledger-skel" aria-hidden="true">'
+        '<i></i><i></i><i></i><i></i><i></i>'
+        '</div></div>'
         '<span class="for-dev mono"> · GET ledger</span></div>'
     )
     return layout(
@@ -3211,9 +3229,6 @@ def page_ledger():
 
 
 def page_lookup():
-    extra = ('<link rel="stylesheet" href="/assets/shs/regular.css">\n'
-             '<link rel="stylesheet" href="/assets/shs/bold.css">\n'
-             '<link rel="stylesheet" href="/assets/shsans/bold.css">')
     body = page_head(
         "查证",
         "输入证明编号和持证单位，两项一致即显示证书信息。",
@@ -3245,7 +3260,7 @@ def page_lookup():
     )
     return layout(
         "v", "查证", body, "/v",
-        extra_head=extra + "\n" + pages_css("attest"),
+        extra_head=pages_css("attest"),
         body_class="page-attest page-attest-tool",
         desc='输入证书编号，核对授权证明的内容与签名。',
     )

@@ -1,3 +1,5 @@
+> 10-07 目录性能与文案收口：[Cursor]。目录行：标题两行 clamp；meta（OFL·厂商）悬停才显且定高不跳；右列定宽对齐；动作「看条目→查看字型」「去出处/看出处→获取字型」。WebFont 并发 3、视口懒加载；去证面/查证阻塞思源 CSS；HTML/CSS/JS `?v=`；Worker HTML/asset `max-age=60`；混写路径 301 小写。PDF 按钮遇 `pdf_not_available` 回落系统打印（另存 PDF）。台账骨架空状态。已上线 OSS+Worker，待提交。
+>
 > 10-07 证明 API 边缘上线：[Cursor]。`wenfeng-org-proxy` 分流 `/api/v1/certs*` + `/badge/`；KV `wenfeng-attest` 存证明记录（已灌 40 条）；HMAC Secret 绑 Worker。PDF 暂 501（用页内打印）。同 CF 账号于 wpcy.net Paid。正式 Ed25519 仍属 M2。
 >
 > 10-06 CyberCDN 清混写缓存：[Cursor]。10 边 `/var/cache/openresty/windfonts` 按 `fonts-packages/{含大写}/` 删缓存（合计约 11.9 万条）。抽样：`xxzt/xwwk/hcszt` 小写 200，混写 `Xxzt/Xwwk/Hcszt` 404。日志 devops `~/bin/mixed-pack-cdn-purge.log`。
