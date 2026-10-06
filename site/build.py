@@ -858,7 +858,7 @@ def page_source(fonts):
     n = len(fonts)
     body = page_head(
         "字型目录",
-        "我要的那一款在哪一行。能下载的直接下载，不能用的去原厂渠道。",
+        "全部免费及开源商用字体，一行一款。可自选下载 TTF / OTF 原件或即用字库切片包。",
         crumbs=[(None, "字型目录")],
         dev="/source · offer · fonts[]=%d" % n,
     )
@@ -875,7 +875,7 @@ def page_source(fonts):
             aside("状态", status_words(), "五个词全站同形。侧栏不是某一款的结论。"),
         )
     )
-    return layout("source", "字型目录", body, "/source", extra_head=pages_css("source"), body_class="page-source", desc='开源字体目录：能下载的直接下载，不能用的去原厂渠道。' )
+    return layout("source", "字型目录", body, "/source", extra_head=pages_css("source"), body_class="page-source", desc='全部免费及开源商用字体，一行一款。可自选下载 TTF / OTF 原件或即用字库切片包。' )
 
 
 def page_lab_source(fonts, variant):
