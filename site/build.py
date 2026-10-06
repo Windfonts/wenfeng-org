@@ -366,7 +366,7 @@ def lab_rows(fonts, page_size="12"):
         elif st == "jump":
             verb, href = "去出处", "/source/%s/" % e(f["norm"])
         elif st == "missing":
-            verb, href = "报缺", "/gap/?norm=%s" % e(f["norm"])
+            verb, href = "报缺收录", "/gap/?norm=%s" % e(f["norm"])
         else:
             verb, href = "看条目", "/source/%s/" % e(f["norm"])
         face = f.get("family") or ""
@@ -660,7 +660,7 @@ def _frow(f):
     elif st == "jump":
         verb, inked, href = "去出处", False, "/source/%s/" % f["norm"]
     elif st == "missing":
-        verb, inked, href = "报缺", False, "/gap/?norm=%s" % f["norm"]
+        verb, inked, href = "报缺收录", False, "/gap/?norm=%s" % f["norm"]
     else:
         verb, inked, href = "看条目", False, "/source/%s/" % f["norm"]
     face = f.get("family") or ""
@@ -1159,7 +1159,7 @@ def can_take(f):
 
 
 def font_verb(f, lic_text=None):
-    """主动作：标签与目录五态同词（下载 / 去出处 / 报缺）；许可全文作次按钮。"""
+    """主动作：标签与目录五态同词（下载 / 去出处 / 报缺收录）；许可全文作次按钮。"""
     archive = file_of(f, "archive")
     staged = bool(archive and archive.get("staged"))
     real = primary_file(f)
@@ -1220,13 +1220,13 @@ def font_verb(f, lic_text=None):
                 "strongLabel": "读许可原文",
             }
         return {
-            "verb": "报缺",
+            "verb": "报缺收录",
             "verbDev": "offer=pending",
             "kickerDev": "primary · pending",
             "note": base,
             "noteDev": "offer=pending · textState=%s · no upstream" % (lic(f).get("textState") or "∅"),
             "strongHref": "/gap/?norm=%s" % f["norm"],
-            "strongLabel": "报缺",
+            "strongLabel": "报缺收录",
         }
     if readable and st == "source":
         return {
@@ -1239,13 +1239,13 @@ def font_verb(f, lic_text=None):
             "strongLabel": "读许可原文",
         }
     return {
-        "verb": "报缺",
+        "verb": "报缺收录",
         "verbDev": "offer=missing",
         "kickerDev": "primary · missing",
         "note": base,
         "noteDev": "offer=missing · no upstream",
         "strongHref": "/gap/?norm=%s" % f["norm"],
-        "strongLabel": "报缺",
+        "strongLabel": "报缺收录",
     }
 
 
@@ -2267,7 +2267,7 @@ def page_license(f, licenses):
         ts_empty = lic_o.get("textState") or "∅"
         sheet = (
             '<p class="quiet">这一款许可尚未收入文本。'
-            "%s或<a href=\"/gap/?norm=%s\">报缺</a>。"
+            "%s或<a href=\"/gap/?norm=%s\">报缺收录</a>。"
             '<span class="for-dev mono"> · textState=%s</span></p>'
             % (
                 ('可先<a href="%s" target="_blank" rel="noopener">去出处</a>，' % e(src)) if src else "",
