@@ -8,11 +8,11 @@
  "licenseName": "待核实",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/Hansha2011/NanoTikBazHei/main/readme.md",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "0e245a6e6f5feb05a837612ba6e058ab82abf98e5ea2843cd6d93a50de953875",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

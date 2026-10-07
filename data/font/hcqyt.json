@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/Warren2060/ChillRound/main/LICENSE",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "d45891f8adfd21368c98e803603df1f575ff3fc4a6ec713ba7ccf0e3cba15b28",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

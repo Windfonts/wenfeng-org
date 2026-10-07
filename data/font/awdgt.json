@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/howlingFounts/EqHiSans/main/OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "9e8ca677147dc71478a15095d63bfbc71f8869398938cea3e34791e731cc246e",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

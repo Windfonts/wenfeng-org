@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project/main/LICENSE-OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "e564f06d018e7b95bc3594c96a17f1d41865af4038c375e7aa974dd69df38602",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "遍黑体计划",

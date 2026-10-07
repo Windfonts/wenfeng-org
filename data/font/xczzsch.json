@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": "2026-09-26",
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/Miiiller/Xiangcui-Wave-Sans/main/SIL_Open_Font_License_1.1.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "697383c6addd5dd14d7e1ff053aaa44520ce86a58589eef1f9985ab66e08db08",
+  "verifiedAt": "2026-10-04",
   "rfn": null,
   "origin": {
    "rootAuthor": "welai",

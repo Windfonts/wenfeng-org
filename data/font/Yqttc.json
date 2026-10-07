@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
+  "textState": "full",
   "sourceUrl": "https://github.com/Des-Magmeta/ChildFunSans-TC",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "fetchedAt": "2026-10-04",
+  "textSha256": "dc447c7bd52b5344d1a6fd9702658154033d3d80443bb2dd010044acfd44b900",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "Des-Magmeta",

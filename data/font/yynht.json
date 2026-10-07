@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://github.com/tani/genei-fonts-mirror/releases/download/mirror/GenEiNuGothic-EB_v1.1.zip",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "407184968a22d0c133f7ea0653c4832e0d8f3cb3f358cb9ad32af6f8fb1867bb",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

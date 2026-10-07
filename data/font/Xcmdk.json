@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
+  "textState": "full",
   "sourceUrl": "https://github.com/DraftingDreamer/FontCilantroCode",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "fetchedAt": "2026-10-04",
+  "textSha256": "7967ea58ef71b0a9717f80a68446a8ec57596a0a62e3838759fdef4667b62b53",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "DraftingDreamer",

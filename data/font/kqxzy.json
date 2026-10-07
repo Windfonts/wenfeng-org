@@ -7,12 +7,12 @@
  ],
  "licenseName": "快去寫作業-CJK授权协议",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/Partyb0ssishere/cef-fonts-cjk/main/LICENSE",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "018874d627011dfebd891fab8f15664eca92590a6c3a0b295f08a99748ac4c3a",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

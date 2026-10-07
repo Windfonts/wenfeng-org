@@ -1,6 +1,8 @@
-> 10-07 目录跟店面一致：[Grok]。人「目录这些都要一致，你为什么老是残留工作」。店面 713 / 本站 739；店面有的都进本站（184 条，含 6 款 BDF）；寒蝉端黑并进 `hcdht`。无包无库 26 条仍只在本站。上海摩登 `shmdt`。DIST 4194 页已上 OSS+CF。`/source/mkcjp/` `/source/bestten/` `/source/clduan/` 现网 200。不要跑 `export-wenfeng.py` 全量覆盖。未 git commit。
+> 10-08 授权原文按短码接回：[Grok]。人「先把授权原文按短码接回去，你再进行全面核查」。79 条 `textState` missing→full、1 条 pointer→full（仓耳周珂正大榜书）；`licenses.json`/`license-text` 本已在短码下，缺的是 `data/font` 与 `samples.json`。构建 4302 页。授权查询全文 346→426。`/license/975yt/` `/license/awdgt/` 现为开源双栏原文。80 页里 60 开源全文、20 厂商原文（健康体/Harmony/仓耳等，非空档）。未改 `offer`：目录仍 未收录 301。未跑 `export-wenfeng.py`。回退 `data/_bak-license-rewire-20261008/`。本提交，未发 OSS/CF。
 >
-> 10-07 目录短码跟店面：[Grok]。人「org 的也要改」。按中文名对上 529 条：379 条 `norm`/`family`/shop 换成店面短码，1 条上海摩登只改 family。27 条只在本站的未动。未插入店面独有款（みかちゃん等 13 款这批不在 556）。旧 CamelCase 在 `aliases`；`site/build.py` 再写 `/source/{old}/` 等 386 个别名 slug。本地 3596 页。对照 `data/norm-history.json`，回退 `data/_bak-org-shorts-20261007/`。未发 OSS/CF，未 git commit。不要再跑 `export-wenfeng.py` 全量覆盖。
+> 10-07 目录跟店面一致：[Grok]。人「目录这些都要一致，你为什么老是残留工作」。店面 713 / 本站 739；店面有的都进本站（184 条，含 6 款 BDF）；寒蝉端黑并进 `hcdht`。无包无库 26 条仍只在本站。上海摩登 `shmdt`。DIST 4194 页已上 OSS+CF。`/source/mkcjp/` `/source/bestten/` `/source/clduan/` 现网 200。不要跑 `export-wenfeng.py` 全量覆盖。已进 `84e9197`。
+>
+> 10-07 目录短码跟店面：[Grok]。人「org 的也要改」。按中文名对上 529 条：379 条 `norm`/`family`/shop 换成店面短码，1 条上海摩登只改 family。27 条只在本站的未动。未插入店面独有款（みかちゃん等 13 款这批不在 556）。旧 CamelCase 在 `aliases`；`site/build.py` 再写 `/source/{old}/` 等 386 个别名 slug。本地 3596 页。对照 `data/norm-history.json`，回退 `data/_bak-org-shorts-20261007/`。已进 `84e9197`。不要再跑 `export-wenfeng.py` 全量覆盖。
 >
 > 10-07 移动端证面与证书文案：[Cursor]。证面固定 794×1123，`.cert-fit` + `transform:scale` 等比缩入舞台（禁流式重排）；内边距左右约 60px；样字「两个黄鹂鸣翠柳，一行白鹭上青天」。左栏「说明」两句（性质+归档）+徽章导语收短。窄屏：工具栏/台账/索引/目录/页头收束；页脚备案整段隐藏。已上线 OSS 并清 CF；文档见 `docs/pages/attest-norm.md` + DECISIONS。
 >

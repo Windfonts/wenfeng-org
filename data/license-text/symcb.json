@@ -1,1 +1,13 @@
-{"norm": "Symb", "title": "GlyphWiki 著作权与许可协议", "body": "上元明朝（LanternMing）遵循 GlyphWiki 著作权与许可协议：\nhttp://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议\n\n上游声明（github.com/GuiWonder/LanternMing README「授权」节，2026-09-24 核对）：\n「遵循 GlyphWiki:著作权与许可协议」。字体基于醍醐书体与花园明朝制作，\n字形部分的著作权与许可以 GlyphWiki 站点页面为准。\n", "textKind": "full", "evidence": {"source": "[CC]", "url": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议", "commit": null, "fetchedAt": "2026-09-24", "rule": null}}
+{
+  "norm": "symcb",
+  "title": "GlyphWiki 著作权与许可协议",
+  "body": "上元明朝（LanternMing）遵循 GlyphWiki 著作权与许可协议：\nhttp://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议\n\n上游声明（github.com/GuiWonder/LanternMing README「授权」节，2026-09-24 核对）：\n「遵循 GlyphWiki:著作权与许可协议」。字体基于醍醐书体与花园明朝制作，\n字形部分的著作权与许可以 GlyphWiki 站点页面为准。\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "[CC]",
+    "url": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
+    "commit": null,
+    "fetchedAt": "2026-09-24",
+    "rule": null
+  }
+}

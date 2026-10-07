@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/master/LICENSE.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

@@ -8,11 +8,11 @@
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://developersstatic.vivo.com/developers/1cdcaef3b39848f290bf90346642ed1d/20241022/vivo%20Sans.zip",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "4f44b9201fac8225d46d7f6df43fe968bef480c49621e8d48ec7db2bb5e6e41b",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

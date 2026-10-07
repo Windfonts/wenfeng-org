@@ -8,11 +8,11 @@
  "licenseName": "庞门正道真贵楷体授权协议",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E5%BA%9E%E9%97%A8%E6%AD%A3%E9%81%93%E7%9C%9F%E8%B4%B5%E6%A5%B7%E4%BD%93_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "55b7951dcc0d7254e9fad479781b667a78c48e472c805b06ad078a85aa4d43c2",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "PangMenZhengDao",

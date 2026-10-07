@@ -7,12 +7,12 @@
  ],
  "licenseName": "Acy授权协议",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/lxfly2000/Acy-Font/master/LICENSE.TXT",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "23a7ba9d7455e7581336224a1e09eb62692986ad5567a8f0b0c6ddbe0af091b1",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

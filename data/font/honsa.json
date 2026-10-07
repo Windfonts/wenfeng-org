@@ -8,11 +8,11 @@
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": "https://contentplatform-drcn.hihonorcdn.com/developerPlatform/HONOR_Sans_1.0/HONOR_Sans_1.0.zip",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://www.honor.com/cn/support/content/zh-cn15838783/",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "9f946106aa13236af1d26ade0fdc740f1f72da2caf308d594747c05264b05d7c",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

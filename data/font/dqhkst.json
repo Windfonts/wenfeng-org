@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://github.com/BridgeRiver/BRWakaishotai",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/BridgeRiver/BRWakaishotai/main/OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "1cb98ec70e2d2dc9bc4aa1790cde0cade008d7539ae052497085f148e0617dd6",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "BridgeRiver",

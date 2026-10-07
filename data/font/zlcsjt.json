@@ -8,11 +8,11 @@
  "licenseName": "Apache License 2.0",
  "license": {
   "spdx": "Apache-2.0",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/zoomla/ZoomlaFont/master/LICENSE",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "逐浪字库",

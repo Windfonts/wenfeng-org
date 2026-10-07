@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
+  "textState": "full",
   "sourceUrl": "https://github.com/Des-Magmeta/PlanKai",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "fetchedAt": "2026-10-04",
+  "textSha256": "f3689edec541006f5edc3cfcb8f2decbebcf7c7f4d1abe6a77d45a9a8161e549",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "Des-Magmeta",

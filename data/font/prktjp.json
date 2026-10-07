@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://licenses.opensource.jp/OFL-1.1/OFL-1.1.html",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "42b4e6640287353721a31dade148f8fb930da55742116571fbf8c51802e2b0b5",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

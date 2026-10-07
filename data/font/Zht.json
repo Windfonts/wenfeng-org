@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
+  "textState": "full",
   "sourceUrl": "https://github.com/chiron-fonts/zev-hei-tc",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "fetchedAt": "2026-10-04",
+  "textSha256": "9159835517d023b142c9c7cac335447489577c9144c802bcfdae30d637393aa8",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "chiron-fonts",

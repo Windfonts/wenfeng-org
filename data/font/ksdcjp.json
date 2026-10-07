@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/kaiseidecol/OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "6c5445d4febbf6d84025b874a85c51e7e4bfa7495279eccdb4c317a6de857b46",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

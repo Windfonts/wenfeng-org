@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://github.com/feiyangjun-1/KirakaraMaru",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/feiyangjun-1/KirakaraMaru/master/LICENSE",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "fb755fa3280d1d215a20df2e64fe6a0f75f8208439b11671978214aae60d2997",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "feiyangjun-1",

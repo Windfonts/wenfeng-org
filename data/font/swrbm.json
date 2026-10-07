@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/sawarabimincho/OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "23a49d3198c9ffd233f73208c5e39c4ed893783cece36b954c0a65ee9aa7ef29",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/sawarabigothic/OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "5f247fad3e8a86b6c0779dff09277047c1ce2b0b7580a1093347a8af755352ba",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

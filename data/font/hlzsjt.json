@@ -8,11 +8,11 @@
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://www.maoken.com/freefonts/17746.html",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "5ec71b553de80b573a9365ff4cf95072799c83cbacbf2778e1066222200ffa48",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

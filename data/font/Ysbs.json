@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
+  "textState": "full",
   "sourceUrl": "https://github.com/Steve-Yuu/YshiPen-Shuti",
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "fetchedAt": "2026-10-04",
+  "textSha256": "7053f85baad56f157aad86bf2fe64e42935394b9ddc0c166b6296bfc88054010",
+  "verifiedAt": "2026-10-04",
   "rfn": null,
   "origin": {
    "rootAuthor": "lxgw",

@@ -8,11 +8,11 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://raw.githubusercontent.com/line/seed/main/OFL.txt",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "2e877cb9d5c82b6f0e0c5da509eb905ae8e299467da73c32f7b80bb9ce51ab62",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

@@ -10,3 +10,6 @@ dist/
 data/attest-hmac.json
 site/dist/
 .superpowers/
+
+# Local rollback snapshots — do not commit
+data/_bak-*/

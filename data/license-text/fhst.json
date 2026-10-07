@@ -1,1 +1,13 @@
-{"norm": "Ffs", "title": "SIL Open Font License 1.1", "body": "## 授权信息\n\n根据字形维基的[著作权与许可协议](http://zhs.glyphwiki.org/wiki/GlyphWiki:%e8%91%97%e4%bd%9c%e6%9d%83%e4%b8%8e%e8%ae%b8%e5%8f%af%e5%8d%8f%e8%ae%ae)，任何人都可以自由使用在字形维基（GlyphWiki）提交的字形数据及文章内容。不论一切针对数据的改变或商业用途，任何人都可以自由地使用、复制甚至转载上述的一切数据和内容。\n\n本字体遵循上述授权信息。\n\n### 允许\n- 一切商业使用；\n- 转载、分享字体文件；\n- 将字体文件嵌入软件中；\n- 修改字体或制作衍生版本，衍生字体也需遵循上述授权信息。\n\n### 不允许\n- 将该字体的原始版本或修改版本作为商品进行售卖或进行变相收费（包括但不限于积分下载，与其他字体捆绑售卖，设置任何权限门槛等）；\n- 用于违反国家法律和公序良俗的任何场景；\n- 在制作衍生字体时，名称出现“飞花”“FlyFlower”等字样。\n\n若对本字体有意见或问题，欢迎于[issue页面](https://github.com/Skr-ZERO/FlyFlowerSong/issues)提出。\n", "textKind": "full", "evidence": {"source": "[CC]", "url": "https://github.com/Skr-ZERO/FlyFlowerSong", "commit": null, "fetchedAt": "2026-09-26", "rule": null}}
+{
+  "norm": "fhst",
+  "title": "SIL Open Font License 1.1",
+  "body": "## 授权信息\n\n根据字形维基的[著作权与许可协议](http://zhs.glyphwiki.org/wiki/GlyphWiki:%e8%91%97%e4%bd%9c%e6%9d%83%e4%b8%8e%e8%ae%b8%e5%8f%af%e5%8d%8f%e8%ae%ae)，任何人都可以自由使用在字形维基（GlyphWiki）提交的字形数据及文章内容。不论一切针对数据的改变或商业用途，任何人都可以自由地使用、复制甚至转载上述的一切数据和内容。\n\n本字体遵循上述授权信息。\n\n### 允许\n- 一切商业使用；\n- 转载、分享字体文件；\n- 将字体文件嵌入软件中；\n- 修改字体或制作衍生版本，衍生字体也需遵循上述授权信息。\n\n### 不允许\n- 将该字体的原始版本或修改版本作为商品进行售卖或进行变相收费（包括但不限于积分下载，与其他字体捆绑售卖，设置任何权限门槛等）；\n- 用于违反国家法律和公序良俗的任何场景；\n- 在制作衍生字体时，名称出现“飞花”“FlyFlower”等字样。\n\n若对本字体有意见或问题，欢迎于[issue页面](https://github.com/Skr-ZERO/FlyFlowerSong/issues)提出。\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "[CC]",
+    "url": "https://github.com/Skr-ZERO/FlyFlowerSong",
+    "commit": null,
+    "fetchedAt": "2026-09-26",
+    "rule": null
+  }
+}

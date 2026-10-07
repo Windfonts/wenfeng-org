@@ -8,10 +8,10 @@
  "licenseName": "仓耳字库免费开源字体授权声明",
  "license": {
   "spdx": null,
-  "textState": "pointer",
+  "textState": "full",
   "sourceUrl": "https://www.tsanger.cn/category/114",
-  "fetchedAt": null,
-  "textSha256": null,
+  "fetchedAt": "2026-09-24",
+  "textSha256": "efc3c011ffb4c83df96ce819940dd1b391b6ba54048f42d85fd56055dabcbeab",
   "verifiedAt": "2026-09-26",
   "rfn": null
  },

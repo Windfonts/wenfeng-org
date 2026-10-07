@@ -8,11 +8,11 @@
  "licenseName": "杨任东竹石体授权协议",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E6%9D%A8%E4%BB%BB%E4%B8%9C%E7%AB%B9%E7%9F%B3%E4%BD%931.23_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "313840e03d6e763fd71547c97e23ab94dec30d111f8d15623fc12c7e8843ed3f",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",

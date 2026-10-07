@@ -7,12 +7,12 @@
  ],
  "licenseName": "猫啃网烟波宋授权协议",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E7%8C%AB%E5%95%83%E7%BD%91%E7%83%9F%E6%B3%A2%E5%AE%8B1.10_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "e564f06d018e7b95bc3594c96a17f1d41865af4038c375e7aa974dd69df38602",
+  "verifiedAt": "2026-10-04",
   "rfn": null,
   "origin": {
    "rootAuthor": "swei-b2-sugar",

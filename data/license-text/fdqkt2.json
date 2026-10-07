@@ -1,1 +1,13 @@
-{"norm": "Mtk2", "title": "SIL Open Font License 1.1", "body": "繁多全系列（FWHP MoTc-TwFl）双授权声明，摘自字体 name 表（2026-09-25 核对）：\n\nCopyright 2023 FWHP (https://github.com/FWHP-Enfun/MoTc-TwFl)\n(c) 2022 数位发展部。使用者可依需求择一使用以下条款：\n1.「政府资料开放授权条款-第一版」(https://data.gov.tw/license)\n2.「开源字型授权 1.1 版 (OFL 1.1)」(https://scripts.sil.org/OFL)\n", "textKind": "full", "evidence": {"source": "[CC]", "url": "https://data.gov.tw/license", "commit": null, "fetchedAt": "2026-09-25", "rule": null}}
+{
+  "norm": "fdqkt2",
+  "title": "SIL Open Font License 1.1",
+  "body": "繁多全系列（FWHP MoTc-TwFl）双授权声明，摘自字体 name 表（2026-09-25 核对）：\n\nCopyright 2023 FWHP (https://github.com/FWHP-Enfun/MoTc-TwFl)\n(c) 2022 数位发展部。使用者可依需求择一使用以下条款：\n1.「政府资料开放授权条款-第一版」(https://data.gov.tw/license)\n2.「开源字型授权 1.1 版 (OFL 1.1)」(https://scripts.sil.org/OFL)\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "[CC]",
+    "url": "https://data.gov.tw/license",
+    "commit": null,
+    "fetchedAt": "2026-09-25",
+    "rule": null
+  }
+}

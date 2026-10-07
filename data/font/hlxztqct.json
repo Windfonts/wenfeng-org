@@ -8,11 +8,11 @@
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
-  "verifiedAt": null,
+  "textState": "full",
+  "sourceUrl": "https://www.100font.com/upload/license/%E9%B8%BF%E9%9B%B7%E5%B0%8F%E7%BA%B8%E6%9D%A1%E9%9D%92%E6%98%A5%E4%BD%93_%E5%AD%97%E4%BD%93%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E.pdf",
+  "fetchedAt": "2026-10-04",
+  "textSha256": "7b7f06d3fdd841bc882c4bd257a395f0a0b1d122b34707dd1e08d060faa16cea",
+  "verifiedAt": "2026-10-04",
   "rfn": null
  },
  "foundry": "",
