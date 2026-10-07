@@ -1,0 +1,54 @@
+{
+ "norm": "hyztc",
+ "name": "滑油字 TC",
+ "en": "WD-XL Lubrifont TC",
+ "aliases": [
+  "hyztc"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": "https://openfontlicense.org",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "WD-XL",
+ "foundrySlug": "wdxl",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/hyztc",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://openfontlicense.org",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 openfontlicense.org",
+   "format": "git",
+   "href": "https://openfontlicense.org",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hyztc"
+}

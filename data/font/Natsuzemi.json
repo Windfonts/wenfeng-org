@@ -1,8 +1,10 @@
 {
- "norm": "Natsuzemi",
+ "norm": "natsuzemi",
  "name": "夏蝉圆黑",
  "en": "Natsuzemi Maru Gothic",
- "aliases": [],
+ "aliases": [
+  "Natsuzemi"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Natsuzemi",
+ "shop": "https://app.windfonts.com/fonts/natsuzemi",
  "weights": [
   "Regular"
  ],

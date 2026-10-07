@@ -1,8 +1,10 @@
 {
- "norm": "Qtxht",
+ "norm": "qtxht",
  "name": "千图学画体",
  "en": "qiantuxuehuati",
- "aliases": [],
+ "aliases": [
+  "Qtxht"
+ ],
  "licenseName": "千图学画体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Qtxht",
+ "shop": "https://app.windfonts.com/fonts/qtxht",
  "weights": [
   "Regular"
  ],

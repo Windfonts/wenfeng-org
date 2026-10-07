@@ -1,8 +1,10 @@
 {
- "norm": "Ztqxyjxs",
+ "norm": "ztqxyjxs",
  "name": "字体圈-新意吉祥宋",
  "en": "Fontquan XinYiJiXiangSong",
- "aliases": [],
+ "aliases": [
+  "Ztqxyjxs"
+ ],
  "licenseName": "字体圈-信谊吉祥宋授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Ztqxyjxs",
+ "shop": "https://app.windfonts.com/fonts/ztqxyjxs",
  "weights": [
   "Regular"
  ],

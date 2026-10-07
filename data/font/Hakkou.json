@@ -1,8 +1,10 @@
 {
- "norm": "Hakkou",
+ "norm": "hakkou",
  "name": "白光明朝",
  "en": "Hakkou Mincho",
- "aliases": [],
+ "aliases": [
+  "Hakkou"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Hakkou",
+ "shop": "https://app.windfonts.com/fonts/hakkou",
  "weights": [
   "Regular"
  ],

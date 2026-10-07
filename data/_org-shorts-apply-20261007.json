@@ -1,0 +1,4012 @@
+{
+  "generated": "2026-10-07",
+  "org": 556,
+  "shop": 707,
+  "same": 149,
+  "move": 379,
+  "family_only": 1,
+  "nomatch": 27,
+  "dest_skip": [],
+  "maps": [
+    {
+      "name": "975 圆体",
+      "old": "975MaruSCRegular",
+      "new": "975yt",
+      "kind": "move",
+      "family": "wenfeng-975yt"
+    },
+    {
+      "name": "简语生活体",
+      "old": "AbbrFes",
+      "new": "jysht",
+      "kind": "move",
+      "family": "wenfeng-jysht"
+    },
+    {
+      "name": "Acy",
+      "old": "AcyBold",
+      "new": "acyjp",
+      "kind": "move",
+      "family": "wenfeng-acyjp"
+    },
+    {
+      "name": "阿里巴巴普惠体",
+      "old": "Albbpht",
+      "new": "Albbpht",
+      "kind": "same",
+      "family": "wenfeng-albbpht"
+    },
+    {
+      "name": "阿里汉仪智能黑体",
+      "old": "Alhyznht",
+      "new": "Alhyznht",
+      "kind": "same",
+      "family": "wenfeng-alhyznht"
+    },
+    {
+      "name": "阿里健康体 2.0",
+      "old": "Alijkt",
+      "new": "aljkt",
+      "kind": "move",
+      "family": "wenfeng-aljkt"
+    },
+    {
+      "name": "谐灵附体",
+      "old": "AllPun",
+      "new": "xlft",
+      "kind": "move",
+      "family": "wenfeng-xlft"
+    },
+    {
+      "name": "阿里妈妈东方大楷",
+      "old": "Almmdfdk",
+      "new": "Almmdfdk",
+      "kind": "same",
+      "family": "wenfeng-almmdfdk"
+    },
+    {
+      "name": "阿里妈妈刀隶体",
+      "old": "Almmdlt",
+      "new": "Almmdlt",
+      "kind": "same",
+      "family": "wenfeng-almmdlt"
+    },
+    {
+      "name": "阿里妈妈数黑体",
+      "old": "Almmsht",
+      "new": "Almmsht",
+      "kind": "same",
+      "family": "wenfeng-almmsht"
+    },
+    {
+      "name": "方舟像素",
+      "old": "Arkp",
+      "new": "fzxs10",
+      "kind": "move",
+      "family": "wenfeng-fzxs10"
+    },
+    {
+      "name": "Droid Sans 后备体",
+      "old": "Azbzzwzt",
+      "new": "dshbt",
+      "kind": "move",
+      "family": "wenfeng-dshbt"
+    },
+    {
+      "name": "猫啃网烟波宋",
+      "old": "B2SCLight",
+      "new": "mkwybs",
+      "kind": "move",
+      "family": "wenfeng-mkwybs"
+    },
+    {
+      "name": "精品点阵体7x7",
+      "old": "Bb7",
+      "new": "jpdzt7x7",
+      "kind": "move",
+      "family": "wenfeng-jpdzt7x7"
+    },
+    {
+      "name": "精品点阵体9x9",
+      "old": "Bb9",
+      "new": "jpdzt9x9",
+      "kind": "move",
+      "family": "wenfeng-jpdzt9x9"
+    },
+    {
+      "name": "遍黑体",
+      "old": "Bbht",
+      "new": "bhtpgt",
+      "kind": "move",
+      "family": "wenfeng-bhtpgt"
+    },
+    {
+      "name": "遍黑体 P2",
+      "old": "Bbhtp2",
+      "new": "bhtp2",
+      "kind": "move",
+      "family": "wenfeng-bhtp2"
+    },
+    {
+      "name": "BIZ UDGothic",
+      "old": "Bizudg",
+      "new": "Bizudg",
+      "kind": "same",
+      "family": "wenfeng-bizudg"
+    },
+    {
+      "name": "BIZ UDMincho",
+      "old": "Bizudm",
+      "new": "Bizudm",
+      "kind": "same",
+      "family": "wenfeng-bizudm"
+    },
+    {
+      "name": "BIZ UDPGothic",
+      "old": "Bizudpg",
+      "new": "Bizudpg",
+      "kind": "same",
+      "family": "wenfeng-bizudpg"
+    },
+    {
+      "name": "BIZ UDPMincho",
+      "old": "Bizudpm",
+      "new": "Bizudpm",
+      "kind": "same",
+      "family": "wenfeng-bizudpm"
+    },
+    {
+      "name": "爆呆",
+      "old": "Bkd",
+      "new": "bkdft",
+      "kind": "move",
+      "family": "wenfeng-bkdft"
+    },
+    {
+      "name": "不寐仿宋",
+      "old": "Bmfs",
+      "new": "Bmfs",
+      "kind": "same",
+      "family": "wenfeng-bmfs"
+    },
+    {
+      "name": "Bokutachi no Gothic",
+      "old": "Bokug",
+      "new": "bngjp",
+      "kind": "move",
+      "family": "wenfeng-bngjp"
+    },
+    {
+      "name": "黑糖梅子糖",
+      "old": "Bspsc",
+      "new": "htmzt",
+      "kind": "move",
+      "family": "wenfeng-htmzt"
+    },
+    {
+      "name": "波塔One",
+      "old": "Btot",
+      "new": "Btot",
+      "kind": "same",
+      "family": "wenfeng-btot"
+    },
+    {
+      "name": "包图小白体",
+      "old": "Btxbt",
+      "new": "Btxbt",
+      "kind": "same",
+      "family": "wenfeng-btxbt"
+    },
+    {
+      "name": "快去寫作業-CJK",
+      "old": "CEFFontsCJK",
+      "new": "kqxzy",
+      "kind": "move",
+      "family": "wenfeng-kqxzy"
+    },
+    {
+      "name": "长坂点宋",
+      "old": "Cbds",
+      "new": "zbds16",
+      "kind": "move",
+      "family": "wenfeng-zbds16"
+    },
+    {
+      "name": "仓耳小丸子",
+      "old": "Cexwz",
+      "new": "Cexwz",
+      "kind": "same",
+      "family": "wenfeng-cexwz"
+    },
+    {
+      "name": "仓耳周珂正大榜书",
+      "old": "Cezkzdbs",
+      "new": "Cezkzdbs",
+      "kind": "same",
+      "family": "wenfeng-cezkzdbs"
+    },
+    {
+      "name": "传趣",
+      "old": "Chuanqu",
+      "new": "cqcqt",
+      "kind": "move",
+      "family": "wenfeng-cqcqt"
+    },
+    {
+      "name": "CJK手写字",
+      "old": "Cjkfqlt",
+      "new": "cjksxz",
+      "kind": "move",
+      "family": "wenfeng-cjksxz"
+    },
+    {
+      "name": "偏歪的黑趣体",
+      "old": "Ckbf",
+      "new": "pwdhqt",
+      "kind": "move",
+      "family": "wenfeng-pwdhqt"
+    },
+    {
+      "name": "创客贴金刚体",
+      "old": "Cktjgt",
+      "new": "Cktjgt",
+      "kind": "same",
+      "family": "wenfeng-cktjgt"
+    },
+    {
+      "name": "寒蝉德黑",
+      "old": "Cldin",
+      "new": "hcdh",
+      "kind": "move",
+      "family": "wenfeng-hcdh"
+    },
+    {
+      "name": "寒蝉端黑",
+      "old": "Clduan",
+      "new": "Clduan",
+      "kind": "nomatch"
+    },
+    {
+      "name": "寒蝉高黑",
+      "old": "Clg",
+      "new": "hcgh",
+      "kind": "move",
+      "family": "wenfeng-hcgh"
+    },
+    {
+      "name": "寒蝉活字仿宋",
+      "old": "Clhfs",
+      "new": "hchzfs",
+      "kind": "move",
+      "family": "wenfeng-hchzfs"
+    },
+    {
+      "name": "寒蝉潭黑",
+      "old": "Cltan",
+      "new": "hcth",
+      "kind": "move",
+      "family": "wenfeng-hcth"
+    },
+    {
+      "name": "Code2003",
+      "old": "Code2003",
+      "new": "c2003",
+      "kind": "move",
+      "family": "wenfeng-c2003"
+    },
+    {
+      "name": "Corporate Logo Ver3",
+      "old": "Corplogo3",
+      "new": "clv3jp",
+      "kind": "move",
+      "family": "wenfeng-clv3jp"
+    },
+    {
+      "name": "云峰字库重庆山城棒棒体",
+      "old": "Cqscbbt",
+      "new": "yfzkzqscbbt",
+      "kind": "move",
+      "family": "wenfeng-yfzkzqscbbt"
+    },
+    {
+      "name": "初夏明朝体",
+      "old": "Cxmc",
+      "new": "cxmct",
+      "kind": "move",
+      "family": "wenfeng-cxmct"
+    },
+    {
+      "name": "辰宇落雁体 Thin",
+      "old": "Cylyt",
+      "new": "cylytt",
+      "kind": "move",
+      "family": "wenfeng-cylytt"
+    },
+    {
+      "name": "钉钉进步体",
+      "old": "Ddjbt",
+      "new": "Ddjbt",
+      "kind": "same",
+      "family": "wenfeng-ddjbt"
+    },
+    {
+      "name": "点阵像素宋体 常规体",
+      "old": "Ddxstfx",
+      "new": "dzxsstcgt",
+      "kind": "move",
+      "family": "wenfeng-dzxsstcgt"
+    },
+    {
+      "name": "点点像素宋体菱形",
+      "old": "Ddxstlx",
+      "new": "ddxsstlx",
+      "kind": "move",
+      "family": "wenfeng-ddxsstlx"
+    },
+    {
+      "name": "点点像素圆体",
+      "old": "Ddxstyx",
+      "new": "ddxsyt",
+      "kind": "move",
+      "family": "wenfeng-ddxsyt"
+    },
+    {
+      "name": "馒头黑体",
+      "old": "Dela",
+      "new": "mtht",
+      "kind": "move",
+      "family": "wenfeng-mtht"
+    },
+    {
+      "name": "鼎猎客家体",
+      "old": "Dlkjt",
+      "new": "Dlkjt",
+      "kind": "same",
+      "family": "wenfeng-dlkjt"
+    },
+    {
+      "name": "鼎猎珠海体",
+      "old": "Dlzht",
+      "new": "Dlzht",
+      "kind": "same",
+      "family": "wenfeng-dlzht"
+    },
+    {
+      "name": "Doki Doki Fantasia",
+      "old": "Dokidoki",
+      "new": "Dokidoki",
+      "kind": "nomatch"
+    },
+    {
+      "name": "DotGothic16",
+      "old": "Dotgothic",
+      "new": "dg16jp",
+      "kind": "move",
+      "family": "wenfeng-dg16jp"
+    },
+    {
+      "name": "点点像素体-圆形",
+      "old": "DottedSongtiCircleRegular",
+      "new": "ddxstyx",
+      "kind": "move",
+      "family": "wenfeng-ddxstyx"
+    },
+    {
+      "name": "大桥和楷书体",
+      "old": "Dqhk",
+      "new": "dqhkst",
+      "kind": "move",
+      "family": "wenfeng-dqhkst"
+    },
+    {
+      "name": "得意黑",
+      "old": "Dyh",
+      "new": "Dyh",
+      "kind": "same",
+      "family": "wenfeng-dyh"
+    },
+    {
+      "name": "抖音美好体",
+      "old": "Dymht",
+      "new": "Dymht",
+      "kind": "same",
+      "family": "wenfeng-dymht"
+    },
+    {
+      "name": "斗鱼追光体",
+      "old": "Dyzgt",
+      "new": "Dyzgt",
+      "kind": "same",
+      "family": "wenfeng-dyzgt"
+    },
+    {
+      "name": "嗷呜等高体",
+      "old": "Eqhi",
+      "new": "awdgt",
+      "kind": "move",
+      "family": "wenfeng-awdgt"
+    },
+    {
+      "name": "流行点阵体16",
+      "old": "Fb16",
+      "new": "lxdzt16",
+      "kind": "move",
+      "family": "wenfeng-lxdzt16"
+    },
+    {
+      "name": "飞花宋体",
+      "old": "Ffs",
+      "new": "fhst",
+      "kind": "move",
+      "family": "wenfeng-fhst"
+    },
+    {
+      "name": "假珍珠",
+      "old": "Fkzl",
+      "new": "jzzt",
+      "kind": "move",
+      "family": "wenfeng-jzzt"
+    },
+    {
+      "name": "范美黑体",
+      "old": "Fmthei",
+      "new": "fmht",
+      "kind": "move",
+      "family": "wenfeng-fmht"
+    },
+    {
+      "name": "范美明体",
+      "old": "Fmtming",
+      "new": "fmmt",
+      "kind": "move",
+      "family": "wenfeng-fmmt"
+    },
+    {
+      "name": "Fontopo Nihongo",
+      "old": "Fontopo",
+      "new": "ftpnh",
+      "kind": "move",
+      "family": "wenfeng-ftpnh"
+    },
+    {
+      "name": "械黑",
+      "old": "Frexsans",
+      "new": "xhfsa",
+      "kind": "move",
+      "family": "wenfeng-xhfsa"
+    },
+    {
+      "name": "缝合像素",
+      "old": "Fupx",
+      "new": "fhxs10",
+      "kind": "move",
+      "family": "wenfeng-fhxs10"
+    },
+    {
+      "name": "普通圆黑",
+      "old": "Futehodo",
+      "new": "Futehodo",
+      "kind": "nomatch"
+    },
+    {
+      "name": "方正仿宋简体",
+      "old": "Fzfs",
+      "new": "fzfsjt",
+      "kind": "move",
+      "family": "wenfeng-fzfsjt"
+    },
+    {
+      "name": "方正黑体简体",
+      "old": "Fzht",
+      "new": "fzhtjt",
+      "kind": "move",
+      "family": "wenfeng-fzhtjt"
+    },
+    {
+      "name": "方正楷体简体",
+      "old": "Fzkt",
+      "new": "fzktjt",
+      "kind": "move",
+      "family": "wenfeng-fzktjt"
+    },
+    {
+      "name": "方正书宋简体",
+      "old": "Fzss",
+      "new": "fzssjt",
+      "kind": "move",
+      "family": "wenfeng-fzssjt"
+    },
+    {
+      "name": "Unifont",
+      "old": "GNUUnifontFull",
+      "new": "unijp",
+      "kind": "move",
+      "family": "wenfeng-unijp"
+    },
+    {
+      "name": "源暎 Antique",
+      "old": "Geneant",
+      "new": "yyaga",
+      "kind": "move",
+      "family": "wenfeng-yyaga"
+    },
+    {
+      "name": "源暎黑体",
+      "old": "Genegothic",
+      "new": "yyhtgeg",
+      "kind": "move",
+      "family": "wenfeng-yyhtgeg"
+    },
+    {
+      "name": "源暎小明朝",
+      "old": "Genekoburi",
+      "new": "yyxmc",
+      "kind": "move",
+      "family": "wenfeng-yyxmc"
+    },
+    {
+      "name": "源暎 Nu 黑体",
+      "old": "Genenu",
+      "new": "yynht",
+      "kind": "move",
+      "family": "wenfeng-yynht"
+    },
+    {
+      "name": "Gen Interface JP",
+      "old": "Genifjp",
+      "new": "genijp",
+      "kind": "move",
+      "family": "wenfeng-genijp"
+    },
+    {
+      "name": "龚帆免费体3.0",
+      "old": "Gfmft",
+      "new": "Gfmft",
+      "kind": "same",
+      "family": "wenfeng-gfmft"
+    },
+    {
+      "name": "光良酒-干杯体",
+      "old": "Gljgbt",
+      "new": "Gljgbt",
+      "kind": "same",
+      "family": "wenfeng-gljgbt"
+    },
+    {
+      "name": "更纱黑体",
+      "old": "Gsht",
+      "new": "Gsht",
+      "kind": "same",
+      "family": "wenfeng-gsht"
+    },
+    {
+      "name": "更纱等宽",
+      "old": "Gskd",
+      "new": "gsdk",
+      "kind": "move",
+      "family": "wenfeng-gsdk"
+    },
+    {
+      "name": "长城共享体",
+      "old": "Gwmsans",
+      "new": "zcgxt",
+      "kind": "move",
+      "family": "wenfeng-zcgxt"
+    },
+    {
+      "name": "Hachi Maru Pop",
+      "old": "Hachimarupop",
+      "new": "hmpjp",
+      "kind": "move",
+      "family": "wenfeng-hmpjp"
+    },
+    {
+      "name": "白光明朝",
+      "old": "Hakkou",
+      "new": "Hakkou",
+      "kind": "nomatch"
+    },
+    {
+      "name": "Harano Aji",
+      "old": "Haranoaji",
+      "new": "hrnajp",
+      "kind": "move",
+      "family": "wenfeng-hrnajp"
+    },
+    {
+      "name": "HarmonyOS Sans",
+      "old": "Harmony",
+      "new": "harmsa",
+      "kind": "move",
+      "family": "wenfeng-harmsa"
+    },
+    {
+      "name": "Hasen G",
+      "old": "Haseng",
+      "new": "Haseng",
+      "kind": "nomatch"
+    },
+    {
+      "name": "寒蝉端黑宋",
+      "old": "Hcdhs",
+      "new": "Hcdhs",
+      "kind": "same",
+      "family": "wenfeng-hcdhs"
+    },
+    {
+      "name": "寒蝉端黑体",
+      "old": "Hcdht",
+      "new": "Hcdht",
+      "kind": "same",
+      "family": "wenfeng-hcdht"
+    },
+    {
+      "name": "寒蝉 DIN 哥特",
+      "old": "Hcdin",
+      "new": "hcdingt",
+      "kind": "move",
+      "family": "wenfeng-hcdingt"
+    },
+    {
+      "name": "寒蝉点阵体",
+      "old": "Hcdzt",
+      "new": "Hcdzt",
+      "kind": "same",
+      "family": "wenfeng-hcdzt"
+    },
+    {
+      "name": "寒蝉活仿宋",
+      "old": "Hchfs",
+      "new": "Hchfs",
+      "kind": "same",
+      "family": "wenfeng-hchfs"
+    },
+    {
+      "name": "寒蝉锦书宋",
+      "old": "Hcjss",
+      "new": "Hcjss",
+      "kind": "same",
+      "family": "wenfeng-hcjss"
+    },
+    {
+      "name": "寒蝉宽黑体",
+      "old": "Hckht",
+      "new": "Hckht",
+      "kind": "same",
+      "family": "wenfeng-hckht"
+    },
+    {
+      "name": "寒蝉楷体",
+      "old": "Hckt",
+      "new": "Hckt",
+      "kind": "same",
+      "family": "wenfeng-hckt"
+    },
+    {
+      "name": "寒蝉龙藏楷书",
+      "old": "Hclck2",
+      "new": "hclcks",
+      "kind": "move",
+      "family": "wenfeng-hclcks"
+    },
+    {
+      "name": "寒蝉全圆体",
+      "old": "Hcqy",
+      "new": "hcqyt",
+      "kind": "move",
+      "family": "wenfeng-hcqyt"
+    },
+    {
+      "name": "寒蝉圆体 M",
+      "old": "Hcrym",
+      "new": "hcytm",
+      "kind": "move",
+      "family": "wenfeng-hcytm"
+    },
+    {
+      "name": "寒蝉手拙体",
+      "old": "Hcszt",
+      "new": "Hcszt",
+      "kind": "same",
+      "family": "wenfeng-hcszt"
+    },
+    {
+      "name": "寒蝉有机体",
+      "old": "Hcth",
+      "new": "hcyjt",
+      "kind": "move",
+      "family": "wenfeng-hcyjt"
+    },
+    {
+      "name": "寒蝉团圆体 Sans",
+      "old": "Hctyt",
+      "new": "hctyts",
+      "kind": "move",
+      "family": "wenfeng-hctyts"
+    },
+    {
+      "name": "寒蝉无机体",
+      "old": "Hcwjt",
+      "new": "Hcwjt",
+      "kind": "same",
+      "family": "wenfeng-hcwjt"
+    },
+    {
+      "name": "寒蝉圆黑体",
+      "old": "Hcyht",
+      "new": "Hcyht",
+      "kind": "same",
+      "family": "wenfeng-hcyht"
+    },
+    {
+      "name": "寒蝉云墨黑",
+      "old": "Hcymh",
+      "new": "Hcymh",
+      "kind": "same",
+      "family": "wenfeng-hcymh"
+    },
+    {
+      "name": "寒蝉拙楷",
+      "old": "Hczk",
+      "new": "Hczk",
+      "kind": "same",
+      "family": "wenfeng-hczk"
+    },
+    {
+      "name": "975 黑体",
+      "old": "Hei975",
+      "new": "975ht",
+      "kind": "move",
+      "family": "wenfeng-975ht"
+    },
+    {
+      "name": "日暮黑体",
+      "old": "Higure",
+      "new": "Higure",
+      "kind": "nomatch"
+    },
+    {
+      "name": "Hina Mincho",
+      "old": "Hinam",
+      "new": "hnmcjp",
+      "kind": "move",
+      "family": "wenfeng-hnmcjp"
+    },
+    {
+      "name": "合简黑体",
+      "old": "Hjht",
+      "new": "Hjht",
+      "kind": "same",
+      "family": "wenfeng-hjht"
+    },
+    {
+      "name": "合简宋体",
+      "old": "Hjst",
+      "new": "Hjst",
+      "kind": "same",
+      "family": "wenfeng-hjst"
+    },
+    {
+      "name": "黄凯桦律师手写体",
+      "old": "Hkhlssxt",
+      "new": "Hkhlssxt",
+      "kind": "same",
+      "family": "wenfeng-hkhlssxt"
+    },
+    {
+      "name": "鸿雷板书体",
+      "old": "Hlbs",
+      "new": "hlbst",
+      "kind": "move",
+      "family": "wenfeng-hlbst"
+    },
+    {
+      "name": "鸿雷板书简体正式版",
+      "old": "Hlbszs",
+      "new": "hlbsjt",
+      "kind": "move",
+      "family": "wenfeng-hlbsjt"
+    },
+    {
+      "name": "鸿雷行书简体",
+      "old": "Hlxs",
+      "new": "hlxsjt",
+      "kind": "move",
+      "family": "wenfeng-hlxsjt"
+    },
+    {
+      "name": "鸿雷小纸条青春体",
+      "old": "Hlxzt",
+      "new": "hlxztqct",
+      "kind": "move",
+      "family": "wenfeng-hlxztqct"
+    },
+    {
+      "name": "鸿雷拙书简体",
+      "old": "Hlzs",
+      "new": "hlzsjt",
+      "kind": "move",
+      "family": "wenfeng-hlzsjt"
+    },
+    {
+      "name": "ほのか新明朝",
+      "old": "Honoka",
+      "new": "hnkmc",
+      "kind": "move",
+      "family": "wenfeng-hnkmc"
+    },
+    {
+      "name": "荣耀 Sans",
+      "old": "Honorsans",
+      "new": "honsa",
+      "kind": "move",
+      "family": "wenfeng-honsa"
+    },
+    {
+      "name": "衡山毛笔",
+      "old": "Hsmbzt",
+      "new": "hsmb",
+      "kind": "move",
+      "family": "wenfeng-hsmb"
+    },
+    {
+      "name": "汇文明朝",
+      "old": "Hwmc",
+      "new": "Hwmc",
+      "kind": "same",
+      "family": "wenfeng-hwmc"
+    },
+    {
+      "name": "胡晓波男神体",
+      "old": "Hxbnst",
+      "new": "Hxbnst",
+      "kind": "same",
+      "family": "wenfeng-hxbnst"
+    },
+    {
+      "name": "胡晓波骚包体",
+      "old": "Hxbsb",
+      "new": "hxbsbt",
+      "kind": "move",
+      "family": "wenfeng-hxbsbt"
+    },
+    {
+      "name": "胡晓波真帅体",
+      "old": "Hxbzst",
+      "new": "Hxbzst",
+      "kind": "same",
+      "family": "wenfeng-hxbzst"
+    },
+    {
+      "name": "混菜写楷",
+      "old": "Hxwk",
+      "new": "hcxk",
+      "kind": "move",
+      "family": "wenfeng-hcxk"
+    },
+    {
+      "name": "花园明朝 A",
+      "old": "Hyma",
+      "new": "hymca",
+      "kind": "move",
+      "family": "wenfeng-hymca"
+    },
+    {
+      "name": "花园明朝 B",
+      "old": "Hymb",
+      "new": "hymcb",
+      "kind": "move",
+      "family": "wenfeng-hymcb"
+    },
+    {
+      "name": "华英明朝",
+      "old": "Hymc",
+      "new": "Hymc",
+      "kind": "same",
+      "family": "wenfeng-hymc"
+    },
+    {
+      "name": "黄引齐招牌体",
+      "old": "Hyqzpt",
+      "new": "Hyqzpt",
+      "kind": "same",
+      "family": "wenfeng-hyqzpt"
+    },
+    {
+      "name": "滑油字",
+      "old": "Hyzi",
+      "new": "hyzt",
+      "kind": "move",
+      "family": "wenfeng-hyzt"
+    },
+    {
+      "name": "汉字拼音体",
+      "old": "Hzpy",
+      "new": "hzpyt",
+      "kind": "move",
+      "family": "wenfeng-hzpyt"
+    },
+    {
+      "name": "IPAexMincho",
+      "old": "IPAexMincho",
+      "new": "ipamjp",
+      "kind": "move",
+      "family": "wenfeng-ipamjp"
+    },
+    {
+      "name": "IBM Plex 无衬线简体中文",
+      "old": "Ibmps",
+      "new": "Ibmps",
+      "kind": "same",
+      "family": "wenfeng-ibmps"
+    },
+    {
+      "name": "IBM Plex Sans JP",
+      "old": "Ibmpsjp",
+      "new": "Ibmpsjp",
+      "kind": "same",
+      "family": "wenfeng-ibmpsjp"
+    },
+    {
+      "name": "jf open 粉圆",
+      "old": "JfOpenHuninn",
+      "new": "jfofy",
+      "kind": "move",
+      "family": "wenfeng-jfofy"
+    },
+    {
+      "name": "汲古明体A",
+      "old": "Jgma",
+      "new": "jgmta",
+      "kind": "move",
+      "family": "wenfeng-jgmta"
+    },
+    {
+      "name": "汲古明体B",
+      "old": "Jgmb",
+      "new": "jgmtb",
+      "kind": "move",
+      "family": "wenfeng-jgmtb"
+    },
+    {
+      "name": "汲古明体C",
+      "old": "Jgmc",
+      "new": "jgmtc",
+      "kind": "move",
+      "family": "wenfeng-jgmtc"
+    },
+    {
+      "name": "计划楷",
+      "old": "Jhk",
+      "new": "Jhk",
+      "kind": "same",
+      "family": "wenfeng-jhk"
+    },
+    {
+      "name": "JK Maru Gothic",
+      "old": "Jkmaru",
+      "new": "jkmgjp",
+      "kind": "move",
+      "family": "wenfeng-jkmgjp"
+    },
+    {
+      "name": "果冻像素",
+      "old": "Jlpx",
+      "new": "gdxs12",
+      "kind": "move",
+      "family": "wenfeng-gdxs12"
+    },
+    {
+      "name": "吉利银河美好体",
+      "old": "Jlyhmht",
+      "new": "Jlyhmht",
+      "kind": "same",
+      "family": "wenfeng-jlyhmht"
+    },
+    {
+      "name": "荆南波波黑",
+      "old": "Jnbbh",
+      "new": "Jnbbh",
+      "kind": "same",
+      "family": "wenfeng-jnbbh"
+    },
+    {
+      "name": "荆南麦圆",
+      "old": "Jnmy",
+      "new": "Jnmy",
+      "kind": "same",
+      "family": "wenfeng-jnmy"
+    },
+    {
+      "name": "荆南缘默体",
+      "old": "Jnymt",
+      "new": "Jnymt",
+      "kind": "same",
+      "family": "wenfeng-jnymt"
+    },
+    {
+      "name": "今年也要加油鸭",
+      "old": "Jnyyjyy",
+      "new": "Jnyyjyy",
+      "kind": "same",
+      "family": "wenfeng-jnyyjyy"
+    },
+    {
+      "name": "精品点阵体",
+      "old": "Jpdz",
+      "new": "jpdzt",
+      "kind": "move",
+      "family": "wenfeng-jpdzt"
+    },
+    {
+      "name": "金山云技术体",
+      "old": "Jsyjst",
+      "new": "Jsyjst",
+      "kind": "same",
+      "family": "wenfeng-jsyjst"
+    },
+    {
+      "name": "江西拙楷体",
+      "old": "Jxzk",
+      "new": "jxzkt",
+      "kind": "move",
+      "family": "wenfeng-jxzkt"
+    },
+    {
+      "name": "瀞之库格尔黑体",
+      "old": "Jzkgeht",
+      "new": "Jzkgeht",
+      "kind": "same",
+      "family": "wenfeng-jzkgeht"
+    },
+    {
+      "name": "瀞明朝",
+      "old": "Jzkgemc",
+      "new": "jmct",
+      "kind": "move",
+      "family": "wenfeng-jmct"
+    },
+    {
+      "name": "Kaisei Decol",
+      "old": "Kaiseidecol",
+      "new": "ksdcjp",
+      "kind": "move",
+      "family": "wenfeng-ksdcjp"
+    },
+    {
+      "name": "Kaisei HarunoUmi",
+      "old": "Kaiseiharuno",
+      "new": "khujp",
+      "kind": "move",
+      "family": "wenfeng-khujp"
+    },
+    {
+      "name": "Kaisei Opti",
+      "old": "Kaiseiopti",
+      "new": "kaiso",
+      "kind": "move",
+      "family": "wenfeng-kaiso"
+    },
+    {
+      "name": "Kaisei Tokumin",
+      "old": "Kaiseitoku",
+      "new": "kstkm",
+      "kind": "move",
+      "family": "wenfeng-kstkm"
+    },
+    {
+      "name": "Kalo 黑体",
+      "old": "Kalo",
+      "new": "khtsa",
+      "kind": "move",
+      "family": "wenfeng-khtsa"
+    },
+    {
+      "name": "KazukiReiwa",
+      "old": "Kazukirw",
+      "new": "kzkrw",
+      "kind": "move",
+      "family": "wenfeng-kzkrw"
+    },
+    {
+      "name": "Keinann Maru POP",
+      "old": "Keinann",
+      "new": "Keinann",
+      "kind": "nomatch"
+    },
+    {
+      "name": "Kiwi Maru",
+      "old": "Kiwimaru",
+      "new": "kwmrjp",
+      "kind": "move",
+      "family": "wenfeng-kwmrjp"
+    },
+    {
+      "name": "快看世界体",
+      "old": "Kksjt",
+      "new": "Kksjt",
+      "kind": "same",
+      "family": "wenfeng-kksjt"
+    },
+    {
+      "name": "Klee One",
+      "old": "Klee",
+      "new": "klojp",
+      "kind": "move",
+      "family": "wenfeng-klojp"
+    },
+    {
+      "name": "I.Ngaan刻石录颜体",
+      "old": "Klsyt",
+      "new": "inkslyt",
+      "kind": "move",
+      "family": "wenfeng-inkslyt"
+    },
+    {
+      "name": "Kosugi",
+      "old": "Kosugi",
+      "new": "ksgjp",
+      "kind": "move",
+      "family": "wenfeng-ksgjp"
+    },
+    {
+      "name": "Kosugi Maru",
+      "old": "Kosugimaru",
+      "new": "ksgmr",
+      "kind": "move",
+      "family": "wenfeng-ksgmr"
+    },
+    {
+      "name": "钢笔鹤-B",
+      "old": "Kslgbht",
+      "new": "gbhb",
+      "kind": "move",
+      "family": "wenfeng-gbhb"
+    },
+    {
+      "name": "一点明体",
+      "old": "Kslyt",
+      "new": "ydmt",
+      "kind": "move",
+      "family": "wenfeng-ydmt"
+    },
+    {
+      "name": "黑花明朝",
+      "old": "Kurohana",
+      "new": "Kurohana",
+      "kind": "nomatch"
+    },
+    {
+      "name": "暮黑",
+      "old": "Kwgh",
+      "new": "mhkrwg",
+      "kind": "move",
+      "family": "wenfeng-mhkrwg"
+    },
+    {
+      "name": "空缘黑体",
+      "old": "Kys",
+      "new": "kyhtsa",
+      "kind": "move",
+      "family": "wenfeng-kyhtsa"
+    },
+    {
+      "name": "苦累蛙圆体",
+      "old": "Kywa",
+      "new": "klwyt",
+      "kind": "move",
+      "family": "wenfeng-klwyt"
+    },
+    {
+      "name": "俐方体11号",
+      "old": "Lftsyh",
+      "new": "lft11h",
+      "kind": "move",
+      "family": "wenfeng-lft11h"
+    },
+    {
+      "name": "刘欢卡通手书",
+      "old": "Lhktss",
+      "new": "Lhktss",
+      "kind": "same",
+      "family": "wenfeng-lhktss"
+    },
+    {
+      "name": "临海体",
+      "old": "Lhls",
+      "new": "lhtt",
+      "kind": "move",
+      "family": "wenfeng-lhtt"
+    },
+    {
+      "name": "濑户字体",
+      "old": "Lhzt",
+      "new": "Lhzt",
+      "kind": "same",
+      "family": "wenfeng-lhzt"
+    },
+    {
+      "name": "LINE Seed JP",
+      "old": "Lineseedjp",
+      "new": "linesjp",
+      "kind": "move",
+      "family": "wenfeng-linesjp"
+    },
+    {
+      "name": "钟齐流江毛草",
+      "old": "Ljmc",
+      "new": "zqljmc",
+      "kind": "move",
+      "family": "wenfeng-zqljmc"
+    },
+    {
+      "name": "乐米律动黑",
+      "old": "Lmld",
+      "new": "Lmld",
+      "kind": "nomatch"
+    },
+    {
+      "name": "联盟起艺卢帅正锐黑体",
+      "old": "Lmqylszrht",
+      "new": "Lmqylszrht",
+      "kind": "same",
+      "family": "wenfeng-lmqylszrht"
+    },
+    {
+      "name": "乐米拾光手札体",
+      "old": "Lmsg",
+      "new": "Lmsg",
+      "kind": "nomatch"
+    },
+    {
+      "name": "乐米野墨体",
+      "old": "Lmys",
+      "new": "Lmys",
+      "kind": "nomatch"
+    },
+    {
+      "name": "LINE Seed TW",
+      "old": "Lnsw",
+      "new": "linestw",
+      "kind": "move",
+      "family": "wenfeng-linestw"
+    },
+    {
+      "name": "立夏黑体",
+      "old": "Lxht",
+      "new": "lxhtssa",
+      "kind": "move",
+      "family": "wenfeng-lxhtssa"
+    },
+    {
+      "name": "漓雨手书",
+      "old": "Lyss",
+      "new": "Lyss",
+      "kind": "same",
+      "family": "wenfeng-lyss"
+    },
+    {
+      "name": "龙珠体",
+      "old": "Lzti",
+      "new": "lsclzt",
+      "kind": "move",
+      "family": "wenfeng-lsclzt"
+    },
+    {
+      "name": "幻之渗明朝",
+      "old": "Maboroshi",
+      "new": "Maboroshi",
+      "kind": "nomatch"
+    },
+    {
+      "name": "正风毛笔",
+      "old": "Masa",
+      "new": "zfmb",
+      "kind": "move",
+      "family": "wenfeng-zfmb"
+    },
+    {
+      "name": "猫啃什锦黑 繁体",
+      "old": "Matc",
+      "new": "mksjhtc",
+      "kind": "move",
+      "family": "wenfeng-mksjhtc"
+    },
+    {
+      "name": "莫大毛笔",
+      "old": "Mdmz",
+      "new": "mdmb",
+      "kind": "move",
+      "family": "wenfeng-mdmb"
+    },
+    {
+      "name": "小米兰亭 Sans",
+      "old": "Misa",
+      "new": "Misa",
+      "kind": "same",
+      "family": "wenfeng-misa"
+    },
+    {
+      "name": "美绩点阵体明朝",
+      "old": "Mjdm",
+      "new": "mjdztmc",
+      "kind": "move",
+      "family": "wenfeng-mjdztmc"
+    },
+    {
+      "name": "美绩点阵体",
+      "old": "Mjdz",
+      "new": "mjdzt",
+      "kind": "move",
+      "family": "wenfeng-mjdzt"
+    },
+    {
+      "name": "丸子黑",
+      "old": "Mkgh",
+      "new": "wzht",
+      "kind": "move",
+      "family": "wenfeng-wzht"
+    },
+    {
+      "name": "猫啃扛重族黑",
+      "old": "Mkkzh",
+      "new": "mkkzzh",
+      "kind": "move",
+      "family": "wenfeng-mkkzzh"
+    },
+    {
+      "name": "猫啃扛重族宋",
+      "old": "Mkkzs",
+      "new": "mkkzzs",
+      "kind": "move",
+      "family": "wenfeng-mkkzzs"
+    },
+    {
+      "name": "猫啃什锦黑",
+      "old": "Mksjh",
+      "new": "Mksjh",
+      "kind": "same",
+      "family": "wenfeng-mksjh"
+    },
+    {
+      "name": "猫啃网风雅宋",
+      "old": "Mkwfys",
+      "new": "Mkwfys",
+      "kind": "same",
+      "family": "wenfeng-mkwfys"
+    },
+    {
+      "name": "猫啃网故障黑",
+      "old": "Mkwgzh",
+      "new": "Mkwgzh",
+      "kind": "same",
+      "family": "wenfeng-mkwgzh"
+    },
+    {
+      "name": "猫啃网故障宋",
+      "old": "Mkwgzs",
+      "new": "Mkwgzs",
+      "kind": "same",
+      "family": "wenfeng-mkwgzs"
+    },
+    {
+      "name": "猫啃网糖圆体",
+      "old": "Mkwxy",
+      "new": "mkwtyt",
+      "kind": "move",
+      "family": "wenfeng-mkwtyt"
+    },
+    {
+      "name": "猫啃硬笔楷书",
+      "old": "Mkybkjs",
+      "new": "mkybks",
+      "kind": "move",
+      "family": "wenfeng-mkybks"
+    },
+    {
+      "name": "猫啃竹圆体",
+      "old": "Mkzyt",
+      "new": "Mkzyt",
+      "kind": "same",
+      "family": "wenfeng-mkzyt"
+    },
+    {
+      "name": "马路口圆体",
+      "old": "Mlyu",
+      "new": "mlkyt",
+      "kind": "move",
+      "family": "wenfeng-mlkyt"
+    },
+    {
+      "name": "MOBO",
+      "old": "Mobo",
+      "new": "Mobo",
+      "kind": "nomatch"
+    },
+    {
+      "name": "M+ gothic 12r",
+      "old": "Mp12",
+      "new": "mpg12jp",
+      "kind": "move",
+      "family": "wenfeng-mpg12jp"
+    },
+    {
+      "name": "M+ 1",
+      "old": "Mplus1",
+      "new": "mp1jp",
+      "kind": "move",
+      "family": "wenfeng-mp1jp"
+    },
+    {
+      "name": "M+ 1 Code",
+      "old": "Mplus1Code",
+      "new": "mp1cjp",
+      "kind": "move",
+      "family": "wenfeng-mp1cjp"
+    },
+    {
+      "name": "M+ 1c",
+      "old": "Mplus1c",
+      "new": "m1cjp",
+      "kind": "move",
+      "family": "wenfeng-m1cjp"
+    },
+    {
+      "name": "M+ 1m",
+      "old": "Mplus1m",
+      "new": "mp1mjp",
+      "kind": "move",
+      "family": "wenfeng-mp1mjp"
+    },
+    {
+      "name": "M+ 1mn",
+      "old": "Mplus1mn",
+      "new": "mp1mn",
+      "kind": "move",
+      "family": "wenfeng-mp1mn"
+    },
+    {
+      "name": "M+ 1p",
+      "old": "Mplus1p",
+      "new": "mp1pjp",
+      "kind": "move",
+      "family": "wenfeng-mp1pjp"
+    },
+    {
+      "name": "M+ 2",
+      "old": "Mplus2",
+      "new": "mp2jp",
+      "kind": "move",
+      "family": "wenfeng-mp2jp"
+    },
+    {
+      "name": "M+ 2c",
+      "old": "Mplus2c",
+      "new": "mp2cjp",
+      "kind": "move",
+      "family": "wenfeng-mp2cjp"
+    },
+    {
+      "name": "M+ 2m",
+      "old": "Mplus2m",
+      "new": "mp2mjp",
+      "kind": "move",
+      "family": "wenfeng-mp2mjp"
+    },
+    {
+      "name": "M+ 2p",
+      "old": "Mplus2p",
+      "new": "mp2pjp",
+      "kind": "move",
+      "family": "wenfeng-mp2pjp"
+    },
+    {
+      "name": "M+ U",
+      "old": "MplusU",
+      "new": "mpujp",
+      "kind": "move",
+      "family": "wenfeng-mpujp"
+    },
+    {
+      "name": "萌神手写体",
+      "old": "Mshx",
+      "new": "mssxt",
+      "kind": "move",
+      "family": "wenfeng-mssxt"
+    },
+    {
+      "name": "梦源宋体",
+      "old": "Mspyt",
+      "new": "myst",
+      "kind": "move",
+      "family": "wenfeng-myst"
+    },
+    {
+      "name": "马善政楷书",
+      "old": "Msz",
+      "new": "mszks",
+      "kind": "move",
+      "family": "wenfeng-mszks"
+    },
+    {
+      "name": "繁多全楷体",
+      "old": "Mtk1",
+      "new": "fdqkt",
+      "kind": "move",
+      "family": "wenfeng-fdqkt"
+    },
+    {
+      "name": "繁多全楷体2",
+      "old": "Mtk2",
+      "new": "fdqkt2",
+      "kind": "move",
+      "family": "wenfeng-fdqkt2"
+    },
+    {
+      "name": "繁多全宋体",
+      "old": "Mts1",
+      "new": "fdqst",
+      "kind": "move",
+      "family": "wenfeng-fdqst"
+    },
+    {
+      "name": "繁多全宋体2",
+      "old": "Mts2",
+      "new": "fdqst2",
+      "kind": "move",
+      "family": "wenfeng-fdqst2"
+    },
+    {
+      "name": "Keinan Mugimaru",
+      "old": "Mugimaru",
+      "new": "Mugimaru",
+      "kind": "nomatch"
+    },
+    {
+      "name": "Murecho",
+      "old": "Murecho",
+      "new": "mrcjp",
+      "kind": "move",
+      "family": "wenfeng-mrcjp"
+    },
+    {
+      "name": "B2花园",
+      "old": "Mxhn",
+      "new": "b2hy",
+      "kind": "move",
+      "family": "wenfeng-b2hy"
+    },
+    {
+      "name": "沐瑶软笔手写体",
+      "old": "Mysxt",
+      "new": "myrbsxt",
+      "kind": "move",
+      "family": "wenfeng-myrbsxt"
+    },
+    {
+      "name": "Nagino",
+      "old": "Nagino",
+      "new": "Nagino",
+      "kind": "nomatch"
+    },
+    {
+      "name": "何某手写体",
+      "old": "Nani",
+      "new": "hmsxt",
+      "kind": "move",
+      "family": "wenfeng-hmsxt"
+    },
+    {
+      "name": "纳挼崩音黑",
+      "old": "Nanotik",
+      "new": "nrbyh",
+      "kind": "move",
+      "family": "wenfeng-nrbyh"
+    },
+    {
+      "name": "夏蝉圆黑",
+      "old": "Natsuzemi",
+      "new": "Natsuzemi",
+      "kind": "nomatch"
+    },
+    {
+      "name": "新清明朝",
+      "old": "Newclear",
+      "new": "Newclear",
+      "kind": "nomatch"
+    },
+    {
+      "name": "New Tegomin",
+      "old": "Newteg",
+      "new": "ntgmjp",
+      "kind": "move",
+      "family": "wenfeng-ntgmjp"
+    },
+    {
+      "name": "夜照飞点阵",
+      "old": "Ngz",
+      "new": "yzfdz",
+      "kind": "move",
+      "family": "wenfeng-yzfdz"
+    },
+    {
+      "name": "新色圆黑",
+      "old": "Niiro",
+      "new": "Niiro",
+      "kind": "nomatch"
+    },
+    {
+      "name": "奈楷",
+      "old": "Nk",
+      "new": "nkakf",
+      "kind": "move",
+      "family": "wenfeng-nkakf"
+    },
+    {
+      "name": "女書鳳栖",
+      "old": "Nsfx",
+      "new": "nsfq",
+      "kind": "move",
+      "family": "wenfeng-nsfq"
+    },
+    {
+      "name": "女書梧桐",
+      "old": "Nswt",
+      "new": "Nswt",
+      "kind": "same",
+      "family": "wenfeng-nswt"
+    },
+    {
+      "name": "OPPO Sans 字体",
+      "old": "Opsa",
+      "new": "Opsa",
+      "kind": "same",
+      "family": "wenfeng-opsa"
+    },
+    {
+      "name": "庞门正道真贵楷体",
+      "old": "PangZhenGuiPMZD",
+      "new": "pmzdzgkt",
+      "kind": "move",
+      "family": "wenfeng-pmzdzgkt"
+    },
+    {
+      "name": "PFanHuTuTi",
+      "old": "Pfhtt",
+      "new": "Pfhtt",
+      "kind": "same",
+      "family": "wenfeng-pfhtt"
+    },
+    {
+      "name": "鹏翎文楷",
+      "old": "Plwk",
+      "new": "plwkpl",
+      "kind": "move",
+      "family": "wenfeng-plwkpl"
+    },
+    {
+      "name": "庞门正道标题体",
+      "old": "Pmzdbtt",
+      "new": "Pmzdbtt",
+      "kind": "same",
+      "family": "wenfeng-pmzdbtt"
+    },
+    {
+      "name": "庞门正道粗书体",
+      "old": "Pmzdcsd",
+      "new": "pmzdcst",
+      "kind": "move",
+      "family": "wenfeng-pmzdcst"
+    },
+    {
+      "name": "庞门正道轻松体",
+      "old": "Pmzdqst",
+      "new": "Pmzdqst",
+      "kind": "same",
+      "family": "wenfeng-pmzdqst"
+    },
+    {
+      "name": "流行黑",
+      "old": "Popgh",
+      "new": "lxhtpop",
+      "kind": "move",
+      "family": "wenfeng-lxhtpop"
+    },
+    {
+      "name": "PopRumKiwi Telop",
+      "old": "Poprum",
+      "new": "prktjp",
+      "kind": "move",
+      "family": "wenfeng-prktjp"
+    },
+    {
+      "name": "品如手写体",
+      "old": "Prsxt",
+      "new": "Prsxt",
+      "kind": "same",
+      "family": "wenfeng-prsxt"
+    },
+    {
+      "name": "屏显臻宋",
+      "old": "Pxzs",
+      "new": "Pxzs",
+      "kind": "same",
+      "family": "wenfeng-pxzs"
+    },
+    {
+      "name": "澳声通拼音文楷",
+      "old": "Pywk",
+      "new": "astpywk",
+      "kind": "move",
+      "family": "wenfeng-astpywk"
+    },
+    {
+      "name": "二维码像素",
+      "old": "QRpx",
+      "new": "ewmxs",
+      "kind": "move",
+      "family": "wenfeng-ewmxs"
+    },
+    {
+      "name": "权衡度量体",
+      "old": "Qhddl",
+      "new": "qhdlt",
+      "kind": "move",
+      "family": "wenfeng-qhdlt"
+    },
+    {
+      "name": "齐伋体",
+      "old": "Qiji",
+      "new": "qjt",
+      "kind": "move",
+      "family": "wenfeng-qjt"
+    },
+    {
+      "name": "秋空黑体 CL",
+      "old": "Qkhc",
+      "new": "qkhtcl",
+      "kind": "move",
+      "family": "wenfeng-qkhtcl"
+    },
+    {
+      "name": "秋空黑体 M",
+      "old": "Qkhm",
+      "new": "qkhtm",
+      "kind": "move",
+      "family": "wenfeng-qkhtm"
+    },
+    {
+      "name": "秋水书体 Bright",
+      "old": "Qssb",
+      "new": "qsstb",
+      "kind": "move",
+      "family": "wenfeng-qsstb"
+    },
+    {
+      "name": "秋水书体",
+      "old": "Qsst",
+      "new": "Qsst",
+      "kind": "same",
+      "family": "wenfeng-qsst"
+    },
+    {
+      "name": "清松手写体2",
+      "old": "Qssxt",
+      "new": "qssxt2",
+      "kind": "move",
+      "family": "wenfeng-qssxt2"
+    },
+    {
+      "name": "千图笔锋手写体",
+      "old": "Qtbfsxt",
+      "new": "Qtbfsxt",
+      "kind": "same",
+      "family": "wenfeng-qtbfsxt"
+    },
+    {
+      "name": "千图厚黑体",
+      "old": "Qthht",
+      "new": "Qthht",
+      "kind": "same",
+      "family": "wenfeng-qthht"
+    },
+    {
+      "name": "千图马克手写体",
+      "old": "Qtmksxt",
+      "new": "Qtmksxt",
+      "kind": "same",
+      "family": "wenfeng-qtmksxt"
+    },
+    {
+      "name": "千图学画体",
+      "old": "Qtxht",
+      "new": "Qtxht",
+      "kind": "same",
+      "family": "wenfeng-qtxht"
+    },
+    {
+      "name": "千图纤墨体",
+      "old": "Qtxmt",
+      "new": "Qtxmt",
+      "kind": "same",
+      "family": "wenfeng-qtxmt"
+    },
+    {
+      "name": "千图小兔体",
+      "old": "Qtxtt",
+      "new": "Qtxtt",
+      "kind": "same",
+      "family": "wenfeng-qtxtt"
+    },
+    {
+      "name": "EBAS 无衬线体",
+      "old": "Qzkswjz",
+      "new": "ebaswcxt",
+      "kind": "move",
+      "family": "wenfeng-ebaswcxt"
+    },
+    {
+      "name": "全字库正楷体",
+      "old": "Qzkt",
+      "new": "qzkzkt",
+      "kind": "move",
+      "family": "wenfeng-qzkzkt"
+    },
+    {
+      "name": "全字库正宋体",
+      "old": "Qzss",
+      "new": "qzkzst",
+      "kind": "move",
+      "family": "wenfeng-qzkzst"
+    },
+    {
+      "name": "Rampart One",
+      "old": "Rampart",
+      "new": "ramojp",
+      "kind": "move",
+      "family": "wenfeng-ramojp"
+    },
+    {
+      "name": "Reggae One",
+      "old": "Reggae",
+      "new": "regojp",
+      "kind": "move",
+      "family": "wenfeng-regojp"
+    },
+    {
+      "name": "RocknRoll",
+      "old": "RocknRoll",
+      "new": "rrojp",
+      "kind": "move",
+      "family": "wenfeng-rrojp"
+    },
+    {
+      "name": "臻妍GB",
+      "old": "Rzzyt",
+      "new": "zygb",
+      "kind": "move",
+      "family": "wenfeng-zygb"
+    },
+    {
+      "name": "Sawarabi Gothic",
+      "old": "Sawag",
+      "new": "swrbg",
+      "kind": "move",
+      "family": "wenfeng-swrbg"
+    },
+    {
+      "name": "Sawarabi Mincho",
+      "old": "Sawam",
+      "new": "swrbm",
+      "kind": "move",
+      "family": "wenfeng-swrbm"
+    },
+    {
+      "name": "ふぉんとうは怖い明朝体",
+      "old": "Scarymin",
+      "new": "Scarymin",
+      "kind": "nomatch"
+    },
+    {
+      "name": "素材集市康康体",
+      "old": "Scjskkt",
+      "new": "Scjskkt",
+      "kind": "same",
+      "family": "wenfeng-scjskkt"
+    },
+    {
+      "name": "随峰体 Beta",
+      "old": "Sft",
+      "new": "sftb",
+      "kind": "move",
+      "family": "wenfeng-sftb"
+    },
+    {
+      "name": "尚古等宽",
+      "old": "Sgdk",
+      "new": "Sgdk",
+      "kind": "same",
+      "family": "wenfeng-sgdk"
+    },
+    {
+      "name": "尚古黑体",
+      "old": "Sght",
+      "new": "Sght",
+      "kind": "same",
+      "family": "wenfeng-sght"
+    },
+    {
+      "name": "尚古明体",
+      "old": "Sgmt",
+      "new": "Sgmt",
+      "kind": "same",
+      "family": "wenfeng-sgmt"
+    },
+    {
+      "name": "尚古圆体",
+      "old": "Sgyt",
+      "new": "Sgyt",
+      "kind": "same",
+      "family": "wenfeng-sgyt"
+    },
+    {
+      "name": "思源等宽 JP",
+      "old": "Shcodejp",
+      "new": "sydkjp",
+      "kind": "move",
+      "family": "wenfeng-sydkjp"
+    },
+    {
+      "name": "新桥黑体",
+      "old": "Shinbashi",
+      "new": "Shinbashi",
+      "kind": "nomatch"
+    },
+    {
+      "name": "复古圆黑",
+      "old": "Shinretro",
+      "new": "Shinretro",
+      "kind": "nomatch"
+    },
+    {
+      "name": "Shippori Gothic Bold",
+      "old": "Shipgbold",
+      "new": "Shipgbold",
+      "kind": "nomatch"
+    },
+    {
+      "name": "Shippori Antique",
+      "old": "Shipporiantique",
+      "new": "spatq",
+      "kind": "move",
+      "family": "wenfeng-spatq"
+    },
+    {
+      "name": "Shippori Antique B1",
+      "old": "Shipporiantiqueb1",
+      "new": "sab1jp",
+      "kind": "move",
+      "family": "wenfeng-sab1jp"
+    },
+    {
+      "name": "Shippori Mincho",
+      "old": "Shipporimincho",
+      "new": "shimjp",
+      "kind": "move",
+      "family": "wenfeng-shimjp"
+    },
+    {
+      "name": "Shippori Mincho B1",
+      "old": "Shipporiminchob1",
+      "new": "smb1jp",
+      "kind": "move",
+      "family": "wenfeng-smb1jp"
+    },
+    {
+      "name": "上海摩登体",
+      "old": "Shmgt",
+      "new": "Shmgt",
+      "kind": "family_only",
+      "family": "wenfeng-shmdt"
+    },
+    {
+      "name": "思源等宽 Mono JP",
+      "old": "Shmonojp",
+      "new": "sydkmjp",
+      "kind": "move",
+      "family": "wenfeng-sydkmjp"
+    },
+    {
+      "name": "思源等宽 TC",
+      "old": "Shmonotc",
+      "new": "sydktc",
+      "kind": "move",
+      "family": "wenfeng-sydktc"
+    },
+    {
+      "name": "思源黑体 像素",
+      "old": "Shp",
+      "new": "syhtxs",
+      "kind": "move",
+      "family": "wenfeng-syhtxs"
+    },
+    {
+      "name": "思源黑体 HK",
+      "old": "Shsanshk",
+      "new": "syhthk",
+      "kind": "move",
+      "family": "wenfeng-syhthk"
+    },
+    {
+      "name": "思源黑体 JP",
+      "old": "Shsansjp",
+      "new": "syhtjp",
+      "kind": "move",
+      "family": "wenfeng-syhtjp"
+    },
+    {
+      "name": "思源宋体 HK",
+      "old": "Shserifhk",
+      "new": "systhk",
+      "kind": "move",
+      "family": "wenfeng-systhk"
+    },
+    {
+      "name": "思源宋体 JP",
+      "old": "Shserifjp",
+      "new": "systjp",
+      "kind": "move",
+      "family": "wenfeng-systjp"
+    },
+    {
+      "name": "演示春风楷",
+      "old": "Slcf",
+      "new": "yscfk",
+      "kind": "move",
+      "family": "wenfeng-yscfk"
+    },
+    {
+      "name": "演示佛系体",
+      "old": "Slfu",
+      "new": "ysfxt",
+      "kind": "move",
+      "family": "wenfeng-ysfxt"
+    },
+    {
+      "name": "演示秋鸿楷",
+      "old": "Slqh",
+      "new": "ysqhk",
+      "kind": "move",
+      "family": "wenfeng-ysqhk"
+    },
+    {
+      "name": "演示夏行楷",
+      "old": "Slxx",
+      "new": "ysxxk",
+      "kind": "move",
+      "family": "wenfeng-ysxxk"
+    },
+    {
+      "name": "演示悠然小楷二",
+      "old": "Sly1",
+      "new": "ysyrxke",
+      "kind": "move",
+      "family": "wenfeng-ysyrxke"
+    },
+    {
+      "name": "演示悠然小楷",
+      "old": "Slyr",
+      "new": "ysyrxk",
+      "kind": "move",
+      "family": "wenfeng-ysyrxk"
+    },
+    {
+      "name": "水木黑体",
+      "old": "Smht",
+      "new": "Smht",
+      "kind": "same",
+      "family": "wenfeng-smht"
+    },
+    {
+      "name": "装甲明朝",
+      "old": "Soukou",
+      "new": "zjmc",
+      "kind": "move",
+      "family": "wenfeng-zjmc"
+    },
+    {
+      "name": "思源黑体 CN",
+      "old": "SourceHanSansCNRegular",
+      "new": "syhtcn",
+      "kind": "move",
+      "family": "wenfeng-syhtcn"
+    },
+    {
+      "name": "思源黑體 TW",
+      "old": "SourceHanSansTWRegular",
+      "new": "syhttw",
+      "kind": "move",
+      "family": "wenfeng-syhttw"
+    },
+    {
+      "name": "思源黑体斜体",
+      "old": "SourceHanSansXTRegular",
+      "new": "syhtxt",
+      "kind": "move",
+      "family": "wenfeng-syhtxt"
+    },
+    {
+      "name": "思源屏显臻宋 CN",
+      "old": "SourceHanSerifCNforDisplay",
+      "new": "sypxzscn",
+      "kind": "move",
+      "family": "wenfeng-sypxzscn"
+    },
+    {
+      "name": "叁慕斜宋体",
+      "old": "SourceSa3mSerifCNRegular",
+      "new": "smxst",
+      "kind": "move",
+      "family": "wenfeng-smxst"
+    },
+    {
+      "name": "书体坊颜体",
+      "old": "Stfytz",
+      "new": "stfyt",
+      "kind": "move",
+      "family": "wenfeng-stfyt"
+    },
+    {
+      "name": "书体坊禚效锋行草体",
+      "old": "Stfzxfxct",
+      "new": "Stfzxfxct",
+      "kind": "same",
+      "family": "wenfeng-stfzxfxct"
+    },
+    {
+      "name": "Stick",
+      "old": "Stick",
+      "new": "stijp",
+      "kind": "move",
+      "family": "wenfeng-stijp"
+    },
+    {
+      "name": "狮尾三腿黑体",
+      "old": "Sw3tleg",
+      "new": "swstht",
+      "kind": "move",
+      "family": "wenfeng-swstht"
+    },
+    {
+      "name": "狮尾三角黑体",
+      "old": "Sw3tsans",
+      "new": "swsjhtsc",
+      "kind": "move",
+      "family": "wenfeng-swsjhtsc"
+    },
+    {
+      "name": "狮尾锯腿黑体",
+      "old": "Swaliasleg",
+      "new": "swjutht",
+      "kind": "move",
+      "family": "wenfeng-swjutht"
+    },
+    {
+      "name": "狮尾锯齿黑体",
+      "old": "Swaliassans",
+      "new": "swjuchtsc",
+      "kind": "move",
+      "family": "wenfeng-swjuchtsc"
+    },
+    {
+      "name": "狮尾斧腿黑体",
+      "old": "Swaxleg",
+      "new": "swftht",
+      "kind": "move",
+      "family": "wenfeng-swftht"
+    },
+    {
+      "name": "狮尾斧头黑体",
+      "old": "Swaxsans",
+      "new": "swfthtsc",
+      "kind": "move",
+      "family": "wenfeng-swfthtsc"
+    },
+    {
+      "name": "狮尾B2腿黑体",
+      "old": "Swb2leg",
+      "new": "swb2tht",
+      "kind": "move",
+      "family": "wenfeng-swb2tht"
+    },
+    {
+      "name": "狮尾B2黑体",
+      "old": "Swb2sans",
+      "new": "swb2htsc",
+      "kind": "move",
+      "family": "wenfeng-swb2htsc"
+    },
+    {
+      "name": "狮尾B2宋体",
+      "old": "Swb2serif",
+      "new": "swb2st",
+      "kind": "move",
+      "family": "wenfeng-swb2st"
+    },
+    {
+      "name": "狮尾蝙蝠圆体",
+      "old": "Swbatsans",
+      "new": "swbfyt",
+      "kind": "move",
+      "family": "wenfeng-swbfyt"
+    },
+    {
+      "name": "狮尾喇腿黑体",
+      "old": "Swbellleg",
+      "new": "swltht",
+      "kind": "move",
+      "family": "wenfeng-swltht"
+    },
+    {
+      "name": "狮尾喇叭黑体",
+      "old": "Swbellsans",
+      "new": "swlbhtsc",
+      "kind": "move",
+      "family": "wenfeng-swlbhtsc"
+    },
+    {
+      "name": "狮尾骨腿黑体",
+      "old": "Swboneleg",
+      "new": "swgtht",
+      "kind": "move",
+      "family": "wenfeng-swgtht"
+    },
+    {
+      "name": "狮尾骨头黑体",
+      "old": "Swbonesans",
+      "new": "swgthtsc",
+      "kind": "move",
+      "family": "wenfeng-swgthtsc"
+    },
+    {
+      "name": "狮尾霓腿黑体",
+      "old": "Swbowleg",
+      "new": "swntht",
+      "kind": "move",
+      "family": "wenfeng-swntht"
+    },
+    {
+      "name": "狮尾霓黑体",
+      "old": "Swbowsans",
+      "new": "swnhtsc",
+      "kind": "move",
+      "family": "wenfeng-swnhtsc"
+    },
+    {
+      "name": "狮尾弯腿黑体",
+      "old": "Swcurveleg",
+      "new": "swwtht",
+      "kind": "move",
+      "family": "wenfeng-swwtht"
+    },
+    {
+      "name": "狮尾弯黑体",
+      "old": "Swcurvesans",
+      "new": "swwhtsc",
+      "kind": "move",
+      "family": "wenfeng-swwhtsc"
+    },
+    {
+      "name": "狮尾飞腿黑体",
+      "old": "Swdartleg",
+      "new": "swfbtht",
+      "kind": "move",
+      "family": "wenfeng-swfbtht"
+    },
+    {
+      "name": "狮尾飞镖黑体",
+      "old": "Swdartsans",
+      "new": "swfbhtsc",
+      "kind": "move",
+      "family": "wenfeng-swfbhtsc"
+    },
+    {
+      "name": "狮尾D卤腿黑体",
+      "old": "Swdellunaleg",
+      "new": "swdltht",
+      "kind": "move",
+      "family": "wenfeng-swdltht"
+    },
+    {
+      "name": "狮尾德鲁纳黑体",
+      "old": "Swdellunasans",
+      "new": "swdlnhtsc",
+      "kind": "move",
+      "family": "wenfeng-swdlnhtsc"
+    },
+    {
+      "name": "狮尾恶腿黑体",
+      "old": "Swdevilleg",
+      "new": "swetht",
+      "kind": "move",
+      "family": "wenfeng-swetht"
+    },
+    {
+      "name": "狮尾恶魔黑体",
+      "old": "Swdevilsans",
+      "new": "swemhtsc",
+      "kind": "move",
+      "family": "wenfeng-swemhtsc"
+    },
+    {
+      "name": "狮尾D露西",
+      "old": "Swdlucy",
+      "new": "swdlx",
+      "kind": "move",
+      "family": "wenfeng-swdlx"
+    },
+    {
+      "name": "狮尾B2加糖宋体",
+      "old": "SweiB2Sugar",
+      "new": "swb2jtst",
+      "kind": "move",
+      "family": "wenfeng-swb2jtst"
+    },
+    {
+      "name": "狮尾四季春",
+      "old": "SweiSpring",
+      "new": "swsjc",
+      "kind": "move",
+      "family": "wenfeng-swsjc"
+    },
+    {
+      "name": "狮尾繁腿黑体",
+      "old": "Swfanleg",
+      "new": "swfztht",
+      "kind": "move",
+      "family": "wenfeng-swfztht"
+    },
+    {
+      "name": "狮尾繁中黑体",
+      "old": "Swfansans",
+      "new": "swfzhtsc",
+      "kind": "move",
+      "family": "wenfeng-swfzhtsc"
+    },
+    {
+      "name": "狮尾繁中宋体",
+      "old": "Swfanserif",
+      "new": "swfzst",
+      "kind": "move",
+      "family": "wenfeng-swfzst"
+    },
+    {
+      "name": "狮尾咏腿黑体",
+      "old": "Swfistleg",
+      "new": "swytht",
+      "kind": "move",
+      "family": "wenfeng-swytht"
+    },
+    {
+      "name": "狮尾咏春黑体",
+      "old": "Swfistsans",
+      "new": "swychtsc",
+      "kind": "move",
+      "family": "wenfeng-swychtsc"
+    },
+    {
+      "name": "狮尾福腿黑体",
+      "old": "Swgospelleg",
+      "new": "swfytht",
+      "kind": "move",
+      "family": "wenfeng-swfytht"
+    },
+    {
+      "name": "狮尾福音黑体",
+      "old": "Swgospelsans",
+      "new": "swfyhtsc",
+      "kind": "move",
+      "family": "wenfeng-swfyhtsc"
+    },
+    {
+      "name": "狮尾圆体",
+      "old": "Swgothic",
+      "new": "swytsc",
+      "kind": "move",
+      "family": "wenfeng-swytsc"
+    },
+    {
+      "name": "狮尾腿圆体",
+      "old": "Swgothicleg",
+      "new": "swtyt",
+      "kind": "move",
+      "family": "wenfeng-swtyt"
+    },
+    {
+      "name": "狮尾半月体",
+      "old": "Swhalfmoon",
+      "new": "swbyt",
+      "kind": "move",
+      "family": "wenfeng-swbyt"
+    },
+    {
+      "name": "狮尾简腿黑体",
+      "old": "Swjayleg",
+      "new": "swjztht",
+      "kind": "move",
+      "family": "wenfeng-swjztht"
+    },
+    {
+      "name": "狮尾简中黑体",
+      "old": "Swjaysans",
+      "new": "swjzhtsc",
+      "kind": "move",
+      "family": "wenfeng-swjzhtsc"
+    },
+    {
+      "name": "狮尾简中宋体",
+      "old": "Swjayserif",
+      "new": "swjzst",
+      "kind": "move",
+      "family": "wenfeng-swjzst"
+    },
+    {
+      "name": "狮尾麦腿黑体",
+      "old": "Swmarkerleg",
+      "new": "swmtht",
+      "kind": "move",
+      "family": "wenfeng-swmtht"
+    },
+    {
+      "name": "狮尾麦克黑体",
+      "old": "Swmarkersans",
+      "new": "swmkhtsc",
+      "kind": "move",
+      "family": "wenfeng-swmkhtsc"
+    },
+    {
+      "name": "狮尾火腿黑体",
+      "old": "Swmatchleg",
+      "new": "swhtht",
+      "kind": "move",
+      "family": "wenfeng-swhtht"
+    },
+    {
+      "name": "狮尾火柴黑体",
+      "old": "Swmatchsans",
+      "new": "swhchtsc",
+      "kind": "move",
+      "family": "wenfeng-swhchtsc"
+    },
+    {
+      "name": "狮尾肉丸",
+      "old": "Swmeatball",
+      "new": "swrwsc",
+      "kind": "move",
+      "family": "wenfeng-swrwsc"
+    },
+    {
+      "name": "狮尾螺帽腿黑体",
+      "old": "Swnutleg",
+      "new": "swlmtht",
+      "kind": "move",
+      "family": "wenfeng-swlmtht"
+    },
+    {
+      "name": "狮尾螺帽黑体",
+      "old": "Swnutsans",
+      "new": "swlmhtsc",
+      "kind": "move",
+      "family": "wenfeng-swlmhtsc"
+    },
+    {
+      "name": "狮尾彩虹腿",
+      "old": "Swrainbowleg",
+      "new": "swcht",
+      "kind": "move",
+      "family": "wenfeng-swcht"
+    },
+    {
+      "name": "狮尾右下腿黑体",
+      "old": "Swrightbottoml",
+      "new": "swyxtht",
+      "kind": "move",
+      "family": "wenfeng-swyxtht"
+    },
+    {
+      "name": "狮尾右下圆黑体",
+      "old": "Swrightbottoms",
+      "new": "swyxyhtsc",
+      "kind": "move",
+      "family": "wenfeng-swyxyhtsc"
+    },
+    {
+      "name": "狮尾黑体",
+      "old": "Swsans",
+      "new": "swhtsc",
+      "kind": "move",
+      "family": "wenfeng-swhtsc"
+    },
+    {
+      "name": "狮尾快腿黑体",
+      "old": "Swshearleg",
+      "new": "swktht",
+      "kind": "move",
+      "family": "wenfeng-swktht"
+    },
+    {
+      "name": "狮尾快剪黑体",
+      "old": "Swshearsans",
+      "new": "swkjhtsc",
+      "kind": "move",
+      "family": "wenfeng-swkjhtsc"
+    },
+    {
+      "name": "狮尾尖腿黑体",
+      "old": "Swspikeleg",
+      "new": "swjtht",
+      "kind": "move",
+      "family": "wenfeng-swjtht"
+    },
+    {
+      "name": "狮尾尖刺黑体",
+      "old": "Swspikesans",
+      "new": "swjchtsc",
+      "kind": "move",
+      "family": "wenfeng-swjchtsc"
+    },
+    {
+      "name": "狮尾加糖宋体",
+      "old": "Swsugar",
+      "new": "swjtst",
+      "kind": "move",
+      "family": "wenfeng-swjtst"
+    },
+    {
+      "name": "狮尾牙膏圆体",
+      "old": "Swtoothpaste",
+      "new": "swygyt",
+      "kind": "move",
+      "family": "wenfeng-swygyt"
+    },
+    {
+      "name": "狮尾XD珍珠",
+      "old": "Swxd",
+      "new": "swxdzz",
+      "kind": "move",
+      "family": "wenfeng-swxdzz"
+    },
+    {
+      "name": "扇尾胄黑 16",
+      "old": "Swzh",
+      "new": "swzh16",
+      "kind": "move",
+      "family": "wenfeng-swzh16"
+    },
+    {
+      "name": "思源黑体 Regular",
+      "old": "Syhtcjk",
+      "new": "syhtr",
+      "kind": "move",
+      "family": "wenfeng-syhtr"
+    },
+    {
+      "name": "思源黑体",
+      "old": "Syhtsc",
+      "new": "Syhtsc",
+      "kind": "same",
+      "family": "wenfeng-syhtsc"
+    },
+    {
+      "name": "思源等宽",
+      "old": "Sykd",
+      "new": "sydksc",
+      "kind": "move",
+      "family": "wenfeng-sydksc"
+    },
+    {
+      "name": "上元明朝 A",
+      "old": "Syma",
+      "new": "symca",
+      "kind": "move",
+      "family": "wenfeng-symca"
+    },
+    {
+      "name": "上元明朝 B",
+      "old": "Symb",
+      "new": "symcb",
+      "kind": "move",
+      "family": "wenfeng-symcb"
+    },
+    {
+      "name": "摄图摩登小方体",
+      "old": "Symdxft",
+      "new": "stmdxft",
+      "kind": "move",
+      "family": "wenfeng-stmdxft"
+    },
+    {
+      "name": "思源宋体 CN",
+      "old": "Systcn",
+      "new": "Systcn",
+      "kind": "same",
+      "family": "wenfeng-systcn"
+    },
+    {
+      "name": "思源宋体 CN Light",
+      "old": "Systcnl",
+      "new": "Systcnl",
+      "kind": "same",
+      "family": "wenfeng-systcnl"
+    },
+    {
+      "name": "思源宋体",
+      "old": "Systsc",
+      "new": "Systsc",
+      "kind": "same",
+      "family": "wenfeng-systsc"
+    },
+    {
+      "name": "思源宋体 TC",
+      "old": "Systtc",
+      "new": "Systtc",
+      "kind": "same",
+      "family": "wenfeng-systtc"
+    },
+    {
+      "name": "淘宝买菜体",
+      "old": "Tbmct",
+      "new": "Tbmct",
+      "kind": "same",
+      "family": "wenfeng-tbmct"
+    },
+    {
+      "name": "鉄瓶ゴシック",
+      "old": "Tetsubin",
+      "new": "Tetsubin",
+      "kind": "nomatch"
+    },
+    {
+      "name": "铁蒺藜体",
+      "old": "Tjlt",
+      "new": "Tjlt",
+      "kind": "same",
+      "family": "wenfeng-tjlt"
+    },
+    {
+      "name": "Train One",
+      "old": "Train",
+      "new": "traojp",
+      "kind": "move",
+      "family": "wenfeng-traojp"
+    },
+    {
+      "name": "仓耳非白 W01",
+      "old": "TsangerFeiBaiW01",
+      "new": "cefbw01",
+      "kind": "move",
+      "family": "wenfeng-cefbw01"
+    },
+    {
+      "name": "仓耳非白 W02",
+      "old": "TsangerFeiBaiW02",
+      "new": "cefbw02",
+      "kind": "move",
+      "family": "wenfeng-cefbw02"
+    },
+    {
+      "name": "仓耳非白 W03",
+      "old": "TsangerFeiBaiW03",
+      "new": "cefbw03",
+      "kind": "move",
+      "family": "wenfeng-cefbw03"
+    },
+    {
+      "name": "仓耳非白 W04",
+      "old": "TsangerFeiBaiW04",
+      "new": "cefbw04",
+      "kind": "move",
+      "family": "wenfeng-cefbw04"
+    },
+    {
+      "name": "仓耳非白 W05",
+      "old": "TsangerFeiBaiW05",
+      "new": "cefbw05",
+      "kind": "move",
+      "family": "wenfeng-cefbw05"
+    },
+    {
+      "name": "仓耳舒圆体",
+      "old": "TsangerShuYuanTW01",
+      "new": "cesyt",
+      "kind": "move",
+      "family": "wenfeng-cesyt"
+    },
+    {
+      "name": "仓耳舒圆体 W02",
+      "old": "TsangerShuYuanTW02",
+      "new": "cesytw02",
+      "kind": "move",
+      "family": "wenfeng-cesytw02"
+    },
+    {
+      "name": "仓耳舒圆体 W03",
+      "old": "TsangerShuYuanTW03",
+      "new": "cesytw03",
+      "kind": "move",
+      "family": "wenfeng-cesytw03"
+    },
+    {
+      "name": "仓耳舒圆体 W04",
+      "old": "TsangerShuYuanTW04",
+      "new": "cesytw04",
+      "kind": "move",
+      "family": "wenfeng-cesytw04"
+    },
+    {
+      "name": "仓耳舒圆体 W05",
+      "old": "TsangerShuYuanTW05",
+      "new": "cesytw05",
+      "kind": "move",
+      "family": "wenfeng-cesytw05"
+    },
+    {
+      "name": "仓耳与墨 W01",
+      "old": "TsangerYuMoW01",
+      "new": "ceymw01",
+      "kind": "move",
+      "family": "wenfeng-ceymw01"
+    },
+    {
+      "name": "仓耳与墨 W02",
+      "old": "TsangerYuMoW02",
+      "new": "ceymw02",
+      "kind": "move",
+      "family": "wenfeng-ceymw02"
+    },
+    {
+      "name": "仓耳与墨 W03",
+      "old": "TsangerYuMoW03",
+      "new": "ceymw03",
+      "kind": "move",
+      "family": "wenfeng-ceymw03"
+    },
+    {
+      "name": "仓耳与墨 W04",
+      "old": "TsangerYuMoW04",
+      "new": "ceymw04",
+      "kind": "move",
+      "family": "wenfeng-ceymw04"
+    },
+    {
+      "name": "仓耳与墨 W05",
+      "old": "TsangerYuMoW05",
+      "new": "ceymw05",
+      "kind": "move",
+      "family": "wenfeng-ceymw05"
+    },
+    {
+      "name": "仓耳渔阳体 W01",
+      "old": "TsangerYuYangTW01",
+      "new": "ceyytw01",
+      "kind": "move",
+      "family": "wenfeng-ceyytw01"
+    },
+    {
+      "name": "仓耳渔阳体 W02",
+      "old": "TsangerYuYangTW02",
+      "new": "ceyytw02",
+      "kind": "move",
+      "family": "wenfeng-ceyytw02"
+    },
+    {
+      "name": "仓耳渔阳体 W03",
+      "old": "TsangerYuYangTW03",
+      "new": "ceyytw03",
+      "kind": "move",
+      "family": "wenfeng-ceyytw03"
+    },
+    {
+      "name": "仓耳渔阳体 W04",
+      "old": "TsangerYuYangTW04",
+      "new": "ceyytw04",
+      "kind": "move",
+      "family": "wenfeng-ceyytw04"
+    },
+    {
+      "name": "仓耳渔阳体 W05",
+      "old": "TsangerYuYangTW05",
+      "new": "ceyytw05",
+      "kind": "move",
+      "family": "wenfeng-ceyytw05"
+    },
+    {
+      "name": "津汲圆黑",
+      "old": "Tsugumi",
+      "new": "Tsugumi",
+      "kind": "nomatch"
+    },
+    {
+      "name": "筑峰正楷明朝",
+      "old": "Tsukuhou",
+      "new": "Tsukuhou",
+      "kind": "nomatch"
+    },
+    {
+      "name": "教育部標準楷書",
+      "old": "Twjybbzjs",
+      "new": "jybbzks",
+      "kind": "move",
+      "family": "wenfeng-jybbzks"
+    },
+    {
+      "name": "教育部标准宋体UN",
+      "old": "Twjybbzst",
+      "new": "jybbzstun",
+      "kind": "move",
+      "family": "wenfeng-jybbzstun"
+    },
+    {
+      "name": "新细明体 (台湾版)",
+      "old": "Twjybxxmt",
+      "new": "xxmttw",
+      "kind": "move",
+      "family": "wenfeng-xxmttw"
+    },
+    {
+      "name": "台湾珍珠",
+      "old": "Twzl",
+      "new": "twzz",
+      "kind": "move",
+      "family": "wenfeng-twzz"
+    },
+    {
+      "name": "无界黑",
+      "old": "Ubss",
+      "new": "wjht",
+      "kind": "move",
+      "family": "wenfeng-wjht"
+    },
+    {
+      "name": "梅黑体",
+      "old": "Umgh",
+      "new": "mhtug",
+      "kind": "move",
+      "family": "wenfeng-mhtug"
+    },
+    {
+      "name": "梅明朝",
+      "old": "Ummc",
+      "new": "mmct",
+      "kind": "move",
+      "family": "wenfeng-mmct"
+    },
+    {
+      "name": "GNU Unifont",
+      "old": "Unfdzh",
+      "new": "gnuuf",
+      "kind": "move",
+      "family": "wenfeng-gnuuf"
+    },
+    {
+      "name": "天王星像素",
+      "old": "Urx",
+      "new": "twxxs",
+      "kind": "move",
+      "family": "wenfeng-twxxs"
+    },
+    {
+      "name": "vivo Sans",
+      "old": "Vivosans",
+      "new": "vvsa",
+      "kind": "move",
+      "family": "wenfeng-vvsa"
+    },
+    {
+      "name": "棉花糖体",
+      "old": "Wataame",
+      "new": "Wataame",
+      "kind": "nomatch"
+    },
+    {
+      "name": "问藏书房",
+      "old": "Wcsf",
+      "new": "Wcsf",
+      "kind": "same",
+      "family": "wenfeng-wcsf"
+    },
+    {
+      "name": "WDXL Lubrifont JP",
+      "old": "Wdxl",
+      "new": "wdxlljp",
+      "kind": "move",
+      "family": "wenfeng-wdxlljp"
+    },
+    {
+      "name": "文津宋体 P2",
+      "old": "Wjm2",
+      "new": "wjstp2",
+      "kind": "move",
+      "family": "wenfeng-wjstp2"
+    },
+    {
+      "name": "文津宋体",
+      "old": "Wjmp",
+      "new": "wjst",
+      "kind": "move",
+      "family": "wenfeng-wjst"
+    },
+    {
+      "name": "未来荧黑",
+      "old": "Wlhxh",
+      "new": "wlyh",
+      "kind": "move",
+      "family": "wenfeng-wlyh"
+    },
+    {
+      "name": "文泉驿等宽微米黑",
+      "old": "Wqydkwmh",
+      "new": "Wqydkwmh",
+      "kind": "same",
+      "family": "wenfeng-wqydkwmh"
+    },
+    {
+      "name": "文泉驿正黑等宽",
+      "old": "Wqydkzh",
+      "new": "wqyzhdk",
+      "kind": "move",
+      "family": "wenfeng-wqyzhdk"
+    },
+    {
+      "name": "文泉驿点阵宋体",
+      "old": "Wqys",
+      "new": "wqydzst",
+      "kind": "move",
+      "family": "wenfeng-wqydzst"
+    },
+    {
+      "name": "文泉驿微米黑",
+      "old": "Wqywmh",
+      "new": "Wqywmh",
+      "kind": "same",
+      "family": "wenfeng-wqywmh"
+    },
+    {
+      "name": "文泉驿正黑体",
+      "old": "Wqyzh",
+      "new": "wqyzht",
+      "kind": "move",
+      "family": "wenfeng-wqyzht"
+    },
+    {
+      "name": "就是不错字（吧）",
+      "old": "WriteRight",
+      "new": "jsbczb",
+      "kind": "move",
+      "family": "wenfeng-jsbczb"
+    },
+    {
+      "name": "文渊黑体",
+      "old": "Wyhk",
+      "new": "wyht",
+      "kind": "move",
+      "family": "wenfeng-wyht"
+    },
+    {
+      "name": "文渊宋体",
+      "old": "Wysf",
+      "new": "wyst",
+      "kind": "move",
+      "family": "wenfeng-wyst"
+    },
+    {
+      "name": "文渊圆体",
+      "old": "Wyyt",
+      "new": "Wyyt",
+      "kind": "same",
+      "family": "wenfeng-wyyt"
+    },
+    {
+      "name": "香萃潮汐宋",
+      "old": "Xccx",
+      "new": "xccxs",
+      "kind": "move",
+      "family": "wenfeng-xccxs"
+    },
+    {
+      "name": "香萃等粗宋",
+      "old": "Xcdc",
+      "new": "xcdcs",
+      "kind": "move",
+      "family": "wenfeng-xcdcs"
+    },
+    {
+      "name": "香萃打字机体",
+      "old": "Xcdj",
+      "new": "xcdzjt",
+      "kind": "move",
+      "family": "wenfeng-xcdzjt"
+    },
+    {
+      "name": "香萃打字机",
+      "old": "Xcdz",
+      "new": "xcdzj",
+      "kind": "move",
+      "family": "wenfeng-xcdzj"
+    },
+    {
+      "name": "香萃汲学宋",
+      "old": "Xcjx",
+      "new": "xcjxs",
+      "kind": "move",
+      "family": "wenfeng-xcjxs"
+    },
+    {
+      "name": "香萃刻宋",
+      "old": "Xcks",
+      "new": "Xcks",
+      "kind": "same",
+      "family": "wenfeng-xcks"
+    },
+    {
+      "name": "香萃零度黑",
+      "old": "Xcld",
+      "new": "xcldh",
+      "kind": "move",
+      "family": "wenfeng-xcldh"
+    },
+    {
+      "name": "香菜碼等宽",
+      "old": "Xcmdk",
+      "new": "Xcmdk",
+      "kind": "same",
+      "family": "wenfeng-xcmdk"
+    },
+    {
+      "name": "香萃自在舒畅黑",
+      "old": "Xcws",
+      "new": "xczzsch",
+      "kind": "move",
+      "family": "wenfeng-xczzsch"
+    },
+    {
+      "name": "玄冬楷书",
+      "old": "Xdks",
+      "new": "Xdks",
+      "kind": "same",
+      "family": "wenfeng-xdks"
+    },
+    {
+      "name": "贤二体",
+      "old": "Xet",
+      "new": "Xet",
+      "kind": "same",
+      "family": "wenfeng-xet"
+    },
+    {
+      "name": "小赖字体等宽 SC",
+      "old": "XiaolaiMonoSC",
+      "new": "xlztdksc",
+      "kind": "move",
+      "family": "wenfeng-xlztdksc"
+    },
+    {
+      "name": "小赖字体 SC",
+      "old": "XiaolaiSC",
+      "new": "xlztsc",
+      "kind": "move",
+      "family": "wenfeng-xlztsc"
+    },
+    {
+      "name": "猫啃网文明宋",
+      "old": "XinYuGongHeXieSongLLight",
+      "new": "mkwwms",
+      "kind": "move",
+      "family": "wenfeng-mkwwms"
+    },
+    {
+      "name": "乡立方黑体",
+      "old": "Xlfht",
+      "new": "Xlfht",
+      "kind": "same",
+      "family": "wenfeng-xlfht"
+    },
+    {
+      "name": "邪宋",
+      "old": "Xsong",
+      "new": "xstes",
+      "kind": "move",
+      "family": "wenfeng-xstes"
+    },
+    {
+      "name": "像素Silver字体",
+      "old": "Xsslv",
+      "new": "xsszt",
+      "kind": "move",
+      "family": "wenfeng-xsszt"
+    },
+    {
+      "name": "晓声通秋茄",
+      "old": "Xstq",
+      "new": "xstqj",
+      "kind": "move",
+      "family": "wenfeng-xstqj"
+    },
+    {
+      "name": "霞鹜文楷 Bright",
+      "old": "Xwbright",
+      "new": "xwwkb",
+      "kind": "move",
+      "family": "wenfeng-xwwkb"
+    },
+    {
+      "name": "霞鹜文楷 Bright Code",
+      "old": "Xwbrightcode",
+      "new": "xwwkbc",
+      "kind": "move",
+      "family": "wenfeng-xwwkbc"
+    },
+    {
+      "name": "霞鹜漫黑",
+      "old": "Xwmh",
+      "new": "Xwmh",
+      "kind": "same",
+      "family": "wenfeng-xwmh"
+    },
+    {
+      "name": "霞鹜铭心宋",
+      "old": "Xwmxs",
+      "new": "Xwmxs",
+      "kind": "same",
+      "family": "wenfeng-xwmxs"
+    },
+    {
+      "name": "霞鹜铭心宋 CL",
+      "old": "Xwmxscl",
+      "new": "Xwmxscl",
+      "kind": "same",
+      "family": "wenfeng-xwmxscl"
+    },
+    {
+      "name": "霞鹜铭心宋 MN",
+      "old": "Xwmxsmn",
+      "new": "Xwmxsmn",
+      "kind": "same",
+      "family": "wenfeng-xwmxsmn"
+    },
+    {
+      "name": "霞鹜尚智黑",
+      "old": "Xwszh",
+      "new": "Xwszh",
+      "kind": "same",
+      "family": "wenfeng-xwszh"
+    },
+    {
+      "name": "霞鹜尚智黑 CL",
+      "old": "Xwszhcl",
+      "new": "Xwszhcl",
+      "kind": "same",
+      "family": "wenfeng-xwszhcl"
+    },
+    {
+      "name": "霞鹜尚智黑 MN",
+      "old": "Xwszhmn",
+      "new": "Xwszhmn",
+      "kind": "same",
+      "family": "wenfeng-xwszhmn"
+    },
+    {
+      "name": "霞鹜文楷",
+      "old": "Xwwk",
+      "new": "Xwwk",
+      "kind": "same",
+      "family": "wenfeng-xwwk"
+    },
+    {
+      "name": "霞鹜文楷 GB",
+      "old": "Xwwkgb",
+      "new": "Xwwkgb",
+      "kind": "same",
+      "family": "wenfeng-xwwkgb"
+    },
+    {
+      "name": "霞鹜文楷 TC",
+      "old": "Xwwktc",
+      "new": "Xwwktc",
+      "kind": "same",
+      "family": "wenfeng-xwwktc"
+    },
+    {
+      "name": "霞鹜晰黑 CL",
+      "old": "Xwxhcl",
+      "new": "Xwxhcl",
+      "kind": "same",
+      "family": "wenfeng-xwxhcl"
+    },
+    {
+      "name": "霞鹜晰黑 MN",
+      "old": "Xwxhmn",
+      "new": "Xwxhmn",
+      "kind": "same",
+      "family": "wenfeng-xwxhmn"
+    },
+    {
+      "name": "霞鹜新晰黑",
+      "old": "Xwxxh",
+      "new": "Xwxxh",
+      "kind": "same",
+      "family": "wenfeng-xwxxh"
+    },
+    {
+      "name": "霞鹜新晰黑 Code",
+      "old": "Xwxxhcode",
+      "new": "xwxxhc",
+      "kind": "move",
+      "family": "wenfeng-xwxxhc"
+    },
+    {
+      "name": "霞鹜新晰黑 Plus",
+      "old": "Xwxxhplus",
+      "new": "xwxxhp",
+      "kind": "move",
+      "family": "wenfeng-xwxxhp"
+    },
+    {
+      "name": "霞鹜新晰黑 Screen",
+      "old": "Xwxxhscreen",
+      "new": "xwxxhs",
+      "kind": "move",
+      "family": "wenfeng-xwxxhs"
+    },
+    {
+      "name": "霞鹜新晰黑 Screen Full",
+      "old": "Xwxxhscreenfull",
+      "new": "xwxxhsf",
+      "kind": "move",
+      "family": "wenfeng-xwxxhsf"
+    },
+    {
+      "name": "霞鹜新致宋",
+      "old": "Xwxzs",
+      "new": "Xwxzs",
+      "kind": "same",
+      "family": "wenfeng-xwxzs"
+    },
+    {
+      "name": "霞鹜新致宋 Plus",
+      "old": "Xwxzsplus",
+      "new": "xwxzsp",
+      "kind": "move",
+      "family": "wenfeng-xwxzsp"
+    },
+    {
+      "name": "霞鹜新致宋 Screen",
+      "old": "Xwxzsscreen",
+      "new": "xwxzss",
+      "kind": "move",
+      "family": "wenfeng-xwxzss"
+    },
+    {
+      "name": "霞鹜新致宋 Screen Full",
+      "old": "Xwxzsscreenfull",
+      "new": "xwxzssf",
+      "kind": "move",
+      "family": "wenfeng-xwxzssf"
+    },
+    {
+      "name": "霞鹜臻楷",
+      "old": "Xwzkgb",
+      "new": "xwzk",
+      "kind": "move",
+      "family": "wenfeng-xwzk"
+    },
+    {
+      "name": "霞鹜臻楷 Slab",
+      "old": "Xwzksgb",
+      "new": "xwzks",
+      "kind": "move",
+      "family": "wenfeng-xwzks"
+    },
+    {
+      "name": "霞鹜致宋 CL",
+      "old": "Xwzscl",
+      "new": "Xwzscl",
+      "kind": "same",
+      "family": "wenfeng-xwzscl"
+    },
+    {
+      "name": "霞鹜致宋 MN",
+      "old": "Xwzsmn",
+      "new": "Xwzsmn",
+      "kind": "same",
+      "family": "wenfeng-xwzsmn"
+    },
+    {
+      "name": "霞鹜篆体",
+      "old": "Xwzt",
+      "new": "Xwzt",
+      "kind": "same",
+      "family": "wenfeng-xwzt"
+    },
+    {
+      "name": "玄宗体",
+      "old": "Xxzt",
+      "new": "xzt",
+      "kind": "move",
+      "family": "wenfeng-xzt"
+    },
+    {
+      "name": "斜月体",
+      "old": "Xyt",
+      "new": "Xyt",
+      "kind": "same",
+      "family": "wenfeng-xyt"
+    },
+    {
+      "name": "杨任东竹石体",
+      "old": "YRDZSTRegular",
+      "new": "yrdzst",
+      "kind": "move",
+      "family": "wenfeng-yrdzst"
+    },
+    {
+      "name": "耀圆体",
+      "old": "Yaoyt",
+      "new": "yytkm",
+      "kind": "move",
+      "family": "wenfeng-yytkm"
+    },
+    {
+      "name": "やさしさゴシック Bold V2",
+      "old": "Yasashisa",
+      "new": "Yasashisa",
+      "kind": "nomatch"
+    },
+    {
+      "name": "YDW 香蕉滑行++体",
+      "old": "Ydwbnnsp",
+      "new": "ydwxjhxt",
+      "kind": "move",
+      "family": "wenfeng-ydwxjhxt"
+    },
+    {
+      "name": "云峰飞云体",
+      "old": "Yffyt",
+      "new": "Yffyt",
+      "kind": "same",
+      "family": "wenfeng-yffyt"
+    },
+    {
+      "name": "源音黑体",
+      "old": "Yiny",
+      "new": "yyhtgng",
+      "kind": "move",
+      "family": "wenfeng-yyhtgng"
+    },
+    {
+      "name": "源界明朝",
+      "old": "Yjmct",
+      "new": "yjmc",
+      "kind": "move",
+      "family": "wenfeng-yjmc"
+    },
+    {
+      "name": "佑字肃",
+      "old": "Yjsu",
+      "new": "yzst",
+      "kind": "move",
+      "family": "wenfeng-yzst"
+    },
+    {
+      "name": "源流明体",
+      "old": "Ylmt",
+      "new": "Ylmt",
+      "kind": "same",
+      "family": "wenfeng-ylmt"
+    },
+    {
+      "name": "Yomogi",
+      "old": "Yomogi",
+      "new": "ymgjp",
+      "kind": "move",
+      "family": "wenfeng-ymgjp"
+    },
+    {
+      "name": "悠哉字体",
+      "old": "Yozai",
+      "new": "yzztyz",
+      "kind": "move",
+      "family": "wenfeng-yzztyz"
+    },
+    {
+      "name": "YozFont",
+      "old": "Yozf",
+      "new": "yofjp",
+      "kind": "move",
+      "family": "wenfeng-yofjp"
+    },
+    {
+      "name": "源起黑体",
+      "old": "Yqht",
+      "new": "Yqht",
+      "kind": "same",
+      "family": "wenfeng-yqht"
+    },
+    {
+      "name": "源起明体",
+      "old": "Yqmt",
+      "new": "Yqmt",
+      "kind": "same",
+      "family": "wenfeng-yqmt"
+    },
+    {
+      "name": "游趣体",
+      "old": "Yqt",
+      "new": "Yqt",
+      "kind": "same",
+      "family": "wenfeng-yqt"
+    },
+    {
+      "name": "遊趣體",
+      "old": "Yqttc",
+      "new": "Yqttc",
+      "kind": "same",
+      "family": "wenfeng-yqttc"
+    },
+    {
+      "name": "芫茜雅楷",
+      "old": "Yqyk",
+      "new": "Yqyk",
+      "kind": "same",
+      "family": "wenfeng-yqyk"
+    },
+    {
+      "name": "源泉圆体",
+      "old": "Yqyt",
+      "new": "Yqyt",
+      "kind": "same",
+      "family": "wenfeng-yqyt"
+    },
+    {
+      "name": "Y式笔书",
+      "old": "Ysbs",
+      "new": "Ysbs",
+      "kind": "same",
+      "family": "wenfeng-ysbs"
+    },
+    {
+      "name": "优设标题黑",
+      "old": "Ysbth",
+      "new": "Ysbth",
+      "kind": "same",
+      "family": "wenfeng-ysbth"
+    },
+    {
+      "name": "峄山碑篆体",
+      "old": "Ysbzt",
+      "new": "Ysbzt",
+      "kind": "same",
+      "family": "wenfeng-ysbzt"
+    },
+    {
+      "name": "源石黑体",
+      "old": "Ysht",
+      "new": "Ysht",
+      "kind": "same",
+      "family": "wenfeng-ysht"
+    },
+    {
+      "name": "芫荽",
+      "old": "Ysui",
+      "new": "ysls",
+      "kind": "move",
+      "family": "wenfeng-ysls"
+    },
+    {
+      "name": "演示斜黑体",
+      "old": "Ysxh",
+      "new": "ysxhts",
+      "kind": "move",
+      "family": "wenfeng-ysxhts"
+    },
+    {
+      "name": "YShi新黑",
+      "old": "Ysxin",
+      "new": "yshxh",
+      "kind": "move",
+      "family": "wenfeng-yshxh"
+    },
+    {
+      "name": "Yuji Boku",
+      "old": "Yujiboku",
+      "new": "yjbkjp",
+      "kind": "move",
+      "family": "wenfeng-yjbkjp"
+    },
+    {
+      "name": "Yuji Mai",
+      "old": "Yujimai",
+      "new": "yjmjp",
+      "kind": "move",
+      "family": "wenfeng-yjmjp"
+    },
+    {
+      "name": "源云明体",
+      "old": "Yunmt",
+      "new": "yymttw",
+      "kind": "move",
+      "family": "wenfeng-yymttw"
+    },
+    {
+      "name": "Yusei Magic",
+      "old": "Yuseimagic",
+      "new": "ysmjp",
+      "kind": "move",
+      "family": "wenfeng-ysmjp"
+    },
+    {
+      "name": "余珍珠",
+      "old": "Yuzl",
+      "new": "yzzyp",
+      "kind": "move",
+      "family": "wenfeng-yzzyp"
+    },
+    {
+      "name": "月星楷",
+      "old": "Yxkt",
+      "new": "Yxkt",
+      "kind": "same",
+      "family": "wenfeng-yxkt"
+    },
+    {
+      "name": "余繁丹青宋",
+      "old": "Yydq",
+      "new": "yfdqs",
+      "kind": "move",
+      "family": "wenfeng-yfdqs"
+    },
+    {
+      "name": "源样黑体",
+      "old": "Yyht",
+      "new": "Yyht",
+      "kind": "same",
+      "family": "wenfeng-yyht"
+    },
+    {
+      "name": "源样明体",
+      "old": "Yymt",
+      "new": "Yymt",
+      "kind": "same",
+      "family": "wenfeng-yymt"
+    },
+    {
+      "name": "阅圆",
+      "old": "Yyuan",
+      "new": "yytyy",
+      "kind": "move",
+      "family": "wenfeng-yytyy"
+    },
+    {
+      "name": "余繁细柳",
+      "old": "Yyxl",
+      "new": "yfxl",
+      "kind": "move",
+      "family": "wenfeng-yfxl"
+    },
+    {
+      "name": "余繁新语",
+      "old": "Yyxy",
+      "new": "yfxy",
+      "kind": "move",
+      "family": "wenfeng-yfxy"
+    },
+    {
+      "name": "余繁真素",
+      "old": "Yyzs",
+      "new": "yfzs",
+      "kind": "move",
+      "family": "wenfeng-yfzs"
+    },
+    {
+      "name": "龙藏体",
+      "old": "Yzklct",
+      "new": "lct",
+      "kind": "move",
+      "family": "wenfeng-lct"
+    },
+    {
+      "name": "仲春仿宋",
+      "old": "Zcfs",
+      "new": "Zcfs",
+      "kind": "same",
+      "family": "wenfeng-zcfs"
+    },
+    {
+      "name": "煮豆黑体",
+      "old": "Zdht",
+      "new": "Zdht",
+      "kind": "same",
+      "family": "wenfeng-zdht"
+    },
+    {
+      "name": "汉典秦系文字体",
+      "old": "Zdicqx",
+      "new": "hdqxwzt",
+      "kind": "move",
+      "family": "wenfeng-hdqxwzt"
+    },
+    {
+      "name": "Zen Antique",
+      "old": "Zenantique",
+      "new": "zenajp",
+      "kind": "move",
+      "family": "wenfeng-zenajp"
+    },
+    {
+      "name": "Zen Antique Soft",
+      "old": "Zenantiquesoft",
+      "new": "zasjp",
+      "kind": "move",
+      "family": "wenfeng-zasjp"
+    },
+    {
+      "name": "Zen Kaku Gothic Antique",
+      "old": "Zenkakuantique",
+      "new": "zkgajp",
+      "kind": "move",
+      "family": "wenfeng-zkgajp"
+    },
+    {
+      "name": "Zen Kaku Gothic New",
+      "old": "Zenkakunew",
+      "new": "zkgnjp",
+      "kind": "move",
+      "family": "wenfeng-zkgnjp"
+    },
+    {
+      "name": "Zen Kurenaido",
+      "old": "Zenkurenaido",
+      "new": "zenkjp",
+      "kind": "move",
+      "family": "wenfeng-zenkjp"
+    },
+    {
+      "name": "Zen Maru Gothic",
+      "old": "Zenmaru",
+      "new": "zmgjp",
+      "kind": "move",
+      "family": "wenfeng-zmgjp"
+    },
+    {
+      "name": "Zen Old Mincho",
+      "old": "Zenoldmincho",
+      "new": "zomjp",
+      "kind": "move",
+      "family": "wenfeng-zomjp"
+    },
+    {
+      "name": "字魂扁桃体",
+      "old": "Zhbtt",
+      "new": "Zhbtt",
+      "kind": "same",
+      "family": "wenfeng-zhbtt"
+    },
+    {
+      "name": "宙黑体",
+      "old": "Zht",
+      "new": "Zht",
+      "kind": "same",
+      "family": "wenfeng-zht"
+    },
+    {
+      "name": "资源圆体",
+      "old": "Ziyyt",
+      "new": "zyytrhr",
+      "kind": "move",
+      "family": "wenfeng-zyytrhr"
+    },
+    {
+      "name": "卓见橄榄简体",
+      "old": "Zjgljt",
+      "new": "Zjgljt",
+      "kind": "same",
+      "family": "wenfeng-zjgljt"
+    },
+    {
+      "name": "站酷高端黑",
+      "old": "Zkgdht",
+      "new": "zkgdh",
+      "kind": "move",
+      "family": "wenfeng-zkgdh"
+    },
+    {
+      "name": "站酷酷黑",
+      "old": "Zkkht",
+      "new": "zkkh",
+      "kind": "move",
+      "family": "wenfeng-zkkh"
+    },
+    {
+      "name": "站酷快乐体",
+      "old": "Zkklt",
+      "new": "Zkklt",
+      "kind": "same",
+      "family": "wenfeng-zkklt"
+    },
+    {
+      "name": "站酷文艺体",
+      "old": "Zkwyt",
+      "new": "Zkwyt",
+      "kind": "same",
+      "family": "wenfeng-zkwyt"
+    },
+    {
+      "name": "站酷小薇体",
+      "old": "Zkxwt",
+      "new": "Zkxwt",
+      "kind": "same",
+      "family": "wenfeng-zkxwt"
+    },
+    {
+      "name": "逐浪粗宋简体",
+      "old": "Zlcs",
+      "new": "zlcsjt",
+      "kind": "move",
+      "family": "wenfeng-zlcsjt"
+    },
+    {
+      "name": "Z Labs 点阵 港标",
+      "old": "Zlhc",
+      "new": "zldzhk",
+      "kind": "move",
+      "family": "wenfeng-zldzhk"
+    },
+    {
+      "name": "Z Labs 点阵 日标",
+      "old": "Zljp",
+      "new": "zldzjp",
+      "kind": "move",
+      "family": "wenfeng-zldzjp"
+    },
+    {
+      "name": "逐浪萌芽字",
+      "old": "Zlmeng",
+      "new": "zlmyz",
+      "kind": "move",
+      "family": "wenfeng-zlmyz"
+    },
+    {
+      "name": "Z Labs 圆像素 12px",
+      "old": "Zlrp12",
+      "new": "zlyxs12",
+      "kind": "move",
+      "family": "wenfeng-zlyxs12"
+    },
+    {
+      "name": "Z Labs 圆像素 16px",
+      "old": "Zlrp16",
+      "new": "zlyxs16",
+      "kind": "move",
+      "family": "wenfeng-zlyxs16"
+    },
+    {
+      "name": "Z Labs 像素 12px",
+      "old": "Zlx12",
+      "new": "zlxs12",
+      "kind": "move",
+      "family": "wenfeng-zlxs12"
+    },
+    {
+      "name": "朱雀仿宋",
+      "old": "Zqfs",
+      "new": "Zqfs",
+      "kind": "same",
+      "family": "wenfeng-zqfs"
+    },
+    {
+      "name": "郑庆科黄油体",
+      "old": "Zqkhyt",
+      "new": "Zqkhyt",
+      "kind": "same",
+      "family": "wenfeng-zqkhyt"
+    },
+    {
+      "name": "字体圈-新意吉祥宋",
+      "old": "Ztqxyjxs",
+      "new": "Ztqxyjxs",
+      "kind": "same",
+      "family": "wenfeng-ztqxyjxs"
+    },
+    {
+      "name": "mplus hzk 12 像素字体",
+      "old": "Zwxszt",
+      "new": "mhzk12",
+      "kind": "move",
+      "family": "wenfeng-mhzk12"
+    },
+    {
+      "name": "昭源黑体",
+      "old": "Zyht",
+      "new": "Zyht",
+      "kind": "same",
+      "family": "wenfeng-zyht"
+    },
+    {
+      "name": "智勇手书体",
+      "old": "Zyss",
+      "new": "zysst",
+      "kind": "move",
+      "family": "wenfeng-zysst"
+    },
+    {
+      "name": "昭源宋体",
+      "old": "Zyst",
+      "new": "Zyst",
+      "kind": "same",
+      "family": "wenfeng-zyst"
+    },
+    {
+      "name": "昭源圆体",
+      "old": "Zyyt",
+      "new": "Zyyt",
+      "kind": "same",
+      "family": "wenfeng-zyyt"
+    },
+    {
+      "name": "宅在家粉条甜",
+      "old": "Zzft",
+      "new": "zzjftt",
+      "kind": "move",
+      "family": "wenfeng-zzjftt"
+    },
+    {
+      "name": "宅在家麦克笔",
+      "old": "Zzmk",
+      "new": "zzjmkb",
+      "kind": "move",
+      "family": "wenfeng-zzjmkb"
+    },
+    {
+      "name": "宅在家自动笔",
+      "old": "Zzzd",
+      "new": "zzjzdb",
+      "kind": "move",
+      "family": "wenfeng-zzjzdb"
+    }
+  ],
+  "nomatch_names": [
+    {
+      "norm": "Clduan",
+      "name": "寒蝉端黑"
+    },
+    {
+      "norm": "Dokidoki",
+      "name": "Doki Doki Fantasia"
+    },
+    {
+      "norm": "Futehodo",
+      "name": "普通圆黑"
+    },
+    {
+      "norm": "Hakkou",
+      "name": "白光明朝"
+    },
+    {
+      "norm": "Haseng",
+      "name": "Hasen G"
+    },
+    {
+      "norm": "Higure",
+      "name": "日暮黑体"
+    },
+    {
+      "norm": "Keinann",
+      "name": "Keinann Maru POP"
+    },
+    {
+      "norm": "Kurohana",
+      "name": "黑花明朝"
+    },
+    {
+      "norm": "Lmld",
+      "name": "乐米律动黑"
+    },
+    {
+      "norm": "Lmsg",
+      "name": "乐米拾光手札体"
+    },
+    {
+      "norm": "Lmys",
+      "name": "乐米野墨体"
+    },
+    {
+      "norm": "Maboroshi",
+      "name": "幻之渗明朝"
+    },
+    {
+      "norm": "Mobo",
+      "name": "MOBO"
+    },
+    {
+      "norm": "Mugimaru",
+      "name": "Keinan Mugimaru"
+    },
+    {
+      "norm": "Nagino",
+      "name": "Nagino"
+    },
+    {
+      "norm": "Natsuzemi",
+      "name": "夏蝉圆黑"
+    },
+    {
+      "norm": "Newclear",
+      "name": "新清明朝"
+    },
+    {
+      "norm": "Niiro",
+      "name": "新色圆黑"
+    },
+    {
+      "norm": "Scarymin",
+      "name": "ふぉんとうは怖い明朝体"
+    },
+    {
+      "norm": "Shinbashi",
+      "name": "新桥黑体"
+    },
+    {
+      "norm": "Shinretro",
+      "name": "复古圆黑"
+    },
+    {
+      "norm": "Shipgbold",
+      "name": "Shippori Gothic Bold"
+    },
+    {
+      "norm": "Tetsubin",
+      "name": "鉄瓶ゴシック"
+    },
+    {
+      "norm": "Tsugumi",
+      "name": "津汲圆黑"
+    },
+    {
+      "norm": "Tsukuhou",
+      "name": "筑峰正楷明朝"
+    },
+    {
+      "norm": "Wataame",
+      "name": "棉花糖体"
+    },
+    {
+      "norm": "Yasashisa",
+      "name": "やさしさゴシック Bold V2"
+    }
+  ],
+  "batch14": {
+    "みかちゃん": null,
+    "カイソウ": null,
+    "キンカク": null,
+    "サマサン": null,
+    "字咍粉圓": null,
+    "字咍粉圆": null,
+    "寒蝉高黑": {
+      "norm": "hcgh",
+      "family": "wenfeng-hcgh",
+      "shop": "https://app.windfonts.com/fonts/hcgh"
+    },
+    "梦源黑体（Pal3love）": null,
+    "梦源宋体·Pal3love": null,
+    "BestTen": null,
+    "LanaPixel": null,
+    "台北字体": null,
+    "坊宋": null,
+    "柳宋": null,
+    "粗宋": null
+  },
+  "overlay_writes": 380,
+  "license_text_copies": 320,
+  "history_maps": 379,
+  "licenses": 933
+}

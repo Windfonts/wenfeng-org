@@ -1,0 +1,48 @@
+{
+ "norm": "waptia",
+ "name": "WAPTIA",
+ "en": "Waptia",
+ "aliases": [
+  "waptia"
+ ],
+ "licenseName": "授权待核",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "moji-waku",
+ "foundrySlug": "moji-waku",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/waptia",
+ "weights": [
+  "Light",
+  "Thin"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-waptia"
+}

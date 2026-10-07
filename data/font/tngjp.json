@@ -1,0 +1,53 @@
+{
+ "norm": "tngjp",
+ "name": "たぬゴ",
+ "en": "Tanugo",
+ "aliases": [
+  "tngjp"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "たぬきフォント",
+ "foundrySlug": "tanukifont",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/tngjp",
+ "weights": [
+  "Bold",
+  "ExtraLight",
+  "Light",
+  "Regular",
+  "Round-Bold",
+  "Round-Light",
+  "Round-Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-tngjp"
+}

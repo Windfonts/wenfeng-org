@@ -1,0 +1,24 @@
+{
+  "norm": "Hlxs",
+  "title": "免费商用",
+  "body": "《鸿雷行书简体》\n\n作者原话（猫啃网页面转载）：\n\n无聊的我两年后再次书写了一套个人免费商用的手写字体《鸿雷行书简体》。\n\n本人在此声明：该字体已经登记版权，这里首次对外发布，全渠道免费商用。\n\n字体授权说明：鸿雷行书简体是采用作者声明授权方式发表。\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "授权页摘录",
+    "url": "https://www.maoken.com/freefonts/16904.html",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "060a3b6ab0842c144e2282297aae5386dd9432a689f3835d291314cb3df850bf",
+    "method": "official-page-excerpt",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://www.maoken.com/freefonts/16904.html",
+        "textSha256": "060a3b6ab0842c144e2282297aae5386dd9432a689f3835d291314cb3df850bf",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

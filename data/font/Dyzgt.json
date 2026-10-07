@@ -1,8 +1,10 @@
 {
- "norm": "Dyzgt",
+ "norm": "dyzgt",
  "name": "斗鱼追光体",
  "en": "DOUYU Font",
- "aliases": [],
+ "aliases": [
+  "Dyzgt"
+ ],
  "licenseName": "斗鱼追光体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Dyzgt",
+ "shop": "https://app.windfonts.com/fonts/dyzgt",
  "weights": [
   "Regular"
  ],

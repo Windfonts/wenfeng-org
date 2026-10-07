@@ -1,0 +1,67 @@
+{
+ "norm": "jpdzt7x7",
+ "name": "精品点阵体7x7",
+ "en": "Boutique Bitmap 7x7",
+ "aliases": [
+  "Bb7"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/scott0107000/BoutiqueBitmap7x7",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "cd578a595d2368c91582b3cde53fde851ddabc63c65fbea6532630c6f7572478",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "littlelimit",
+   "rootWork": "美咲ゴシック",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "",
+ "foundrySlug": "scott0107000",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/jpdzt7x7",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/scott0107000/BoutiqueBitmap7x7",
+  "upstream": "https://github.com/scott0107000/BoutiqueBitmap7x7",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Bb7.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/scott0107000/BoutiqueBitmap7x7",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jpdzt7x7"
+}

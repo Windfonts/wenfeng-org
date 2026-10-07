@@ -1,8 +1,10 @@
 {
- "norm": "Gfmft",
+ "norm": "gfmft",
  "name": "龚帆免费体3.0",
  "en": "GongFan Free Font 3.0",
- "aliases": [],
+ "aliases": [
+  "Gfmft"
+ ],
  "licenseName": "龚帆免费体3.0授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Gfmft",
+ "shop": "https://app.windfonts.com/fonts/gfmft",
  "weights": [
   "Regular"
  ],

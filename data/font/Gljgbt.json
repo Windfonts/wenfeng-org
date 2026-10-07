@@ -1,8 +1,10 @@
 {
- "norm": "Gljgbt",
+ "norm": "gljgbt",
  "name": "光良酒-干杯体",
  "en": "Guangliangjiu Ganbei Ti",
- "aliases": [],
+ "aliases": [
+  "Gljgbt"
+ ],
  "licenseName": "光良酒-干杯体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Gljgbt",
+ "shop": "https://app.windfonts.com/fonts/gljgbt",
  "weights": [
   "Regular"
  ],

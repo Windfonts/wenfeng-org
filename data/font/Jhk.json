@@ -1,52 +1,54 @@
 {
-  "norm": "Jhk",
-  "name": "计划楷",
-  "en": "PlanKai",
-  "aliases": [],
-  "licenseName": "SIL Open Font License 1.1",
-  "license": {
-    "spdx": "OFL-1.1",
-    "textState": "full",
-    "sourceUrl": "https://raw.githubusercontent.com/Des-Magmeta/PlanKai/main/OFL.txt",
-    "fetchedAt": "2026-10-04",
-    "textSha256": "f3689edec541006f5edc3cfcb8f2decbebcf7c7f4d1abe6a77d45a9a8161e549",
-    "verifiedAt": "2026-10-04",
-    "rfn": null
+ "norm": "jhk",
+ "name": "计划楷",
+ "en": "PlanKai",
+ "aliases": [
+  "Jhk"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": "https://github.com/Des-Magmeta/PlanKai",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Des-Magmeta",
+ "foundrySlug": "des-magmeta",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/jhk",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/Des-Magmeta/PlanKai",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Des-Magmeta/PlanKai",
+   "sha256": null
   },
-  "foundry": "Des-Magmeta",
-  "foundrySlug": "des-magmeta",
-  "offer": "missing",
-  "slice": "planned",
-  "distribution": true,
-  "shop": "https://app.windfonts.com/fonts/Jhk",
-  "weights": [
-    "Regular"
-  ],
-  "mirror": {
-    "state": "absent",
-    "feicode": null,
-    "upstream": "https://github.com/Des-Magmeta/PlanKai",
-    "syncedAt": null,
-    "headSha": null
-  },
-  "lineage": null,
-  "files": [
-    {
-      "kind": "upstream",
-      "label": "上游 github.com",
-      "format": "git",
-      "href": "https://github.com/Des-Magmeta/PlanKai",
-      "sha256": null
-    },
-    {
-      "kind": "slice",
-      "label": "网页切片包（自托管）",
-      "format": "zip",
-      "href": null,
-      "status": "planned",
-      "sha256": null
-    }
-  ],
-  "visitorNote": "",
-  "family": "wenfeng-jhk"
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jhk"
 }

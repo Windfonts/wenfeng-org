@@ -1,0 +1,67 @@
+{
+ "norm": "fhxs10",
+ "name": "缝合像素",
+ "en": "Fusion Pixel 10px",
+ "aliases": [
+  "Fupx"
+ ],
+ "licenseName": "MIT License",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/TakWolf/fusion-pixel-font",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "6806b674346bb5b88735bff0eadea43f8013d3fee7c888b12126dec37f1dc7e2",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "takwolf",
+   "rootWork": "方舟像素",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "",
+ "foundrySlug": "takwolf",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/fhxs10",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/TakWolf/fusion-pixel-font",
+  "upstream": "https://github.com/TakWolf/fusion-pixel-font",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Fupx.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/TakWolf/fusion-pixel-font",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-fhxs10"
+}

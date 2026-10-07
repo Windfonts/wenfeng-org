@@ -1,8 +1,10 @@
 {
- "norm": "Xwxxh",
+ "norm": "xwxxh",
  "name": "霞鹜新晰黑",
  "en": "LXGW Neo XiHei",
- "aliases": [],
+ "aliases": [
+  "Xwxxh"
+ ],
  "licenseName": "IPA Font License",
  "license": {
   "spdx": "IPA-1.0",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwxxh",
+ "shop": "https://app.windfonts.com/fonts/xwxxh",
  "weights": [
   "Regular"
  ],

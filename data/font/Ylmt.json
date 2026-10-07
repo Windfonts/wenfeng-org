@@ -1,8 +1,10 @@
 {
- "norm": "Ylmt",
+ "norm": "ylmt",
  "name": "源流明体",
  "en": "GenRyuMin TW",
- "aliases": [],
+ "aliases": [
+  "Ylmt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ylmt",
+ "shop": "https://app.windfonts.com/fonts/ylmt",
  "weights": [
   "Bold",
   "Light",

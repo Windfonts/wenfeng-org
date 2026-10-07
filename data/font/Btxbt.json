@@ -1,8 +1,10 @@
 {
- "norm": "Btxbt",
+ "norm": "btxbt",
  "name": "包图小白体",
  "en": "Baotu Xiaobai Ti",
- "aliases": [],
+ "aliases": [
+  "Btxbt"
+ ],
  "licenseName": "包图小白体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Btxbt",
+ "shop": "https://app.windfonts.com/fonts/btxbt",
  "weights": [
   "Regular"
  ],

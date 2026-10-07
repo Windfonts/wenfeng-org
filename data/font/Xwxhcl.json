@@ -1,8 +1,10 @@
 {
- "norm": "Xwxhcl",
+ "norm": "xwxhcl",
  "name": "霞鹜晰黑 CL",
  "en": "LXGW XiHei CL",
- "aliases": [],
+ "aliases": [
+  "Xwxhcl"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwxhcl",
+ "shop": "https://app.windfonts.com/fonts/xwxhcl",
  "weights": [
   "Regular"
  ],

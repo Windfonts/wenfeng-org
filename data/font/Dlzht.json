@@ -1,8 +1,10 @@
 {
- "norm": "Dlzht",
+ "norm": "dlzht",
  "name": "鼎猎珠海体",
  "en": "Dinglie Zhuhai Font",
- "aliases": [],
+ "aliases": [
+  "Dlzht"
+ ],
  "licenseName": "鼎猎珠海体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Dlzht",
+ "shop": "https://app.windfonts.com/fonts/dlzht",
  "weights": [
   "Normal"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Sght",
+ "norm": "sght",
  "name": "尚古黑体",
  "en": "Shanggu Sans",
- "aliases": [],
+ "aliases": [
+  "Sght"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Sght",
+ "shop": "https://app.windfonts.com/fonts/sght",
  "weights": [
   "ExtraLight",
   "Light",

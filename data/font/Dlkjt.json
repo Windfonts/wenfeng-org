@@ -1,8 +1,10 @@
 {
- "norm": "Dlkjt",
+ "norm": "dlkjt",
  "name": "鼎猎客家体",
  "en": "Dinglie Hakka Font",
- "aliases": [],
+ "aliases": [
+  "Dlkjt"
+ ],
  "licenseName": "鼎猎客家体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Dlkjt",
+ "shop": "https://app.windfonts.com/fonts/dlkjt",
  "weights": [
   "Regular"
  ],

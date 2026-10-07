@@ -1,8 +1,10 @@
 {
- "norm": "Systtc",
+ "norm": "systtc",
  "name": "思源宋体 TC",
  "en": "Source Han Serif TC",
- "aliases": [],
+ "aliases": [
+  "Systtc"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Systtc",
+ "shop": "https://app.windfonts.com/fonts/systtc",
  "weights": [
   "Bold",
   "ExtraLight",

@@ -1,0 +1,47 @@
+{
+ "norm": "xsszt",
+ "name": "像素Silver字体",
+ "en": "Silver",
+ "aliases": [
+  "Xsslv"
+ ],
+ "licenseName": "CC BY 4.0",
+ "license": {
+  "spdx": "CC-BY-4.0",
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Poppy Works",
+ "foundrySlug": "poppy-works",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xsszt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xsszt"
+}

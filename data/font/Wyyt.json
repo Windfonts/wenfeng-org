@@ -1,8 +1,10 @@
 {
- "norm": "Wyyt",
+ "norm": "wyyt",
  "name": "文渊圆体",
  "en": "WenYuan Rounded SC",
- "aliases": [],
+ "aliases": [
+  "Wyyt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Wyyt",
+ "shop": "https://app.windfonts.com/fonts/wyyt",
  "weights": [
   "Light",
   "Regular",

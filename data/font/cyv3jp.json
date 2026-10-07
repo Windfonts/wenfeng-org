@@ -1,0 +1,47 @@
+{
+ "norm": "cyv3jp",
+ "name": "コーポレートやわ明 ver3",
+ "en": "Corporate Yawamin Ver3",
+ "aliases": [
+  "cyv3jp"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "ロゴタイプJP",
+ "foundrySlug": "logotype-jp",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/cyv3jp",
+ "weights": [
+  "Medium"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-cyv3jp"
+}

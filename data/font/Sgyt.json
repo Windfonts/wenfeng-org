@@ -1,8 +1,10 @@
 {
- "norm": "Sgyt",
+ "norm": "sgyt",
  "name": "尚古圆体",
  "en": "Shanggu Round",
- "aliases": [],
+ "aliases": [
+  "Sgyt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Sgyt",
+ "shop": "https://app.windfonts.com/fonts/sgyt",
  "weights": [
   "ExtraLight",
   "Light",

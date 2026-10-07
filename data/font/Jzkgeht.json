@@ -1,8 +1,10 @@
 {
- "norm": "Jzkgeht",
+ "norm": "jzkgeht",
  "name": "瀞之库格尔黑体",
  "en": "Torono Kugel Sans",
- "aliases": [],
+ "aliases": [
+  "Jzkgeht"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Jzkgeht",
+ "shop": "https://app.windfonts.com/fonts/jzkgeht",
  "weights": [
   "Heavy"
  ],

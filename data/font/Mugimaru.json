@@ -1,8 +1,10 @@
 {
- "norm": "Mugimaru",
+ "norm": "mugimaru",
  "name": "Keinan Mugimaru",
  "en": "Keinan Mugimaru JP",
- "aliases": [],
+ "aliases": [
+  "Mugimaru"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Mugimaru",
+ "shop": "https://app.windfonts.com/fonts/mugimaru",
  "weights": [
   "Regular"
  ],

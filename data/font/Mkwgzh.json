@@ -1,8 +1,10 @@
 {
- "norm": "Mkwgzh",
+ "norm": "mkwgzh",
  "name": "猫啃网故障黑",
  "en": "Maoken Glitch Hei",
- "aliases": [],
+ "aliases": [
+  "Mkwgzh"
+ ],
  "licenseName": "SIL Open Font License",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Mkwgzh",
+ "shop": "https://app.windfonts.com/fonts/mkwgzh",
  "weights": [
   "Regular"
  ],

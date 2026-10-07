@@ -1,0 +1,47 @@
+{
+ "norm": "zasjp",
+ "name": "Zen Antique Soft",
+ "en": "Zen Antique Soft",
+ "aliases": [
+  "Zenantiquesoft"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "c76594cc8f4af2ea35d1e05278b1911b22cc6227bc3b0ad404f68be03fe3f107",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "Google",
+ "foundrySlug": "google-fonts",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/zasjp",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zasjp"
+}

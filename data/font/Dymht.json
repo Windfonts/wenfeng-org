@@ -1,8 +1,10 @@
 {
- "norm": "Dymht",
+ "norm": "dymht",
  "name": "抖音美好体",
  "en": "Douyin Sans Bold",
- "aliases": [],
+ "aliases": [
+  "Dymht"
+ ],
  "licenseName": "抖音美好体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Dymht",
+ "shop": "https://app.windfonts.com/fonts/dymht",
  "weights": [
   "Regular"
  ],

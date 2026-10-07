@@ -1,0 +1,67 @@
+{
+ "norm": "myst",
+ "name": "梦源宋体",
+ "en": "Mengshen HanSerif",
+ "aliases": [
+  "Mspyt"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Pal3love/dream-han-cjk",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "3b9d9d42393580f6c66c60b17910b1f7aa95a1470261b6b8ba768039983be653",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源宋体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "",
+ "foundrySlug": "unknown",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/myst",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Pal3love/dream-han-cjk",
+  "upstream": "https://github.com/Pal3love/dream-han-cjk",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Mspyt.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Pal3love/dream-han-cjk",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-myst"
+}

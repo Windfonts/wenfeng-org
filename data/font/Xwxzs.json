@@ -1,8 +1,10 @@
 {
- "norm": "Xwxzs",
+ "norm": "xwxzs",
  "name": "霞鹜新致宋",
  "en": "LXGW Neo ZhiSong",
- "aliases": [],
+ "aliases": [
+  "Xwxzs"
+ ],
  "licenseName": "IPA Open Font License 1.0",
  "license": {
   "spdx": "IPA-1.0",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwxzs",
+ "shop": "https://app.windfonts.com/fonts/xwxzs",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Xet",
+ "norm": "xet",
  "name": "贤二体",
  "en": "XianErTi",
- "aliases": [],
+ "aliases": [
+  "Xet"
+ ],
  "licenseName": "贤二体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xet",
+ "shop": "https://app.windfonts.com/fonts/xet",
  "weights": [
   "Regular"
  ],

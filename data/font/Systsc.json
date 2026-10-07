@@ -1,8 +1,10 @@
 {
- "norm": "Systsc",
+ "norm": "systsc",
  "name": "思源宋体",
  "en": "Source Han Serif SC",
- "aliases": [],
+ "aliases": [
+  "Systsc"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Systsc",
+ "shop": "https://app.windfonts.com/fonts/systsc",
  "weights": [
   "ExtraLight",
   "Light",

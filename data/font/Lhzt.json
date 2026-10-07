@@ -1,8 +1,10 @@
 {
- "norm": "Lhzt",
+ "norm": "lhzt",
  "name": "濑户字体",
  "en": "SetoFont",
- "aliases": [],
+ "aliases": [
+  "Lhzt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Lhzt",
+ "shop": "https://app.windfonts.com/fonts/lhzt",
  "weights": [
   "Regular"
  ],

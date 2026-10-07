@@ -1,8 +1,10 @@
 {
- "norm": "Hchfs",
+ "norm": "hchfs",
  "name": "寒蝉活仿宋",
  "en": "Chill Huo Fang Song",
- "aliases": [],
+ "aliases": [
+  "Hchfs"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hchfs",
+ "shop": "https://app.windfonts.com/fonts/hchfs",
  "weights": [
   "Regular"
  ],

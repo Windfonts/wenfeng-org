@@ -1,0 +1,47 @@
+{
+ "norm": "ipamjp",
+ "name": "IPAexMincho",
+ "en": "IPAexMincho",
+ "aliases": [
+  "IPAexMincho"
+ ],
+ "licenseName": "IPA Font License",
+ "license": {
+  "spdx": "IPA-1.0",
+  "textState": "full",
+  "sourceUrl": "https://opensource.org/licenses/IPA",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "59f3a63fde2679836a16bb32522110959ce85d4260f11f95cc0feac89b4138ca",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "ipa",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/ipamjp",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ipamjp"
+}

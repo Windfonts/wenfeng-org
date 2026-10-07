@@ -1,8 +1,10 @@
 {
- "norm": "Ysht",
+ "norm": "ysht",
  "name": "源石黑体",
  "en": "GenSeki Gothic TW",
- "aliases": [],
+ "aliases": [
+  "Ysht"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ysht",
+ "shop": "https://app.windfonts.com/fonts/ysht",
  "weights": [
   "Bold",
   "Heavy",

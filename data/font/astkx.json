@@ -1,0 +1,52 @@
+{
+ "norm": "astkx",
+ "name": "澳声通快雪",
+ "en": "ToneOZ QuickSnow",
+ "aliases": [
+  "astkx"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "toneoz",
+ "foundrySlug": "toneoz",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/astkx",
+ "weights": [
+  "Variable",
+  "W300",
+  "W400",
+  "W500",
+  "W600",
+  "W700"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-astkx"
+}

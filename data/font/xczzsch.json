@@ -1,0 +1,52 @@
+{
+ "norm": "xczzsch",
+ "name": "香萃自在舒畅黑",
+ "en": "Xiangcui Wave Sans Comfort",
+ "aliases": [
+  "Xcws"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "welai",
+   "rootWork": "未来荧黑",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "香萃",
+ "foundrySlug": "xiangcui",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xczzsch",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xczzsch"
+}

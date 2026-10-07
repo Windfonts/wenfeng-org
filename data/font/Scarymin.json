@@ -1,8 +1,10 @@
 {
- "norm": "Scarymin",
+ "norm": "scarymin",
  "name": "ふぉんとうは怖い明朝体",
  "en": "Really Scary Minchotai",
- "aliases": [],
+ "aliases": [
+  "Scarymin"
+ ],
  "licenseName": "IPA Font License Agreement v1.0",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Scarymin",
+ "shop": "https://app.windfonts.com/fonts/scarymin",
  "weights": [
   "Regular"
  ],

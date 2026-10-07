@@ -1,0 +1,53 @@
+{
+ "norm": "zhzys",
+ "name": "字嗨注音宋",
+ "en": "Bpmf Zihi Serif",
+ "aliases": [
+  "zhzys"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": "http://scripts.sil.org/OFL",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "buttaiwan",
+ "foundrySlug": "buttaiwan",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/zhzys",
+ "weights": [
+  "ExtraLight",
+  "Light",
+  "Regular",
+  "Medium",
+  "SemiBold",
+  "Bold",
+  "Heavy"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zhzys"
+}

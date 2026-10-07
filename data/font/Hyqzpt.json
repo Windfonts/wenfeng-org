@@ -1,8 +1,10 @@
 {
- "norm": "Hyqzpt",
+ "norm": "hyqzpt",
  "name": "黄引齐招牌体",
  "en": "Huang Yinqi Zhaopaiti",
- "aliases": [],
+ "aliases": [
+  "Hyqzpt"
+ ],
  "licenseName": "黄引齐招牌体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hyqzpt",
+ "shop": "https://app.windfonts.com/fonts/hyqzpt",
  "weights": [
   "Regular"
  ],

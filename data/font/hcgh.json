@@ -1,0 +1,62 @@
+{
+ "norm": "hcgh",
+ "name": "寒蝉高黑",
+ "en": "Chill G Sans",
+ "aliases": [
+  "Clg"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Warren2060/ChillGSans",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "f60049c03e1f9826f3fec19fe2d3d11c4c50b1625a8df41c0edb514dcebaab48",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "chilltype",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/hcgh",
+ "weights": [
+  "Medium"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Warren2060/ChillGSans",
+  "upstream": "https://github.com/Warren2060/ChillGSans",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Clg.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Warren2060/ChillGSans",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hcgh"
+}

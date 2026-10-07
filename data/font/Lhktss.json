@@ -1,8 +1,10 @@
 {
- "norm": "Lhktss",
+ "norm": "lhktss",
  "name": "刘欢卡通手书",
  "en": "Liu Huan KaTong ShouShu",
- "aliases": [],
+ "aliases": [
+  "Lhktss"
+ ],
  "licenseName": "刘欢卡通手书授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Lhktss",
+ "shop": "https://app.windfonts.com/fonts/lhktss",
  "weights": [
   "Regular"
  ],

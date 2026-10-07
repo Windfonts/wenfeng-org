@@ -1,8 +1,10 @@
 {
- "norm": "Hymc",
+ "norm": "hymc",
  "name": "华英明朝",
  "en": "Huaying Mincho",
- "aliases": [],
+ "aliases": [
+  "Hymc"
+ ],
  "licenseName": "IPA Font License Agreement v1.0",
  "license": {
   "spdx": null,
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hymc",
+ "shop": "https://app.windfonts.com/fonts/hymc",
  "weights": [
   "Regular"
  ],

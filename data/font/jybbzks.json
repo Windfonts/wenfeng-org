@@ -1,0 +1,47 @@
+{
+ "norm": "jybbzks",
+ "name": "教育部標準楷書",
+ "en": "Taiwan MOE Standard Kai",
+ "aliases": [
+  "Twjybbzjs"
+ ],
+ "licenseName": "CC BY-ND 3.0 TW",
+ "license": {
+  "spdx": null,
+  "textState": "pointer",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Ministry of Education (Taiwan)",
+ "foundrySlug": "moe-tw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/jybbzks",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jybbzks"
+}

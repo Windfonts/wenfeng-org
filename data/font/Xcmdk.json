@@ -1,53 +1,55 @@
 {
-  "norm": "Xcmdk",
-  "name": "香菜碼等宽",
-  "en": "Cilantro Code Mono",
-  "aliases": [],
-  "licenseName": "SIL Open Font License 1.1",
-  "license": {
-    "spdx": "OFL-1.1",
-    "textState": "full",
-    "sourceUrl": "https://raw.githubusercontent.com/DraftingDreamer/FontCilantroCode/main/LICENSE",
-    "fetchedAt": "2026-10-04",
-    "textSha256": "7967ea58ef71b0a9717f80a68446a8ec57596a0a62e3838759fdef4667b62b53",
-    "verifiedAt": "2026-10-04",
-    "rfn": null
+ "norm": "xcmdk",
+ "name": "香菜碼等宽",
+ "en": "Cilantro Code Mono",
+ "aliases": [
+  "Xcmdk"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": "https://github.com/DraftingDreamer/FontCilantroCode",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "DraftingDreamer",
+ "foundrySlug": "draftingdreamer",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xcmdk",
+ "weights": [
+  "Regular",
+  "Bold"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/DraftingDreamer/FontCilantroCode",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/DraftingDreamer/FontCilantroCode",
+   "sha256": null
   },
-  "foundry": "DraftingDreamer",
-  "foundrySlug": "draftingdreamer",
-  "offer": "missing",
-  "slice": "planned",
-  "distribution": true,
-  "shop": "https://app.windfonts.com/fonts/Xcmdk",
-  "weights": [
-    "Regular",
-    "Bold"
-  ],
-  "mirror": {
-    "state": "absent",
-    "feicode": null,
-    "upstream": "https://github.com/DraftingDreamer/FontCilantroCode",
-    "syncedAt": null,
-    "headSha": null
-  },
-  "lineage": null,
-  "files": [
-    {
-      "kind": "upstream",
-      "label": "上游 github.com",
-      "format": "git",
-      "href": "https://github.com/DraftingDreamer/FontCilantroCode",
-      "sha256": null
-    },
-    {
-      "kind": "slice",
-      "label": "网页切片包（自托管）",
-      "format": "zip",
-      "href": null,
-      "status": "planned",
-      "sha256": null
-    }
-  ],
-  "visitorNote": "",
-  "family": "wenfeng-xcmdk"
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xcmdk"
 }

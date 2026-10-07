@@ -1,0 +1,67 @@
+{
+ "norm": "xcldh",
+ "name": "香萃零度黑",
+ "en": "Xiangcui Zero Hei",
+ "aliases": [
+  "Xcld"
+ ],
+ "licenseName": "香萃零度黑授权协议",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Miiiller/Xiangcui-ZeroHei",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "697383c6addd5dd14d7e1ff053aaa44520ce86a58589eef1f9985ab66e08db08",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "香萃",
+ "foundrySlug": "xiangcui",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xcldh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Miiiller/Xiangcui-ZeroHei",
+  "upstream": "https://github.com/Miiiller/Xiangcui-ZeroHei",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Xcld.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Miiiller/Xiangcui-ZeroHei",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xcldh"
+}

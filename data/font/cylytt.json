@@ -1,0 +1,63 @@
+{
+ "norm": "cylytt",
+ "name": "辰宇落雁体 Thin",
+ "en": "Chenyu Luoyan Thin",
+ "aliases": [
+  "Cylyt"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Chenyu-otf/chenyuluoyan_thin",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "393732512d2658fa5841dfaad325e002ccb6755b9037a818500434c0a5c4a6d1",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "新价值",
+ "foundrySlug": "新价值",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/cylytt",
+ "weights": [
+  "Monospaced",
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Chenyu-otf/chenyuluoyan_thin",
+  "upstream": "https://github.com/Chenyu-otf/chenyuluoyan_thin",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Cylyt.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Chenyu-otf/chenyuluoyan_thin",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-cylytt"
+}

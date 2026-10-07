@@ -1,8 +1,10 @@
 {
- "norm": "Lmld",
+ "norm": "lmld",
  "name": "乐米律动黑",
  "en": "Lemi Lvdong",
- "aliases": [],
+ "aliases": [
+  "Lmld"
+ ],
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Lmld",
+ "shop": "https://app.windfonts.com/fonts/lmld",
  "weights": [
   "Regular"
  ],

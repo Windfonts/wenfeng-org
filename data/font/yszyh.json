@@ -1,0 +1,51 @@
+{
+ "norm": "yszyh",
+ "name": "源石注音黑",
+ "en": "Bpmf GenSeki Gothic",
+ "aliases": [
+  "yszyh"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": "http://scripts.sil.org/OFL",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "buttaiwan",
+ "foundrySlug": "buttaiwan",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/yszyh",
+ "weights": [
+  "Light",
+  "Regular",
+  "Medium",
+  "Bold",
+  "Heavy"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-yszyh"
+}

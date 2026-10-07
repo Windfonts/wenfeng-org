@@ -1,8 +1,10 @@
 {
- "norm": "Xwwktc",
+ "norm": "xwwktc",
  "name": "霞鹜文楷 TC",
  "en": "LXGW WenKai TC",
- "aliases": [],
+ "aliases": [
+  "Xwwktc"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwwktc",
+ "shop": "https://app.windfonts.com/fonts/xwwktc",
  "weights": [
   "Light",
   "Regular",

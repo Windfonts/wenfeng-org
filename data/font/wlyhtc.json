@@ -1,0 +1,55 @@
+{
+ "norm": "wlyhtc",
+ "name": "未来荧黑 TC",
+ "en": "Glow Sans TC",
+ "aliases": [
+  "wlyhtc"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Wêlai",
+ "foundrySlug": "welai",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/wlyhtc",
+ "weights": [
+  "Bold",
+  "Book",
+  "ExtraBold",
+  "ExtraLight",
+  "Heavy",
+  "Light",
+  "Medium",
+  "Regular",
+  "Thin"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-wlyhtc"
+}

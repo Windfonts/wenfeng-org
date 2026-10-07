@@ -1,0 +1,52 @@
+{
+ "norm": "xwwkbc",
+ "name": "霞鹜文楷 Bright Code",
+ "en": "LXGW Bright Code",
+ "aliases": [
+  "Xwbrightcode"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "4eac4cb6c3b92c39a853e64b42c0aa9fd2476a768d62cef8b3b7c15844651c15",
+  "verifiedAt": "2026-09-26",
+  "rfn": "霞鹜、霞鶩、落霞孤鹜、落霞孤鶩、LXGW"
+ },
+ "foundry": "LXGW",
+ "foundrySlug": "lxgw",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xwwkbc",
+ "weights": [
+  "Regular",
+  "Light",
+  "ExtraLight",
+  "Italic",
+  "LightItalic",
+  "ExtraLightItalic"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xwwkbc"
+}

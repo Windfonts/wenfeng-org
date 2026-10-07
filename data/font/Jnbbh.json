@@ -1,8 +1,10 @@
 {
- "norm": "Jnbbh",
+ "norm": "jnbbh",
  "name": "荆南波波黑",
  "en": "Kingnam Bobo",
- "aliases": [],
+ "aliases": [
+  "Jnbbh"
+ ],
  "licenseName": "荆南波波黑授权协议",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Jnbbh",
+ "shop": "https://app.windfonts.com/fonts/jnbbh",
  "weights": [
   "Regular"
  ],

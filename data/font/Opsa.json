@@ -1,8 +1,10 @@
 {
- "norm": "Opsa",
+ "norm": "opsa",
  "name": "OPPO Sans 字体",
  "en": "OPPO Sans",
- "aliases": [],
+ "aliases": [
+  "Opsa"
+ ],
  "licenseName": "OPPO Sans Free Use License",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Opsa",
+ "shop": "https://app.windfonts.com/fonts/opsa",
  "weights": [
   "Medium",
   "Light",

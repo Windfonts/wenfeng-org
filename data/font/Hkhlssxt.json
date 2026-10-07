@@ -1,8 +1,10 @@
 {
- "norm": "Hkhlssxt",
+ "norm": "hkhlssxt",
  "name": "黄凯桦律师手写体",
  "en": "Huang Kaihua Lawyer Handwritten Font",
- "aliases": [],
+ "aliases": [
+  "Hkhlssxt"
+ ],
  "licenseName": "黄凯桦律师手写体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hkhlssxt",
+ "shop": "https://app.windfonts.com/fonts/hkhlssxt",
  "weights": [
   "Regular"
  ],

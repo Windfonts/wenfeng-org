@@ -1,8 +1,10 @@
 {
- "norm": "Hckht",
+ "norm": "hckht",
  "name": "寒蝉宽黑体",
  "en": "Chill K Sans",
- "aliases": [],
+ "aliases": [
+  "Hckht"
+ ],
  "licenseName": "SIL Open Font License",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hckht",
+ "shop": "https://app.windfonts.com/fonts/hckht",
  "weights": [
   "Medium"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Zyht",
+ "norm": "zyht",
  "name": "昭源黑体",
  "en": "Chiron Hei HK",
- "aliases": [],
+ "aliases": [
+  "Zyht"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zyht",
+ "shop": "https://app.windfonts.com/fonts/zyht",
  "weights": [
   "Bold",
   "Light",

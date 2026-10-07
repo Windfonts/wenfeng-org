@@ -1,8 +1,10 @@
 {
- "norm": "Wcsf",
+ "norm": "wcsf",
  "name": "问藏书房",
  "en": "WenCang",
- "aliases": [],
+ "aliases": [
+  "Wcsf"
+ ],
  "licenseName": "问藏书房授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Wcsf",
+ "shop": "https://app.windfonts.com/fonts/wcsf",
  "weights": [
   "Normal"
  ],

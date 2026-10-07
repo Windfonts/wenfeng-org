@@ -1,8 +1,10 @@
 {
- "norm": "Hxbzst",
+ "norm": "hxbzst",
  "name": "胡晓波真帅体",
  "en": "HuXiaoBo-ZhenShuai",
- "aliases": [],
+ "aliases": [
+  "Hxbzst"
+ ],
  "licenseName": "胡晓波真帅体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hxbzst",
+ "shop": "https://app.windfonts.com/fonts/hxbzst",
  "weights": [
   "Regular"
  ],

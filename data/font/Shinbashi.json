@@ -1,8 +1,10 @@
 {
- "norm": "Shinbashi",
+ "norm": "shinbashi",
  "name": "新桥黑体",
  "en": "Shinbashi Gothic",
- "aliases": [],
+ "aliases": [
+  "Shinbashi"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Shinbashi",
+ "shop": "https://app.windfonts.com/fonts/shinbashi",
  "weights": [
   "Regular"
  ],

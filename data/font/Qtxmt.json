@@ -1,8 +1,10 @@
 {
- "norm": "Qtxmt",
+ "norm": "qtxmt",
  "name": "千图纤墨体",
  "en": "qiantuxianmoti",
- "aliases": [],
+ "aliases": [
+  "Qtxmt"
+ ],
  "licenseName": "千图纤墨体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Qtxmt",
+ "shop": "https://app.windfonts.com/fonts/qtxmt",
  "weights": [
   "Regular"
  ],

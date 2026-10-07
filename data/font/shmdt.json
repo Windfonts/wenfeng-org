@@ -1,0 +1,54 @@
+{
+ "norm": "shmdt",
+ "name": "上海摩登体",
+ "en": "Shanghai Modeng",
+ "aliases": [
+  "Shmgt"
+ ],
+ "licenseName": "上海摩登体作者声明授权（汉唐文化）",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": "https://www.shanghaimodeng.com/",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "汉唐文化",
+ "foundrySlug": "hantang",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/shmdt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://www.shanghaimodeng.com/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.shanghaimodeng.com",
+   "format": "git",
+   "href": "https://www.shanghaimodeng.com/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-shmdt"
+}

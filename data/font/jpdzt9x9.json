@@ -1,0 +1,67 @@
+{
+ "norm": "jpdzt9x9",
+ "name": "精品点阵体9x9",
+ "en": "Boutique Bitmap 9x9 Dot",
+ "aliases": [
+  "Bb9"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/scott0107000/BoutiqueBitmap9x9",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "57ada0ae3a68f8db6d1649c658a93c091abbce685a016eff1a1d2230ef2dcc66",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "mplus",
+   "rootWork": "M+ BITMAP FONTS",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "",
+ "foundrySlug": "scott0107000",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/jpdzt9x9",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/scott0107000/BoutiqueBitmap9x9",
+  "upstream": "https://github.com/scott0107000/BoutiqueBitmap9x9",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Bb9.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/scott0107000/BoutiqueBitmap9x9",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-jpdzt9x9"
+}

@@ -1,0 +1,47 @@
+{
+ "norm": "fdqst",
+ "name": "繁多全宋体",
+ "en": "MoTc Sung",
+ "aliases": [
+  "Mts1"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://data.gov.tw/license",
+  "fetchedAt": "2026-09-25",
+  "textSha256": "f50f5d7ab25787f85ab580b700cdd8d3c2dfb649b12779b44f400553b9131dbf",
+  "verifiedAt": "2026-09-25",
+  "rfn": null
+ },
+ "foundry": "花乐",
+ "foundrySlug": "fwhp",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/fdqst",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-fdqst"
+}

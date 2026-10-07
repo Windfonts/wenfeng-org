@@ -1,8 +1,10 @@
 {
- "norm": "Keinann",
+ "norm": "keinann",
  "name": "Keinann Maru POP",
  "en": "KeinannMaruPOP JP",
- "aliases": [],
+ "aliases": [
+  "Keinann"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Keinann",
+ "shop": "https://app.windfonts.com/fonts/keinann",
  "weights": [
   "Regular"
  ],

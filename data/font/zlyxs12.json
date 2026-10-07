@@ -1,0 +1,62 @@
+{
+ "norm": "zlyxs12",
+ "name": "Z Labs 圆像素 12px",
+ "en": "Z Labs RoundPix 12px",
+ "aliases": [
+  "Zlrp12"
+ ],
+ "licenseName": "MIT License",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/Astro-2539/ZLabs-RoundPix-12px",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "108d4086afbf094f375bb01ca405a3b26c5433e037576feb8de2d7eaba73c3f7",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "",
+ "foundrySlug": "astro-2539",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/zlyxs12",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Astro-2539/ZLabs-RoundPix-12px",
+  "upstream": "https://github.com/Astro-2539/ZLabs-RoundPix-12px",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Zlrp12.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Astro-2539/ZLabs-RoundPix-12px",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zlyxs12"
+}

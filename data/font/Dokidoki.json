@@ -1,8 +1,10 @@
 {
- "norm": "Dokidoki",
+ "norm": "dokidoki",
  "name": "Doki Doki Fantasia",
  "en": "Doki Doki Fantasia",
- "aliases": [],
+ "aliases": [
+  "Dokidoki"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Dokidoki",
+ "shop": "https://app.windfonts.com/fonts/dokidoki",
  "weights": [
   "Regular"
  ],

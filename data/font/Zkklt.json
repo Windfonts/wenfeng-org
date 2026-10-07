@@ -1,8 +1,10 @@
 {
- "norm": "Zkklt",
+ "norm": "zkklt",
  "name": "站酷快乐体",
  "en": "HappyZcool-2016",
- "aliases": [],
+ "aliases": [
+  "Zkklt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zkklt",
+ "shop": "https://app.windfonts.com/fonts/zkklt",
  "weights": [
   "Regular"
  ],

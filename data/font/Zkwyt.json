@@ -1,8 +1,10 @@
 {
- "norm": "Zkwyt",
+ "norm": "zkwyt",
  "name": "站酷文艺体",
  "en": "ZCOOL WenYiTi",
- "aliases": [],
+ "aliases": [
+  "Zkwyt"
+ ],
  "licenseName": "站酷文艺体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zkwyt",
+ "shop": "https://app.windfonts.com/fonts/zkwyt",
  "weights": [
   "Regular"
  ],

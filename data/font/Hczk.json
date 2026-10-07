@@ -1,8 +1,10 @@
 {
- "norm": "Hczk",
+ "norm": "hczk",
  "name": "寒蝉拙楷",
  "en": "Chill Zhuo Kai",
- "aliases": [],
+ "aliases": [
+  "Hczk"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hczk",
+ "shop": "https://app.windfonts.com/fonts/hczk",
  "weights": [
   "Regular"
  ],

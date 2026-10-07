@@ -1,0 +1,47 @@
+{
+ "norm": "mp1cjp",
+ "name": "M+ 1 Code",
+ "en": "M PLUS 1 Code",
+ "aliases": [
+  "Mplus1Code"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "04971e3fcee60b247395150d93b3616f6a0b092572332c96187b472976553abc",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "M+ FONTS PROJECT",
+ "foundrySlug": "mplus",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/mp1cjp",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mp1cjp"
+}

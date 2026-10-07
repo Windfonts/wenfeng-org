@@ -1,8 +1,10 @@
 {
- "norm": "Lmsg",
+ "norm": "lmsg",
  "name": "乐米拾光手札体",
  "en": "Lemi Shiguang",
- "aliases": [],
+ "aliases": [
+  "Lmsg"
+ ],
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Lmsg",
+ "shop": "https://app.windfonts.com/fonts/lmsg",
  "weights": [
   "Regular"
  ],

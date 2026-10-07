@@ -1,0 +1,67 @@
+{
+ "norm": "lxdzt16",
+ "name": "流行点阵体16",
+ "en": "Fashion Bitmap 16",
+ "aliases": [
+  "Fb16"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/scott0107000/FashionBitmap16",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "e72b94fbcf3f1b251b96f5b1883f2895538434d73819bfee8b7314b32e6085a0",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "font-silo",
+   "rootWork": "KHドットフォントシリーズ",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "",
+ "foundrySlug": "scott0107000",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/lxdzt16",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/scott0107000/FashionBitmap16",
+  "upstream": "https://github.com/scott0107000/FashionBitmap16",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Fb16.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/scott0107000/FashionBitmap16",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-lxdzt16"
+}

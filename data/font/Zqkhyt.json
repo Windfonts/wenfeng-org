@@ -1,8 +1,10 @@
 {
- "norm": "Zqkhyt",
+ "norm": "zqkhyt",
  "name": "郑庆科黄油体",
  "en": "Zhengqingke Butter Regular",
- "aliases": [],
+ "aliases": [
+  "Zqkhyt"
+ ],
  "licenseName": "郑庆科黄油体 Regular授权协议",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zqkhyt",
+ "shop": "https://app.windfonts.com/fonts/zqkhyt",
  "weights": [
   "Regular"
  ],

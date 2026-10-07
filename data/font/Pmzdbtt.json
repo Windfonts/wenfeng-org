@@ -1,8 +1,10 @@
 {
- "norm": "Pmzdbtt",
+ "norm": "pmzdbtt",
  "name": "庞门正道标题体",
  "en": "PangMenZhengDao Title 3.12",
- "aliases": [],
+ "aliases": [
+  "Pmzdbtt"
+ ],
  "licenseName": "庞门正道标题体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Pmzdbtt",
+ "shop": "https://app.windfonts.com/fonts/pmzdbtt",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Zkxwt",
+ "norm": "zkxwt",
  "name": "站酷小薇体",
  "en": "ZCOOL XiaoWei",
- "aliases": [],
+ "aliases": [
+  "Zkxwt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zkxwt",
+ "shop": "https://app.windfonts.com/fonts/zkxwt",
  "weights": [
   "Regular"
  ],

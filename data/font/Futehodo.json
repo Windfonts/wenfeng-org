@@ -1,8 +1,10 @@
 {
- "norm": "Futehodo",
+ "norm": "futehodo",
  "name": "普通圆黑",
  "en": "Futehodo Maru Gothic",
- "aliases": [],
+ "aliases": [
+  "Futehodo"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Futehodo",
+ "shop": "https://app.windfonts.com/fonts/futehodo",
  "weights": [
   "Regular"
  ],

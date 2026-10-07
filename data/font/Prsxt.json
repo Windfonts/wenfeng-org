@@ -1,8 +1,10 @@
 {
- "norm": "Prsxt",
+ "norm": "prsxt",
  "name": "品如手写体",
  "en": "PinRuShouXieTi",
- "aliases": [],
+ "aliases": [
+  "Prsxt"
+ ],
  "licenseName": "品如手写体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Prsxt",
+ "shop": "https://app.windfonts.com/fonts/prsxt",
  "weights": [
   "Regular"
  ],

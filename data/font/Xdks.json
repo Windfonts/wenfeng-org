@@ -1,8 +1,10 @@
 {
- "norm": "Xdks",
+ "norm": "xdks",
  "name": "玄冬楷书",
  "en": "Xuandong Kaishu",
- "aliases": [],
+ "aliases": [
+  "Xdks"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xdks",
+ "shop": "https://app.windfonts.com/fonts/xdks",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Zyyt",
+ "norm": "zyyt",
  "name": "昭源圆体",
  "en": "Chiron GoRound TC",
- "aliases": [],
+ "aliases": [
+  "Zyyt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zyyt",
+ "shop": "https://app.windfonts.com/fonts/zyyt",
  "weights": [
   "Bold",
   "Light",

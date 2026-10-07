@@ -1,8 +1,10 @@
 {
- "norm": "Almmsht",
+ "norm": "almmsht",
  "name": "阿里妈妈数黑体",
  "en": "Alimama ShuHeiTi Bold",
- "aliases": [],
+ "aliases": [
+  "Almmsht"
+ ],
  "licenseName": "阿里妈妈数黑体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Almmsht",
+ "shop": "https://app.windfonts.com/fonts/almmsht",
  "weights": [
   "Bold"
  ],

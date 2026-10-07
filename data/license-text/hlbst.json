@@ -1,0 +1,24 @@
+{
+  "norm": "Hlbs",
+  "title": "免费商用",
+  "body": "《鸿雷板书简体》\n\n作者（鸿雷字记）原话，猫啃网转载：\n\n3、如果问到我将如何看待或者如何处置这个《鸿雷板书简体》？\n\n关于如何处置这个问题，我当然选择免费使用啦。如果能被使用，那便是对我的认可以及鼓励与支持！\n\n同页标注：字体作者：鸿雷字记。字体授权：作者声明（企业、个人均可免费商用）。\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "授权页摘录",
+    "url": "https://www.maoken.com/freefonts/3791.html",
+    "commit": null,
+    "fetchedAt": "2026-10-04",
+    "rule": null,
+    "textSha256": "104c5570e7f1a147edb2c355ce415406ba4fdb53e6790c89925abdcab478844a",
+    "method": "official-page-excerpt",
+    "history": [
+      {
+        "at": "2026-10-04",
+        "event": "archive",
+        "url": "https://www.maoken.com/freefonts/3791.html",
+        "textSha256": "104c5570e7f1a147edb2c355ce415406ba4fdb53e6790c89925abdcab478844a",
+        "note": "写入已核对的许可原文"
+      }
+    ]
+  }
+}

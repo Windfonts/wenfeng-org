@@ -1,8 +1,10 @@
 {
- "norm": "Tbmct",
+ "norm": "tbmct",
  "name": "淘宝买菜体",
  "en": "TaoBaoMaiCaiTi",
- "aliases": [],
+ "aliases": [
+  "Tbmct"
+ ],
  "licenseName": "淘宝买菜体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Tbmct",
+ "shop": "https://app.windfonts.com/fonts/tbmct",
  "weights": [
   "Regular"
  ],

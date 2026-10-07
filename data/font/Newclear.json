@@ -1,8 +1,10 @@
 {
- "norm": "Newclear",
+ "norm": "newclear",
  "name": "新清明朝",
  "en": "New Clear Mincho",
- "aliases": [],
+ "aliases": [
+  "Newclear"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Newclear",
+ "shop": "https://app.windfonts.com/fonts/newclear",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Zjgljt",
+ "norm": "zjgljt",
  "name": "卓见橄榄简体",
  "en": "ZhuoJianGanLanJianTi",
- "aliases": [],
+ "aliases": [
+  "Zjgljt"
+ ],
  "licenseName": "卓健橄榄简体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Zjgljt",
+ "shop": "https://app.windfonts.com/fonts/zjgljt",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Ysbzt",
+ "norm": "ysbzt",
  "name": "峄山碑篆体",
  "en": "Yishan Stele Seal Script",
- "aliases": [],
+ "aliases": [
+  "Ysbzt"
+ ],
  "licenseName": "峄山碑篆体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ysbzt",
+ "shop": "https://app.windfonts.com/fonts/ysbzt",
  "weights": [
   "Regular"
  ],

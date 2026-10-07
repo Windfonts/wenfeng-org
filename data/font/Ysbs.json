@@ -1,57 +1,59 @@
 {
-  "norm": "Ysbs",
-  "name": "Y式笔书",
-  "en": "YshiPen-Shuti",
-  "aliases": [],
-  "licenseName": "SIL Open Font License 1.1",
-  "license": {
-    "spdx": "OFL-1.1",
-    "textState": "full",
-    "sourceUrl": "https://raw.githubusercontent.com/Steve-Yuu/YshiPen-Shuti/main/OFL.txt",
-    "fetchedAt": "2026-10-04",
-    "textSha256": "7053f85baad56f157aad86bf2fe64e42935394b9ddc0c166b6296bfc88054010",
-    "verifiedAt": "2026-10-04",
-    "rfn": null,
-    "origin": {
-      "rootAuthor": "lxgw",
-      "rootWork": "霞鹜文楷 TC",
-      "note": "衍生字体，授权随上游沿袭。"
-    }
+ "norm": "ysbs",
+ "name": "Y式笔书",
+ "en": "YshiPen-Shuti",
+ "aliases": [
+  "Ysbs"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": "https://github.com/Steve-Yuu/YshiPen-Shuti",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "lxgw",
+   "rootWork": "霞鹜文楷 TC",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Steve-Yuu",
+ "foundrySlug": "steve-yuu",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/ysbs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/Steve-Yuu/YshiPen-Shuti",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Steve-Yuu/YshiPen-Shuti",
+   "sha256": null
   },
-  "foundry": "Steve-Yuu",
-  "foundrySlug": "steve-yuu",
-  "offer": "missing",
-  "slice": "planned",
-  "distribution": true,
-  "shop": "https://app.windfonts.com/fonts/Ysbs",
-  "weights": [
-    "Regular"
-  ],
-  "mirror": {
-    "state": "absent",
-    "feicode": null,
-    "upstream": "https://github.com/Steve-Yuu/YshiPen-Shuti",
-    "syncedAt": null,
-    "headSha": null
-  },
-  "lineage": null,
-  "files": [
-    {
-      "kind": "upstream",
-      "label": "上游 github.com",
-      "format": "git",
-      "href": "https://github.com/Steve-Yuu/YshiPen-Shuti",
-      "sha256": null
-    },
-    {
-      "kind": "slice",
-      "label": "网页切片包（自托管）",
-      "format": "zip",
-      "href": null,
-      "status": "planned",
-      "sha256": null
-    }
-  ],
-  "visitorNote": "",
-  "family": "wenfeng-ysbs"
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ysbs"
 }

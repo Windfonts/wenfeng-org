@@ -1,8 +1,10 @@
 {
- "norm": "Qtbfsxt",
+ "norm": "qtbfsxt",
  "name": "千图笔锋手写体",
  "en": "Qiantu Bifeng Handwriting",
- "aliases": [],
+ "aliases": [
+  "Qtbfsxt"
+ ],
  "licenseName": "千图笔锋手写体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Qtbfsxt",
+ "shop": "https://app.windfonts.com/fonts/qtbfsxt",
  "weights": [
   "Regular"
  ],

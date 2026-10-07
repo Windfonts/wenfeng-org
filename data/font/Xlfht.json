@@ -1,8 +1,10 @@
 {
- "norm": "Xlfht",
+ "norm": "xlfht",
  "name": "乡立方黑体",
  "en": "Xianglifang Heiti",
- "aliases": [],
+ "aliases": [
+  "Xlfht"
+ ],
  "licenseName": "乡立方黑体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Xlfht",
+ "shop": "https://app.windfonts.com/fonts/xlfht",
  "weights": [
   "Regular"
  ],

@@ -325,6 +325,22 @@ def _public_font(font):
     return out
 
 
+def _font_by_norm(fonts, norm):
+    """Match canonical norm or ASCII slug aliases (old CamelCase)."""
+    n = str(norm or "").lower()
+    if not n:
+        return None
+    for font in fonts:
+        if str(font.get("norm") or "").lower() == n:
+            return font
+    for font in fonts:
+        for a in font.get("aliases") or []:
+            s = str(a).strip()
+            if s.lower() == n:
+                return font
+    return None
+
+
 def _filter_fonts(fonts, query):
     q = (query.get("q") or [""])[0].strip().lower()
     offer = (query.get("offer") or ["all"])[0]
@@ -702,7 +718,7 @@ class Handler(SimpleHTTPRequestHandler):
             fonts = data.get("fonts") or []
             norm = m.group(1)
             if norm:
-                hit = next((f for f in fonts if str(f.get("norm") or "").lower() == norm.lower()), None)
+                hit = _font_by_norm(fonts, norm)
                 if not hit:
                     self._send_json({"error": "not_found", "norm": str(norm).lower()}, 404)
                     return True
@@ -804,8 +820,7 @@ class Handler(SimpleHTTPRequestHandler):
                 except OSError:
                     pass
             cert = _build_attestation(
-                next((f for f in _load_samples().get("fonts") or []
-                      if str(f.get("norm") or "").lower() == str(norm).lower()), None),
+                _font_by_norm(_load_samples().get("fonts") or [], norm),
                 _load_licenses(),
                 holder=(query.get("holder") or [""])[0],
                 usage=[u for u in (query.get("usage") or [""])[0].split(",") if u],
@@ -927,7 +942,7 @@ class Handler(SimpleHTTPRequestHandler):
                     }
                 )
                 return True
-            hit = next((f for f in fonts if str(f.get("norm") or "").lower() == str(norm).lower()), None)
+            hit = _font_by_norm(fonts, norm)
             if not hit:
                 self._send_json({"error": "not_found", "norm": str(norm).lower()}, 404)
                 return True

@@ -1,8 +1,10 @@
 {
- "norm": "Alhyznht",
+ "norm": "alhyznht",
  "name": "阿里汉仪智能黑体",
  "en": "AliHYAiHei",
- "aliases": [],
+ "aliases": [
+  "Alhyznht"
+ ],
  "licenseName": "阿里汉仪智能黑体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Alhyznht",
+ "shop": "https://app.windfonts.com/fonts/alhyznht",
  "weights": [
   "Regular"
  ],

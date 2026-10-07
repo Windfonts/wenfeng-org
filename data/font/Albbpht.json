@@ -1,17 +1,18 @@
 {
- "norm": "Albbpht",
+ "norm": "albbpht",
  "name": "阿里巴巴普惠体",
  "en": "Alibaba PuHuiTi",
  "aliases": [
   "普惠体",
-  "PuHuiTi"
+  "PuHuiTi",
+  "Albbpht"
  ],
  "licenseName": "阿里巴巴普惠体授权协议",
  "license": {
   "spdx": null,
   "textState": "pointer",
-  "sourceUrl": "https://www.alibabafonts.com/",
-  "fetchedAt": "2026-10-04",
+  "sourceUrl": null,
+  "fetchedAt": null,
   "textSha256": null,
   "verifiedAt": null,
   "rfn": null
@@ -21,7 +22,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Albbpht",
+ "shop": "https://app.windfonts.com/fonts/albbpht",
  "weights": [
   "Thin",
   "Light",

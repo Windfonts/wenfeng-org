@@ -1,8 +1,10 @@
 {
- "norm": "Yqht",
+ "norm": "yqht",
  "name": "源起黑体",
  "en": "GenKiGothic TW",
- "aliases": [],
+ "aliases": [
+  "Yqht"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Yqht",
+ "shop": "https://app.windfonts.com/fonts/yqht",
  "weights": [
   "Bold",
   "Light",

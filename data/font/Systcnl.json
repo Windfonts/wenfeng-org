@@ -1,8 +1,10 @@
 {
- "norm": "Systcnl",
+ "norm": "systcnl",
  "name": "思源宋体 CN Light",
  "en": "Source Han Serif CN Light",
- "aliases": [],
+ "aliases": [
+  "Systcnl"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Systcnl",
+ "shop": "https://app.windfonts.com/fonts/systcnl",
  "weights": [
   "Light"
  ],

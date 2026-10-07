@@ -1,16 +1,18 @@
 {
- "norm": "Ddxstyx",
- "name": "点点像素圆体",
- "en": "Dotted Songti Circle Regular",
- "aliases": [],
+ "norm": "ddxstyx",
+ "name": "点点像素体-圆形",
+ "en": "Dotted Songti Circle",
+ "aliases": [
+  "DottedSongtiCircleRegular"
+ ],
  "licenseName": "GPL-2.0",
  "license": {
-  "spdx": "GPL-2.0",
+  "spdx": null,
   "textState": "full",
-  "sourceUrl": "https://github.com/wixette/dotted-chinese-fonts",
-  "fetchedAt": "2026-09-25",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
   "textSha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
-  "verifiedAt": "2026-09-25",
+  "verifiedAt": null,
   "rfn": null,
   "origin": {
    "rootAuthor": "wenquanyi",
@@ -20,37 +22,22 @@
  },
  "foundry": "wixette",
  "foundrySlug": "wixette",
- "offer": "source",
+ "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ddxstyx",
+ "shop": "https://app.windfonts.com/fonts/ddxstyx",
  "weights": [
   "Regular"
  ],
  "mirror": {
-  "state": "mirrored",
-  "feicode": "https://feicode.com/wixette/dotted-chinese-fonts",
-  "upstream": "https://github.com/wixette/dotted-chinese-fonts",
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
-  {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Ddxstyx.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
-   "kind": "upstream",
-   "label": "上游 github.com",
-   "format": "git",
-   "href": "https://github.com/wixette/dotted-chinese-fonts",
-   "sha256": null
-  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

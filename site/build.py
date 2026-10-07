@@ -97,6 +97,15 @@ try:
 except Exception:
     OSS_PACKS = {}
 OSS_PACKS_LOWER = {str(k).lower(): v for k, v in OSS_PACKS.items()}
+# 2026-10-07 短码：新 norm → 旧 CamelCase 小写（font-licenses 目录仍是旧名）
+try:
+    _NORM_OLD = {
+        str(m.get("new") or "").lower(): str(m.get("old") or "").lower()
+        for m in (json.loads((ROOT / "data/norm-history.json").read_text("utf-8")).get("maps") or [])
+        if m.get("new") and m.get("old") and str(m["new"]).lower() != str(m["old"]).lower()
+    }
+except Exception:
+    _NORM_OLD = {}
 
 
 # ---------- 数据 ----------
@@ -2440,7 +2449,24 @@ def _norm_key(norm):
 def license_pack_name(norm):
     """font-licenses 目录名（小写）；仓耳等共用包走别名。"""
     k = _norm_key(norm)
+    k = _NORM_OLD.get(k, k)
     return _LICENSE_PACK_ALIAS.get(k, k)
+
+
+def slug_aliases(f):
+    """旧 CamelCase / ASCII 别名，给 /source/{old}/ 等再写一页。中文别名不算路径。"""
+    out = []
+    seen = {str(f.get("norm") or "").lower()}
+    for a in f.get("aliases") or []:
+        s = str(a).strip()
+        if not s or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", s):
+            continue
+        k = s.lower()
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(k)
+    return out
 
 
 def license_pack_dir(norm):
@@ -4221,6 +4247,19 @@ def main():
         if can_attest(f):
             write("/attest/%s/" % f["norm"], page_attest(f))
         write("/slice/%s/" % f["norm"], page_slice(f, fonts))
+    taken = {f["norm"] for f in fonts}
+    n_alias = 0
+    for f in fonts:
+        for s in slug_aliases(f):
+            if s in taken:
+                continue
+            taken.add(s)
+            write("/source/%s/" % s, page_font(f))
+            write("/license/%s/" % s, page_license(f, licenses))
+            if can_attest(f):
+                write("/attest/%s/" % s, page_attest(f))
+            write("/slice/%s/" % s, page_slice(f, fonts))
+            n_alias += 1
     groups = foundries(fonts)
     write("/foundry/", page_foundries(groups))
     for g in groups:
@@ -4232,8 +4271,8 @@ def main():
         write(path, fn())
     write("404.html", page_404())
     print(
-        "built %d pages -> %s (license pdf %d)"
-        % (sum(1 for _ in DIST.rglob("index.html")), DIST, n_lic_pdf)
+        "built %d pages -> %s (license pdf %d, alias slugs %d)"
+        % (sum(1 for _ in DIST.rglob("index.html")), DIST, n_lic_pdf, n_alias)
     )
 
 

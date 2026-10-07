@@ -1,8 +1,10 @@
 {
- "norm": "Mkwgzs",
+ "norm": "mkwgzs",
  "name": "猫啃网故障宋",
  "en": "Maoken Glitch Song",
- "aliases": [],
+ "aliases": [
+  "Mkwgzs"
+ ],
  "licenseName": "SIL Open Font License (OFL)",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Mkwgzs",
+ "shop": "https://app.windfonts.com/fonts/mkwgzs",
  "weights": [
   "Regular"
  ],

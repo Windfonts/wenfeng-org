@@ -1,8 +1,10 @@
 {
- "norm": "Pfhtt",
+ "norm": "pfhtt",
  "name": "PFanHuTuTi",
  "en": "PFanHuTuTi",
- "aliases": [],
+ "aliases": [
+  "Pfhtt"
+ ],
  "licenseName": "PF频凡胡涂体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Pfhtt",
+ "shop": "https://app.windfonts.com/fonts/pfhtt",
  "weights": [
   "Regular"
  ],

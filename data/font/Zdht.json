@@ -1,8 +1,10 @@
 {
- "norm": "Zdht",
+ "norm": "zdht",
  "name": "煮豆黑体",
  "en": "Zhudou Sans",
- "aliases": [],
+ "aliases": [
+  "Zdht"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zdht",
+ "shop": "https://app.windfonts.com/fonts/zdht",
  "weights": [
   "ExtraLight",
   "Light",

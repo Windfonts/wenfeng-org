@@ -1,0 +1,52 @@
+{
+ "norm": "mkwybs",
+ "name": "猫啃网烟波宋",
+ "en": "Maoken Yanbo Song",
+ "aliases": [
+  "B2SCLight"
+ ],
+ "licenseName": "猫啃网烟波宋授权协议",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "swei-b2-sugar",
+   "rootWork": "狮尾B2加糖宋体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "猫啃网",
+ "foundrySlug": "maoken",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/mkwybs",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mkwybs"
+}

@@ -1,8 +1,10 @@
 {
- "norm": "Hckt",
+ "norm": "hckt",
  "name": "寒蝉楷体",
  "en": "Chill Kai",
- "aliases": [],
+ "aliases": [
+  "Hckt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hckt",
+ "shop": "https://app.windfonts.com/fonts/hckt",
  "weights": [
   "Regular"
  ],

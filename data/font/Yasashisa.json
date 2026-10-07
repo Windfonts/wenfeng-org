@@ -1,8 +1,10 @@
 {
- "norm": "Yasashisa",
+ "norm": "yasashisa",
  "name": "やさしさゴシック Bold V2",
  "en": "Yasashisa Gothic Bold V2",
- "aliases": [],
+ "aliases": [
+  "Yasashisa"
+ ],
  "licenseName": "M+ FONTS PROJECT",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Yasashisa",
+ "shop": "https://app.windfonts.com/fonts/yasashisa",
  "weights": [
   "Regular"
  ],

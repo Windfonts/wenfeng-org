@@ -1,8 +1,10 @@
 {
- "norm": "Lmys",
+ "norm": "lmys",
  "name": "乐米野墨体",
  "en": "Lemi Yemo",
- "aliases": [],
+ "aliases": [
+  "Lmys"
+ ],
  "licenseName": "免费商用",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Lmys",
+ "shop": "https://app.windfonts.com/fonts/lmys",
  "weights": [
   "Regular"
  ],

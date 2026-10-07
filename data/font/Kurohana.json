@@ -1,8 +1,10 @@
 {
- "norm": "Kurohana",
+ "norm": "kurohana",
  "name": "黑花明朝",
  "en": "Kuro Hana Mincho",
- "aliases": [],
+ "aliases": [
+  "Kurohana"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Kurohana",
+ "shop": "https://app.windfonts.com/fonts/kurohana",
  "weights": [
   "Regular"
  ],

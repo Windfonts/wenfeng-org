@@ -1,9 +1,11 @@
 {
- "norm": "Cjkfqlt",
- "name": "CJK手写字",
- "en": "cjkFonts",
- "aliases": [],
- "licenseName": "SIL Open Font License 1.1",
+ "norm": "cjkfqlt",
+ "name": "cjkFonts 全濑体",
+ "en": "cjkFonts AllSeto",
+ "aliases": [
+  "cjkfqlt"
+ ],
+ "licenseName": "OFL",
  "license": {
   "spdx": "OFL-1.1",
   "textState": "full",
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Cjkfqlt",
+ "shop": "https://app.windfonts.com/fonts/cjkfqlt",
  "weights": [
   "Regular"
  ],

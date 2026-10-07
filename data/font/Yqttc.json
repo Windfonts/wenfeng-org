@@ -1,52 +1,54 @@
 {
-  "norm": "Yqttc",
-  "name": "遊趣體",
-  "en": "Child Fun Sans TC",
-  "aliases": [],
-  "licenseName": "SIL Open Font License 1.1",
-  "license": {
-    "spdx": "OFL-1.1",
-    "textState": "full",
-    "sourceUrl": "https://raw.githubusercontent.com/Des-Magmeta/ChildFunSans-TC/main/OFL.txt",
-    "fetchedAt": "2026-10-04",
-    "textSha256": "dc447c7bd52b5344d1a6fd9702658154033d3d80443bb2dd010044acfd44b900",
-    "verifiedAt": "2026-10-04",
-    "rfn": null
+ "norm": "yqttc",
+ "name": "遊趣體",
+ "en": "Child Fun Sans TC",
+ "aliases": [
+  "Yqttc"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": "https://github.com/Des-Magmeta/ChildFunSans-TC",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Des-Magmeta",
+ "foundrySlug": "des-magmeta",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/yqttc",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/Des-Magmeta/ChildFunSans-TC",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Des-Magmeta/ChildFunSans-TC",
+   "sha256": null
   },
-  "foundry": "Des-Magmeta",
-  "foundrySlug": "des-magmeta",
-  "offer": "missing",
-  "slice": "planned",
-  "distribution": true,
-  "shop": "https://app.windfonts.com/fonts/Yqttc",
-  "weights": [
-    "Regular"
-  ],
-  "mirror": {
-    "state": "absent",
-    "feicode": null,
-    "upstream": "https://github.com/Des-Magmeta/ChildFunSans-TC",
-    "syncedAt": null,
-    "headSha": null
-  },
-  "lineage": null,
-  "files": [
-    {
-      "kind": "upstream",
-      "label": "上游 github.com",
-      "format": "git",
-      "href": "https://github.com/Des-Magmeta/ChildFunSans-TC",
-      "sha256": null
-    },
-    {
-      "kind": "slice",
-      "label": "网页切片包（自托管）",
-      "format": "zip",
-      "href": null,
-      "status": "planned",
-      "sha256": null
-    }
-  ],
-  "visitorNote": "",
-  "family": "wenfeng-yqttc"
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-yqttc"
 }

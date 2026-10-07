@@ -1,8 +1,10 @@
 {
- "norm": "Qthht",
+ "norm": "qthht",
  "name": "千图厚黑体",
  "en": "Qiantu Hou Hei Ti",
- "aliases": [],
+ "aliases": [
+  "Qthht"
+ ],
  "licenseName": "千图厚黑体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Qthht",
+ "shop": "https://app.windfonts.com/fonts/qthht",
  "weights": [
   "Regular"
  ],

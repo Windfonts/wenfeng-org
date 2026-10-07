@@ -1,8 +1,10 @@
 {
- "norm": "Cktjgt",
+ "norm": "cktjgt",
  "name": "创客贴金刚体",
  "en": "CKT KingKong",
- "aliases": [],
+ "aliases": [
+  "Cktjgt"
+ ],
  "licenseName": "创客贴金刚体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Cktjgt",
+ "shop": "https://app.windfonts.com/fonts/cktjgt",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Jsyjst",
+ "norm": "jsyjst",
  "name": "金山云技术体",
  "en": "Kingsoft Cloud Font",
- "aliases": [],
+ "aliases": [
+  "Jsyjst"
+ ],
  "licenseName": "金山云技术体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Jsyjst",
+ "shop": "https://app.windfonts.com/fonts/jsyjst",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,12 @@
 {
- "norm": "Hcdht",
+ "norm": "hcdht",
  "name": "寒蝉端黑体",
  "en": "Chill Duan Sans",
- "aliases": [],
+ "aliases": [
+  "Clduan",
+  "Hcdht",
+  "寒蝉端黑"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -20,18 +24,19 @@
  },
  "foundry": "寒蝉字型",
  "foundrySlug": "chilltype",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hcdht",
+ "shop": "https://app.windfonts.com/fonts/hcdht",
  "weights": [
   "Light",
-  "Black"
+  "Black",
+  "Regular"
  ],
  "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Warren2060/ChillDuanSans",
+  "upstream": "https://github.com/Warren2060/ChillDuanSans",
   "syncedAt": null,
   "headSha": null
  },
@@ -43,6 +48,21 @@
    "format": "zip",
    "href": null,
    "status": "planned",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Clduan.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Warren2060/ChillDuanSans",
    "sha256": null
   }
  ],

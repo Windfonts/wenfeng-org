@@ -1,0 +1,56 @@
+{
+ "norm": "prejp",
+ "name": "Pretendard JP",
+ "en": "Pretendard JP",
+ "aliases": [
+  "prejp"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "orioncactus",
+ "foundrySlug": "orioncactus",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/prejp",
+ "weights": [
+  "Black",
+  "Bold",
+  "ExtraBold",
+  "ExtraLight",
+  "Light",
+  "Medium",
+  "Regular",
+  "SemiBold",
+  "Thin",
+  "Variable"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-prejp"
+}

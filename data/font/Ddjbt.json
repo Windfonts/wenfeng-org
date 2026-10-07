@@ -1,8 +1,10 @@
 {
- "norm": "Ddjbt",
+ "norm": "ddjbt",
  "name": "钉钉进步体",
  "en": "DingTalk JinBuTi",
- "aliases": [],
+ "aliases": [
+  "Ddjbt"
+ ],
  "licenseName": "钉钉进步体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Ddjbt",
+ "shop": "https://app.windfonts.com/fonts/ddjbt",
  "weights": [
   "Normal",
   "Regular"

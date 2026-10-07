@@ -1,8 +1,10 @@
 {
- "norm": "Maboroshi",
+ "norm": "maboroshi",
  "name": "幻之渗明朝",
  "en": "Maboroshi no Nijimi Mincho",
- "aliases": [],
+ "aliases": [
+  "Maboroshi"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Maboroshi",
+ "shop": "https://app.windfonts.com/fonts/maboroshi",
  "weights": [
   "Regular"
  ],

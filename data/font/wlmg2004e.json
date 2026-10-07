@@ -1,0 +1,47 @@
+{
+ "norm": "wlmg2004e",
+ "name": "和田研細丸ゴシック2004絵文字",
+ "en": "WadaLabMaruGo2004Emoji",
+ "aliases": [
+  "wlmg2004e"
+ ],
+ "licenseName": "free_commercial",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "希土類元素レアアース",
+ "foundrySlug": "rareearth",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/wlmg2004e",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-wlmg2004e"
+}

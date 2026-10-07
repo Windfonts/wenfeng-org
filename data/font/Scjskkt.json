@@ -1,8 +1,10 @@
 {
- "norm": "Scjskkt",
+ "norm": "scjskkt",
  "name": "素材集市康康体",
  "en": "Sucaijishi Kangkangti",
- "aliases": [],
+ "aliases": [
+  "Scjskkt"
+ ],
  "licenseName": "素材集市康康体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Scjskkt",
+ "shop": "https://app.windfonts.com/fonts/scjskkt",
  "weights": [
   "Regular"
  ],

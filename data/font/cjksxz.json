@@ -1,0 +1,54 @@
+{
+ "norm": "cjksxz",
+ "name": "CJK手写字",
+ "en": "cjkFonts",
+ "aliases": [
+  "Cjkfqlt"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "85482ee5d1a96052f4d8b33fe33c57f91a2cb0e0ae69af2945010e37d9e7cd14",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "cjkFonts",
+ "foundrySlug": "cjkfonts",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/cjksxz",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 connect.cjkfonts.com",
+   "format": "git",
+   "href": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-cjksxz"
+}

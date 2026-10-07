@@ -1,8 +1,10 @@
 {
- "norm": "Systcn",
+ "norm": "systcn",
  "name": "思源宋体 CN",
  "en": "Source Han Serif CN",
- "aliases": [],
+ "aliases": [
+  "Systcn"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Systcn",
+ "shop": "https://app.windfonts.com/fonts/systcn",
  "weights": [
   "Heavy",
   "Light",

@@ -1,8 +1,10 @@
 {
- "norm": "Misa",
+ "norm": "misa",
  "name": "小米兰亭 Sans",
  "en": "MiSans",
- "aliases": [],
+ "aliases": [
+  "Misa"
+ ],
  "licenseName": "MiSans 字体知识产权许可协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Misa",
+ "shop": "https://app.windfonts.com/fonts/misa",
  "weights": [
   "Medium",
   "Heavy",

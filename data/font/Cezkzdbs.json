@@ -1,14 +1,16 @@
 {
- "norm": "Cezkzdbs",
+ "norm": "cezkzdbs",
  "name": "仓耳周珂正大榜书",
  "en": "Tsanger Zhouke Zhengdabangshu",
- "aliases": [],
+ "aliases": [
+  "Cezkzdbs"
+ ],
  "licenseName": "仓耳字库免费开源字体授权声明",
  "license": {
   "spdx": null,
   "textState": "pointer",
   "sourceUrl": "https://www.tsanger.cn/category/114",
-  "fetchedAt": "2026-10-04",
+  "fetchedAt": null,
   "textSha256": null,
   "verifiedAt": "2026-09-26",
   "rfn": null
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Cezkzdbs",
+ "shop": "https://app.windfonts.com/fonts/cezkzdbs",
  "weights": [
   "Regular"
  ],
@@ -47,6 +49,6 @@
    "sha256": null
   }
  ],
- "visitorNote": "声明全文见本页归档原文与 PDF；出处在仓耳官网免费开源字体分类页。",
+ "visitorNote": "",
  "family": "wenfeng-cezkzdbs"
 }

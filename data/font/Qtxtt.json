@@ -1,8 +1,10 @@
 {
- "norm": "Qtxtt",
+ "norm": "qtxtt",
  "name": "千图小兔体",
  "en": "QTxiaotu",
- "aliases": [],
+ "aliases": [
+  "Qtxtt"
+ ],
  "licenseName": "千图小兔体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Qtxtt",
+ "shop": "https://app.windfonts.com/fonts/qtxtt",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Cexwz",
+ "norm": "cexwz",
  "name": "仓耳小丸子",
  "en": "Tsanger Little Balls",
- "aliases": [],
+ "aliases": [
+  "Cexwz"
+ ],
  "licenseName": "仓耳字库免费开源字体授权声明",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Cexwz",
+ "shop": "https://app.windfonts.com/fonts/cexwz",
  "weights": [
   "Regular"
  ],

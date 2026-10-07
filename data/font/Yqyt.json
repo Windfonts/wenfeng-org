@@ -1,8 +1,10 @@
 {
- "norm": "Yqyt",
+ "norm": "yqyt",
  "name": "源泉圆体",
  "en": "GenSenRounded TW",
- "aliases": [],
+ "aliases": [
+  "Yqyt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Yqyt",
+ "shop": "https://app.windfonts.com/fonts/yqyt",
  "weights": [
   "Bold",
   "Light",

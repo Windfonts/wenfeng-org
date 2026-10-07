@@ -1,0 +1,74 @@
+{
+ "norm": "xhfsa",
+ "name": "械黑",
+ "en": "Frex Sans GB",
+ "aliases": [
+  "Frexsans"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/maoken-fonts/frex-sans",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "0e56ca0bef2b70bb0083b006f81cf2974929b344ba5274beccd9c70b56a0b0cb",
+  "verifiedAt": "2026-09-24",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "ibm",
+   "rootWork": "IBM Plex Sans SC 简体中文",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "械黑计划 (Frex Sans Project)",
+ "foundrySlug": "frex-sans",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xhfsa",
+ "weights": [
+  "Thin",
+  "ExtraLight",
+  "Light",
+  "Text",
+  "Regular",
+  "Medium",
+  "SemiBold",
+  "Bold"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/maoken-fonts/frex-sans",
+  "upstream": "https://github.com/maoken-fonts/frex-sans",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Frexsans.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/maoken-fonts/frex-sans",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xhfsa"
+}

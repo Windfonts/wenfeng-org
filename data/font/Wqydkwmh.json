@@ -1,8 +1,10 @@
 {
- "norm": "Wqydkwmh",
+ "norm": "wqydkwmh",
  "name": "文泉驿等宽微米黑",
  "en": "WenQuanYi Micro Hei Mono",
- "aliases": [],
+ "aliases": [
+  "Wqydkwmh"
+ ],
  "licenseName": "Apache 2.0 / GPLv3",
  "license": {
   "spdx": "Apache-2.0",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Wqydkwmh",
+ "shop": "https://app.windfonts.com/fonts/wqydkwmh",
  "weights": [
   "Regular"
  ],

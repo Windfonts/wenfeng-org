@@ -1,8 +1,10 @@
 {
- "norm": "Zyst",
+ "norm": "zyst",
  "name": "昭源宋体",
  "en": "Chiron Sung HK",
- "aliases": [],
+ "aliases": [
+  "Zyst"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Zyst",
+ "shop": "https://app.windfonts.com/fonts/zyst",
  "weights": [
   "Bold",
   "Light",

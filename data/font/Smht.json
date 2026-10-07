@@ -1,8 +1,10 @@
 {
- "norm": "Smht",
+ "norm": "smht",
  "name": "水木黑体",
  "en": "Mizuki Gothic",
- "aliases": [],
+ "aliases": [
+  "Smht"
+ ],
  "licenseName": "IPA Font License Agreement v1.0",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Smht",
+ "shop": "https://app.windfonts.com/fonts/smht",
  "weights": [
   "Regular"
  ],

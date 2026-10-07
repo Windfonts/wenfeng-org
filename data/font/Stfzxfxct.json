@@ -1,8 +1,10 @@
 {
- "norm": "Stfzxfxct",
+ "norm": "stfzxfxct",
  "name": "书体坊禚效锋行草体",
  "en": "Shutifang Zhuo Xiaofeng Xingcao",
- "aliases": [],
+ "aliases": [
+  "Stfzxfxct"
+ ],
  "licenseName": "书体坊禚效锋行草体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Stfzxfxct",
+ "shop": "https://app.windfonts.com/fonts/stfzxfxct",
  "weights": [
   "Regular"
  ],

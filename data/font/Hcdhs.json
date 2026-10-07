@@ -1,8 +1,10 @@
 {
- "norm": "Hcdhs",
+ "norm": "hcdhs",
  "name": "寒蝉端黑宋",
  "en": "Chill Duan Hei Song",
- "aliases": [],
+ "aliases": [
+  "Hcdhs"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hcdhs",
+ "shop": "https://app.windfonts.com/fonts/hcdhs",
  "weights": [
   "Regular",
   "Bold",

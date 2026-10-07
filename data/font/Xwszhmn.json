@@ -1,8 +1,10 @@
 {
- "norm": "Xwszhmn",
+ "norm": "xwszhmn",
  "name": "霞鹜尚智黑 MN",
  "en": "LXGW Fasmart Gothic MN",
- "aliases": [],
+ "aliases": [
+  "Xwszhmn"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwszhmn",
+ "shop": "https://app.windfonts.com/fonts/xwszhmn",
  "weights": [
   "Regular"
  ],

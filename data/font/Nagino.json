@@ -1,8 +1,10 @@
 {
- "norm": "Nagino",
+ "norm": "nagino",
  "name": "Nagino",
  "en": "Nagino",
- "aliases": [],
+ "aliases": [
+  "Nagino"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Nagino",
+ "shop": "https://app.windfonts.com/fonts/nagino",
  "weights": [
   "Regular"
  ],

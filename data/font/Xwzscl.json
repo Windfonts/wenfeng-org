@@ -1,8 +1,10 @@
 {
- "norm": "Xwzscl",
+ "norm": "xwzscl",
  "name": "霞鹜致宋 CL",
  "en": "LXGW ZhiSong CL",
- "aliases": [],
+ "aliases": [
+  "Xwzscl"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwzscl",
+ "shop": "https://app.windfonts.com/fonts/xwzscl",
  "weights": [
   "Regular"
  ],

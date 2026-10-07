@@ -1,8 +1,10 @@
 {
- "norm": "Haseng",
+ "norm": "haseng",
  "name": "Hasen G",
  "en": "Hasen G",
- "aliases": [],
+ "aliases": [
+  "Haseng"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Haseng",
+ "shop": "https://app.windfonts.com/fonts/haseng",
  "weights": [
   "Regular"
  ],

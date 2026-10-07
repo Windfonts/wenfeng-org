@@ -1,8 +1,10 @@
 {
- "norm": "Tjlt",
+ "norm": "tjlt",
  "name": "铁蒺藜体",
  "en": "Tiejili",
- "aliases": [],
+ "aliases": [
+  "Tjlt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Tjlt",
+ "shop": "https://app.windfonts.com/fonts/tjlt",
  "weights": [
   "Regular"
  ],

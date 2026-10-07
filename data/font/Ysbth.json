@@ -1,8 +1,10 @@
 {
- "norm": "Ysbth",
+ "norm": "ysbth",
  "name": "优设标题黑",
  "en": "YouSheBiaoTiHei",
- "aliases": [],
+ "aliases": [
+  "Ysbth"
+ ],
  "licenseName": "优设标题黑授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Ysbth",
+ "shop": "https://app.windfonts.com/fonts/ysbth",
  "weights": [
   "Bold"
  ],

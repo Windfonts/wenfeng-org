@@ -1,11 +1,12 @@
 {
- "norm": "Xwwk",
+ "norm": "xwwk",
  "name": "霞鹜文楷",
  "en": "LXGW WenKai",
  "aliases": [
   "文楷",
   "LxgwWenKai",
-  "LXGW"
+  "LXGW",
+  "Xwwk"
  ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
@@ -28,7 +29,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwwk",
+ "shop": "https://app.windfonts.com/fonts/xwwk",
  "weights": [
   "Light",
   "Regular",

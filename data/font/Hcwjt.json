@@ -1,8 +1,10 @@
 {
- "norm": "Hcwjt",
+ "norm": "hcwjt",
  "name": "寒蝉无机体",
  "en": "Chill Inorganic",
- "aliases": [],
+ "aliases": [
+  "Hcwjt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hcwjt",
+ "shop": "https://app.windfonts.com/fonts/hcwjt",
  "weights": [
   "Regular",
   "Medium"

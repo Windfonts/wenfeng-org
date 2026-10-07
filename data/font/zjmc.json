@@ -1,0 +1,54 @@
+{
+ "norm": "zjmc",
+ "name": "装甲明朝",
+ "en": "Soukou Mincho",
+ "aliases": [
+  "Soukou"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "missing",
+  "sourceUrl": "https://flopdesign.booth.pm/items/1028555",
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "FLOP Design",
+ "foundrySlug": "flop design",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/zjmc",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://flopdesign.booth.pm/items/1028555",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 flopdesign.booth.pm",
+   "format": "git",
+   "href": "https://flopdesign.booth.pm/items/1028555",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zjmc"
+}

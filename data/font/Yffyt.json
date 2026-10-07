@@ -1,8 +1,10 @@
 {
- "norm": "Yffyt",
+ "norm": "yffyt",
  "name": "云峰飞云体",
  "en": "Yun Feng Fei Yun Ti",
- "aliases": [],
+ "aliases": [
+  "Yffyt"
+ ],
  "licenseName": "云峰飞云体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Yffyt",
+ "shop": "https://app.windfonts.com/fonts/yffyt",
  "weights": [
   "Regular"
  ],

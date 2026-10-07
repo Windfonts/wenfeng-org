@@ -1,8 +1,10 @@
 {
- "norm": "Lmqylszrht",
+ "norm": "lmqylszrht",
  "name": "联盟起艺卢帅正锐黑体",
  "en": "Lianmeng Qiyi Lushuai Zhenrui Heiti",
- "aliases": [],
+ "aliases": [
+  "Lmqylszrht"
+ ],
  "licenseName": "联盟起艺卢帅正锐黑体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Lmqylszrht",
+ "shop": "https://app.windfonts.com/fonts/lmqylszrht",
  "weights": [
   "Regular"
  ],

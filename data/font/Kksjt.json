@@ -1,8 +1,10 @@
 {
- "norm": "Kksjt",
+ "norm": "kksjt",
  "name": "快看世界体",
  "en": "KuaiKan World Typeface",
- "aliases": [],
+ "aliases": [
+  "Kksjt"
+ ],
  "licenseName": "快看世界体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Kksjt",
+ "shop": "https://app.windfonts.com/fonts/kksjt",
  "weights": [
   "Regular"
  ],

@@ -1,0 +1,52 @@
+{
+ "norm": "yyhtgng",
+ "name": "源音黑体",
+ "en": "Genne Gothic",
+ "aliases": [
+  "Yiny"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": null,
+  "fetchedAt": "2026-09-26",
+  "textSha256": "e9c4c62582807c250061e07ede99f4c0c7e1a7d536e621ec68d049f1f7ee0d81",
+  "verifiedAt": "2026-09-26",
+  "rfn": "霞鹜、霞鶩、落霞孤鹜、落霞孤鶩、LXGW",
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源黑体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "MoneMizuno",
+ "foundrySlug": "genne",
+ "offer": "pending",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/yyhtgng",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-yyhtgng"
+}

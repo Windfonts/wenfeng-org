@@ -1,8 +1,10 @@
 {
- "norm": "Shinretro",
+ "norm": "shinretro",
  "name": "复古圆黑",
  "en": "Shin Retro Maru Gothic",
- "aliases": [],
+ "aliases": [
+  "Shinretro"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Shinretro",
+ "shop": "https://app.windfonts.com/fonts/shinretro",
  "weights": [
   "Regular"
  ],

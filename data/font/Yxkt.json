@@ -1,8 +1,10 @@
 {
- "norm": "Yxkt",
+ "norm": "yxkt",
  "name": "月星楷",
  "en": "Moon Stars Kai",
- "aliases": [],
+ "aliases": [
+  "Yxkt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Yxkt",
+ "shop": "https://app.windfonts.com/fonts/yxkt",
  "weights": [
   "Bold",
   "Light",

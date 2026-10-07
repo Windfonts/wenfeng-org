@@ -1,8 +1,10 @@
 {
- "norm": "Tsugumi",
+ "norm": "tsugumi",
  "name": "津汲圆黑",
  "en": "Tsugumi Maru Gothic",
- "aliases": [],
+ "aliases": [
+  "Tsugumi"
+ ],
  "licenseName": "待核实",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "missing",
  "slice": "planned",
  "distribution": false,
- "shop": "https://app.windfonts.com/fonts/Tsugumi",
+ "shop": "https://app.windfonts.com/fonts/tsugumi",
  "weights": [
   "Regular"
  ],

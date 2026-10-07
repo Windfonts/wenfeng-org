@@ -1,8 +1,10 @@
 {
- "norm": "Xwzt",
+ "norm": "xwzt",
  "name": "霞鹜篆体",
  "en": "LXGW Seal",
- "aliases": [],
+ "aliases": [
+  "Xwzt"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwzt",
+ "shop": "https://app.windfonts.com/fonts/xwzt",
  "weights": [
   "Regular"
  ],

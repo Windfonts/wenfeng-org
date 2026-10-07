@@ -1,0 +1,62 @@
+{
+ "norm": "mkybks",
+ "name": "猫啃硬笔楷书",
+ "en": "Maoken YingBi KaiShu",
+ "aliases": [
+  "Mkybkjs"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/maoken-fonts/MaokenYingBiKaiShuJ",
+  "fetchedAt": "2026-09-24",
+  "textSha256": "dd5a763b1c507d4bb17d8f1de8ee5f161c05a6f115cfe4f074b458a684a66cc0",
+  "verifiedAt": "2026-09-24",
+  "rfn": null
+ },
+ "foundry": "猫啃网 (Maoken)",
+ "foundrySlug": "maoken",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/mkybks",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/maoken-fonts/MaokenYingBiKaiShuJ",
+  "upstream": "https://github.com/maoken-fonts/MaokenYingBiKaiShuJ",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Mkybkjs.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/maoken-fonts/MaokenYingBiKaiShuJ",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-mkybks"
+}

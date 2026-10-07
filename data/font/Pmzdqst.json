@@ -1,8 +1,10 @@
 {
- "norm": "Pmzdqst",
+ "norm": "pmzdqst",
  "name": "庞门正道轻松体",
  "en": "Pangmenzhengdaoqingsongti",
- "aliases": [],
+ "aliases": [
+  "Pmzdqst"
+ ],
  "licenseName": "庞门正道轻松体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Pmzdqst",
+ "shop": "https://app.windfonts.com/fonts/pmzdqst",
  "weights": [
   "Regular"
  ],

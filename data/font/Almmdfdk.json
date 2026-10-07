@@ -1,8 +1,10 @@
 {
- "norm": "Almmdfdk",
+ "norm": "almmdfdk",
  "name": "阿里妈妈东方大楷",
  "en": "Alimama DongFangDaKai",
- "aliases": [],
+ "aliases": [
+  "Almmdfdk"
+ ],
  "licenseName": "阿里妈妈东方大楷授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Almmdfdk",
+ "shop": "https://app.windfonts.com/fonts/almmdfdk",
  "weights": [
   "Regular"
  ],

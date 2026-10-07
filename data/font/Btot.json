@@ -1,8 +1,10 @@
 {
- "norm": "Btot",
+ "norm": "btot",
  "name": "波塔One",
  "en": "Potta One",
- "aliases": [],
+ "aliases": [
+  "Btot"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Btot",
+ "shop": "https://app.windfonts.com/fonts/btot",
  "weights": [
   "Regular"
  ],

@@ -1,0 +1,54 @@
+{
+ "norm": "ibmpstc",
+ "name": "IBM Plex Sans TC",
+ "en": "IBM Plex Sans TC",
+ "aliases": [
+  "ibmpstc"
+ ],
+ "licenseName": "OFL",
+ "license": {
+  "spdx": null,
+  "textState": "missing",
+  "sourceUrl": null,
+  "fetchedAt": null,
+  "textSha256": null,
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "IBM",
+ "foundrySlug": "ibm-plex",
+ "offer": "missing",
+ "slice": "planned",
+ "distribution": false,
+ "shop": "https://app.windfonts.com/fonts/ibmpstc",
+ "weights": [
+  "Bold",
+  "ExtraLight",
+  "Light",
+  "Medium",
+  "Regular",
+  "SemiBold",
+  "Text",
+  "Thin"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": null,
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ibmpstc"
+}

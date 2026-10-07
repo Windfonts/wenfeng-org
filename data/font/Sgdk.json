@@ -1,8 +1,10 @@
 {
- "norm": "Sgdk",
+ "norm": "sgdk",
  "name": "尚古等宽",
  "en": "Shanggu Mono",
- "aliases": [],
+ "aliases": [
+  "Sgdk"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -23,7 +25,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Sgdk",
+ "shop": "https://app.windfonts.com/fonts/sgdk",
  "weights": [
   "ExtraLight",
   "Light",

@@ -1,0 +1,67 @@
+{
+ "norm": "swb2jtst",
+ "name": "狮尾B2加糖宋体",
+ "en": "Swei B2 Sugar CJK SC",
+ "aliases": [
+  "SweiB2Sugar"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/max32002/swei-b2-sugar",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "e564f06d018e7b95bc3594c96a17f1d41865af4038c375e7aa974dd69df38602",
+  "verifiedAt": "2026-09-26",
+  "rfn": null,
+  "origin": {
+   "rootAuthor": "adobe",
+   "rootWork": "思源宋体",
+   "note": "衍生字体，授权随上游沿袭。"
+  }
+ },
+ "foundry": "Aqua",
+ "foundrySlug": "aqua",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/swb2jtst",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": "https://feicode.com/max32002/swei-b2-sugar",
+  "upstream": "https://github.com/max32002/swei-b2-sugar",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/SweiB2Sugar.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/max32002/swei-b2-sugar",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-swb2jtst"
+}

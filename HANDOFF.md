@@ -1,3 +1,7 @@
+> 10-07 目录跟店面一致：[Grok]。人「目录这些都要一致，你为什么老是残留工作」。店面 713 / 本站 739；店面有的都进本站（184 条，含 6 款 BDF）；寒蝉端黑并进 `hcdht`。无包无库 26 条仍只在本站。上海摩登 `shmdt`。DIST 4194 页已上 OSS+CF。`/source/mkcjp/` `/source/bestten/` `/source/clduan/` 现网 200。不要跑 `export-wenfeng.py` 全量覆盖。未 git commit。
+>
+> 10-07 目录短码跟店面：[Grok]。人「org 的也要改」。按中文名对上 529 条：379 条 `norm`/`family`/shop 换成店面短码，1 条上海摩登只改 family。27 条只在本站的未动。未插入店面独有款（みかちゃん等 13 款这批不在 556）。旧 CamelCase 在 `aliases`；`site/build.py` 再写 `/source/{old}/` 等 386 个别名 slug。本地 3596 页。对照 `data/norm-history.json`，回退 `data/_bak-org-shorts-20261007/`。未发 OSS/CF，未 git commit。不要再跑 `export-wenfeng.py` 全量覆盖。
+>
 > 10-07 移动端证面与证书文案：[Cursor]。证面固定 794×1123，`.cert-fit` + `transform:scale` 等比缩入舞台（禁流式重排）；内边距左右约 60px；样字「两个黄鹂鸣翠柳，一行白鹭上青天」。左栏「说明」两句（性质+归档）+徽章导语收短。窄屏：工具栏/台账/索引/目录/页头收束；页脚备案整段隐藏。已上线 OSS 并清 CF；文档见 `docs/pages/attest-norm.md` + DECISIONS。
 >
 > 10-07 目录性能与文案收口：[Cursor]。目录行：标题两行 clamp；meta（OFL·厂商）悬停才显且定高不跳；右列定宽对齐；动作「看条目→查看字型」「去出处/看出处→获取字型」。WebFont 并发 3、视口懒加载；去证面/查证阻塞思源 CSS；HTML/CSS/JS `?v=`；Worker HTML/asset `max-age=60`；混写路径 301 小写。PDF 按钮遇 `pdf_not_available` 回落系统打印（另存 PDF）。台账骨架空状态。已上线 OSS+Worker。

@@ -1,8 +1,10 @@
 {
- "norm": "Xwszhcl",
+ "norm": "xwszhcl",
  "name": "霞鹜尚智黑 CL",
  "en": "LXGW Fasmart Gothic CL",
- "aliases": [],
+ "aliases": [
+  "Xwszhcl"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
@@ -18,7 +20,7 @@
  "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Xwszhcl",
+ "shop": "https://app.windfonts.com/fonts/xwszhcl",
  "weights": [
   "Regular"
  ],

@@ -1,8 +1,10 @@
 {
- "norm": "Almmdlt",
+ "norm": "almmdlt",
  "name": "阿里妈妈刀隶体",
  "en": "Alimama DaoLiTi",
- "aliases": [],
+ "aliases": [
+  "Almmdlt"
+ ],
  "licenseName": "阿里妈妈刀隶体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "pending",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Almmdlt",
+ "shop": "https://app.windfonts.com/fonts/almmdlt",
  "weights": [
   "Regular"
  ],

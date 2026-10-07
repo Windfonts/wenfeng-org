@@ -1,8 +1,10 @@
 {
- "norm": "Qtmksxt",
+ "norm": "qtmksxt",
  "name": "千图马克手写体",
  "en": "Qiantumake Handwriting",
- "aliases": [],
+ "aliases": [
+  "Qtmksxt"
+ ],
  "licenseName": "千图马克手写体授权协议",
  "license": {
   "spdx": null,
@@ -18,7 +20,7 @@
  "offer": "jump",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Qtmksxt",
+ "shop": "https://app.windfonts.com/fonts/qtmksxt",
  "weights": [
   "Regular"
  ],

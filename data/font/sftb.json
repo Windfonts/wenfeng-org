@@ -1,0 +1,54 @@
+{
+ "norm": "sftb",
+ "name": "随峰体 Beta",
+ "en": "The Peak Font",
+ "aliases": [
+  "Sft"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://connect.cjkfonts.com/blog/ThePeakFont",
+  "fetchedAt": "2026-09-26",
+  "textSha256": "d2240552e0af8df2944b8cb91060c59f537fabe1d3d8ca4a1f6d15ebe20705b6",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "cjkFonts",
+ "foundrySlug": "cjkfonts",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/sftb",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://connect.cjkfonts.com/blog/ThePeakFont",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 connect.cjkfonts.com",
+   "format": "git",
+   "href": "https://connect.cjkfonts.com/blog/ThePeakFont",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-sftb"
+}

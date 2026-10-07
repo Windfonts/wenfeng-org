@@ -1,37 +1,53 @@
 {
- "norm": "Hcth",
- "name": "寒蝉有机体",
- "en": "Chill Organic",
- "aliases": [],
+ "norm": "hcth",
+ "name": "寒蝉潭黑",
+ "en": "Chill Tan Hei",
+ "aliases": [
+  "Cltan"
+ ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
   "textState": "full",
-  "sourceUrl": null,
+  "sourceUrl": "https://github.com/Warren2060/ChillTanHei",
   "fetchedAt": "2026-09-26",
   "textSha256": "3e8c600206aca84fc2d9b8de13ba52a11afadfe4d705e39da608d3651872ecbb",
   "verifiedAt": "2026-09-26",
   "rfn": null
  },
- "foundry": "寒蝉字型",
+ "foundry": "",
  "foundrySlug": "chilltype",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
- "shop": "https://app.windfonts.com/fonts/Hcth",
+ "shop": "https://app.windfonts.com/fonts/hcth",
  "weights": [
-  "Regular",
-  "Medium"
+  "Regular"
  ],
  "mirror": {
-  "state": "absent",
-  "feicode": null,
-  "upstream": null,
+  "state": "mirrored",
+  "feicode": "https://feicode.com/Warren2060/ChillTanHei",
+  "upstream": "https://github.com/Warren2060/ChillTanHei",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件归档",
+   "format": "tar.gz",
+   "href": "https://cn.windfonts.com/wenfeng-original/Cltan.tar.gz",
+   "sha256": null,
+   "staged": true
+  },
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Warren2060/ChillTanHei",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",
