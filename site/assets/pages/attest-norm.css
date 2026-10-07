@@ -57,6 +57,11 @@
   background: var(--fill);
   overflow: hidden;
 }
+.page-attest-norm .atn-panel .atn-stage {
+  /* 证面缩放后阴影不裁切过狠，竖向允许自然撑开 */
+  overflow-x: hidden;
+  overflow-y: visible;
+}
 .page-attest-norm .atn-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +107,8 @@
   margin: 0;
   padding: var(--s-5);
   background: transparent;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 .page-attest-norm .atn-stage > .quiet {
   text-align: center;
@@ -130,9 +136,8 @@
   border: 1px solid var(--rule);
   animation: atn-shimmer 1.2s ease-in-out infinite;
 }
-.page-attest-norm .atn-stage .cert-sheet,
-.page-attest-norm .atn-stage .cert-minimal {
-  max-width: 100%;
+/* 证面宽度由 .cert-fit 等比缩放，勿再设 max-width:100% 以免挤扁固定版式 */
+.page-attest-norm .atn-stage .cert-fit {
   margin-left: auto;
   margin-right: auto;
 }
@@ -278,7 +283,7 @@
     width: auto;
   }
   .page-attest-norm .atn-stage {
-    padding: var(--s-4) var(--s-2);
+    padding: var(--s-3) 0;
   }
 }
 
@@ -305,14 +310,27 @@
 /* ⑤ 移动端：下载 PDF 独占一行加大（第一视觉动线） */
 @media (max-width: 720px) {
   .page-attest-norm .atn-toolbar { padding: var(--s-3); gap: var(--s-2); }
-  .page-attest-norm .atn-tools-main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--s-2); }
+  .page-attest-norm .atn-tools-main { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); width: 100%; }
   .page-attest-norm .atn-tools-main .btn { height: 2.75rem; padding: 0 0.4rem; font-size: var(--fs-13); justify-content: center; }
   .page-attest-norm .atn-tools-main [data-pdf] {
     grid-column: 1 / -1;
     height: 3rem;
     font-size: var(--fs-15, 0.9375rem);
   }
-  .page-attest-norm .atn-tools-links { grid-column: 1 / -1; display: flex; gap: var(--s-4); }
+  .page-attest-norm .atn-tools-end {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+  }
+  .page-attest-norm .atn-mast h1.xxzt {
+    font-size: clamp(1.85rem, 9vw, 2.4rem);
+  }
+  .page-attest-norm .atn-embed .acts {
+    flex-direction: column;
+  }
+  .page-attest-norm .atn-embed .acts .btn {
+    width: 100%;
+  }
 }
 
 /* 相关链接：左栏两枚按钮，纵向堆叠 */

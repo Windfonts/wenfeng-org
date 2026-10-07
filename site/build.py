@@ -499,10 +499,10 @@ def _foot_dev(dev):
 
 
 def _foot_bottom(dev=""):
-    icp = ('<a class="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">'
-           '粤ICP备2023091240号-3</a>')
+    icp = ('<span class="icp"> · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">'
+           '粤ICP备2023091240号-3</a></span>')
     copy = ('<p>版权所有 · 文风 <span class="tm" aria-hidden="true">™</span>'
-            ' · © 2026 文派（广州）科技有限公司 · %s%s</p>' % (icp, _foot_dev(dev)))
+            ' · © 2026 文派（广州）科技有限公司%s%s</p>' % (icp, _foot_dev(dev)))
     links = ('<nav class="foot-bottom-links" aria-label="页脚条款">'
              '<a href="/about/">关于</a><a href="/use/">文档</a></nav>')
     return '<div class="site-foot-bottom">%s%s</div>' % (copy, links)
@@ -3099,9 +3099,9 @@ def page_attest(f):
     side = (
         '<aside class="atn-side no-print">'
         '<section class="atn-note">'
-        '<p class="label">证书文书类型</p>'
-        '<p class="atn-note-p">这份证明记录该字体的许可核验结果：授权来自谁、适用哪份开源协议、原文是否存档可查。证明不是著作权人的授权书，字体权利仍以许可原文为准。</p>'
-        '<p class="atn-note-p">把下方的证明徽章嵌入你的网站，等于对外声明「本项目使用的字体已完成合规核验」，点击徽章可回到本页查看完整内容。采购归档请用「下载 PDF」打开系统打印并另存，编号可在核验页查验。</p>'
+        '<p class="label">说明</p>'
+        '<p class="atn-note-p">这份证明记录许可核验结果：授权来源、开源协议与原文存档。它并非著作权人出具；使用边界仍以许可原文为准。</p>'
+        '<p class="atn-note-p">归档请用「下载 PDF」另存；编号可在查验页核对。</p>'
         '</section>'
         '<section class="atn-links">'
         '<p class="label">相关链接</p>'
@@ -3110,7 +3110,7 @@ def page_attest(f):
         '</section>'
         '<section class="atn-embed" data-share>'
         '<p class="label">嵌入徽章</p>'
-        '<p class="atn-embed-lead">三种样式；横条可选黑白。下载或复制嵌入代码。</p>'
+        '<p class="atn-embed-lead">可选嵌入网站，对外标明本项目字体已完成合规核验；点击回到本页。</p>'
         '<div class="atn-embed-controls">'
         '<div class="seg atn-badge-pick" data-badge-variants role="group" aria-label="徽章样式">'
         '<button type="button" class="is-on" data-badge-kind="plaque">卡片式</button>'

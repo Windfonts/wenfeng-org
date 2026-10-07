@@ -2,6 +2,17 @@
   "generated": "2026-10-07",
   "records": [
     {
+      "serial": "WF-20261007-A2CA595898",
+      "norm": "Ckbf",
+      "catalogName": "文风·偏歪的黑趣体",
+      "issuedAt": "2026-10-07",
+      "holder": null,
+      "spdx": "OFL-1.1",
+      "usage": null,
+      "uscc": null,
+      "licenseHash": "0673FDC8"
+    },
+    {
       "serial": "WF-20261007-DDEF9A5628",
       "norm": "Arkp",
       "catalogName": "文风·方舟像素",

@@ -968,7 +968,7 @@
     }
     prose += ct('有关信息列示如下：', '有關信息列示如下：');
 
-    return '<article class="cert-sheet' + (cert.prototype ? ' is-proto' : '') + '" id="cert-sheet">' +
+    return '<div class="cert-fit"><article class="cert-sheet' + (cert.prototype ? ' is-proto' : '') + '" id="cert-sheet">' +
       '<span class="cert-frame" aria-hidden="true"></span>' +
       '<span class="cert-frame-inner" aria-hidden="true"></span>' +
       '<p class="cert-mark" aria-hidden="true">文风字体</p>' +
@@ -1003,7 +1003,7 @@
             (stage && stage.getAttribute('data-face-family')
               ? ' data-face-norm="' + esc(cert.norm) + '" data-face-family="' + esc(stage.getAttribute('data-face-family')) + '" data-face-full="1"'
               : '') +
-          '>' + ct('行到水穷处，坐看云起时', '行到水窮處，坐看雲起時') + '</p>' +
+          '>' + ct('两个黄鹂鸣翠柳，一行白鹭上青天', '兩個黃鸝鳴翠柳，一行白鷺上青天') + '</p>' +
         '</div>' +
         '<p class="cert-memo"><b>' + ct('声明', '聲明') + '</b>　' + ct(
           '文派（广州）科技有限公司系平台运营与分发主体，并非该字体原始著作权人。本证明不改变、不替代原始授权条款，亦非著作权人出具的授权书；字体的使用、修改及分发，以原始授权协议及著作权人声明为准。签发记录留存不少于六年。',
@@ -1032,7 +1032,7 @@
           ? '<p class="cert-proto">' + ct('电子样张　原型环境签发　不作为正式存档', '電子樣張　原型環境簽發　不作為正式存檔') + '</p>'
           : '') +
       '</div>' +
-    '</article>';
+    '</article></div>';
   }
 
   function renderMinimalCert(c) {
@@ -1041,7 +1041,7 @@
       return b ? ct('可以', '可以') : ct('不可以', '不可以');
     };
     var row = function (k, v) { return v ? '<div><dt>' + esc(k) + '</dt><dd>' + v + '</dd></div>' : ''; };
-    return '<article class="cert cert-minimal">' +
+    return '<div class="cert-fit"><article class="cert cert-minimal">' +
       '<header>' +
         '<p class="cm-kicker mono">WENFENG · ATTESTATION</p>' +
         '<h2>' + esc(cd(c.title)) + '</h2>' +
@@ -1080,7 +1080,22 @@
           encodeURIComponent(c.serial) + '" alt="' + ct('查验二维码', '查驗二維碼') + '"' +
         ' onload="this.classList.add(\'is-ready\');this.parentNode.classList.remove(\'is-wait\')"' +
         ' onerror="this.parentNode.classList.remove(\'is-wait\')">' +
-      '</span></footer></article>';
+      '</span></footer></article></div>';
+  }
+
+  function fitCertSheet() {
+    var wrap = document.querySelector('.cert-fit');
+    if (!wrap) return;
+    var sheet = wrap.querySelector('.cert-sheet, .cert-minimal');
+    if (!sheet) return;
+    wrap.style.height = '';
+    wrap.style.setProperty('--cert-scale', '1');
+    var natural = sheet.offsetWidth || 794;
+    var stageEl = wrap.parentElement;
+    var avail = (stageEl && stageEl.clientWidth) || wrap.clientWidth || natural;
+    var scale = Math.min(1, avail / natural);
+    wrap.style.setProperty('--cert-scale', String(scale));
+    wrap.style.height = Math.ceil(sheet.offsetHeight * scale) + 'px';
   }
 
   /* 授权证明：渲染证面与版式切换 */
@@ -1152,8 +1167,25 @@
         if (fam) applyFontFace(activeCert.norm, fam, true);
       }
       syncToolbarLabels();
+      requestAnimationFrame(function () {
+        fitCertSheet();
+        requestAnimationFrame(fitCertSheet);
+      });
       try { localStorage.setItem('wf-cert-style', certStyle); } catch (e) {}
       try { localStorage.setItem('wf-cert-script', certScript); } catch (e) {}
+    }
+
+    var certFitTimer = 0;
+    window.addEventListener('resize', function () {
+      clearTimeout(certFitTimer);
+      certFitTimer = setTimeout(fitCertSheet, 80);
+    });
+    if (window.matchMedia) {
+      try {
+        matchMedia('print').addListener(function (mq) {
+          if (!mq.matches) requestAnimationFrame(fitCertSheet);
+        });
+      } catch (e) {}
     }
 
     api('/api/v1/certs/' + encodeURIComponent(norm) + '?' + p).then(function (c) {

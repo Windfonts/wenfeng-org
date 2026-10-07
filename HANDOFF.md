@@ -1,4 +1,6 @@
-> 10-07 目录性能与文案收口：[Cursor]。目录行：标题两行 clamp；meta（OFL·厂商）悬停才显且定高不跳；右列定宽对齐；动作「看条目→查看字型」「去出处/看出处→获取字型」。WebFont 并发 3、视口懒加载；去证面/查证阻塞思源 CSS；HTML/CSS/JS `?v=`；Worker HTML/asset `max-age=60`；混写路径 301 小写。PDF 按钮遇 `pdf_not_available` 回落系统打印（另存 PDF）。台账骨架空状态。已上线 OSS+Worker，待提交。
+> 10-07 移动端证面与证书文案：[Cursor]。证面固定 794×1123，`.cert-fit` + `transform:scale` 等比缩入舞台（禁流式重排）；内边距左右约 60px；样字「两个黄鹂鸣翠柳，一行白鹭上青天」。左栏「说明」两句（性质+归档）+徽章导语收短。窄屏：工具栏/台账/索引/目录/页头收束；页脚备案整段隐藏。已上线 OSS 并清 CF；文档见 `docs/pages/attest-norm.md` + DECISIONS。
+>
+> 10-07 目录性能与文案收口：[Cursor]。目录行：标题两行 clamp；meta（OFL·厂商）悬停才显且定高不跳；右列定宽对齐；动作「看条目→查看字型」「去出处/看出处→获取字型」。WebFont 并发 3、视口懒加载；去证面/查证阻塞思源 CSS；HTML/CSS/JS `?v=`；Worker HTML/asset `max-age=60`；混写路径 301 小写。PDF 按钮遇 `pdf_not_available` 回落系统打印（另存 PDF）。台账骨架空状态。已上线 OSS+Worker。
 >
 > 10-07 证明 API 边缘上线：[Cursor]。`wenfeng-org-proxy` 分流 `/api/v1/certs*` + `/badge/`；KV `wenfeng-attest` 存证明记录（已灌 40 条）；HMAC Secret 绑 Worker。PDF 暂 501（用页内打印）。同 CF 账号于 wpcy.net Paid。正式 Ed25519 仍属 M2。
 >

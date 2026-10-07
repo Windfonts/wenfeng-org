@@ -514,7 +514,7 @@ a.task.is-ink:hover { background: var(--ink-hover); }
 
 .cert-stage { margin-bottom: var(--s-10); }
 
-/* 16030 经典证书样式 */
+/* 证面：屏上固定 A4（794×1123），窄屏用 .cert-fit 缩放，禁止流式重排挤扁版式 */
 .cert-sheet {
   --cert-red: #a63a2f;
   --cert-ink: #26200f;
@@ -528,8 +528,8 @@ a.task.is-ink:hover { background: var(--ink-hover); }
   --cert-sans: "WF-Syhtsc", "Source Han Sans SC", "思源黑体", "PingFang SC", "Microsoft YaHei", sans-serif;
   position: relative;
   width: 794px;
-  max-width: 100%;
-  min-height: 1123px;
+  height: 1123px;
+  max-width: none;
   margin: 0 auto;
   padding: 0.75rem;
   color: var(--cert-ink);
@@ -548,7 +548,8 @@ a.task.is-ink:hover { background: var(--ink-hover); }
   position: relative; z-index: 1;
   display: flex; flex-direction: column;
   min-height: 1096px;
-  padding: 1.2rem 2rem 0.8rem;
+  /* 相对双线框明显留白：左右约 58px */
+  padding: 1.25rem 3.75rem 0.95rem;
   box-sizing: border-box;
 }
 .cert-header {
@@ -698,7 +699,14 @@ a.task.is-ink:hover { background: var(--ink-hover); }
   text-align: center;
   position: relative;
 }
-.cert-sample-text { margin: 0; font-size: 1.35rem; letter-spacing: 0.22em; line-height: 1.45; white-space: nowrap; color: var(--cert-ink); }
+.cert-sample-text {
+  margin: 0;
+  font-size: 1.22rem;
+  letter-spacing: 0.14em;
+  line-height: 1.45;
+  white-space: nowrap;
+  color: var(--cert-ink);
+}
 
 .cert-memo {
   margin: 0.9rem 0 0; padding: 0.42rem 0.75rem;
@@ -785,7 +793,7 @@ a.task.is-ink:hover { background: var(--ink-hover); }
 .cert-minimal {
   position: relative;
   width: 794px;
-  max-width: 100%;
+  max-width: none;
   min-height: 1123px;
   height: 1123px;
   margin: 0 auto;
@@ -929,22 +937,33 @@ a.task.is-ink:hover { background: var(--ink-hover); }
 .cert-minimal footer .mono { font-size: var(--fs-11); letter-spacing: 0.02em; }
 .cert-minimal footer img { width: 5.4rem; height: 5.4rem; flex: none; border: 1px solid var(--rule); background: #fff; }
 
-/* 响应式与打印 */
-@media screen and (max-width: 880px) {
-  .cert-sheet { width: 100%; height: auto; min-height: 0; padding: 0.4rem; }
-  .cert-frame { inset: 0.35rem; }
-  .cert-frame-inner { inset: 0.65rem; }
-  .cert-inner { padding: 1.3rem 1rem 1rem; min-height: 0; }
-  .cert-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-  .cert-type { text-align: left; }
-  .cert-title { font-size: 2rem; letter-spacing: 0.3em; text-indent: 0.3em; }
-  .cert-title::before, .cert-title::after { display: none; }
-  .cert-cell, .cert-scope-grid { grid-template-columns: 1fr; }
-  .cert-sign { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
-  .cert-sign-off { align-self: flex-end; }
-  .cert-mark { font-size: 2.8rem; letter-spacing: 0.7rem; }
-  .cert-minimal { width: 100%; height: auto; min-height: 0; padding: 1.4rem 1.1rem 1.2rem; box-shadow: none; }
-  .cert-minimal .concl { grid-template-columns: 1fr; }
+/* 窄屏：不重排证面内部，由 .cert-fit 等比缩放；打印仍用真实 A4 */
+.cert-fit {
+  --cert-scale: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  /* 高度由 JS 按 scale×自然高度写入，避免缩放后留白/裁切 */
+}
+.cert-fit > .cert-sheet,
+.cert-fit > .cert-minimal {
+  flex: none;
+  transform: scale(var(--cert-scale));
+  transform-origin: top center;
+  margin: 0;
+}
+
+@media print {
+  .cert-fit {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+  .cert-fit > .cert-sheet,
+  .cert-fit > .cert-minimal {
+    transform: none !important;
+  }
 }
 
 @media print {
@@ -2252,6 +2271,23 @@ body.page-gap .gp1-kinds button {
   .topnav { gap: var(--s-1); padding: 0 var(--gutter) 0.3rem; margin: 0 calc(-1 * var(--gutter)); border-bottom: 1px solid var(--rule); }
   .topnav a { padding: 0.55rem 0.7rem; font-size: var(--fs-14); }
   .topnav a.is-active { background: var(--fill); }
+  /* 索引表四列在窄屏会挤成碎块：改成名主、其余折行 */
+  .index-head { display: none; }
+  .index li > a,
+  .index.is-3 li > a {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--s-2) var(--s-3);
+  }
+  .index .norm,
+  .index .info {
+    grid-column: 1;
+    white-space: normal;
+  }
+  .index .go { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+  .stats { gap: var(--s-2) 0; }
+  .stat { padding-right: var(--s-4); }
+  .stat + .stat { padding-left: var(--s-4); }
+  .foundry-cards { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   /* 顶栏两行：字标 | 放大/主题 一行，主导航独占一行。五项导航加右区在窄屏塞不进一行，

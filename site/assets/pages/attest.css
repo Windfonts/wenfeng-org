@@ -278,6 +278,35 @@ html[data-view="dev"] .page-attest .at-more-grid .d {
   .page-attest .at-form .two {
     grid-template-columns: 1fr;
   }
+  .page-attest .at-more-grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--s-5);
+  }
+  /* 台账行：编号与日期折到第二行，避免挤扁 */
+  .page-attest-tool [data-ledger] .lrow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "nm go"
+      "rel go";
+    column-gap: var(--s-3);
+    row-gap: 0.2rem;
+    align-items: start;
+  }
+  .page-attest-tool [data-ledger] .lrow .lnm { grid-area: nm; }
+  .page-attest-tool [data-ledger] .lrow .lrel {
+    grid-area: rel;
+    justify-self: start;
+    font-size: var(--fs-11);
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  .page-attest-tool [data-ledger] .lrow .lgo {
+    grid-area: go;
+    align-self: center;
+    font-size: var(--fs-12);
+    color: var(--gray);
+  }
 }
 
 /* 核对 / 台账 / 查证：与办事台同一套 split + 侧注 */

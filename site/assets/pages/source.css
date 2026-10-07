@@ -209,7 +209,7 @@
       "st go";
     align-items: start;
   }
-  .page-source .lrow .lnm { grid-area: nm; }
+  .page-source .lrow .lnm { grid-area: nm; font-size: var(--fs-18); }
   .page-source .lrow .lrel {
     grid-area: st;
     justify-self: start;
@@ -218,4 +218,16 @@
   .page-source .lrow .lgo { grid-area: go; justify-self: stretch; }
   .page-source .lrow .lmeta.for-design { display: block; }
   .page-source .lrow .lmeta.for-dev { display: none; }
+}
+
+@media (max-width: 720px) {
+  .page-source .lrow {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--s-3);
+    padding: var(--s-3) var(--s-2);
+  }
+  .page-source .lrow .lgo {
+    font-size: var(--fs-13);
+    white-space: nowrap;
+  }
 }

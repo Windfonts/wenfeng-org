@@ -194,4 +194,10 @@
     border-left: 0;
     border-top: 1px solid var(--rule);
   }
+  .page-mast h1.xxzt {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+  }
+  .page-mast h1.is-face {
+    font-size: clamp(1.9rem, 10vw, 2.75rem);
+  }
 }
