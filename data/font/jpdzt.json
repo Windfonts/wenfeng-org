@@ -22,7 +22,7 @@
  },
  "foundry": "字言字语",
  "foundrySlug": "boutique",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jpdzt",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jpdzt/source/Regular.ttf",
+   "sha256": "981f0ccf566c95d552baf252c9805d63aee33936ff8d09002dfaa32ea8b1deeb",
+   "staged": false,
+   "bytes": 2132504,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

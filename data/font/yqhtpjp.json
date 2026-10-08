@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yqhtpjp",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/yqhtpjp/source/Regular.otf",
+   "sha256": "c9f28cf4365a2a68ea3c10dca65571d936ce788748aab44f262f4cdacc9c357b",
+   "staged": false,
+   "bytes": 9534116,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

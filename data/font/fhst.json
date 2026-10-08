@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Ffs.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/fhst/source/Regular.ttf",
+   "sha256": "a3e0a81641b1af9c55c347d5d1ec8f3f90ac683d79a270f8cd8abf616f586bfd",
+   "staged": false,
+   "bytes": 15298480,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

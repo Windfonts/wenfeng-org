@@ -17,7 +17,7 @@
  },
  "foundry": "LY Corporation",
  "foundrySlug": "lineseed",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/linestw",
@@ -28,7 +28,7 @@
   "ExtraBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/linestw/source/Regular.ttf",
+   "sha256": "cb906a1aff3ac0307ddcc4a2a76f73bc1d4f75d1ba7fc3361798ef9b05733c8c",
+   "staged": false,
+   "bytes": 6871876,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

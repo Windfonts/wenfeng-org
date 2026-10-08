@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xcld.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xcldh/source/Regular.ttf",
+   "sha256": "ee1869af495c0e25ee4adab4746b24ffba0b350895e1ad7736e7b5c16c0c4c92",
+   "staged": false,
+   "bytes": 6940636,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

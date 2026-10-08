@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/sydktc",
@@ -31,7 +31,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/sydktc/source/Regular.ttf",
+   "sha256": "6a8c529e4cd4c520b48531388e7e820ab343ae179912ff97da9da383c491863d",
+   "staged": false,
+   "bytes": 17176496,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -17,7 +17,7 @@
  },
  "foundry": "文字枠研究 / Moji-Waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tgltjp",
@@ -31,7 +31,7 @@
   "Thin"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -45,6 +45,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/tgltjp/source/Regular.otf",
+   "sha256": "bfd5abfe30bfedf900f5facc4cc502f852b75912970f882b68b04a6818685f1f",
+   "staged": false,
+   "bytes": 3237232,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

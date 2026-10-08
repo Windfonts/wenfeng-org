@@ -34,19 +34,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/SourceHanSansTWRegular.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/adobe-fonts/source-han-sans",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/syhttw/source/Regular.otf",
+   "sha256": "10e6d832bc73650840aa7fbfec4e10c527f8136ae2aec71c3e1c13a67475c24a",
+   "staged": false,
+   "bytes": 16528276,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

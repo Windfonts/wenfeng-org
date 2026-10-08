@@ -22,7 +22,7 @@
  },
  "foundry": "Aqua（阿杰）",
  "foundrySlug": "aqua",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/twzz",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/twzz/source/Regular.ttf",
+   "sha256": "bf021e90511fe157c2ecb1472fa3f8ed22f356e2823bcbd413117209cd99b786",
+   "staged": false,
+   "bytes": 21756404,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

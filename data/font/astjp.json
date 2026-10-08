@@ -17,7 +17,7 @@
  },
  "foundry": "MODI工場",
  "foundrySlug": "modi-factory",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/astjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://modi.jpn.org/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/astjp/source/Regular.otf",
+   "sha256": "c6a58bd98e8947fc9d32287c339182da9efb18b1a675e8f1bfc0ca78e26e81d8",
+   "staged": false,
+   "bytes": 322040,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

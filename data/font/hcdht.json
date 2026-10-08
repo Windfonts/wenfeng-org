@@ -52,11 +52,13 @@
   },
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Clduan.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcdht/source/Regular.ttf",
+   "sha256": "057720496d8bfea126c82c6613704d21c741599520e6dea9037a10a946704d0b",
+   "staged": false,
+   "bytes": 7382392,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

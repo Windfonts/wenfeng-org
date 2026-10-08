@@ -17,7 +17,7 @@
  },
  "foundry": "omonomo",
  "foundrySlug": "omonomo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/idrjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/idrjp/source/Regular.ttf",
+   "sha256": "4bd47524e99cc1a08250cd8150deb03aa48a2ed7f6fa09b326c338fbd8c1fc42",
+   "staged": false,
+   "bytes": 7040272,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

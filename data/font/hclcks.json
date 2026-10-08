@@ -22,7 +22,7 @@
  },
  "foundry": "寒蝉字型",
  "foundrySlug": "chilltype",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hclcks",
@@ -33,7 +33,7 @@
   "ExtraBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hclcks/source/Regular.otf",
+   "sha256": "70faa0841dc48d64032c4c98b0ac854d5c177235bb2304be174e9040aee2cf80",
+   "staged": false,
+   "bytes": 3841796,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

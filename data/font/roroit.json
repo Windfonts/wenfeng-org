@@ -17,7 +17,7 @@
  },
  "foundry": "omonomo",
  "foundrySlug": "omonomo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/roroit",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/roroit/source/Regular.ttf",
+   "sha256": "78ba76ec342d3fde7f77f539750beac4bb8802d57bba54bf2774b041f445b7cb",
+   "staged": false,
+   "bytes": 7302196,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

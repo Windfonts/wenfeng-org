@@ -22,7 +22,7 @@
  },
  "foundry": "香萃",
  "foundrySlug": "xiangcui",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xczzsch",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xczzsch/source/Regular.ttf",
+   "sha256": "70a60c9d4b6da38dde22fc9749012b17016cf5a25a00306c8c9343f553b4ca31",
+   "staged": false,
+   "bytes": 9809928,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

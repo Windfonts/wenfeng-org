@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/sydkmjp",
@@ -31,7 +31,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/sydkmjp/source/Regular.ttf",
+   "sha256": "8475520c9494d4a162b700c4854de2eba37d47a857c952596c30b59675b41de7",
+   "staged": false,
+   "bytes": 17208772,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

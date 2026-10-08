@@ -17,7 +17,7 @@
  },
  "foundry": "yuta-fonts",
  "foundrySlug": "yuta-fonts",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yutcc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://net2.system.to/pc/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "http://net2.system.to/pc/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/yutcc/source/Regular.otf",
+   "sha256": "f5218689b3115533c6df46ffeda6b04d969f250f6655949006b9092ce05261c1",
+   "staged": false,
+   "bytes": 7072956,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

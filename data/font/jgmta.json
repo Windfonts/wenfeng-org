@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Jgma.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jgmta/source/Regular.ttf",
+   "sha256": "be04b54d10ab6d0d184868366ae1b37dba1e26203f7bca50fb5647a7a2606344",
+   "staged": false,
+   "bytes": 40174076,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

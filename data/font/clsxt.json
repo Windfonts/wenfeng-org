@@ -17,7 +17,7 @@
  },
  "foundry": "typejam",
  "foundrySlug": "typejam",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/clsxt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/clsxt/source/Regular.otf",
+   "sha256": "ba681fcd892d3338d4054823a29b7117ec1ded32f54aef4eb77d72048bd28f91",
+   "staged": false,
+   "bytes": 3025536,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/QRpx.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ewmxs/source/Regular.ttf",
+   "sha256": "414b160ca18dd92c785edb803c7bec2a112b7936ef2003b9f1d7472d1c58cf12",
+   "staged": false,
+   "bytes": 39343056,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

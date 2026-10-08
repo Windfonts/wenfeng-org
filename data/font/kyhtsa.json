@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Kys.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/kyhtsa/source/Regular.otf",
+   "sha256": "f2f0bb0ad3988908f1587c90b49fcf1dbe4b6b32a84b9cace83a9d7381aa09de",
+   "staged": false,
+   "bytes": 31012416,
+   "file": "Regular.otf"
   },
   {
    "kind": "upstream",

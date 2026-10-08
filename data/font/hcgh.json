@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Clg.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcgh/source/Regular.ttf",
+   "sha256": "93af461beb799901d597cefaf1f382667ad29230d042688803a405778a981383",
+   "staged": false,
+   "bytes": 7959892,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

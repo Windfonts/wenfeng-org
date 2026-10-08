@@ -17,7 +17,7 @@
  },
  "foundry": "Google Noto",
  "foundrySlug": "google-noto",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nshjp",
@@ -31,7 +31,7 @@
   "SemiBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nshjp/source/Regular.ttf",
+   "sha256": "421f39077f39317962c16a30b5fea190132d6f1f55c0fc3a58dcb4f84b30503a",
+   "staged": false,
+   "bytes": 265860,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

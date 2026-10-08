@@ -22,7 +22,7 @@
  },
  "foundry": "GuiWonder",
  "foundrySlug": "guiwonder",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/symcb",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/symcb/source/Regular.ttf",
+   "sha256": "8b62788c1ddf5b7963aef03d0f082a876aaa864d5701b999e6c1b239a5e6adcc",
+   "staged": false,
+   "bytes": 25414560,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

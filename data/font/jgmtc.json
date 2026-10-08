@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Jgmc.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jgmtc/source/Regular.ttf",
+   "sha256": "28c641011788ec2cf80899ed290ce8a9de19ee172d9d5e29ca18946a7719f5c9",
+   "staged": false,
+   "bytes": 40449276,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -22,7 +22,7 @@
  },
  "foundry": "Aqua",
  "foundrySlug": "aqua",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mlkyt",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mlkyt/source/Regular.ttf",
+   "sha256": "375b09cde606eda1df5b78f6cdf3767d952455b38a452c1da0786503d85385ad",
+   "staged": false,
+   "bytes": 16092116,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

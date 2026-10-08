@@ -34,19 +34,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xwszhmn.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/lxgw/LxgwFasmartGothic",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwszhmn/source/LXGWFasmartGothicMN.ttf",
+   "sha256": "09584acb149fd6590296810ec3c9beb34c74f1dec56e1fdb4a6db6daf3772bd6",
+   "staged": false,
+   "bytes": 4162682,
+   "file": "LXGWFasmartGothicMN.ttf"
   },
   {
    "kind": "slice",

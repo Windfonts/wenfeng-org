@@ -17,7 +17,7 @@
  },
  "foundry": "BridgeRiver",
  "foundrySlug": "bridgeriver",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/dqhkst",
@@ -27,7 +27,7 @@
   "Medium"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/BridgeRiver/BRWakaishotai",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "git",
    "href": "https://github.com/BridgeRiver/BRWakaishotai",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/dqhkst/source/Regular.ttf",
+   "sha256": "5ea91018a4c88eb57b4e3f09f014bf4ed88cc9de40875c5ba96493da0c428887",
+   "staged": false,
+   "bytes": 22255816,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

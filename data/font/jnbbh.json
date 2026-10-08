@@ -17,7 +17,7 @@
  },
  "foundry": "一字一句",
  "foundrySlug": "etrump",
- "offer": "source",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jnbbh",
@@ -33,14 +33,6 @@
  },
  "lineage": null,
  "files": [
-  {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Jnbbh.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
   {
    "kind": "upstream",
    "label": "上游 github.com",

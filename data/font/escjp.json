@@ -17,7 +17,7 @@
  },
  "foundry": "moji-waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/escjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/escjp/source/Regular.otf",
+   "sha256": "e2fcca30ff22acf67b41d5a8d4e73d0b2be0be60fbc96229c765cab17aeaf6e6",
+   "staged": false,
+   "bytes": 17356,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

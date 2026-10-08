@@ -17,7 +17,7 @@
  },
  "foundry": "be5invis",
  "foundrySlug": "be5invis",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/gsuitc",
@@ -34,7 +34,7 @@
   "SemiBoldItalic"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/be5invis/Sarasa-Gothic",
   "syncedAt": null,
@@ -48,6 +48,16 @@
    "format": "git",
    "href": "https://github.com/be5invis/Sarasa-Gothic",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/gsuitc/source/Regular.ttf",
+   "sha256": "fe4c95e1ca834326c92376ec05cd95f64fecf4870bd6aaf9f073cecd36453fe4",
+   "staged": false,
+   "bytes": 24237184,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

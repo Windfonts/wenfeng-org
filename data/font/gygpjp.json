@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/gygpjp",
@@ -31,7 +31,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/gygpjp/source/Regular.otf",
+   "sha256": "a8c0984ca049c9511cbe442fc6610cc21c8bbb1360ac767c7382195d67c3466a",
+   "staged": false,
+   "bytes": 10721360,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

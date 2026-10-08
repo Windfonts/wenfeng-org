@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Slfu.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysfxt/source/Regular.ttf",
+   "sha256": "b8c59c7cddb8723a8f9c53ce0bd2a949d10241ddc88569c1cbb0eb4d889861d2",
+   "staged": false,
+   "bytes": 15172184,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

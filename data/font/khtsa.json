@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Kalo.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/khtsa/source/Regular.ttf",
+   "sha256": "18461e55175219173342fecc0c932a1a23690f9a547d936c8b2a5d347ce1d0b7",
+   "staged": false,
+   "bytes": 9006388,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

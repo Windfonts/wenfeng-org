@@ -17,7 +17,7 @@
  },
  "foundry": "Gutenberg Labo",
  "foundrySlug": "gutenberg-labo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/glapjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/glapjp/source/Regular.ttf",
+   "sha256": "6dd57e3761031d3abd73f01d556771b6d5c26b7fb673c74ec4c37426e8d2bf43",
+   "staged": false,
+   "bytes": 4481760,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

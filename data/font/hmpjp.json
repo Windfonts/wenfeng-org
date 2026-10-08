@@ -17,7 +17,7 @@
  },
  "foundry": "Google",
  "foundrySlug": "google-fonts",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hmpjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hmpjp/source/Regular.ttf",
+   "sha256": "7a2491d22847c9b686b9ef5c3fa97bc2b9e5cc83cb38834d59cf07af75b3ede4",
+   "staged": false,
+   "bytes": 7188220,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

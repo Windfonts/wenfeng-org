@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Zljp.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zldzjp/source/Regular.ttf",
+   "sha256": "e8135b5a65c0719cbd0b9688f04a3374517831b08178155eaafbdaaf2e7708fb",
+   "staged": false,
+   "bytes": 1723396,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

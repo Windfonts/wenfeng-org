@@ -17,7 +17,7 @@
  },
  "foundry": "Google",
  "foundrySlug": "google-fonts",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/sab1jp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/sab1jp/source/Regular.ttf",
+   "sha256": "0b55142100b58f6bd221b2229132cc2e344d1d3c803adafeb376624c6e3819c4",
+   "staged": false,
+   "bytes": 13095332,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

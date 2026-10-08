@@ -17,7 +17,7 @@
  },
  "foundry": "omonomo",
  "foundrySlug": "omonomo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cyrjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cyrjp/source/Regular.ttf",
+   "sha256": "c7c16e764c73ba5f021668f460fb15b1c2cc06d7e92975cdf6a474571bac5436",
+   "staged": false,
+   "bytes": 6937964,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

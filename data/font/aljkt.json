@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/aljkt",
@@ -26,7 +26,7 @@
   "Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "git",
    "href": "https://www.foundertype.com/index.php/FontInfo/index/id/6694.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/aljkt/source/Regular.ttf",
+   "sha256": "f912d45485197d2e276acef24c88d9923e0edfbda78bfcbe8e4198cf65702f11",
+   "staged": false,
+   "bytes": 2809676,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

@@ -25,7 +25,7 @@
  },
  "foundry": "猫啃网 (Maoken)",
  "foundrySlug": "maoken",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mkkzzh",
@@ -33,7 +33,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "skipped-too-heavy",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/maoken-fonts/maoken-heavy-labourer",
   "syncedAt": null,
@@ -47,6 +47,16 @@
    "format": "git",
    "href": "https://github.com/maoken-fonts/maoken-heavy-labourer",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mkkzzh/source/Regular.ttf",
+   "sha256": "8f33e4003a365fc73c64b929b5b444b862982ab7f49198d34c3bdf631c2ceec8",
+   "staged": false,
+   "bytes": 34659956,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

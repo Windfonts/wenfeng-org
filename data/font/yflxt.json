@@ -17,7 +17,7 @@
  },
  "foundry": "yufan",
  "foundrySlug": "yufan",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yflxt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/chilingg/YufanDanQingSong",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/chilingg/YufanDanQingSong",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/yflxt/source/Regular.otf",
+   "sha256": "b8e6d3a67530e0615413cb568973df21318eb09c92288f2c5b8f88c304149fc9",
+   "staged": false,
+   "bytes": 1187996,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

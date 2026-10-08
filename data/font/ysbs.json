@@ -22,7 +22,7 @@
  },
  "foundry": "Steve-Yuu",
  "foundrySlug": "steve-yuu",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ysbs",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Steve-Yuu/YshiPen-Shuti",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/Steve-Yuu/YshiPen-Shuti",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysbs/source/YshiPenShutiTC-Regular.ttf",
+   "sha256": "99dc8be6290e4a61b55d0c87a4ad19135b164286b35fe827ee62a277c401bbfe",
+   "staged": false,
+   "bytes": 23005452,
+   "file": "YshiPenShutiTC-Regular.ttf"
   },
   {
    "kind": "slice",

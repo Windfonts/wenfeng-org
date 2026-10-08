@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Urx.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/twxxs/source/Regular.ttf",
+   "sha256": "23c700fb18af1e3cccf29fff53fdba6f4e405764e366f93b1fe0f898382c3d2e",
+   "staged": false,
+   "bytes": 1344764,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

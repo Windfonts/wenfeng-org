@@ -17,7 +17,7 @@
  },
  "foundry": "modi-factory",
  "foundrySlug": "modi-factory",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tmmcwjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://modi.jpn.org/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/tmmcwjp/source/Regular.ttf",
+   "sha256": "dfe7f69437f810df57a88c452f944cc69d33c225b58becd0eb5eebd01a5bbe10",
+   "staged": false,
+   "bytes": 7465944,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "逐浪字库",
  "foundrySlug": "zoomla",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zlmyz",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zlmyz/source/Regular.ttf",
+   "sha256": "695a57e7bcaff9a261fd5452e6681a9e6d80023a907e3dc253cc83be5cb5fb97",
+   "staged": false,
+   "bytes": 2624088,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

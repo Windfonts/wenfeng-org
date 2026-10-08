@@ -47,11 +47,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Frexsans.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xhfsa/source/Regular.ttf",
+   "sha256": "825021d30f5df8cf1540fc57ff1a2d53059ca8f0b2dba864f6cf806d356853e1",
+   "staged": false,
+   "bytes": 3627180,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

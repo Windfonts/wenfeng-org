@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/vvsa",
@@ -33,7 +33,7 @@
   "Black"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -47,6 +47,16 @@
    "format": "git",
    "href": "https://developersstatic.vivo.com/developers/1cdcaef3b39848f290bf90346642ed1d/20241022/vivo%20Sans.zip",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/vvsa/source/Regular.ttf",
+   "sha256": "e18a429e049616b6fb53f5ad3117afd21d17bb84612bd7812a8a5a2af0c8b725",
+   "staged": false,
+   "bytes": 7786748,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

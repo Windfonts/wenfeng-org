@@ -36,19 +36,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xwwkgb.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/lxgw/LxgwWenKai",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwwkgb/source/LXGWWenKaiGB-Regular.ttf",
+   "sha256": "295568c131648062107543aa159c97dd49564be791136c2abf74cad83eba3f7f",
+   "staged": false,
+   "bytes": 25819540,
+   "file": "LXGWWenKaiGB-Regular.ttf"
   },
   {
    "kind": "slice",

@@ -22,7 +22,7 @@
  },
  "foundry": "Adobe",
  "foundrySlug": "adobe",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/sydksc",
@@ -36,7 +36,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -44,6 +44,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/sydksc/source/Regular.otf",
+   "sha256": "cecd1a14b948b8468389af021e1304d00a660d9e9c6b971aa322908d00edfe7a",
+   "staged": false,
+   "bytes": 17177936,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

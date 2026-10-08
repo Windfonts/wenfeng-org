@@ -17,7 +17,7 @@
  },
  "foundry": "Des-Magmeta",
  "foundrySlug": "des-magmeta",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yqttc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Des-Magmeta/ChildFunSans-TC",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/Des-Magmeta/ChildFunSans-TC",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yqttc/source/Regular.ttf",
+   "sha256": "994b5e2613f1c115f0638891064abb5d89a9e388f81180c82797a8575679d5f1",
+   "staged": false,
+   "bytes": 3259740,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zcgxt",
@@ -27,7 +27,7 @@
   "Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "git",
    "href": "https://www.gwm.com.cn/gwmsans/fontdownload.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/zcgxt/source/Regular.otf",
+   "sha256": "122863624904578ae86ddb4793fbe0f7d65cb009253a2948ab7bb4742b32e2ce",
+   "staged": false,
+   "bytes": 5872748,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

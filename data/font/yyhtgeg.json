@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yyhtgeg",
@@ -31,7 +31,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -45,6 +45,16 @@
    "format": "git",
    "href": "https://okoneya.jp/font/GenEiGothicAll-1.1a.7z",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/yyhtgeg/source/Regular.otf",
+   "sha256": "9206e0198c7baba100d5f35e05802d33e3d29bef21ac1829ff2d701539b0435c",
+   "staged": false,
+   "bytes": 4721772,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

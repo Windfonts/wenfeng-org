@@ -17,7 +17,7 @@
  },
  "foundry": "ロゴタイプJP",
  "foundrySlug": "logotype-jp",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cormc",
@@ -25,7 +25,7 @@
   "Medium"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://logotype.jp/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://logotype.jp/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/cormc/source/Medium.otf",
+   "sha256": "2ed685b90b06d2a4cdd81523bcdbf7d76f2c7eb784acc4da10b83f65b0dcded8",
+   "staged": false,
+   "bytes": 3582252,
+   "file": "Medium.otf"
   },
   {
    "kind": "slice",

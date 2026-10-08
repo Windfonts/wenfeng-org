@@ -17,7 +17,7 @@
  },
  "foundry": "uchida-xano",
  "foundrySlug": "uchida-xano",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xanomc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://www.vector.co.jp/soft/dl/data/writing/se367514.html",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "http://www.vector.co.jp/soft/dl/data/writing/se367514.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xanomc/source/Regular.ttf",
+   "sha256": "661bc3565f60e066e3d7841d94bf8ed94ed8761d5a4da81d7b7d14198948a641",
+   "staged": false,
+   "bytes": 4926656,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

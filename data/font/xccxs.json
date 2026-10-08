@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xccx.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xccxs/source/Regular.ttf",
+   "sha256": "e4161584d51390e2520dbd16593639747ec1033e320d8cd3df77ac903c931fa8",
+   "staged": false,
+   "bytes": 5775976,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

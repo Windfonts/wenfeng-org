@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yynht",
@@ -25,7 +25,7 @@
   "ExtraBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/tani/genei-fonts-mirror/releases/download/mirror/GenEiNuGothic-EB_v1.1.zip",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yynht/source/ExtraBold.ttf",
+   "sha256": "add26eca0ea70b8cb956788936959c048b97288b72a15c4a89591408b59d7692",
+   "staged": false,
+   "bytes": 7422040,
+   "file": "ExtraBold.ttf"
   },
   {
    "kind": "slice",

@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Cldin.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcdh/source/Regular.ttf",
+   "sha256": "98543b27703ad3325a4276d6c17327ce5eb436933ac7eb1f9388c9c06c9301a2",
+   "staged": false,
+   "bytes": 7345008,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

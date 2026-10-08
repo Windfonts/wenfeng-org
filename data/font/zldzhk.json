@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Zlhc.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zldzhk/source/Regular.ttf",
+   "sha256": "ae89184c8a048ee5587addd32aa8fbaff1bb1db2a45fd9a175f37643a8046489",
+   "staged": false,
+   "bytes": 1746188,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

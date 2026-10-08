@@ -17,7 +17,7 @@
  },
  "foundry": "Adobe",
  "foundrySlug": "adobe",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/sydkhk",
@@ -31,7 +31,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://www.adobe.com",
   "syncedAt": null,
@@ -45,6 +45,16 @@
    "format": "link",
    "href": "https://www.adobe.com",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/sydkhk/source/Regular.otf",
+   "sha256": "7d1a7e8c5920bd8cdc779a3b333494e799977a8a9372f52e5dc9088eea048b4e",
+   "staged": false,
+   "bytes": 17167736,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

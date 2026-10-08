@@ -17,7 +17,7 @@
  },
  "foundry": "Han-Nom Revival Committee",
  "foundrySlug": "hannom-rcv",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xyygn",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/TKYKmori/Gothic-Nguyen",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/TKYKmori/Gothic-Nguyen",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xyygn/source/Regular.ttf",
+   "sha256": "1ea1750bd1b4399276a82de6d3c623d927abb6157cc47920ad77c7fedfe3de1a",
+   "staged": false,
+   "bytes": 16152876,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

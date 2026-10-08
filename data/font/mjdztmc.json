@@ -17,7 +17,7 @@
  },
  "foundry": "ItMarki",
  "foundrySlug": "itmarki",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mjdztmc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mjdztmc/source/Regular.ttf",
+   "sha256": "b488824c55875ea5a684228a6e7432d49596b6ef3b129ffde9263938aaca576e",
+   "staged": false,
+   "bytes": 2531336,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

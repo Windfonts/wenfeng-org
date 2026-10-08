@@ -17,7 +17,7 @@
  },
  "foundry": "Google",
  "foundrySlug": "google-fonts",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/shimjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/shimjp/source/Regular.ttf",
+   "sha256": "743f95a923387d9c5d0709b08e98adf706f871bfa7ccaa21ebdf5526ba080476",
+   "staged": false,
+   "bytes": 19552772,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

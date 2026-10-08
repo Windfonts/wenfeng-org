@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Clhfs.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hchzfs/source/Regular.ttf",
+   "sha256": "b82f1a35dd2d1cfbb82ec2ca59ed40a1fdf65f3bc4510451a2ea423211859451",
+   "staged": false,
+   "bytes": 18889180,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -43,11 +43,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Hxwk.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcxk/source/Regular.ttf",
+   "sha256": "506a0140aaac20cfee4166246709ed64152e60640a1cb0c384e78a59ff8497e1",
+   "staged": false,
+   "bytes": 18094824,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

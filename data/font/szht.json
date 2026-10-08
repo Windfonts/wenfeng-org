@@ -17,7 +17,7 @@
  },
  "foundry": "chiron",
  "foundrySlug": "chiron",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/szht",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/szht/source/Regular.ttf",
+   "sha256": "64af4893154d8a75a1344b799c778992dccbf004d542d2a268aba709a7c2f730",
+   "staged": false,
+   "bytes": 16622060,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

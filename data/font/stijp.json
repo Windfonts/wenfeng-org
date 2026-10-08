@@ -17,7 +17,7 @@
  },
  "foundry": "Fontworks",
  "foundrySlug": "fontworks",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/stijp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/stijp/source/Regular.ttf",
+   "sha256": "050f2772d198926d2b2a0719ccbacc53f8139ab488df91c139acad0073ae40c5",
+   "staged": false,
+   "bytes": 2215036,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

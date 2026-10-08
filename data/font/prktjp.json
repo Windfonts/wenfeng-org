@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/prktjp",
@@ -25,7 +25,7 @@
   "Black"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://kiwi-kawagoto.com/poprumkiwi/index.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/prktjp/source/Black.ttf",
+   "sha256": "488a394fcf92aa4c088aab5ae1fda7192a28ba6acb85f477bbd2cec36476efb2",
+   "staged": false,
+   "bytes": 3464212,
+   "file": "Black.ttf"
   },
   {
    "kind": "slice",

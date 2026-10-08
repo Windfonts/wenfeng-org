@@ -22,7 +22,7 @@
  },
  "foundry": "寒蝉字型",
  "foundrySlug": "chilltype",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hczk",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hczk/source/Regular.ttf",
+   "sha256": "701f628d421f28c6cde41dd23c8c0998ffad6fe506d986ab70e8405b3354bb91",
+   "staged": false,
+   "bytes": 34952848,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

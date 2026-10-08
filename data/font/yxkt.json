@@ -22,7 +22,7 @@
  },
  "foundry": "中文网字计划",
  "foundrySlug": "guiwonder",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yxkt",
@@ -32,7 +32,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -40,6 +40,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yxkt/source/Regular.ttf",
+   "sha256": "c1e947611aa384cc995f9b154acd6379ede11eab131b3eded76a30e9ffb68684",
+   "staged": false,
+   "bytes": 19410420,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

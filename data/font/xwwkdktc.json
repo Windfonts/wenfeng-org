@@ -17,7 +17,7 @@
  },
  "foundry": "lxgw",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwwkdktc",
@@ -27,7 +27,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -35,6 +35,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwwkdktc/source/Regular.ttf",
+   "sha256": "04f1e24faab8108075a74fb27ad81de4a3f80b1510fe993993c19b00eb1b3945",
+   "staged": false,
+   "bytes": 15277228,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

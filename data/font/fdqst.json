@@ -17,7 +17,7 @@
  },
  "foundry": "花乐",
  "foundrySlug": "fwhp",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/fdqst",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/fdqst/source/Regular.ttf",
+   "sha256": "5a7e1234496e2c068d398aba04f71ba11f5121671968e73040dc555405c32e1c",
+   "staged": false,
+   "bytes": 31737728,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

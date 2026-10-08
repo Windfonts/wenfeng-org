@@ -22,7 +22,7 @@
  },
  "foundry": "寒蝉字型",
  "foundrySlug": "chilltype",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hcymh",
@@ -33,7 +33,7 @@
   "Medium"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcymh/source/Regular.otf",
+   "sha256": "90e263e02b735eb26779b76c5c2c4f9a5f2b49dbd6f352e0a9183babc5c0f91f",
+   "staged": false,
+   "bytes": 14473240,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

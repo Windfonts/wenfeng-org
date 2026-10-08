@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Mxhn.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/b2hy/source/Regular.ttf",
+   "sha256": "d80fa6e60ffacf639535f061edd371f1e4912245caf92c5992660b8db74e58cc",
+   "staged": false,
+   "bytes": 28414728,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

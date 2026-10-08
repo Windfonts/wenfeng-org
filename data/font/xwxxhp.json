@@ -34,19 +34,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xwxxhplus.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/lxgw/LxgwNeoXiHei",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxxhp/source/LXGWNeoXiHeiPlus.ttf",
+   "sha256": "68261add407bd795c040fe662b7e21e5a766acc9a534c393473f8a972c5ed224",
+   "staged": false,
+   "bytes": 9026028,
+   "file": "LXGWNeoXiHeiPlus.ttf"
   },
   {
    "kind": "slice",

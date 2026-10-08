@@ -22,7 +22,7 @@
  },
  "foundry": "昭源",
  "foundrySlug": "chiron",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zyyt",
@@ -33,7 +33,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/zyyt/source/Regular.otf",
+   "sha256": "519253233cbca3c2b97b818949e803ccf08f937d75431bedf59e167b00bf4b65",
+   "staged": false,
+   "bytes": 19635772,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

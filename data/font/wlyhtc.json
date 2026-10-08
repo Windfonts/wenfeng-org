@@ -17,7 +17,7 @@
  },
  "foundry": "Wêlai",
  "foundrySlug": "welai",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wlyhtc",
@@ -33,7 +33,7 @@
   "Thin"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/welai/glow-sans",
   "syncedAt": null,
@@ -47,6 +47,16 @@
    "format": "git",
    "href": "https://github.com/welai/glow-sans",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/wlyhtc/source/Regular.otf",
+   "sha256": "cbd6843ab96acc9bb92048dd426232ece37f79068cc9e48c40e8d48e9fd0ee59",
+   "staged": false,
+   "bytes": 8926856,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

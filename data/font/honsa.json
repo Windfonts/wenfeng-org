@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/honsa",
@@ -33,7 +33,7 @@
   "Black"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://contentplatform-drcn.hihonorcdn.com/developerPlatform/HONOR_Sans_1.0/HONOR_Sans_1.0.zip",
   "syncedAt": null,
@@ -47,6 +47,16 @@
    "format": "git",
    "href": "https://contentplatform-drcn.hihonorcdn.com/developerPlatform/HONOR_Sans_1.0/HONOR_Sans_1.0.zip",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/honsa/source/Regular.ttf",
+   "sha256": "09944d4472f5117903e86ef7a7edb53244ffa148b68a2ef283137f19fc6b8f85",
+   "staged": false,
+   "bytes": 8026808,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

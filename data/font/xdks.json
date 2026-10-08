@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xdks.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xdks/source/Regular.ttf",
+   "sha256": "f3b3881ffdc3e145ea524684207a0acf7c6f872b239da8bddc32cddd5a050164",
+   "staged": false,
+   "bytes": 7629268,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

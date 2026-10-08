@@ -17,7 +17,7 @@
  },
  "foundry": "umihotaru",
  "foundrySlug": "umihotaru",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nsktk",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://umihotaru.work/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://umihotaru.work/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nsktk/source/Regular.ttf",
+   "sha256": "ca8782436f7dd82fc9fd93d28c9ec38c0c4ac0044f601a51451f0d648ac52809",
+   "staged": false,
+   "bytes": 12322460,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

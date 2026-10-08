@@ -34,19 +34,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xwzksgb.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/lxgw/LxgwZhenKai",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwzks/source/LXGWZhenKaiSlabGB-Regular.ttf",
+   "sha256": "086fa66af57b7a0d7a007067097cd1ac27eb8b8db810fb83ac3de620be1eb3a1",
+   "staged": false,
+   "bytes": 17642176,
+   "file": "LXGWZhenKaiSlabGB-Regular.ttf"
   },
   {
    "kind": "slice",

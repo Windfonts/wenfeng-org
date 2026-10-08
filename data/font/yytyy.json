@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yytyy",
@@ -25,7 +25,7 @@
   "Text"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yytyy/source/Text.ttf",
+   "sha256": "73f893ea83f2124473c7c7e6e03a840f0883c3c6057f60b97d87e570360781b5",
+   "staged": false,
+   "bytes": 14930244,
+   "file": "Text.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

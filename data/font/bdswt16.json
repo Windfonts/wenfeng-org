@@ -17,7 +17,7 @@
  },
  "foundry": "taketori",
  "foundrySlug": "taketori",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/bdswt16",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/bdswt16/source/Regular.ttf",
+   "sha256": "e2c39cd33d32a2253cc88de0e1fd9b36ec62fb9550a94a4590612f47576df8fe",
+   "staged": false,
+   "bytes": 4326816,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

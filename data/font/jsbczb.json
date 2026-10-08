@@ -22,7 +22,7 @@
  },
  "foundry": "justfont",
  "foundrySlug": "justfont",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jsbczb",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jsbczb/source/Regular.ttf",
+   "sha256": "70809c1097259ce5aaaf824d18dc9f503d54260f75468b02dd21bed440f931b0",
+   "staged": false,
+   "bytes": 8089320,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

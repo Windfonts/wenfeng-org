@@ -17,7 +17,7 @@
  },
  "foundry": "文字枠研究 / Moji-Waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/smsnjp",
@@ -27,7 +27,7 @@
   "Donokun-03"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/smsnjp/source/Donokun-03.otf",
+   "sha256": "cd709e15f9be0401bfe4daadbb0d3a1a81a9427331a84d26e4074206a151720a",
+   "staged": false,
+   "bytes": 75832,
+   "file": "Donokun-03.otf"
   },
   {
    "kind": "slice",

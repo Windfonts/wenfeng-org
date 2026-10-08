@@ -17,7 +17,7 @@
  },
  "foundry": "yzdnn",
  "foundrySlug": "yzdnn",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/swzh16",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/yzdnn/ShanWeiZhouHei-16",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/yzdnn/ShanWeiZhouHei-16",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/swzh16/source/Regular.ttf",
+   "sha256": "057408368e5cb7deb3c9ba9f6abae1be443ffbb6ec026df0b334c4b52e0e84e9",
+   "staged": false,
+   "bytes": 3030044,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

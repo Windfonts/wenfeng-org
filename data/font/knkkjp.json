@@ -17,7 +17,7 @@
  },
  "foundry": "文字枠研究 / Moji-Waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/knkkjp",
@@ -25,7 +25,7 @@
   "Normal"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/knkkjp/source/Normal.otf",
+   "sha256": "52b4b2b3851ccd8f0c92c0f84d33516e17269bc2c89a164c5bcaa671f4c48f63",
+   "staged": false,
+   "bytes": 2118392,
+   "file": "Normal.otf"
   },
   {
    "kind": "slice",

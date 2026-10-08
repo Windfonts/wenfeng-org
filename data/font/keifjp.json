@@ -17,7 +17,7 @@
  },
  "foundry": "Do-Font",
  "foundrySlug": "do-font",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/keifjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/keifjp/source/Regular.ttf",
+   "sha256": "d5795bdff960c2b2ec5727ffeb79d836f8f11dac3015f6e16089a912e9cced6f",
+   "staged": false,
+   "bytes": 4348192,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

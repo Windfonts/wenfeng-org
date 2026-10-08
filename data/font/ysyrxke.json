@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Sly1.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysyrxke/source/Regular.ttf",
+   "sha256": "f606d03872c01f6676e9c841205c3f8a4984ca07aa8aeded0b1cf96b5103da1d",
+   "staged": false,
+   "bytes": 12707232,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

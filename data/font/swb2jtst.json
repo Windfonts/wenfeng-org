@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/SweiB2Sugar.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/swb2jtst/source/Regular.ttf",
+   "sha256": "1f34094baa78deeabebfeef4596a12c6c831802887d4cfe592ee89ef65ad8d72",
+   "staged": false,
+   "bytes": 25447036,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

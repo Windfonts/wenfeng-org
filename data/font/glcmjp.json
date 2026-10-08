@@ -17,7 +17,7 @@
  },
  "foundry": "gutenberg-labo",
  "foundrySlug": "gutenberg-labo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/glcmjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/glcmjp/source/Regular.ttf",
+   "sha256": "e9b368546b98474170caa7b5990326780ee3d59bda199bb45501c7f2914e6b5e",
+   "staged": false,
+   "bytes": 13782284,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

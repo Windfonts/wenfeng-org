@@ -22,7 +22,7 @@
  },
  "foundry": "Unbounded Sans",
  "foundrySlug": "unbounded",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wjht",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/wjht/source/Regular.ttf",
+   "sha256": "d37d10dbb85c7403b164a4565e4e2c837cbbb10005ec812a721104600fc9686d",
+   "staged": false,
+   "bytes": 4260296,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

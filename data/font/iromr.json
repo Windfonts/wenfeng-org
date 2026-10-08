@@ -17,7 +17,7 @@
  },
  "foundry": "modi-factory",
  "foundrySlug": "modi-factory",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/iromr",
@@ -27,7 +27,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://modi.jpn.org/",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "link",
    "href": "https://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/iromr/source/Regular.ttf",
+   "sha256": "de88bb27f8de7bc78255418a20f34f0830beda9c4477c36a22a4df3567d2d107",
+   "staged": false,
+   "bytes": 10681912,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

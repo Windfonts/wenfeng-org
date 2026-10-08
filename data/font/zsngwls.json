@@ -17,7 +17,7 @@
  },
  "foundry": "InkPantherType",
  "foundrySlug": "inkpanther-type",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zsngwls",
@@ -26,7 +26,7 @@
   "Lite-Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/InkPantherType/CheeseFoamOolongSong",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "git",
    "href": "https://github.com/InkPantherType/CheeseFoamOolongSong",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zsngwls/source/Bold.ttf",
+   "sha256": "960d8d3a9b5fdecdf42b9a87e34803f2e46440af270b3316bf049369a455bd6d",
+   "staged": false,
+   "bytes": 80058000,
+   "file": "Bold.ttf"
   },
   {
    "kind": "slice",

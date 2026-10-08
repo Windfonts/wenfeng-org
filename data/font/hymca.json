@@ -17,7 +17,7 @@
  },
  "foundry": "GlyphWiki",
  "foundrySlug": "hanamin",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hymca",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hymca/source/Regular.ttf",
+   "sha256": "7ca87559414474848fc513a8d8eb42d5b0f8194c30c2abdfbfedff5398ec88d7",
+   "staged": false,
+   "bytes": 22761228,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

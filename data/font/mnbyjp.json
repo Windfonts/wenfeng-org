@@ -17,7 +17,7 @@
  },
  "foundry": "modi-factory",
  "foundrySlug": "modi-factory",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mnbyjp",
@@ -26,7 +26,7 @@
   "Sakura"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://modi.jpn.org/",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "link",
    "href": "https://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/mnbyjp/source/Icho.otf",
+   "sha256": "53198c013b1cdbfd85e45237258d5e41e49f7360a327ae9852985181bde4b2af",
+   "staged": false,
+   "bytes": 372048,
+   "file": "Icho.otf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "Nanigashitei",
  "foundrySlug": "nanigashi",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hmsxt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hmsxt/source/Regular.ttf",
+   "sha256": "9e36860fd6656269c5a44e55c5dfb1bff8bf424773475551346b7d48c3bc2003",
+   "staged": false,
+   "bytes": 17799696,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

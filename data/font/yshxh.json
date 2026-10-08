@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yshxh",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Steve-Yuu/YShi-NewHei",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/Steve-Yuu/YShi-NewHei",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yshxh/source/YShiNewHeiGGJ-Regular.ttf",
+   "sha256": "a6e4ab841950e0d93638ebccb0c07b984d47dc1f362774e8e23d1792f4333f7d",
+   "staged": false,
+   "bytes": 8002180,
+   "file": "YShiNewHeiGGJ-Regular.ttf"
   },
   {
    "kind": "slice",

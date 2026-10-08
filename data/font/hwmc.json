@@ -17,7 +17,7 @@
  },
  "foundry": "汇文",
  "foundrySlug": "huiwen",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hwmc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hwmc/source/Regular.otf",
+   "sha256": "1c491750613de17d007ef9b8b4937b15cdaaa936a6ae2485c5dc0cee200fb044",
+   "staged": false,
+   "bytes": 16625636,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

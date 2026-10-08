@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Fupx.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/fhxs10/source/Regular.ttf",
+   "sha256": "04de2c9adf78db676bd910fd229e16c1d70230b776579049ce82f7c6a06703f2",
+   "staged": false,
+   "bytes": 3957440,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

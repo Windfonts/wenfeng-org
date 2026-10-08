@@ -17,7 +17,7 @@
  },
  "foundry": "font.websozai.jp",
  "foundrySlug": "websozai",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cjxtjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://font.websozai.jp/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://font.websozai.jp/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cjxtjp/source/Regular.ttf",
+   "sha256": "bd4ebe661508ac8fcc6093916b45ae75900626c997133a1bdaaa6c2cb90fb5a6",
+   "staged": false,
+   "bytes": 2754732,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

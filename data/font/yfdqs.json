@@ -17,7 +17,7 @@
  },
  "foundry": "余繁",
  "foundrySlug": "yufan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yfdqs",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/yfdqs/source/Regular.otf",
+   "sha256": "a21d8d4e487c2531eb266636ee4b1fa00fbc4ba3d015e19970ba04d5d9832423",
+   "staged": false,
+   "bytes": 13248196,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

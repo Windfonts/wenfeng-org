@@ -17,7 +17,7 @@
  },
  "foundry": "何某亭 / Nanigashitei",
  "foundrySlug": "sleepcows-nanigashitei",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ottmjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://font.sleepcows.com/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://font.sleepcows.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ottmjp/source/Regular.ttf",
+   "sha256": "d0afc192b2ab1d893ce70dcfa207e2b917a3523268356b71049b4b1efdc63f3f",
+   "staged": false,
+   "bytes": 7716240,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

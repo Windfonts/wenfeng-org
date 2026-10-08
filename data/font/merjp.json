@@ -17,7 +17,7 @@
  },
  "foundry": "omonomo",
  "foundrySlug": "omonomo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/merjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/merjp/source/Regular.ttf",
+   "sha256": "2abc4283fb2ea9fcc4f8683ee6db9af4e75c063cd187c1ddd7782b327626c650",
+   "staged": false,
+   "bytes": 7110484,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

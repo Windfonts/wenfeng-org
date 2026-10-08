@@ -39,19 +39,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/XiaolaiMonoSC.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/lxgw/kose-font",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xlztdksc/source/XiaolaiMono-Regular.ttf",
+   "sha256": "802b658db492e02ae5b659f5b56d7d4ef8f77609515bdcc82f462ae912888c33",
+   "staged": false,
+   "bytes": 22199284,
+   "file": "XiaolaiMono-Regular.ttf"
   },
   {
    "kind": "slice",

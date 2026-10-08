@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Jlpx.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/gdxs12/source/Regular.ttf",
+   "sha256": "f273578d4866a541bcba24cce773ef1edfcca1755d64a2b5cf362e90b95f655e",
+   "staged": false,
+   "bytes": 488040,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

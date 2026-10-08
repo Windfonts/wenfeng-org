@@ -46,11 +46,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Sgdk.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/sgdk/source/Regular.ttf",
+   "sha256": "87d2974afb7bbdb99d9c19931e925dca4d11d76ed9c82789abb4dc494db31406",
+   "staged": false,
+   "bytes": 13415396,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

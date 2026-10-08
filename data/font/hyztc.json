@@ -17,7 +17,7 @@
  },
  "foundry": "WD-XL",
  "foundrySlug": "wdxl",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hyztc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/NightFurySL2001/WD-XL-font",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/NightFurySL2001/WD-XL-font",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hyztc/source/WD-XLLubrifontTC-Regular.otf",
+   "sha256": "51c179e927526a9acd88b7722909e44c958133733ca316e824f812a28713768b",
+   "staged": false,
+   "bytes": 6161104,
+   "file": "WD-XLLubrifontTC-Regular.otf"
   },
   {
    "kind": "slice",

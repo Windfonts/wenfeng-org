@@ -34,19 +34,21 @@
  "lineage": null,
  "files": [
   {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Xwxzsplus.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
-  {
    "kind": "upstream",
    "label": "上游 github.com",
    "format": "git",
    "href": "https://github.com/lxgw/LxgwNeoZhiSong",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxzsp/source/LXGWNeoZhiSongPlus.ttf",
+   "sha256": "639595c65001872d0da16dacaeb7de3ba396c64c37b70a16feb1536091bb6c1f",
+   "staged": false,
+   "bytes": 12756806,
+   "file": "LXGWNeoZhiSongPlus.ttf"
   },
   {
    "kind": "slice",

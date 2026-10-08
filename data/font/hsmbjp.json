@@ -17,7 +17,7 @@
  },
  "foundry": "opentype.jp / 武蔵システム",
  "foundrySlug": "kouzan-aoyagi",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hsmbjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://opentype.jp/kouzangyousho.htm",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "http://opentype.jp/kouzangyousho.htm",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hsmbjp/source/Regular.otf",
+   "sha256": "661496e1bedb48d22bc8d019477a101c50e36111c19cfb39ad63dc1551ec9e7f",
+   "staged": false,
+   "bytes": 6045160,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

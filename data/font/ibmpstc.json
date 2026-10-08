@@ -17,7 +17,7 @@
  },
  "foundry": "IBM",
  "foundrySlug": "ibm-plex",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ibmpstc",
@@ -32,7 +32,7 @@
   "Thin"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/IBM/plex",
   "syncedAt": null,
@@ -46,6 +46,16 @@
    "format": "git",
    "href": "https://github.com/IBM/plex",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ibmpstc/source/Regular.ttf",
+   "sha256": "34420a7acdbfd1d3a31d90c650292cd7064ef0087a64f74010faf5feea723714",
+   "staged": false,
+   "bytes": 5460836,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

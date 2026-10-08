@@ -22,7 +22,7 @@
  },
  "foundry": "Steve-Yuu",
  "foundrySlug": "steve-yuu",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cqcqt",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://openfontlicense.org",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://openfontlicense.org",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cqcqt/source/ChuanQu-Regular.ttf",
+   "sha256": "2ed7e4a53de771b2d46d86f4479d40d88d5419ec14c8986ce729cdb3fcc87be2",
+   "staged": false,
+   "bytes": 4364360,
+   "file": "ChuanQu-Regular.ttf"
   },
   {
    "kind": "slice",

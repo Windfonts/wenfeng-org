@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Tjlt.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/tjlt/source/Regular.ttf",
+   "sha256": "a62b797d8a3b283791700c7b1a476dda34d11843b68bcde39960db78d22052d8",
+   "staged": false,
+   "bytes": 5801128,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

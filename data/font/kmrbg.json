@@ -17,7 +17,7 @@
  },
  "foundry": "MODI工場",
  "foundrySlug": "modi-koujou",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/kmrbg",
@@ -26,7 +26,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://modi.jpn.org/",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "link",
    "href": "http://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/kmrbg/source/Regular.ttf",
+   "sha256": "382b0d8374d76ecf7c2fe3de71b53f80e0958b96f847b3e625f9582821f800b6",
+   "staged": false,
+   "bytes": 4309524,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

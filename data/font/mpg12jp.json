@@ -17,7 +17,7 @@
  },
  "foundry": "M+ 字体计划",
  "foundrySlug": "mplus",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mpg12jp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://mplus-fonts.osdn.jp/mplus-bitmap-fonts/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://mplus-fonts.osdn.jp/mplus-bitmap-fonts/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mpg12jp/source/Regular.ttf",
+   "sha256": "9eacfe6ab8a9d4ec76857de1e31534130c99d297300dd66ca2d846f453d952b2",
+   "staged": false,
+   "bytes": 2528020,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

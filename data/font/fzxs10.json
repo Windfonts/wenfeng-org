@@ -37,11 +37,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Arkp.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/fzxs10/source/Regular.ttf",
+   "sha256": "699cdd76e80535603b292d348b3ba5a61320b916f1bea95a8a19a1798c41ce47",
+   "staged": false,
+   "bytes": 528276,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yyxmc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://okoneya.jp/font/GenEiKoburiMin_v6.1.zip",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yyxmc/source/Regular.ttf",
+   "sha256": "c27fb4039ac9fae19152716992b5b9d07558e24f6cccea7b0c1abd0109235166",
+   "staged": false,
+   "bytes": 8486332,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

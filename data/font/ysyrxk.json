@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Slyr.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysyrxk/source/Regular.ttf",
+   "sha256": "10a92c32d388f119db8a975fe6f0507ec48d15e3050e7ff2971c3784ad878580",
+   "staged": false,
+   "bytes": 12639808,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -17,7 +17,7 @@
  },
  "foundry": "梅字体",
  "foundrySlug": "ume",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mhtug",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://metadata.ftp-master.debian.org/changelogs/main/f/fonts-horai-umefont/fonts-horai-umefont_670-5_copyright",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mhtug/source/Regular.ttf",
+   "sha256": "46b4748d44e9038801c6d116ad7cc59271ef3c275785b385d541543e5db0f781",
+   "staged": false,
+   "bytes": 4150100,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

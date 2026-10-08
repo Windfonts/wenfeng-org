@@ -17,15 +17,15 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nagino",
  "weights": [
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/amazusa/Nagino",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/amazusa/Nagino",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/nagino/source/nagino.otf",
+   "sha256": "d84306f6dc550cbd02b9e584abf967bb80766641cd9e61463d9c860675e85982",
+   "staged": false,
+   "bytes": 4308700,
+   "file": "nagino.otf"
   },
   {
    "kind": "slice",

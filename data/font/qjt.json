@@ -17,7 +17,7 @@
  },
  "foundry": "Lingdong Huang",
  "foundrySlug": "lingdong",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/qjt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/qjt/source/Regular.ttf",
+   "sha256": "2ee30738d37b102bfa90e56cd04fde2620ccef012b44390b77b0703cf995cf5b",
+   "staged": false,
+   "bytes": 11038112,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -17,7 +17,7 @@
  },
  "foundry": "omonomo",
  "foundrySlug": "omonomo",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/awrjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/awrjp/source/Regular.ttf",
+   "sha256": "98d89ffd43a1683a8f59b294e20f96c9baa09cb1c361f60d0c354a6816089818",
+   "staged": false,
+   "bytes": 6849716,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -17,7 +17,7 @@
  },
  "foundry": "JT Foundry",
  "foundrySlug": "jt-foundry",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tbht",
@@ -27,7 +27,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://sites.google.com/view/jtfoundry/en/downloads",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "link",
    "href": "https://sites.google.com/view/jtfoundry/en/downloads",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/tbht/source/Regular.ttf",
+   "sha256": "8cc967e1e428c552701c461e8169e6ae76c7a23694ea1a6a786d6746adec53c4",
+   "staged": false,
+   "bytes": 20659344,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

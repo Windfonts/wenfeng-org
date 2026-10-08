@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hlzsjt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://www.maoken.com/freefonts/17746.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hlzsjt/source/Regular.otf",
+   "sha256": "aa9acda893029add8d8827d53f32ba9bc413655871961ef8e2747e60860dc0b5",
+   "staged": false,
+   "bytes": 6496068,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

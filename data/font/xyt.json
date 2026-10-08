@@ -22,7 +22,7 @@
  },
  "foundry": "斜月",
  "foundrySlug": "smiley-moon",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xyt",
@@ -32,7 +32,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -40,6 +40,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xyt/source/Regular.ttf",
+   "sha256": "f251fc32c48aba64da243abcf3e20cf90d8121d26052e967c6ef50e8e6539101",
+   "staged": false,
+   "bytes": 18242984,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

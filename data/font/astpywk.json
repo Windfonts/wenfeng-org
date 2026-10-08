@@ -22,7 +22,7 @@
  },
  "foundry": "澳声通",
  "foundrySlug": "toneoz",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/astpywk",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astpywk/source/Regular.ttf",
+   "sha256": "3faba5262f9cde31cc184848dd3dec7be65030a88089801b3e528f429f62ce29",
+   "staged": false,
+   "bytes": 20028708,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

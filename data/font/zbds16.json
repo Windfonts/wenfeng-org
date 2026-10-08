@@ -22,7 +22,7 @@
  },
  "foundry": "yzdnn",
  "foundrySlug": "yzdnn",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zbds16",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zbds16/source/Regular.ttf",
+   "sha256": "b36947389aff05fbfed574fe7a7e58dc354c00f107fa616a2fd2b20ca12df4a6",
+   "staged": false,
+   "bytes": 4390276,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

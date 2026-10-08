@@ -17,7 +17,7 @@
  },
  "foundry": "文字枠研究 / Moji-Waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/albjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/albjp/source/Regular.otf",
+   "sha256": "29cd8cb27279ca7de9f2bc89554b8aa9e24885ba60faee40a4daf5aab35d5eb7",
+   "staged": false,
+   "bytes": 11900,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

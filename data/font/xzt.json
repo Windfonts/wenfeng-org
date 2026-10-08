@@ -24,7 +24,7 @@
  },
  "foundry": "Yuchen Tian",
  "foundrySlug": "kaonashi-tyc",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xzt",
@@ -32,7 +32,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -40,6 +40,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/xzt/source/Regular.otf",
+   "sha256": "f6194046d6e918077da34cfac8d0277f3577019404912303153be26c6a2f9dcf",
+   "staged": false,
+   "bytes": 18654380,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

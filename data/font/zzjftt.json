@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Zzft.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zzjftt/source/Regular.ttf",
+   "sha256": "2fc0f003729b19929271a4b3d60684780c1140b54c99d680bf046ddb3d4bc567",
+   "staged": false,
+   "bytes": 21449656,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

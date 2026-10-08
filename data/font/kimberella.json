@@ -17,7 +17,7 @@
  },
  "foundry": "moji-waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/kimberella",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/kimberella/source/Regular.otf",
+   "sha256": "0d6be0e1cbbe0cd7029456ca56ee456006b4c26fd685c5a4de53f6541f16f36e",
+   "staged": false,
+   "bytes": 14608,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

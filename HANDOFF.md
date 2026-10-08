@@ -1,3 +1,5 @@
+> 10-08 开源本站下载、免费商用非强制官网也提供：[Grok]。人「开源字体都要能提供下载，免费商用的只要不是强制非要去官网下载的都要提供。」假 staged 113 不当本站。本地真 TTF/OTF 478 款 + 霞鹜文楷/思源 CN 等 15 款上传 `{norm}/source/`。首页「收录 739 款 · 本站可下载 493 款」。官方 120、pending 101、未收录 25。普惠体/仓耳/方正/站酷等 57 强制官网不托管。91 个 LFS 指针未接线。构建 4419，check.py PASS。预览 :16041。未发 OSS/CF 站，未写 true-source.json。回退 `data/_bak-source-host-20261008/font-before/`。本提交。
+>
 > 10-08 未收录按店面许可和原地址拉取：[Grok]。人「直接说未收录怎么弄…app 都核查过给了原地址和许可证，你就不能去下载和拉取对齐」。未收录=offer missing（无许可正文且无原地址），不是「没进目录」。按店面 API / fonts.json / 拆包 OFL / GitHub LICENSE / 标准 OFL 写入 197 条：官方下载 130、暂无下载 62（pending+full）；未收录 222→25（店面没有的 25 款）。未镜像不得升本站。未改五态用词，未发桶，未跑 export。构建 4419，check.py PASS。`/source/fzxs12/` 暂无下载（包内 OFL）；`/source/gsuihk/` 官方下载 GitHub，许可页有 OFL 正文。回退 `data/_bak-missing-fetch-20261008/`。本提交。
 >
 > 10-08 OFL SPDX + 开源商用再分发：[Grok]。人「两列一起改」。99 条 `licenseName=OFL` 写入 `spdx=OFL-1.1`；116 条店面「开源商用」`distribution` false→true（含那 99 条 + 传趣 + 14 条 JFドット + 2 条 Apache）。未改 `offer` / `textState` / `licenseName`。构建 4302 页。`check.py` PASS。方舟像素 12 `/source/fzxs12/` 现 OFL-1.1、未收录；传趣 `/license/cqcqt/` 可分发可出证。回退 `data/_bak-spdx-dist-20261008/`。`export-wenfeng.py` 补裸 OFL 与开源商用默认 dist，未跑全量。本提交。

@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Qkhc.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/qkhtcl/source/Regular.otf",
+   "sha256": "1d9af7ad811b5c4bf360acde8d270e3325014428142a27f11335b6e4ce42e1f2",
+   "staged": false,
+   "bytes": 12049736,
+   "file": "Regular.otf"
   },
   {
    "kind": "upstream",

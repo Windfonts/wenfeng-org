@@ -22,7 +22,7 @@
  },
  "foundry": "中文网字计划",
  "foundrySlug": "guiwonder",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hjst",
@@ -33,7 +33,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hjst/source/Regular.ttf",
+   "sha256": "cd8dab07face8611f7fd3f54498404a6800a9c2bdf7edd7c3ccb4b44d0bb2273",
+   "staged": false,
+   "bytes": 20424656,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

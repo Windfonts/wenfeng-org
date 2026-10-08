@@ -22,7 +22,7 @@
  },
  "foundry": "香萃",
  "foundrySlug": "xiangcui",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xcdzj",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Miiiller",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/Miiiller",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xcdzj/source/Regular.ttf",
+   "sha256": "e8f77d1ab3b8558b3e130e9cf07af52b960b58e277abfb14522ddef2606a739a",
+   "staged": false,
+   "bytes": 2959724,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

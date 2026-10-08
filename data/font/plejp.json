@@ -17,7 +17,7 @@
  },
  "foundry": "ryota2357",
  "foundrySlug": "ryota2357",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/plejp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/ryota2357/PleckJP",
   "syncedAt": null,
@@ -42,6 +42,16 @@
    "format": "git",
    "href": "https://github.com/ryota2357/PleckJP",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/plejp/source/Regular.ttf",
+   "sha256": "ed266b94724cdd9ee40d60e84d98917dbdd9012aa4c1472b05f255db8b9d42c3",
+   "staged": false,
+   "bytes": 7879680,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

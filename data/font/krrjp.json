@@ -17,7 +17,7 @@
  },
  "foundry": "Koruri",
  "foundrySlug": "koruri",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/krrjp",
@@ -29,7 +29,7 @@
   "Semibold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Koruri/Koruri",
   "syncedAt": null,
@@ -43,6 +43,16 @@
    "format": "git",
    "href": "https://github.com/Koruri/Koruri",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/krrjp/source/Regular.ttf",
+   "sha256": "bb26bde06a30ec071a3b2d4a9a74132f261ce64e69f7845ff9c26eeba4d32d5d",
+   "staged": false,
+   "bytes": 1864628,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

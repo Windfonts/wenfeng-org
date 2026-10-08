@@ -46,11 +46,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Sgyt.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/sgyt/source/Regular.ttf",
+   "sha256": "4e073ebc2c8f0369afe15fd461a3e46b9484d47111a1e115e647774fef52a0eb",
+   "staged": false,
+   "bytes": 21218160,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

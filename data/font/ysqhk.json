@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Slqh.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysqhk/source/Regular.ttf",
+   "sha256": "d74ea3a8872e10226833793d0075716a4bcc2a3f72edb45cfeac6330f912d899",
+   "staged": false,
+   "bytes": 14924580,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

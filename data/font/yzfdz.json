@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Ngz.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yzfdz/source/Regular.ttf",
+   "sha256": "9b0a36e165c083503a7eb642a8f0504d79f5968de72900d7a0d15f3e2241835b",
+   "staged": false,
+   "bytes": 3580528,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

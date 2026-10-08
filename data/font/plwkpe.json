@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/plwkpe",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/lxgw/Pengli",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/lxgw/Pengli",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/plwkpe/source/Regular.ttf",
+   "sha256": "4ef70f5ba372d2da3a6767302cca516768f8c75c5c0a9b3e455216f3a8156edc",
+   "staged": false,
+   "bytes": 10110212,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Wqys.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/wqydzst/source/Regular.ttf",
+   "sha256": "23a0d07b6f957276782e105084e0767260428d69411808ef37944ea40ab93345",
+   "staged": false,
+   "bytes": 20765376,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

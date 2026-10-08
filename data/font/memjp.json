@@ -17,7 +17,7 @@
  },
  "foundry": "modi-factory",
  "foundrySlug": "modi-factory",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/memjp",
@@ -27,7 +27,7 @@
   "Square"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://modi.jpn.org/",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "link",
    "href": "https://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/memjp/source/Regular.otf",
+   "sha256": "e7ecb1b8019bdaace94e19b80f9f898936690a76f3783388bd23cc8b26682e05",
+   "staged": false,
+   "bytes": 395360,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

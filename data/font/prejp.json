@@ -17,7 +17,7 @@
  },
  "foundry": "orioncactus",
  "foundrySlug": "orioncactus",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/prejp",
@@ -34,7 +34,7 @@
   "Variable"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/orioncactus/pretendard",
   "syncedAt": null,
@@ -48,6 +48,16 @@
    "format": "git",
    "href": "https://github.com/orioncactus/pretendard",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/prejp/source/Regular.ttf",
+   "sha256": "b14698ed6d82737f45e918d079bca6fc498a107bcb094b56c5229dbddf3246d3",
+   "staged": false,
+   "bytes": 5462268,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

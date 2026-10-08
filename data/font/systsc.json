@@ -41,11 +41,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Systsc.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/systsc/source/Regular.otf",
+   "sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+   "staged": false,
+   "bytes": 24543332,
+   "file": "Regular.otf"
   },
   {
    "kind": "upstream",

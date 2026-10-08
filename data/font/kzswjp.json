@@ -17,7 +17,7 @@
  },
  "foundry": "kazesawa",
  "foundrySlug": "kazesawa",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/kzswjp",
@@ -30,7 +30,7 @@
   "Semibold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/kazesawa/kazesawa",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/kazesawa/kazesawa",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/kzswjp/source/Regular.ttf",
+   "sha256": "2094fcfb791cde6cbfadd76f0ad3a0676507997b8eaec1126ab13444192effa8",
+   "staged": false,
+   "bytes": 1964484,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

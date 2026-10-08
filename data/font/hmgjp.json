@@ -17,7 +17,7 @@
  },
  "foundry": "font-gloomy",
  "foundrySlug": "font-gloomy",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hmgjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://font.gloomy.jp/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://font.gloomy.jp/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hmgjp/source/Regular.otf",
+   "sha256": "551ef286e0ef92916ae8289d82da85c2df6a1aacb09754a7f541683c893a3533",
+   "staged": false,
+   "bytes": 3799020,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

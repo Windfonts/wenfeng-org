@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Ckbf.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/pwdhqt/source/Regular.ttf",
+   "sha256": "4bb938186fd6c2557d2b5dab55f20820aa45a997ebaf5c2b1a693af64c5cec31",
+   "staged": false,
+   "bytes": 18044216,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -17,7 +17,7 @@
  },
  "foundry": "自家製フォント工房",
  "foundrySlug": "jikasei",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jfdk14",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://jikasei.me/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "http://jikasei.me/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jfdk14/source/Regular.ttf",
+   "sha256": "7eb4cf9696f37c8eba3190b6da77504035c934cf5b4ddd2d9650755dc4c2b2f6",
+   "staged": false,
+   "bytes": 2922868,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

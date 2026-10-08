@@ -17,7 +17,7 @@
  },
  "foundry": "ロゴタイプJP",
  "foundrySlug": "logotype-jp",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cyv3jp",
@@ -25,7 +25,7 @@
   "Medium"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://logotype.jp/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://logotype.jp/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/cyv3jp/source/Medium.otf",
+   "sha256": "ec0d07e89af612c6263ccaa15d9ad8d9eefdf4e77a6963d187a9e0c0628940af",
+   "staged": false,
+   "bytes": 4309164,
+   "file": "Medium.otf"
   },
   {
    "kind": "slice",

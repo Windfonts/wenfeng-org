@@ -17,7 +17,7 @@
  },
  "foundry": "yuru7",
  "foundrySlug": "yuru7",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/minmjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/minmjp/source/Regular.ttf",
+   "sha256": "09b775ee18663c27f396a0f5c0d1c9d3878e0df3ab6f60d2c3232d5da2f9af1c",
+   "staged": false,
+   "bytes": 5708728,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

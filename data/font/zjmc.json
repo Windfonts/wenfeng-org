@@ -17,7 +17,7 @@
  },
  "foundry": "FLOP Design",
  "foundrySlug": "flop design",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zjmc",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://flopdesign.booth.pm/items/2747965",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://flopdesign.booth.pm/items/2747965",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zjmc/source/Regular.ttf",
+   "sha256": "82c7d5fe924966c231adb4275d86ef0176390e755ccaaca9b3f3407516229657",
+   "staged": false,
+   "bytes": 9815820,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

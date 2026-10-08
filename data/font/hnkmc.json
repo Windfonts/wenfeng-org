@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hnkmc",
@@ -25,7 +25,7 @@
   "Light"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hnkmc/source/Light.otf",
+   "sha256": "9674928eece0ac82d3fc549a9068b1e7e88e1c5271e125c82c50e4360c481a21",
+   "staged": false,
+   "bytes": 3584472,
+   "file": "Light.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

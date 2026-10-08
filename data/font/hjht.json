@@ -46,11 +46,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Hjht.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hjht/source/Regular.ttf",
+   "sha256": "6404a7f41699ea044e49dbf0c8c750b0cb03ba627e01d3726a2fe8904f7f76ed",
+   "staged": false,
+   "bytes": 11754844,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -22,7 +22,7 @@
  },
  "foundry": "Keynote研究所",
  "foundrySlug": "keynote",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ysxhts",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://www.maoken.com/freefonts/4535.html",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://www.maoken.com/freefonts/4535.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysxhts/source/Regular.otf",
+   "sha256": "514d8062e4e96b3fdba4042d9f7e339563ccdb55dd65a2e14fc29386290b060e",
+   "staged": false,
+   "bytes": 10043796,
+   "file": "Regular.otf"
   },
   {
    "kind": "slice",

@@ -22,7 +22,7 @@
  },
  "foundry": "LogoSC",
  "foundrySlug": "logosc",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/lsclzt",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/lsclzt/source/Regular.ttf",
+   "sha256": "0180f21c9911bc2358cbbee0674cd51e783f3f63e09ffb08b03b082e6e400bdc",
+   "staged": false,
+   "bytes": 2535952,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

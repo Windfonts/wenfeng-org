@@ -17,7 +17,7 @@
  },
  "foundry": "Cockatrice Digital",
  "foundrySlug": "cockatrice",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tktpjp",
@@ -28,7 +28,7 @@
   "SemiBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://cktrc.com/",
   "syncedAt": null,
@@ -42,6 +42,16 @@
    "format": "link",
    "href": "https://cktrc.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/tktpjp/source/Regular.ttf",
+   "sha256": "84fa79a9330b48bf4806253f4915a62c325fbb36fec10891d946a0ba554d37a1",
+   "staged": false,
+   "bytes": 5545332,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

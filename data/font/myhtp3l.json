@@ -17,7 +17,7 @@
  },
  "foundry": "Pal3love",
  "foundrySlug": "pal3love",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/myhtp3l",
@@ -64,7 +64,7 @@
   "TW-W7"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Pal3love/dream-han-cjk",
   "syncedAt": null,
@@ -78,6 +78,16 @@
    "format": "git",
    "href": "https://github.com/Pal3love/dream-han-cjk",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/myhtp3l/source/CN-W1.ttf",
+   "sha256": "63e7a3d2f54b769cf1d250d6737809ad95fd5566b45b32dad3139b2e24211576",
+   "staged": false,
+   "bytes": 11599612,
+   "file": "CN-W1.ttf"
   },
   {
    "kind": "slice",

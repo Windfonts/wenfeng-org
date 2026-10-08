@@ -17,7 +17,7 @@
  },
  "foundry": "汉典",
  "foundrySlug": "zdic",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hdqxwzt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hdqxwzt/source/Regular.ttf",
+   "sha256": "af293a990613a5865a74024771cdee785fa0251b59820577b439d12e6e1bd3f2",
+   "staged": false,
+   "bytes": 2325296,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

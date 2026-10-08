@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Zlrp16.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zlyxs16/source/Regular.ttf",
+   "sha256": "55420aa3f8fc78b933c64af9071feb47e8b1442e9fb65e3da3e4dc5a743b205f",
+   "staged": false,
+   "bytes": 2037004,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

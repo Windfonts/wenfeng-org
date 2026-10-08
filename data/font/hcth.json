@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Cltan.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcth/source/Regular.ttf",
+   "sha256": "392fbcc3907554c7d40b7b5a6fb72586623362d88124ea86e7c9f9ce9605e799",
+   "staged": false,
+   "bytes": 9107896,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

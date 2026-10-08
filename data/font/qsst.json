@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Qsst.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/qsst/source/Regular.ttf",
+   "sha256": "14bf7d227bca1bb9aed27939962007e9150b608619c617c24f3479587a872440",
+   "staged": false,
+   "bytes": 19165712,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

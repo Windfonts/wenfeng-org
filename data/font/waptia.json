@@ -17,7 +17,7 @@
  },
  "foundry": "moji-waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/waptia",
@@ -26,7 +26,7 @@
   "Thin"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/waptia/source/Thin.otf",
+   "sha256": "2ff68687402938de02601c381f26abc1b607ea5903b7453750209a1315c47b7e",
+   "staged": false,
+   "bytes": 18112,
+   "file": "Thin.otf"
   },
   {
    "kind": "slice",

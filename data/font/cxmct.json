@@ -22,7 +22,7 @@
  },
  "foundry": "中文网字计划",
  "foundrySlug": "guiwonder",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cxmct",
@@ -33,7 +33,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cxmct/source/Regular.ttf",
+   "sha256": "853e5b3fc7845ab004587ddd52572d1518a04ef39c42d20ed9e638b888b120b5",
+   "staged": false,
+   "bytes": 16280924,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

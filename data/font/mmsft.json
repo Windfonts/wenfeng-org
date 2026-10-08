@@ -17,7 +17,7 @@
  },
  "foundry": "dining-sister",
  "foundrySlug": "dining-sister",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mmsft",
@@ -27,7 +27,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://www.vector.co.jp/",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "link",
    "href": "http://www.vector.co.jp/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mmsft/source/Regular.ttf",
+   "sha256": "ccddcf9db5f70f1ed847384929c185f5a807f6327b6253d781680037de2fd031",
+   "staged": false,
+   "bytes": 4544304,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

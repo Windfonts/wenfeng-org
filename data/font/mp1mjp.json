@@ -17,7 +17,7 @@
  },
  "foundry": "M+ FONTS PROJECT",
  "foundrySlug": "mplus",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mp1mjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mp1mjp/source/Regular.ttf",
+   "sha256": "591a3572db98ee466951699d0f23ad0173348e90a72c2b59b9f1cb13c945c4f4",
+   "staged": false,
+   "bytes": 1564936,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

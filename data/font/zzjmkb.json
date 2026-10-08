@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Zzmk.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zzjmkb/source/Regular.ttf",
+   "sha256": "f1aeda0f63619c6417b6a1b7322322f7fa7f8c1f438f999460d1e89ce00a01a5",
+   "staged": false,
+   "bytes": 16970100,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -22,7 +22,7 @@
  },
  "foundry": "GuiWonder",
  "foundrySlug": "guiwonder",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/symca",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "http://zhs.glyphwiki.org/wiki/GlyphWiki:著作权与许可协议",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/symca/source/Regular.ttf",
+   "sha256": "12b8a349ee8a9bd85395630586f0a0332a72a2dfe8dcffc319c2108eb8747e36",
+   "staged": false,
+   "bytes": 30017812,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

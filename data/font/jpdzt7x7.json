@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Bb7.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jpdzt7x7/source/Regular.ttf",
+   "sha256": "4448dfd8ff0401b09924522888d3c708bfe1937e8114f0a62abe312018581c31",
+   "staged": false,
+   "bytes": 2496388,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -13,7 +13,7 @@
   1. 不当店面：不做样张墙、选字袋、用户账号、控制台。店面是 `app.windfonts.com`（`Windfonts/fonts-front`）。
   2. 不当 CDN：不托管网页字体 CSS。
   3. 不给厂商自拟协议出证（普惠体、仓耳、HarmonyOS、MiSans、OPPO 等），只给原文。
-  4. 不托管禁再分发的原件，只列条目、给出处、给切片门。
+  4. 不托管禁再分发的原件，只列条目、给出处、给切片门。`[部分作废 2026-10-08]` 人：「开源字体都要能提供下载，免费商用的只要不是强制非要去官网下载的都要提供。」开源有原件则本站下载；免费商用仅强制官网（普惠体 / 仓耳 / Harmony / 方正 / 站酷 / 阿里妈妈 等）仍只给出处。假 staged tar.gz 不当本站。
   5. 不放造字编辑器（造字平台独立新域）。本站做入口、收录、缺字导流。首页侧门可以用「造字」作营销衬字，见 **D-10**。不得因这条红线删掉该词。
   6. 生产不改 `wenfeng.org` 域名 DNS 与现网部署，除非人明确指令。
 
@@ -269,3 +269,4 @@
 - `2026-10-08`：人：把 offer 也按短码接回去，并问字体原件有没有放到 OSS。按 leftover 同名档案 + 现有 `textState`/`body` 走 `offer_of`（不把 leftover `source` 接到 `mirror≠mirrored`）。79 条 missing→pending 48 / jump 31；jump 补 18 条 upstream 文件。目录 未收录 301→222，暂无下载 209→257，官方 63→94，本站 113。公网 `wenfeng-original` 243 条与 pack `source/index.json` 120 条 HEAD 全 404；网页分片仍 200。未跑全量 export，未改 ARCHIVE_HREF。回退 `data/_bak-offer-rewire-20261008/`。未新开编号。本提交。记录人：[Grok]。
 - `2026-10-08`：人：两列一起改。店面 `licenseName=OFL` 且本站 `spdx` 空 → `OFL-1.1`（99 条）；店面档位「开源商用」且本站 `distribution=false` → true（116 条，A⊂B）。不改 `offer`/`textState`/`licenseName`，不挂标准 OFL 正文，不动「免费商用」再分发。导出脚本 `spdx_of` 认裸 `OFL`，`dist_of` 对开源商用/开源免费商用默认 true；未跑全量 export。构建 4302；`check.py` PASS。回退 `data/_bak-spdx-dist-20261008/`。未新开编号。本提交。记录人：[Grok]。
 - `2026-10-08`：人：未收录怎么弄，按 app 已核原地址和许可证下载对齐。未收录=offer missing。拉取许可正文（GitHub LICENSE / 店面拆包 OFL / 标准 OFL-1.1）+ 原地址后走 `offer_of`：有 upstream→jump，仅全文→pending（textState=full 即暂无下载），未镜像不得 source。222 条里 197 条已写（jump 130 / pending 67 其中 full 62）；店面没有的 25 条仍 missing。未发明空协议名 SPDX，未翻免费商用 dist，未发桶。构建 4419；check.py PASS。回退 `data/_bak-missing-fetch-20261008/`。未新开编号。本提交。记录人：[Grok]。
+- `2026-10-08`：人：开源字体都要能提供下载，免费商用只要不是强制官网都要提供。假 staged `wenfeng-original/*.tar.gz` 不当本站。本地真件 478 款 + GitHub/park 补 15 款上传 `fonts-packages/{norm}/source/`（桶 wenfeng-fonts，CDN 200）。本站 113→493；官方 120；pending 101；未收录 25。强制官网 57 仍 jump/pending。91 个 Git LFS 指针（132B）未接线。未改五态用词，未发生产，未写 `metadata/true-source.json`。回退 `data/_bak-source-host-20261008/font-before/`。未新开编号。记录人：[Grok]。

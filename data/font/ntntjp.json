@@ -17,7 +17,7 @@
  },
  "foundry": "yuru7",
  "foundrySlug": "yuru7",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ntntjp",
@@ -33,7 +33,7 @@
   "Thin"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -41,6 +41,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ntntjp/source/Regular.ttf",
+   "sha256": "63989062c8c3873c864b17a52add0234de53e2da2b2be1d5a67f92580d7b9070",
+   "staged": false,
+   "bytes": 6517392,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -22,7 +22,7 @@
  },
  "foundry": "ItMarki",
  "foundrySlug": "itmarki",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yqyk",
@@ -32,7 +32,7 @@
   "Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
   "syncedAt": null,
@@ -46,6 +46,16 @@
    "format": "git",
    "href": "https://cdn.jsdmirror.com/gh/ItMarki/jyunsaikaai@main/README.md#readme",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yqyk/source/Regular.ttf",
+   "sha256": "945bffd30e313f316df19e4fd2704e944380092d90f764b909076e3aad2631d1",
+   "staged": false,
+   "bytes": 10991696,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

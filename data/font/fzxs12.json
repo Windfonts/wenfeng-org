@@ -17,7 +17,7 @@
  },
  "foundry": "takwolf",
  "foundrySlug": "takwolf",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/fzxs12",
@@ -31,7 +31,7 @@
   "zh_tw"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/fzxs12/source/zh_hant.otf",
+   "sha256": "923ddfa5a8a093506aad70dd011b26247bf63e6de0879c4abbc7913c6df12e2a",
+   "staged": false,
+   "bytes": 3548124,
+   "file": "zh_hant.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

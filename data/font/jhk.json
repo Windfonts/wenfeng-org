@@ -17,7 +17,7 @@
  },
  "foundry": "Des-Magmeta",
  "foundrySlug": "des-magmeta",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jhk",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Des-Magmeta/PlanKai",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/Des-Magmeta/PlanKai",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jhk/source/Regular.ttf",
+   "sha256": "2ce4d8dc28c74abf5b90c054695c2a2c9cbb71453ca247507f5c98178c95a70d",
+   "staged": false,
+   "bytes": 3139168,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

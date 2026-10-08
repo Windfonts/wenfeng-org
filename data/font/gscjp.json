@@ -17,7 +17,7 @@
  },
  "foundry": "yuru7",
  "foundrySlug": "yuru7",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/gscjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/gscjp/source/Regular.ttf",
+   "sha256": "c502a9fbda4ab137d2322c829db4ff3f3eb2050293d1a2287b5d21e1f93990f9",
+   "staged": false,
+   "bytes": 5461732,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

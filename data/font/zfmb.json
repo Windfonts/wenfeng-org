@@ -22,7 +22,7 @@
  },
  "foundry": "Aqua（阿杰）",
  "foundrySlug": "aqua",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zfmb",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://max-everyday.com/2020/05/masafont/",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://max-everyday.com/2020/05/masafont/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zfmb/source/Regular.ttf",
+   "sha256": "f5a449d3a9ce2170e404050cc2b44bfa16ae48ef8fb06aa5968383ed74e5ed4d",
+   "staged": false,
+   "bytes": 17922528,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

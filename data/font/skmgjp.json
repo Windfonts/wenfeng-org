@@ -17,7 +17,7 @@
  },
  "foundry": "Hukkana",
  "foundrySlug": "hukkana",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/skmgjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Hukkana/Sukima-gothic",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/Hukkana/Sukima-gothic",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/skmgjp/source/Regular.ttf",
+   "sha256": "a03cec95f3acc84352ef289b525ab352d6ecdeb08a34db93f18d4da97ee6ea73",
+   "staged": false,
+   "bytes": 17670428,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

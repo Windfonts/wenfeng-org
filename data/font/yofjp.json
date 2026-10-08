@@ -17,7 +17,7 @@
  },
  "foundry": "Y.OzVox",
  "foundrySlug": "yoz",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yofjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://yozvox.web.fc2.com/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "http://yozvox.web.fc2.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yofjp/source/Regular.ttf",
+   "sha256": "bbfdfecc923a635866f3a347311849b8626da3307195ed524f4bf07e0f970940",
+   "staged": false,
+   "bytes": 13452776,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

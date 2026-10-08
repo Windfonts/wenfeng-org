@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Shp.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/syhtxs/source/Regular.otf",
+   "sha256": "5b2d7d2e9e2548d7976cab46dec2797826855b27803026267e77ddb3478ee084",
+   "staged": false,
+   "bytes": 30737656,
+   "file": "Regular.otf"
   },
   {
    "kind": "upstream",

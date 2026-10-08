@@ -17,7 +17,7 @@
  },
  "foundry": "yuru7",
  "foundrySlug": "yuru7",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/juisee",
@@ -28,7 +28,7 @@
   "RegularItalic"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -36,6 +36,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/juisee/source/Regular.ttf",
+   "sha256": "c2b4a3ee13022984370f4ade42fe793a7d37394b1d6f242a9bae0c1f29a215e3",
+   "staged": false,
+   "bytes": 5290536,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

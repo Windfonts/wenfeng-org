@@ -17,7 +17,7 @@
  },
  "foundry": "逐浪字库",
  "foundrySlug": "zoomla",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zlcsjt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/zlcsjt/source/Regular.otf",
+   "sha256": "a56b46dcde472cb42c07ee5c6e86c6a166746132133c28fe1b43a3ad46c594ca",
+   "staged": false,
+   "bytes": 2413248,
+   "file": "Regular.otf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

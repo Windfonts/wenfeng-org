@@ -17,7 +17,7 @@
  },
  "foundry": "ニコ文字配布所",
  "foundrySlug": "nicomoji",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nckkjp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://nicofont.pupu.jp/",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://nicofont.pupu.jp/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nckkjp/source/Regular.ttf",
+   "sha256": "6d3ee1186a08a23b3a81d0abb8d3990577fb19f5abdda8575c58c1c400853071",
+   "staged": false,
+   "bytes": 1833124,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

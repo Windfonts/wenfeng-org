@@ -22,7 +22,7 @@
  },
  "foundry": "妙笔",
  "foundrySlug": "myil",
- "offer": "source",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nsfq",
@@ -38,14 +38,6 @@
  },
  "lineage": null,
  "files": [
-  {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Nsfx.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
   {
    "kind": "upstream",
    "label": "上游 github.com",

@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/smht",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/MEE-Developers/Mizuki-Gothic",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/MEE-Developers/Mizuki-Gothic",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/smht/source/Regular.ttf",
+   "sha256": "444a807a232f58ecb8a27ba5fe7156172b375d27ecb2d637ebac2805e7d37217",
+   "staged": false,
+   "bytes": 4423504,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

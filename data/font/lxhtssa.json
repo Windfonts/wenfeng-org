@@ -35,11 +35,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Lxht.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/lxhtssa/source/Regular.ttf",
+   "sha256": "216a008e001f17734a597fab214dbf45b493dacdbb0d1a21f9e98d663dce2f0d",
+   "staged": false,
+   "bytes": 10634636,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

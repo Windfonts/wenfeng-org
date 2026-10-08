@@ -17,7 +17,7 @@
  },
  "foundry": "hansha2011",
  "foundrySlug": "hansha2011",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nrdws",
@@ -27,7 +27,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/Hansha2011/NanoDyongMwenSong",
   "syncedAt": null,
@@ -41,6 +41,16 @@
    "format": "git",
    "href": "https://github.com/Hansha2011/NanoDyongMwenSong",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nrdws/source/Regular.ttf",
+   "sha256": "424aa25cc5ff52ef60ed1b7362a9c8f21a35d8c5bf71640b9393766222e41382",
+   "staged": false,
+   "bytes": 22804432,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

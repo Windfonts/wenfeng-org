@@ -17,7 +17,7 @@
  },
  "foundry": "Dela Gothic",
  "foundrySlug": "dela",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mtht",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mtht/source/Regular.ttf",
+   "sha256": "f73c81ed56ca9d07b796228f7f0f7e8f0117b64dcb54da7246f1001ace5c6d19",
+   "staged": false,
+   "bytes": 5469244,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

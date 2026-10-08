@@ -17,7 +17,7 @@
  },
  "foundry": "余繁",
  "foundrySlug": "yufan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yfxy",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yfxy/source/Regular.ttf",
+   "sha256": "be4f4e2d8f83af81ca3eeb8ddb900b91d583ad83cc5460e0c69839e98249ce97",
+   "staged": false,
+   "bytes": 2306268,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

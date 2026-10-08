@@ -17,7 +17,7 @@
  },
  "foundry": "chiron-fonts",
  "foundrySlug": "chiron-fonts",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zht",
@@ -26,7 +26,7 @@
   "Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/chiron-fonts/zev-hei-tc",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "git",
    "href": "https://github.com/chiron-fonts/zev-hei-tc",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zht/source/Regular.ttf",
+   "sha256": "80d177edb218f509139771409568810a330fc1a8fbfe41d0f2794d497fa71a47",
+   "staged": false,
+   "bytes": 17016636,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

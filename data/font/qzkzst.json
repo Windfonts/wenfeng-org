@@ -17,7 +17,7 @@
  },
  "foundry": "全字库",
  "foundrySlug": "cns11643",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/qzkzst",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/qzkzst/source/Regular.ttf",
+   "sha256": "0d9cec4af5a392d106a2ab2de68b97ced6a81dee06fce1044516880e66bd47e9",
+   "staged": false,
+   "bytes": 35581276,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

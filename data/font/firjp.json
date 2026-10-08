@@ -17,7 +17,7 @@
  },
  "foundry": "negset",
  "foundrySlug": "negset",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/firjp",
@@ -28,7 +28,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/negset/Firple",
   "syncedAt": null,
@@ -42,6 +42,16 @@
    "format": "git",
    "href": "https://github.com/negset/Firple",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/firjp/source/Regular.ttf",
+   "sha256": "55f64b400b286b379d97fce2aaee8431949c697a501d383a590e0672547ffd93",
+   "staged": false,
+   "bytes": 8471400,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

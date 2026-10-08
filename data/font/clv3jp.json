@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/clv3jp",
@@ -26,7 +26,7 @@
   "Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://logotype.jp/corporate-logo-font-dl.html",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "git",
    "href": "https://logotype.jp/corporate-logo-font-dl.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/clv3jp/source/Bold.otf",
+   "sha256": "88239d1b11d1f70cdb3a5805791ae6bc0c1b8667bb67fadee20d73edf28cbeb3",
+   "staged": false,
+   "bytes": 2834916,
+   "file": "Bold.otf"
   },
   {
    "kind": "slice",

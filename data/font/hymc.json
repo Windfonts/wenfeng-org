@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Hymc.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hymc/source/Regular.ttf",
+   "sha256": "07c7eb6818cd9565b72635e738aca23b6da1121efd31677b8cfcc1770d8eb65d",
+   "staged": false,
+   "bytes": 27470932,
+   "file": "Regular.ttf"
   },
   {
    "kind": "upstream",

@@ -22,7 +22,7 @@
  },
  "foundry": "RaptorType",
  "foundrySlug": "raptortype",
- "offer": "source",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jzkgeht",
@@ -38,14 +38,6 @@
  },
  "lineage": null,
  "files": [
-  {
-   "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Jzkgeht.tar.gz",
-   "sha256": null,
-   "staged": true
-  },
   {
    "kind": "upstream",
    "label": "上游 github.com",

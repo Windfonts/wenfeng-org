@@ -17,7 +17,7 @@
  },
  "foundry": "遍黑体计划",
  "foundrySlug": "plangothic",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/bhtpgt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/bhtpgt/source/Regular.ttf",
+   "sha256": "4194a3599361593d17bc1a2c2266d037e093538e83f1ea226109c021876cb085",
+   "staged": false,
+   "bytes": 20410332,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

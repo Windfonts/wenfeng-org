@@ -17,7 +17,7 @@
  },
  "foundry": "たぬきフォント",
  "foundrySlug": "tanukifont",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tngjp",
@@ -31,7 +31,7 @@
   "Round-Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/tanukifont/Tanugo",
   "syncedAt": null,
@@ -45,6 +45,16 @@
    "format": "git",
    "href": "https://github.com/tanukifont/Tanugo",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/tngjp/source/Round-Regular.otf",
+   "sha256": "ffad36d90b5962ac435f7af56515abb2d3f26eebfe2956ed784a8eff92316caf",
+   "staged": false,
+   "bytes": 3700396,
+   "file": "Round-Regular.otf"
   },
   {
    "kind": "slice",

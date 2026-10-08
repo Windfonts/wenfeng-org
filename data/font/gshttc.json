@@ -17,7 +17,7 @@
  },
  "foundry": "be5invis",
  "foundrySlug": "be5invis",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/gshttc",
@@ -29,7 +29,7 @@
   "SemiBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/be5invis/Sarasa-Gothic",
   "syncedAt": null,
@@ -43,6 +43,16 @@
    "format": "git",
    "href": "https://github.com/be5invis/Sarasa-Gothic",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/gshttc/source/Regular.ttf",
+   "sha256": "66607fc4a7b2d7128421c25ee14dc4c2352bee123dc1a61dbf8a9a70ae7a65b6",
+   "staged": false,
+   "bytes": 13217604,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

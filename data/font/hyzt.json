@@ -40,11 +40,13 @@
  "files": [
   {
    "kind": "archive",
-   "label": "源文件归档",
-   "format": "tar.gz",
-   "href": "https://cn.windfonts.com/wenfeng-original/Hyzi.tar.gz",
-   "sha256": null,
-   "staged": true
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/hyzt/source/Regular.otf",
+   "sha256": "45095369dda9a99fe7c705d57c37c0b251706db09be823e0d758664030a57d7f",
+   "staged": false,
+   "bytes": 5445500,
+   "file": "Regular.otf"
   },
   {
    "kind": "upstream",

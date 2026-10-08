@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/swrbm",
@@ -25,7 +25,7 @@
   "Medium"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/swrbm/source/Medium.ttf",
+   "sha256": "e7f1b932d4858291a7b01e552cddea611a4b3e9aa64031948fd2871ebeba1f56",
+   "staged": false,
+   "bytes": 1547668,
+   "file": "Medium.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

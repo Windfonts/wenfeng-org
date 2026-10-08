@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yyaga",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://okoneya.jp/font/GenEiAntique_v6.0a.zip",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yyaga/source/Regular.ttf",
+   "sha256": "a04b166a260e67635bff99512355a14de459620df6451d1ee72b4d072370df55",
+   "staged": false,
+   "bytes": 5097622,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

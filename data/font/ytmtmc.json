@@ -17,7 +17,7 @@
  },
  "foundry": "wing-land",
  "foundrySlug": "motomachi",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ytmtmc",
@@ -29,7 +29,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/wing-land/motomachi",
   "syncedAt": null,
@@ -43,6 +43,16 @@
    "format": "git",
    "href": "https://github.com/wing-land/motomachi",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ytmtmc/source/Regular.ttf",
+   "sha256": "4dd86d4f9827b1bc640f6d194c439933d187e9b5a97b74bfe361a0e66ceeb6a6",
+   "staged": false,
+   "bytes": 2026316,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

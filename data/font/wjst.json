@@ -22,7 +22,7 @@
  },
  "foundry": "Takushun Wu",
  "foundrySlug": "takushun",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wjst",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/wjst/source/Regular.ttf",
+   "sha256": "ad8d8fb30c25da7f9981dc02aee23ff0c958f48f5ea823627a60ee66a99518d0",
+   "staged": false,
+   "bytes": 21842384,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

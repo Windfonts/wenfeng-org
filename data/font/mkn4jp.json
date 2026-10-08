@@ -17,7 +17,7 @@
  },
  "foundry": "文字枠研究 / Moji-Waku",
  "foundrySlug": "moji-waku",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mkn4jp",
@@ -26,7 +26,7 @@
   "Square"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://moji-waku.com/",
   "syncedAt": null,
@@ -40,6 +40,16 @@
    "format": "link",
    "href": "https://moji-waku.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "otf",
+   "href": "https://cn.windfonts.com/fonts-packages/mkn4jp/source/Flat.otf",
+   "sha256": "b58c561cb1fadc3566e4fd7cd09fc61de963c828c9f0ce70c03b5320dda43f6b",
+   "staged": false,
+   "bytes": 1533528,
+   "file": "Flat.otf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "modi-factory",
  "foundrySlug": "modi-factory",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hqwjp",
@@ -31,7 +31,7 @@
   "Thin"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://modi.jpn.org/",
   "syncedAt": null,
@@ -45,6 +45,16 @@
    "format": "link",
    "href": "https://modi.jpn.org/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hqwjp/source/Regular.ttf",
+   "sha256": "52415139c27b274ec8325d83b1ef5bb393c85b0ebdabd401061e87f8b16ffc14",
+   "staged": false,
+   "bytes": 2718516,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",
