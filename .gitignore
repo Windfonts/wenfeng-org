@@ -13,3 +13,9 @@ site/dist/
 
 # Local rollback snapshots — do not commit
 data/_bak-*/
+
+# occupancy-safe cn chrome staging
+.deploy-cn-chrome/
+.deploy-cn-chrome.tar
+.deploy-org-html/
+.deploy-org-html.tar

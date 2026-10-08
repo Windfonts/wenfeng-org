@@ -35,6 +35,14 @@
   /* 字体 WebFont：目录名字照 APP 谱系列表。
      包目录 fonts-packages/{norm}/ 一律小写；过渡期仍会试 data-face-pack 原样。
      子集用 data-face-subset；族名改写成店面 data-face-family；样式只作用在名字（.lnm）。 */
+  var ASSET_ORIGIN = (typeof window !== 'undefined' && window.WF_ASSET_ORIGIN)
+    ? String(window.WF_ASSET_ORIGIN).replace(/\/$/, '')
+    : '';
+  function assetUrl(p) {
+    if (!p) return p;
+    if (ASSET_ORIGIN && p.charAt(0) === '/') return ASSET_ORIGIN + p;
+    return p;
+  }
   var FACE_CSS_TPL = 'https://cn.windfonts.com/api/css?family={F}&weight=400&subset=zh-common&version=zh-common';
   var MISS_KEY = 'wf-webfont-miss-v2';
   var FACE_PACK_BASE = 'https://cn.windfonts.com/fonts-packages/';
@@ -975,7 +983,7 @@
       '<div class="cert-inner">' +
         '<header class="cert-header">' +
           '<div class="cert-brand">' +
-            '<img class="cert-logo" src="/assets/wf-icon.webp" alt="" width="34" height="34">' +
+            '<img class="cert-logo" src="' + assetUrl('/assets/wf-icon.webp') + '" alt="" width="34" height="34">' +
             '<span class="cert-brand-text"><b>文风字体</b><i>WENPAI TECHNOLOGY · WINDFONTS</i></span>' +
           '</div>' +
           '<div class="cert-type"><b>' + ct('开源字体 · 合规可查', '開源字體 · 合規可查') +
@@ -1147,17 +1155,17 @@
           var shs = document.createElement('link');
           shs.id = 'wf-shs-css';
           shs.rel = 'stylesheet';
-          shs.href = '/assets/shs/regular.css';
+          shs.href = assetUrl('/assets/shs/regular.css');
           document.head.appendChild(shs);
           var shsb = document.createElement('link');
           shsb.id = 'wf-shs-css-b';
           shsb.rel = 'stylesheet';
-          shsb.href = '/assets/shs/bold.css';
+          shsb.href = assetUrl('/assets/shs/bold.css');
           document.head.appendChild(shsb);
           var shei = document.createElement('link');
           shei.id = 'wf-shsans-css';
           shei.rel = 'stylesheet';
-          shei.href = '/assets/shsans/bold.css';
+          shei.href = assetUrl('/assets/shsans/bold.css');
           document.head.appendChild(shei);
         }
         stage.innerHTML = renderClassicCert(activeCert);

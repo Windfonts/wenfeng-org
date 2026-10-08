@@ -11,6 +11,7 @@
 
 import html
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -77,6 +78,20 @@ FOOT_REST = [
 
 e = lambda s: html.escape("" if s is None else str(s), quote=True)
 SPRITE = re.sub(r"<\?xml[^>]*>\s*", "", (ROOT / "assets/icons.svg").read_text("utf-8"))
+# HTML stays on wenfeng.org (CF). Chrome CSS/JS/woff2/images go to already-filed
+# cn.windfonts.com (oss://wenfeng-fonts Guangzhou). Empty origin = same-host preview.
+# License PDFs stay on the HTML origin. Do not put org HTML in wenfeng-web-hz.
+ASSET_ORIGIN = os.environ.get("WF_ASSET_ORIGIN", "https://cn.windfonts.com").rstrip("/")
+
+
+def asset(path):
+    """Prefix UI chrome. /assets/licenses/ stays on the page origin."""
+    if not path.startswith("/"):
+        path = "/" + path
+    if path.startswith("/assets/licenses/") or not ASSET_ORIGIN:
+        return path
+    return ASSET_ORIGIN + path
+
 # cn.windfonts.com 有 web 包的字体名单（api/css 探测产物 data/webfonts.json；包上架后重跑探测刷新）
 try:
     _wf_doc = json.loads((ROOT / "data/webfonts.json").read_text("utf-8"))
@@ -488,7 +503,8 @@ def _foot_marks():
     fc = (
         '<li><a href="https://feicode.com/Windfonts" target="_blank" rel="noopener"'
         ' title="feiCode 源码（即将离开文风）" aria-label="feiCode 源码">'
-        '<img src="/assets/marks/feicode.svg" alt="" width="26" height="22">feiCode<span class="x">↗</span></a></li>'
+        '<img src="%s" alt="" width="26" height="22">feiCode<span class="x">↗</span></a></li>'
+        % asset("/assets/marks/feicode.svg")
     )
     gh = (
         '<li><a href="https://github.com/Windfonts" target="_blank" rel="noopener"'
@@ -499,8 +515,9 @@ def _foot_marks():
 
 
 def _foot_wm():
-    return ('<a class="wordmark" href="/"><img class="wm-ico" src="/assets/icon.webp" alt="" width="24" height="24">'
-            '<span class="wm-name">文风<span class="wm-alt">开源</span></span></a>')
+    return ('<a class="wordmark" href="/"><img class="wm-ico" src="%s" alt="" width="24" height="24">'
+            '<span class="wm-name">文风<span class="wm-alt">开源</span></span></a>'
+            % asset("/assets/icon.webp"))
 
 
 def _foot_dev(dev):
@@ -591,7 +608,7 @@ def pages_css(*names):
     for n in names:
         p = HERE / "assets" / "pages" / ("%s.css" % n)
         v = int(p.stat().st_mtime) if p.is_file() else 0
-        bits.append('<link rel="stylesheet" href="/assets/pages/%s.css?v=%d">' % (n, v))
+        bits.append('<link rel="stylesheet" href="%s?v=%d">' % (asset("/assets/pages/%s.css" % n), v))
     return "\n".join(bits)
 
 
@@ -600,7 +617,7 @@ def pages_js(*names):
     for n in names:
         p = HERE / "assets" / "pages" / ("%s.js" % n)
         v = int(p.stat().st_mtime) if p.is_file() else 0
-        bits.append('<script src="/assets/pages/%s.js?v=%d" defer></script>' % (n, v))
+        bits.append('<script src="%s?v=%d" defer></script>' % (asset("/assets/pages/%s.js" % n), v))
     return "\n".join(bits)
 
 
@@ -626,8 +643,9 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
     items = NAV if nav_items is None else nav_items
     nav = "".join('<a href="%s"%s>%s</a>' % (h, ' class="is-active"' if section in keys else "", t)
                   for h, t, keys in items)
-    wm = ('<a class="wordmark" href="%s"><img class="wm-ico" src="/assets/icon.webp" alt="" width="24" height="24">'
-          '<span class="wm-name">文风<span class="wm-alt">开源</span></span></a>' % e(wordmark_href))
+    wm = ('<a class="wordmark" href="%s"><img class="wm-ico" src="%s" alt="" width="24" height="24">'
+          '<span class="wm-name">文风<span class="wm-alt">开源</span></span></a>'
+          % (e(wordmark_href), asset("/assets/icon.webp")))
     b_cls = (' class="%s"' % e(body_class)) if body_class else ""
     if footer is None:
         footer = foot_site(dev)
@@ -637,8 +655,9 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <meta name="robots" content="noindex,nofollow">
 <title>%s</title>
 %s<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
-<link rel="stylesheet" href="/assets/tokens.css?v=%d"><link rel="stylesheet" href="/assets/site.css?v=%d">
-<link rel="stylesheet" href="/assets/pages/chrome.css?v=%d">%s
+<link rel="stylesheet" href="%s?v=%d"><link rel="stylesheet" href="%s?v=%d">
+<link rel="stylesheet" href="%s?v=%d">
+<script>window.WF_ASSET_ORIGIN=%s;</script>%s
 </head><body data-page="%s"%s>
 %s
 <header class="topbar"><div class="container topbar-inner">%s
@@ -658,15 +677,20 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 </div></header>
 <main class="container page">%s</main>
 %s
-<script src="/assets/site.js?v=%d" defer></script>
+<script src="%s?v=%d" defer></script>
 </body></html>""" % (
         e(("%s · 文风开源" % title) if title else "文风开源"),
         (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""),
+        asset("/assets/tokens.css"),
         int((HERE / "assets" / "tokens.css").stat().st_mtime),
+        asset("/assets/site.css"),
         int((HERE / "assets" / "site.css").stat().st_mtime),
+        asset("/assets/pages/chrome.css"),
         int((HERE / "assets" / "pages" / "chrome.css").stat().st_mtime),
+        json.dumps(ASSET_ORIGIN, ensure_ascii=False),
         (("\n" + extra_head) if extra_head else ""),
         section, b_cls, SPRITE, wm, nav, nav, body, footer,
+        asset("/assets/site.js"),
         int((HERE / "assets" / "site.js").stat().st_mtime),
     )
 
@@ -732,7 +756,7 @@ def home_prime(fonts, q_id):
 def page_home(data, fonts):
     """首页活页：丙′（开源商用字体主门 + 三侧门）。"""
     body = '<article class="lab-home">%s</article>' % home_prime(fonts, "q")
-    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    extra = '<link rel="stylesheet" href="%s">' % asset("/assets/lab-home.css")
     return layout("home", "", body, "/", extra_head=extra, body_class="lab-home-page", desc='开源字体源文件目录：许可逐款核对，本站可下载，商用证明在线申领。' )
 
 
@@ -857,7 +881,7 @@ def page_lab_home(data, fonts, variant):
     else:
         inner = home_prime(fonts, "lab-q-c")
     body = '<article class="lab-home">%s%s</article>' % (flag, inner)
-    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    extra = '<link rel="stylesheet" href="%s">' % asset("/assets/lab-home.css")
     return layout("home", "首页稿%s" % self_name, body, path, extra_head=extra, body_class="lab-home-page",
                   nav_items=NAV_LAB, wordmark_href=path)
 
@@ -879,7 +903,7 @@ def page_lab_foot(data, fonts, variant):
         % (_fv("页脚稿%s" % self_name, path), others)
     )
     body = '<article class="lab-home">%s%s</article>' % (flag, home_prime(fonts, "lab-fq-%s" % variant))
-    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    extra = '<link rel="stylesheet" href="%s">' % asset("/assets/lab-home.css")
     return layout(
         "home", "页脚稿%s" % self_name, body, path, extra_head=extra,
         body_class="lab-home-page lab-foot-page", footer=foot_lab(variant, path),
@@ -911,7 +935,7 @@ def page_lab_foot_left(data, fonts, variant):
         % (inner, _foot_bottom(path))
     )
     body = '<article class="lab-home">%s%s</article>' % (flag, home_prime(fonts, "lab-fl-%s" % variant))
-    extra = '<link rel="stylesheet" href="/assets/lab-home.css">'
+    extra = '<link rel="stylesheet" href="%s">' % asset("/assets/lab-home.css")
     return layout(
         "home", "页脚左侧%s" % self_name, body, path, extra_head=extra,
         body_class="lab-home-page lab-foot-page", footer=footer,

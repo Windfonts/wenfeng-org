@@ -29,24 +29,30 @@
 
 ## 2. 日常更新流程（数据或页面变更后）
 
+HTML 仍走 CF Worker → `oss://wenfeng-org`（广州）。页眉 CSS/JS/woff2/图走已备案 `cn.windfonts.com` → `oss://wenfeng-fonts/assets/`（广州；zone `windfonts` 未切杭州前不要灌 `wenfeng-fonts-hz`）。构建默认 `WF_ASSET_ORIGIN=https://cn.windfonts.com`。授权 PDF 仍 `/assets/licenses/` 同源。不要把 org HTML 写进 `wenfeng-web-hz`。不要改 Worker / 不要给 `.org` 挂大陆七 A。
+
 ```bash
-# Mac 侧：重导出（如数据变了）+ 构建
-python3 export-wenfeng.py && python3 build.py [--allow-index]   # 放开索引时加
+# Mac 侧：site/ v2（不要用根 build.py / deploy.sh）
+python3 site/build.py [--allow-index]   # 放开索引时加
 
-# 上传（在 modiqi，~/bin 的 aliyun CLI wenpai profile；dist 先 vm-file-sync 推过去）
-vm-exec modiqi "aliyun --profile wenpai oss cp <dist>/ oss://wenfeng-org/ -r -f \
-  -e oss-cn-guangzhou.aliyuncs.com --exclude '*.woff2' --exclude '*.png' --exclude '*.webp' \
-  --exclude '.DS_Store' --meta Cache-Control:no-cache"
-vm-exec modiqi "aliyun --profile wenpai oss cp <dist>/assets/ oss://wenfeng-org/assets/ -r -f \
-  -e oss-cn-guangzhou.aliyuncs.com --include '*.woff2' --include '*.png' --include '*.webp' \
-  --meta Cache-Control:max-age=31536000,immutable"
+# 1) 页眉静态 → 字体桶（occupancy-safe：tar + scp devops，Mac 无 wenpai 写钥匙）
+#    源：site/assets/ + assets/shs/ + assets/shsans/（不要 licenses）
+aliyun --profile wenpai oss cp <chrome>/ oss://wenfeng-fonts/assets/ -r -f \
+  -e oss-cn-guangzhou.aliyuncs.com --meta Cache-Control:max-age=31536000,immutable
 
-# 清 CF 缓存（html/数据是 no-cache 会重验证，可跳过；assets immutable 只在内容变化时清）
+# 2) HTML + licenses → 网页桶
+aliyun --profile wenpai oss cp <html>/ oss://wenfeng-org/ -r -f \
+  -e oss-cn-guangzhou.aliyuncs.com --exclude '.DS_Store' \
+  --meta Cache-Control:no-cache
+
+# 清 CF 缓存（html/数据是 no-cache 会重验证，可跳过；换 HTML 戳后建议清）
 CF_PROFILE=default ~/bin/cf-api POST /zones/91c9a7ea3da441c2b912a15420216af4/purge_cache \
   -d '{"purge_everything":true}'
 ```
 
-Mac 侧 `deploy.sh` 保留为 ossutil 版等价物（需文派账号独立 ossutil 配置 `-c` 指定）；静态托管（index/404）已配好不用重跑。
+本地只预览页眉、不走 cn：`WF_ASSET_ORIGIN= python3 site/build.py`。
+
+Mac 侧根目录 `deploy.sh` 是旧 M1 ossutil 路径，不要用。静态托管（index/404）已配好不用重跑。
 
 ## 3. Worker 运维
 

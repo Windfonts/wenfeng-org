@@ -89,6 +89,15 @@ def main():
     if not view_pass: all_pass = False
     print_row("4. 双视图标记覆盖", view_pass, "首页具备 for-design 与 for-dev")
 
+    want_origin = os.environ.get("WF_ASSET_ORIGIN", "https://cn.windfonts.com").rstrip("/")
+    if want_origin:
+        cn_pass = (want_origin + "/assets/tokens.css") in index_html and 'window.WF_ASSET_ORIGIN=' in index_html
+        if not cn_pass:
+            all_pass = False
+        print_row("4b. 页眉静态走国内主机", cn_pass, "tokens.css + WF_ASSET_ORIGIN → " + want_origin.split("://", 1)[-1])
+    else:
+        print_row("4b. 页眉静态走国内主机", True, "WF_ASSET_ORIGIN 空，同源预览")
+
     # 5. 联机关键路由联通性 (若端口 16031 在线)
     routes = [
         "/",
