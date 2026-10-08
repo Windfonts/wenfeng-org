@@ -1,0 +1,64 @@
+{
+ "norm": "astzykks",
+ "name": "澳声通注音库楷简",
+ "en": "ToneOZ Zhuyin Kai Simplified",
+ "aliases": [
+  "ToneOZ Zhuyin Kai Simplified"
+ ],
+ "licenseName": "ARPHIC PUBLIC LICENSE 1999",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://github.com/jeffreyxuan/toneoz-font-zhuyin/blob/main/LICENSE",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "5b47f99a383f62041ff77e756c713472bb14229fb90d6feb6e8741dcb0fab1ad",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "澳声通",
+ "foundrySlug": "toneoz",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/astzykks",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/jeffreyxuan/toneoz-font-zhuyin",
+  "syncedAt": "2026-10-08T16:20:59+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/jeffreyxuan/toneoz-font-zhuyin",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astzykks/source/Regular.ttf",
+   "sha256": "c8fa312fcfa3544d3e9adf0eb87e46b4eaca3512eba8800f76047e9e17637e9b",
+   "staged": false,
+   "bytes": 15770936,
+   "file": "Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-astzykks"
+}

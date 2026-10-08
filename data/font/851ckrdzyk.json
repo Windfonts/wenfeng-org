@@ -17,7 +17,7 @@
  },
  "foundry": "851",
  "foundrySlug": "851",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/851ckrdzyk",
@@ -26,10 +26,10 @@
   "KanaB"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://pm85122.onamae.jp/851fontTerm.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -40,6 +40,16 @@
    "format": "link",
    "href": "https://pm85122.onamae.jp/851fontTerm.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/851ckrdzyk/source/851CHIKARA-DZUYOKU_kanaA_004.ttf",
+   "sha256": "8ed0a61010d19efd0b9cb59e6cb114cd1a25fe4a67c9dfb47288aeca78beec70",
+   "staged": false,
+   "bytes": 4205384,
+   "file": "851CHIKARA-DZUYOKU_kanaA_004.ttf"
   },
   {
    "kind": "slice",

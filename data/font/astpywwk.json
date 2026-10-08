@@ -1,0 +1,64 @@
+{
+ "norm": "astpywwk",
+ "name": "澳声通大拼音文楷",
+ "en": "ToneOZ PinyinW WenKai",
+ "aliases": [
+  "ToneOZ PinyinW WenKai"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai/releases/tag/v0.241128",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "b44440834ad924495c97dfddfff910da75b77d0461234023708542188caf6bb1",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "澳声通",
+ "foundrySlug": "toneoz",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/astpywwk",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai",
+  "syncedAt": "2026-10-08T16:20:59+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astpywwk/source/Regular.ttf",
+   "sha256": "91d304cfa178829baccf2612eb1d60ecf538b4b2a9e604277c3be070ce35586b",
+   "staged": false,
+   "bytes": 20028508,
+   "file": "Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-astpywwk"
+}

@@ -1,0 +1,24 @@
+{
+  "norm": "astpywkk",
+  "title": "Open Government Data License 1.0",
+  "body": "ToneOZ Pinyin Kai Traditional\n\nProduced by: https://toneoz.com\n\nFree and open-source under the SIL Open Font License\n\n\n\nFont Installation Instructions\n===========================\n\n1. Download link\n\n\thttps://toneoz.com/blog/download-fonts/\n\n2. Installation\nThe files are in ZIP format. Open the ZIP file and click on the .ttf file inside to install.\n\n3. Features\nSupport multiple pronunciations for a single character (IVS standard for phonetic annotations 字嗨注音).\n\nThey also come with a free online Pinyin/Zhuyin editor (no installation required), which can automatically correct mispronounced characters.\n\nOnline editor:\n\n\thttps://toneoz.com/ime\n\n-----\nZip ships only an install note (SIL Open Font License claimed).\nHan glyphs follow ToneOZ Zhuyin Kai Traditional (全字庫 / OGDL 1.0).\nFull license text from jeffreyxuan/toneoz-font-zhuyin LICENSE:\n-----\n\n原始楷體字型來自兩種中文教學時常用的免費商用授權字型：\n\n* 文鼎PL简中楷 - [《ARPHIC PUBLIC LICENSE 1999》](http://ftp.gnu.org/non-gnu/chinese-fonts-truetype/LICENSE)\n* 全字庫正楷體 - [《Open Government Data License, version 1.0》](https://data.gov.tw/en/licenses)\n\n拼音及非漢字的部分是基於「[FONTWORKS Klee One](https://github.com/fontworks-fonts/Klee)」以及「[LXGW 霞鶩文楷](https://github.com/lxgw/LxgwWenKai)」，採用 SIL Open Font License 1.1 免費商用授權。\n\n注音部分是基於「源流明體注音」，來自But Ko的「[注音IVS字型規格](https://github.com/ButTaiwan/bpmfvs)」，採用 Apache 2.0 免費商用授權。\n\n「表意文字變體多音字選擇器」的概念來自But Ko的「[注音IVS字型規格](https://github.com/ButTaiwan/bpmfvs)」。\n\nFree for both commercial and personal usage.\n\n* ToneOZ-Zhuyin-Kai-Traditional\n* ToneOZ-ZhuyinW-Kai-Traditional\n\nThese 2 fonts are based on 全字庫, licensed under [《Open Government Data License, version 1.0》](https://data.gov.tw/en/licenses)\n\n* ToneOZ-Zhuyin-Kai-Simplified\n* ToneOZ-ZhuyinW-Kai-Simplified\n\nThese 2 fonts are based on 文鼎PL简中楷, licensed under [《ARPHIC PUBLIC LICENSE 1999》](http://ftp.gnu.org/non-gnu/chinese-fonts-truetype/LICENSE)\n\nPinyin and none Chinese characters glyphs are based on [FONTWORKS Klee One](https://github.com/fontworks-fonts/Klee), licensed under SIL Open Font License 1.1\n\nZhuyin glyphs are based on 「GenyoMinBopomofo-Regular」by But Ko, licensed under Apache 2.0\n\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "官方下载包",
+    "url": "https://download.toneatoz.com/latest/toneoz-font-pinyin-kai/",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "6c0b5f5ff2ca240eaba15d03c49060b59dce7fc67246a875c0d21ba210e2556b",
+    "method": "upstream-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://download.toneatoz.com/latest/toneoz-font-pinyin-kai/",
+        "note": "ToneOZ jeffreyxuan / toneoz.com 入库",
+        "textSha256": "6c0b5f5ff2ca240eaba15d03c49060b59dce7fc67246a875c0d21ba210e2556b"
+      }
+    ]
+  }
+}

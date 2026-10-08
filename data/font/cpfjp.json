@@ -17,7 +17,7 @@
  },
  "foundry": "よく飛ばない鳥",
  "foundrySlug": "yokutobanaitori",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cpfjp",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://yokutobanaitori.web.fc2.com/guideline.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://yokutobanaitori.web.fc2.com/guideline.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cpfjp/source/CPFont.ttf",
+   "sha256": "136b2f0777d98fe36cb6dea4216e68c5c300f82e23d6c999af448ed53a0c3105",
+   "staged": false,
+   "bytes": 3794960,
+   "file": "CPFont.ttf"
   },
   {
    "kind": "slice",

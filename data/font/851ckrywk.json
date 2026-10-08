@@ -17,7 +17,7 @@
  },
  "foundry": "851",
  "foundrySlug": "851",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/851ckrywk",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://pm85122.onamae.jp/851fontTerm.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://pm85122.onamae.jp/851fontTerm.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/851ckrywk/source/851CHIKARA-YOWAKU_002.ttf",
+   "sha256": "0a11074b39d9ed5af63dfd4a208b8f02a22fff9b0695195064c8ace72cb8d3ce",
+   "staged": false,
+   "bytes": 1645216,
+   "file": "851CHIKARA-YOWAKU_002.ttf"
   },
   {
    "kind": "slice",

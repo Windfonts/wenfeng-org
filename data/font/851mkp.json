@@ -17,7 +17,7 @@
  },
  "foundry": "851",
  "foundrySlug": "851",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/851mkp",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://pm85122.onamae.jp/851fontTerm.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://pm85122.onamae.jp/851fontTerm.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/851mkp/source/851MkPOP_101.ttf",
+   "sha256": "66b0a68c701b40238f9657598a2c0bad52fde1b63820b868ff3bf67f1929b1e6",
+   "staged": false,
+   "bytes": 4481764,
+   "file": "851MkPOP_101.ttf"
   },
   {
    "kind": "slice",

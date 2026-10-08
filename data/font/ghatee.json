@@ -17,7 +17,7 @@
  },
  "foundry": "よく飛ばない鳥",
  "foundrySlug": "yokutobanaitori",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ghatee",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://yokutobanaitori.web.fc2.com/guideline.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://yokutobanaitori.web.fc2.com/guideline.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ghatee/source/Ghatee.ttf",
+   "sha256": "016c12b4237c58f41ff0f68a7303d960b0f152866311ffe1c5cdca69086d8a8c",
+   "staged": false,
+   "bytes": 5078808,
+   "file": "Ghatee.ttf"
   },
   {
    "kind": "slice",

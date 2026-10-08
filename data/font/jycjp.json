@@ -17,7 +17,7 @@
  },
  "foundry": "よく飛ばない鳥",
  "foundrySlug": "yokutobanaitori",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jycjp",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://yokutobanaitori.web.fc2.com/guideline.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://yokutobanaitori.web.fc2.com/guideline.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jycjp/source/Jiyucho.ttf",
+   "sha256": "3d27311c2e96486add4af99afd74da4cd1e52257f719074598add563217e6e8e",
+   "staged": false,
+   "bytes": 3528588,
+   "file": "Jiyucho.ttf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "希土類元素レアアース",
  "foundrySlug": "rareearth",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wlmg2004e",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://sourceforge.net/p/jis2004/wiki/index/",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://sourceforge.net/p/jis2004/wiki/index/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/wlmg2004e/source/wlmaru2004emoji.ttf",
+   "sha256": "dd9b4730aa78304c230c7806aa194a6c1d0273eca46d272c72aa630cd193e26b",
+   "staged": false,
+   "bytes": 9568116,
+   "file": "wlmaru2004emoji.ttf"
   },
   {
    "kind": "slice",

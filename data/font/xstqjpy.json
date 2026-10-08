@@ -1,0 +1,64 @@
+{
+ "norm": "xstqjpy",
+ "name": "晓声通秋茄拼音",
+ "en": "ToneOZ Pinyin Tsuipita TC",
+ "aliases": [
+  "ToneOZ Pinyin Tsuipita TC"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/jeffreyxuan/toneoz-font-tsuipita/blob/main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "131f4e0c5c98de092bcc8bbdc3f105c29ab88aa05f3023185117fe71ad7e4a22",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "澳声通",
+ "foundrySlug": "toneoz",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xstqjpy",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/jeffreyxuan/toneoz-font-tsuipita",
+  "syncedAt": "2026-10-08T16:20:59+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/jeffreyxuan/toneoz-font-tsuipita",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xstqjpy/source/Regular.ttf",
+   "sha256": "d0fb642a5ca38fba56d0657b7b4fddaccdf124aba67511fbb48fb0fbd34fbc5f",
+   "staged": false,
+   "bytes": 31853628,
+   "file": "Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xstqjpy"
+}

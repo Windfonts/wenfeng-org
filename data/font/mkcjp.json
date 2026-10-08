@@ -17,7 +17,7 @@
  },
  "foundry": "みかちゃん",
  "foundrySlug": "mikachan",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mkcjp",
@@ -28,10 +28,10 @@
   "mikachan-PS"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://www.ac-font.com/jp/detail_j_011.php",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -42,6 +42,16 @@
    "format": "link",
    "href": "https://www.ac-font.com/jp/detail_j_011.php",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mkcjp/source/mikachan-full.ttf",
+   "sha256": "3650c2d7b1784054998e912924f2f01018004be7f778ef27623d514776689f7f",
+   "staged": false,
+   "bytes": 2846948,
+   "file": "mikachan-full.ttf"
   },
   {
    "kind": "slice",

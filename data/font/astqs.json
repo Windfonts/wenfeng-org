@@ -1,0 +1,120 @@
+{
+ "norm": "astqs",
+ "name": "澳声通快雪",
+ "en": "ToneOZ QuickSnow",
+ "aliases": [
+  "ToneOZ QuickSnow",
+  "astqs"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://github.com/jeffreyxuan/toneoz-font-quicksnow/blob/main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "beb8502005c0c6adf45fe63ce45f1fba2b5096aa0800cce60a687651a9997215",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "澳声通",
+ "foundrySlug": "toneoz",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/astqs",
+ "weights": [
+  "Variable",
+  "W300",
+  "W400",
+  "W500",
+  "W600",
+  "W700"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/jeffreyxuan/toneoz-font-quicksnow",
+  "syncedAt": "2026-10-08T16:20:59+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/jeffreyxuan/toneoz-font-quicksnow",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astqs/source/Variable.ttf",
+   "sha256": "f416d6a9babc0341175964a7213cf0437806f9b4142a4711268fcfd5ea5e40ff",
+   "staged": false,
+   "bytes": 138368,
+   "file": "Variable.ttf"
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astqs/source/W300.ttf",
+   "sha256": "53f2c289254ebecd7608e9b0880366a92ee49ccd596300c3c70a4a5065c08df9",
+   "staged": false,
+   "bytes": 87780,
+   "file": "W300.ttf"
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astqs/source/W400.ttf",
+   "sha256": "8c28929df37fad99f960a0d68a31193ccb66897f23983ed508f98531f58747e5",
+   "staged": false,
+   "bytes": 88096,
+   "file": "W400.ttf"
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astqs/source/W500.ttf",
+   "sha256": "2a28f00aa528a47cd222d154da57b68b66653ff8000b2946f17c6b913caf3b30",
+   "staged": false,
+   "bytes": 87940,
+   "file": "W500.ttf"
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astqs/source/W600.ttf",
+   "sha256": "4680bff3536c6911f5da714a79132dcbb3039aaecd11632abaa9d1e71b3110c8",
+   "staged": false,
+   "bytes": 87676,
+   "file": "W600.ttf"
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astqs/source/W700.ttf",
+   "sha256": "feb36c3caeebf49da7c072342909ae46d05e3d77df2d4c1428905c83f7bbb11d",
+   "staged": false,
+   "bytes": 87008,
+   "file": "W700.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-astqs"
+}

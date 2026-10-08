@@ -17,7 +17,7 @@
  },
  "foundry": "851",
  "foundrySlug": "851",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/851gjp",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://pm85122.onamae.jp/851fontTerm.html",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://pm85122.onamae.jp/851fontTerm.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/851gjp/source/851Gkktt_005.ttf",
+   "sha256": "c30194deb421feb7d187d1a4197d8afbf7f3a77b2d6ed6b85018e28e78390ff8",
+   "staged": false,
+   "bytes": 1407252,
+   "file": "851Gkktt_005.ttf"
   },
   {
    "kind": "slice",

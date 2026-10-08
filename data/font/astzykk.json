@@ -1,0 +1,64 @@
+{
+ "norm": "astzykk",
+ "name": "澳声通注音库楷",
+ "en": "ToneOZ Zhuyin Kai Traditional",
+ "aliases": [
+  "ToneOZ Zhuyin Kai Traditional"
+ ],
+ "licenseName": "Open Government Data License 1.0",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://github.com/jeffreyxuan/toneoz-font-zhuyin/blob/main/LICENSE",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "5b47f99a383f62041ff77e756c713472bb14229fb90d6feb6e8741dcb0fab1ad",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "澳声通",
+ "foundrySlug": "toneoz",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/astzykk",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/jeffreyxuan/toneoz-font-zhuyin",
+  "syncedAt": "2026-10-08T16:20:59+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/jeffreyxuan/toneoz-font-zhuyin",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astzykk/source/Regular.ttf",
+   "sha256": "ab2ad0f520cc9c4d4b670f121dcfcc6bd961dd3897bf3c2eb19169f0b7906051",
+   "staged": false,
+   "bytes": 31650796,
+   "file": "Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "网页切片不含 GSUB 多音字选择器；源文件原件保留。",
+ "family": "wenfeng-astzykk"
+}

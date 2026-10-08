@@ -17,7 +17,7 @@
  },
  "foundry": "chiphead",
  "foundrySlug": "chiphead",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cinjp",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://web.archive.org/web/20160327023942/http://chiphead.jp/font/cinecaption2.28.zip",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://web.archive.org/web/20160327023942/http://chiphead.jp/font/cinecaption2.28.zip",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cinjp/source/cinecaption2.28.ttf",
+   "sha256": "95c643174b3ecd5e06bf668eaea58e399039aa1b1b646fc10b1f211aeafabb94",
+   "staged": false,
+   "bytes": 1719332,
+   "file": "cinecaption2.28.ttf"
   },
   {
    "kind": "slice",

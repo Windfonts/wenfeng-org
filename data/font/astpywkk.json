@@ -1,0 +1,64 @@
+{
+ "norm": "astpywkk",
+ "name": "澳声通大拼音库楷",
+ "en": "ToneOZ PinyinW Kai Traditional",
+ "aliases": [
+  "ToneOZ PinyinW Kai Traditional"
+ ],
+ "licenseName": "Open Government Data License 1.0",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://download.toneatoz.com/latest/toneoz-font-pinyin-kai/",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "6c0b5f5ff2ca240eaba15d03c49060b59dce7fc67246a875c0d21ba210e2556b",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "澳声通",
+ "foundrySlug": "toneoz",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/astpywkk",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://toneoz.com/blog/download-fonts/",
+  "syncedAt": "2026-10-08T16:20:59+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游下载页",
+   "format": "link",
+   "href": "https://toneoz.com/blog/download-fonts/",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astpywkk/source/Regular.ttf",
+   "sha256": "48c3129e0142c5364f72be3c934434cb9a796cb35f03eb283245611c35a5ba10",
+   "staged": false,
+   "bytes": 32304472,
+   "file": "Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-astpywkk"
+}

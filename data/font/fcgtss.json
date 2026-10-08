@@ -17,7 +17,7 @@
  },
  "foundry": "があた",
  "foundrySlug": "gata",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/fcgtss",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://uu.getuploader.com/amogata/download/60",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://uu.getuploader.com/amogata/download/60",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/fcgtss/source/GataSousho-Regular.ttf",
+   "sha256": "2100c3432c73c7fb2deed10cb0b33b0fc55aa203d83afe8214b7aea3c970c725",
+   "staged": false,
+   "bytes": 3029364,
+   "file": "GataSousho-Regular.ttf"
   },
   {
    "kind": "slice",

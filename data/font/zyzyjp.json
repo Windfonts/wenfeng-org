@@ -17,7 +17,7 @@
  },
  "foundry": "たぬきフォント",
  "foundrySlug": "tanukifont",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zyzyjp",
@@ -25,10 +25,10 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://tanukifont.com/",
-  "syncedAt": null,
+  "syncedAt": "2026-10-08T15:52:55+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -39,6 +39,16 @@
    "format": "link",
    "href": "https://tanukifont.com/",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zyzyjp/source/JiyunoTsubasa.ttf",
+   "sha256": "15abeb77c07a0fdc4623de28fc7881a04e8657565cbdee3a054d89751309e8aa",
+   "staged": false,
+   "bytes": 1775740,
+   "file": "JiyunoTsubasa.ttf"
   },
   {
    "kind": "slice",
