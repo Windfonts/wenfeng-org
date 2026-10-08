@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwxxhsf",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/lxgw/LxgwNeoXiHei",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxxhsf/source/LXGWNeoXiHeiScreenFull.ttf",
+   "sha256": "22150f8ffe4f0c1cfd9f4f97798c22f18dd2ec6b166c24f2c164442ca2e9a258",
+   "staged": false,
+   "bytes": 11501566,
+   "file": "LXGWNeoXiHeiScreenFull.ttf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "Moonlit Owen",
  "foundrySlug": "moonlitowen",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zglht",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://github.com/MoonlitOwen/ChocolateSans",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/MoonlitOwen/ChocolateSans",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zglht/source/ChocolateClassicalSans-Regular.ttf",
+   "sha256": "e6345f3d92c7a9b7044c31a87d9b61f50220b08c0f1dcc2736e94c2aa587ce03",
+   "staged": false,
+   "bytes": 12183000,
+   "file": "ChocolateClassicalSans-Regular.ttf"
   },
   {
    "kind": "slice",

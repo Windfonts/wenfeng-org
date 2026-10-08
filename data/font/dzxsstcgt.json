@@ -22,7 +22,7 @@
  },
  "foundry": "wixette",
  "foundrySlug": "wixette",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/dzxsstcgt",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/wixette/dotted-chinese-fonts",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/dzxsstcgt/source/Regular.ttf",
+   "sha256": "c5823b88b35937b638b85cf8ba35d4b9a94b4d3b58c981550ddca7cb39c86714",
+   "staged": false,
+   "bytes": 9465956,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

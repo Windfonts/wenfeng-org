@@ -17,7 +17,7 @@
  },
  "foundry": "Sandoll Inc.",
  "foundrySlug": "ibm",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ibmps",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ibmps/source/Text.ttf",
+   "sha256": "fc266ed7126aaf56c6c8e785a29cc475e09a456f38fba34811ea17774248dcc9",
+   "staged": false,
+   "bytes": 7129384,
+   "file": "Text.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

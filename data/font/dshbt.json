@@ -17,7 +17,7 @@
  },
  "foundry": "Ascender Corp",
  "foundrySlug": "google-fonts",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/dshbt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/dshbt/source/Regular.ttf",
+   "sha256": "70f760ee31bb569ec53e33b44a699643898dc8c65b3034e370953afd1e63964d",
+   "staged": false,
+   "bytes": 3189464,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

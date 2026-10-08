@@ -22,7 +22,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xlztsc",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/lxgw/kose-font",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xlztsc/source/Xiaolai-Regular.ttf",
+   "sha256": "e2f68daf0e72777a8cf58bc83de1b98634b251e537ddbfca24b0ae50d1802da2",
+   "staged": false,
+   "bytes": 22220806,
+   "file": "Xiaolai-Regular.ttf"
   },
   {
    "kind": "slice",

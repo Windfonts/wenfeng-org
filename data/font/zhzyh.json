@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zhzyh",
@@ -30,7 +30,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zhzyh/source/BpmfZihiSans-Regular.ttf",
+   "sha256": "7df96517970fe0e6fd96a1c2499ebd22124fd8fd8ecdd18aafc4ae882207e0ec",
+   "staged": false,
+   "bytes": 5340032,
+   "file": "BpmfZihiSans-Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

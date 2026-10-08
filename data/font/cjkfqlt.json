@@ -17,7 +17,7 @@
  },
  "foundry": "cjkFonts",
  "foundrySlug": "cjkfonts",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cjkfqlt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cjkfqlt/source/Regular.ttf",
+   "sha256": "ccdb577c1dd7840e816a170d34339a86407ca00c2f570c69468ab0066c1840e9",
+   "staged": false,
+   "bytes": 15666772,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

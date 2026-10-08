@@ -22,7 +22,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwxxh",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxxh/source/Regular.ttf",
+   "sha256": "8ec2d02c3e5d7f382e16493b437a077b925dea1f9703f42483d32acaa1d0f2fe",
+   "staged": false,
+   "bytes": 7154226,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

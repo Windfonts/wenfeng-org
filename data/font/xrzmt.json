@@ -17,7 +17,7 @@
  },
  "foundry": "Moonlit Owen",
  "foundrySlug": "moonlitowen",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xrzmt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://openfontlicense.org",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://openfontlicense.org",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xrzmt/source/CactusClassicalSerif-Regular.ttf",
+   "sha256": "ecbd58961db922392d7fecfafa3681fefaeec0c399b860ab6940ba700f7da055",
+   "staged": false,
+   "bytes": 28502932,
+   "file": "CactusClassicalSerif-Regular.ttf"
   },
   {
    "kind": "slice",

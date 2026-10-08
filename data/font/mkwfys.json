@@ -22,7 +22,7 @@
  },
  "foundry": "Maoken",
  "foundrySlug": "maoken",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mkwfys",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/maoken-fonts/fengyasong",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mkwfys/source/Regular.ttf",
+   "sha256": "6431d4a54a3cd9faaed42875d86cc1781a97b966515b3089c18ce3cab10c013f",
+   "staged": false,
+   "bytes": 17732988,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

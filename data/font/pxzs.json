@@ -22,7 +22,7 @@
  },
  "foundry": "chncwk",
  "foundrySlug": "chncwk",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/pxzs",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/izfsk-ium/Clear-Han-Serif",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/pxzs/source/Regular.ttf",
+   "sha256": "f481ff9dcdab92c938b6e87afb53822e6e0da278a8e4cbf7b1de211ac64afbf2",
+   "staged": false,
+   "bytes": 14355932,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

@@ -22,7 +22,7 @@
  },
  "foundry": "妙笔",
  "foundrySlug": "myil",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nsfq",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/nushu-script/Nyushu",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nsfq/source/Regular.ttf",
+   "sha256": "fe49ba90c80e4d87108dd49af9c80f7ef975161512e577a1b46fdb696e59ebfe",
+   "staged": false,
+   "bytes": 10357352,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

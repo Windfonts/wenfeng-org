@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yyzybgm",
@@ -29,7 +29,7 @@
   "SemiBold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -37,6 +37,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yyzybgm/source/BpmfGenWanMin-R.ttf",
+   "sha256": "67a43334afd341fa74c6238259de68bbf9c47459c90756a65cf823e654981936",
+   "staged": false,
+   "bytes": 15511396,
+   "file": "BpmfGenWanMin-R.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

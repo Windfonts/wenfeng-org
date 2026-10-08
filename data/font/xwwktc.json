@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwwktc",
@@ -41,6 +41,16 @@
    "format": "git",
    "href": "https://github.com/lxgw/LxgwWenKai",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwwktc/source/LXGWWenKaiTC-Regular.ttf",
+   "sha256": "b1a0795862c1415bf3f393ea50b2a4ea6275012cf5bad3f94feeb1222f555731",
+   "staged": false,
+   "bytes": 15267616,
+   "file": "LXGWWenKaiTC-Regular.ttf"
   },
   {
    "kind": "slice",

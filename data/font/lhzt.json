@@ -17,7 +17,7 @@
  },
  "foundry": "濑户字体",
  "foundrySlug": "seto",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/lhzt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/lhzt/source/Regular.ttf",
+   "sha256": "5c2e7ffaaa45bd9e78983d31c5a57d2fc77c33ca1a2f1dee63cc7a4b889d8b38",
+   "staged": false,
+   "bytes": 12473708,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

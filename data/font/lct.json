@@ -17,7 +17,7 @@
  },
  "foundry": "ZhongQi",
  "foundrySlug": "zhongqi",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/lct",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/lct/source/Regular.ttf",
+   "sha256": "a1236ac99a5b1b05304ada83d5d9a1ba716510e763bda89c892c37cbe44ea9ba",
+   "staged": false,
+   "bytes": 5151180,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

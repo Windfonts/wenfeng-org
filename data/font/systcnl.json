@@ -17,7 +17,7 @@
  },
  "foundry": "Adobe",
  "foundrySlug": "adobe",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/systcnl",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/adobe-fonts/source-han-serif",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/systcnl/source/Systcn.ttf",
+   "sha256": "bbcb3ec1b48cd3dd19b65bdba073c1723d7a41bdad0e3a6e449000bfbff3e615",
+   "staged": false,
+   "bytes": 11090240,
+   "file": "Systcn.ttf"
   },
   {
    "kind": "slice",

@@ -17,7 +17,7 @@
  },
  "foundry": "寒蝉字型",
  "foundrySlug": "chilltype",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hcszt",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/Warren2060/ChillShouZhuo",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hcszt/source/Normal.ttf",
+   "sha256": "ab566f9494e9bcb6efd955276df9bad1b69ddc84bb8693cfe7371b14713f9151",
+   "staged": false,
+   "bytes": 3962328,
+   "file": "Normal.ttf"
   },
   {
    "kind": "slice",

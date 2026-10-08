@@ -22,7 +22,7 @@
  },
  "foundry": "文泉驿",
  "foundrySlug": "wenquanyi",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wqywmh",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/anthonyfok/fonts-wqy-microhei",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/wqywmh/source/Regular.ttf",
+   "sha256": "6e4efecda044da318ad98a916558cb15288463625e926eb16fea4123123e87b8",
+   "staged": false,
+   "bytes": 4625768,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

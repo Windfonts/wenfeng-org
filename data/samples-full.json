@@ -147,7 +147,7 @@
    },
    "foundry": "",
    "foundrySlug": "unknown",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/acyjp",
@@ -155,7 +155,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -163,6 +163,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "otf",
+     "href": "https://cn.windfonts.com/fonts-packages/acyjp/source/Acy-Regular.otf",
+     "sha256": "73780472fbb6b42a520c46e71cca0f2a7ca00aac3658c72523ab147d639dd00f",
+     "staged": false,
+     "bytes": 47657912,
+     "file": "Acy-Regular.otf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -635,7 +645,7 @@
    },
    "foundry": "Ascender Corp",
    "foundrySlug": "google-fonts",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/dshbt",
@@ -643,7 +653,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -651,6 +661,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/dshbt/source/Regular.ttf",
+     "sha256": "70f760ee31bb569ec53e33b44a699643898dc8c65b3034e370953afd1e63964d",
+     "staged": false,
+     "bytes": 3189464,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -1465,7 +1485,7 @@
    },
    "foundry": "FontZone108",
    "foundrySlug": "potta",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/btot",
@@ -1473,7 +1493,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -1481,6 +1501,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/btot/source/Regular.ttf",
+     "sha256": "d0a00695280655d5cdc3fe3fc452cb615896e92875044f92814433f93b7f64d8",
+     "staged": false,
+     "bytes": 4136936,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -2519,7 +2549,7 @@
    },
    "foundry": "新价值",
    "foundrySlug": "新价值",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/cylytt",
@@ -2542,6 +2572,16 @@
      "format": "git",
      "href": "https://github.com/Chenyu-otf/chenyuluoyan_thin",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/cylytt/source/Monospaced.ttf",
+     "sha256": "d8ecd0598634c92f0b29f90aabef8f7916f17aef19b0350883ca7b46979a5373",
+     "staged": false,
+     "bytes": 4515324,
+     "file": "Monospaced.ttf"
     },
     {
      "kind": "slice",
@@ -2627,7 +2667,7 @@
    },
    "foundry": "wixette",
    "foundrySlug": "wixette",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/dzxsstcgt",
@@ -2649,6 +2689,16 @@
      "format": "git",
      "href": "https://github.com/wixette/dotted-chinese-fonts",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/dzxsstcgt/source/Regular.ttf",
+     "sha256": "c5823b88b35937b638b85cf8ba35d4b9a94b4d3b58c981550ddca7cb39c86714",
+     "staged": false,
+     "bytes": 9465956,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -2686,7 +2736,7 @@
    },
    "foundry": "wixette",
    "foundrySlug": "wixette",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/ddxsstlx",
@@ -2708,6 +2758,16 @@
      "format": "git",
      "href": "https://github.com/wixette/dotted-chinese-fonts",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/ddxsstlx/source/Regular.ttf",
+     "sha256": "9a82a5d521ea0e3d131570750d3ecaa9ab226c94615c15163cddb08e6dd9f7d0",
+     "staged": false,
+     "bytes": 8042216,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -2745,7 +2805,7 @@
    },
    "foundry": "wixette",
    "foundrySlug": "wixette",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/ddxsyt",
@@ -2767,6 +2827,16 @@
      "format": "git",
      "href": "https://github.com/wixette/dotted-chinese-fonts",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/ddxsyt/source/Regular.ttf",
+     "sha256": "7b2c41e821d7091bed42df0158c130d62aeabdda7fde31b2754b1b7017cfb2d1",
+     "staged": false,
+     "bytes": 6927764,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -3172,7 +3242,7 @@
    },
    "foundry": "Atelier Anchor",
    "foundrySlug": "atelier-anchor",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/dyh",
@@ -3180,7 +3250,7 @@
     "Oblique"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -3188,6 +3258,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/dyh/source/Oblique.ttf",
+     "sha256": "6b02399b62585f4a250b34b6261f490dac9cf7de2153ebf85cfc872f59e731d6",
+     "staged": false,
+     "bytes": 2098640,
+     "file": "Oblique.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -4159,7 +4239,7 @@
    },
    "foundry": "",
    "foundrySlug": "unifoundry",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/unijp",
@@ -4167,7 +4247,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -4175,6 +4255,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/unijp/source/unifont-15.0.06.ttf",
+     "sha256": "9282b6eff54eeca2e7f58c9a40a91049bd219f3e6a45fbee8eba013379b9af3a",
+     "staged": false,
+     "bytes": 12452236,
+     "file": "unifont-15.0.06.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -5781,7 +5871,7 @@
    },
    "foundry": "寒蝉字型",
    "foundrySlug": "chilltype",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/hcszt",
@@ -5803,6 +5893,16 @@
      "format": "git",
      "href": "https://github.com/Warren2060/ChillShouZhuo",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/hcszt/source/Normal.ttf",
+     "sha256": "ab566f9494e9bcb6efd955276df9bad1b69ddc84bb8693cfe7371b14713f9151",
+     "staged": false,
+     "bytes": 3962328,
+     "file": "Normal.ttf"
     },
     {
      "kind": "slice",
@@ -5898,7 +5998,7 @@
    },
    "foundry": "寒蝉字型",
    "foundrySlug": "chilltype",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/hctyts",
@@ -5907,7 +6007,7 @@
     "Round"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -5915,6 +6015,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/hctyts/source/Normal.ttf",
+     "sha256": "17e1ff0d9669e022af5ee3d4d5328044a3c25d4102646f2b311af2ed467f961f",
+     "staged": false,
+     "bytes": 2191796,
+     "file": "Normal.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -7609,7 +7719,7 @@
    },
    "foundry": "",
    "foundrySlug": "unknown",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/hzpyt",
@@ -7631,6 +7741,16 @@
      "format": "git",
      "href": "https://github.com/parlr/hanzi-pinyin-font",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/hzpyt/source/Regular.ttf",
+     "sha256": "2f479e01e25fd9717915e78d96e2f3d81a5f84e4cdecfbcac493b8d02302ec37",
+     "staged": false,
+     "bytes": 10880104,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -7710,7 +7830,7 @@
    },
    "foundry": "Sandoll Inc.",
    "foundrySlug": "ibm",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/ibmps",
@@ -7723,7 +7843,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -7731,6 +7851,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/ibmps/source/Text.ttf",
+     "sha256": "fc266ed7126aaf56c6c8e785a29cc475e09a456f38fba34811ea17774248dcc9",
+     "staged": false,
+     "bytes": 7129384,
+     "file": "Text.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -8338,7 +8468,7 @@
    },
    "foundry": "一字一句",
    "foundrySlug": "etrump",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/jnbbh",
@@ -8360,6 +8490,16 @@
      "format": "git",
      "href": "https://github.com/maoken-fonts/KNBobohei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/jnbbh/source/Regular.ttf",
+     "sha256": "46f4c4001439329cb66ffaf803cf76d073d56e3b38f242f254d37bf673442b6a",
+     "staged": false,
+     "bytes": 2263808,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -8456,7 +8596,7 @@
    },
    "foundry": "京南",
    "foundrySlug": "jingnan",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/jnymt",
@@ -8478,6 +8618,16 @@
      "format": "git",
      "href": "https://github.com/maoken-fonts/KNYuanmo",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/jnymt/source/Regular.ttf",
+     "sha256": "6da16be58ea09cdaba65ab508163b1cbff30e68c159714938af891434d48e3cc",
+     "staged": false,
+     "bytes": 2521236,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -8718,7 +8868,7 @@
    },
    "foundry": "RaptorType",
    "foundrySlug": "raptortype",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/jzkgeht",
@@ -8740,6 +8890,16 @@
      "format": "git",
      "href": "https://github.com/amazusa/ToronoKugel",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/jzkgeht/source/Heavy.ttf",
+     "sha256": "e80ebf9877ea10f108228e13aa76e1677fadd09e7f0d4958fc12c95e43c7f3b0",
+     "staged": false,
+     "bytes": 4121792,
+     "file": "Heavy.ttf"
     },
     {
      "kind": "slice",
@@ -8777,7 +8937,7 @@
    },
    "foundry": "RaptorType",
    "foundrySlug": "raptortype",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/jmct",
@@ -8799,6 +8959,16 @@
      "format": "git",
      "href": "https://github.com/amazusa/ToronoKugel",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/jmct/source/Heavy.ttf",
+     "sha256": "bc6e39deda1fa9abe4abf3246bb339af6e2e2e77b66c6d135e4fe7bff9963b25",
+     "staged": false,
+     "bytes": 5903404,
+     "file": "Heavy.ttf"
     },
     {
      "kind": "slice",
@@ -9405,15 +9575,15 @@
    },
    "foundry": "I.Font Project",
    "foundrySlug": "ichiten",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
-   "distribution": false,
+   "distribution": true,
    "shop": "https://app.windfonts.com/fonts/inkslyt",
    "weights": [
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -9421,6 +9591,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/inkslyt/source/Regular.ttf",
+     "sha256": "7aba8f5bb77ea7e0fc37c0e5e709bd8e1d49b44a3c91eb503f426562602f9c2a",
+     "staged": false,
+     "bytes": 8953760,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -9566,7 +9746,7 @@
    },
    "foundry": "I.Font Project",
    "foundrySlug": "ichiten",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/gbhb",
@@ -9574,7 +9754,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -9582,6 +9762,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/gbhb/source/Regular.ttf",
+     "sha256": "77ef4032f6d637b9e074bd153c79ad9b0849189c63945135be1c59e54ea2a816",
+     "staged": false,
+     "bytes": 13085420,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -9618,7 +9808,7 @@
    },
    "foundry": "I.Font Project",
    "foundrySlug": "ichiten",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/ydmt",
@@ -9626,7 +9816,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -9634,6 +9824,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/ydmt/source/Regular.ttf",
+     "sha256": "b571da01eda103bab3e9d9d491c805ad8538c311cba4ab11a8d021623d9f768d",
+     "staged": false,
+     "bytes": 24824264,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -9912,7 +10112,7 @@
    },
    "foundry": "",
    "foundrySlug": "unknown",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/lft11h",
@@ -9934,6 +10134,16 @@
      "format": "git",
      "href": "https://github.com/ACh-K/Cubic-11",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/lft11h/source/Regular.ttf",
+     "sha256": "aea8d1b30eb4fd10c99b48cf2494d85bf939533cceb12fd62997ac418a5cc2d6",
+     "staged": false,
+     "bytes": 2766420,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -10060,7 +10270,7 @@
    },
    "foundry": "濑户字体",
    "foundrySlug": "seto",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/lhzt",
@@ -10068,7 +10278,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
     "syncedAt": null,
@@ -10082,6 +10292,16 @@
      "format": "git",
      "href": "http://web.archive.org/web/20140822195738/http://nonty.net/item/font/setofont.php",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/lhzt/source/Regular.ttf",
+     "sha256": "5c2e7ffaaa45bd9e78983d31c5a57d2fc77c33ca1a2f1dee63cc7a4b889d8b38",
+     "staged": false,
+     "bytes": 12473708,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -10174,7 +10394,7 @@
    },
    "foundry": "ZhongQi",
    "foundrySlug": "zhongqi",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zqljmc",
@@ -10182,7 +10402,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -10190,6 +10410,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zqljmc/source/Regular.ttf",
+     "sha256": "4e38236969b13e7b4a942bf986e249958f92303908df7a34bd0fa50fa8fb350d",
+     "staged": false,
+     "bytes": 4949252,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -11286,7 +11516,7 @@
    },
    "foundry": "Maoken",
    "foundrySlug": "maoken",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mksjh",
@@ -11294,7 +11524,7 @@
     "Bold"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -11302,6 +11532,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mksjh/source/Bold.ttf",
+     "sha256": "8c52feb85279e12d5a7d061fa5c0acfdd6b53eca8c2830c990eabfe2839c2784",
+     "staged": false,
+     "bytes": 5113800,
+     "file": "Bold.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -11338,7 +11578,7 @@
    },
    "foundry": "Maoken",
    "foundrySlug": "maoken",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mkwfys",
@@ -11360,6 +11600,16 @@
      "format": "git",
      "href": "https://github.com/maoken-fonts/fengyasong",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mkwfys/source/Regular.ttf",
+     "sha256": "6431d4a54a3cd9faaed42875d86cc1781a97b966515b3089c18ce3cab10c013f",
+     "staged": false,
+     "bytes": 17732988,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -11397,7 +11647,7 @@
    },
    "foundry": "Maoken",
    "foundrySlug": "maoken",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mkwgzh",
@@ -11405,7 +11655,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://www.maoken.com/freefonts/14318.html",
     "syncedAt": null,
@@ -11419,6 +11669,16 @@
      "format": "git",
      "href": "https://www.maoken.com/freefonts/14318.html",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mkwgzh/source/Regular.ttf",
+     "sha256": "2b5400196af8e6fbc3c3d9354fba1be2b7c763803c9493d3107490f7f9c30d25",
+     "staged": false,
+     "bytes": 58313808,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -11456,7 +11716,7 @@
    },
    "foundry": "Maoken",
    "foundrySlug": "maoken",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mkwgzs",
@@ -11464,7 +11724,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://www.maoken.com/freefonts/15861.html",
     "syncedAt": null,
@@ -11478,6 +11738,16 @@
      "format": "git",
      "href": "https://www.maoken.com/freefonts/15861.html",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mkwgzs/source/Regular.ttf",
+     "sha256": "2c0e4ed99b91bcbcd92856e4221ea172b8123e71fe6c287c0697d7e9406d854a",
+     "staged": false,
+     "bytes": 50047524,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -11515,7 +11785,7 @@
    },
    "foundry": "Maoken",
    "foundrySlug": "maoken",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mkwtyt",
@@ -11537,6 +11807,16 @@
      "format": "git",
      "href": "https://github.com/NightFurySL2001/TangYuan-font",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mkwtyt/source/Regular.ttf",
+     "sha256": "056fcf4f4e4b969952a9e032cc1051e407ede8aeb9b9c3fbe0371d9d4d997147",
+     "staged": false,
+     "bytes": 3047088,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -11638,7 +11918,7 @@
    },
    "foundry": "LogoSC / Biaoxiaozhi",
    "foundrySlug": "maoken",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mkzyt",
@@ -11646,7 +11926,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://www.maoken.com/freefonts/17948.html",
     "syncedAt": null,
@@ -11660,6 +11940,16 @@
      "format": "git",
      "href": "https://www.maoken.com/freefonts/17948.html",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mkzyt/source/Regular.ttf",
+     "sha256": "221ce3d8e2fc52f982ce9be57de3c66726ed951c8d07b0208b726763fbf7e96a",
+     "staged": false,
+     "bytes": 5708296,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -12557,7 +12847,7 @@
    },
    "foundry": "",
    "foundrySlug": "unknown",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/myst",
@@ -12579,6 +12869,16 @@
      "format": "git",
      "href": "https://github.com/Pal3love/dream-han-cjk",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/myst/source/Regular.ttf",
+     "sha256": "f0dce9e246f98b94bd464b6831d0416aa9e7135ca5fe50c02ddce73e1e32db99",
+     "staged": false,
+     "bytes": 17191712,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -13621,7 +13921,7 @@
    },
    "foundry": "妙笔",
    "foundrySlug": "myil",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/nsfq",
@@ -13643,6 +13943,16 @@
      "format": "git",
      "href": "https://github.com/nushu-script/Nyushu",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/nsfq/source/Regular.ttf",
+     "sha256": "fe49ba90c80e4d87108dd49af9c80f7ef975161512e577a1b46fdb696e59ebfe",
+     "staged": false,
+     "bytes": 10357352,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -13675,7 +13985,7 @@
    },
    "foundry": "妙笔",
    "foundrySlug": "myil",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/nswt",
@@ -13698,6 +14008,16 @@
      "format": "git",
      "href": "https://github.com/nushu-script/Nyushu",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/nswt/source/Italic.ttf",
+     "sha256": "71bcf2cbbe64d83653a3bd4e10ad39e52fa2f1efee244223c3935ef6cd3cab3e",
+     "staged": false,
+     "bytes": 10796564,
+     "file": "Italic.ttf"
     },
     {
      "kind": "slice",
@@ -14262,7 +14582,7 @@
    },
    "foundry": "chncwk",
    "foundrySlug": "chncwk",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/pxzs",
@@ -14284,6 +14604,16 @@
      "format": "git",
      "href": "https://github.com/izfsk-ium/Clear-Han-Serif",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/pxzs/source/Regular.ttf",
+     "sha256": "f481ff9dcdab92c938b6e87afb53822e6e0da278a8e4cbf7b1de211ac64afbf2",
+     "staged": false,
+     "bytes": 14355932,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -14829,7 +15159,7 @@
    },
    "foundry": "Writes",
    "foundrySlug": "writes",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/qssxt2",
@@ -14851,6 +15181,16 @@
      "format": "git",
      "href": "https://github.com/jasonhandwriting/JasonHandwriting",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/qssxt2/source/Regular.ttf",
+     "sha256": "9a24f01fef420cd13580b28bb5bd1816cdd4b24c9b35bc002cf03595d15304c6",
+     "staged": false,
+     "bytes": 5060016,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -15815,7 +16155,7 @@
    },
    "foundry": "cjkFonts",
    "foundrySlug": "cjkfonts",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/sftb",
@@ -15823,7 +16163,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://connect.cjkfonts.com/blog/ThePeakFont",
     "syncedAt": null,
@@ -15837,6 +16177,16 @@
      "format": "git",
      "href": "https://connect.cjkfonts.com/blog/ThePeakFont",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/sftb/source/Regular.ttf",
+     "sha256": "7dfa878952fed5935155cb4780ba589576a00176c5129461bdb1c71cf9929a5a",
+     "staged": false,
+     "bytes": 10455396,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -21716,7 +22066,7 @@
    },
    "foundry": "Adobe",
    "foundrySlug": "adobe",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/syhtr",
@@ -21730,7 +22080,7 @@
     "Bold"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -21738,6 +22088,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/syhtr/source/DemiLight.ttf",
+     "sha256": "3466d9a677be4fa754ca460ad7898c5a3bce6649ab1b09635a14bc1a96f5cd53",
+     "staged": false,
+     "bytes": 16504696,
+     "file": "DemiLight.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -22092,7 +22452,7 @@
    },
    "foundry": "Adobe",
    "foundrySlug": "adobe",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/systcn",
@@ -22106,7 +22466,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -22114,6 +22474,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/systcn/source/Heavy.ttf",
+     "sha256": "78101f93fb76951da79728a7ece95a974fb8f95f2024fa50792bc79627951a07",
+     "staged": false,
+     "bytes": 11304840,
+     "file": "Heavy.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -22145,7 +22515,7 @@
    },
    "foundry": "Adobe",
    "foundrySlug": "adobe",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/systcnl",
@@ -22167,6 +22537,16 @@
      "format": "git",
      "href": "https://github.com/adobe-fonts/source-han-serif",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/systcnl/source/Systcn.ttf",
+     "sha256": "bbcb3ec1b48cd3dd19b65bdba073c1723d7a41bdad0e3a6e449000bfbff3e615",
+     "staged": false,
+     "bytes": 11090240,
+     "file": "Systcn.ttf"
     },
     {
      "kind": "slice",
@@ -23789,7 +24169,7 @@
    },
    "foundry": "MOESongUN",
    "foundrySlug": "moesongun",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/jybbzstun",
@@ -23797,7 +24177,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -23805,6 +24185,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/jybbzstun/source/Regular.ttf",
+     "sha256": "e1a48e33597c0b96c32d2dd96ddcd7d5dd6e4ba63f317bfe11dc5f8baa15bce0",
+     "staged": false,
+     "bytes": 21260280,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -24135,7 +24525,7 @@
    },
    "foundry": "Unifoundry",
    "foundrySlug": "unifoundry",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/gnuuf",
@@ -24143,7 +24533,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -24151,6 +24541,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/gnuuf/source/Regular.ttf",
+     "sha256": "2aec371ce16b0150c39046a6124d4343e98138f09db297ead27808d6748be5aa",
+     "staged": false,
+     "bytes": 14767664,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -24657,7 +25057,7 @@
    },
    "foundry": "文泉驿",
    "foundrySlug": "wenquanyi",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/wqydkwmh",
@@ -24679,6 +25079,16 @@
      "format": "git",
      "href": "https://github.com/anthonyfok/fonts-wqy-microhei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/wqydkwmh/source/Regular.ttf",
+     "sha256": "3481c900f2094fe674a59f1e70a7b8eab723cd9b16ab32c0d1b0e9c1025f4d5d",
+     "staged": false,
+     "bytes": 4626136,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -24711,7 +25121,7 @@
    },
    "foundry": "WenQuanYi",
    "foundrySlug": "wenquanyi",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/wqyzhdk",
@@ -24733,6 +25143,16 @@
      "format": "git",
      "href": "https://github.com/deepin-community/fonts-wqy-zenhei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/wqyzhdk/source/Regular.ttf",
+     "sha256": "6bc8e587a388cae8a9808c12d722009fb1d346500a4ef8ddd85b49e764717dda",
+     "staged": false,
+     "bytes": 8927464,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -24834,7 +25254,7 @@
    },
    "foundry": "文泉驿",
    "foundrySlug": "wenquanyi",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/wqywmh",
@@ -24856,6 +25276,16 @@
      "format": "git",
      "href": "https://github.com/anthonyfok/fonts-wqy-microhei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/wqywmh/source/Regular.ttf",
+     "sha256": "6e4efecda044da318ad98a916558cb15288463625e926eb16fea4123123e87b8",
+     "staged": false,
+     "bytes": 4625768,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -24888,7 +25318,7 @@
    },
    "foundry": "WenQuanYi",
    "foundrySlug": "wenquanyi",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/wqyzht",
@@ -24910,6 +25340,16 @@
      "format": "git",
      "href": "https://github.com/deepin-community/fonts-wqy-zenhei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/wqyzht/source/Regular.ttf",
+     "sha256": "3077d5c485493f78bdecaf7d7534156e964f0a1925b5e6f2cc39189bd9d710dc",
+     "staged": false,
+     "bytes": 12853412,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -25994,7 +26434,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xlztsc",
@@ -26016,6 +26456,16 @@
      "format": "git",
      "href": "https://github.com/lxgw/kose-font",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xlztsc/source/Xiaolai-Regular.ttf",
+     "sha256": "e2f68daf0e72777a8cf58bc83de1b98634b251e537ddbfca24b0ae50d1802da2",
+     "staged": false,
+     "bytes": 22220806,
+     "file": "Xiaolai-Regular.ttf"
     },
     {
      "kind": "slice",
@@ -26216,7 +26666,7 @@
    },
    "foundry": "Poppy Works",
    "foundrySlug": "poppy-works",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xsszt",
@@ -26224,7 +26674,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26232,6 +26682,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xsszt/source/Regular.ttf",
+     "sha256": "7a4818ceb52278e6774ebefc51f6fccebf795ace6f4b1959dabde8b59a38dd16",
+     "staged": false,
+     "bytes": 3717480,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26330,7 +26790,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwwkb",
@@ -26343,7 +26803,7 @@
     "MediumItalic"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26351,6 +26811,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwwkb/source/LXGWBright-Regular.ttf",
+     "sha256": "d8cd796c0c73f82dcaf514f11d7408892890ce3bfea570c1754fb0bed33cd5a7",
+     "staged": false,
+     "bytes": 13522964,
+     "file": "LXGWBright-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26382,7 +26852,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwwkbc",
@@ -26395,7 +26865,7 @@
     "ExtraLightItalic"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26403,6 +26873,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwwkbc/source/LXGWBrightCode-Regular.ttf",
+     "sha256": "be3ff1f8de436d2384a3602fadb5b39b87221c3175e89d1cd6616f8f1503266e",
+     "staged": false,
+     "bytes": 13861912,
+     "file": "LXGWBrightCode-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26439,7 +26919,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwmh",
@@ -26447,7 +26927,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26455,6 +26935,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwmh/source/Regular.ttf",
+     "sha256": "6837e616797de8cf59932f7c3b7360a0a6d26907fdf30ea5f1d151f533c2ec53",
+     "staged": false,
+     "bytes": 3181228,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26491,7 +26981,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwmxs",
@@ -26499,7 +26989,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26507,6 +26997,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwmxs/source/LXGWHeartSerif.ttf",
+     "sha256": "c31ad15b1b3eee633ff74ac3d7b6440a73be7286a508ad190ffbb54b3cd61c31",
+     "staged": false,
+     "bytes": 11107012,
+     "file": "LXGWHeartSerif.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26538,7 +27038,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwmxscl",
@@ -26546,7 +27046,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26554,6 +27054,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwmxscl/source/LXGWHeartSerifCL.ttf",
+     "sha256": "a9d5046959849e0b22288cabe847db0c643e9e4f331032a669cf69c5b59324e1",
+     "staged": false,
+     "bytes": 9208390,
+     "file": "LXGWHeartSerifCL.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26585,7 +27095,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwmxsmn",
@@ -26593,7 +27103,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26601,6 +27111,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwmxsmn/source/LXGWHeartSerifMN.ttf",
+     "sha256": "05e82824536e9e0e78b1fc608033cc5885a36107148dea60297deddb643f9ea9",
+     "staged": false,
+     "bytes": 9158684,
+     "file": "LXGWHeartSerifMN.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26637,7 +27157,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwszh",
@@ -26645,7 +27165,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -26653,6 +27173,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwszh/source/LXGWFasmartGothic.ttf",
+     "sha256": "46c06f85c75aa55b4450fa02c37a35f0f8a4efe8058ffcb6e48b9e2eccd764eb",
+     "staged": false,
+     "bytes": 4995344,
+     "file": "LXGWFasmartGothic.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -26684,7 +27214,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwszhcl",
@@ -26706,6 +27236,16 @@
      "format": "git",
      "href": "https://github.com/lxgw/LxgwFasmartGothic",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwszhcl/source/LXGWFasmartGothicCL.ttf",
+     "sha256": "ff0284d5a62b7bf0df6ab09f7dcab38cc2bf8a5bd03b705ca2d363c6a77ee8c0",
+     "staged": false,
+     "bytes": 4182662,
+     "file": "LXGWFasmartGothicCL.ttf"
     },
     {
      "kind": "slice",
@@ -26943,7 +27483,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwwktc",
@@ -26967,6 +27507,16 @@
      "format": "git",
      "href": "https://github.com/lxgw/LxgwWenKai",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwwktc/source/LXGWWenKaiTC-Regular.ttf",
+     "sha256": "b1a0795862c1415bf3f393ea50b2a4ea6275012cf5bad3f94feeb1222f555731",
+     "staged": false,
+     "bytes": 15267616,
+     "file": "LXGWWenKaiTC-Regular.ttf"
     },
     {
      "kind": "slice",
@@ -27004,7 +27554,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxhcl",
@@ -27012,7 +27562,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -27020,6 +27570,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxhcl/source/LXGWXiHeiCL.ttf",
+     "sha256": "da5de5e1c742864fd41634ad12c76eeea047a135a04b7695e6ec702b0126bdcd",
+     "staged": false,
+     "bytes": 6329982,
+     "file": "LXGWXiHeiCL.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -27051,7 +27611,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxhmn",
@@ -27059,7 +27619,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -27067,6 +27627,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxhmn/source/LXGWXiHeiMN.ttf",
+     "sha256": "e29b6388cff06d2c9f665a5f8bb2e2d832793a4f3a5aeaeb74622bf14a27eb5b",
+     "staged": false,
+     "bytes": 6339034,
+     "file": "LXGWXiHeiMN.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -27103,7 +27673,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxxh",
@@ -27111,7 +27681,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -27119,6 +27689,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxxh/source/Regular.ttf",
+     "sha256": "8ec2d02c3e5d7f382e16493b437a077b925dea1f9703f42483d32acaa1d0f2fe",
+     "staged": false,
+     "bytes": 7154226,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -27268,7 +27848,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxxhs",
@@ -27290,6 +27870,16 @@
      "format": "git",
      "href": "https://github.com/lxgw/LxgwNeoXiHei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxxhs/source/LXGWNeoXiHeiScreen.ttf",
+     "sha256": "6f69412d8307c055b7f247e67669b0e4ab4b79bf199fe58ee93545429b586092",
+     "staged": false,
+     "bytes": 7666968,
+     "file": "LXGWNeoXiHeiScreen.ttf"
     },
     {
      "kind": "slice",
@@ -27322,7 +27912,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxxhsf",
@@ -27344,6 +27934,16 @@
      "format": "git",
      "href": "https://github.com/lxgw/LxgwNeoXiHei",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxxhsf/source/LXGWNeoXiHeiScreenFull.ttf",
+     "sha256": "22150f8ffe4f0c1cfd9f4f97798c22f18dd2ec6b166c24f2c164442ca2e9a258",
+     "staged": false,
+     "bytes": 11501566,
+     "file": "LXGWNeoXiHeiScreenFull.ttf"
     },
     {
      "kind": "slice",
@@ -27381,7 +27981,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxzs",
@@ -27389,7 +27989,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -27397,6 +27997,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxzs/source/Regular.ttf",
+     "sha256": "1977087e2b943648ea34cc9d070c24213db350fde977e84dc974f0a819ea32b0",
+     "staged": false,
+     "bytes": 10028648,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -27492,7 +28102,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwxzss",
@@ -27514,6 +28124,16 @@
      "format": "git",
      "href": "https://github.com/lxgw/LxgwNeoXiZhi-Screen",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwxzss/source/LXGWNeoZhiSongScreen.ttf",
+     "sha256": "4e071b63ee221e72309ec720259f264024336991d1ee0bce42e80d1fb3855a1c",
+     "staged": false,
+     "bytes": 11922650,
+     "file": "LXGWNeoZhiSongScreen.ttf"
     },
     {
      "kind": "slice",
@@ -27748,7 +28368,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwzscl",
@@ -27756,7 +28376,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -27764,6 +28384,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwzscl/source/LXGWZhiSongCL.ttf",
+     "sha256": "dd46426e6f8cbe386fbf1f5b3cc708c1e689d8ef52048d6f8f9fbf7e020f1429",
+     "staged": false,
+     "bytes": 8777284,
+     "file": "LXGWZhiSongCL.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -27795,7 +28425,7 @@
    },
    "foundry": "LXGW",
    "foundrySlug": "lxgw",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xwzsmn",
@@ -27803,7 +28433,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -27811,6 +28441,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xwzsmn/source/LXGWZhiSongMN.ttf",
+     "sha256": "055708c4497a0f4678e18a7bb933a51389f377e2af3e52896002a379fdd28745",
+     "staged": false,
+     "bytes": 8789200,
+     "file": "LXGWZhiSongMN.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -28355,7 +28995,7 @@
    },
    "foundry": "",
    "foundrySlug": "unknown",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/yjmc",
@@ -28363,7 +29003,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -28371,6 +29011,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/yjmc/source/Regular.ttf",
+     "sha256": "21facd62751b4597c349a3fccba1e77614eeae2f0b5c0df6df3e5a460b2a8e27",
+     "staged": false,
+     "bytes": 23021312,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -30308,7 +30958,7 @@
    },
    "foundry": "ZhongQi",
    "foundrySlug": "zhongqi",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/lct",
@@ -30316,7 +30966,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -30324,6 +30974,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/lct/source/Regular.ttf",
+     "sha256": "a1236ac99a5b1b05304ada83d5d9a1ba716510e763bda89c892c37cbe44ea9ba",
+     "staged": false,
+     "bytes": 5151180,
+     "file": "Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -30956,7 +31616,7 @@
    },
    "foundry": "字魂",
    "foundrySlug": "zihun",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zhbtt",
@@ -30964,7 +31624,7 @@
     "Oblique"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://izihun.com/shangyongziti/7495.html",
     "syncedAt": null,
@@ -30978,6 +31638,16 @@
      "format": "git",
      "href": "https://izihun.com/shangyongziti/7495.html",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zhbtt/source/Oblique.ttf",
+     "sha256": "24758548d8324539d96dd84f08636ce39804f7ff870d55b139c5a538d1f4cc70",
+     "staged": false,
+     "bytes": 2160508,
+     "file": "Oblique.ttf"
     },
     {
      "kind": "slice",
@@ -31946,7 +32616,7 @@
    },
    "foundry": "ZCOOL QingKe (Zheng Qingke)",
    "foundrySlug": "qingke",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zqkhyt",
@@ -31954,7 +32624,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
     "syncedAt": null,
@@ -31968,6 +32638,16 @@
      "format": "git",
      "href": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zqkhyt/source/Regular.ttf",
+     "sha256": "342d008aaa22a55a489f8482caea3aae52cc6c44d47317682f73f545bdec262e",
+     "staged": false,
+     "bytes": 6865148,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -32047,7 +32727,7 @@
    },
    "foundry": "",
    "foundrySlug": "unknown",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/mhzk12",
@@ -32055,7 +32735,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://www.maoken.com/freefonts/11130.html",
     "syncedAt": null,
@@ -32069,6 +32749,16 @@
      "format": "git",
      "href": "https://www.maoken.com/freefonts/11130.html",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/mhzk12/source/Regular.ttf",
+     "sha256": "52c0ba5f0f19609ff62fb4c05c95a0bef672bf5f60132b25b2ccb4e3d668c091",
+     "staged": false,
+     "bytes": 2871636,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -32614,7 +33304,7 @@
    },
    "foundry": "cjkFonts",
    "foundrySlug": "cjkfonts",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/cjkfqlt",
@@ -32622,7 +33312,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
     "syncedAt": null,
@@ -32636,6 +33326,16 @@
      "format": "git",
      "href": "https://connect.cjkfonts.com/blog/cjkfonts_handwriting4",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/cjkfqlt/source/Regular.ttf",
+     "sha256": "ccdb577c1dd7840e816a170d34339a86407ca00c2f570c69468ab0066c1840e9",
+     "staged": false,
+     "bytes": 15666772,
+     "file": "Regular.ttf"
     },
     {
      "kind": "slice",
@@ -35566,7 +36266,7 @@
    },
    "foundry": "ほのかフォント",
    "foundrySlug": "honoka-font",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/hsakjp",
@@ -35574,7 +36274,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://font.gloomy.jp/",
     "syncedAt": null,
@@ -35588,6 +36288,16 @@
      "format": "link",
      "href": "https://font.gloomy.jp/",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "otf",
+     "href": "https://cn.windfonts.com/fonts-packages/hsakjp/source/Regular.otf",
+     "sha256": "aa04b9aa4998c3e52c63dd62030fc3c7777bfcf44b1a7728fb99be493042b03e",
+     "staged": false,
+     "bytes": 2748888,
+     "file": "Regular.otf"
     },
     {
      "kind": "slice",
@@ -41754,7 +42464,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/yyzym",
@@ -41768,7 +42478,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -41776,6 +42486,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/yyzym/source/BpmfGenYoMin-R.ttf",
+     "sha256": "5168100c0ae4930b928fd955b7a981fb16d7561f8424f84a274b174ab816a088",
+     "staged": false,
+     "bytes": 7388616,
+     "file": "BpmfGenYoMin-R.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -41807,7 +42527,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/yyzyh",
@@ -41821,7 +42541,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -41829,6 +42549,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/yyzyh/source/BpmfGenYoGothic-R.ttf",
+     "sha256": "4a1b5c7792bc153367b2b6d162743164e8b5282da64dec28572bc2c90ec81eda",
+     "staged": false,
+     "bytes": 5398836,
+     "file": "BpmfGenYoGothic-R.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -41860,7 +42590,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/ylzym",
@@ -41874,7 +42604,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -41882,6 +42612,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/ylzym/source/BpmfGenRyuMin-R.ttf",
+     "sha256": "94b65fe8aac102699c15b20aa0baf56eca3c9720ab85a04e219584e359cc8dd5",
+     "staged": false,
+     "bytes": 9240436,
+     "file": "BpmfGenRyuMin-R.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -41913,7 +42653,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/yszyh",
@@ -41925,7 +42665,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -41933,6 +42673,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/yszyh/source/BpmfGenSekiGothic-R.ttf",
+     "sha256": "5b75456b8845385b6c5789dcae72ae3f789b1f61c0209db6c8209b778e395ce8",
+     "staged": false,
+     "bytes": 8259628,
+     "file": "BpmfGenSekiGothic-R.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -41964,7 +42714,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/yyzybgm",
@@ -41976,7 +42726,7 @@
     "SemiBold"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -41984,6 +42734,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/yyzybgm/source/BpmfGenWanMin-R.ttf",
+     "sha256": "67a43334afd341fa74c6238259de68bbf9c47459c90756a65cf823e654981936",
+     "staged": false,
+     "bytes": 15511396,
+     "file": "BpmfGenWanMin-R.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42015,7 +42775,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/yqzyy",
@@ -42028,7 +42788,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42036,6 +42796,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/yqzyy/source/BpmfGenSenRounded-R.ttf",
+     "sha256": "95982386306113e72ca19739ec3396b7ed399e772c3479df58a3d526dbb09587",
+     "staged": false,
+     "bytes": 8016140,
+     "file": "BpmfGenSenRounded-R.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42067,7 +42837,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zhzyh",
@@ -42080,7 +42850,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42088,6 +42858,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zhzyh/source/BpmfZihiSans-Regular.ttf",
+     "sha256": "7df96517970fe0e6fd96a1c2499ebd22124fd8fd8ecdd18aafc4ae882207e0ec",
+     "staged": false,
+     "bytes": 5340032,
+     "file": "BpmfZihiSans-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42119,7 +42899,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zhzys",
@@ -42133,7 +42913,7 @@
     "Heavy"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42141,6 +42921,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zhzys/source/BpmfZihiSerif-Regular.ttf",
+     "sha256": "fc25a90d27699ec4a52f5b50838291303474b4ba7db8a236ad5982acdf0d54e2",
+     "staged": false,
+     "bytes": 6833852,
+     "file": "BpmfZihiSerif-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42172,7 +42962,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zhfy",
@@ -42180,7 +42970,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42188,6 +42978,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zhfy/source/Huninn-Regular.ttf",
+     "sha256": "6f2b79de0ee013f260fc88b4c668969e34fdfe87b7daeecaeeb5ad5a97eb9883",
+     "staged": false,
+     "bytes": 4688264,
+     "file": "Huninn-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42219,7 +43019,7 @@
    },
    "foundry": "Moonlit Owen",
    "foundrySlug": "moonlitowen",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/xrzmt",
@@ -42227,7 +43027,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://openfontlicense.org",
     "syncedAt": null,
@@ -42241,6 +43041,16 @@
      "format": "git",
      "href": "https://openfontlicense.org",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/xrzmt/source/CactusClassicalSerif-Regular.ttf",
+     "sha256": "ecbd58961db922392d7fecfafa3681fefaeec0c399b860ab6940ba700f7da055",
+     "staged": false,
+     "bytes": 28502932,
+     "file": "CactusClassicalSerif-Regular.ttf"
     },
     {
      "kind": "slice",
@@ -42273,7 +43083,7 @@
    },
    "foundry": "Moonlit Owen",
    "foundrySlug": "moonlitowen",
-   "offer": "jump",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zglht",
@@ -42281,7 +43091,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://github.com/MoonlitOwen/ChocolateSans",
     "syncedAt": null,
@@ -42295,6 +43105,16 @@
      "format": "git",
      "href": "https://github.com/MoonlitOwen/ChocolateSans",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zglht/source/ChocolateClassicalSans-Regular.ttf",
+     "sha256": "e6345f3d92c7a9b7044c31a87d9b61f50220b08c0f1dcc2736e94c2aa587ce03",
+     "staged": false,
+     "bytes": 12183000,
+     "file": "ChocolateClassicalSans-Regular.ttf"
     },
     {
      "kind": "slice",
@@ -42327,7 +43147,7 @@
    },
    "foundry": "Moonlit Owen",
    "foundrySlug": "moonlitowen",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/ywtq",
@@ -42335,7 +43155,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": "https://openfontlicense.org",
     "syncedAt": null,
@@ -42349,6 +43169,16 @@
      "format": "git",
      "href": "https://openfontlicense.org",
      "sha256": null
+    },
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/ywtq/source/UoqMunThenKhung-Regular.ttf",
+     "sha256": "943a23eb10d40ca85ee08491c0e3fb3adbc4bd111ef1f93526a4f766a8e66fbd",
+     "staged": false,
+     "bytes": 4901688,
+     "file": "UoqMunThenKhung-Regular.ttf"
     },
     {
      "kind": "slice",
@@ -42445,7 +43275,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zyfy",
@@ -42453,7 +43283,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42461,6 +43291,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zyfy/source/BpmfHuninn-Regular.ttf",
+     "sha256": "323da7a271c80a6fd2565eaca5212b8cf9610393c398dc9ae36fff57b6b21ba2",
+     "staged": false,
+     "bytes": 4581932,
+     "file": "BpmfHuninn-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42492,7 +43332,7 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
    "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zyys",
@@ -42500,7 +43340,7 @@
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42508,6 +43348,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zyys/source/BpmfIansui-Regular.ttf",
+     "sha256": "7a2759ae4e4ef6d4b12618d1375b0a639ca2e73d7963982e5d376dbdaa41165e",
+     "staged": false,
+     "bytes": 7424064,
+     "file": "BpmfIansui-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",
@@ -42539,15 +43389,15 @@
    },
    "foundry": "buttaiwan",
    "foundrySlug": "buttaiwan",
-   "offer": "pending",
+   "offer": "source",
    "slice": "planned",
-   "distribution": false,
+   "distribution": true,
    "shop": "https://app.windfonts.com/fonts/zhzybk",
    "weights": [
     "Regular"
    ],
    "mirror": {
-    "state": "absent",
+    "state": "mirrored",
     "feicode": null,
     "upstream": null,
     "syncedAt": null,
@@ -42555,6 +43405,16 @@
    },
    "lineage": null,
    "files": [
+    {
+     "kind": "archive",
+     "label": "源文件",
+     "format": "ttf",
+     "href": "https://cn.windfonts.com/fonts-packages/zhzybk/source/BpmfZihiKaiStd-Regular.ttf",
+     "sha256": "b5de180c456840edc57d07256d7d167a95306c81ab1936677c4706491a9e7d37",
+     "staged": false,
+     "bytes": 17141668,
+     "file": "BpmfZihiKaiStd-Regular.ttf"
+    },
     {
      "kind": "slice",
      "label": "网页切片包（自托管）",

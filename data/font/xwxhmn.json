@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwxhmn",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxhmn/source/LXGWXiHeiMN.ttf",
+   "sha256": "e29b6388cff06d2c9f665a5f8bb2e2d832793a4f3a5aeaeb74622bf14a27eb5b",
+   "staged": false,
+   "bytes": 6339034,
+   "file": "LXGWXiHeiMN.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

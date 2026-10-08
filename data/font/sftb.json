@@ -17,7 +17,7 @@
  },
  "foundry": "cjkFonts",
  "foundrySlug": "cjkfonts",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/sftb",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://connect.cjkfonts.com/blog/ThePeakFont",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://connect.cjkfonts.com/blog/ThePeakFont",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/sftb/source/Regular.ttf",
+   "sha256": "7dfa878952fed5935155cb4780ba589576a00176c5129461bdb1c71cf9929a5a",
+   "staged": false,
+   "bytes": 10455396,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

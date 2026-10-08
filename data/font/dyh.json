@@ -17,7 +17,7 @@
  },
  "foundry": "Atelier Anchor",
  "foundrySlug": "atelier-anchor",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/dyh",
@@ -25,7 +25,7 @@
   "Oblique"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/dyh/source/Oblique.ttf",
+   "sha256": "6b02399b62585f4a250b34b6261f490dac9cf7de2153ebf85cfc872f59e731d6",
+   "staged": false,
+   "bytes": 2098640,
+   "file": "Oblique.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

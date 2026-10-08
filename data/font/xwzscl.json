@@ -22,7 +22,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwzscl",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwzscl/source/LXGWZhiSongCL.ttf",
+   "sha256": "dd46426e6f8cbe386fbf1f5b3cc708c1e689d8ef52048d6f8f9fbf7e020f1429",
+   "staged": false,
+   "bytes": 8777284,
+   "file": "LXGWZhiSongCL.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

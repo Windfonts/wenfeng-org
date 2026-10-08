@@ -17,7 +17,7 @@
  },
  "foundry": "Writes",
  "foundrySlug": "writes",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/qssxt2",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/jasonhandwriting/JasonHandwriting",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/qssxt2/source/Regular.ttf",
+   "sha256": "9a24f01fef420cd13580b28bb5bd1816cdd4b24c9b35bc002cf03595d15304c6",
+   "staged": false,
+   "bytes": 5060016,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

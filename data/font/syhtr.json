@@ -21,7 +21,7 @@
  },
  "foundry": "Adobe",
  "foundrySlug": "adobe",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/syhtr",
@@ -35,7 +35,7 @@
   "Bold"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -43,6 +43,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/syhtr/source/DemiLight.ttf",
+   "sha256": "3466d9a677be4fa754ca460ad7898c5a3bce6649ab1b09635a14bc1a96f5cd53",
+   "staged": false,
+   "bytes": 16504696,
+   "file": "DemiLight.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

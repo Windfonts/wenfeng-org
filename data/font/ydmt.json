@@ -22,7 +22,7 @@
  },
  "foundry": "I.Font Project",
  "foundrySlug": "ichiten",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ydmt",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ydmt/source/Regular.ttf",
+   "sha256": "b571da01eda103bab3e9d9d491c805ad8538c311cba4ab11a8d021623d9f768d",
+   "staged": false,
+   "bytes": 24824264,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

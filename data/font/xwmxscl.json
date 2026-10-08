@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwmxscl",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwmxscl/source/LXGWHeartSerifCL.ttf",
+   "sha256": "a9d5046959849e0b22288cabe847db0c643e9e4f331032a669cf69c5b59324e1",
+   "staged": false,
+   "bytes": 9208390,
+   "file": "LXGWHeartSerifCL.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

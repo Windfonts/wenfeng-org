@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yqzyy",
@@ -30,7 +30,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yqzyy/source/BpmfGenSenRounded-R.ttf",
+   "sha256": "95982386306113e72ca19739ec3396b7ed399e772c3479df58a3d526dbb09587",
+   "staged": false,
+   "bytes": 8016140,
+   "file": "BpmfGenSenRounded-R.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

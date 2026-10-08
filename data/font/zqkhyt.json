@@ -17,7 +17,7 @@
  },
  "foundry": "ZCOOL QingKe (Zheng Qingke)",
  "foundrySlug": "qingke",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zqkhyt",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zqkhyt/source/Regular.ttf",
+   "sha256": "342d008aaa22a55a489f8482caea3aae52cc6c44d47317682f73f545bdec262e",
+   "staged": false,
+   "bytes": 6865148,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

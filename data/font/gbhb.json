@@ -17,7 +17,7 @@
  },
  "foundry": "I.Font Project",
  "foundrySlug": "ichiten",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/gbhb",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/gbhb/source/Regular.ttf",
+   "sha256": "77ef4032f6d637b9e074bd153c79ad9b0849189c63945135be1c59e54ea2a816",
+   "staged": false,
+   "bytes": 13085420,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

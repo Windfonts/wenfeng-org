@@ -22,7 +22,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwwkb",
@@ -35,7 +35,7 @@
   "MediumItalic"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -43,6 +43,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwwkb/source/LXGWBright-Regular.ttf",
+   "sha256": "d8cd796c0c73f82dcaf514f11d7408892890ce3bfea570c1754fb0bed33cd5a7",
+   "staged": false,
+   "bytes": 13522964,
+   "file": "LXGWBright-Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

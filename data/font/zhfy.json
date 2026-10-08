@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zhfy",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zhfy/source/Huninn-Regular.ttf",
+   "sha256": "6f2b79de0ee013f260fc88b4c668969e34fdfe87b7daeecaeeb5ad5a97eb9883",
+   "staged": false,
+   "bytes": 4688264,
+   "file": "Huninn-Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

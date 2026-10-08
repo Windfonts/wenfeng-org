@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ylzym",
@@ -31,7 +31,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ylzym/source/BpmfGenRyuMin-R.ttf",
+   "sha256": "94b65fe8aac102699c15b20aa0baf56eca3c9720ab85a04e219584e359cc8dd5",
+   "staged": false,
+   "bytes": 9240436,
+   "file": "BpmfGenRyuMin-R.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

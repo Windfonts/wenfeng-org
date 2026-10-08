@@ -17,7 +17,7 @@
  },
  "foundry": "buttaiwan",
  "foundrySlug": "buttaiwan",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yyzyh",
@@ -31,7 +31,7 @@
   "Heavy"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -39,6 +39,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/yyzyh/source/BpmfGenYoGothic-R.ttf",
+   "sha256": "4a1b5c7792bc153367b2b6d162743164e8b5282da64dec28572bc2c90ec81eda",
+   "staged": false,
+   "bytes": 5398836,
+   "file": "BpmfGenYoGothic-R.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

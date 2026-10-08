@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hzpyt",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/parlr/hanzi-pinyin-font",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hzpyt/source/Regular.ttf",
+   "sha256": "2f479e01e25fd9717915e78d96e2f3d81a5f84e4cdecfbcac493b8d02302ec37",
+   "staged": false,
+   "bytes": 10880104,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

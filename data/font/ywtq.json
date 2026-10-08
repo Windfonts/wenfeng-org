@@ -17,7 +17,7 @@
  },
  "foundry": "Moonlit Owen",
  "foundrySlug": "moonlitowen",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ywtq",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://openfontlicense.org",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://openfontlicense.org",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ywtq/source/UoqMunThenKhung-Regular.ttf",
+   "sha256": "943a23eb10d40ca85ee08491c0e3fb3adbc4bd111ef1f93526a4f766a8e66fbd",
+   "staged": false,
+   "bytes": 4901688,
+   "file": "UoqMunThenKhung-Regular.ttf"
   },
   {
    "kind": "slice",

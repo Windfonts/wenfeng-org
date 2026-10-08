@@ -22,7 +22,7 @@
  },
  "foundry": "RaptorType",
  "foundrySlug": "raptortype",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jzkgeht",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/amazusa/ToronoKugel",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jzkgeht/source/Heavy.ttf",
+   "sha256": "e80ebf9877ea10f108228e13aa76e1677fadd09e7f0d4958fc12c95e43c7f3b0",
+   "staged": false,
+   "bytes": 4121792,
+   "file": "Heavy.ttf"
   },
   {
    "kind": "slice",

@@ -22,7 +22,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/myst",
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://github.com/Pal3love/dream-han-cjk",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/myst/source/Regular.ttf",
+   "sha256": "f0dce9e246f98b94bd464b6831d0416aa9e7135ca5fe50c02ddce73e1e32db99",
+   "staged": false,
+   "bytes": 17191712,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

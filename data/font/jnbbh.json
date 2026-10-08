@@ -17,7 +17,7 @@
  },
  "foundry": "一字一句",
  "foundrySlug": "etrump",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jnbbh",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/maoken-fonts/KNBobohei",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jnbbh/source/Regular.ttf",
+   "sha256": "46f4c4001439329cb66ffaf803cf76d073d56e3b38f242f254d37bf673442b6a",
+   "staged": false,
+   "bytes": 2263808,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

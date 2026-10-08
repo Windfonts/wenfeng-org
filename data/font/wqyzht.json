@@ -17,7 +17,7 @@
  },
  "foundry": "WenQuanYi",
  "foundrySlug": "wenquanyi",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wqyzht",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/deepin-community/fonts-wqy-zenhei",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/wqyzht/source/Regular.ttf",
+   "sha256": "3077d5c485493f78bdecaf7d7534156e964f0a1925b5e6f2cc39189bd9d710dc",
+   "staged": false,
+   "bytes": 12853412,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

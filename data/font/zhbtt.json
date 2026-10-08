@@ -22,7 +22,7 @@
  },
  "foundry": "字魂",
  "foundrySlug": "zihun",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zhbtt",
@@ -30,7 +30,7 @@
   "Oblique"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://izihun.com/shangyongziti/7495.html",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://izihun.com/shangyongziti/7495.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/zhbtt/source/Oblique.ttf",
+   "sha256": "24758548d8324539d96dd84f08636ce39804f7ff870d55b139c5a538d1f4cc70",
+   "staged": false,
+   "bytes": 2160508,
+   "file": "Oblique.ttf"
   },
   {
    "kind": "slice",

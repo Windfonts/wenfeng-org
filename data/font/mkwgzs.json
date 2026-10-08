@@ -22,7 +22,7 @@
  },
  "foundry": "Maoken",
  "foundrySlug": "maoken",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mkwgzs",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://www.maoken.com/freefonts/15861.html",
   "syncedAt": null,
@@ -44,6 +44,16 @@
    "format": "git",
    "href": "https://www.maoken.com/freefonts/15861.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mkwgzs/source/Regular.ttf",
+   "sha256": "2c0e4ed99b91bcbcd92856e4221ea172b8123e71fe6c287c0697d7e9406d854a",
+   "staged": false,
+   "bytes": 50047524,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

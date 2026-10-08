@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unifoundry",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/unijp",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/unijp/source/unifont-15.0.06.ttf",
+   "sha256": "9282b6eff54eeca2e7f58c9a40a91049bd219f3e6a45fbee8eba013379b9af3a",
+   "staged": false,
+   "bytes": 12452236,
+   "file": "unifont-15.0.06.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

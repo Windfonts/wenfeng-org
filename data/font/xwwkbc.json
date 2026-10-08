@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwwkbc",
@@ -30,7 +30,7 @@
   "ExtraLightItalic"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwwkbc/source/LXGWBrightCode-Regular.ttf",
+   "sha256": "be3ff1f8de436d2384a3602fadb5b39b87221c3175e89d1cd6616f8f1503266e",
+   "staged": false,
+   "bytes": 13861912,
+   "file": "LXGWBrightCode-Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

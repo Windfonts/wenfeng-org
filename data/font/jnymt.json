@@ -17,7 +17,7 @@
  },
  "foundry": "京南",
  "foundrySlug": "jingnan",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jnymt",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/maoken-fonts/KNYuanmo",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/jnymt/source/Regular.ttf",
+   "sha256": "6da16be58ea09cdaba65ab508163b1cbff30e68c159714938af891434d48e3cc",
+   "staged": false,
+   "bytes": 2521236,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

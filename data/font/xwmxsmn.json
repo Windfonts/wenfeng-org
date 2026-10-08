@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwmxsmn",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwmxsmn/source/LXGWHeartSerifMN.ttf",
+   "sha256": "05e82824536e9e0e78b1fc608033cc5885a36107148dea60297deddb643f9ea9",
+   "staged": false,
+   "bytes": 9158684,
+   "file": "LXGWHeartSerifMN.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -17,7 +17,7 @@
  },
  "foundry": "新价值",
  "foundrySlug": "新价值",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cylytt",
@@ -40,6 +40,16 @@
    "format": "git",
    "href": "https://github.com/Chenyu-otf/chenyuluoyan_thin",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/cylytt/source/Monospaced.ttf",
+   "sha256": "d8ecd0598634c92f0b29f90aabef8f7916f17aef19b0350883ca7b46979a5373",
+   "staged": false,
+   "bytes": 4515324,
+   "file": "Monospaced.ttf"
   },
   {
    "kind": "slice",

@@ -17,15 +17,15 @@
  },
  "foundry": "I.Font Project",
  "foundrySlug": "ichiten",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/inkslyt",
  "weights": [
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/inkslyt/source/Regular.ttf",
+   "sha256": "7aba8f5bb77ea7e0fc37c0e5e709bd8e1d49b44a3c91eb503f426562602f9c2a",
+   "staged": false,
+   "bytes": 8953760,
+   "file": "Regular.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

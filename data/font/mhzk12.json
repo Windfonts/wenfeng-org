@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mhzk12",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": "https://www.maoken.com/freefonts/11130.html",
   "syncedAt": null,
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://www.maoken.com/freefonts/11130.html",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/mhzk12/source/Regular.ttf",
+   "sha256": "52c0ba5f0f19609ff62fb4c05c95a0bef672bf5f60132b25b2ccb4e3d668c091",
+   "staged": false,
+   "bytes": 2871636,
+   "file": "Regular.ttf"
   },
   {
    "kind": "slice",

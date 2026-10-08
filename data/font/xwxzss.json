@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwxzss",
@@ -39,6 +39,16 @@
    "format": "git",
    "href": "https://github.com/lxgw/LxgwNeoXiZhi-Screen",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxzss/source/LXGWNeoZhiSongScreen.ttf",
+   "sha256": "4e071b63ee221e72309ec720259f264024336991d1ee0bce42e80d1fb3855a1c",
+   "staged": false,
+   "bytes": 11922650,
+   "file": "LXGWNeoZhiSongScreen.ttf"
   },
   {
    "kind": "slice",

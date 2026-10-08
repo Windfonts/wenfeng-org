@@ -22,7 +22,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwxhcl",
@@ -30,7 +30,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -38,6 +38,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwxhcl/source/LXGWXiHeiCL.ttf",
+   "sha256": "da5de5e1c742864fd41634ad12c76eeea047a135a04b7695e6ec702b0126bdcd",
+   "staged": false,
+   "bytes": 6329982,
+   "file": "LXGWXiHeiCL.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

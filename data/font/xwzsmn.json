@@ -17,7 +17,7 @@
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "pending",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xwzsmn",
@@ -25,7 +25,7 @@
   "Regular"
  ],
  "mirror": {
-  "state": "absent",
+  "state": "mirrored",
   "feicode": null,
   "upstream": null,
   "syncedAt": null,
@@ -33,6 +33,16 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xwzsmn/source/LXGWZhiSongMN.ttf",
+   "sha256": "055708c4497a0f4678e18a7bb933a51389f377e2af3e52896002a379fdd28745",
+   "staged": false,
+   "bytes": 8789200,
+   "file": "LXGWZhiSongMN.ttf"
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

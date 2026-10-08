@@ -17,7 +17,7 @@
  },
  "foundry": "妙笔",
  "foundrySlug": "myil",
- "offer": "jump",
+ "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nswt",
@@ -40,6 +40,16 @@
    "format": "git",
    "href": "https://github.com/nushu-script/Nyushu",
    "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nswt/source/Italic.ttf",
+   "sha256": "71bcf2cbbe64d83653a3bd4e10ad39e52fa2f1efee244223c3935ef6cd3cab3e",
+   "staged": false,
+   "bytes": 10796564,
+   "file": "Italic.ttf"
   },
   {
    "kind": "slice",
