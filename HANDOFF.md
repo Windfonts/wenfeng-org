@@ -1,3 +1,7 @@
+> 10-08 org favicon 用 app 反色：[Grok]。人「favicon org 的用app 的反色即可」。app `/favicon.ico` 白标深底 → org 深标浅底（RGB 反相、透明保留）。现网 `https://wenfeng.org/favicon.ico` 与 `/favicon.webp` 200，网页桶根路径，不走 cn。页眉仍 `assets/icon.webp`。layout 已加 `<link rel="icon">`，现网页 HTML 未整站重发。未改 Worker。
+
+> 10-08 页眉走 cn 剩余项：[Grok]。人「未做的去做」。CF `purge_everything` zone `91c9a7ea…` success（modiqi `cf-api`）。浏览器 `/source/` 752 款、`/source/xwwk/` 本站下载、`/attest/xwwk/` 证面：页眉 CSS/JS/woff2 与 `assets/shs|shsans` 均 cn 200；QR/badge 仍 `wenfeng.org/api/v1/certs*`。`cn.windfonts.com/api/css` 仍 ORB（旧 FACE_CSS_TPL，包 CSS 回退 200）。favicon 已另条。linuxjoy SOP `692d6e5` 未推。
+
 > 10-08 页眉静态走 cn.windfonts.com：[Grok]。人「未做的去做」。HTML 仍 CF Worker → `oss://wenfeng-org`。页眉 CSS/JS/woff2/图 + 证面思源 → `oss://wenfeng-fonts/assets/` 广州（1506 对象，occupancy-safe devops）。`WF_ASSET_ORIGIN` 默认 `https://cn.windfonts.com`；授权 PDF 仍 `/assets/licenses/`。未改 Worker/DNS，未挂大陆七 A，未进 `wenfeng-web-hz`。构建 4463 页；HTML 4468 进网页桶。现网首页 9 条 cn；`perf-check.py --site org` EXIT 0。浏览器首页/用法/关于 CSS 与寒蝉/玄宗 woff2 均 cn 200。favicon.ico 404 未动。不要用根 `deploy.sh`。
 
 > 10-08 org 跟上 752 并提交 15 条：[Grok]。人「本会话把 org 跟上 752 并提交 15 条。」从 `wt/wenfeng-org-toneoz` 并入 13 款 ToneOZ（astbspy astbszy astpykk astpywkk astpywwk astqs astzykk astzykks astzywkk astzywkks xstqjpy xstqjpz xstqjzy）`data/font` + `license-text`；`samples.json` / `samples-full.json` 739→752，本站 source 594→607。15 条 `licenseName=free_commercial` 接线 offer=source 字节未改。未动已有 astkx/astpywk/xstqj 谱系。未跑 export-wenfeng.py。未发 OSS/CF。未提交 attest-ledger 与 deploy tar。

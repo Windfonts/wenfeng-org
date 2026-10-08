@@ -654,6 +654,8 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>%s</title>
+<link rel="icon" type="image/webp" href="/favicon.webp">
+<link rel="icon" href="/favicon.ico">
 %s<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
 <link rel="stylesheet" href="%s?v=%d"><link rel="stylesheet" href="%s?v=%d">
 <link rel="stylesheet" href="%s?v=%d">
@@ -4235,6 +4237,11 @@ def main():
     if DIST.exists():
         shutil.rmtree(DIST)
     shutil.copytree(HERE / "assets", DIST / "assets", symlinks=True)
+    # 标签图标在 HTML 源站根路径（浏览器默认要 /favicon.ico）。反色自 app，不是页眉方标。
+    for name in ("favicon.ico", "favicon.webp"):
+        src = HERE / "assets" / name
+        if src.exists():
+            shutil.copy2(src, DIST / name)
     # 软链接思源宋体与思源黑体（~75MB，避免重复拷贝）
     for name in ("shs", "shsans"):
         target = DIST / "assets" / name

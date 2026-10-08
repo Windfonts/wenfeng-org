@@ -29,7 +29,7 @@
 
 ## 2. 日常更新流程（数据或页面变更后）
 
-HTML 仍走 CF Worker → `oss://wenfeng-org`（广州）。页眉 CSS/JS/woff2/图走已备案 `cn.windfonts.com` → `oss://wenfeng-fonts/assets/`（广州；zone `windfonts` 未切杭州前不要灌 `wenfeng-fonts-hz`）。构建默认 `WF_ASSET_ORIGIN=https://cn.windfonts.com`。授权 PDF 仍 `/assets/licenses/` 同源。不要把 org HTML 写进 `wenfeng-web-hz`。不要改 Worker / 不要给 `.org` 挂大陆七 A。
+HTML 仍走 CF Worker → `oss://wenfeng-org`（广州）。页眉 CSS/JS/woff2/图走已备案 `cn.windfonts.com` → `oss://wenfeng-fonts/assets/`（广州；zone `windfonts` 未切杭州前不要灌 `wenfeng-fonts-hz`）。构建默认 `WF_ASSET_ORIGIN=https://cn.windfonts.com`。授权 PDF 仍 `/assets/licenses/` 同源。不要把 org HTML 写进 `wenfeng-web-hz`。不要改 Worker / 不要给 `.org` 挂大陆七 A。标签图标 `/favicon.ico` 与 `/favicon.webp` 是 app 方标反色，放网页桶根路径（同源，不走 cn）。页眉仍用 `assets/icon.webp`。
 
 ```bash
 # Mac 侧：site/ v2（不要用根 build.py / deploy.sh）

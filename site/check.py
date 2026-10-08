@@ -74,7 +74,9 @@ def main():
         "site/serve.py",
         "site/assets/tokens.css",
         "site/assets/site.css",
-        "site/assets/site.js"
+        "site/assets/site.js",
+        "site/assets/favicon.ico",
+        "site/assets/favicon.webp",
     ]
     missing = [f for f in core_files if not (ROOT / f).exists()]
     files_pass = len(missing) == 0
