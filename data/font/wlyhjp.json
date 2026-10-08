@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/welai/glow-sans@master/LICENSE",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "1dafc216f62d298766dc58949a0ebe8fec97f71813c9c20b2054c7a1bc1c9ebb",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "Wêlai",
  "foundrySlug": "welai",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wlyhjp",
  "weights": [
   "Bold",
@@ -35,12 +35,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/welai/glow-sans",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/welai/glow-sans",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": "https://openfontlicense.org",
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/MoonlitOwen/ChocolateSans@main/license.md",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "158f2589fded019b551710504fadfd01044564bdab6b71ed39992d5f0fb74031",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "Moonlit Owen",
  "foundrySlug": "moonlitowen",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zglht",
  "weights": [
   "Regular"
@@ -27,7 +27,7 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": "https://openfontlicense.org",
+  "upstream": "https://github.com/MoonlitOwen/ChocolateSans",
   "syncedAt": null,
   "headSha": null
  },
@@ -35,9 +35,9 @@
  "files": [
   {
    "kind": "upstream",
-   "label": "上游 openfontlicense.org",
+   "label": "上游 GitHub",
    "format": "git",
-   "href": "https://openfontlicense.org",
+   "href": "https://github.com/MoonlitOwen/ChocolateSans",
    "sha256": null
   },
   {

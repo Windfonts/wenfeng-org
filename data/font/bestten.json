@@ -8,16 +8,16 @@
  "licenseName": "BestTen授权协议",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
+  "textState": "pointer",
+  "sourceUrl": "https://flopdesign.booth.pm/items/2747965",
+  "fetchedAt": "2026-10-08",
   "textSha256": null,
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "FLOP DESIGN",
  "foundrySlug": "flopdesign",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/bestten",
@@ -28,12 +28,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://flopdesign.booth.pm/items/2747965",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 flopdesign.booth.pm",
+   "format": "link",
+   "href": "https://flopdesign.booth.pm/items/2747965",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -1,0 +1,24 @@
+{
+  "norm": "jkgljp",
+  "title": "授权待核",
+  "body": "■商用利用について\n\n自由に使って頂いて大丈夫です。\n需要があるかは分かりませんが、企業・サービスの印刷物やホームページ、映像でも利用できます。報告などは不要です。\nなお、ロゴでの使用も可です。\n\n■著作権について\n\n仮名文字以外は「M+ FONTS PROJECT」様に著作権が帰属します。\n仮名文字は本サイト「かわいいフォントと素材の箱（JK FONTS）」にあります。\n\nCopyright  (c) 2014 M+ FONTS PROJECT\nCopyright  (c) 2015 JK FONTS\n\n■使用上のご注意\n\n無料での提供になりますが、勝手ながら無保証とさせていただきます。このフォントデータが原因の直接的・間接的損害についても、フォント提供側は責任を負うことはできませんので、その点を納得した上でダウンロード・インストール願います。なお、フォント製作者は女子高生ではありません。\n\n■謝辞\n\n漢字等には「M+フォント」を使用させていただきました。制作者様にこの場を借りて感謝申し上げます。\n\nJK FONTS\nhttp://font.cutegirl.jp/\n--- M+ FONTS LICENSE ---\nM+ FONTS                                Copyright (C) 2002-2014 M+ FONTS PROJECT\n\n-\n\nLICENSE_E\n\n\n\n\nThese fonts are free software.\nUnlimited permission is granted to use, copy, and distribute them, with\nor without modification, either commercially or noncommercially.\nTHESE FONTS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY.\n\n\nhttp://mplus-fonts.sourceforge.jp/mplus-outline-fonts/",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/JKGothicL/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "7b47b928863ab69775ab9918d43f055b690368a59c829d05fa969a4dfe5e2bd4",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/JKGothicL/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "7b47b928863ab69775ab9918d43f055b690368a59c829d05fa969a4dfe5e2bd4"
+      }
+    ]
+  }
+}

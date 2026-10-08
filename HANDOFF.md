@@ -1,3 +1,9 @@
+> 10-08 未收录按店面许可和原地址拉取：[Grok]。人「直接说未收录怎么弄…app 都核查过给了原地址和许可证，你就不能去下载和拉取对齐」。未收录=offer missing（无许可正文且无原地址），不是「没进目录」。按店面 API / fonts.json / 拆包 OFL / GitHub LICENSE / 标准 OFL 写入 197 条：官方下载 130、暂无下载 62（pending+full）；未收录 222→25（店面没有的 25 款）。未镜像不得升本站。未改五态用词，未发桶，未跑 export。构建 4419，check.py PASS。`/source/fzxs12/` 暂无下载（包内 OFL）；`/source/gsuihk/` 官方下载 GitHub，许可页有 OFL 正文。回退 `data/_bak-missing-fetch-20261008/`。本提交。
+>
+> 10-08 OFL SPDX + 开源商用再分发：[Grok]。人「两列一起改」。99 条 `licenseName=OFL` 写入 `spdx=OFL-1.1`；116 条店面「开源商用」`distribution` false→true（含那 99 条 + 传趣 + 14 条 JFドット + 2 条 Apache）。未改 `offer` / `textState` / `licenseName`。构建 4302 页。`check.py` PASS。方舟像素 12 `/source/fzxs12/` 现 OFL-1.1、未收录；传趣 `/license/cqcqt/` 可分发可出证。回退 `data/_bak-spdx-dist-20261008/`。`export-wenfeng.py` 补裸 OFL 与开源商用默认 dist，未跑全量。本提交。
+>
+> 10-08 offer 按短码接回：[Grok]。人「把 offer 也按短码接回去，还有告诉我字体原件有没有放到OSS」。79 条 `offer` missing→pending 48、missing→jump 31（有全文走 `offer_of`；未镜像不得升 source）。目录 未收录 301→222，暂无下载 209→257，官方下载 63→94，本站 113 不动。构建 4302 页。原件 `wenfeng-original/{短码,旧名}.tar.gz` 公网 HEAD 243 条全 404；`fonts-packages/…/source/index.json` 120 条 404。网页分片 `result.css` 仍 200。未跑 `export-wenfeng.py`，未改 `ARCHIVE_HREF_PREFIX`，未发 OSS/CF。回退 `data/_bak-offer-rewire-20261008/`。本提交。
+>
 > 10-08 授权原文按短码接回：[Grok]。人「先把授权原文按短码接回去，你再进行全面核查」。79 条 `textState` missing→full、1 条 pointer→full（仓耳周珂正大榜书）；`licenses.json`/`license-text` 本已在短码下，缺的是 `data/font` 与 `samples.json`。构建 4302 页。授权查询全文 346→426。`/license/975yt/` `/license/awdgt/` 现为开源双栏原文。80 页里 60 开源全文、20 厂商原文（健康体/Harmony/仓耳等，非空档）。未改 `offer`：目录仍 未收录 301。未跑 `export-wenfeng.py`。回退 `data/_bak-license-rewire-20261008/`。本提交，未发 OSS/CF。
 >
 > 10-07 目录跟店面一致：[Grok]。人「目录这些都要一致，你为什么老是残留工作」。店面 713 / 本站 739；店面有的都进本站（184 条，含 6 款 BDF）；寒蝉端黑并进 `hcdht`。无包无库 26 条仍只在本站。上海摩登 `shmdt`。DIST 4194 页已上 OSS+CF。`/source/mkcjp/` `/source/bestten/` `/source/clduan/` 现网 200。不要跑 `export-wenfeng.py` 全量覆盖。已进 `84e9197`。

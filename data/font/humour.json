@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/Humour/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "f61a2f0336a40f2956cbd823606a13d0079ffd4b398e579c2889d4df1ed3d9fc",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "文字枠研究 / Moji-Waku",
  "foundrySlug": "moji-waku",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/humour",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://moji-waku.com/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 moji-waku.com",
+   "format": "link",
+   "href": "https://moji-waku.com/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/InkPantherType/CheeseFoamOolongSong@main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "1c2fb5b74ffeb9ba932289293013ea8ff81c3cf316dd169480b385ee4ead7dc9",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "InkPantherType",
  "foundrySlug": "inkpanther-type",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zsngwls",
  "weights": [
   "Bold",
@@ -28,12 +28,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/InkPantherType/CheeseFoamOolongSong",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/InkPantherType/CheeseFoamOolongSong",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

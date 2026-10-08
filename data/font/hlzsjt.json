@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hlzsjt",
@@ -33,6 +33,13 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 maoken.com",
+   "format": "git",
+   "href": "https://www.maoken.com/freefonts/17746.html",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

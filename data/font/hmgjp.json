@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/HonokaMaruGothic/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "697383c6addd5dd14d7e1ff053aaa44520ce86a58589eef1f9985ab66e08db08",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "font-gloomy",
  "foundrySlug": "font-gloomy",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hmgjp",
  "weights": [
   "Regular"
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://font.gloomy.jp/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 font.gloomy.jp",
+   "format": "link",
+   "href": "https://font.gloomy.jp/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

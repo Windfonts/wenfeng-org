@@ -1,0 +1,24 @@
+{
+  "norm": "jfdj16s",
+  "title": "Public Domain",
+  "body": "PUBLIC DOMAIN (as stated by 自家製フォント工房 license table + readme_jfdotfont.txt)\n\nFont family: JFドットjiskan16s\nUpstream author chain: JEITA / 安岡・今村・花高 + 東雲半角 → jikasei\n\nPer http://jikasei.me/font/jf-dotfont/ and archive doc/readme_jfdotfont.txt:\n- Copyright abandoned / not exercised by original authors\n- Personal / commercial use: unconstrained\n- App embed / Web font: unconstrained\n- Modification / redistribution: unconstrained\n- Credit / license notice: not required\n- Provided AS IS without warranty\n\n自家製フォント工房 claims no copyright on the TrueType outline conversion.\n\nVault date: 2026-09-27 (Asia/Shanghai) · News R17\nPrimary sources:\n- http://jikasei.me/font/jf-dotfont/\n- http://jikasei.me/info/license.html\n- archive: jfdotfont-20150527 doc/readme_jfdotfont.txt",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan16s/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "79d89ff53c692f6365e772d03bdbf2f5781b6bd13d406e69bb50423bca69e931",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan16s/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "79d89ff53c692f6365e772d03bdbf2f5781b6bd13d406e69bb50423bca69e931"
+      }
+    ]
+  }
+}

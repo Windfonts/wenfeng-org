@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/GothicNguyen/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "002991e867f81f1133ef005eeed8510b4c0dde87f8967a207b1194df915d4518",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "Han-Nom Revival Committee",
  "foundrySlug": "hannom-rcv",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xyygn",
  "weights": [
   "Regular"
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/TKYKmori/Gothic-Nguyen",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/TKYKmori/Gothic-Nguyen",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

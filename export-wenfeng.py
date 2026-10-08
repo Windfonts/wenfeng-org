@@ -92,11 +92,14 @@ def parse_rfn(text):
 def spdx_of(info, base):
     if info and info.get('spdx'):
         return info['spdx']
-    name = (base.get('licenseName') or '').lower()
-    for token, spdx in (('open font license', 'OFL-1.1'), ('apache', 'Apache-2.0'),
+    name = (base.get('licenseName') or '').strip()
+    lower = name.lower()
+    if lower == 'ofl' or lower.startswith('ofl') or 'open font license' in lower or name.startswith('SIL'):
+        return 'OFL-1.1'
+    for token, spdx in (('apache', 'Apache-2.0'),
                         ('mit license', 'MIT'), ('gnu lesser', 'LGPL-2.1'),
                         ('gnu general', 'GPL-3.0'), ('cc by 4.0', 'CC-BY-4.0')):
-        if token in name:
+        if token in lower:
             return spdx
     return None
 
@@ -107,6 +110,15 @@ def text_state(lic_path, info):
     if info:
         return 'pointer'
     return 'missing'
+
+
+def dist_of(info, base):
+    if info and 'distribution' in info:
+        return bool(info.get('distribution'))
+    lic = base.get('license') or ''
+    if lic in ('开源商用', '开源免费商用'):
+        return True
+    return lic == '免费商用'
 
 
 def offer_of(mirror_state, info, upstream, has_text=False):
@@ -283,7 +295,7 @@ def main():
             'foundrySlug': base_brand,
             'offer': offer,
             'slice': 'planned',
-            'distribution': bool((info or {}).get('distribution', base.get('license') == '免费商用')),
+            'distribution': dist_of(info, base),
             'shop': SHOP_HREF + norm,
             'weights': base.get('weights') or [],
             'mirror': {

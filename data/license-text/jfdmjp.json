@@ -1,0 +1,24 @@
+{
+  "norm": "jfdmjp",
+  "title": "授权待核",
+  "body": "These fonts are free software.\nUnlimited permission is granted to use, copy, and distribute them,\nwith or without modification, either commercially or noncommercially.\nTHESE FONTS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY.\n\nこれらのフォントはフリー（自由な）ソフトウエアです。\nあらゆる改変の有無に関わらず、また商業的な利用であっても、\n自由にご利用、複製、再配布することができますが、全て無保証とさせていただきます。",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/JfDotMplus/MPLUS-LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "3cb4543994f6575adb9190c995ff69aa6df738c21c493da8d36489111bd64b77",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/JfDotMplus/MPLUS-LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "3cb4543994f6575adb9190c995ff69aa6df738c21c493da8d36489111bd64b77"
+      }
+    ]
+  }
+}

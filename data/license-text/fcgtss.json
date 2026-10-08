@@ -1,0 +1,30 @@
+{
+  "norm": "fcgtss",
+  "title": "free_commercial",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://uu.getuploader.com/amogata/download/60",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://uu.getuploader.com/amogata/download/60",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://uu.getuploader.com/amogata/download/60",
+      "label": "上游 uu.getuploader.com"
+    }
+  ]
+}

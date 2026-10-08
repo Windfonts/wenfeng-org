@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
+  "textState": "pointer",
+  "sourceUrl": "http://net2.system.to/pc/",
+  "fetchedAt": "2026-10-08",
   "textSha256": null,
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "yuta-fonts",
  "foundrySlug": "yuta-fonts",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yutcd",
@@ -29,12 +29,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "http://net2.system.to/pc/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 net2.system.to",
+   "format": "link",
+   "href": "http://net2.system.to/pc/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

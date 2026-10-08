@@ -8,16 +8,16 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": "https://flopdesign.booth.pm/items/1028555",
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://openfontlicense.org/documents/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "45b7a65081eff71aee0dda7ac45f5c6f220a3faa5d2bc5e171a8a2e8f19c915c",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "FLOP Design",
  "foundrySlug": "flop design",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zjmc",
@@ -27,7 +27,7 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": "https://flopdesign.booth.pm/items/1028555",
+  "upstream": "https://flopdesign.booth.pm/items/2747965",
   "syncedAt": null,
   "headSha": null
  },
@@ -37,7 +37,7 @@
    "kind": "upstream",
    "label": "上游 flopdesign.booth.pm",
    "format": "git",
-   "href": "https://flopdesign.booth.pm/items/1028555",
+   "href": "https://flopdesign.booth.pm/items/2747965",
    "sha256": null
   },
   {

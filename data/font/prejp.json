@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/orioncactus/pretendard@main/LICENSE",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "27d59a4c888d2a658b78ce57069bc5c3009bd1d857590b0e8a0994ceb484abb4",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "orioncactus",
  "foundrySlug": "orioncactus",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/prejp",
  "weights": [
   "Black",
@@ -36,12 +36,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/orioncactus/pretendard",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/orioncactus/pretendard",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

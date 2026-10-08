@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/KosefontJP/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "a5d783a64662d4a848a72aedfb132d6dd9eb3e00377b9e0d086e044c25d63ad4",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "missing",
+ "offer": "pending",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xlztjp",
  "weights": [
   "Regular"

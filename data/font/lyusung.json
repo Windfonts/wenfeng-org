@@ -8,16 +8,16 @@
  "licenseName": "CC-BY-SA-4.0",
  "license": {
   "spdx": "CC-BY-SA-4.0",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "925e1b06fa82e379bad225eb67723f7f296266d61b9fe6ac83445cc9778b8e2c",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "DWNfonts",
  "foundrySlug": "dwnfonts",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/lyusung",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://diaowinner.itch.io/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 diaowinner.itch.io",
+   "format": "link",
+   "href": "https://diaowinner.itch.io/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

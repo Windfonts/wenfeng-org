@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/negset/Firple@master/LICENSE",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "4f32b5af8929c42e55f5241af8f52cf66f7b59953005d561d02c25e0a2427b7f",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "negset",
  "foundrySlug": "negset",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/firjp",
  "weights": [
   "Bold",
@@ -30,12 +30,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/negset/Firple",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/negset/Firple",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

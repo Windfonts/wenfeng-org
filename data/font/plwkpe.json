@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/lxgw/Pengli@main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "5ea7af201867f811b0c60986095651e2b2be983fc95ee69759a280785b0f6ab8",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "LXGW",
  "foundrySlug": "lxgw",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/plwkpe",
  "weights": [
   "Regular"
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/lxgw/Pengli",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/lxgw/Pengli",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

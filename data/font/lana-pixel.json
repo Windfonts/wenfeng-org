@@ -8,16 +8,16 @@
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://openfontlicense.org/documents/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "45b7a65081eff71aee0dda7ac45f5c6f220a3faa5d2bc5e171a8a2e8f19c915c",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "eishiya",
  "foundrySlug": "eishiya",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/lana-pixel",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://opengameart.org/content/lanapixel-localization-friendly-pixel-font",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 opengameart.org",
+   "format": "link",
+   "href": "https://opengameart.org/content/lanapixel-localization-friendly-pixel-font",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

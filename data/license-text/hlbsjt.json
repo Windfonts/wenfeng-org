@@ -1,0 +1,23 @@
+{
+  "norm": "hlbsjt",
+  "title": "免费商用",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": null,
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": null,
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  }
+}

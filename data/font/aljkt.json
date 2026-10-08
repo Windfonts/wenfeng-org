@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/aljkt",
@@ -34,6 +34,13 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 foundertype.com",
+   "format": "git",
+   "href": "https://www.foundertype.com/index.php/FontInfo/index/id/6694.html",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

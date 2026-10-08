@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/TypeJam/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "59e63d3bdc2d32139cc5674ba029de45db757129cece72770e9f37b6a2fe3e01",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "typejam",
  "foundrySlug": "typejam",
- "offer": "missing",
+ "offer": "pending",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/clsxt",
  "weights": [
   "Regular"

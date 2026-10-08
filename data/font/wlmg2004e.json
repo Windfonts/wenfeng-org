@@ -8,16 +8,16 @@
  "licenseName": "free_commercial",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/wlmg2004e/wlmaru2004emoji.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "39126a7f61159ed4187a390b69b17aba7a8a494a097d4d06e0f75ae9be31bfac",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "希土類元素レアアース",
  "foundrySlug": "rareearth",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/wlmg2004e",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://sourceforge.net/p/jis2004/wiki/index/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 sourceforge.net",
+   "format": "link",
+   "href": "https://sourceforge.net/p/jis2004/wiki/index/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
+  "textState": "pointer",
+  "sourceUrl": "https://github.com/Hansha2011/NanoDyongMwenSong",
+  "fetchedAt": "2026-10-08",
   "textSha256": null,
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "hansha2011",
  "foundrySlug": "hansha2011",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/nrdws",
@@ -29,12 +29,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/Hansha2011/NanoDyongMwenSong",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/Hansha2011/NanoDyongMwenSong",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

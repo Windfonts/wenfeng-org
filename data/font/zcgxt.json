@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zcgxt",
@@ -35,6 +35,13 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 gwm.com.cn",
+   "format": "git",
+   "href": "https://www.gwm.com.cn/gwmsans/fontdownload.html",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

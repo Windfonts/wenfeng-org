@@ -8,18 +8,18 @@
  "licenseName": "Apache",
  "license": {
   "spdx": "Apache-2.0",
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "Do-Font",
  "foundrySlug": "do-font",
- "offer": "missing",
+ "offer": "pending",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/keifjp",
  "weights": [
   "Regular"

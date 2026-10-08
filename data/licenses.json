@@ -253,13 +253,13 @@
   }
  },
  "bngjp": {
-  "textKind": "missing",
-  "title": "IPA Font License Agreement v1.0",
+  "textKind": "full",
+  "title": "IPA Font License",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://licenses.opensource.jp/IPAfont/IPAfont.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -429,13 +429,13 @@
   }
  },
  "c2003": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "Code2003授权协议",
   "evidence": {
-   "source": "结构化记录",
+   "source": "厂商官网",
    "url": null,
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -704,13 +704,13 @@
   }
  },
  "ftpnh": {
-  "textKind": "missing",
-  "title": "IPA Font License Agreement v1.0",
+  "textKind": "full",
+  "title": "IPA Font License",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://licenses.opensource.jp/IPAfont/IPAfont.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -748,46 +748,46 @@
   }
  },
  "fzfsjt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "方正仿宋简体授权协议",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://www.foundertype.com",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fzhtjt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "方正黑体简体授权协议",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://www.foundertype.com",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fzktjt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "方正楷体简体授权协议",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://www.foundertype.com",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fzssjt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "方正书宋简体授权协议",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://www.foundertype.com",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -1243,13 +1243,13 @@
   }
  },
  "hlbsjt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "免费商用",
   "evidence": {
-   "source": "结构化记录",
+   "source": "厂商官网",
    "url": null,
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -1529,13 +1529,13 @@
   }
  },
  "jkmgjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "M+ FONTS PROJECT",
   "evidence": {
-   "source": "结构化记录",
+   "source": "厂商官网",
    "url": null,
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -2486,13 +2486,13 @@
   }
  },
  "nagino": {
-  "textKind": "missing",
-  "title": "待核实",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/amazusa/Nagino@main/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -3157,13 +3157,13 @@
   }
  },
  "shmdt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "上海摩登体作者声明授权（汉唐文化）",
   "evidence": {
-   "source": "结构化记录",
+   "source": "厂商官网",
    "url": "https://www.shanghaimodeng.com/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -3311,24 +3311,24 @@
   }
  },
  "smht": {
-  "textKind": "missing",
-  "title": "IPA Font License Agreement v1.0",
+  "textKind": "full",
+  "title": "IPA Font License",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/MEE-Developers/Mizuki-Gothic@main/LICENSE.md",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zjmc": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://flopdesign.booth.pm/items/1028555",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -3377,13 +3377,13 @@
   }
  },
  "smxst": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "叁慕斜宋体授权协议",
   "evidence": {
-   "source": "结构化记录",
+   "source": "厂商官网",
    "url": null,
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -5533,13 +5533,13 @@
   }
  },
  "yshxh": {
-  "textKind": "missing",
-  "title": "IPA Font License Agreement v1.0",
+  "textKind": "full",
+  "title": "IPA Font License",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/Steve-Yuu/YShi-NewHei@main/IPAfont_LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -6105,13 +6105,13 @@
   }
  },
  "albjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Albertella/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -6127,1740 +6127,1740 @@
   }
  },
  "qlhct": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/AoyagiKouzanT/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "qllst": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/AoyagiReisho/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "qlsstas": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/AoyagiSoseki/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fzxs12": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/ArkPixel12/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "astjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Asatte/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "awrjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Awroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "bdswt16": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/BaDing16/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "bzgjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/BizinGothic/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zbds12": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/ChangBan12/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zsngwls": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/InkPantherType/CheeseFoamOolongSong@main/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cjxtjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/ChogokubosoGothic/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cormc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/CorpMincho/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cyv3jp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/CorpYawamin3/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "clrv3": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/CorplogoRound3/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cyrjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Cyroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "dcx8y12": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/hicchicc/x8y12pxDenkiChip@main/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "dnmjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "http://www.vector.co.jp/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "myhtp3l": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/Pal3love/dream-han-cjk@main/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mystp3l": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/Pal3love/dream-han-cjk@main/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "escjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://moji-waku.com/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "expjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Explex/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "firjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/negset/Firple@master/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fhxs12": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/FusionPixel12/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqhtjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenKiGothicJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqhtpjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenKiGothicPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqhtd": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenKiGothicTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqmcp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenKiMinPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqmtd": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenKiMinTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ylmcp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenRyuMinPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gsgpjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenSekiGothicPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yshtd": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenSekiGothicTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gsrjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenSenRoundedJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gsrpjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenSenRoundedPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqytd": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenSenRoundedTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yymcpgwm": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenWanMinPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gygpjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenYoGothicPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yymcpgym": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GenYoMinPJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "glapjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GlAntiquePlus/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "glcmjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GlCurulMinamoto/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "glnmjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GlNovantiquaMinamoto/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "wlyhjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/welai/glow-sans@master/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "wlyhtc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/welai/glow-sans@master/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "xyygn": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GothicNguyen/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gscjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/GuguruSansCode/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hartgk": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "http://www.vector.co.jp/soft/dl/data/writing/se505937.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hsakjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/HonokaAntiqueKaku/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hamjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/HonokaAntiqueMaru/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hmgjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/HonokaMaruGothic/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "humour": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Humour/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ibmpstc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/IBM/plex@master/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "idrjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Idroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "iromr": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "iromc": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://modi.jpn.org/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jkgljp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JKGothicL/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jeroit": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Jeroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdajp": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotAyu/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdig": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotIzumi/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdj16": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan16/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdj16s": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan16s/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdj24": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan24/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdj24h": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan24h/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdk12": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotK12/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdk12x10": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotK12x10/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdk14": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotK14/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdkjp": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotKaname/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdk20": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotKappa20/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdm16": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotMilkjf16/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdmjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotMplus/MPLUS-LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jfdsjp": {
-  "textKind": "missing",
-  "title": "授权待核",
+  "textKind": "full",
+  "title": "Public Domain",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/JfDotShinonome/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "juisee": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Juisee/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "kisjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Kaiso/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "kzswjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/kazesawa/kazesawa@master/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "keifjp": {
-  "textKind": "missing",
-  "title": "Apache",
+  "textKind": "full",
+  "title": "Apache License 2.0",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "kimberella": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://moji-waku.com/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "knkkjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Kinkaku/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "kmrbg": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/KomorebiGothic/NOTE-LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "krrjp": {
-  "textKind": "missing",
-  "title": "Apache",
+  "textKind": "full",
+  "title": "Apache License 2.0",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://gcore.jsdelivr.net/gh/Koruri/Koruri@master/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "xlztjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/KosefontJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hsmbxs": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/KouzanGyousho/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hsmbjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/KouzanMouhitu/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hsmbcs": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/KouzanSousho/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hqwjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://modi.jpn.org/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mkn4jp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Makinas4/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mmlnjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Mamelon/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mnbyjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://modi.jpn.org/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "memjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://modi.jpn.org/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "merjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Meroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "myngy": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/MinhNguyen/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "minmjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/MintMono/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ytmtmc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/wing-land/motomachi@master/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "wxmst": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Mushin/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ntntjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/NOTONOTO/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "nrdws": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://github.com/Hansha2011/NanoDyongMwenSong",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "nckkjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/NicoKaku/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "nsktk": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/NishikiTeki/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "nshjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/NotoSerifHentaigana/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ottmjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Otsutome/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "pdmnjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/PendingMono/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "plwkpe": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/lxgw/Pengli@main/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "p00jp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Pigmo00/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "p01jp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Pigmo01/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "plejp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/ryota2357/PleckJP@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "prcjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://moji-waku.com/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "prejp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/orioncactus/pretendard@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mlkytjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/RawMarukoJP/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mlkyttc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/RawMarukoTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "rofs16": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/yzdnn/RenOuFangSong-16@main/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "rbsjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/RondeBSquare/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "roroit": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Roroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "rmgpjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/RoundedMgenPlus/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "smsnjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Samasan/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gshttc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/be5invis/Sarasa-Gothic@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gsuihk": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/be5invis/Sarasa-Gothic@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gsuitc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/be5invis/Sarasa-Gothic@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "sscjk": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/scriptwide-fonts/scriptwide-sans-cjk@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "snbgjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://modi.jpn.org/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "sastjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Shiasatte/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mmsft": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "http://www.vector.co.jp/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "sorjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Soroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "sydkhk": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/SourceHanMonoHK/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "szht": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/SubHei/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "szst": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/SubSung/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "skmgjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/SukimaGothic/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "tbht": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/TaipeiSansTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "tngjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/tanukifont/Tanugo@master/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "tpmjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/TanukiMagic/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "tktpjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/TekitouPoem/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "tmmcwjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://modi.jpn.org/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "tgltjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Togalite/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "astkx": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/jeffreyxuan/toneoz-font-pinyin-wenkai@master/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "clsxt": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/TypeJam/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ubrjp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Ubroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "viroit": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/Viroit/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "waptia": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://moji-waku.com/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "xwwkdk": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/WenKaiMono/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "xwwkdktc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/WenKaiMonoTC/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "xanomc": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/XanoMincho/license.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yflxt": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/chilingg/YufanDanQingSong@main/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yutcc": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "http://net2.system.to/pc/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yutcd": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "授权待核",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "http://net2.system.to/pc/",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cdmc": {
-  "textKind": "missing",
-  "title": "mit",
+  "textKind": "full",
+  "title": "MIT License",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/sacco325/dejima-fonts@master/LICENSE",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fcgtss": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://uu.getuploader.com/amogata/download/60",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yyzym": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yyzyh": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ylzym": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yszyh": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yyzybgm": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "yqzyy": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zhzyh": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zhzys": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zhfy": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "xrzmt": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://openfontlicense.org",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zglht": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://openfontlicense.org",
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/MoonlitOwen/ChocolateSans@main/license.md",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ywtq": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://openfontlicense.org",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "hyztc": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://openfontlicense.org",
+   "source": "官方仓原文",
+   "url": "https://cdn.jsdmirror.com/gh/NightFurySL2001/WD-XL-font@main/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zyfy": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "http://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zyys": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zhzybk": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "汉字 CC-BY-4.0 + 其余 OFL-1.1",
   "evidence": {
-   "source": "结构化记录",
+   "source": "厂商官网",
    "url": null,
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
@@ -7876,255 +7876,255 @@
   }
  },
  "851ckrywk": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://pm85122.onamae.jp/851fontTerm.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "851gjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://pm85122.onamae.jp/851fontTerm.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "851mkp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://pm85122.onamae.jp/851fontTerm.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "851hkt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://pm85122.onamae.jp/851fontTerm.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fzijp": {
-  "textKind": "missing",
-  "title": "OFL",
+  "textKind": "full",
+  "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": "https://scripts.sil.org/OFL",
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "851ckrdzyk": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://pm85122.onamae.jp/851fontTerm.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "851tgkzt": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://pm85122.onamae.jp/851fontTerm.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ksojp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "bsd",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/ksojp/LICENCE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cpfjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/cpfjp/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "jycjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/jycjp/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "ghatee": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://yokutobanaitori.web.fc2.com/guideline.html",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "zyzyjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/zyzyjp/LICENSE.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "mkcjp": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://www.ac-font.com/jp/detail_j_011.php",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "gytljp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/gytljp/guideline-2024-05-18.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "wlmg2004e": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/wlmg2004e/wlmaru2004emoji.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "cinjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "free_commercial",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/cinjp/cinecaption2.28.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "kljjp": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "bsd",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "店面拆包随附",
+   "url": "https://cn.windfonts.com/fonts-packages/kljjp/License.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "bestten": {
-  "textKind": "missing",
+  "textKind": "pointer",
   "title": "BestTen授权协议",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "厂商官网",
+   "url": "https://flopdesign.booth.pm/items/2747965",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "lana-pixel": {
-  "textKind": "missing",
+  "textKind": "full",
   "title": "SIL Open Font License 1.1",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://openfontlicense.org/documents/OFL.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "taipei-pixel": {
-  "textKind": "missing",
-  "title": "CC-BY-SA-4.0",
+  "textKind": "full",
+  "title": "CC BY-SA 4.0",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "chusung": {
-  "textKind": "missing",
-  "title": "CC-BY-SA-4.0",
+  "textKind": "full",
+  "title": "CC BY-SA 4.0",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "fonsung": {
-  "textKind": "missing",
-  "title": "CC-BY-SA-4.0",
+  "textKind": "full",
+  "title": "CC BY-SA 4.0",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },
  "lyusung": {
-  "textKind": "missing",
-  "title": "CC-BY-SA-4.0",
+  "textKind": "full",
+  "title": "CC BY-SA 4.0",
   "evidence": {
-   "source": "结构化记录",
-   "url": null,
+   "source": "标准许可原文",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
    "commit": null,
-   "fetchedAt": null,
+   "fetchedAt": "2026-10-08",
    "rule": null
   }
  },

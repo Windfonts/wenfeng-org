@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/TaipeiSansTC/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "f99b6a6bdd5c5647e6bdb6ead5a0ae8e67d5ea689c98ab782b7e2b9d525fd965",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "JT Foundry",
  "foundrySlug": "jt-foundry",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tbht",
  "weights": [
   "Bold",
@@ -29,12 +29,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://sites.google.com/view/jtfoundry/en/downloads",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 sites.google.com",
+   "format": "link",
+   "href": "https://sites.google.com/view/jtfoundry/en/downloads",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

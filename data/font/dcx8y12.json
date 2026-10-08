@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/hicchicc/x8y12pxDenkiChip@main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "4e69ecfc312581c921eb3fb418606a814b798d84a1f18dc6b214d8c9329e22a7",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "hicchicc",
  "foundrySlug": "hicchicc",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/dcx8y12",
  "weights": [
   "Regular"
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/hicchicc/x8y12pxDenkiChip",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/hicchicc/x8y12pxDenkiChip",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

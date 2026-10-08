@@ -1,0 +1,24 @@
+{
+  "norm": "cjxtjp",
+  "title": "授权待核",
+  "body": "超極細ゴシック体 / Chogokuboso Gothic\nSource portal: https://font.websozai.jp/line-font-mihon.html\nAuthor claim (2026-10-03 capture): 商用利用可能。ロゴ・出版・印刷・Web・放送・映像 OK。再配布可能。M+ 派生。無保証。\nAlso inherits M+ FONTS LICENSE (unlimited use/copy/distribute commercial).",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/ChogokubosoGothic/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "eca53e871d17f53dbc6131e70f16f506a9fc9bb1950feb19a401c04a5a74e9a8",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/ChogokubosoGothic/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "eca53e871d17f53dbc6131e70f16f506a9fc9bb1950feb19a401c04a5a74e9a8"
+      }
+    ]
+  }
+}

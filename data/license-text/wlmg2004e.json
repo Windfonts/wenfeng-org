@@ -1,0 +1,24 @@
+{
+  "norm": "wlmg2004e",
+  "title": "free_commercial",
+  "body": "和田研細丸ゴシック2004絵文字（Unicode版）（等幅フォント）\nバージョン 4.73; 4.7.3.0\n\n○概要\nこのフォントはftp.ipl.t.u-tokyo.ac.jpで無償公開されている「和田研」が制\n作した「細丸ゴシック体」を元にして、TTFに機械的に変換し、それぞれ「T.Fu\njiwara」さんの作られたシフトJIS2000形式の「明朝2000P」のフォントのそれぞ\nれに当てはまるように文字を割り当て、足りない文字や記号を希土類元素レアア\nースが自作追加したものです。\nUnicodeフォーマットに変換した和田研細丸ゴシック20044フォントにARIBの規格\nにある文字と機種依存文字と携帯電話の絵文字をUnicodeの規格で入れました。\nそれ以外の絵文字類も追加しています。\n\nWindows 2000、Windows XP、Windows Vista、Windows 7、Windows 8、\nWindows 10、Windows 11、Mac OS Xで使えるとおもいます。 \nUNIXやLinuxのOSやAndroidなどのモバイルOSなどでも使えるようです。\n\nこのフォントにより出力される文字や記号は画像、出版物、製品等の商用、非商\n用に関わらず自由に利用できます。\n\n○インストール方法\n・Windowsの場合\n　・Windows 98、NT、2000、Me、XP\nデスクトップの「マイ　コンピュータ」からWindowsドライブ（DOS/V互換機やPC\n98NXなどのＨＤでは「c:」、PC9821などでは「a:」である可能性が高いです）\nの「windows\\fonts」フォルダを開き（WindowsNTの場合は「winnt\\fonts」）を\n開きメニューの「ファイル」から「新しいフォントをインストール」で解凍した\nフォントを選択してOKすればインストールされます（fontsフォルダに解凍した\nwlmaru2004emoji.ttfをドラッグ＆ドロップしてもインストールできます）\n（古いバージョンの同じ名前のフォントがある場合はあらかじめ古いバージョン\nのフォントをアンインストールしてから新たにインストールしてください。）\n　・Windows Vista、7、8、10、11\nフォントファイルを開いた後、フォントのインストールボタンよりインストール\nしてください。\n\n・Mac OS Xの場合\n　・10.2以前\nすべてのユーザで使用する場合は「/Library/Fonts」にコピーします、現在のユ\nーザのみが使用するには「~/Library/Fonts/」にコピーします。\n　・10.3以降\nフォントファイルを開いた後、「フォントをインストール」ボタンを押してくだ\nさい。\n\n○情報\nフォント名称（日本語）\n\t和田研細丸ゴシック2004絵文字\nフォント名称（英語）\n\tWadaLabMaruGo2004Emoji\nファイル名\n\twlmaru2004emoji.ttf\n元フォント制作\n\t和田研\nフォント制作\n\t希土類元素レアアース\nフォント形式\n\t等幅\nフォントフォーマット\n\tUnicode 17.0.0\nフォントバージョン\n\t4.73; 4.7.3.0\n初版公開日\n\t2010/11/27\nこのバージョンの公開日\n\t2025/12/14\n動作環境\n\tWindows2000，XP，Vista，7，８，10、11、Mac OS Xなど\n内容\n\tJIS X 0213:2004 第１水準～第４水準、ARIB漢字と記号、WindowsとMacの機種\n\t依存文字、i-mode、EZWeb、Softbankの絵文字のうちUnicode 6.0.0に収録された\n\t文字、Unicode 17.0の絵文字や記号類\n\tARIB外字のマッピングはARIB STD-B24のUnicode実装仕様とUnicode 5.2\n\tのダブルマッピングです。\n\n○使用条件\nこのフォントはフリーフォントです。\nいわゆるパブリックドメインと同じです。\n無償で使用可能です。\n商用・非商用いずれでもお使い頂けます。\nこのフォントは再配布が可能です。\nこのフォントは改変が可能です。\n商用非商用に関わらずＯＳなどにインストールした状態での配布も可能です。 \nまた、他のソフトに添付や組み込んだ形での配布も可能です。 \nこのフォントを使用して作成したものに、このフォントを使用した旨の記載は\n必要ありません。 \nこのフォントを使用して作成したものに、このフォントの規定が継承されるこ\nとはありません。 \nこのフォントを使用や再配布をするにあたって当方への確認は必要ありません。\n\n何かありましたら希土類元素レアアース宛てに連絡をお願いします。\nkidoruigenso@gmail.com\nhttps://sourceforge.net/p/jis2004/wiki/",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/wlmg2004e/wlmaru2004emoji.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "39126a7f61159ed4187a390b69b17aba7a8a494a097d4d06e0f75ae9be31bfac",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/wlmg2004e/wlmaru2004emoji.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "39126a7f61159ed4187a390b69b17aba7a8a494a097d4d06e0f75ae9be31bfac"
+      }
+    ]
+  }
+}

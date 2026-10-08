@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/tanukifont/Tanugo@master/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "9d6bca4ebc4699a873723ddeca3b76359068872472254d62e86fd8058223636c",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "たぬきフォント",
  "foundrySlug": "tanukifont",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tngjp",
  "weights": [
   "Bold",
@@ -33,12 +33,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/tanukifont/Tanugo",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/tanukifont/Tanugo",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

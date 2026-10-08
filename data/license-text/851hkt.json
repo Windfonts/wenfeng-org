@@ -1,0 +1,30 @@
+{
+  "norm": "851hkt",
+  "title": "free_commercial",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://pm85122.onamae.jp/851fontTerm.html",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://pm85122.onamae.jp/851fontTerm.html",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://pm85122.onamae.jp/851fontTerm.html",
+      "label": "上游 pm85122.onamae.jp"
+    }
+  ]
+}

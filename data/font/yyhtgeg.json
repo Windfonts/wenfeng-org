@@ -17,7 +17,7 @@
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yyhtgeg",
@@ -39,6 +39,13 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 okoneya.jp",
+   "format": "git",
+   "href": "https://okoneya.jp/font/GenEiGothicAll-1.1a.7z",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

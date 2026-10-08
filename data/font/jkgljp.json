@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/JKGothicL/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "7b47b928863ab69775ab9918d43f055b690368a59c829d05fa969a4dfe5e2bd4",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "かわいいフォント箱",
  "foundrySlug": "jk-fonts",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jkgljp",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://font.cutegirl.jp/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 font.cutegirl.jp",
+   "format": "link",
+   "href": "https://font.cutegirl.jp/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

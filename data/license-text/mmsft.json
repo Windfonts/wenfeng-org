@@ -1,0 +1,30 @@
+{
+  "norm": "mmsft",
+  "title": "授权待核",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "http://www.vector.co.jp/",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "http://www.vector.co.jp/",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "http://www.vector.co.jp/",
+      "label": "上游 www.vector.co.jp"
+    }
+  ]
+}

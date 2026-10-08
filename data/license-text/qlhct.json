@@ -1,0 +1,24 @@
+{
+  "norm": "qlhct",
+  "title": "授权待核",
+  "body": "武蔵システム 無料フォント（opentype.jp）ポータル記載（各字体ページ同文）:\n\n無料でご利用できます。\n商用利用可能で制限はありません。\nロゴ等へも自由にご利用いただけます。\n無保証です。お客様の責任でご利用ください。\n雑誌・書籍への掲載・CD収録も自由です。\n\n出典ページ: see SOURCE.url / CAPTURE.md portal URL\nArchived HTML: raw/wave2b-2026-10-03/pages/",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/AoyagiKouzanT/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "3d54de1eacbeae8638e4929162e6b87577ad70bf50803ead63ac2ce3dff02bad",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/AoyagiKouzanT/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "3d54de1eacbeae8638e4929162e6b87577ad70bf50803ead63ac2ce3dff02bad"
+      }
+    ]
+  }
+}

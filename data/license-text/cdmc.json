@@ -1,0 +1,24 @@
+{
+  "norm": "cdmc",
+  "title": "MIT License",
+  "body": "Copyright (c) 2005-2009 Yoshiki Hayashi  <yoshiki@xemacs.org>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+  "textKind": "full",
+  "evidence": {
+    "source": "官方仓原文",
+    "url": "https://cdn.jsdmirror.com/gh/sacco325/dejima-fonts@master/LICENSE",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "ab9df991fe212519f86c06ac33fe4b3dd2c210b4f56c563acf69cb7d76088a47",
+    "method": "upstream-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cdn.jsdmirror.com/gh/sacco325/dejima-fonts@master/LICENSE",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "ab9df991fe212519f86c06ac33fe4b3dd2c210b4f56c563acf69cb7d76088a47"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "norm": "cinjp",
+  "title": "free_commercial",
+  "body": "●しねきゃぷしょん（cinecaption）\n映画字幕風フォントです。Windows用２バイト文字です。\n\n●作成ソフト\nAdobe Illustrator CS4\nTTEdit\nFontLinkEnabler\n\n●インストール方法\nスタート→設定→コントロールパネル→『フォント』→ファイルメニュー『新しいフォントのインストール』でフォントを選んでインストールしてください。\nまたWindowsフォルダにあるfontフォルダに直接入れてもOKです。\n\n\n●配布条件\nこのフォントは無料ですが著作権は放棄しておりません。\nですのでフォントの改造・著作権表示の改変を禁止します。\n再配布に関しては制限を緩和したので、自由に配布していただいてかまいません。\n\n＊語句の説明\n「改造」＝フォントファイルの中身を改造すること。画像処理ソフトでの加工はOKです。\n\n●商用利用について\n自由に使っていただいてかまいません。ただ、フォント作者としては使用報告をしていただけるとうれしいです。\n\n\n●前バージョン（2.27）からの変更点\n・漢字追加\n・あとこまごま\n\n\n●著作権関係\nこのフォントのひらがな部分のデザインは「雑念の塊」氏が、カタカナ、漢字、英字、記号部分のデザイン及びフォント作成はchipheadが行いました。\n\nひらがなデザイン\n【Copyright(C)2000 雑念の塊】\n【http://member.nifty.ne.jp/zatsunen/jimaku/】\n\nカタカナデザイン＆フォント作成\n【Copyright(C)2009 chiphead 】\n【http://chiphead.jp】\n\n\n\n●免責\n著作権者であるchipheadはこのフォントを使用した結果、生じた損害等について責任を負いません。あらかじめご了承の上、使用してください。\n\nあと、久しぶりなので色々へんなところがあるかも知れません。\nメールで報告してください。\n\n\nご意見・ご要望はこちらまで\n＞webmaster@chiphead.jp",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/cinjp/cinecaption2.28.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "91acbeea6dd30ba1e29e4bd4b0f4acf9c2490827a1ad1f5fac2785fa5ee87980",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/cinjp/cinecaption2.28.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "91acbeea6dd30ba1e29e4bd4b0f4acf9c2490827a1ad1f5fac2785fa5ee87980"
+      }
+    ]
+  }
+}

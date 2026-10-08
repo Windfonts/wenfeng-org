@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/SubHei/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "aabdf6f60ee75498f840ab1eb36f6581786abe37d657db560bec10b5313f5a42",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "chiron",
  "foundrySlug": "chiron",
- "offer": "missing",
+ "offer": "pending",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/szht",
  "weights": [
   "Regular"

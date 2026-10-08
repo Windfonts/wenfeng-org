@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/AoyagiReisho/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "420df333584f5bac1dd0487c4d6896363f4afda201a39b42fac27f6ff6f86a91",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "SIMO / opentype.jp",
  "foundrySlug": "simo-opentype",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/qllst",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "http://opentype.jp/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 opentype.jp",
+   "format": "link",
+   "href": "http://opentype.jp/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

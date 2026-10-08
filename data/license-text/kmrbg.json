@@ -1,0 +1,24 @@
+{
+  "norm": "kmrbg",
+  "title": "授权待核",
+  "body": "Komorebi Gothic (木漏れ日ゴシック) is a Ume-font derivative (梅ゴシック / 梅Hyゴシック).\nUpstream Ume license: free software — commercial use, modification, redistribution OK; all without warranty.\nNOT SIL OFL. Tier for vault: free_commercial (correcting r12 JSON ofl_ok mis-tag).\nUpstream Ume: https://ja.osdn.net/projects/ume-font/\nMODI: http://modi.jpn.org/font_komorebi-gothic.php",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/KomorebiGothic/NOTE-LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "602c8b27e034aead2a2d90455a9ef7c9e6fd32a6042db568c42d91f66169605d",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/KomorebiGothic/NOTE-LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "602c8b27e034aead2a2d90455a9ef7c9e6fd32a6042db568c42d91f66169605d"
+      }
+    ]
+  }
+}

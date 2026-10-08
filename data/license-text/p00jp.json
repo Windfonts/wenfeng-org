@@ -1,0 +1,24 @@
+{
+  "norm": "p00jp",
+  "title": "授权待核",
+  "body": "���̓x�́A�w�s�O��00�x��\n�_�E�����[�h�����������肪�Ƃ��������܂��B\n������A�f���֘A�̏��p���p�ȂǁA�����R�ɂ����p���������B\n���T�v\nFormat: OpenType\nLicence: �t���[�t�H���g�i���p�j\n���^�����F��7,000��\n���^�ڍׁF�Ђ炩�ȁE�J�^�J�i�E�S�p���p�p�����E�L���E����\n�@�@�@�@�@JIS��ꐅ���i2965���j�@JIS��񐅏��i3390���j\n�@�@�@�@�@�M���V�������E�L��������\n�����C�Z���X�ڍ�\n�@https://moji-waku.com/mj_work_license/\n��������\n�����f�ł̃f�[�^�̃A�b�v���[�h�E�f�[�^�̉��ρA�����E�j���z�z�́A���T�����������悤�����͂̂قǂ��肢�v���܂��B\n�������E���O�̃t���[�t�H���g���e�T�C�g�y�t�H���g���e�T�C�g�ւ̃t�H���g�f�[�^���e�͋֎~���Ă��܂��B\n���s�O��00���g�p���A���̌��ʂƂ��Ĕ��������@�B����у\\�t�g�E�G�A�̌̏�A\n�@���͌듮��E��o�͂Ɋւ��āA�u�������N�����v�͐ӔC�𕉂�Ȃ����̂Ƃ��܂��B\n���s���ȓ_���������܂�����A���L�̃A�h���X�܂ł��A�����������B\n\n\nWe are pleased to announce that \"Pigmo00\"\nThank you for downloading this file.\nPlease feel free to use it for commercial use, such as for printed materials and images.\n\n[Overview]\nFormat: OpenType\nLicence: Free(commercial use OK)\nCharacters�F7,000\nCJK(JIS1:2965) (JIS2:3390)\nHirakana, Katakana, Euro, Greece, Cyrillic, Symbol\n[Licence]\nhttps://moji-waku.com/mj_work_license/\n\n\n(1)Please refrain from uploading, altering, modifying or distributing the data without permission.\n\n(2)It is prohibited to submit font data to free font submission sites and font submission sites in Japan and abroad.\n\n(3)Mechanical and software failures resulting from the use of Pigmo00, and You will not be held responsible for any malfunctions or errors in operation or output.\n\nIf you have any questions, please contact us at the address below.\n\n\n�������N����\n�Ђ낫�����\nMoji-Waku Kenkyu�^HIROKI-CHAN\nWEB: https://moji-waku.com\nE-Mail: info@moji-waku.com\n\n--- official license page excerpt (moji-waku.com/mj_work_license/ 2026-10-02) ---\nWebフォント ○ サーバーへのフォントのインストール / サブセット化 ○\n禁止: 無断2次配布・転売; フォントデータ改変及び改変データ配布; 書籍付録メディア配布",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/Pigmo00/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "71c3d641e8e5f2342b3bb12b6765d955cb020e47dc344664f0fe35ce53011871",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/Pigmo00/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "71c3d641e8e5f2342b3bb12b6765d955cb020e47dc344664f0fe35ce53011871"
+      }
+    ]
+  }
+}

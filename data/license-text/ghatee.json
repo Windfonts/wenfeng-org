@@ -1,0 +1,30 @@
+{
+  "norm": "ghatee",
+  "title": "free_commercial",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://yokutobanaitori.web.fc2.com/guideline.html",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://yokutobanaitori.web.fc2.com/guideline.html",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://yokutobanaitori.web.fc2.com/guideline.html",
+      "label": "上游 yokutobanaitori.web.fc2.com"
+    }
+  ]
+}

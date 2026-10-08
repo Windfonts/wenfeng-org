@@ -1,0 +1,30 @@
+{
+  "norm": "mkcjp",
+  "title": "free_commercial",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://www.ac-font.com/jp/detail_j_011.php",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://www.ac-font.com/jp/detail_j_011.php",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://www.ac-font.com/jp/detail_j_011.php",
+      "label": "上游 www.ac-font.com"
+    }
+  ]
+}

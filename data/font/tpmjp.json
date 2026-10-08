@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/TanukiMagic/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "dba5073b0e0e3257be3d3244793cfdd89a6814a4da0a90e13ce0565637d88eed",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "たぬきフォント",
  "foundrySlug": "tanuki-font",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tpmjp",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://tanukifont.com/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 tanukifont.com",
+   "format": "link",
+   "href": "https://tanukifont.com/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

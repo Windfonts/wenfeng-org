@@ -8,16 +8,16 @@
  "licenseName": "free_commercial",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/zyzyjp/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "31c826d281ceacc163f078bc8b2ed78cf7b94a4fe4fa02d739c70b6122ad4fba",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "たぬきフォント",
  "foundrySlug": "tanukifont",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/zyzyjp",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://tanukifont.com/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 tanukifont.com",
+   "format": "link",
+   "href": "https://tanukifont.com/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

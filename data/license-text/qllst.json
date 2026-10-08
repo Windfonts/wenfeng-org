@@ -1,0 +1,24 @@
+{
+  "norm": "qllst",
+  "title": "授权待核",
+  "body": "『青柳隷書しも』フォントの使用方法\n\n　フォントのインストール方法\n①Windowsの場合　TrueTypeのフォントファイル（aoyagireisyosimo2.ttf）をコピーしてフォントフォルダ内に貼り付けてください。（WinXPの場合です）\n②Macの場合　OpenTypeのフォントファイル（aoyagireisyosimo2.otf）をコピーしてフォントフォルダ内に貼り付けてください。（Mac OS X 10.1以降の場合です）\n　他のosの場合は、武蔵システムさんの解説ページをご覧ください。\n　http://musashi.or.tv/\n　http://musashi.or.tv/fontinst.htm\n\n　青柳隷書しもフォントは無料フォントです。使用にあたっての条件は何も\nありません。商用使用もＯＫです。（できましたら連絡はください）\n\n　青柳隷書しもフォントは無料でどこにでも配布することができます。た\nだし、再配布にあたって有料とすることはできません。\n\n　青柳隷書しもフォントを配布する際には、必ずフォントの使用方法と、フ\nォントの解説を一緒に配布するようにしてください。又、本雑誌等に付け\nる場合にはいつ何に掲載するかをご連絡ください。\n\n　ファイルの内容におかしな点がありましたら、以下のアドレスにご連絡\nいただきますようお願いいたします。\n　連絡アドレス　simo.shin@nifty.com\n 使用や再配布にあたっての連絡は不要ですが、使用しての感想等をお\n聞かせいただくと嬉しいです。\t\t\t SIMO\n \n 変更履歴\n 20090530：『青柳隷書しも』フォント　V-1.00公開\n 20090912：フォントの解説の内容を一部訂正\n         　フォントの使用方法を一部訂正\n 20100211：OpenType版を公開\n 20120324：数字及び主な記号を追加\n 20120414：OTF TTF 共に再アップ（V-1.01）\n 20130609：第二水準版にバージョンアップ（V-2.00）",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/AoyagiReisho/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "420df333584f5bac1dd0487c4d6896363f4afda201a39b42fac27f6ff6f86a91",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/AoyagiReisho/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "420df333584f5bac1dd0487c4d6896363f4afda201a39b42fac27f6ff6f86a91"
+      }
+    ]
+  }
+}

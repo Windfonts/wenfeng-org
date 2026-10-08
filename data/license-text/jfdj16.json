@@ -1,0 +1,24 @@
+{
+  "norm": "jfdj16",
+  "title": "Public Domain",
+  "body": "Hybrid license for JFドットjiskan16:\n- Fullwidth (kanji/kana) glyphs: Public Domain (jiskan lineage)\n- Halfwidth glyphs: Sony Corp. 1989 permission notice (see sony.txt)\n  Redistribution / webfont as reusable font data requires retaining\n  copyright notice + permission notice; Sony name not for advertising.\n\nSource: http://jikasei.me/font/jf-dotfont/ + jfdotfont-20150527/doc/SONY/readme.txt\nConverter (jikasei) claims no additional copyright.",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan16/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "be1f457169639b5e246500584c4852432bcc049c55620d689ab573f3dbe37ef3",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan16/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "be1f457169639b5e246500584c4852432bcc049c55620d689ab573f3dbe37ef3"
+      }
+    ]
+  }
+}

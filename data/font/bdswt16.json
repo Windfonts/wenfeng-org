@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/BaDing16/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "bb8b804e2f4a3615bc9edef811f3e638d31abaf226cf9e7c454b63d5003d24a0",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "taketori",
  "foundrySlug": "taketori",
- "offer": "missing",
+ "offer": "pending",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/bdswt16",
  "weights": [
   "Regular"

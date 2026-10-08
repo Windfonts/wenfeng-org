@@ -7,17 +7,17 @@
  ],
  "licenseName": "bsd",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "BSD-3-Clause",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/ksojp/LICENCE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "304eefb174a5dfb9113b14f9af3bbea9532b51a165044db51668705b73264f43",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "kanji.uk",
  "foundrySlug": "kanji-uk",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": false,
  "shop": "https://app.windfonts.com/fonts/ksojp",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://sites.google.com/site/nihilistorguk/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 sites.google.com",
+   "format": "link",
+   "href": "https://sites.google.com/site/nihilistorguk/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

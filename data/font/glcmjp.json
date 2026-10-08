@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/GlCurulMinamoto/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "9b0bb026d7e659a71c3264ef322250aeb4434eed317998ef0b67774c1b2ba5bb",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "gutenberg-labo",
  "foundrySlug": "gutenberg-labo",
- "offer": "missing",
+ "offer": "pending",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/glcmjp",
  "weights": [
   "Regular"

@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/IBM/plex@master/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "3f256fece63dbeffa40b6690409509a612c732e3760bb4024845aa2005d28dc3",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "IBM",
  "foundrySlug": "ibm-plex",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ibmpstc",
  "weights": [
   "Bold",
@@ -34,12 +34,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/IBM/plex",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/IBM/plex",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

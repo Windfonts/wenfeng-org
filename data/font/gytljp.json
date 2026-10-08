@@ -8,16 +8,16 @@
  "licenseName": "free_commercial",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/gytljp/guideline-2024-05-18.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "7b42c2d56033f7e071938fc550da8b0f86ab8a940666152a9c513dcf5014fef5",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "よく飛ばない鳥",
  "foundrySlug": "yokutobanaitori",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/gytljp",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://yokutobanaitori.web.fc2.com/guideline.html",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 yokutobanaitori.web.fc2.com",
+   "format": "link",
+   "href": "https://yokutobanaitori.web.fc2.com/guideline.html",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

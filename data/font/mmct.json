@@ -17,7 +17,7 @@
  },
  "foundry": "梅字体",
  "foundrySlug": "ume",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/mmct",
@@ -33,6 +33,13 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 metadata.ftp-master.debian.org",
+   "format": "git",
+   "href": "https://metadata.ftp-master.debian.org/changelogs/main/f/fonts-horai-umefont/fonts-horai-umefont_670-5_copyright",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

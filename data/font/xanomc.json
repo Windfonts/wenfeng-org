@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/XanoMincho/license.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "333e9c7e44ca5e5ab96e46369a4d7f935273734a04d11603ceeb20774e2ce4c0",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "uchida-xano",
  "foundrySlug": "uchida-xano",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/xanomc",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "http://www.vector.co.jp/soft/dl/data/writing/se367514.html",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 www.vector.co.jp",
+   "format": "link",
+   "href": "http://www.vector.co.jp/soft/dl/data/writing/se367514.html",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

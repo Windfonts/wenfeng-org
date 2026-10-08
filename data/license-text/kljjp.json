@@ -1,0 +1,24 @@
+{
+  "norm": "kljjp",
+  "title": "bsd",
+  "body": "Name    :  きろ字\nVersion :  ver2.1.0 - 2007/06/25 - LicenseをNew BSD licenseに変更\nURL     :  www.ez0.net\n\nLICENSE : New BSD license\n\nCopyright (c) 2007, kilo <kilo.sw@gmail.com>. All rights reserved.\n\nRedistribution and use in source and binary forms, with or without \nmodification, are permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    2. Redistributions in binary form must reproduce the above copyright notice, \n       this list of conditions and the following disclaimer in the documentation \n       and/or other materials provided with the distribution.\n    3. The name of the author may not be used to endorse or promote products \n       derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\nEXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\nPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/kljjp/License.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "46e0480cea952794f0be88f6df989eb61977c4dbc65d36d407c6aa29dc7542a4",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/kljjp/License.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "46e0480cea952794f0be88f6df989eb61977c4dbc65d36d407c6aa29dc7542a4"
+      }
+    ]
+  }
+}

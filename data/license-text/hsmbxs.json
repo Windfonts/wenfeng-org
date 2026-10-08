@@ -1,0 +1,24 @@
+{
+  "norm": "hsmbxs",
+  "title": "授权待核",
+  "body": "衡山毛筆フォント行書（KouzanGyousho）\nSource portal: http://opentype.jp/kouzangyousho.htm (fetched 2026-10-02)\n\nAuthor page asserts:\n- 無料でご利用できます。\n- 商用利用可能で制限はありません。\n- ロゴ等へも自由にご利用いただけます。\n- 無保証です。\n- 雑誌・書籍への掲載・CD収録も自由です。\n\nZIP from: http://opentype.jp/bin/KouzanGyoushoOTF.zip",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/KouzanGyousho/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "1a3e87699a0ad92f8aab811fa86c2e7cf84f34201b69e8d66aa8baca29398e7d",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/KouzanGyousho/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "1a3e87699a0ad92f8aab811fa86c2e7cf84f34201b69e8d66aa8baca29398e7d"
+      }
+    ]
+  }
+}

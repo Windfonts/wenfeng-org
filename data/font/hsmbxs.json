@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/KouzanGyousho/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "1a3e87699a0ad92f8aab811fa86c2e7cf84f34201b69e8d66aa8baca29398e7d",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "KouzanAoyagi / opentype.jp",
  "foundrySlug": "kouzan-aoyagi",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hsmbxs",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "http://opentype.jp/kouzangyousho.htm",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 opentype.jp",
+   "format": "link",
+   "href": "http://opentype.jp/kouzangyousho.htm",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

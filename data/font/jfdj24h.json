@@ -8,18 +8,18 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/JfDotJiskan24h/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "237e268c7e0e732d6d2cf4f56f690339b9c9b1fe4d174a33fe147b2b6cbc8f05",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "自家製フォント工房",
  "foundrySlug": "jikasei",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/jfdj24h",
  "weights": [
   "Regular"
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "http://jikasei.me/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 jikasei.me",
+   "format": "link",
+   "href": "http://jikasei.me/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

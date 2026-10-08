@@ -1,0 +1,24 @@
+{
+  "norm": "jfdj24h",
+  "title": "Public Domain",
+  "body": "Hybrid license for JFドットjiskan24h:\n- Fullwidth: Public Domain (jiskan24)\n- Halfwidth: SIL Open Font License 1.1 (日比谷24 / KH Dot · 平木敬太郎)\nCDN/redistrib of reusable font data must include OFL notice for halfwidth portion.\n\nSources: http://jikasei.me/font/jf-dotfont/, http://jikasei.me/info/license.html, archive readme_jfdotfont.txt",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan24h/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "237e268c7e0e732d6d2cf4f56f690339b9c9b1fe4d174a33fe147b2b6cbc8f05",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/JfDotJiskan24h/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "237e268c7e0e732d6d2cf4f56f690339b9c9b1fe4d174a33fe147b2b6cbc8f05"
+      }
+    ]
+  }
+}

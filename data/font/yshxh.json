@@ -7,17 +7,17 @@
  ],
  "licenseName": "IPA Font License Agreement v1.0",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "IPA",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/Steve-Yuu/YShi-NewHei@main/IPAfont_LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "e940aaf713a08c83563300a88e02614517a6b86f980b7c7a3e726ec952871886",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/yshxh",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/Steve-Yuu/YShi-NewHei",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/Steve-Yuu/YShi-NewHei",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

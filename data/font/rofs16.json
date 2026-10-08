@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/yzdnn/RenOuFangSong-16@main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "1fcf25bfd0c10489a1c8e30c5fdccf9012ebd92998ca4941b57fbe8b5ef9f43d",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "yzdnn",
  "foundrySlug": "yzdnn",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/rofs16",
  "weights": [
   "Regular"
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/yzdnn/RenOuFangSong-16",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/yzdnn/RenOuFangSong-16",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

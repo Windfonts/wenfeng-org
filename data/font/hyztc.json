@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": "https://openfontlicense.org",
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/NightFurySL2001/WD-XL-font@main/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "c1426279bc38dde2a39bed76db54e93c9f2daf3aff960be62382a1efeb4b30e5",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "WD-XL",
  "foundrySlug": "wdxl",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/hyztc",
  "weights": [
   "Regular"
@@ -27,7 +27,7 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": "https://openfontlicense.org",
+  "upstream": "https://github.com/NightFurySL2001/WD-XL-font",
   "syncedAt": null,
   "headSha": null
  },
@@ -35,9 +35,9 @@
  "files": [
   {
    "kind": "upstream",
-   "label": "上游 openfontlicense.org",
+   "label": "上游 GitHub",
    "format": "git",
-   "href": "https://openfontlicense.org",
+   "href": "https://github.com/NightFurySL2001/WD-XL-font",
    "sha256": null
   },
   {

@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/wing-land/motomachi@master/LICENSE",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "eed5ccf04c36e999a6bcad984930a1b34453ac54ad6190ea2bd565e6ae29dd03",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "wing-land",
  "foundrySlug": "motomachi",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/ytmtmc",
  "weights": [
   "Bold",
@@ -31,12 +31,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/wing-land/motomachi",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/wing-land/motomachi",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

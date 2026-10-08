@@ -17,7 +17,7 @@
  },
  "foundry": "PangMenZhengDao",
  "foundrySlug": "pangmen",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/pmzdzgkt",
@@ -33,6 +33,13 @@
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 oss.maoken.com",
+   "format": "git",
+   "href": "https://oss.maoken.com/%E7%8C%AB%E5%95%83%E5%AD%97%E4%BD%93/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/%E5%BA%9E%E9%97%A8%E6%AD%A3%E9%81%93%E7%9C%9F%E8%B4%B5%E6%A5%B7%E4%BD%93_%E7%8C%AB%E5%95%83%E7%BD%91.zip",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

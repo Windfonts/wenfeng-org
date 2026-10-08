@@ -1,0 +1,24 @@
+{
+  "norm": "glapjp",
+  "title": "授权待核",
+  "body": "Copyright (C) 2003-2009 Das Ende der Wildnis (http://heiden.daynight.jp/),\nCopyright (C) 2008-2023 Gutenberg Labo (https://github.com/Gutenberg-Labo),\nCopyright (C) 2002-2017 M+ FONTS PROJECT (http://mplus-fonts.osdn.jp/), All rights reserved.\n\nThese fonts are free softwares.\nUnlimited permission is granted to use, copy, and distribute it, with or without modification, either commercially and noncommercially.\nTHESE FONTS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY.\n\nこれらのフォントはフリー（自由な）ソフトウエアです。\nあらゆる改変の有無に関わらず、また商業的な利用であっても、自由にご利用、複製、再配布することができますが、全て無保証とさせていただきます。",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/GlAntiquePlus/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "c5c0934c74a13d8f04e6b92d89bc11f2f31d4dbbffea391a34ea79776df3ab0c",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/GlAntiquePlus/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "c5c0934c74a13d8f04e6b92d89bc11f2f31d4dbbffea391a34ea79776df3ab0c"
+      }
+    ]
+  }
+}

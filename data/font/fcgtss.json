@@ -8,16 +8,16 @@
  "licenseName": "free_commercial",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
+  "textState": "pointer",
+  "sourceUrl": "https://uu.getuploader.com/amogata/download/60",
+  "fetchedAt": "2026-10-08",
   "textSha256": null,
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "があた",
  "foundrySlug": "gata",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/fcgtss",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://uu.getuploader.com/amogata/download/60",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 uu.getuploader.com",
+   "format": "link",
+   "href": "https://uu.getuploader.com/amogata/download/60",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

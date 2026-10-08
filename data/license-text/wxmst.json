@@ -1,0 +1,24 @@
+{
+  "norm": "wxmst",
+  "title": "授权待核",
+  "body": "MODI工場 独自ライセンス（各字体ページ同趣旨）:\n\n連絡表記不要。商用、非商用問わずご自由にどうぞ。素材集書籍などへの収録も同様です。\n通常利用、商用利用、改変、再配布、埋め込みもOK。とにかくご自由にどうぞ。\n\n出典: https://modi.jpn.org/font_shiasatte.php / font_mushin.php 等",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/Mushin/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "3c0a79513fbe23569c234df7a4f0ad6e6739102fe1ec418f35fd9a75a13fda5e",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/Mushin/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "3c0a79513fbe23569c234df7a4f0ad6e6739102fe1ec418f35fd9a75a13fda5e"
+      }
+    ]
+  }
+}

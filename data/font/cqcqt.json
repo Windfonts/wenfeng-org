@@ -24,7 +24,7 @@
  "foundrySlug": "steve-yuu",
  "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cqcqt",
  "weights": [
   "Regular"

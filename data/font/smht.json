@@ -7,17 +7,17 @@
  ],
  "licenseName": "IPA Font License Agreement v1.0",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "IPA",
+  "textState": "full",
+  "sourceUrl": "https://cdn.jsdmirror.com/gh/MEE-Developers/Mizuki-Gothic@main/LICENSE.md",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "1aa1a5b09074da86ed9ea2e8013a66a5ccd97f41e83cee28eae013c4c0d68cc3",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "",
  "foundrySlug": "unknown",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/smht",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://github.com/MEE-Developers/Mizuki-Gothic",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 GitHub",
+   "format": "git",
+   "href": "https://github.com/MEE-Developers/Mizuki-Gothic",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

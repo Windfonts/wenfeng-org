@@ -1,0 +1,30 @@
+{
+  "norm": "yutcd",
+  "title": "授权待核",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "http://net2.system.to/pc/",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "http://net2.system.to/pc/",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "http://net2.system.to/pc/",
+      "label": "上游 net2.system.to"
+    }
+  ]
+}

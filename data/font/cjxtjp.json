@@ -8,16 +8,16 @@
  "licenseName": "授权待核",
  "license": {
   "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/ChogokubosoGothic/LICENSE.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "eca53e871d17f53dbc6131e70f16f506a9fc9bb1950feb19a401c04a5a74e9a8",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "font.websozai.jp",
  "foundrySlug": "websozai",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/cjxtjp",
@@ -27,12 +27,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://font.websozai.jp/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 font.websozai.jp",
+   "format": "link",
+   "href": "https://font.websozai.jp/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

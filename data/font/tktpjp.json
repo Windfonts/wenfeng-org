@@ -7,19 +7,19 @@
  ],
  "licenseName": "OFL",
  "license": {
-  "spdx": null,
-  "textState": "missing",
-  "sourceUrl": null,
-  "fetchedAt": null,
-  "textSha256": null,
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/TekitouPoem/OFL.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "e765afa854aa8dbb1fb043c5064e927410c79cb812eb8a46a6b46099dece52b1",
   "verifiedAt": null,
   "rfn": null
  },
  "foundry": "Cockatrice Digital",
  "foundrySlug": "cockatrice",
- "offer": "missing",
+ "offer": "jump",
  "slice": "planned",
- "distribution": false,
+ "distribution": true,
  "shop": "https://app.windfonts.com/fonts/tktpjp",
  "weights": [
   "Bold",
@@ -30,12 +30,19 @@
  "mirror": {
   "state": "absent",
   "feicode": null,
-  "upstream": null,
+  "upstream": "https://cktrc.com/",
   "syncedAt": null,
   "headSha": null
  },
  "lineage": null,
  "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 cktrc.com",
+   "format": "link",
+   "href": "https://cktrc.com/",
+   "sha256": null
+  },
   {
    "kind": "slice",
    "label": "网页切片包（自托管）",

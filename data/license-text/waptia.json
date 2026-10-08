@@ -1,0 +1,30 @@
+{
+  "norm": "waptia",
+  "title": "授权待核",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://moji-waku.com/",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://moji-waku.com/",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://moji-waku.com/",
+      "label": "上游 moji-waku.com"
+    }
+  ]
+}

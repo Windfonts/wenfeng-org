@@ -1,0 +1,24 @@
+{
+  "norm": "knkkjp",
+  "title": "授权待核",
+  "body": "もじワク研究 使用許諾範囲（摘録・全文は portal）\nURL: https://moji-waku.com/mj_work_license/\n\nフリーフォント | デジタルフォント使用許容範囲 | もじワク研究\nもじワク研究\n研究ノート\n使用許諾範囲\n▼ページが正常に表示されない場合はこちら。\nもじワク研究\n研究ノート\n使用許諾範囲\n▼ページが正常に表示されない場合はこちら。\nもじワク研究 ／ Open Type フォント使用許諾範囲\n使用許諾範囲適用フォント一覧\n日本語フォント\nピグモ00\n｜\nピグモ01\nマキナス\n｜\nマメロン\nポプらむ☆キュート\n廻想体\n｜\nロンド B\n｜\nトガリテ\n金畫字\n｜\nユムール\n｜\nサマサン・ドノクン\nカラーフォント\nピグモ05 Clr\n欧文フォント\nWAPTIA\n｜\nALBERTELLA\nKIMBERELLA\n｜\nESCUMASIA\nアウトライン素材\nらんたんU\n※当使用許諾範囲は、フリーフォント集などで付録DVDデータとして配布された\n上記に記載のないフリーフォントデータも含みます。\n印　刷\n○\n：\n出版\n○\n：\n広告・カタログ\n○\n：\n販促物\n（チラシ・POP・DM・商業印刷使用）\n○\n：\nサイン・看板\n（店外広告使用）\n○\n：\nグッズなどへの商品利用\n（年賀はがきのテンプレートへの使用も可）\n○\n：\n製品・機器筐体・商品パッケージへの使用\n文字の加工\n○\n：\n変形・加工・分解・再構成\n○\n：\nロゴ　商標登録なし\n○\n：\nロゴ　商標登録あり\nWeb\n○\n：\n企業・個人サイトでの画像としての文字表示\n○\n：\n商用バナーとしての使用\n○\n：\n待ち受け画面・PC壁紙\n○\n：\nメール配信用画像として使用\nWebフォント\n○\n：\nサーバーへのフォントのインストール\n○\n：\nサブセット化\n○\n：\nAdobe Flashへの埋め込み\n放送・映像\n○\n：\n映画\n○\n：\n放送番組\n○\n：\nインターネットを通じた動画配信\n○\n：\nBD・DVDなどの映像コンテンツ販売\n○\n：\nテレビCM・PVでの使用\nゲーム・アプリケーション\n○\n：\nコンテンツ内での画像としての文字表示\n○\n：\n文字編集機能・システムフォントとしての使用",
+  "textKind": "full",
+  "evidence": {
+    "source": "店面拆包随附",
+    "url": "https://cn.windfonts.com/fonts-packages/Kinkaku/LICENSE.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "8d675ca0e55ae73eb8715807ae3848c242e25f6b9dfd7531fa23e87842ababeb",
+    "method": "pack-file",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://cn.windfonts.com/fonts-packages/Kinkaku/LICENSE.txt",
+        "note": "按店面已核许可与原地址拉取",
+        "textSha256": "8d675ca0e55ae73eb8715807ae3848c242e25f6b9dfd7531fa23e87842ababeb"
+      }
+    ]
+  }
+}

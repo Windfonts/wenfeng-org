@@ -1,0 +1,30 @@
+{
+  "norm": "bestten",
+  "title": "BestTen授权协议",
+  "body": "",
+  "textKind": "pointer",
+  "evidence": {
+    "source": "厂商官网",
+    "url": "https://flopdesign.booth.pm/items/2747965",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": null,
+    "method": "pointer",
+    "history": [
+      {
+        "at": "2026-10-08",
+        "event": "archive",
+        "url": "https://flopdesign.booth.pm/items/2747965",
+        "note": "按店面已核许可与原地址拉取"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "kind": "html",
+      "href": "https://flopdesign.booth.pm/items/2747965",
+      "label": "上游 flopdesign.booth.pm"
+    }
+  ]
+}
