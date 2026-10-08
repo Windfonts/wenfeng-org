@@ -1,3 +1,7 @@
+> 10-09 SEO/GEO 已发版：[Grok]。人「按审查把两站改到符合标准」。`python3 site/build.py --allow-index`；`site/seo.py`。广州 `oss://wenfeng-org` 8999；CF zone `91c9a7ea…` purge_everything。现网 robots yinji 体例、sitemap 2218 loc、llms 200、首页 `index,follow` H1 `开源商用字体`。别名 stub noindex。未改 Worker/DNS。未提交 attest-ledger。SOP linuxjoy #41。
+
+> 10-08 SEO/GEO 审查：[Grok]。人要 app+org 全面审查、不擅自改生产。稿 linuxjoy `docs/plans/2026-10-08-windfonts-seo-geo-audit.md`。现网 `robots.txt` Disallow:/；每页 noindex,nofollow。v2 `site/build.py` 写死 noindex，无 `--allow-index`。档案 HTML 已有许可事实。未发令不放开索引。recall #9374。
+
 > 10-08 org favicon 用 app 反色：[Grok]。人「favicon org 的用app 的反色即可」。app `/favicon.ico` 白标深底 → org 深标浅底（RGB 反相、透明保留）。现网 `https://wenfeng.org/favicon.ico` 与 `/favicon.webp` 200，网页桶根路径，不走 cn。页眉仍 `assets/icon.webp`。layout 已加 `<link rel="icon">`，现网页 HTML 未整站重发。未改 Worker。
 
 > 10-08 页眉走 cn 剩余项：[Grok]。人「未做的去做」。CF `purge_everything` zone `91c9a7ea…` success（modiqi `cf-api`）。浏览器 `/source/` 752 款、`/source/xwwk/` 本站下载、`/attest/xwwk/` 证面：页眉 CSS/JS/woff2 与 `assets/shs|shsans` 均 cn 200；QR/badge 仍 `wenfeng.org/api/v1/certs*`。`cn.windfonts.com/api/css` 仍 ORB（旧 FACE_CSS_TPL，包 CSS 回退 200）。favicon 已另条。linuxjoy SOP `692d6e5` 未推。

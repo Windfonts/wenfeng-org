@@ -9,6 +9,7 @@
 数据只读：../samples.json、../data/font/*.json、../data/licenses.json、../data/license-text/*.json。
 """
 
+import argparse
 import html
 import json
 import os
@@ -82,6 +83,7 @@ SPRITE = re.sub(r"<\?xml[^>]*>\s*", "", (ROOT / "assets/icons.svg").read_text("u
 # cn.windfonts.com (oss://wenfeng-fonts Guangzhou). Empty origin = same-host preview.
 # License PDFs stay on the HTML origin. Do not put org HTML in wenfeng-web-hz.
 ASSET_ORIGIN = os.environ.get("WF_ASSET_ORIGIN", "https://cn.windfonts.com").rstrip("/")
+import seo  # site/seo.py; sys.path[0] is this directory when run as site/build.py
 
 
 def asset(path):
@@ -639,7 +641,7 @@ def page_head(title, lead, crumbs=(), kicker="", dev="", face_attrs="", sub=""):
     return '%s<header class="page-mast">%s%s%s%s%s</header>' % (cr, kick, h1, sub_h, lead_d, lead_v)
 
 
-def layout(section, title, body, dev="", extra_head="", body_class="", nav_items=None, wordmark_href="/", footer=None, desc=""):
+def layout(section, title, body, dev="", extra_head="", body_class="", nav_items=None, wordmark_href="/", footer=None, desc="", jsonld=None, index=None, canonical=""):
     items = NAV if nav_items is None else nav_items
     nav = "".join('<a href="%s"%s>%s</a>' % (h, ' class="is-active"' if section in keys else "", t)
                   for h, t, keys in items)
@@ -649,10 +651,13 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
     b_cls = (' class="%s"' % e(body_class)) if body_class else ""
     if footer is None:
         footer = foot_site(dev)
+    full_title = ("%s · 文风开源" % title) if title else "文风开源"
+    canon = canonical or seo.infer_canonical(dev, section)
+    robots = seo.robots_content(index=index, dev=dev, title=title, canonical=canon)
+    seo_head = seo.meta_tags(full_title, desc=desc, canonical=canon, robots=robots, jsonld=jsonld)
     return """<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
 <title>%s</title>
 <link rel="icon" type="image/webp" href="/favicon.webp">
 <link rel="icon" href="/favicon.ico">
@@ -681,8 +686,8 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 %s
 <script src="%s?v=%d" defer></script>
 </body></html>""" % (
-        e(("%s · 文风开源" % title) if title else "文风开源"),
-        (('<meta name="description" content="' + e(desc) + '">\n') if desc else ""),
+        e(full_title),
+        seo_head,
         asset("/assets/tokens.css"),
         int((HERE / "assets" / "tokens.css").stat().st_mtime),
         asset("/assets/site.css"),
@@ -697,8 +702,6 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
     )
 
 
-
-# ---------- 页面 ----------
 
 def _fv(d, v, cls=""):
     p = (cls + " ") if cls else ""
@@ -720,9 +723,8 @@ def home_prime(fonts, q_id):
         '<div class="lab-door is-find">'
         '<div class="lab-find-copy">'
         '<p class="lab-find-kicker">%s</p>'
-        '<h1 class="lab-find-title">'
-        '<span class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-rot" data-rot><span class="is-on lab-find-em">开源</span><span class="lab-find-em">免费</span><span class="lab-find-em">文派</span><span class="lab-find-em">精品</span></span>商用字体'
-        '<span class="for-dev mono">/source</span></h1>'
+        '<h1 class="lab-find-title">开源商用字体<span class="for-dev mono">/source</span></h1>'
+        '<p class="for-design lab-find-live" contenteditable="true" spellcheck="false" role="textbox" aria-label="可编辑的活样张" data-placeholder="写几个字试试" data-face-family="wenfeng-xxzt"><span class="lab-rot" data-rot><span class="is-on lab-find-em">开源</span><span class="lab-find-em">免费</span><span class="lab-find-em">文派</span><span class="lab-find-em">精品</span></span>商用字体</p>'
         '<p class="d">%s</p></div>'
         '<div class="lab-find-act">'
         '<form class="search is-embed" action="/source/" method="get" role="search">'
@@ -759,7 +761,10 @@ def page_home(data, fonts):
     """首页活页：丙′（开源商用字体主门 + 三侧门）。"""
     body = '<article class="lab-home">%s</article>' % home_prime(fonts, "q")
     extra = '<link rel="stylesheet" href="%s">' % asset("/assets/lab-home.css")
-    return layout("home", "", body, "/", extra_head=extra, body_class="lab-home-page", desc='开源字体源文件目录：许可逐款核对，本站可下载，商用证明在线申领。' )
+    return layout("home", "开源商用字体", body, "/", extra_head=extra, body_class="lab-home-page",
+        desc='开源字体源文件目录：许可逐款核对，本站可下载，商用证明在线申领。',
+        canonical="/",
+        jsonld=seo.graph(seo.organization(), seo.website(with_search=True)))
 
 
 def _recent(fonts, st=None, n=8):
@@ -965,7 +970,10 @@ def page_source(fonts):
             aside("状态", status_words(), "五个词全站同形。侧栏不是某一款的结论。"),
         )
     )
-    return layout("source", "字型目录", body, "/source", extra_head=pages_css("source"), body_class="page-source", desc='全部免费及开源商用字体。可自选下载 TTF / OTF 原件或即用字库切片包。' )
+    src_desc = '全部免费及开源商用字体。可自选下载 TTF / OTF 原件或即用字库切片包。'
+    return layout("source", "字型目录", body, "/source", extra_head=pages_css("source"), body_class="page-source", desc=src_desc,
+        jsonld=seo.graph(seo.collection_page("字型目录", "/source/", src_desc),
+                         seo.breadcrumb([("/", "首页"), (None, "字型目录")])))
 
 
 def page_lab_source(fonts, variant):
@@ -1827,10 +1835,24 @@ def page_font(f):
     body += font_take_html(f)
     body += font_quiet_more(f) + '</div>'
     body += aside("这一款", dossier) + '</div>'
+    font_desc = "%s（%s）。%s。许可 %s，厂商 %s。源文件与许可原文在文风开源，本站不二次授权。" % (
+        wf(f), f["norm"], st_label, proto, foundry)
     return layout(
         "source", wf(f), body, "/source/%s" % f["norm"],
         extra_head=pages_css("source-norm", "slice") + "\n" + pages_js("slice"),
         body_class="page-font",
+        desc=font_desc,
+        jsonld=seo.graph(
+            seo.creative_work(
+                wf(f), "/source/%s/" % f["norm"],
+                description=font_desc,
+                license_url="/license/%s/" % f["norm"],
+                identifier=f["norm"],
+                alternate=(f.get("en") or ""),
+                holder="" if foundry == "未标注" else foundry,
+            ),
+            seo.breadcrumb([("/", "首页"), ("/source/", "目录"), (None, wf(f))]),
+        ),
     )
 
 
@@ -2282,11 +2304,14 @@ def page_licenses(fonts):
         )
     )
     body = '<div class="lic-page" data-lic-layout>%s%s</div>' % (stage, results)
+    lic_desc = "字体许可数据集，现已开放公众查询。"
     return layout(
         "license", "授权查询", body, "/license",
         extra_head=pages_css("license"),
         body_class="page-license",
-        desc='字体许可数据集，现已开放公众查询。',
+        desc=lic_desc,
+        jsonld=seo.graph(seo.collection_page("授权查询", "/license/", lic_desc),
+                         seo.breadcrumb([("/", "首页"), (None, "授权查询")])),
     )
 
 
@@ -2895,10 +2920,11 @@ def page_license(f, licenses):
         lead = "%s。以下为归档许可原文。" % e(face)
 
     body = page_head(
-        title, lead,
+        face, lead,
         crumbs=[("/license/", "授权"), (None, face)],
         kicker=kick,
         dev="/license/%s · %s" % (norm, dev_state),
+        sub=title if title and title != face else "",
     )
     body += '<div class="licn">'
     body += meta
@@ -2906,9 +2932,17 @@ def page_license(f, licenses):
     body += sheet
     body += evidence_block(f, lic_obj)
     body += "</div>"
+    licn_desc = "%s 的许可原文（%s）。本站不二次授权，以本页归档文本为准。" % (face, spdx)
     return layout(
         "license", "%s 授权" % face, body, "/license/%s" % norm,
         extra_head=pages_css("license-norm"), body_class="page-license-norm",
+        desc=licn_desc,
+        jsonld=seo.graph(
+            seo.creative_work(face, "/license/%s/" % norm, description=licn_desc,
+                              license_url="/license/%s/" % norm, identifier=norm,
+                              alternate=(f.get("en") or "")),
+            seo.breadcrumb([("/", "首页"), ("/license/", "授权"), (None, face)]),
+        ),
     )
 
 
@@ -3025,11 +3059,14 @@ def page_foundries(groups):
             '<p class="quiet">还没有按厂商归类的条目。</p>',
         )
     )
+    fd_desc = "按厂商浏览开源字体目录。"
     return layout(
         "foundry", "厂商", body, "/foundry",
         extra_head=pages_css("source", "foundry"),
         body_class="page-source page-foundry page-foundries",
-        desc='按厂商浏览开源字体目录。',
+        desc=fd_desc,
+        jsonld=seo.graph(seo.collection_page("厂商", "/foundry/", fd_desc),
+                         seo.breadcrumb([("/", "首页"), (None, "厂商")])),
     )
 
 
@@ -3055,10 +3092,16 @@ def page_foundry(g):
             '<p class="quiet">没有这一类。换一个筛选，或<a href="/source/">回目录</a>。</p>',
         )
     )
+    g_desc = "%s 出品的开源与免费商用字体，文风开源目录收录。" % g["name"]
     return layout(
         "foundry", g["name"], body, "/foundry/%s" % g["slug"],
         extra_head=pages_css("source", "foundry"),
         body_class="page-source page-foundry",
+        desc=g_desc,
+        jsonld=seo.graph(
+            seo.collection_page(g["name"], "/foundry/%s/" % g["slug"], g_desc),
+            seo.breadcrumb([("/", "首页"), ("/foundry/", "厂商"), (None, g["name"])]),
+        ),
     )
 
 
@@ -3129,11 +3172,14 @@ def page_attest_index(fonts):
         '%s<div class="at-desk"><div class="at-desk-main">%s%s</div>%s</div>'
         % (mast, form, more, bound)
     )
+    at_desc = "标准开源协议字体的商用证明在线申领，完整记录授权链、协议和原文哈希。"
     return layout(
         "attest", "授权证明", body, "/attest",
         extra_head=pages_css("attest"),
         body_class="page-attest",
-        desc='标准开源协议字体的商用证明在线申领，完整记录授权链、协议和原文哈希。',
+        desc=at_desc,
+        jsonld=seo.graph(seo.collection_page("授权证明", "/attest/", at_desc),
+                         seo.breadcrumb([("/", "首页"), (None, "授权证明")])),
     )
 
 
@@ -3211,11 +3257,27 @@ def page_attest(f):
         (' data-face-family="%s"' % e(f["family"])) if f.get("family") else "",
     )
     extra = pages_css("attest-norm")
-    body = '%s<div class="atn-layout">%s%s</div>' % (mast, side, stage)
+    spdx_w = spdx_of(f) or "未记录"
+    sha_w = lic(f).get("textSha256") or "未记录"
+    facts = (
+        '<section class="atn-facts" aria-label="核验事实">'
+        "<p>字体 <strong>%s</strong>（%s）。SPDX %s。许可原文 SHA-256：%s。</p>"
+        '<p>本页证明记录核验结果，不是著作权人出具的授权书。使用边界以<a href="/license/%s/">许可原文</a>为准。</p>'
+        "</section>"
+    ) % (e(name), e(f["norm"]), e(spdx_w), e(sha_w), e(f["norm"]))
+    body = "%s%s<div class=\"atn-layout\">%s%s</div>" % (mast, facts, side, stage)
+    atn_desc = "%s 授权证明。SPDX %s。记录核验结果，不是著作权人授权书。" % (name, spdx_w)
     return layout(
-        "attest", "%s 授权证明" % f["name"], body, "attest",
+        "attest", "%s 授权证明" % name, body, "/attest/%s" % f["norm"],
         extra_head=extra,
         body_class="page-attest-norm",
+        desc=atn_desc,
+        jsonld=seo.graph(
+            seo.creative_work(name + " 授权证明", "/attest/%s/" % f["norm"],
+                              description=atn_desc, license_url="/license/%s/" % f["norm"],
+                              identifier=f["norm"]),
+            seo.breadcrumb([("/", "首页"), ("/attest/", "核验"), (None, name)]),
+        ),
     )
 def page_attest_go():
     return layout("attest", "生成授权证明", page_head("正在跳转", "按所选字体打开证书页。", kicker="核验", dev="/attest/go") + '<p class="quiet" data-attest-go>正在跳转…</p>')
@@ -3461,17 +3523,7 @@ def slice_desk_html(f, bare=False, chrome="quiet"):
 
 
 def page_redirect(to):
-    href = e(to)
-    return (
-        "<!doctype html><html lang=\"zh-Hans\"><head>"
-        "<meta charset=\"utf-8\">"
-        "<meta http-equiv=\"refresh\" content=\"0;url=%s\">"
-        "<link rel=\"canonical\" href=\"%s\">"
-        "<title>转到</title>"
-        "<script>location.replace(%s)</script>"
-        "</head><body><p><a href=\"%s\">转到目录</a></p></body></html>"
-        % (href, href, json.dumps(to), href)
-    )
+    return seo.redirect_page(to)
 
 
 def page_slices(fonts=None):
@@ -3479,7 +3531,7 @@ def page_slices(fonts=None):
 
 
 def page_slice(f, fonts=None):
-    return page_redirect("/source/%s/#slice" % f["norm"])
+    return seo.redirect_page("/source/%s/" % f["norm"], wf(f))
 
 _READ_DESC = {
     "how": "收录门槛、许可留证、原件与切片规则、授权证明签发，以及目录五态含义。",
@@ -3505,12 +3557,13 @@ def _how_status_sidebar():
         ], words=True),
     ).replace('<aside class="aside">', '<aside class="aside" id="how-status">', 1)
 
-def _read_layout(section, title, body, path):
+def _read_layout(section, title, body, path, jsonld=None):
     return layout(
         section, title, body, path,
         body_class="page-read page-%s" % section,
         extra_head=pages_css("read"),
         desc=_READ_DESC.get(section, ""),
+        jsonld=jsonld,
     )
 
 
@@ -3604,11 +3657,16 @@ def page_use():
         crumbs=[(None, "用法")],
         dev="/use",
     ) + paths + bands.replace("__COMMENT__", e(COMMENT))
+    use_desc = "目录下载原件或切片包；网页引用 cn.windfonts.com 托管 CSS。"
     return layout(
         "use", "用法", body, "/use",
         extra_head=pages_css("gate"),
         body_class="page-gate page-use",
-        desc="目录下载原件或切片包；网页引用 cn.windfonts.com 托管 CSS。",
+        desc=use_desc,
+        jsonld=seo.graph(
+            seo.howto("用法", "/use/", ["下载原件", "领取切片包", "网页引用托管 CSS"], use_desc),
+            seo.breadcrumb([("/", "首页"), (None, "用法")]),
+        ),
     )
 
 
@@ -3684,7 +3742,12 @@ def page_how():
         crumbs=[(None, "我们怎么核验")],
         dev="/how",
     ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (main, _how_status_sidebar())
-    return _read_layout("how", "我们怎么核验", body, "/how")
+    return _read_layout("how", "我们怎么核验", body, "/how", jsonld=seo.graph(
+        seo.howto("我们怎么核验", "/how/",
+                  ["核对许可原文", "对应著作权人", "从官方渠道取件", "许可留证", "原件与切片", "签发证明"],
+                  _READ_DESC["how"]),
+        seo.breadcrumb([("/", "首页"), (None, "我们怎么核验")]),
+    ))
 
 
 def page_legal():
@@ -3706,7 +3769,12 @@ def page_legal():
         crumbs=[(None, "法律声明")],
         dev="/legal",
     ) + '<div class="read-desk"><div class="read-main">%s</div>%s</div>' % (seq + acts, side)
-    return _read_layout("legal", "法律声明", body, "/legal")
+    return _read_layout("legal", "法律声明", body, "/legal", jsonld=seo.graph(
+        seo.howto("法律声明", "/legal/",
+                  ["打开这页", "对着原文", "看证上三行", "放进档案", "有异议再写信"],
+                  _READ_DESC["legal"]),
+        seo.breadcrumb([("/", "首页"), (None, "法律声明")]),
+    ))
 
 
 
@@ -3799,7 +3867,9 @@ def page_about():
         "about", "关于", body, "/about",
         extra_head=pages_css("gate"),
         body_class="page-gate page-about",
-        desc="文派旗下开源商用字体服务平台",
+        desc="文派旗下开源商用字体服务平台。源文件、许可原文与授权证明在本站；网页嵌入在 app.windfonts.com。",
+        jsonld=seo.graph(seo.organization(), seo.website(with_search=True),
+                         seo.breadcrumb([("/", "首页"), (None, "关于")])),
     )
 
 
@@ -4213,7 +4283,8 @@ def page_gap():
         kicker="03",
         dev="/gap · POST 未接",
     ) + form
-    return layout("gap", "报缺字", body, "/gap", body_class="page-gap", desc='缺字形、缺收录或勘误，都从一个入口报。' )
+    return layout("gap", "缺字勘误", body, "/gap", body_class="page-gap",
+        desc='缺字形、缺收录或勘误，都从一个入口报。提交入口尚未接通。')
 def page_404():
     body = page_head(
         "没有这一页",
@@ -4233,6 +4304,10 @@ def write(rel, text):
 
 
 def main():
+    ap = argparse.ArgumentParser(description="wenfeng.org v2 site builder")
+    ap.add_argument("--allow-index", action="store_true", help="public index,follow and robots Allow")
+    args = ap.parse_args()
+    seo.ALLOW_INDEX = bool(args.allow_index)
     data, fonts, licenses = load()
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -4285,11 +4360,11 @@ def main():
             if s in taken:
                 continue
             taken.add(s)
-            write("/source/%s/" % s, page_font(f))
-            write("/license/%s/" % s, page_license(f, licenses))
+            write("/source/%s/" % s, seo.alias_stub("/source/%s/" % f["norm"], wf(f)))
+            write("/license/%s/" % s, seo.alias_stub("/license/%s/" % f["norm"], wf(f)))
             if can_attest(f):
-                write("/attest/%s/" % s, page_attest(f))
-            write("/slice/%s/" % s, page_slice(f, fonts))
+                write("/attest/%s/" % s, seo.alias_stub("/attest/%s/" % f["norm"], wf(f)))
+            write("/slice/%s/" % s, seo.alias_stub("/source/%s/" % f["norm"], wf(f)))
             n_alias += 1
     groups = foundries(fonts)
     write("/foundry/", page_foundries(groups))
@@ -4301,9 +4376,23 @@ def main():
                      ("/legal/", page_legal), ("/about/", page_about), ("/gap/", page_gap)]:
         write(path, fn())
     write("404.html", page_404())
+    sitemap = [
+        "/", "/source/", "/license/", "/foundry/", "/attest/",
+        "/use/", "/how/", "/legal/", "/about/", "/gap/",
+        "/v/", "/attest/verify/", "/attest/ledger/",
+    ]
+    for f in fonts:
+        sitemap.append("/source/%s/" % f["norm"])
+        sitemap.append("/license/%s/" % f["norm"])
+        if can_attest(f):
+            sitemap.append("/attest/%s/" % f["norm"])
+    for g in groups:
+        sitemap.append("/foundry/%s/" % g["slug"])
+    seo.write_discovery(DIST, sitemap)
     print(
-        "built %d pages -> %s (license pdf %d, alias slugs %d)"
-        % (sum(1 for _ in DIST.rglob("index.html")), DIST, n_lic_pdf, n_alias)
+        "built %d pages -> %s (license pdf %d, alias slugs %d, index=%s)"
+        % (sum(1 for _ in DIST.rglob("index.html")), DIST, n_lic_pdf, n_alias,
+           "allow" if seo.ALLOW_INDEX else "noindex")
     )
 
 

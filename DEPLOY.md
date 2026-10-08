@@ -15,7 +15,7 @@
 | 域名 | 已注册（July Name Limited，2005 老域）。**到期 2026-12-14，需续费** |
 | DNS | Cloudflare（jaime/raphaela）。apex 记录=CNAME wenfeng-org.oss-cn-guangzhou.aliyuncs.com（橙云；实际流量被 Worker 路由接管） |
 | 源站桶 | oss://wenfeng-org 广州，两段缓存（数据 no-cache / assets immutable 一年），4184 文件，manifest git=943c683 |
-| 索引 | **robots 全站拒收（noindex 构建款）**；放开=重建 `--allow-index` + 重传 + 清 CF 缓存 |
+| 索引 | 公开页 `index,follow`（`python3 site/build.py --allow-index`）。`/lab/` 与 404 仍 noindex。别名页薄跳转 + noindex。 |
 | 备案 | **.org 后缀不在工信部可备案清单，永久备不了案（feibisi 2026-10-01 拍板口径）**——大陆 CDN 此路不通，长期走 CF；大陆可达性=CF 线路质量 |
 | 遗留 DNS | api/app/cdn.wenfeng.org 三条 A 仍指死机 47.76.95.55（520 元凶），未动，留待 feibisi 定用途；_dnsauth TXT 一条（绑域尝试遗留，无害） |
 
@@ -78,4 +78,4 @@ Mac 侧根目录 `deploy.sh` 是旧 M1 ossutil 路径，不要用。静态托管
 
 - M2 证书签发服务上线后：CF 再加一条 Worker/路由把 `/api/v1/certs/*` 与 `/badge/*` 分流到签发服务，静态部分不动
 - wenfeng-original/ 原件包生产（113 款镜像源打包上传 wenfeng-fonts 桶，换 `ARCHIVE_HREF_PREFIX` 真值重导出）
-- 放开索引（`--allow-index`）等 feibisi 发令
+- 索引开关在 v2 `site/build.py --allow-index`（2026-10-09 已接上；不要跑根目录 `build.py`）
