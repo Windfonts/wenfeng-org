@@ -1,3 +1,5 @@
+> 10-10 首页大字轮转收回 h1：[Grok]。人「org 首页大字有问题，轮转没变化」。SEO 把静态 h1 和 14px 活样张拆开，96px 玄宗不再换词。轮转收回 `h1.lab-find-title`，补上 `</span>`。现网 index.html 已上 oss://wenfeng-org，CF 清首页。title 仍「开源商用字体」。
+
 > 10-09 SEO/GEO 已发版：[Grok]。人「按审查把两站改到符合标准」。`python3 site/build.py --allow-index`；`site/seo.py`。广州 `oss://wenfeng-org` 8999；CF zone `91c9a7ea…` purge_everything。现网 robots yinji 体例、sitemap 2218 loc、llms 200、首页 `index,follow` H1 `开源商用字体`。别名 stub noindex。未改 Worker/DNS。未提交 attest-ledger。SOP linuxjoy #41。
 
 > 10-08 SEO/GEO 审查：[Grok]。人要 app+org 全面审查、不擅自改生产。稿 linuxjoy `docs/plans/2026-10-08-windfonts-seo-geo-audit.md`。现网 `robots.txt` Disallow:/；每页 noindex,nofollow。v2 `site/build.py` 写死 noindex，无 `--allow-index`。档案 HTML 已有许可事实。未发令不放开索引。recall #9374。
