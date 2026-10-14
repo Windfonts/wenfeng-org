@@ -5,7 +5,7 @@
  "aliases": [
   "cdmc"
  ],
- "licenseName": "mit",
+ "licenseName": "MIT",
  "license": {
   "spdx": "MIT",
   "textState": "full",

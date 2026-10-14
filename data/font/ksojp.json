@@ -5,7 +5,7 @@
  "aliases": [
   "ksojp"
  ],
- "licenseName": "bsd",
+ "licenseName": "BSD-3-Clause",
  "license": {
   "spdx": "BSD-3-Clause",
   "textState": "full",

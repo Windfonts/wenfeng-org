@@ -271,7 +271,7 @@
     var map = {};
     fonts.forEach(function (f) {
       var slug = f.foundrySlug || 'unknown';
-      if (!map[slug]) map[slug] = { slug: slug, name: f.foundry || '未标注', fonts: [] };
+      if (!map[slug]) map[slug] = { slug: slug, name: f.foundry || '作者不详', fonts: [] };
       map[slug].fonts.push(f);
     });
     var groups = Object.keys(map).map(function (k) { return map[k]; });
@@ -772,7 +772,7 @@
     var rows = list.map(function (f) {
       var act = indexAct(f);
       var textState = (f.license || {}).textState || '—';
-      var maker = f.foundry || '未标注';
+      var maker = f.foundry || '作者不详';
       return '<li class="sd2b-row">' +
         '<span class="norm">' + esc(f.norm) + '</span>' +
         '<a class="name" href="/source/' + esc(f.norm) + '/">' + esc(wfName(f)) + '</a>' +
@@ -1369,7 +1369,7 @@
     }
     var spdx = attestSpdxOf(f) || '';
     var proto = spdx || f.licenseName || '—';
-    var foundry = f.foundry || '未标注';
+    var foundry = f.foundry || '作者不详';
     var textCell = fontTextCell(f);
     var archCell = fontArchiveCell(f);
     var mirrorState = (f.mirror || {}).state || '';
@@ -1609,7 +1609,7 @@
     var kind = licenseKind(f);
     var copy = verdictCopy(f, kind);
     var spdx = attestSpdxOf(f) || '';
-    var foundry = f.foundry || '未标注';
+    var foundry = f.foundry || '作者不详';
     var proto = spdx || f.licenseName || '—';
     var acts = stageActs(f, kind).map(function (a) {
       return '<a' + (a.strong ? ' class="is-strong"' : '') + ' href="' + esc(a.href) + '">' + esc(a.label) + '</a>';
@@ -1659,7 +1659,7 @@
       '<span class="state">' + esc(copy.line) + '</span>' +
       '<span class="body">' +
         '<span class="fname">' + esc(wfName(f)) + '</span>' +
-        '<span class="meta for-design">' + esc(spdx || f.licenseName || '待核实') + ' · ' + esc(f.foundry || '未标注') + ' · ' + esc(statusWord(f)) + '</span>' +
+        '<span class="meta for-design">' + esc(spdx || f.licenseName || '待核实') + ' · ' + esc(f.foundry || '作者不详') + ' · ' + esc(statusWord(f)) + '</span>' +
         '<span class="meta for-dev mono">' + esc(f.norm) + ' · textState=' + esc(String((f.license || {}).textState || '∅')) + ' · offer=' + esc(offerOf(f)) + '</span>' +
       '</span>' +
       '<span class="go" aria-hidden="true">' + esc(go) + '</span>' +
@@ -2060,7 +2060,7 @@
           return '<li>' +
             '<a class="tool-index-row" href="/source/' + esc(f.norm) + '/">' +
               '<span class="tool-index-name">' + esc(wfName(f)) + '</span>' +
-              '<span class="tool-index-meta">' + esc(f.foundry || '未标注') + '</span>' +
+              '<span class="tool-index-meta">' + esc(f.foundry || '作者不详') + '</span>' +
               '<span class="tool-index-go">看下载页</span>' +
             '</a>' +
           '</li>';
@@ -2081,7 +2081,7 @@
             return '<li>' +
               '<a class="tool-index-row" href="/slice/' + esc(f.norm) + '/">' +
                 '<span class="tool-index-name">' + esc(wfName(f)) + '</span>' +
-                '<span class="tool-index-meta">' + esc(f.foundry || '未标注') + '</span>' +
+                '<span class="tool-index-meta">' + esc(f.foundry || '作者不详') + '</span>' +
                 '<span class="tool-index-go">领取</span>' +
               '</a>' +
             '</li>';
@@ -2713,7 +2713,7 @@
             '<h2 class="for-design">证明怎么签</h2>' +
             '<h2 class="for-dev mono">attest</h2>' +
             '<p class="for-design">只给采用标准开源协议的字体出证，文派（广州）科技有限公司是出证责任主体。出证时申报用途（网页嵌入、印刷物料、软件内嵌、修改衍生、再分发），用途写入证明和台账，作为授权范围的确认记录。每份证明有唯一编号，签发即写入<a href="/attest/ledger">签发台账</a>。</p>' +
-            '<p class="for-design">核对收到的证明：编号在台账查得到、内容与台账一致，才是文风签发的。编号对不上，按伪造处理。</p>' +
+            '<p class="for-design">核对收到的证明：编号在台账查得到、内容与台账一致，才是文风签发的。编号对不上的，不是文风签发的证明。</p>' +
             '<p class="for-dev mono">SPDX only · 文派 is the subject<br />usage into cert + ledger · unique serial<br />serial miss → forged</p>' +
           '</section>' +
         '</div>' +
@@ -2888,7 +2888,7 @@
       '</div>' +
       searchForm('/attest/ledger', q, '', '', '搜编号或持证单位') +
       rows +
-      '<p class="tool-aside">台账里没有的编号，或编号对不上内容的，按伪造处理，欢迎来信 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a> 反映。</p>' +
+      '<p class="tool-aside">台账里没有的编号，或编号对不上内容的，不是文风签发的证明，欢迎来信 <a href="mailto:license@wenfeng.org">license@wenfeng.org</a> 反映。</p>' +
     '</div>';
   }
 
@@ -2928,7 +2928,7 @@
       '<article id="legal-what">' +
       '<h3 class="for-design">证明是什么</h3>' +
       '<h3 class="for-dev mono">what</h3>' +
-      '<p class="for-design">《文风字体授权证明》记录某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它填档案里「要一份盖章件」的缺口。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p>' +
+      '<p class="for-design">《文风字体授权证明》记录某日从某上游取得某款字、许可原文哈希、本站是否提供原件、可否按原文再分发。它用作企业采购、验收时的存档材料。不替代许可原文，不创设新的权利，不是著作权人的授权书，不等于软著登记或公证。没有把著作权转给持证人这种授权。</p>' +
       '<p class="for-dev mono">chain + hash + original? + redist<br />attest ≠ new rights · no assignment · not 软著 · not notary</p>' +
       '</article>' +
       '</div>' +
@@ -3000,7 +3000,7 @@
       '<article id="legal-sign">' +
       '<h3 class="for-design">签名验的是改没改过</h3>' +
       '<h3 class="for-dev mono">sign</h3>' +
-      '<p class="for-design">平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是 CA 签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。印迹是视觉签章产品，与本证无关。</p>' +
+      '<p class="for-design">平台密钥签名，贴到核对页即可验证内容是否被改过。不是可靠电子签名，也不是 CA 签发的数字证书。不要交给公证处当「已公证」。JSON 可以作辅助证据：某日平台对某哈希、某 SPDX 做过签名。</p>' +
       '<p class="for-dev mono">platform key · not reliable e-sign · not CA<br />JSON is auxiliary · 印迹 unrelated</p>' +
       '</article>' +
       '</div>' +
