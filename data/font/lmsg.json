@@ -5,7 +5,7 @@
  "aliases": [
   "Lmsg"
  ],
- "licenseName": "免费商用",
+ "licenseName": "厂商保留全部权利",
  "license": {
   "spdx": null,
   "textState": "missing",
@@ -19,7 +19,7 @@
  "foundrySlug": "unknown",
  "offer": "missing",
  "slice": "planned",
- "distribution": true,
+ "distribution": false,
  "shop": "https://app.windfonts.com/fonts/lmsg",
  "weights": [
   "Regular"
@@ -42,6 +42,6 @@
    "sha256": null
   }
  ],
- "visitorNote": "",
+ "visitorNote": "未收录：乐米字库 All rights reserved，不可再分发；不得标免费商用/开源商用。不进店面与 CDN。",
  "family": "wenfeng-lmsg"
 }

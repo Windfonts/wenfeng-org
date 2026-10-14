@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-14",
   "purpose": "wenfeng.org 全量目录（export-wenfeng.py 从真源导出）",
-  "comment": "2026-10-14 Foundry：samples 对齐货架补录 48 款（IPA/KH Dot/怀旧像素等）；yshxh/mhzk12/myst/astkx 显示名跟货架。2026-10-08 跟上现网 752：并入 13 款 ToneOZ；15 条 free_commercial 接线保留。2026-10-07 目录与店面一致：店面有的都进本站；6 款 BDF 入库；寒蝉端黑并进寒蝉端黑体。无包无库的 26 条仍只在本站。",
+  "comment": "2026-10-14 Foundry：HOLD25 标未收录（offer=missing）；乐米三去掉免费商用/distribution。 2026-10-14 Foundry：samples 对齐货架补录 48 款（IPA/KH Dot/怀旧像素等）；yshxh/mhzk12/myst/astkx 显示名跟货架。2026-10-08 跟上现网 752：并入 13 款 ToneOZ；15 条 free_commercial 接线保留。2026-10-07 目录与店面一致：店面有的都进本站；6 款 BDF 入库；寒蝉端黑并进寒蝉端黑体。无包无库的 26 条仍只在本站。",
   "coverage": {
     "shop_fonts": 713,
     "source_mirrors": 607,
@@ -5677,7 +5677,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-dokidoki"
     },
     {
@@ -7097,7 +7097,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-futehodo"
     },
     {
@@ -8830,7 +8830,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-hakkou"
     },
     {
@@ -9057,7 +9057,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-haseng"
     },
     {
@@ -10617,7 +10617,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-higure"
     },
     {
@@ -15870,7 +15870,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-keinann"
     },
     {
@@ -16930,7 +16930,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-kurohana"
     },
     {
@@ -17652,7 +17652,7 @@
       "aliases": [
         "Lmld"
       ],
-      "licenseName": "免费商用",
+      "licenseName": "厂商保留全部权利",
       "license": {
         "spdx": null,
         "textState": "missing",
@@ -17666,7 +17666,7 @@
       "foundrySlug": "unknown",
       "offer": "missing",
       "slice": "planned",
-      "distribution": true,
+      "distribution": false,
       "shop": "https://app.windfonts.com/fonts/lmld",
       "weights": [
         "Regular"
@@ -17689,7 +17689,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：乐米字库 All rights reserved，不可再分发；不得标免费商用/开源商用。不进店面与 CDN。",
       "family": "wenfeng-lmld"
     },
     {
@@ -17746,7 +17746,7 @@
       "aliases": [
         "Lmsg"
       ],
-      "licenseName": "免费商用",
+      "licenseName": "厂商保留全部权利",
       "license": {
         "spdx": null,
         "textState": "missing",
@@ -17760,7 +17760,7 @@
       "foundrySlug": "unknown",
       "offer": "missing",
       "slice": "planned",
-      "distribution": true,
+      "distribution": false,
       "shop": "https://app.windfonts.com/fonts/lmsg",
       "weights": [
         "Regular"
@@ -17783,7 +17783,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：乐米字库 All rights reserved，不可再分发；不得标免费商用/开源商用。不进店面与 CDN。",
       "family": "wenfeng-lmsg"
     },
     {
@@ -17793,7 +17793,7 @@
       "aliases": [
         "Lmys"
       ],
-      "licenseName": "免费商用",
+      "licenseName": "厂商保留全部权利",
       "license": {
         "spdx": null,
         "textState": "missing",
@@ -17807,7 +17807,7 @@
       "foundrySlug": "unknown",
       "offer": "missing",
       "slice": "planned",
-      "distribution": true,
+      "distribution": false,
       "shop": "https://app.windfonts.com/fonts/lmys",
       "weights": [
         "Regular"
@@ -17830,7 +17830,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：乐米字库 All rights reserved，不可再分发；不得标免费商用/开源商用。不进店面与 CDN。",
       "family": "wenfeng-lmys"
     },
     {
@@ -18299,7 +18299,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-maboroshi"
     },
     {
@@ -20339,7 +20339,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-mobo"
     },
     {
@@ -21252,7 +21252,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-mugimaru"
     },
     {
@@ -21756,7 +21756,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-natsuzemi"
     },
     {
@@ -21867,7 +21867,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-newclear"
     },
     {
@@ -21914,7 +21914,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-niiro"
     },
     {
@@ -25288,7 +25288,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-scarymin"
     },
     {
@@ -25800,7 +25800,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-shinbashi"
     },
     {
@@ -25847,7 +25847,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-shinretro"
     },
     {
@@ -25894,7 +25894,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-shipgbold"
     },
     {
@@ -32242,7 +32242,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-tetsubin"
     },
     {
@@ -32750,7 +32750,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-tsugumi"
     },
     {
@@ -32797,7 +32797,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-tsukuhou"
     },
     {
@@ -33289,7 +33289,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-wataame"
     },
     {
@@ -38262,7 +38262,7 @@
           "sha256": null
         }
       ],
-      "visitorNote": "",
+      "visitorNote": "未收录：店面不上架。无本站原件/切片；许可未达收录门槛或源在登录墙后。",
       "family": "wenfeng-yasashisa"
     },
     {
