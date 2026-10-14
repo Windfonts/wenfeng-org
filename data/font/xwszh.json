@@ -5,13 +5,13 @@
  "aliases": [
   "Xwszh"
  ],
- "licenseName": "SIL Open Font License 1.1",
+ "licenseName": "IPA Font License Agreement v1.0",
  "license": {
-  "spdx": "OFL-1.1",
+  "spdx": "IPA",
   "textState": "full",
-  "sourceUrl": null,
-  "fetchedAt": "2026-09-26",
-  "textSha256": "8a5719e6a0ddc1eba3d0671cee61a0c2cdf2ca555f2e0328532c591aca5e997a",
+  "sourceUrl": "https://raw.githubusercontent.com/lxgw/LxgwFasmartGothic/1b9cc6c5d66af322c26c979643975f299753d18c/license.txt",
+  "fetchedAt": "2026-10-14",
+  "textSha256": "daf91386d6f9a6a78e4e736c0c00375cae30214ac5c1dab2479f0a05fcb63edd",
   "verifiedAt": "2026-09-26",
   "rfn": null,
   "origin": {
