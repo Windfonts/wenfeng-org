@@ -74,7 +74,6 @@ FOOT_REST = [
     ("https://icons.motucloud.com/", "字体图标", "墨图爱可", ""),
     ("https://app.windfonts.com/", "网页字体", "样张与选字", ""),
     ("/api/v1/certs", "证明 API", "GET certs", "for-dev"),
-    ("/api/v1/fonts", "目录 API", "GET fonts", "for-dev"),
 ]
 
 e = lambda s: html.escape("" if s is None else str(s), quote=True)
@@ -662,6 +661,7 @@ def layout(section, title, body, dev="", extra_head="", body_class="", nav_items
 <link rel="icon" type="image/webp" href="/favicon.webp">
 <link rel="icon" href="/favicon.ico">
 %s<script>try{if(localStorage.getItem('wf-theme')==='dark')document.documentElement.dataset.theme='dark';if(localStorage.getItem('wf-view')==='dev')document.documentElement.dataset.view='dev';if(localStorage.getItem('wf-scale')==='lg')document.documentElement.dataset.scale='lg'}catch(e){}</script>
+<style>html:not([data-view="dev"]) .for-dev{display:none}</style>
 <link rel="stylesheet" href="%s?v=%d"><link rel="stylesheet" href="%s?v=%d">
 <link rel="stylesheet" href="%s?v=%d">
 <script>window.WF_ASSET_ORIGIN=%s;</script>%s
@@ -3619,32 +3619,14 @@ def page_use():
         '<p class="quiet">按款示例见目录条目页「怎么用」。</p>'
         '</div></section>'
         '<section class="gate-band" id="api">'
-        '<h2>目录 API</h2>'
+        '<h2>核验 API</h2>'
         '<div class="gate-band-body">'
-        '<p>查目录用下列接口。不是在线选字的 <code>/api/css</code>。'
-        '商业字只出字段，<code>files</code> 为空。<code>lineage</code> 恒为 '
-        '<code>null</code>。</p>'
+        '<p>目前开放的是授权核验接口。目录接口还没上线，先用 <a href="/source/">目录页</a>。</p>'
         '<ul class="gate-api">'
-        '<li><a href="/api/v1/fonts"><code>GET /api/v1/fonts</code><span>全部条目</span></a></li>'
-        '<li><a href="/api/v1/fonts?offer=source"><code>GET /api/v1/fonts?offer=source</code><span>本站下载</span></a></li>'
-        '<li><a href="/api/v1/fonts?q=%E9%9C%9E%E9%B9%AD"><code>GET /api/v1/fonts?q=霞鹜</code><span>按名搜</span></a></li>'
-        '<li><a href="/api/v1/fonts/xwwk"><code>GET /api/v1/fonts/xwwk</code><span>一款 · 有 files</span></a></li>'
-        '<li><a href="/api/v1/fonts/albbpht"><code>GET /api/v1/fonts/albbpht</code><span>files 为空</span></a></li>'
-        '<li><a href="/api/v1/licenses/xwwk"><code>GET /api/v1/licenses/xwwk</code><span>许可原文</span></a></li>'
-        '<li><a href="/api/v1/foundries"><code>GET /api/v1/foundries</code><span>厂商</span></a></li>'
         '<li><a href="/api/v1/certs"><code>GET /api/v1/certs</code><span>可核验目录</span></a></li>'
         '<li><a href="/api/v1/certs/xwwk"><code>GET /api/v1/certs/xwwk</code><span>一款核验 JSON</span></a></li>'
         '<li><span class="api-row"><code>POST /api/v1/certs/verify</code><span>核对本份签名</span></span></li>'
         '</ul>'
-        '<pre class="gate-code gate-sample">GET /api/v1/fonts/{norm}\n'
-        '{\n'
-        '  "norm": "xwwk",\n'
-        '  "name": "霞鹜文楷",\n'
-        '  "distribution": true,\n'
-        '  "offer": "source",\n'
-        '  "files": [ { "kind": "archive", "href": "…" } ],\n'
-        '  "lineage": null\n'
-        '}</pre>'
         '<p class="gate-acts">'
         '<a href="/source/">目录</a>'
         '<a href="/license/">许可</a>'

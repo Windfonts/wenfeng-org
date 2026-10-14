@@ -428,7 +428,6 @@
             '<a href="/about">关于</a>' +
             '<a href="/legal">法务</a>' +
             '<a href="/use">用法</a>' +
-            '<a href="/api/v1/fonts">目录 API</a>' +
           '</div>' +
         '</div>' +
         '<div class="container site-foot-bottom">' +
@@ -597,7 +596,7 @@
           '<div class="hv4-display">' +
             '<h1>源文件</h1>' +
             '<p class="hv4-lead for-design">开源字体的源文件和许可原文。<br class="hv4-br" />能下载的直接下载，不允许再分发的核验后领取切片包。</p>' +
-            '<p class="hv4-lead for-dev mono">/license · /source · /gap<br class="hv4-br" /> samples.json · offer · textState · GET /api/v1/fonts · /attest</p>' +
+            '<p class="hv4-lead for-dev mono">/license · /source · /gap<br class="hv4-br" /> samples.json · offer · textState · /attest</p>' +
           '</div>' +
           '<div class="hv4-split">' +
             '<div class="hv4-tasks" role="list">' +
