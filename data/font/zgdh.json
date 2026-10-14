@@ -1,0 +1,55 @@
+{
+ "norm": "zgdh",
+ "name": "正格点黑",
+ "en": "ZhengGeDianHei 16",
+ "aliases": [
+  "zgdh",
+  "zgdh16"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/zgdh/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "2632fb84aac2c3597192977672cdb4a9a79f8a9fa27d4fc8a8a71f0882d10366",
+  "verifiedAt": "2026-09-27",
+  "rfn": null
+ },
+ "foundry": "yzdnn",
+ "foundrySlug": "yzdnn",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/zgdh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/yzdnn/ZhengGeDianHei-16",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/yzdnn/ZhengGeDianHei-16",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-zgdh16"
+}

@@ -1,0 +1,64 @@
+{
+ "norm": "konatu",
+ "name": "小夏",
+ "en": "Konatu",
+ "aliases": [
+  "konatu"
+ ],
+ "licenseName": "MIT License",
+ "license": {
+  "spdx": "MIT",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/konatu/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "f3577c286b00d25134268e83e6e248a9a0c0560f1d876e1c7df128194a8f4e83",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "枡田道也",
+ "foundrySlug": "masuda-mitiya",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/konatu",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://www.masuseki.com/wp/?p=233",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 masuseki.com",
+   "format": "link",
+   "href": "https://www.masuseki.com/wp/?p=233",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/konatu/source/Konatu-Regular.ttf",
+   "sha256": "9cfce9eba7312a037e1e0ad2adc429d84f4fb5f40ff8a34f19ea41fc6d39d63b",
+   "staged": false,
+   "bytes": 5747688,
+   "file": "Konatu-Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-konatu"
+}

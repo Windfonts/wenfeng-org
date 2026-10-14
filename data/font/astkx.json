@@ -1,39 +1,35 @@
 {
  "norm": "astkx",
- "name": "澳声通快雪",
- "en": "ToneOZ QuickSnow",
+ "name": "澳声通快雪拼音楷",
+ "en": "ToneOZ QuickSnow Pinyin Kai Traditional",
  "aliases": [
   "astkx"
  ],
- "licenseName": "OFL",
+ "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
   "textState": "full",
-  "sourceUrl": "https://cdn.jsdmirror.com/gh/jeffreyxuan/toneoz-font-pinyin-wenkai@master/OFL.txt",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/astkx/license/original.txt",
   "fetchedAt": "2026-10-08",
-  "textSha256": "4b819d18a707f96a89ccdae47cda23acd613179fe888a3d2f0aa7e5e37726f7a",
+  "textSha256": "beb8502005c0c6adf45fe63ce45f1fba2b5096aa0800cce60a687651a9997215",
   "verifiedAt": null,
   "rfn": null
  },
- "foundry": "toneoz",
+ "foundry": "澳声通",
  "foundrySlug": "toneoz",
  "offer": "source",
  "slice": "planned",
  "distribution": true,
  "shop": "https://app.windfonts.com/fonts/astkx",
  "weights": [
-  "Variable",
-  "W300",
-  "W400",
-  "W500",
-  "W600",
-  "W700"
+  "Regular",
+  "Variable"
  ],
  "mirror": {
   "state": "mirrored",
   "feicode": null,
-  "upstream": "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai",
-  "syncedAt": null,
+  "upstream": "https://github.com/jeffreyxuan/toneoz-font-quicksnow-pinyin-kai-traditional",
+  "syncedAt": "2026-10-08T16:00:57+08:00",
   "headSha": null
  },
  "lineage": null,
@@ -42,17 +38,27 @@
    "kind": "upstream",
    "label": "上游 GitHub",
    "format": "git",
-   "href": "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai",
+   "href": "https://github.com/jeffreyxuan/toneoz-font-quicksnow-pinyin-kai-traditional",
    "sha256": null
   },
   {
    "kind": "archive",
    "label": "源文件",
    "format": "ttf",
-   "href": "https://cn.windfonts.com/fonts-packages/astkx/source/Variable.ttf",
-   "sha256": "f416d6a9babc0341175964a7213cf0437806f9b4142a4711268fcfd5ea5e40ff",
+   "href": "https://cn.windfonts.com/fonts-packages/astkx/source/Regular.ttf",
+   "sha256": "f5a2afcd72a94da5d2d7a3e6d91811aa19082e8f81f8b3dfd00330bd9c035e7a",
    "staged": false,
-   "bytes": 138368,
+   "bytes": 32127400,
+   "file": "Regular.ttf"
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/astkx/source/Variable.ttf",
+   "sha256": "f5a2afcd72a94da5d2d7a3e6d91811aa19082e8f81f8b3dfd00330bd9c035e7a",
+   "staged": false,
+   "bytes": 32127400,
    "file": "Variable.ttf"
   },
   {

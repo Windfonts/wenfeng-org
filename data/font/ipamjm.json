@@ -1,0 +1,64 @@
+{
+ "norm": "ipamjm",
+ "name": "IPAmj明朝",
+ "en": "IPAmj Mincho",
+ "aliases": [
+  "ipamjm"
+ ],
+ "licenseName": "IPA Font License Agreement v1.0",
+ "license": {
+  "spdx": "IPA",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/ipamjm/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "4c84dd528ec3044638ec346fc1ee27cd1eb95dfc04cbc6a881b3ca7a7f517e54",
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "情報処理推進機構 (IPA)",
+ "foundrySlug": "ipa",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/ipamjm",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://moji.or.jp/mojikiban/font/",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 moji.or.jp",
+   "format": "link",
+   "href": "https://moji.or.jp/mojikiban/font/",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ipamjm/source/ipamjm.ttf",
+   "sha256": "a3e84f495f3c388db7a1473bf1985c1c076d0c814100f10a027ca6853eb1e8cb",
+   "staged": false,
+   "bytes": 46676744,
+   "file": "ipamjm.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ipamjm"
+}

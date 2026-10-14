@@ -1,0 +1,55 @@
+{
+ "norm": "ipagothic",
+ "name": "IPA 黑体",
+ "en": "IPA Gothic",
+ "aliases": [
+  "ipagothic",
+  "ipahtgo"
+ ],
+ "licenseName": "IPA Font License Agreement v1.0",
+ "license": {
+  "spdx": "IPA",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/ipagothic/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "4c84dd528ec3044638ec346fc1ee27cd1eb95dfc04cbc6a881b3ca7a7f517e54",
+  "verifiedAt": "2026-09-27",
+  "rfn": null
+ },
+ "foundry": "情報処理推進機構 (IPA)",
+ "foundrySlug": "ipa",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/ipagothic",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://moji.or.jp/ipafont/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 moji.or.jp",
+   "format": "link",
+   "href": "https://moji.or.jp/ipafont/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ipahtgo"
+}

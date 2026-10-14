@@ -1,0 +1,64 @@
+{
+ "norm": "gekifude",
+ "name": "激笔 SFX",
+ "en": "GEKIFUDE SFX",
+ "aliases": [
+  "gekifude"
+ ],
+ "licenseName": "CC0 1.0 Universal",
+ "license": {
+  "spdx": "CC0-1.0",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/gekifude/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "激笔",
+ "foundrySlug": "gekifude",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/gekifude",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/ukr8b3g-cmyk/GEKIFUDE-SFX",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/ukr8b3g-cmyk/GEKIFUDE-SFX",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/gekifude/source/GEKIFUDE-Regular.ttf",
+   "sha256": "21dc18d401be7d1e2e6b76509c17f2eb2d1b0e6b4bcd818a2b161f6161d0874e",
+   "staged": false,
+   "bytes": 213424,
+   "file": "GEKIFUDE-Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-gekifude"
+}

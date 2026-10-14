@@ -1,0 +1,64 @@
+{
+ "norm": "xcdzst",
+ "name": "香萃端庄宋体",
+ "en": "Xiangcui Duanzhuang Song",
+ "aliases": [
+  "xcdzst"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/xcdzst/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "e564f06d018e7b95bc3594c96a17f1d41865af4038c375e7aa974dd69df38602",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "香萃",
+ "foundrySlug": "xiangcui",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xcdzst",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/Miiiller/Xiangcui-Duanzhuangsongti",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Miiiller/Xiangcui-Duanzhuangsongti",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xcdzst/source/Duanzhuang.ttf",
+   "sha256": "e8f77d1ab3b8558b3e130e9cf07af52b960b58e277abfb14522ddef2606a739a",
+   "staged": false,
+   "bytes": 2959724,
+   "file": "Duanzhuang.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xcdzst"
+}

@@ -1,0 +1,64 @@
+{
+ "norm": "hjxsjj",
+ "name": "怀旧像素 街机",
+ "en": "Retro Pixel Arcade",
+ "aliases": [
+  "hjxsjj"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/hjxsjj/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "fef832d4651226c082ff6164463662e8e97b674396d276bd4a1db1e3e8f70f01",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "狼人小林 (TakWolf)",
+ "foundrySlug": "takwolf",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/hjxsjj",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/TakWolf/retro-pixel-font",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/TakWolf/retro-pixel-font",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hjxsjj/source/retro-pixel-arcade.ttf",
+   "sha256": "43d2bd7420b738a0fc363ca7e542988862387fc155133abb5e118dcf7fcf31db",
+   "staged": false,
+   "bytes": 10808,
+   "file": "retro-pixel-arcade.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hjxsjj"
+}

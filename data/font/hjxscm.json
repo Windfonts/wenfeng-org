@@ -1,0 +1,64 @@
+{
+ "norm": "hjxscm",
+ "name": "怀旧像素 可爱等宽",
+ "en": "Retro Pixel Cute Mono",
+ "aliases": [
+  "hjxscm"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/hjxscm/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "fef832d4651226c082ff6164463662e8e97b674396d276bd4a1db1e3e8f70f01",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "狼人小林 (TakWolf)",
+ "foundrySlug": "takwolf",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/hjxscm",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/TakWolf/retro-pixel-font",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/TakWolf/retro-pixel-font",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/hjxscm/source/retro-pixel-cute-mono.ttf",
+   "sha256": "c95574776068b399e252d4d16ba7636aeab4862181f2d59d4d4f12ad6499633f",
+   "staged": false,
+   "bytes": 10624,
+   "file": "retro-pixel-cute-mono.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hjxscm"
+}

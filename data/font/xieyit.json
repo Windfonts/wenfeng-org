@@ -1,0 +1,65 @@
+{
+ "norm": "xieyit",
+ "name": "写意体",
+ "en": "YShi Written",
+ "aliases": [
+  "xieyit",
+  "xytysw"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/xieyit/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "e4473be81b062310f87b30f98a63d6b1975e06d6d4d414ace7c3158abe63b12c",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "Steve-Yuu",
+ "foundrySlug": "steve-yuu",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/xieyit",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/Steve-Yuu/YShi-Written",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Steve-Yuu/YShi-Written",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/xieyit/source/YShiWritten-Regular.ttf",
+   "sha256": "a982a892e780da2736c77b991bf1d40aa059d2fab46ed9ee9e796b2aa04a3a34",
+   "staged": false,
+   "bytes": 3994192,
+   "file": "YShiWritten-Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xytysw"
+}

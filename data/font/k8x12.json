@@ -1,0 +1,54 @@
+{
+ "norm": "k8x12",
+ "name": "k8x12",
+ "en": "k8x12",
+ "aliases": [
+  "k8x12"
+ ],
+ "licenseName": "Num Kadoma free software license",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/k8x12/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "b032e8ace0655001808820adf3471ab47519b166e379b70493edbe18f4e105a4",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "littlelimit",
+ "foundrySlug": "littlelimit",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/k8x12",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://littlelimit.net/font.htm",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 littlelimit.net",
+   "format": "link",
+   "href": "https://littlelimit.net/font.htm",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-k8x12"
+}

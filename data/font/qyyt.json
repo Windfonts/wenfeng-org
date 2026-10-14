@@ -1,0 +1,55 @@
+{
+ "norm": "qyyt",
+ "name": "秋叶圆体",
+ "en": "QiuYeYuanTi 16",
+ "aliases": [
+  "qyyt",
+  "qyyt16"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/qyyt/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "74b62bc643604b4ae2681d1a97b83c890ac3fddc6f91be3d47c4ce01bc786809",
+  "verifiedAt": "2026-09-27",
+  "rfn": null
+ },
+ "foundry": "yzdnn",
+ "foundrySlug": "yzdnn",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/qyyt",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/yzdnn/QiuYeYuanTi-16",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/yzdnn/QiuYeYuanTi-16",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-qyyt16"
+}

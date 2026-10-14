@@ -1,0 +1,54 @@
+{
+ "norm": "kokoro",
+ "name": "こころ明朝",
+ "en": "Kokoro Mincho",
+ "aliases": [
+  "kokoro"
+ ],
+ "licenseName": "IPA Font License Agreement v1.0",
+ "license": {
+  "spdx": "IPA",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/kokoro/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "4c84dd528ec3044638ec346fc1ee27cd1eb95dfc04cbc6a881b3ca7a7f517e54",
+  "verifiedAt": "2026-09-27",
+  "rfn": null
+ },
+ "foundry": "Typingart",
+ "foundrySlug": "typingart",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/kokoro",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://typingart.net/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 typingart.net",
+   "format": "link",
+   "href": "https://typingart.net/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-kokoro"
+}

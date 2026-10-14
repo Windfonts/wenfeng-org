@@ -1,16 +1,17 @@
 {
  "norm": "myst",
- "name": "梦源宋体",
+ "name": "萌神汉宋",
  "en": "Mengshen HanSerif",
  "aliases": [
-  "Mspyt"
+  "Mspyt",
+  "梦源宋体"
  ],
  "licenseName": "SIL Open Font License 1.1",
  "license": {
   "spdx": "OFL-1.1",
   "textState": "full",
-  "sourceUrl": "https://github.com/Pal3love/dream-han-cjk",
-  "fetchedAt": "2026-09-26",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/myst/license/original.txt",
+  "fetchedAt": "2026-10-12",
   "textSha256": "3b9d9d42393580f6c66c60b17910b1f7aa95a1470261b6b8ba768039983be653",
   "verifiedAt": "2026-09-26",
   "rfn": null,
@@ -20,8 +21,8 @@
    "note": "衍生字体，授权随上游沿袭。"
   }
  },
- "foundry": "",
- "foundrySlug": "unknown",
+ "foundry": "萌神",
+ "foundrySlug": "mengshen",
  "offer": "source",
  "slice": "planned",
  "distribution": true,
@@ -31,18 +32,18 @@
  ],
  "mirror": {
   "state": "mirrored",
-  "feicode": "https://feicode.com/Pal3love/dream-han-cjk",
-  "upstream": "https://github.com/Pal3love/dream-han-cjk",
-  "syncedAt": null,
+  "feicode": null,
+  "upstream": "https://github.com/MaruTama/Mengshen-pinyin-font",
+  "syncedAt": "2026-10-12T13:10:00+08:00",
   "headSha": null
  },
  "lineage": null,
  "files": [
   {
    "kind": "upstream",
-   "label": "上游 github.com",
+   "label": "上游 GitHub",
    "format": "git",
-   "href": "https://github.com/Pal3love/dream-han-cjk",
+   "href": "https://github.com/MaruTama/Mengshen-pinyin-font",
    "sha256": null
   },
   {

@@ -1,0 +1,54 @@
+{
+ "norm": "khdny16",
+ "name": "KH Dot 人形町 16",
+ "en": "KH Dot Ningyouchou 16",
+ "aliases": [
+  "khdny16"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/khdny16/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "697383c6addd5dd14d7e1ff053aaa44520ce86a58589eef1f9985ab66e08db08",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "Font Silo",
+ "foundrySlug": "font-silo",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/khdny16",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "http://hp.vector.co.jp/authors/VA000874/",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 hp.vector.co.jp",
+   "format": "link",
+   "href": "http://hp.vector.co.jp/authors/VA000874/",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-khdny16"
+}

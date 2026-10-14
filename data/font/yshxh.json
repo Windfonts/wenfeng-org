@@ -1,9 +1,10 @@
 {
  "norm": "yshxh",
- "name": "YShi新黑",
- "en": "YShi NewHei",
+ "name": "Y式新黑体",
+ "en": "YShi New Hei",
  "aliases": [
-  "Ysxin"
+  "Ysxin",
+  "YShi新黑"
  ],
  "licenseName": "IPA Font License Agreement v1.0",
  "license": {

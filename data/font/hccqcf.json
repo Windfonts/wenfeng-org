@@ -1,0 +1,54 @@
+{
+ "norm": "hccqcf",
+ "name": "寒蝉春秋·春风",
+ "en": "Chill Calligraphy ChunQiu ChenFeng",
+ "aliases": [
+  "hccqcf"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/hccqcf/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "8d177ed1972594bbbff69d2628953209c20fc4ed36c403591a02020d4b8c4402",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "寒蝉字型",
+ "foundrySlug": "chilltype",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/hccqcf",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://github.com/Warren2060/ChillCalligraphy",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Warren2060/ChillCalligraphy",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-hccqcf"
+}

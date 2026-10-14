@@ -1,0 +1,14 @@
+{
+  "norm": "konatutohaba",
+  "title": "MIT License",
+  "body": "==Konatu Description==\n\nThis is TrueTypeFont where BitmapFont is embedded. \nIt was confirmed to use it with Windows XP, and Ubuntu 12.10\n\n===licence===\n\nThis work is licensed under The MIT License.\n\n* http://opensource.org/licenses/mit-license.php\n\n===Author===\n\nBY:MASUDA mitiya\n\nMail:mitimasu@gmail.com\n\nPlease use Japanese or easy peacy English.\n\n",
+  "textKind": "full",
+  "evidence": {
+    "source": "OSS original.txt",
+    "url": "https://cn.windfonts.com/fonts-packages/konatutohaba/license/original.txt",
+    "commit": null,
+    "fetchedAt": "2026-10-08",
+    "rule": null,
+    "textSha256": "f3577c286b00d25134268e83e6e248a9a0c0560f1d876e1c7df128194a8f4e83"
+  }
+}

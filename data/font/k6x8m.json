@@ -1,0 +1,54 @@
+{
+ "norm": "k6x8m",
+ "name": "k6x8 明朝",
+ "en": "k6x8 Mincho",
+ "aliases": [
+  "k6x8m"
+ ],
+ "licenseName": "Num Kadoma free software license",
+ "license": {
+  "spdx": null,
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/k6x8m/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "162c3e8e5623e5b4d5d585b5ca2adb6bbd5e24d6c0fa553f8522c192083ca11c",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "littlelimit",
+ "foundrySlug": "littlelimit",
+ "offer": "jump",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/k6x8m",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "absent",
+  "feicode": null,
+  "upstream": "https://littlelimit.net/font.htm",
+  "syncedAt": null,
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 littlelimit.net",
+   "format": "link",
+   "href": "https://littlelimit.net/font.htm",
+   "sha256": null
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-k6x8m"
+}

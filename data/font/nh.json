@@ -1,0 +1,65 @@
+{
+ "norm": "nh",
+ "name": "納黑",
+ "en": "NaHei",
+ "aliases": [
+  "nh",
+  "nhzt"
+ ],
+ "licenseName": "SIL Open Font License 1.1",
+ "license": {
+  "spdx": "OFL-1.1",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/nh/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "dfa5f0725803fdf90d2d962c816c8ec7e9547a8fdb9fe51d5f3eab56012b6b9d",
+  "verifiedAt": null,
+  "rfn": null
+ },
+ "foundry": "Steve-Yuu",
+ "foundrySlug": "steve-yuu",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/nh",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/Steve-Yuu/nahei",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Steve-Yuu/nahei",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/nh/source/NaHei-Regular.ttf",
+   "sha256": "7f23b4bc05942830cb906bc8ff902e459ad4e10b40c628ded6fefb2aca228aeb",
+   "staged": false,
+   "bytes": 4414120,
+   "file": "NaHei-Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-nhzt"
+}

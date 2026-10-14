@@ -1,0 +1,65 @@
+{
+ "norm": "konatutohaba",
+ "name": "小夏等幅",
+ "en": "Konatu Tohaba",
+ "aliases": [
+  "konatutohaba",
+  "xxdft"
+ ],
+ "licenseName": "MIT License",
+ "license": {
+  "spdx": "MIT",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/konatutohaba/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "f3577c286b00d25134268e83e6e248a9a0c0560f1d876e1c7df128194a8f4e83",
+  "verifiedAt": "2026-09-26",
+  "rfn": null
+ },
+ "foundry": "枡田道也",
+ "foundrySlug": "masuda-mitiya",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/konatutohaba",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://www.masuseki.com/wp/?p=233",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 masuseki.com",
+   "format": "link",
+   "href": "https://www.masuseki.com/wp/?p=233",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/konatutohaba/source/KonatuTohaba-Regular.ttf",
+   "sha256": "8c0d8779fdb9aef74b8f2f9e6b0cea283f16f9f360af2b3c38f3099f132c4e43",
+   "staged": false,
+   "bytes": 5704443,
+   "file": "KonatuTohaba-Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-xxdft"
+}

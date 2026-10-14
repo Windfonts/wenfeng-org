@@ -1,0 +1,64 @@
+{
+ "norm": "ysmct",
+ "name": "Y式明朝体",
+ "en": "YShi Mincho",
+ "aliases": [
+  "ysmct"
+ ],
+ "licenseName": "IPA Font License Agreement v1.0",
+ "license": {
+  "spdx": "IPA",
+  "textState": "full",
+  "sourceUrl": "https://cn.windfonts.com/fonts-packages/ysmct/license/original.txt",
+  "fetchedAt": "2026-10-08",
+  "textSha256": "13ac75bd4e2872272982da0617a62eaa9af8c6a12ba88619997a20c36b103e53",
+  "verifiedAt": "2026-10-08",
+  "rfn": null
+ },
+ "foundry": "Steve-Yuu",
+ "foundrySlug": "steve-yuu",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/ysmct",
+ "weights": [
+  "Regular"
+ ],
+ "mirror": {
+  "state": "mirrored",
+  "feicode": null,
+  "upstream": "https://github.com/Steve-Yuu/YShiMincho",
+  "syncedAt": "2026-10-08T11:56:45+08:00",
+  "headSha": null
+ },
+ "lineage": null,
+ "files": [
+  {
+   "kind": "upstream",
+   "label": "上游 github.com",
+   "format": "git",
+   "href": "https://github.com/Steve-Yuu/YShiMincho",
+   "sha256": null
+  },
+  {
+   "kind": "archive",
+   "label": "源文件",
+   "format": "ttf",
+   "href": "https://cn.windfonts.com/fonts-packages/ysmct/source/YShiMincho-Regular.ttf",
+   "sha256": "22bb27400eabc054ed835f4b4a124c843fc8b4e1e4241cf07aa52d84da2c3a3e",
+   "staged": false,
+   "bytes": 26892776,
+   "file": "YShiMincho-Regular.ttf"
+  },
+  {
+   "kind": "slice",
+   "label": "网页切片包（自托管）",
+   "format": "zip",
+   "href": null,
+   "status": "planned",
+   "sha256": null
+  }
+ ],
+ "visitorNote": "",
+ "family": "wenfeng-ysmct"
+}
