@@ -502,11 +502,11 @@
      "kind": "archive",
      "label": "源文件",
      "format": "ttf",
-     "href": "https://cn.windfonts.com/fonts-packages/975yt/source/LXGW975YuanSC-700W.ttf",
-     "sha256": "f392de4cba941f3c44c7770cfed7ac3c658b46b7e3a4b2546fe155010109d403",
+     "href": "https://cn.windfonts.com/fonts-packages/975yt/source/LXGW975YuanSC-400W.ttf",
+     "sha256": "d14f5a453a221525f0db4887412712cbc03a84d0dc44ce2d22d51d1c136ed9a1",
      "staged": false,
-     "bytes": 14884594,
-     "file": "LXGW975YuanSC-700W.ttf"
+     "bytes": 14525950,
+     "file": "LXGW975YuanSC-400W.ttf"
     },
     {
      "kind": "slice",
