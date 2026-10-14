@@ -760,7 +760,7 @@ class Handler(SimpleHTTPRequestHandler):
                     slug,
                     {
                         "slug": slug,
-                        "name": font.get("foundry") or "作者不详",
+                        "name": font.get("foundry") or "未标注",
                         "fonts": [],
                     },
                 )

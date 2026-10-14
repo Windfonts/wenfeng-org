@@ -407,7 +407,7 @@ def index_rows(fonts, go=None, href_of=None, rel_of=None, list_attrs=""):
                                      f.get("licenseName")] + (f.get("aliases") or []))).lower()
         rel = rel_of(f) if rel_of else STATUS[st][0]
         info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空",
-                                          f.get("foundry") or "作者不详"]))
+                                          f.get("foundry") or "未标注"]))
         info_v = "%s · offer=%s · textState=%s" % (e(f["norm"]), e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
         if go:
             got = go(f)
@@ -787,7 +787,7 @@ def _frow(f):
     face = f.get("family") or ""
     cls = "frow t-%s" % e(f["norm"]) if face else "frow"
     attrs = ' data-face-norm="%s" data-face-family="%s"' % (e(f["norm"]), e(face)) if face else ""
-    info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空", f.get("foundry") or "作者不详"]))
+    info_d = " · ".join(filter(None, [spdx_of(f) or f.get("licenseName") or "许可空", f.get("foundry") or "未标注"]))
     info_v = "offer=%s · textState=%s" % (e(f.get("offer") or "jump"), e(lic(f).get("textState") or "—"))
     return ('<a class="%s" href="%s"%s>'
             '<span class="fnm">%s</span>'
@@ -1779,7 +1779,7 @@ def page_font(f):
         note = "原件正在上架到本站 OSS。" + note
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
-    foundry = f.get("foundry") or "作者不详"
+    foundry = f.get("foundry") or "未标注"
     foundry_slug = f.get("foundrySlug")
     foundry_html = (
         ('<a href="/foundry/%s/">%s</a>' % (e(foundry_slug), e(foundry)))
@@ -1809,7 +1809,7 @@ def page_font(f):
         x for x in (
             (f.get("en") or "").strip(),
             proto if proto != "—" else "",
-            foundry if foundry != "作者不详" else "",
+            foundry if foundry != "未标注" else "",
         ) if x
     ) or (f.get("en") or "")
 
@@ -1850,7 +1850,7 @@ def page_font(f):
                 license_url="/license/%s/" % f["norm"],
                 identifier=f["norm"],
                 alternate=(f.get("en") or ""),
-                holder="" if foundry == "作者不详" else foundry,
+                holder="" if foundry == "未标注" else foundry,
             ),
             seo.breadcrumb([("/", "首页"), ("/source/", "目录"), (None, wf(f))]),
         ),
@@ -1884,7 +1884,7 @@ def _lab_font_bits(f):
         note = "原件正在上架到本站 OSS。" + note
     spdx = spdx_of(f) or ""
     proto = spdx or f.get("licenseName") or "—"
-    foundry = f.get("foundry") or "作者不详"
+    foundry = f.get("foundry") or "未标注"
     foundry_slug = f.get("foundrySlug")
     foundry_html = (
         ('<a href="/foundry/%s/">%s</a>' % (e(foundry_slug), e(foundry)))
@@ -1913,7 +1913,7 @@ def _lab_font_bits(f):
         x for x in (
             (f.get("en") or "").strip(),
             proto if proto != "—" else "",
-            foundry if foundry != "作者不详" else "",
+            foundry if foundry != "未标注" else "",
         ) if x
     ) or (f.get("en") or "")
     lead = "%s。%s" % (e(st_label), e(note))
@@ -2158,7 +2158,7 @@ def license_stage(f):
     kind = license_kind(f)
     copy = verdict_copy(f, kind)
     spdx = spdx_of(f) or ""
-    foundry = f.get("foundry") or "作者不详"
+    foundry = f.get("foundry") or "未标注"
     foundry_slug = f.get("foundrySlug") or "—"
     proto = spdx or f.get("licenseName") or "—"
     acts = "".join(
@@ -2239,7 +2239,7 @@ def license_foil(f, n):
             n,
             e(copy["line"]),
             e(wf(f)),
-            e(spdx or f.get("licenseName") or "待核实"), e(f.get("foundry") or "作者不详"), e(status_word(f)),
+            e(spdx or f.get("licenseName") or "待核实"), e(f.get("foundry") or "未标注"), e(status_word(f)),
             e(f["norm"]), e(str(lic(f).get("textState") or "∅")), e(offer_of(f)),
             e(go)
         )
@@ -2952,7 +2952,7 @@ def foundries(fonts):
     for f in fonts:
         s = f.get("foundrySlug") or "unknown"
         if s not in groups_map:
-            groups_map[s] = {"slug": s, "name": f.get("foundry") or "作者不详", "fonts": []}
+            groups_map[s] = {"slug": s, "name": f.get("foundry") or "未标注", "fonts": []}
         groups_map[s]["fonts"].append(f)
     groups = list(groups_map.values())
     groups.sort(key=lambda g: (1 if g["slug"] == "unknown" else 0, -len(g["fonts"])))

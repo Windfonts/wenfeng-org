@@ -271,7 +271,7 @@
     var map = {};
     fonts.forEach(function (f) {
       var slug = f.foundrySlug || 'unknown';
-      if (!map[slug]) map[slug] = { slug: slug, name: f.foundry || '作者不详', fonts: [] };
+      if (!map[slug]) map[slug] = { slug: slug, name: f.foundry || '未标注', fonts: [] };
       map[slug].fonts.push(f);
     });
     var groups = Object.keys(map).map(function (k) { return map[k]; });
@@ -771,7 +771,7 @@
     var rows = list.map(function (f) {
       var act = indexAct(f);
       var textState = (f.license || {}).textState || '—';
-      var maker = f.foundry || '作者不详';
+      var maker = f.foundry || '未标注';
       return '<li class="sd2b-row">' +
         '<span class="norm">' + esc(f.norm) + '</span>' +
         '<a class="name" href="/source/' + esc(f.norm) + '/">' + esc(wfName(f)) + '</a>' +
@@ -1368,7 +1368,7 @@
     }
     var spdx = attestSpdxOf(f) || '';
     var proto = spdx || f.licenseName || '—';
-    var foundry = f.foundry || '作者不详';
+    var foundry = f.foundry || '未标注';
     var textCell = fontTextCell(f);
     var archCell = fontArchiveCell(f);
     var mirrorState = (f.mirror || {}).state || '';
@@ -1608,7 +1608,7 @@
     var kind = licenseKind(f);
     var copy = verdictCopy(f, kind);
     var spdx = attestSpdxOf(f) || '';
-    var foundry = f.foundry || '作者不详';
+    var foundry = f.foundry || '未标注';
     var proto = spdx || f.licenseName || '—';
     var acts = stageActs(f, kind).map(function (a) {
       return '<a' + (a.strong ? ' class="is-strong"' : '') + ' href="' + esc(a.href) + '">' + esc(a.label) + '</a>';
@@ -1658,7 +1658,7 @@
       '<span class="state">' + esc(copy.line) + '</span>' +
       '<span class="body">' +
         '<span class="fname">' + esc(wfName(f)) + '</span>' +
-        '<span class="meta for-design">' + esc(spdx || f.licenseName || '待核实') + ' · ' + esc(f.foundry || '作者不详') + ' · ' + esc(statusWord(f)) + '</span>' +
+        '<span class="meta for-design">' + esc(spdx || f.licenseName || '待核实') + ' · ' + esc(f.foundry || '未标注') + ' · ' + esc(statusWord(f)) + '</span>' +
         '<span class="meta for-dev mono">' + esc(f.norm) + ' · textState=' + esc(String((f.license || {}).textState || '∅')) + ' · offer=' + esc(offerOf(f)) + '</span>' +
       '</span>' +
       '<span class="go" aria-hidden="true">' + esc(go) + '</span>' +
@@ -2059,7 +2059,7 @@
           return '<li>' +
             '<a class="tool-index-row" href="/source/' + esc(f.norm) + '/">' +
               '<span class="tool-index-name">' + esc(wfName(f)) + '</span>' +
-              '<span class="tool-index-meta">' + esc(f.foundry || '作者不详') + '</span>' +
+              '<span class="tool-index-meta">' + esc(f.foundry || '未标注') + '</span>' +
               '<span class="tool-index-go">看下载页</span>' +
             '</a>' +
           '</li>';
@@ -2080,7 +2080,7 @@
             return '<li>' +
               '<a class="tool-index-row" href="/slice/' + esc(f.norm) + '/">' +
                 '<span class="tool-index-name">' + esc(wfName(f)) + '</span>' +
-                '<span class="tool-index-meta">' + esc(f.foundry || '作者不详') + '</span>' +
+                '<span class="tool-index-meta">' + esc(f.foundry || '未标注') + '</span>' +
                 '<span class="tool-index-go">领取</span>' +
               '</a>' +
             '</li>';
