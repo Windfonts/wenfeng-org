@@ -80,10 +80,12 @@ Mac 侧根目录 `deploy.sh` 是旧 M1 ossutil 路径，不要用。静态托管
 - wenfeng-original/ 原件包生产（113 款镜像源打包上传 wenfeng-fonts 桶，换 `ARCHIVE_HREF_PREFIX` 真值重导出）
 - 索引开关在 v2 `site/build.py --allow-index`（2026-10-09 已接上；不要跑根目录 `build.py`）
 
-## 6. 证书作废（2026-10-28 起，待上线）
+## 6. 证书作废（2026-10-28 23:2x CST 已上线，Feng 批准）
 
 - 作废记录存 KV `wenfeng-attest`，每张一个键 `revoked:<编号>`，值含 revokedAt / reason / supersededBy。只增不改：写前确认键不存在，台账 `ledger:records` 不删不改。
 - 记录文件放 `worker/revocations/*.json`；`node worker/revoke-certs.mjs <文件>` 先看计划，`--apply` 才写（需 CF_ACCOUNT_ID / CF_KV_NAMESPACE_ID / CF_API_TOKEN，脚本不打印凭据）。
 - 上线后：`/api/v1/certs/lookup?s=` 只凭编号即返回「已作废」与取代编号（不返回持证单位）；verify 对已作废证书返回 valid:false、status:revoked；台账接口给作废条目加 status；徽章返回 410。`/v?s=` 页带编号即自动查。
 - 自动入账开关 `LEDGER_REQUIRE_ISSUE`（Worker 变量，默认不开＝旧行为）：开了以后只有带 `issue=1` 的 GET 才写台账，证明页带持证单位时自动加 issue=1。开之前先定目录证（无持证单位）还要不要入账。
 - 本地测：`node worker/test/revoke.test.mjs`。
+- 首批已作废：WF-20261022-E7F783942C→WF-20261028-8E57D06464；WF-20261020-33EB45AC57→WF-20261028-1EEE30EDB4；WF-20261028-5EFD56A973（探测误签发，无取代）。site.js ?v=1793201094 只换了 /v/、/attest/verify/、/attest/ledger/ 三页 HTML。备份：modiqi 与 devops 的 ~/backup/wenfeng-org-revoke-20261028/。
+- 坑：打开 /attest/<norm>/ 证明页会调用 GET /api/v1/certs/<norm> 并自动写台账（每款每天一张无持证单位的证）；探测时也一样，别用 GET 探测。
