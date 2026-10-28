@@ -5,8 +5,8 @@
  "textKind": "full",
  "evidence": {
   "source": "上游原文（Foundry 2026-10-14 替换，Bot 签字）",
-  "url": "https://raw.githubusercontent.com/ItMarki/MisekiBitmap/main/LICENSE",
-  "commit": null,
+  "url": "https://raw.githubusercontent.com/ItMarki/MisekiBitmap/64b102ca30abe4de0733d9e80c0336a148297a2e/LICENSE",
+  "commit": "64b102ca30abe4de0733d9e80c0336a148297a2e",
   "fetchedAt": "2026-10-14",
   "rule": null,
   "textSha256": "e855b45b384d37c9a778119271bd9c32706e3f1f9f278de0ad47347606eea846"
