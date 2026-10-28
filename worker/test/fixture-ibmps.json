@@ -1,0 +1,25 @@
+{
+ "norm": "ibmps",
+ "name": "IBM Plex 无衬线简体中文",
+ "en": "IBM Plex Sans SC",
+ "licenseName": "SIL Open Font License 1.1",
+ "foundry": "Sandoll Inc.",
+ "foundrySlug": "ibm",
+ "offer": "source",
+ "slice": "planned",
+ "distribution": true,
+ "shop": "https://app.windfonts.com/fonts/ibmps",
+ "weights": [
+  "Light",
+  "Text",
+  "Extralight",
+  "Thin",
+  "Bold",
+  "Regular"
+ ],
+ "family": "wenfeng-ibmps",
+ "license": {
+  "textState": "full",
+  "spdx": "OFL-1.1"
+ }
+}

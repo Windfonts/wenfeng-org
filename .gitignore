@@ -19,3 +19,4 @@ data/_bak-*/
 .deploy-cn-chrome.tar
 .deploy-org-html/
 .deploy-org-html.tar
+worker/test/.wf-worker.test.mjs

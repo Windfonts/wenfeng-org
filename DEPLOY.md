@@ -79,3 +79,11 @@ Mac 侧根目录 `deploy.sh` 是旧 M1 ossutil 路径，不要用。静态托管
 - M2 证书签发服务上线后：CF 再加一条 Worker/路由把 `/api/v1/certs/*` 与 `/badge/*` 分流到签发服务，静态部分不动
 - wenfeng-original/ 原件包生产（113 款镜像源打包上传 wenfeng-fonts 桶，换 `ARCHIVE_HREF_PREFIX` 真值重导出）
 - 索引开关在 v2 `site/build.py --allow-index`（2026-10-09 已接上；不要跑根目录 `build.py`）
+
+## 6. 证书作废（2026-10-28 起，待上线）
+
+- 作废记录存 KV `wenfeng-attest`，每张一个键 `revoked:<编号>`，值含 revokedAt / reason / supersededBy。只增不改：写前确认键不存在，台账 `ledger:records` 不删不改。
+- 记录文件放 `worker/revocations/*.json`；`node worker/revoke-certs.mjs <文件>` 先看计划，`--apply` 才写（需 CF_ACCOUNT_ID / CF_KV_NAMESPACE_ID / CF_API_TOKEN，脚本不打印凭据）。
+- 上线后：`/api/v1/certs/lookup?s=` 只凭编号即返回「已作废」与取代编号（不返回持证单位）；verify 对已作废证书返回 valid:false、status:revoked；台账接口给作废条目加 status；徽章返回 410。`/v?s=` 页带编号即自动查。
+- 自动入账开关 `LEDGER_REQUIRE_ISSUE`（Worker 变量，默认不开＝旧行为）：开了以后只有带 `issue=1` 的 GET 才写台账，证明页带持证单位时自动加 issue=1。开之前先定目录证（无持证单位）还要不要入账。
+- 本地测：`node worker/test/revoke.test.mjs`。

@@ -1,0 +1,26 @@
+[
+  {
+    "serial": "WF-20261022-E7F783942C",
+    "norm": "mjdzt",
+    "revokedAt": "2026-10-28",
+    "reason": "来源更正前自动签发，证面上游来源写错（误记为芫茜雅楷），已按 ItMarki/MisekiBitmap 重新签发。",
+    "supersededBy": "WF-20261028-8E57D06464",
+    "approvedBy": "Feng 2026-10-28 23:04 CST"
+  },
+  {
+    "serial": "WF-20261020-33EB45AC57",
+    "norm": "mjdztmc",
+    "revokedAt": "2026-10-28",
+    "reason": "来源更正前自动签发，证面上游来源写错（误记为芫茜雅楷），已按 ItMarki/MisekiBitmap 重新签发。",
+    "supersededBy": "WF-20261028-1EEE30EDB4",
+    "approvedBy": "Feng 2026-10-28 23:04 CST"
+  },
+  {
+    "serial": "WF-20261028-5EFD56A973",
+    "norm": "ibmps",
+    "revokedAt": "2026-10-28",
+    "reason": "探测误签发：盘点时调用接口探测，误写入台账，无持证单位。",
+    "supersededBy": null,
+    "approvedBy": "Feng 2026-10-28（经 Foundry 转达）"
+  }
+]

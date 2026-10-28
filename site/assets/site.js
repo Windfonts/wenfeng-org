@@ -1196,6 +1196,7 @@
       } catch (e) {}
     }
 
+    if (p.get('holder')) p.set('issue', '1');
     api('/api/v1/certs/' + encodeURIComponent(norm) + '?' + p).then(function (c) {
       activeCert = c;
       if (!c || c.error || !c.serial) {
@@ -1356,6 +1357,18 @@
     }).catch(function (err) { stage.innerHTML = result(false, '证明服务暂不可用', '<p>' + esc(err.message) + '</p>'); });
   }
 
+  function revokedHtml(r) {
+    var rv = r.revoked || {};
+    var nx = r.supersededBy || rv.supersededBy;
+    var body = '<dl class="kv-rows"><div><dt>编号</dt><dd>' + esc(r.serial || rv.serial) + '</dd></div>' +
+      (r.catalogName ? '<div><dt>字体</dt><dd>' + esc(r.catalogName) + '</dd></div>' : '') +
+      '<div><dt>作废日期</dt><dd>' + esc(rv.revokedAt || '') + '</dd></div>' +
+      '<div><dt>原因</dt><dd>' + esc(rv.reason || '') + '</dd></div>' +
+      (nx ? '<div><dt>取代它的证书</dt><dd><a href="/v/?s=' + encodeURIComponent(nx) + '&holder=' + encodeURIComponent('通用核验记录') + '">' + esc(nx) + '</a></dd></div>' : '') +
+      '</dl><p>这张证书已作废，不再作为核验依据。' + (nx ? '请改用新证书 ' + esc(nx) + '。' : '') + '</p>';
+    return result(false, '证书已作废', body);
+  }
+
   /* 核对 JSON */
   var vf = $('[data-verify]');
   if (vf) vf.addEventListener('submit', function (ev) {
@@ -1363,6 +1376,7 @@
     var out = $('[data-out]'), raw = vf.json.value.trim();
     try { JSON.parse(raw); } catch (e) { out.innerHTML = result(false, '不是有效的 JSON', '<p>请贴入完整的证明文件内容。</p>'); return; }
     api('/api/v1/certs/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: raw }).then(function (r) {
+      if (r.status === 'revoked') { out.innerHTML = revokedHtml(r); return; }
       out.innerHTML = r.valid
         ? result(true, '签名一致', '<p>' + esc(r.catalogName) + ' · ' + esc(r.serial) + '，内容未被改动。</p>')
         : result(false, '签名不一致', '<p>' + esc(r.reason || r.error || '内容被改过，或不是文风签发的。') + '</p>');
@@ -1380,7 +1394,7 @@
     lg.innerHTML = '<ul class="lin-list" data-list data-page-size="20" data-unit="份">' + rec.map(function (x) {
       var hay = esc((x.serial || '') + ' ' + (x.catalogName || '') + ' ' + ((x.usage || []).join(' '))).toLowerCase();
       return '<li data-hay="' + hay + '"><a class="lrow" href="/attest/' + esc(x.norm) + '/">' +
-        '<span class="lnm">' + esc(x.catalogName) + '</span>' +
+        '<span class="lnm">' + esc(x.catalogName) + (x.status === 'revoked' ? '（已作废）' : '') + '</span>' +
         '<span class="lrel">' + esc(x.serial) + '</span>' +
         '<span class="lgo">' + esc(x.issuedAt) + '</span></a></li>';
     }).join('') + '</ul><p class="empty" data-empty hidden>' + icon('search') + '<span>没有匹配的记录。</span></p><nav class="pager" data-pager hidden></nav>';
@@ -1395,6 +1409,8 @@
     function runLookup() {
       var out = $('[data-out]');
       api('/api/v1/certs/lookup?s=' + encodeURIComponent(lk.s.value) + '&holder=' + encodeURIComponent(lk.holder.value)).then(function (r) {
+        if (r.status === 'revoked') { out.innerHTML = revokedHtml(r); return; }
+        if (r.error === 'need_serial_and_holder') { out.innerHTML = ''; return; }
         if (r.error) {
           out.innerHTML = result(false, r.error === 'holder_mismatch' ? '持证单位不一致' : '查不到这个编号',
             '<p>编号与单位须与证明上完全一致。通用记录填「通用核验记录」。查不到的，按伪造处理。</p>'); return;
@@ -1406,7 +1422,7 @@
       }).catch(function (e) { out.innerHTML = result(false, '查验服务暂不可用', '<p>' + esc(e.message) + '</p>'); });
     }
     lk.addEventListener('submit', function (ev) { ev.preventDefault(); runLookup(); });
-    if (qs.get('s') && qs.get('holder')) runLookup();
+    if (qs.get('s')) runLookup();
   }
 
   /* 报缺字 */
